@@ -1,0 +1,32 @@
+# OpenapiClient::CoursePageDto
+
+## Properties
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **id** | **String** |  | [optional] |
+| **timestamp** | **Time** |  | [optional] |
+| **title** | **String** |  | [optional] |
+| **description** | **String** |  | [optional] |
+| **content** | **String** |  | [optional] |
+| **slug** | **String** |  | [optional] |
+| **course_id** | **String** |  | [optional] |
+| **tenant_id** | **String** |  | [optional] |
+
+## Example
+
+```ruby
+require 'openapi_client'
+
+instance = OpenapiClient::CoursePageDto.new(
+  id: null,
+  timestamp: null,
+  title: null,
+  description: null,
+  content: null,
+  slug: null,
+  course_id: null,
+  tenant_id: null
+)
+```
+

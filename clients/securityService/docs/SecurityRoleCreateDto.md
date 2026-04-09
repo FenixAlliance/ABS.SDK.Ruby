@@ -1,0 +1,26 @@
+# OpenapiClient::SecurityRoleCreateDto
+
+## Properties
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **id** | **String** |  | [optional] |
+| **timestamp** | **Time** |  | [optional] |
+| **name** | **String** |  |  |
+| **tenant_id** | **String** |  |  |
+| **description** | **String** |  | [optional] |
+
+## Example
+
+```ruby
+require 'openapi_client'
+
+instance = OpenapiClient::SecurityRoleCreateDto.new(
+  id: null,
+  timestamp: null,
+  name: null,
+  tenant_id: null,
+  description: null
+)
+```
+

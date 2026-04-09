@@ -1,0 +1,34 @@
+# OpenapiClient::ShareTransferCreateDto
+
+## Properties
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **id** | **String** |  | [optional] |
+| **timestamp** | **Time** |  | [optional] |
+| **description** | **String** |  | [optional] |
+| **value** | **Float** |  | [optional] |
+| **new_share_holder_id** | **String** |  | [optional] |
+| **former_share_holder_id** | **String** |  | [optional] |
+| **share_transfer_reason_id** | **String** |  | [optional] |
+| **enrollment_id** | **String** |  | [optional] |
+| **tenant_id** | **String** |  | [optional] |
+
+## Example
+
+```ruby
+require 'openapi_client'
+
+instance = OpenapiClient::ShareTransferCreateDto.new(
+  id: null,
+  timestamp: null,
+  description: null,
+  value: null,
+  new_share_holder_id: null,
+  former_share_holder_id: null,
+  share_transfer_reason_id: null,
+  enrollment_id: null,
+  tenant_id: null
+)
+```
+
