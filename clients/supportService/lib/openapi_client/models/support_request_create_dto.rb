@@ -27,15 +27,9 @@ module OpenapiClient
 
     attr_accessor :approved_timestamp
 
-    attr_accessor :business_id
-
-    attr_accessor :business_profile_record_id
-
     attr_accessor :support_entitlement_id
 
     attr_accessor :contact_id
-
-    attr_accessor :account_holder_id
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
@@ -46,11 +40,8 @@ module OpenapiClient
         :'description' => :'description',
         :'approved' => :'approved',
         :'approved_timestamp' => :'approvedTimestamp',
-        :'business_id' => :'businessID',
-        :'business_profile_record_id' => :'businessProfileRecordID',
         :'support_entitlement_id' => :'supportEntitlementID',
-        :'contact_id' => :'contactID',
-        :'account_holder_id' => :'accountHolderID'
+        :'contact_id' => :'contactID'
       }
     end
 
@@ -68,11 +59,8 @@ module OpenapiClient
         :'description' => :'String',
         :'approved' => :'Boolean',
         :'approved_timestamp' => :'Time',
-        :'business_id' => :'String',
-        :'business_profile_record_id' => :'String',
         :'support_entitlement_id' => :'String',
-        :'contact_id' => :'String',
-        :'account_holder_id' => :'String'
+        :'contact_id' => :'String'
       }
     end
 
@@ -80,11 +68,8 @@ module OpenapiClient
     def self.openapi_nullable
       Set.new([
         :'description',
-        :'business_id',
-        :'business_profile_record_id',
         :'support_entitlement_id',
-        :'contact_id',
-        :'account_holder_id'
+        :'contact_id'
       ])
     end
 
@@ -129,24 +114,12 @@ module OpenapiClient
         self.approved_timestamp = attributes[:'approved_timestamp']
       end
 
-      if attributes.key?(:'business_id')
-        self.business_id = attributes[:'business_id']
-      end
-
-      if attributes.key?(:'business_profile_record_id')
-        self.business_profile_record_id = attributes[:'business_profile_record_id']
-      end
-
       if attributes.key?(:'support_entitlement_id')
         self.support_entitlement_id = attributes[:'support_entitlement_id']
       end
 
       if attributes.key?(:'contact_id')
         self.contact_id = attributes[:'contact_id']
-      end
-
-      if attributes.key?(:'account_holder_id')
-        self.account_holder_id = attributes[:'account_holder_id']
       end
     end
 
@@ -233,11 +206,8 @@ module OpenapiClient
           description == o.description &&
           approved == o.approved &&
           approved_timestamp == o.approved_timestamp &&
-          business_id == o.business_id &&
-          business_profile_record_id == o.business_profile_record_id &&
           support_entitlement_id == o.support_entitlement_id &&
-          contact_id == o.contact_id &&
-          account_holder_id == o.account_holder_id
+          contact_id == o.contact_id
     end
 
     # @see the `==` method
@@ -249,7 +219,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, timestamp, title, description, approved, approved_timestamp, business_id, business_profile_record_id, support_entitlement_id, contact_id, account_holder_id].hash
+      [id, timestamp, title, description, approved, approved_timestamp, support_entitlement_id, contact_id].hash
     end
 
     # Builds the object from hash

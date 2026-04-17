@@ -9,8 +9,6 @@
 | **new_share_holder_id** | **String** |  | [optional] |
 | **former_share_holder_id** | **String** |  | [optional] |
 | **share_transfer_reason_id** | **String** |  | [optional] |
-| **enrollment_id** | **String** |  | [optional] |
-| **tenant_id** | **String** |  | [optional] |
 
 ## Example
 
@@ -22,9 +20,7 @@ instance = OpenapiClient::ShareTransferUpdateDto.new(
   value: null,
   new_share_holder_id: null,
   former_share_holder_id: null,
-  share_transfer_reason_id: null,
-  enrollment_id: null,
-  tenant_id: null
+  share_transfer_reason_id: null
 )
 ```
 

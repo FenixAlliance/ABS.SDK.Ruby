@@ -15,6 +15,10 @@ require 'time'
 
 module OpenapiClient
   class AssetDepreciationRecordCreateDto
+    attr_accessor :id
+
+    attr_accessor :timestamp
+
     attr_accessor :asset_id
 
     attr_accessor :asset_depreciation_policy_id
@@ -34,6 +38,8 @@ module OpenapiClient
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'id' => :'id',
+        :'timestamp' => :'timestamp',
         :'asset_id' => :'assetId',
         :'asset_depreciation_policy_id' => :'assetDepreciationPolicyId',
         :'depreciation_amount' => :'depreciationAmount',
@@ -53,6 +59,8 @@ module OpenapiClient
     # Attribute type mapping.
     def self.openapi_types
       {
+        :'id' => :'String',
+        :'timestamp' => :'Time',
         :'asset_id' => :'String',
         :'asset_depreciation_policy_id' => :'String',
         :'depreciation_amount' => :'Float',
@@ -86,6 +94,14 @@ module OpenapiClient
         end
         h[k.to_sym] = v
       }
+
+      if attributes.key?(:'id')
+        self.id = attributes[:'id']
+      end
+
+      if attributes.key?(:'timestamp')
+        self.timestamp = attributes[:'timestamp']
+      end
 
       if attributes.key?(:'asset_id')
         self.asset_id = attributes[:'asset_id']
@@ -140,6 +156,8 @@ module OpenapiClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          id == o.id &&
+          timestamp == o.timestamp &&
           asset_id == o.asset_id &&
           asset_depreciation_policy_id == o.asset_depreciation_policy_id &&
           depreciation_amount == o.depreciation_amount &&
@@ -159,7 +177,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [asset_id, asset_depreciation_policy_id, depreciation_amount, accumulated_depreciation, book_value, depreciation_date, year, month].hash
+      [id, timestamp, asset_id, asset_depreciation_policy_id, depreciation_amount, accumulated_depreciation, book_value, depreciation_date, year, month].hash
     end
 
     # Builds the object from hash

@@ -16,8 +16,6 @@
 | **valid_response** | **Boolean** |  | [optional] |
 | **parent_file_upload_id** | **String** |  | [optional] |
 | **file_path** | **String** |  | [optional] |
-| **business_id** | **String** |  | [optional] |
-| **business_profile_record_id** | **String** |  | [optional] |
 | **metadata** | **String** |  | [optional] |
 | **support_request_id** | **String** |  | [optional] |
 
@@ -39,8 +37,6 @@ instance = OpenapiClient::SupportRequestAttachmentCreateDto.new(
   valid_response: null,
   parent_file_upload_id: null,
   file_path: null,
-  business_id: null,
-  business_profile_record_id: null,
   metadata: null,
   support_request_id: null
 )

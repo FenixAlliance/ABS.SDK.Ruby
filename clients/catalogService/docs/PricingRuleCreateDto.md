@@ -27,8 +27,6 @@
 | **custom_state** | **String** |  | [optional] |
 | **custom_city** | **String** |  | [optional] |
 | **city_id** | **String** |  | [optional] |
-| **business_id** | **String** |  | [optional] |
-| **business_profile_record_id** | **String** |  | [optional] |
 
 ## Example
 
@@ -58,9 +56,7 @@ instance = OpenapiClient::PricingRuleCreateDto.new(
   country_state_id: null,
   custom_state: null,
   custom_city: null,
-  city_id: null,
-  business_id: null,
-  business_profile_record_id: null
+  city_id: null
 )
 ```
 

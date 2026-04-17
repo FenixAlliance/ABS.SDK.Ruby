@@ -97,17 +97,11 @@ module OpenapiClient
 
     attr_accessor :data9_label
 
-    attr_accessor :account_holder_id
-
     attr_accessor :individual_id
 
     attr_accessor :organization_id
 
     attr_accessor :receiver_business_id
-
-    attr_accessor :business_id
-
-    attr_accessor :business_profile_record_id
 
     attr_accessor :payment_token_id
 
@@ -159,12 +153,9 @@ module OpenapiClient
         :'data8_label' => :'data8Label',
         :'data9' => :'data9',
         :'data9_label' => :'data9Label',
-        :'account_holder_id' => :'accountHolderID',
         :'individual_id' => :'individualID',
         :'organization_id' => :'organizationID',
         :'receiver_business_id' => :'receiverBusinessID',
-        :'business_id' => :'businessID',
-        :'business_profile_record_id' => :'businessProfileRecordID',
         :'payment_token_id' => :'paymentTokenID',
         :'wallet_account_id' => :'walletAccountID',
         :'security_certificate_id' => :'securityCertificateID'
@@ -220,12 +211,9 @@ module OpenapiClient
         :'data8_label' => :'String',
         :'data9' => :'String',
         :'data9_label' => :'String',
-        :'account_holder_id' => :'String',
         :'individual_id' => :'String',
         :'organization_id' => :'String',
         :'receiver_business_id' => :'String',
-        :'business_id' => :'String',
-        :'business_profile_record_id' => :'String',
         :'payment_token_id' => :'String',
         :'wallet_account_id' => :'String',
         :'security_certificate_id' => :'String'
@@ -259,12 +247,9 @@ module OpenapiClient
         :'data8_label',
         :'data9',
         :'data9_label',
-        :'account_holder_id',
         :'individual_id',
         :'organization_id',
         :'receiver_business_id',
-        :'business_id',
-        :'business_profile_record_id',
         :'payment_token_id',
         :'wallet_account_id',
         :'security_certificate_id'
@@ -450,10 +435,6 @@ module OpenapiClient
         self.data9_label = attributes[:'data9_label']
       end
 
-      if attributes.key?(:'account_holder_id')
-        self.account_holder_id = attributes[:'account_holder_id']
-      end
-
       if attributes.key?(:'individual_id')
         self.individual_id = attributes[:'individual_id']
       end
@@ -464,14 +445,6 @@ module OpenapiClient
 
       if attributes.key?(:'receiver_business_id')
         self.receiver_business_id = attributes[:'receiver_business_id']
-      end
-
-      if attributes.key?(:'business_id')
-        self.business_id = attributes[:'business_id']
-      end
-
-      if attributes.key?(:'business_profile_record_id')
-        self.business_profile_record_id = attributes[:'business_profile_record_id']
       end
 
       if attributes.key?(:'payment_token_id')
@@ -596,12 +569,9 @@ module OpenapiClient
           data8_label == o.data8_label &&
           data9 == o.data9 &&
           data9_label == o.data9_label &&
-          account_holder_id == o.account_holder_id &&
           individual_id == o.individual_id &&
           organization_id == o.organization_id &&
           receiver_business_id == o.receiver_business_id &&
-          business_id == o.business_id &&
-          business_profile_record_id == o.business_profile_record_id &&
           payment_token_id == o.payment_token_id &&
           wallet_account_id == o.wallet_account_id &&
           security_certificate_id == o.security_certificate_id
@@ -616,7 +586,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, timestamp, title, description, start_date_time, end_date_time, next_invoice_date_time, code, signature, quantity, repetitions, charge_attempts, free_trial_in_days, grace_period_in_days, custom_renewal_period, enable_automatic_renew, enable_pro_rate_billing, enable_usage_threshold, enable_automatic_disable, enable_automatic_payments, usage_threshold, data, data_label, data1, data1_label, data2, data2_label, data3, data3_label, data4, data4_label, data5, data5_label, data6, data6_label, data7, data7_label, data8, data8_label, data9, data9_label, account_holder_id, individual_id, organization_id, receiver_business_id, business_id, business_profile_record_id, payment_token_id, wallet_account_id, security_certificate_id].hash
+      [id, timestamp, title, description, start_date_time, end_date_time, next_invoice_date_time, code, signature, quantity, repetitions, charge_attempts, free_trial_in_days, grace_period_in_days, custom_renewal_period, enable_automatic_renew, enable_pro_rate_billing, enable_usage_threshold, enable_automatic_disable, enable_automatic_payments, usage_threshold, data, data_label, data1, data1_label, data2, data2_label, data3, data3_label, data4, data4_label, data5, data5_label, data6, data6_label, data7, data7_label, data8, data8_label, data9, data9_label, individual_id, organization_id, receiver_business_id, payment_token_id, wallet_account_id, security_certificate_id].hash
     end
 
     # Builds the object from hash

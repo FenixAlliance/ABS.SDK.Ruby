@@ -30,7 +30,7 @@ tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 opts = {
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example', # String | 
-  item_question_create_dto: OpenapiClient::ItemQuestionCreateDto.new({title: 'title_example', needs_revision: false, question: 'question_example', business_id: 'business_id_example', item_id: 'item_id_example'}) # ItemQuestionCreateDto | 
+  item_question_create_dto: OpenapiClient::ItemQuestionCreateDto.new({title: 'title_example', needs_revision: false, question: 'question_example', item_id: 'item_id_example'}) # ItemQuestionCreateDto | 
 }
 
 begin

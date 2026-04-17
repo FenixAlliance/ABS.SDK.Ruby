@@ -6,7 +6,6 @@
 | ---- | ---- | ----------- | ----- |
 | **id** | **String** |  | [optional] |
 | **timestamp** | **Time** |  | [optional] |
-| **tenant_id** | **String** |  |  |
 | **type** | **String** |  |  |
 | **first_name** | **String** |  |  |
 | **last_name** | **String** |  | [optional] |
@@ -56,7 +55,6 @@ require 'openapi_client'
 instance = OpenapiClient::ContactCreateDto.new(
   id: null,
   timestamp: null,
-  tenant_id: null,
   type: null,
   first_name: null,
   last_name: null,

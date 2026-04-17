@@ -36,7 +36,6 @@
 | **pattern** | **String** |  | [optional] |
 | **features** | **String** |  | [optional] |
 | **material** | **String** |  | [optional] |
-| **tenant_id** | **String** |  | [optional] |
 | **permalink** | **String** |  | [optional] |
 | **brand_name** | **String** |  | [optional] |
 | **variations** | **String** |  | [optional] |
@@ -208,7 +207,6 @@ instance = OpenapiClient::SubscriptionPlanCreateDto.new(
   pattern: null,
   features: null,
   material: null,
-  tenant_id: null,
   permalink: null,
   brand_name: null,
   variations: null,

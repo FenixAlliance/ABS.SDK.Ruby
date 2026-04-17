@@ -12,7 +12,6 @@
 | **content_type** | **String** |  | [optional] |
 | **file_length** | **Integer** |  | [optional] |
 | **course_id** | **String** |  |  |
-| **business_id** | **String** |  |  |
 
 ## Example
 
@@ -27,8 +26,7 @@ instance = OpenapiClient::CourseFileCreateDto.new(
   file_upload_url: null,
   content_type: null,
   file_length: null,
-  course_id: null,
-  business_id: null
+  course_id: null
 )
 ```
 

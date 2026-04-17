@@ -23,16 +23,13 @@ module OpenapiClient
 
     attr_accessor :parent_business_industry_id
 
-    attr_accessor :business_profile_record_id
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'id' => :'id',
         :'timestamp' => :'timestamp',
         :'name' => :'name',
-        :'parent_business_industry_id' => :'parentBusinessIndustryID',
-        :'business_profile_record_id' => :'businessProfileRecordID'
+        :'parent_business_industry_id' => :'parentBusinessIndustryID'
       }
     end
 
@@ -47,8 +44,7 @@ module OpenapiClient
         :'id' => :'String',
         :'timestamp' => :'Time',
         :'name' => :'String',
-        :'parent_business_industry_id' => :'String',
-        :'business_profile_record_id' => :'String'
+        :'parent_business_industry_id' => :'String'
       }
     end
 
@@ -56,8 +52,7 @@ module OpenapiClient
     def self.openapi_nullable
       Set.new([
         :'name',
-        :'parent_business_industry_id',
-        :'business_profile_record_id'
+        :'parent_business_industry_id'
       ])
     end
 
@@ -91,10 +86,6 @@ module OpenapiClient
       if attributes.key?(:'parent_business_industry_id')
         self.parent_business_industry_id = attributes[:'parent_business_industry_id']
       end
-
-      if attributes.key?(:'business_profile_record_id')
-        self.business_profile_record_id = attributes[:'business_profile_record_id']
-      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -120,8 +111,7 @@ module OpenapiClient
           id == o.id &&
           timestamp == o.timestamp &&
           name == o.name &&
-          parent_business_industry_id == o.parent_business_industry_id &&
-          business_profile_record_id == o.business_profile_record_id
+          parent_business_industry_id == o.parent_business_industry_id
     end
 
     # @see the `==` method
@@ -133,7 +123,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, timestamp, name, parent_business_industry_id, business_profile_record_id].hash
+      [id, timestamp, name, parent_business_industry_id].hash
     end
 
     # Builds the object from hash

@@ -57,10 +57,6 @@ module OpenapiClient
 
     attr_accessor :city_id
 
-    attr_accessor :enrollment_id
-
-    attr_accessor :tenant_id
-
     attr_accessor :zero
 
     attr_accessor :reduced
@@ -93,8 +89,6 @@ module OpenapiClient
         :'custom_state' => :'customState',
         :'custom_city' => :'customCity',
         :'city_id' => :'cityId',
-        :'enrollment_id' => :'enrollmentId',
-        :'tenant_id' => :'tenantId',
         :'zero' => :'zero',
         :'reduced' => :'reduced',
         :'withholding' => :'withholding',
@@ -131,8 +125,6 @@ module OpenapiClient
         :'custom_state' => :'String',
         :'custom_city' => :'String',
         :'city_id' => :'String',
-        :'enrollment_id' => :'String',
-        :'tenant_id' => :'String',
         :'zero' => :'Boolean',
         :'reduced' => :'Boolean',
         :'withholding' => :'Boolean',
@@ -152,8 +144,6 @@ module OpenapiClient
         :'custom_state',
         :'custom_city',
         :'city_id',
-        :'enrollment_id',
-        :'tenant_id',
         :'fiscal_authority_id'
       ])
     end
@@ -257,14 +247,6 @@ module OpenapiClient
         self.city_id = attributes[:'city_id']
       end
 
-      if attributes.key?(:'enrollment_id')
-        self.enrollment_id = attributes[:'enrollment_id']
-      end
-
-      if attributes.key?(:'tenant_id')
-        self.tenant_id = attributes[:'tenant_id']
-      end
-
       if attributes.key?(:'zero')
         self.zero = attributes[:'zero']
       end
@@ -319,22 +301,6 @@ module OpenapiClient
         invalid_properties.push('invalid value for "city_id", the character length must be great than or equal to 0.')
       end
 
-      if !@enrollment_id.nil? && @enrollment_id.to_s.length > 36
-        invalid_properties.push('invalid value for "enrollment_id", the character length must be smaller than or equal to 36.')
-      end
-
-      if !@enrollment_id.nil? && @enrollment_id.to_s.length < 0
-        invalid_properties.push('invalid value for "enrollment_id", the character length must be great than or equal to 0.')
-      end
-
-      if !@tenant_id.nil? && @tenant_id.to_s.length > 36
-        invalid_properties.push('invalid value for "tenant_id", the character length must be smaller than or equal to 36.')
-      end
-
-      if !@tenant_id.nil? && @tenant_id.to_s.length < 0
-        invalid_properties.push('invalid value for "tenant_id", the character length must be great than or equal to 0.')
-      end
-
       if !@fiscal_authority_id.nil? && @fiscal_authority_id.to_s.length > 36
         invalid_properties.push('invalid value for "fiscal_authority_id", the character length must be smaller than or equal to 36.')
       end
@@ -358,10 +324,6 @@ module OpenapiClient
       return false if !@country_state_id.nil? && @country_state_id.to_s.length < 0
       return false if !@city_id.nil? && @city_id.to_s.length > 36
       return false if !@city_id.nil? && @city_id.to_s.length < 0
-      return false if !@enrollment_id.nil? && @enrollment_id.to_s.length > 36
-      return false if !@enrollment_id.nil? && @enrollment_id.to_s.length < 0
-      return false if !@tenant_id.nil? && @tenant_id.to_s.length > 36
-      return false if !@tenant_id.nil? && @tenant_id.to_s.length < 0
       return false if !@fiscal_authority_id.nil? && @fiscal_authority_id.to_s.length > 36
       return false if !@fiscal_authority_id.nil? && @fiscal_authority_id.to_s.length < 0
       true
@@ -424,34 +386,6 @@ module OpenapiClient
     end
 
     # Custom attribute writer method with validation
-    # @param [Object] enrollment_id Value to be assigned
-    def enrollment_id=(enrollment_id)
-      if !enrollment_id.nil? && enrollment_id.to_s.length > 36
-        fail ArgumentError, 'invalid value for "enrollment_id", the character length must be smaller than or equal to 36.'
-      end
-
-      if !enrollment_id.nil? && enrollment_id.to_s.length < 0
-        fail ArgumentError, 'invalid value for "enrollment_id", the character length must be great than or equal to 0.'
-      end
-
-      @enrollment_id = enrollment_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] tenant_id Value to be assigned
-    def tenant_id=(tenant_id)
-      if !tenant_id.nil? && tenant_id.to_s.length > 36
-        fail ArgumentError, 'invalid value for "tenant_id", the character length must be smaller than or equal to 36.'
-      end
-
-      if !tenant_id.nil? && tenant_id.to_s.length < 0
-        fail ArgumentError, 'invalid value for "tenant_id", the character length must be great than or equal to 0.'
-      end
-
-      @tenant_id = tenant_id
-    end
-
-    # Custom attribute writer method with validation
     # @param [Object] fiscal_authority_id Value to be assigned
     def fiscal_authority_id=(fiscal_authority_id)
       if !fiscal_authority_id.nil? && fiscal_authority_id.to_s.length > 36
@@ -491,8 +425,6 @@ module OpenapiClient
           custom_state == o.custom_state &&
           custom_city == o.custom_city &&
           city_id == o.city_id &&
-          enrollment_id == o.enrollment_id &&
-          tenant_id == o.tenant_id &&
           zero == o.zero &&
           reduced == o.reduced &&
           withholding == o.withholding &&
@@ -508,7 +440,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [code, title, description, is_free, reduce, is_enabled, is_default, allow_international, hours, days, weeks, months, years, value, percentage, currency_id, country_id, country_state_id, custom_state, custom_city, city_id, enrollment_id, tenant_id, zero, reduced, withholding, fiscal_authority_id].hash
+      [code, title, description, is_free, reduce, is_enabled, is_default, allow_international, hours, days, weeks, months, years, value, percentage, currency_id, country_id, country_state_id, custom_state, custom_city, city_id, zero, reduced, withholding, fiscal_authority_id].hash
     end
 
     # Builds the object from hash

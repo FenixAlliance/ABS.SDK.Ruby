@@ -6,8 +6,6 @@
 | ---- | ---- | ----------- | ----- |
 | **id** | **String** |  | [optional] |
 | **timestamp** | **Time** |  | [optional] |
-| **tenant_id** | **String** |  | [optional] |
-| **enrollment_id** | **String** |  | [optional] |
 | **description** | **String** |  |  |
 | **date** | **Time** |  | [optional] |
 | **amount** | **Float** |  | [optional] |
@@ -26,8 +24,6 @@ require 'openapi_client'
 instance = OpenapiClient::BudgetAccountEntryCreateDto.new(
   id: null,
   timestamp: null,
-  tenant_id: null,
-  enrollment_id: null,
   description: null,
   date: null,
   amount: null,

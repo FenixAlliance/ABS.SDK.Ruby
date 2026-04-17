@@ -15,6 +15,10 @@ require 'time'
 
 module OpenapiClient
   class OAuthApplicationCreateDto
+    attr_accessor :id
+
+    attr_accessor :timestamp
+
     attr_accessor :display_name
 
     attr_accessor :client_id
@@ -33,13 +37,11 @@ module OpenapiClient
 
     attr_accessor :logo
 
-    attr_accessor :business_id
-
-    attr_accessor :business_profile_record_id
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'id' => :'id',
+        :'timestamp' => :'timestamp',
         :'display_name' => :'displayName',
         :'client_id' => :'clientId',
         :'client_secret' => :'clientSecret',
@@ -48,9 +50,7 @@ module OpenapiClient
         :'requirements' => :'requirements',
         :'redirect_uris' => :'redirectUris',
         :'post_logout_redirect_uris' => :'postLogoutRedirectUris',
-        :'logo' => :'logo',
-        :'business_id' => :'businessID',
-        :'business_profile_record_id' => :'businessProfileRecordID'
+        :'logo' => :'logo'
       }
     end
 
@@ -62,6 +62,8 @@ module OpenapiClient
     # Attribute type mapping.
     def self.openapi_types
       {
+        :'id' => :'String',
+        :'timestamp' => :'Time',
         :'display_name' => :'String',
         :'client_id' => :'String',
         :'client_secret' => :'String',
@@ -70,9 +72,7 @@ module OpenapiClient
         :'requirements' => :'String',
         :'redirect_uris' => :'String',
         :'post_logout_redirect_uris' => :'String',
-        :'logo' => :'String',
-        :'business_id' => :'String',
-        :'business_profile_record_id' => :'String'
+        :'logo' => :'String'
       }
     end
 
@@ -86,9 +86,7 @@ module OpenapiClient
         :'requirements',
         :'redirect_uris',
         :'post_logout_redirect_uris',
-        :'logo',
-        :'business_id',
-        :'business_profile_record_id'
+        :'logo'
       ])
     end
 
@@ -106,6 +104,14 @@ module OpenapiClient
         end
         h[k.to_sym] = v
       }
+
+      if attributes.key?(:'id')
+        self.id = attributes[:'id']
+      end
+
+      if attributes.key?(:'timestamp')
+        self.timestamp = attributes[:'timestamp']
+      end
 
       if attributes.key?(:'display_name')
         self.display_name = attributes[:'display_name']
@@ -143,14 +149,6 @@ module OpenapiClient
 
       if attributes.key?(:'logo')
         self.logo = attributes[:'logo']
-      end
-
-      if attributes.key?(:'business_id')
-        self.business_id = attributes[:'business_id']
-      end
-
-      if attributes.key?(:'business_profile_record_id')
-        self.business_profile_record_id = attributes[:'business_profile_record_id']
       end
     end
 
@@ -198,6 +196,8 @@ module OpenapiClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          id == o.id &&
+          timestamp == o.timestamp &&
           display_name == o.display_name &&
           client_id == o.client_id &&
           client_secret == o.client_secret &&
@@ -206,9 +206,7 @@ module OpenapiClient
           requirements == o.requirements &&
           redirect_uris == o.redirect_uris &&
           post_logout_redirect_uris == o.post_logout_redirect_uris &&
-          logo == o.logo &&
-          business_id == o.business_id &&
-          business_profile_record_id == o.business_profile_record_id
+          logo == o.logo
     end
 
     # @see the `==` method
@@ -220,7 +218,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [display_name, client_id, client_secret, consent_type, permissions, requirements, redirect_uris, post_logout_redirect_uris, logo, business_id, business_profile_record_id].hash
+      [id, timestamp, display_name, client_id, client_secret, consent_type, permissions, requirements, redirect_uris, post_logout_redirect_uris, logo].hash
     end
 
     # Builds the object from hash

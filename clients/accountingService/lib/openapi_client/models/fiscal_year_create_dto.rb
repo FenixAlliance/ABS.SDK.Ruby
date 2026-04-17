@@ -25,13 +25,11 @@ module OpenapiClient
 
     attr_accessor :closed
 
-    attr_accessor :tenant_id
-
-    attr_accessor :enrollment_id
-
     attr_accessor :end_date
 
     attr_accessor :start_date
+
+    attr_accessor :fiscal_authority_id
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
@@ -41,10 +39,9 @@ module OpenapiClient
         :'name' => :'name',
         :'description' => :'description',
         :'closed' => :'closed',
-        :'tenant_id' => :'tenantId',
-        :'enrollment_id' => :'enrollmentId',
         :'end_date' => :'endDate',
-        :'start_date' => :'startDate'
+        :'start_date' => :'startDate',
+        :'fiscal_authority_id' => :'fiscalAuthorityId'
       }
     end
 
@@ -61,10 +58,9 @@ module OpenapiClient
         :'name' => :'String',
         :'description' => :'String',
         :'closed' => :'Boolean',
-        :'tenant_id' => :'String',
-        :'enrollment_id' => :'String',
         :'end_date' => :'Time',
-        :'start_date' => :'Time'
+        :'start_date' => :'Time',
+        :'fiscal_authority_id' => :'String'
       }
     end
 
@@ -73,8 +69,7 @@ module OpenapiClient
       Set.new([
         :'name',
         :'description',
-        :'tenant_id',
-        :'enrollment_id',
+        :'fiscal_authority_id'
       ])
     end
 
@@ -113,20 +108,16 @@ module OpenapiClient
         self.closed = attributes[:'closed']
       end
 
-      if attributes.key?(:'tenant_id')
-        self.tenant_id = attributes[:'tenant_id']
-      end
-
-      if attributes.key?(:'enrollment_id')
-        self.enrollment_id = attributes[:'enrollment_id']
-      end
-
       if attributes.key?(:'end_date')
         self.end_date = attributes[:'end_date']
       end
 
       if attributes.key?(:'start_date')
         self.start_date = attributes[:'start_date']
+      end
+
+      if attributes.key?(:'fiscal_authority_id')
+        self.fiscal_authority_id = attributes[:'fiscal_authority_id']
       end
     end
 
@@ -155,10 +146,9 @@ module OpenapiClient
           name == o.name &&
           description == o.description &&
           closed == o.closed &&
-          tenant_id == o.tenant_id &&
-          enrollment_id == o.enrollment_id &&
           end_date == o.end_date &&
-          start_date == o.start_date
+          start_date == o.start_date &&
+          fiscal_authority_id == o.fiscal_authority_id
     end
 
     # @see the `==` method
@@ -170,7 +160,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, timestamp, name, description, closed, tenant_id, enrollment_id, end_date, start_date].hash
+      [id, timestamp, name, description, closed, end_date, start_date, fiscal_authority_id].hash
     end
 
     # Builds the object from hash

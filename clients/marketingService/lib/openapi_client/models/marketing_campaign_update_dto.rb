@@ -43,10 +43,6 @@ module OpenapiClient
 
     attr_accessor :currency_id
 
-    attr_accessor :tenant_id
-
-    attr_accessor :enrollment_id
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -63,9 +59,7 @@ module OpenapiClient
         :'misc_cost' => :'miscCost',
         :'expected_response_percent' => :'expectedResponsePercent',
         :'marketing_area_id' => :'marketingAreaId',
-        :'currency_id' => :'currencyId',
-        :'tenant_id' => :'tenantId',
-        :'enrollment_id' => :'enrollmentId'
+        :'currency_id' => :'currencyId'
       }
     end
 
@@ -90,9 +84,7 @@ module OpenapiClient
         :'misc_cost' => :'Float',
         :'expected_response_percent' => :'Float',
         :'marketing_area_id' => :'String',
-        :'currency_id' => :'String',
-        :'tenant_id' => :'String',
-        :'enrollment_id' => :'String'
+        :'currency_id' => :'String'
       }
     end
 
@@ -103,9 +95,7 @@ module OpenapiClient
         :'offer',
         :'code',
         :'marketing_area_id',
-        :'currency_id',
-        :'tenant_id',
-        :'enrollment_id'
+        :'currency_id'
       ])
     end
 
@@ -179,14 +169,6 @@ module OpenapiClient
       if attributes.key?(:'currency_id')
         self.currency_id = attributes[:'currency_id']
       end
-
-      if attributes.key?(:'tenant_id')
-        self.tenant_id = attributes[:'tenant_id']
-      end
-
-      if attributes.key?(:'enrollment_id')
-        self.enrollment_id = attributes[:'enrollment_id']
-      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -222,9 +204,7 @@ module OpenapiClient
           misc_cost == o.misc_cost &&
           expected_response_percent == o.expected_response_percent &&
           marketing_area_id == o.marketing_area_id &&
-          currency_id == o.currency_id &&
-          tenant_id == o.tenant_id &&
-          enrollment_id == o.enrollment_id
+          currency_id == o.currency_id
     end
 
     # @see the `==` method
@@ -236,7 +216,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [name, offer, active, proposed_start, proposed_end, actual_start, actual_end, code, allocated_budget, activity_cost, misc_cost, expected_response_percent, marketing_area_id, currency_id, tenant_id, enrollment_id].hash
+      [name, offer, active, proposed_start, proposed_end, actual_start, actual_end, code, allocated_budget, activity_cost, misc_cost, expected_response_percent, marketing_area_id, currency_id].hash
     end
 
     # Builds the object from hash

@@ -395,7 +395,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
-    # @option opts [GrantUpdateDto] :grant_update_dto 
+    # @option opts [Object] :body 
     # @return [EmptyEnvelope]
     def update_grant_async(tenant_id, grant_id, opts = {})
       data, _status_code, _headers = update_grant_async_with_http_info(tenant_id, grant_id, opts)
@@ -409,7 +409,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
-    # @option opts [GrantUpdateDto] :grant_update_dto 
+    # @option opts [Object] :body 
     # @return [Array<(EmptyEnvelope, Integer, Hash)>] EmptyEnvelope data, response status code and response headers
     def update_grant_async_with_http_info(tenant_id, grant_id, opts = {})
       if @api_client.config.debugging
@@ -446,7 +446,7 @@ module OpenapiClient
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'grant_update_dto'])
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'body'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'EmptyEnvelope'

@@ -27,8 +27,6 @@
 | **custom_state** | **String** |  | [optional] |
 | **custom_city** | **String** |  | [optional] |
 | **city_id** | **String** |  | [optional] |
-| **enrollment_id** | **String** |  | [optional] |
-| **tenant_id** | **String** |  | [optional] |
 | **zero** | **Boolean** |  | [optional] |
 | **reduced** | **Boolean** |  | [optional] |
 | **withholding** | **Boolean** |  | [optional] |
@@ -63,8 +61,6 @@ instance = OpenapiClient::TaxPolicyCreateDto.new(
   custom_state: null,
   custom_city: null,
   city_id: null,
-  enrollment_id: null,
-  tenant_id: null,
   zero: null,
   reduced: null,
   withholding: null,

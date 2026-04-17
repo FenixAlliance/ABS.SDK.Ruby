@@ -9,6 +9,7 @@
 | **closed** | **Boolean** |  | [optional] |
 | **end_date** | **Time** |  | [optional] |
 | **start_date** | **Time** |  | [optional] |
+| **fiscal_authority_id** | **String** |  | [optional] |
 
 ## Example
 
@@ -20,7 +21,8 @@ instance = OpenapiClient::FiscalYearUpdateDto.new(
   description: null,
   closed: null,
   end_date: null,
-  start_date: null
+  start_date: null,
+  fiscal_authority_id: null
 )
 ```
 

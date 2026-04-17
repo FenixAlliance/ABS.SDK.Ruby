@@ -19,10 +19,6 @@ module OpenapiClient
 
     attr_accessor :title
 
-    attr_accessor :tenant_id
-
-    attr_accessor :enrollment_id
-
     attr_accessor :name
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -30,8 +26,6 @@ module OpenapiClient
       {
         :'code' => :'code',
         :'title' => :'title',
-        :'tenant_id' => :'tenantId',
-        :'enrollment_id' => :'enrollmentId',
         :'name' => :'name'
       }
     end
@@ -46,8 +40,6 @@ module OpenapiClient
       {
         :'code' => :'String',
         :'title' => :'String',
-        :'tenant_id' => :'String',
-        :'enrollment_id' => :'String',
         :'name' => :'String'
       }
     end
@@ -57,8 +49,6 @@ module OpenapiClient
       Set.new([
         :'code',
         :'title',
-        :'tenant_id',
-        :'enrollment_id',
         :'name'
       ])
     end
@@ -84,14 +74,6 @@ module OpenapiClient
 
       if attributes.key?(:'title')
         self.title = attributes[:'title']
-      end
-
-      if attributes.key?(:'tenant_id')
-        self.tenant_id = attributes[:'tenant_id']
-      end
-
-      if attributes.key?(:'enrollment_id')
-        self.enrollment_id = attributes[:'enrollment_id']
       end
 
       if attributes.key?(:'name')
@@ -121,8 +103,6 @@ module OpenapiClient
       self.class == o.class &&
           code == o.code &&
           title == o.title &&
-          tenant_id == o.tenant_id &&
-          enrollment_id == o.enrollment_id &&
           name == o.name
     end
 
@@ -135,7 +115,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [code, title, tenant_id, enrollment_id, name].hash
+      [code, title, name].hash
     end
 
     # Builds the object from hash

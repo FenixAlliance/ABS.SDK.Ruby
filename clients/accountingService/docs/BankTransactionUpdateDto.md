@@ -15,8 +15,6 @@
 | **unit_id** | **String** |  | [optional] |
 | **transaction_category_id** | **String** |  | [optional] |
 | **currency_id** | **String** |  | [optional] |
-| **tenant_id** | **String** |  | [optional] |
-| **enrollment_id** | **String** |  | [optional] |
 | **bank_profile_id** | **String** |  | [optional] |
 | **bank_account_id** | **String** |  | [optional] |
 
@@ -37,8 +35,6 @@ instance = OpenapiClient::BankTransactionUpdateDto.new(
   unit_id: null,
   transaction_category_id: null,
   currency_id: null,
-  tenant_id: null,
-  enrollment_id: null,
   bank_profile_id: null,
   bank_account_id: null
 )

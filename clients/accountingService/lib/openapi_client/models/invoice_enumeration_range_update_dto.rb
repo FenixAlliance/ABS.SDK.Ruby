@@ -35,10 +35,6 @@ module OpenapiClient
 
     attr_accessor :fiscal_authority_id
 
-    attr_accessor :tenant_id
-
-    attr_accessor :enrollment_id
-
     attr_accessor :document_type
 
     class EnumAttributeValidator
@@ -76,8 +72,6 @@ module OpenapiClient
         :'valid_from' => :'validFrom',
         :'valid_to' => :'validTo',
         :'fiscal_authority_id' => :'fiscalAuthorityId',
-        :'tenant_id' => :'tenantId',
-        :'enrollment_id' => :'enrollmentId',
         :'document_type' => :'documentType'
       }
     end
@@ -100,8 +94,6 @@ module OpenapiClient
         :'valid_from' => :'Time',
         :'valid_to' => :'Time',
         :'fiscal_authority_id' => :'String',
-        :'tenant_id' => :'String',
-        :'enrollment_id' => :'String',
         :'document_type' => :'String'
       }
     end
@@ -114,8 +106,6 @@ module OpenapiClient
         :'identifier',
         :'qualified_name',
         :'fiscal_authority_id',
-        :'tenant_id',
-        :'enrollment_id',
       ])
     end
 
@@ -174,14 +164,6 @@ module OpenapiClient
         self.fiscal_authority_id = attributes[:'fiscal_authority_id']
       end
 
-      if attributes.key?(:'tenant_id')
-        self.tenant_id = attributes[:'tenant_id']
-      end
-
-      if attributes.key?(:'enrollment_id')
-        self.enrollment_id = attributes[:'enrollment_id']
-      end
-
       if attributes.key?(:'document_type')
         self.document_type = attributes[:'document_type']
       end
@@ -229,8 +211,6 @@ module OpenapiClient
           valid_from == o.valid_from &&
           valid_to == o.valid_to &&
           fiscal_authority_id == o.fiscal_authority_id &&
-          tenant_id == o.tenant_id &&
-          enrollment_id == o.enrollment_id &&
           document_type == o.document_type
     end
 
@@ -243,7 +223,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [prefix, suffix, identifier, qualified_name, current_numeration, numeration_from, numeration_to, valid_from, valid_to, fiscal_authority_id, tenant_id, enrollment_id, document_type].hash
+      [prefix, suffix, identifier, qualified_name, current_numeration, numeration_from, numeration_to, valid_from, valid_to, fiscal_authority_id, document_type].hash
     end
 
     # Builds the object from hash

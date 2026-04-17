@@ -31,11 +31,7 @@ module OpenapiClient
 
     attr_accessor :prefix
 
-    attr_accessor :tenant_id
-
     attr_accessor :currency_id
-
-    attr_accessor :enrollment_id
 
     attr_accessor :account_type_id
 
@@ -90,9 +86,7 @@ module OpenapiClient
         :'code' => :'code',
         :'path' => :'path',
         :'prefix' => :'prefix',
-        :'tenant_id' => :'tenantId',
         :'currency_id' => :'currencyId',
-        :'enrollment_id' => :'enrollmentId',
         :'account_type_id' => :'accountTypeId',
         :'parent_account_id' => :'parentAccountId',
         :'account_category' => :'accountCategory',
@@ -122,9 +116,7 @@ module OpenapiClient
         :'code' => :'String',
         :'path' => :'String',
         :'prefix' => :'String',
-        :'tenant_id' => :'String',
         :'currency_id' => :'String',
-        :'enrollment_id' => :'String',
         :'account_type_id' => :'String',
         :'parent_account_id' => :'String',
         :'account_category' => :'String',
@@ -144,8 +136,6 @@ module OpenapiClient
         :'code',
         :'path',
         :'prefix',
-        :'tenant_id',
-        :'enrollment_id',
         :'account_type_id',
         :'parent_account_id',
         :'iban',
@@ -207,18 +197,10 @@ module OpenapiClient
         self.prefix = attributes[:'prefix']
       end
 
-      if attributes.key?(:'tenant_id')
-        self.tenant_id = attributes[:'tenant_id']
-      end
-
       if attributes.key?(:'currency_id')
         self.currency_id = attributes[:'currency_id']
       else
         self.currency_id = nil
-      end
-
-      if attributes.key?(:'enrollment_id')
-        self.enrollment_id = attributes[:'enrollment_id']
       end
 
       if attributes.key?(:'account_type_id')
@@ -405,9 +387,7 @@ module OpenapiClient
           code == o.code &&
           path == o.path &&
           prefix == o.prefix &&
-          tenant_id == o.tenant_id &&
           currency_id == o.currency_id &&
-          enrollment_id == o.enrollment_id &&
           account_type_id == o.account_type_id &&
           parent_account_id == o.parent_account_id &&
           account_category == o.account_category &&
@@ -429,7 +409,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, timestamp, group, frozen, name, code, path, prefix, tenant_id, currency_id, enrollment_id, account_type_id, parent_account_id, account_category, iban, swift, branch_code, bank_account_number, qualified_name, bank_id, bank_profile_id].hash
+      [id, timestamp, group, frozen, name, code, path, prefix, currency_id, account_type_id, parent_account_id, account_category, iban, swift, branch_code, bank_account_number, qualified_name, bank_id, bank_profile_id].hash
     end
 
     # Builds the object from hash

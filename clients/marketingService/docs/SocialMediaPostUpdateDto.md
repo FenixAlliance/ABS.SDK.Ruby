@@ -7,9 +7,7 @@
 | **title** | **String** |  | [optional] |
 | **content** | **String** |  | [optional] |
 | **featured_image_url** | **String** |  | [optional] |
-| **tenant_id** | **String** |  | [optional] |
 | **social_post_bucket_id** | **String** |  | [optional] |
-| **enrollment_id** | **String** |  | [optional] |
 
 ## Example
 
@@ -20,9 +18,7 @@ instance = OpenapiClient::SocialMediaPostUpdateDto.new(
   title: null,
   content: null,
   featured_image_url: null,
-  tenant_id: null,
-  social_post_bucket_id: null,
-  enrollment_id: null
+  social_post_bucket_id: null
 )
 ```
 

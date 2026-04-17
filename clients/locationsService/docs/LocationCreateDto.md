@@ -18,7 +18,6 @@
 | **state_id** | **String** |  | [optional] |
 | **postal_code** | **String** |  | [optional] |
 | **country_id** | **String** |  | [optional] |
-| **tenant_id** | **String** |  | [optional] |
 | **longitude** | **Float** |  | [optional] |
 | **latitude** | **Float** |  | [optional] |
 | **is_routable** | **Boolean** |  | [optional] |
@@ -49,7 +48,6 @@ instance = OpenapiClient::LocationCreateDto.new(
   state_id: null,
   postal_code: null,
   country_id: null,
-  tenant_id: null,
   longitude: null,
   latitude: null,
   is_routable: null,

@@ -4,9 +4,10 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
+| **id** | **String** |  | [optional] |
+| **timestamp** | **Time** |  | [optional] |
 | **title** | **String** |  | [optional] |
 | **description** | **String** |  | [optional] |
-| **business_id** | **String** |  | [optional] |
 | **support_entitlement_id** | **String** |  | [optional] |
 
 ## Example
@@ -15,9 +16,10 @@
 require 'openapi_client'
 
 instance = OpenapiClient::SupportTicketPriorityCreateDto.new(
+  id: null,
+  timestamp: null,
   title: null,
   description: null,
-  business_id: null,
   support_entitlement_id: null
 )
 ```

@@ -55,7 +55,6 @@
 | **material** | **String** |  | [optional] |
 | **on_discount** | **Boolean** |  | [optional] |
 | **total_tax** | **Float** |  | [optional] |
-| **tenant_id** | **String** |  | [optional] |
 | **permalink** | **String** |  | [optional] |
 | **brand_name** | **String** |  | [optional] |
 | **reviews_count** | **Integer** |  | [optional] |
@@ -80,7 +79,6 @@
 | **custom_tax_value** | **Float** |  | [optional] |
 | **has_variations** | **Boolean** |  | [optional] |
 | **questions_count** | **Integer** |  | [optional] |
-| **enrollment_id** | **String** |  | [optional] |
 | **supplier_code** | **String** |  | [optional] |
 | **auction_end** | **Time** |  | [optional] |
 | **purchase_note** | **String** |  | [optional] |
@@ -235,7 +233,6 @@ instance = OpenapiClient::ServiceLevelUpdateDto.new(
   material: null,
   on_discount: null,
   total_tax: null,
-  tenant_id: null,
   permalink: null,
   brand_name: null,
   reviews_count: null,
@@ -260,7 +257,6 @@ instance = OpenapiClient::ServiceLevelUpdateDto.new(
   custom_tax_value: null,
   has_variations: null,
   questions_count: null,
-  enrollment_id: null,
   supplier_code: null,
   auction_end: null,
   purchase_note: null,

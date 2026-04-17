@@ -7,7 +7,6 @@
 | **title** | **String** |  | [optional] |
 | **description** | **String** |  | [optional] |
 | **type** | **String** |  | [optional] |
-| **business_profile_record_id** | **String** |  | [optional] |
 
 ## Example
 
@@ -17,8 +16,7 @@ require 'openapi_client'
 instance = OpenapiClient::TenantPositionUpdateDto.new(
   title: null,
   description: null,
-  type: null,
-  business_profile_record_id: null
+  type: null
 )
 ```
 

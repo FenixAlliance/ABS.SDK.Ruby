@@ -15,8 +15,6 @@
 | **credit_months** | **Float** |  | [optional] |
 | **credit_years** | **Float** |  | [optional] |
 | **payment_mode_id** | **String** |  | [optional] |
-| **tenant_id** | **String** |  | [optional] |
-| **enrollment_id** | **String** |  | [optional] |
 
 ## Example
 
@@ -34,9 +32,7 @@ instance = OpenapiClient::PaymentTermCreateDto.new(
   credit_weeks: null,
   credit_months: null,
   credit_years: null,
-  payment_mode_id: null,
-  tenant_id: null,
-  enrollment_id: null
+  payment_mode_id: null
 )
 ```
 

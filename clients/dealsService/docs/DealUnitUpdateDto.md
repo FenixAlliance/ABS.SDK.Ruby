@@ -7,10 +7,8 @@
 | **closed** | **Boolean** |  | [optional] |
 | **title** | **String** |  | [optional] |
 | **user_id** | **String** |  | [optional] |
-| **tenant_id** | **String** |  | [optional] |
 | **price_list_id** | **String** |  | [optional] |
 | **description** | **String** |  | [optional] |
-| **enrollment_id** | **String** |  | [optional] |
 | **individual_id** | **String** |  | [optional] |
 | **payment_term_id** | **String** |  | [optional] |
 | **organization_id** | **String** |  | [optional] |
@@ -86,10 +84,8 @@ instance = OpenapiClient::DealUnitUpdateDto.new(
   closed: null,
   title: null,
   user_id: null,
-  tenant_id: null,
   price_list_id: null,
   description: null,
-  enrollment_id: null,
   individual_id: null,
   payment_term_id: null,
   organization_id: null,

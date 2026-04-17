@@ -17,8 +17,6 @@ module OpenapiClient
   class ReceiptUpdateDto
     attr_accessor :payment_id
 
-    attr_accessor :tenant_id
-
     attr_accessor :forex_rate
 
     attr_accessor :total_amount
@@ -29,11 +27,7 @@ module OpenapiClient
 
     attr_accessor :currency_id
 
-    attr_accessor :account_holder_id
-
     attr_accessor :contact_id
-
-    attr_accessor :enrollment_id
 
     attr_accessor :order_id
 
@@ -43,15 +37,12 @@ module OpenapiClient
     def self.attribute_map
       {
         :'payment_id' => :'paymentId',
-        :'tenant_id' => :'tenantId',
         :'forex_rate' => :'forexRate',
         :'total_amount' => :'totalAmount',
         :'total_amount_in_usd' => :'totalAmountInUsd',
         :'closed' => :'closed',
         :'currency_id' => :'currencyId',
-        :'account_holder_id' => :'accountHolderId',
         :'contact_id' => :'contactId',
-        :'enrollment_id' => :'enrollmentId',
         :'order_id' => :'orderId',
         :'invoice_id' => :'invoiceId'
       }
@@ -66,15 +57,12 @@ module OpenapiClient
     def self.openapi_types
       {
         :'payment_id' => :'String',
-        :'tenant_id' => :'String',
         :'forex_rate' => :'Float',
         :'total_amount' => :'Float',
         :'total_amount_in_usd' => :'Float',
         :'closed' => :'Boolean',
         :'currency_id' => :'String',
-        :'account_holder_id' => :'String',
         :'contact_id' => :'String',
-        :'enrollment_id' => :'String',
         :'order_id' => :'String',
         :'invoice_id' => :'String'
       }
@@ -84,11 +72,8 @@ module OpenapiClient
     def self.openapi_nullable
       Set.new([
         :'payment_id',
-        :'tenant_id',
         :'currency_id',
-        :'account_holder_id',
         :'contact_id',
-        :'enrollment_id',
         :'order_id',
         :'invoice_id'
       ])
@@ -113,10 +98,6 @@ module OpenapiClient
         self.payment_id = attributes[:'payment_id']
       end
 
-      if attributes.key?(:'tenant_id')
-        self.tenant_id = attributes[:'tenant_id']
-      end
-
       if attributes.key?(:'forex_rate')
         self.forex_rate = attributes[:'forex_rate']
       end
@@ -137,16 +118,8 @@ module OpenapiClient
         self.currency_id = attributes[:'currency_id']
       end
 
-      if attributes.key?(:'account_holder_id')
-        self.account_holder_id = attributes[:'account_holder_id']
-      end
-
       if attributes.key?(:'contact_id')
         self.contact_id = attributes[:'contact_id']
-      end
-
-      if attributes.key?(:'enrollment_id')
-        self.enrollment_id = attributes[:'enrollment_id']
       end
 
       if attributes.key?(:'order_id')
@@ -179,15 +152,12 @@ module OpenapiClient
       return true if self.equal?(o)
       self.class == o.class &&
           payment_id == o.payment_id &&
-          tenant_id == o.tenant_id &&
           forex_rate == o.forex_rate &&
           total_amount == o.total_amount &&
           total_amount_in_usd == o.total_amount_in_usd &&
           closed == o.closed &&
           currency_id == o.currency_id &&
-          account_holder_id == o.account_holder_id &&
           contact_id == o.contact_id &&
-          enrollment_id == o.enrollment_id &&
           order_id == o.order_id &&
           invoice_id == o.invoice_id
     end
@@ -201,7 +171,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [payment_id, tenant_id, forex_rate, total_amount, total_amount_in_usd, closed, currency_id, account_holder_id, contact_id, enrollment_id, order_id, invoice_id].hash
+      [payment_id, forex_rate, total_amount, total_amount_in_usd, closed, currency_id, contact_id, order_id, invoice_id].hash
     end
 
     # Builds the object from hash

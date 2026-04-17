@@ -9,9 +9,7 @@
 | **order** | **Integer** |  | [optional] |
 | **name** | **String** |  | [optional] |
 | **deal_unit_flow_id** | **String** |  | [optional] |
-| **tenant_id** | **String** |  | [optional] |
 | **description** | **String** |  | [optional] |
-| **enrollment_id** | **String** |  | [optional] |
 | **parent_business_process_stage_id** | **String** |  | [optional] |
 
 ## Example
@@ -25,9 +23,7 @@ instance = OpenapiClient::DealUnitFlowStageCreateDto.new(
   order: null,
   name: null,
   deal_unit_flow_id: null,
-  tenant_id: null,
   description: null,
-  enrollment_id: null,
   parent_business_process_stage_id: null
 )
 ```

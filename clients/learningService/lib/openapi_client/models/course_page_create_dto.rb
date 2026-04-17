@@ -29,8 +29,6 @@ module OpenapiClient
 
     attr_accessor :course_id
 
-    attr_accessor :business_id
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -40,8 +38,7 @@ module OpenapiClient
         :'description' => :'description',
         :'content' => :'content',
         :'slug' => :'slug',
-        :'course_id' => :'courseID',
-        :'business_id' => :'businessID'
+        :'course_id' => :'courseID'
       }
     end
 
@@ -59,8 +56,7 @@ module OpenapiClient
         :'description' => :'String',
         :'content' => :'String',
         :'slug' => :'String',
-        :'course_id' => :'String',
-        :'business_id' => :'String'
+        :'course_id' => :'String'
       }
     end
 
@@ -119,12 +115,6 @@ module OpenapiClient
       else
         self.course_id = nil
       end
-
-      if attributes.key?(:'business_id')
-        self.business_id = attributes[:'business_id']
-      else
-        self.business_id = nil
-      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -148,14 +138,6 @@ module OpenapiClient
         invalid_properties.push('invalid value for "course_id", the character length must be great than or equal to 1.')
       end
 
-      if @business_id.nil?
-        invalid_properties.push('invalid value for "business_id", business_id cannot be nil.')
-      end
-
-      if @business_id.to_s.length < 1
-        invalid_properties.push('invalid value for "business_id", the character length must be great than or equal to 1.')
-      end
-
       invalid_properties
     end
 
@@ -167,8 +149,6 @@ module OpenapiClient
       return false if @title.to_s.length < 1
       return false if @course_id.nil?
       return false if @course_id.to_s.length < 1
-      return false if @business_id.nil?
-      return false if @business_id.to_s.length < 1
       true
     end
 
@@ -200,20 +180,6 @@ module OpenapiClient
       @course_id = course_id
     end
 
-    # Custom attribute writer method with validation
-    # @param [Object] business_id Value to be assigned
-    def business_id=(business_id)
-      if business_id.nil?
-        fail ArgumentError, 'business_id cannot be nil'
-      end
-
-      if business_id.to_s.length < 1
-        fail ArgumentError, 'invalid value for "business_id", the character length must be great than or equal to 1.'
-      end
-
-      @business_id = business_id
-    end
-
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(o)
@@ -225,8 +191,7 @@ module OpenapiClient
           description == o.description &&
           content == o.content &&
           slug == o.slug &&
-          course_id == o.course_id &&
-          business_id == o.business_id
+          course_id == o.course_id
     end
 
     # @see the `==` method
@@ -238,7 +203,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, timestamp, title, description, content, slug, course_id, business_id].hash
+      [id, timestamp, title, description, content, slug, course_id].hash
     end
 
     # Builds the object from hash

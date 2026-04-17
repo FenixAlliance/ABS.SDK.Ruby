@@ -19,8 +19,6 @@
 | **image_url** | **String** |  | [optional] |
 | **image** | **String** |  | [optional] |
 | **web_portal_id** | **String** |  | [optional] |
-| **business_id** | **String** |  | [optional] |
-| **business_profile_record_id** | **String** |  | [optional] |
 
 ## Example
 
@@ -42,9 +40,7 @@ instance = OpenapiClient::BlogPostTagCreateDto.new(
   canonical_url: null,
   image_url: null,
   image: null,
-  web_portal_id: null,
-  business_id: null,
-  business_profile_record_id: null
+  web_portal_id: null
 )
 ```
 

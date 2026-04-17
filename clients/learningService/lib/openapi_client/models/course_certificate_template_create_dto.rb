@@ -21,13 +21,9 @@ module OpenapiClient
 
     attr_accessor :course_id
 
-    attr_accessor :business_id
-
     attr_accessor :web_portal_id
 
     attr_accessor :website_theme_id
-
-    attr_accessor :business_profile_record_id
 
     attr_accessor :social_profile_id
 
@@ -41,10 +37,8 @@ module OpenapiClient
         :'id' => :'id',
         :'timestamp' => :'timestamp',
         :'course_id' => :'courseID',
-        :'business_id' => :'businessID',
         :'web_portal_id' => :'webPortalID',
         :'website_theme_id' => :'websiteThemeID',
-        :'business_profile_record_id' => :'businessProfileRecordID',
         :'social_profile_id' => :'socialProfileID',
         :'parent_web_content_id' => :'parentWebContentID',
         :'parent_web_content_version_id' => :'parentWebContentVersionID'
@@ -62,10 +56,8 @@ module OpenapiClient
         :'id' => :'String',
         :'timestamp' => :'Time',
         :'course_id' => :'String',
-        :'business_id' => :'String',
         :'web_portal_id' => :'String',
         :'website_theme_id' => :'String',
-        :'business_profile_record_id' => :'String',
         :'social_profile_id' => :'String',
         :'parent_web_content_id' => :'String',
         :'parent_web_content_version_id' => :'String'
@@ -77,7 +69,6 @@ module OpenapiClient
       Set.new([
         :'web_portal_id',
         :'website_theme_id',
-        :'business_profile_record_id',
         :'social_profile_id',
         :'parent_web_content_id',
         :'parent_web_content_version_id'
@@ -113,22 +104,12 @@ module OpenapiClient
         self.course_id = nil
       end
 
-      if attributes.key?(:'business_id')
-        self.business_id = attributes[:'business_id']
-      else
-        self.business_id = nil
-      end
-
       if attributes.key?(:'web_portal_id')
         self.web_portal_id = attributes[:'web_portal_id']
       end
 
       if attributes.key?(:'website_theme_id')
         self.website_theme_id = attributes[:'website_theme_id']
-      end
-
-      if attributes.key?(:'business_profile_record_id')
-        self.business_profile_record_id = attributes[:'business_profile_record_id']
       end
 
       if attributes.key?(:'social_profile_id')
@@ -161,18 +142,6 @@ module OpenapiClient
         invalid_properties.push('invalid value for "course_id", the character length must be great than or equal to 36.')
       end
 
-      if @business_id.nil?
-        invalid_properties.push('invalid value for "business_id", business_id cannot be nil.')
-      end
-
-      if @business_id.to_s.length > 36
-        invalid_properties.push('invalid value for "business_id", the character length must be smaller than or equal to 36.')
-      end
-
-      if @business_id.to_s.length < 36
-        invalid_properties.push('invalid value for "business_id", the character length must be great than or equal to 36.')
-      end
-
       invalid_properties
     end
 
@@ -183,9 +152,6 @@ module OpenapiClient
       return false if @course_id.nil?
       return false if @course_id.to_s.length > 36
       return false if @course_id.to_s.length < 36
-      return false if @business_id.nil?
-      return false if @business_id.to_s.length > 36
-      return false if @business_id.to_s.length < 36
       true
     end
 
@@ -207,24 +173,6 @@ module OpenapiClient
       @course_id = course_id
     end
 
-    # Custom attribute writer method with validation
-    # @param [Object] business_id Value to be assigned
-    def business_id=(business_id)
-      if business_id.nil?
-        fail ArgumentError, 'business_id cannot be nil'
-      end
-
-      if business_id.to_s.length > 36
-        fail ArgumentError, 'invalid value for "business_id", the character length must be smaller than or equal to 36.'
-      end
-
-      if business_id.to_s.length < 36
-        fail ArgumentError, 'invalid value for "business_id", the character length must be great than or equal to 36.'
-      end
-
-      @business_id = business_id
-    end
-
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(o)
@@ -233,10 +181,8 @@ module OpenapiClient
           id == o.id &&
           timestamp == o.timestamp &&
           course_id == o.course_id &&
-          business_id == o.business_id &&
           web_portal_id == o.web_portal_id &&
           website_theme_id == o.website_theme_id &&
-          business_profile_record_id == o.business_profile_record_id &&
           social_profile_id == o.social_profile_id &&
           parent_web_content_id == o.parent_web_content_id &&
           parent_web_content_version_id == o.parent_web_content_version_id
@@ -251,7 +197,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, timestamp, course_id, business_id, web_portal_id, website_theme_id, business_profile_record_id, social_profile_id, parent_web_content_id, parent_web_content_version_id].hash
+      [id, timestamp, course_id, web_portal_id, website_theme_id, social_profile_id, parent_web_content_id, parent_web_content_version_id].hash
     end
 
     # Builds the object from hash

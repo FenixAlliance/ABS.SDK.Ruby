@@ -21,18 +21,12 @@ module OpenapiClient
 
     attr_accessor :enabled
 
-    attr_accessor :tenant_id
-
-    attr_accessor :enrollment_id
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'name' => :'name',
         :'description' => :'description',
-        :'enabled' => :'enabled',
-        :'tenant_id' => :'tenantId',
-        :'enrollment_id' => :'enrollmentId'
+        :'enabled' => :'enabled'
       }
     end
 
@@ -46,9 +40,7 @@ module OpenapiClient
       {
         :'name' => :'String',
         :'description' => :'String',
-        :'enabled' => :'Boolean',
-        :'tenant_id' => :'String',
-        :'enrollment_id' => :'String'
+        :'enabled' => :'Boolean'
       }
     end
 
@@ -57,8 +49,6 @@ module OpenapiClient
       Set.new([
         :'name',
         :'description',
-        :'tenant_id',
-        :'enrollment_id'
       ])
     end
 
@@ -88,14 +78,6 @@ module OpenapiClient
       if attributes.key?(:'enabled')
         self.enabled = attributes[:'enabled']
       end
-
-      if attributes.key?(:'tenant_id')
-        self.tenant_id = attributes[:'tenant_id']
-      end
-
-      if attributes.key?(:'enrollment_id')
-        self.enrollment_id = attributes[:'enrollment_id']
-      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -120,9 +102,7 @@ module OpenapiClient
       self.class == o.class &&
           name == o.name &&
           description == o.description &&
-          enabled == o.enabled &&
-          tenant_id == o.tenant_id &&
-          enrollment_id == o.enrollment_id
+          enabled == o.enabled
     end
 
     # @see the `==` method
@@ -134,7 +114,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [name, description, enabled, tenant_id, enrollment_id].hash
+      [name, description, enabled].hash
     end
 
     # Builds the object from hash

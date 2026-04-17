@@ -29,10 +29,6 @@ module OpenapiClient
 
     attr_accessor :share_transfer_reason_id
 
-    attr_accessor :enrollment_id
-
-    attr_accessor :tenant_id
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -42,9 +38,7 @@ module OpenapiClient
         :'value' => :'value',
         :'new_share_holder_id' => :'newShareHolderId',
         :'former_share_holder_id' => :'formerShareHolderId',
-        :'share_transfer_reason_id' => :'shareTransferReasonId',
-        :'enrollment_id' => :'enrollmentId',
-        :'tenant_id' => :'tenantId'
+        :'share_transfer_reason_id' => :'shareTransferReasonId'
       }
     end
 
@@ -62,9 +56,7 @@ module OpenapiClient
         :'value' => :'Float',
         :'new_share_holder_id' => :'String',
         :'former_share_holder_id' => :'String',
-        :'share_transfer_reason_id' => :'String',
-        :'enrollment_id' => :'String',
-        :'tenant_id' => :'String'
+        :'share_transfer_reason_id' => :'String'
       }
     end
 
@@ -74,9 +66,7 @@ module OpenapiClient
         :'description',
         :'new_share_holder_id',
         :'former_share_holder_id',
-        :'share_transfer_reason_id',
-        :'enrollment_id',
-        :'tenant_id'
+        :'share_transfer_reason_id'
       ])
     end
 
@@ -122,14 +112,6 @@ module OpenapiClient
       if attributes.key?(:'share_transfer_reason_id')
         self.share_transfer_reason_id = attributes[:'share_transfer_reason_id']
       end
-
-      if attributes.key?(:'enrollment_id')
-        self.enrollment_id = attributes[:'enrollment_id']
-      end
-
-      if attributes.key?(:'tenant_id')
-        self.tenant_id = attributes[:'tenant_id']
-      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -169,22 +151,6 @@ module OpenapiClient
         invalid_properties.push('invalid value for "share_transfer_reason_id", the character length must be great than or equal to 0.')
       end
 
-      if !@enrollment_id.nil? && @enrollment_id.to_s.length > 36
-        invalid_properties.push('invalid value for "enrollment_id", the character length must be smaller than or equal to 36.')
-      end
-
-      if !@enrollment_id.nil? && @enrollment_id.to_s.length < 0
-        invalid_properties.push('invalid value for "enrollment_id", the character length must be great than or equal to 0.')
-      end
-
-      if !@tenant_id.nil? && @tenant_id.to_s.length > 36
-        invalid_properties.push('invalid value for "tenant_id", the character length must be smaller than or equal to 36.')
-      end
-
-      if !@tenant_id.nil? && @tenant_id.to_s.length < 0
-        invalid_properties.push('invalid value for "tenant_id", the character length must be great than or equal to 0.')
-      end
-
       invalid_properties
     end
 
@@ -200,10 +166,6 @@ module OpenapiClient
       return false if !@former_share_holder_id.nil? && @former_share_holder_id.to_s.length < 0
       return false if !@share_transfer_reason_id.nil? && @share_transfer_reason_id.to_s.length > 36
       return false if !@share_transfer_reason_id.nil? && @share_transfer_reason_id.to_s.length < 0
-      return false if !@enrollment_id.nil? && @enrollment_id.to_s.length > 36
-      return false if !@enrollment_id.nil? && @enrollment_id.to_s.length < 0
-      return false if !@tenant_id.nil? && @tenant_id.to_s.length > 36
-      return false if !@tenant_id.nil? && @tenant_id.to_s.length < 0
       true
     end
 
@@ -263,34 +225,6 @@ module OpenapiClient
       @share_transfer_reason_id = share_transfer_reason_id
     end
 
-    # Custom attribute writer method with validation
-    # @param [Object] enrollment_id Value to be assigned
-    def enrollment_id=(enrollment_id)
-      if !enrollment_id.nil? && enrollment_id.to_s.length > 36
-        fail ArgumentError, 'invalid value for "enrollment_id", the character length must be smaller than or equal to 36.'
-      end
-
-      if !enrollment_id.nil? && enrollment_id.to_s.length < 0
-        fail ArgumentError, 'invalid value for "enrollment_id", the character length must be great than or equal to 0.'
-      end
-
-      @enrollment_id = enrollment_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] tenant_id Value to be assigned
-    def tenant_id=(tenant_id)
-      if !tenant_id.nil? && tenant_id.to_s.length > 36
-        fail ArgumentError, 'invalid value for "tenant_id", the character length must be smaller than or equal to 36.'
-      end
-
-      if !tenant_id.nil? && tenant_id.to_s.length < 0
-        fail ArgumentError, 'invalid value for "tenant_id", the character length must be great than or equal to 0.'
-      end
-
-      @tenant_id = tenant_id
-    end
-
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(o)
@@ -302,9 +236,7 @@ module OpenapiClient
           value == o.value &&
           new_share_holder_id == o.new_share_holder_id &&
           former_share_holder_id == o.former_share_holder_id &&
-          share_transfer_reason_id == o.share_transfer_reason_id &&
-          enrollment_id == o.enrollment_id &&
-          tenant_id == o.tenant_id
+          share_transfer_reason_id == o.share_transfer_reason_id
     end
 
     # @see the `==` method
@@ -316,7 +248,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, timestamp, description, value, new_share_holder_id, former_share_holder_id, share_transfer_reason_id, enrollment_id, tenant_id].hash
+      [id, timestamp, description, value, new_share_holder_id, former_share_holder_id, share_transfer_reason_id].hash
     end
 
     # Builds the object from hash

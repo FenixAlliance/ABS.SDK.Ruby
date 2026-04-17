@@ -15,6 +15,10 @@ require 'time'
 
 module OpenapiClient
   class SocialGroupCreateDto
+    attr_accessor :id
+
+    attr_accessor :timestamp
+
     attr_accessor :name
 
     attr_accessor :title
@@ -26,6 +30,8 @@ module OpenapiClient
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'id' => :'id',
+        :'timestamp' => :'timestamp',
         :'name' => :'name',
         :'title' => :'title',
         :'avatar_url' => :'avatarURL',
@@ -41,6 +47,8 @@ module OpenapiClient
     # Attribute type mapping.
     def self.openapi_types
       {
+        :'id' => :'String',
+        :'timestamp' => :'Time',
         :'name' => :'String',
         :'title' => :'String',
         :'avatar_url' => :'String',
@@ -72,6 +80,14 @@ module OpenapiClient
         end
         h[k.to_sym] = v
       }
+
+      if attributes.key?(:'id')
+        self.id = attributes[:'id']
+      end
+
+      if attributes.key?(:'timestamp')
+        self.timestamp = attributes[:'timestamp']
+      end
 
       if attributes.key?(:'name')
         self.name = attributes[:'name']
@@ -110,6 +126,8 @@ module OpenapiClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          id == o.id &&
+          timestamp == o.timestamp &&
           name == o.name &&
           title == o.title &&
           avatar_url == o.avatar_url &&
@@ -125,7 +143,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [name, title, avatar_url, social_profile_id].hash
+      [id, timestamp, name, title, avatar_url, social_profile_id].hash
     end
 
     # Builds the object from hash

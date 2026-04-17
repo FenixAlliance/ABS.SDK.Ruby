@@ -4,6 +4,8 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
+| **id** | **String** |  | [optional] |
+| **timestamp** | **Time** |  | [optional] |
 | **asset_id** | **String** |  | [optional] |
 | **is_root_transfer** | **Boolean** |  | [optional] |
 | **serial_list** | **String** |  | [optional] |
@@ -23,6 +25,8 @@
 require 'openapi_client'
 
 instance = OpenapiClient::AssetTransferCreateDto.new(
+  id: null,
+  timestamp: null,
   asset_id: null,
   is_root_transfer: null,
   serial_list: null,

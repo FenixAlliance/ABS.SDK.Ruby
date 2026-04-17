@@ -19,10 +19,6 @@ module OpenapiClient
 
     attr_accessor :ledger_class
 
-    attr_accessor :tenant_id
-
-    attr_accessor :enrollment_id
-
     class EnumAttributeValidator
       attr_reader :datatype
       attr_reader :allowable_values
@@ -49,9 +45,7 @@ module OpenapiClient
     def self.attribute_map
       {
         :'name' => :'name',
-        :'ledger_class' => :'ledgerClass',
-        :'tenant_id' => :'tenantId',
-        :'enrollment_id' => :'enrollmentId'
+        :'ledger_class' => :'ledgerClass'
       }
     end
 
@@ -64,9 +58,7 @@ module OpenapiClient
     def self.openapi_types
       {
         :'name' => :'String',
-        :'ledger_class' => :'String',
-        :'tenant_id' => :'String',
-        :'enrollment_id' => :'String'
+        :'ledger_class' => :'String'
       }
     end
 
@@ -74,9 +66,7 @@ module OpenapiClient
     def self.openapi_nullable
       Set.new([
         :'name',
-        :'ledger_class',
-        :'tenant_id',
-        :'enrollment_id'
+        :'ledger_class'
       ])
     end
 
@@ -102,14 +92,6 @@ module OpenapiClient
       if attributes.key?(:'ledger_class')
         self.ledger_class = attributes[:'ledger_class']
       end
-
-      if attributes.key?(:'tenant_id')
-        self.tenant_id = attributes[:'tenant_id']
-      end
-
-      if attributes.key?(:'enrollment_id')
-        self.enrollment_id = attributes[:'enrollment_id']
-      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -125,22 +107,6 @@ module OpenapiClient
         invalid_properties.push('invalid value for "name", the character length must be great than or equal to 0.')
       end
 
-      if !@tenant_id.nil? && @tenant_id.to_s.length > 36
-        invalid_properties.push('invalid value for "tenant_id", the character length must be smaller than or equal to 36.')
-      end
-
-      if !@tenant_id.nil? && @tenant_id.to_s.length < 0
-        invalid_properties.push('invalid value for "tenant_id", the character length must be great than or equal to 0.')
-      end
-
-      if !@enrollment_id.nil? && @enrollment_id.to_s.length > 36
-        invalid_properties.push('invalid value for "enrollment_id", the character length must be smaller than or equal to 36.')
-      end
-
-      if !@enrollment_id.nil? && @enrollment_id.to_s.length < 0
-        invalid_properties.push('invalid value for "enrollment_id", the character length must be great than or equal to 0.')
-      end
-
       invalid_properties
     end
 
@@ -152,10 +118,6 @@ module OpenapiClient
       return false if !@name.nil? && @name.to_s.length < 0
       ledger_class_validator = EnumAttributeValidator.new('String', ["Assets", "Equity", "Gains", "Losses", "Revenue", "Expenses", "Liabilities"])
       return false unless ledger_class_validator.valid?(@ledger_class)
-      return false if !@tenant_id.nil? && @tenant_id.to_s.length > 36
-      return false if !@tenant_id.nil? && @tenant_id.to_s.length < 0
-      return false if !@enrollment_id.nil? && @enrollment_id.to_s.length > 36
-      return false if !@enrollment_id.nil? && @enrollment_id.to_s.length < 0
       true
     end
 
@@ -183,43 +145,13 @@ module OpenapiClient
       @ledger_class = ledger_class
     end
 
-    # Custom attribute writer method with validation
-    # @param [Object] tenant_id Value to be assigned
-    def tenant_id=(tenant_id)
-      if !tenant_id.nil? && tenant_id.to_s.length > 36
-        fail ArgumentError, 'invalid value for "tenant_id", the character length must be smaller than or equal to 36.'
-      end
-
-      if !tenant_id.nil? && tenant_id.to_s.length < 0
-        fail ArgumentError, 'invalid value for "tenant_id", the character length must be great than or equal to 0.'
-      end
-
-      @tenant_id = tenant_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] enrollment_id Value to be assigned
-    def enrollment_id=(enrollment_id)
-      if !enrollment_id.nil? && enrollment_id.to_s.length > 36
-        fail ArgumentError, 'invalid value for "enrollment_id", the character length must be smaller than or equal to 36.'
-      end
-
-      if !enrollment_id.nil? && enrollment_id.to_s.length < 0
-        fail ArgumentError, 'invalid value for "enrollment_id", the character length must be great than or equal to 0.'
-      end
-
-      @enrollment_id = enrollment_id
-    end
-
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
           name == o.name &&
-          ledger_class == o.ledger_class &&
-          tenant_id == o.tenant_id &&
-          enrollment_id == o.enrollment_id
+          ledger_class == o.ledger_class
     end
 
     # @see the `==` method
@@ -231,7 +163,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [name, ledger_class, tenant_id, enrollment_id].hash
+      [name, ledger_class].hash
     end
 
     # Builds the object from hash

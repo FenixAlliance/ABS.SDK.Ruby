@@ -16,8 +16,6 @@
 | **valid_from** | **Time** |  |  |
 | **valid_to** | **Time** |  |  |
 | **fiscal_authority_id** | **String** |  | [optional] |
-| **tenant_id** | **String** |  | [optional] |
-| **enrollment_id** | **String** |  | [optional] |
 | **document_type** | **String** |  | [optional] |
 
 ## Example
@@ -38,8 +36,6 @@ instance = OpenapiClient::InvoiceEnumerationRangeCreateDto.new(
   valid_from: null,
   valid_to: null,
   fiscal_authority_id: null,
-  tenant_id: null,
-  enrollment_id: null,
   document_type: null
 )
 ```

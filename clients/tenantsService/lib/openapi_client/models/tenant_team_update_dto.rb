@@ -19,10 +19,6 @@ module OpenapiClient
 
     attr_accessor :timestamp
 
-    attr_accessor :business_id
-
-    attr_accessor :business_profile_record_id
-
     attr_accessor :name
 
     attr_accessor :description
@@ -40,8 +36,6 @@ module OpenapiClient
       {
         :'id' => :'id',
         :'timestamp' => :'timestamp',
-        :'business_id' => :'businessID',
-        :'business_profile_record_id' => :'businessProfileRecordID',
         :'name' => :'name',
         :'description' => :'description',
         :'avatar_url' => :'avatarURL',
@@ -61,8 +55,6 @@ module OpenapiClient
       {
         :'id' => :'String',
         :'timestamp' => :'Time',
-        :'business_id' => :'String',
-        :'business_profile_record_id' => :'String',
         :'name' => :'String',
         :'description' => :'String',
         :'avatar_url' => :'String',
@@ -77,8 +69,6 @@ module OpenapiClient
       Set.new([
         :'id',
         :'timestamp',
-        :'business_id',
-        :'business_profile_record_id',
         :'name',
         :'description',
         :'avatar_url',
@@ -108,14 +98,6 @@ module OpenapiClient
 
       if attributes.key?(:'timestamp')
         self.timestamp = attributes[:'timestamp']
-      end
-
-      if attributes.key?(:'business_id')
-        self.business_id = attributes[:'business_id']
-      end
-
-      if attributes.key?(:'business_profile_record_id')
-        self.business_profile_record_id = attributes[:'business_profile_record_id']
       end
 
       if attributes.key?(:'name')
@@ -165,8 +147,6 @@ module OpenapiClient
       self.class == o.class &&
           id == o.id &&
           timestamp == o.timestamp &&
-          business_id == o.business_id &&
-          business_profile_record_id == o.business_profile_record_id &&
           name == o.name &&
           description == o.description &&
           avatar_url == o.avatar_url &&
@@ -184,7 +164,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, timestamp, business_id, business_profile_record_id, name, description, avatar_url, is_public, business_unit_id, organization_profile_id].hash
+      [id, timestamp, name, description, avatar_url, is_public, business_unit_id, organization_profile_id].hash
     end
 
     # Builds the object from hash

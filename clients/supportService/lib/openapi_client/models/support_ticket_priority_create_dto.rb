@@ -15,20 +15,23 @@ require 'time'
 
 module OpenapiClient
   class SupportTicketPriorityCreateDto
+    attr_accessor :id
+
+    attr_accessor :timestamp
+
     attr_accessor :title
 
     attr_accessor :description
-
-    attr_accessor :business_id
 
     attr_accessor :support_entitlement_id
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'id' => :'id',
+        :'timestamp' => :'timestamp',
         :'title' => :'title',
         :'description' => :'description',
-        :'business_id' => :'businessID',
         :'support_entitlement_id' => :'supportEntitlementID'
       }
     end
@@ -41,9 +44,10 @@ module OpenapiClient
     # Attribute type mapping.
     def self.openapi_types
       {
+        :'id' => :'String',
+        :'timestamp' => :'Time',
         :'title' => :'String',
         :'description' => :'String',
-        :'business_id' => :'String',
         :'support_entitlement_id' => :'String'
       }
     end
@@ -53,7 +57,6 @@ module OpenapiClient
       Set.new([
         :'title',
         :'description',
-        :'business_id',
         :'support_entitlement_id'
       ])
     end
@@ -73,16 +76,20 @@ module OpenapiClient
         h[k.to_sym] = v
       }
 
+      if attributes.key?(:'id')
+        self.id = attributes[:'id']
+      end
+
+      if attributes.key?(:'timestamp')
+        self.timestamp = attributes[:'timestamp']
+      end
+
       if attributes.key?(:'title')
         self.title = attributes[:'title']
       end
 
       if attributes.key?(:'description')
         self.description = attributes[:'description']
-      end
-
-      if attributes.key?(:'business_id')
-        self.business_id = attributes[:'business_id']
       end
 
       if attributes.key?(:'support_entitlement_id')
@@ -111,14 +118,6 @@ module OpenapiClient
         invalid_properties.push('invalid value for "description", the character length must be great than or equal to 0.')
       end
 
-      if !@business_id.nil? && @business_id.to_s.length > 36
-        invalid_properties.push('invalid value for "business_id", the character length must be smaller than or equal to 36.')
-      end
-
-      if !@business_id.nil? && @business_id.to_s.length < 36
-        invalid_properties.push('invalid value for "business_id", the character length must be great than or equal to 36.')
-      end
-
       if !@support_entitlement_id.nil? && @support_entitlement_id.to_s.length > 36
         invalid_properties.push('invalid value for "support_entitlement_id", the character length must be smaller than or equal to 36.')
       end
@@ -138,8 +137,6 @@ module OpenapiClient
       return false if !@title.nil? && @title.to_s.length < 0
       return false if !@description.nil? && @description.to_s.length > 1000
       return false if !@description.nil? && @description.to_s.length < 0
-      return false if !@business_id.nil? && @business_id.to_s.length > 36
-      return false if !@business_id.nil? && @business_id.to_s.length < 36
       return false if !@support_entitlement_id.nil? && @support_entitlement_id.to_s.length > 36
       return false if !@support_entitlement_id.nil? && @support_entitlement_id.to_s.length < 36
       true
@@ -174,20 +171,6 @@ module OpenapiClient
     end
 
     # Custom attribute writer method with validation
-    # @param [Object] business_id Value to be assigned
-    def business_id=(business_id)
-      if !business_id.nil? && business_id.to_s.length > 36
-        fail ArgumentError, 'invalid value for "business_id", the character length must be smaller than or equal to 36.'
-      end
-
-      if !business_id.nil? && business_id.to_s.length < 36
-        fail ArgumentError, 'invalid value for "business_id", the character length must be great than or equal to 36.'
-      end
-
-      @business_id = business_id
-    end
-
-    # Custom attribute writer method with validation
     # @param [Object] support_entitlement_id Value to be assigned
     def support_entitlement_id=(support_entitlement_id)
       if !support_entitlement_id.nil? && support_entitlement_id.to_s.length > 36
@@ -206,9 +189,10 @@ module OpenapiClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          id == o.id &&
+          timestamp == o.timestamp &&
           title == o.title &&
           description == o.description &&
-          business_id == o.business_id &&
           support_entitlement_id == o.support_entitlement_id
     end
 
@@ -221,7 +205,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [title, description, business_id, support_entitlement_id].hash
+      [id, timestamp, title, description, support_entitlement_id].hash
     end
 
     # Builds the object from hash

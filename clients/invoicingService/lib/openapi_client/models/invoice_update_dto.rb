@@ -21,13 +21,9 @@ module OpenapiClient
 
     attr_accessor :user_id
 
-    attr_accessor :tenant_id
-
     attr_accessor :price_list_id
 
     attr_accessor :description
-
-    attr_accessor :enrollment_id
 
     attr_accessor :individual_id
 
@@ -189,10 +185,8 @@ module OpenapiClient
         :'closed' => :'closed',
         :'title' => :'title',
         :'user_id' => :'userId',
-        :'tenant_id' => :'tenantId',
         :'price_list_id' => :'priceListId',
         :'description' => :'description',
-        :'enrollment_id' => :'enrollmentId',
         :'individual_id' => :'individualId',
         :'payment_term_id' => :'paymentTermId',
         :'organization_id' => :'organizationId',
@@ -273,10 +267,8 @@ module OpenapiClient
         :'closed' => :'Boolean',
         :'title' => :'String',
         :'user_id' => :'String',
-        :'tenant_id' => :'String',
         :'price_list_id' => :'String',
         :'description' => :'String',
-        :'enrollment_id' => :'String',
         :'individual_id' => :'String',
         :'payment_term_id' => :'String',
         :'organization_id' => :'String',
@@ -351,10 +343,8 @@ module OpenapiClient
       Set.new([
         :'title',
         :'user_id',
-        :'tenant_id',
         :'price_list_id',
         :'description',
-        :'enrollment_id',
         :'individual_id',
         :'payment_term_id',
         :'organization_id',
@@ -431,20 +421,12 @@ module OpenapiClient
         self.user_id = attributes[:'user_id']
       end
 
-      if attributes.key?(:'tenant_id')
-        self.tenant_id = attributes[:'tenant_id']
-      end
-
       if attributes.key?(:'price_list_id')
         self.price_list_id = attributes[:'price_list_id']
       end
 
       if attributes.key?(:'description')
         self.description = attributes[:'description']
-      end
-
-      if attributes.key?(:'enrollment_id')
-        self.enrollment_id = attributes[:'enrollment_id']
       end
 
       if attributes.key?(:'individual_id')
@@ -801,10 +783,8 @@ module OpenapiClient
           closed == o.closed &&
           title == o.title &&
           user_id == o.user_id &&
-          tenant_id == o.tenant_id &&
           price_list_id == o.price_list_id &&
           description == o.description &&
-          enrollment_id == o.enrollment_id &&
           individual_id == o.individual_id &&
           payment_term_id == o.payment_term_id &&
           organization_id == o.organization_id &&
@@ -882,7 +862,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [closed, title, user_id, tenant_id, price_list_id, description, enrollment_id, individual_id, payment_term_id, organization_id, receiver_tenant_id, first_name, last_name, company_name, billing_email, address_line1, address_line2, postal_code, country_id, state_id, city_id, billing_location_id, shipping_location_id, shipping_method_id, forex_rate, currency_id, total_detail, total_detail_currency_id, total_profit, total_profit_currency_id, total_discounts, total_discounts_currency_id, total_surcharges, total_surcharges_currency_id, total_shipping_tax, total_shipping_tax_currency_id, total_shipping_cost, total_shipping_cost_currency_id, total_global_discounts, total_global_discounts_currency_id, total_global_surcharges, total_global_surcharges_currency_id, total_withheld_tax, total_withheld_tax_currency_id, total_tax_base, total_tax_base_currency_id, total_taxes, total_taxes_currency_id, total, total_currency_id, cost_calculation_method, tax_calculation_method, paid, number, notes, order_id, enumeration, payment_mode_id, enumeration_range_id, emisor_billing_profile_id, receiver_billing_profile_id, emisor_wallet_account_id, receiver_wallet_account_id, customer_notes, invoice_type, document_type, invoice_status, payment_due, valid_from, valid_to, invoice_lines, invoice_references, invoice_adjustments].hash
+      [closed, title, user_id, price_list_id, description, individual_id, payment_term_id, organization_id, receiver_tenant_id, first_name, last_name, company_name, billing_email, address_line1, address_line2, postal_code, country_id, state_id, city_id, billing_location_id, shipping_location_id, shipping_method_id, forex_rate, currency_id, total_detail, total_detail_currency_id, total_profit, total_profit_currency_id, total_discounts, total_discounts_currency_id, total_surcharges, total_surcharges_currency_id, total_shipping_tax, total_shipping_tax_currency_id, total_shipping_cost, total_shipping_cost_currency_id, total_global_discounts, total_global_discounts_currency_id, total_global_surcharges, total_global_surcharges_currency_id, total_withheld_tax, total_withheld_tax_currency_id, total_tax_base, total_tax_base_currency_id, total_taxes, total_taxes_currency_id, total, total_currency_id, cost_calculation_method, tax_calculation_method, paid, number, notes, order_id, enumeration, payment_mode_id, enumeration_range_id, emisor_billing_profile_id, receiver_billing_profile_id, emisor_wallet_account_id, receiver_wallet_account_id, customer_notes, invoice_type, document_type, invoice_status, payment_due, valid_from, valid_to, invoice_lines, invoice_references, invoice_adjustments].hash
     end
 
     # Builds the object from hash

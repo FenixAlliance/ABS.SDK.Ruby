@@ -15,6 +15,10 @@ require 'time'
 
 module OpenapiClient
   class AssetTransferCreateDto
+    attr_accessor :id
+
+    attr_accessor :timestamp
+
     attr_accessor :asset_id
 
     attr_accessor :is_root_transfer
@@ -42,6 +46,8 @@ module OpenapiClient
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'id' => :'id',
+        :'timestamp' => :'timestamp',
         :'asset_id' => :'assetId',
         :'is_root_transfer' => :'isRootTransfer',
         :'serial_list' => :'serialList',
@@ -65,6 +71,8 @@ module OpenapiClient
     # Attribute type mapping.
     def self.openapi_types
       {
+        :'id' => :'String',
+        :'timestamp' => :'Time',
         :'asset_id' => :'String',
         :'is_root_transfer' => :'Boolean',
         :'serial_list' => :'String',
@@ -111,6 +119,14 @@ module OpenapiClient
         end
         h[k.to_sym] = v
       }
+
+      if attributes.key?(:'id')
+        self.id = attributes[:'id']
+      end
+
+      if attributes.key?(:'timestamp')
+        self.timestamp = attributes[:'timestamp']
+      end
 
       if attributes.key?(:'asset_id')
         self.asset_id = attributes[:'asset_id']
@@ -181,6 +197,8 @@ module OpenapiClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          id == o.id &&
+          timestamp == o.timestamp &&
           asset_id == o.asset_id &&
           is_root_transfer == o.is_root_transfer &&
           serial_list == o.serial_list &&
@@ -204,7 +222,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [asset_id, is_root_transfer, serial_list, quantity, serial, previous_asset_transfer_id, source_location_id, destination_location_id, source_contact_id, destination_contact_id, source_department_id, destination_department_id].hash
+      [id, timestamp, asset_id, is_root_transfer, serial_list, quantity, serial, previous_asset_transfer_id, source_location_id, destination_location_id, source_contact_id, destination_contact_id, source_department_id, destination_department_id].hash
     end
 
     # Builds the object from hash

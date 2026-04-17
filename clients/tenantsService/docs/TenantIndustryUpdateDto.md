@@ -6,7 +6,6 @@
 | ---- | ---- | ----------- | ----- |
 | **name** | **String** |  | [optional] |
 | **parent_business_industry_id** | **String** |  | [optional] |
-| **business_profile_record_id** | **String** |  | [optional] |
 
 ## Example
 
@@ -15,8 +14,7 @@ require 'openapi_client'
 
 instance = OpenapiClient::TenantIndustryUpdateDto.new(
   name: null,
-  parent_business_industry_id: null,
-  business_profile_record_id: null
+  parent_business_industry_id: null
 )
 ```
 

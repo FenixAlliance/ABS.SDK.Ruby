@@ -21,8 +21,6 @@ module OpenapiClient
 
     attr_accessor :name
 
-    attr_accessor :tenant_id
-
     attr_accessor :fiscal_year_id
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -31,7 +29,6 @@ module OpenapiClient
         :'id' => :'id',
         :'timestamp' => :'timestamp',
         :'name' => :'name',
-        :'tenant_id' => :'tenantId',
         :'fiscal_year_id' => :'fiscalYearId'
       }
     end
@@ -47,7 +44,6 @@ module OpenapiClient
         :'id' => :'String',
         :'timestamp' => :'Time',
         :'name' => :'String',
-        :'tenant_id' => :'String',
         :'fiscal_year_id' => :'String'
       }
     end
@@ -56,7 +52,6 @@ module OpenapiClient
     def self.openapi_nullable
       Set.new([
         :'name',
-        :'tenant_id',
         :'fiscal_year_id'
       ])
     end
@@ -88,10 +83,6 @@ module OpenapiClient
         self.name = attributes[:'name']
       end
 
-      if attributes.key?(:'tenant_id')
-        self.tenant_id = attributes[:'tenant_id']
-      end
-
       if attributes.key?(:'fiscal_year_id')
         self.fiscal_year_id = attributes[:'fiscal_year_id']
       end
@@ -120,7 +111,6 @@ module OpenapiClient
           id == o.id &&
           timestamp == o.timestamp &&
           name == o.name &&
-          tenant_id == o.tenant_id &&
           fiscal_year_id == o.fiscal_year_id
     end
 
@@ -133,7 +123,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, timestamp, name, tenant_id, fiscal_year_id].hash
+      [id, timestamp, name, fiscal_year_id].hash
     end
 
     # Builds the object from hash

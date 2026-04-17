@@ -5,7 +5,6 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **contact_id** | **String** |  | [optional] |
-| **tenant_id** | **String** |  | [optional] |
 | **tax_id** | **String** |  | [optional] |
 | **phone** | **String** |  | [optional] |
 | **email** | **String** |  | [optional] |
@@ -33,7 +32,6 @@ require 'openapi_client'
 
 instance = OpenapiClient::BillingProfileUpdateDto.new(
   contact_id: null,
-  tenant_id: null,
   tax_id: null,
   phone: null,
   email: null,

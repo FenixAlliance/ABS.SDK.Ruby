@@ -4,6 +4,8 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
+| **id** | **String** |  | [optional] |
+| **timestamp** | **Time** |  | [optional] |
 | **display_name** | **String** |  |  |
 | **client_id** | **String** |  | [optional] |
 | **client_secret** | **String** |  | [optional] |
@@ -13,8 +15,6 @@
 | **redirect_uris** | **String** |  | [optional] |
 | **post_logout_redirect_uris** | **String** |  | [optional] |
 | **logo** | **String** |  | [optional] |
-| **business_id** | **String** |  | [optional] |
-| **business_profile_record_id** | **String** |  | [optional] |
 
 ## Example
 
@@ -22,6 +22,8 @@
 require 'openapi_client'
 
 instance = OpenapiClient::OAuthApplicationCreateDto.new(
+  id: null,
+  timestamp: null,
   display_name: null,
   client_id: null,
   client_secret: null,
@@ -30,9 +32,7 @@ instance = OpenapiClient::OAuthApplicationCreateDto.new(
   requirements: null,
   redirect_uris: null,
   post_logout_redirect_uris: null,
-  logo: null,
-  business_id: null,
-  business_profile_record_id: null
+  logo: null
 )
 ```
 

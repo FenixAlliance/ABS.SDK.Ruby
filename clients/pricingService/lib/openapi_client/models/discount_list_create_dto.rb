@@ -23,19 +23,13 @@ module OpenapiClient
 
     attr_accessor :currency_id
 
-    attr_accessor :tenant_id
-
-    attr_accessor :enrollment_id
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'id' => :'id',
         :'timestamp' => :'timestamp',
         :'name' => :'name',
-        :'currency_id' => :'currencyId',
-        :'tenant_id' => :'tenantId',
-        :'enrollment_id' => :'enrollmentId'
+        :'currency_id' => :'currencyId'
       }
     end
 
@@ -50,9 +44,7 @@ module OpenapiClient
         :'id' => :'String',
         :'timestamp' => :'Time',
         :'name' => :'String',
-        :'currency_id' => :'String',
-        :'tenant_id' => :'String',
-        :'enrollment_id' => :'String'
+        :'currency_id' => :'String'
       }
     end
 
@@ -60,9 +52,7 @@ module OpenapiClient
     def self.openapi_nullable
       Set.new([
         :'name',
-        :'currency_id',
-        :'tenant_id',
-        :'enrollment_id'
+        :'currency_id'
       ])
     end
 
@@ -96,14 +86,6 @@ module OpenapiClient
       if attributes.key?(:'currency_id')
         self.currency_id = attributes[:'currency_id']
       end
-
-      if attributes.key?(:'tenant_id')
-        self.tenant_id = attributes[:'tenant_id']
-      end
-
-      if attributes.key?(:'enrollment_id')
-        self.enrollment_id = attributes[:'enrollment_id']
-      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -119,22 +101,6 @@ module OpenapiClient
         invalid_properties.push('invalid value for "name", the character length must be great than or equal to 0.')
       end
 
-      if !@tenant_id.nil? && @tenant_id.to_s.length > 36
-        invalid_properties.push('invalid value for "tenant_id", the character length must be smaller than or equal to 36.')
-      end
-
-      if !@tenant_id.nil? && @tenant_id.to_s.length < 0
-        invalid_properties.push('invalid value for "tenant_id", the character length must be great than or equal to 0.')
-      end
-
-      if !@enrollment_id.nil? && @enrollment_id.to_s.length > 36
-        invalid_properties.push('invalid value for "enrollment_id", the character length must be smaller than or equal to 36.')
-      end
-
-      if !@enrollment_id.nil? && @enrollment_id.to_s.length < 0
-        invalid_properties.push('invalid value for "enrollment_id", the character length must be great than or equal to 0.')
-      end
-
       invalid_properties
     end
 
@@ -144,10 +110,6 @@ module OpenapiClient
       warn '[DEPRECATED] the `valid?` method is obsolete'
       return false if !@name.nil? && @name.to_s.length > 50
       return false if !@name.nil? && @name.to_s.length < 0
-      return false if !@tenant_id.nil? && @tenant_id.to_s.length > 36
-      return false if !@tenant_id.nil? && @tenant_id.to_s.length < 0
-      return false if !@enrollment_id.nil? && @enrollment_id.to_s.length > 36
-      return false if !@enrollment_id.nil? && @enrollment_id.to_s.length < 0
       true
     end
 
@@ -165,34 +127,6 @@ module OpenapiClient
       @name = name
     end
 
-    # Custom attribute writer method with validation
-    # @param [Object] tenant_id Value to be assigned
-    def tenant_id=(tenant_id)
-      if !tenant_id.nil? && tenant_id.to_s.length > 36
-        fail ArgumentError, 'invalid value for "tenant_id", the character length must be smaller than or equal to 36.'
-      end
-
-      if !tenant_id.nil? && tenant_id.to_s.length < 0
-        fail ArgumentError, 'invalid value for "tenant_id", the character length must be great than or equal to 0.'
-      end
-
-      @tenant_id = tenant_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] enrollment_id Value to be assigned
-    def enrollment_id=(enrollment_id)
-      if !enrollment_id.nil? && enrollment_id.to_s.length > 36
-        fail ArgumentError, 'invalid value for "enrollment_id", the character length must be smaller than or equal to 36.'
-      end
-
-      if !enrollment_id.nil? && enrollment_id.to_s.length < 0
-        fail ArgumentError, 'invalid value for "enrollment_id", the character length must be great than or equal to 0.'
-      end
-
-      @enrollment_id = enrollment_id
-    end
-
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(o)
@@ -201,9 +135,7 @@ module OpenapiClient
           id == o.id &&
           timestamp == o.timestamp &&
           name == o.name &&
-          currency_id == o.currency_id &&
-          tenant_id == o.tenant_id &&
-          enrollment_id == o.enrollment_id
+          currency_id == o.currency_id
     end
 
     # @see the `==` method
@@ -215,7 +147,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, timestamp, name, currency_id, tenant_id, enrollment_id].hash
+      [id, timestamp, name, currency_id].hash
     end
 
     # Builds the object from hash

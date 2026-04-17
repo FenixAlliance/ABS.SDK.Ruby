@@ -37,10 +37,6 @@ module OpenapiClient
 
     attr_accessor :currency_id
 
-    attr_accessor :tenant_id
-
-    attr_accessor :enrollment_id
-
     attr_accessor :bank_profile_id
 
     attr_accessor :bank_account_id
@@ -59,8 +55,6 @@ module OpenapiClient
         :'unit_id' => :'unitId',
         :'transaction_category_id' => :'transactionCategoryId',
         :'currency_id' => :'currencyId',
-        :'tenant_id' => :'tenantId',
-        :'enrollment_id' => :'enrollmentId',
         :'bank_profile_id' => :'bankProfileId',
         :'bank_account_id' => :'bankAccountId'
       }
@@ -85,8 +79,6 @@ module OpenapiClient
         :'unit_id' => :'String',
         :'transaction_category_id' => :'String',
         :'currency_id' => :'String',
-        :'tenant_id' => :'String',
-        :'enrollment_id' => :'String',
         :'bank_profile_id' => :'String',
         :'bank_account_id' => :'String'
       }
@@ -101,8 +93,6 @@ module OpenapiClient
         :'unit_id',
         :'transaction_category_id',
         :'currency_id',
-        :'tenant_id',
-        :'enrollment_id',
         :'bank_profile_id',
         :'bank_account_id'
       ])
@@ -167,14 +157,6 @@ module OpenapiClient
         self.currency_id = attributes[:'currency_id']
       end
 
-      if attributes.key?(:'tenant_id')
-        self.tenant_id = attributes[:'tenant_id']
-      end
-
-      if attributes.key?(:'enrollment_id')
-        self.enrollment_id = attributes[:'enrollment_id']
-      end
-
       if attributes.key?(:'bank_profile_id')
         self.bank_profile_id = attributes[:'bank_profile_id']
       end
@@ -229,22 +211,6 @@ module OpenapiClient
         invalid_properties.push('invalid value for "transaction_category_id", the character length must be great than or equal to 0.')
       end
 
-      if !@tenant_id.nil? && @tenant_id.to_s.length > 36
-        invalid_properties.push('invalid value for "tenant_id", the character length must be smaller than or equal to 36.')
-      end
-
-      if !@tenant_id.nil? && @tenant_id.to_s.length < 0
-        invalid_properties.push('invalid value for "tenant_id", the character length must be great than or equal to 0.')
-      end
-
-      if !@enrollment_id.nil? && @enrollment_id.to_s.length > 36
-        invalid_properties.push('invalid value for "enrollment_id", the character length must be smaller than or equal to 36.')
-      end
-
-      if !@enrollment_id.nil? && @enrollment_id.to_s.length < 0
-        invalid_properties.push('invalid value for "enrollment_id", the character length must be great than or equal to 0.')
-      end
-
       if !@bank_profile_id.nil? && @bank_profile_id.to_s.length > 36
         invalid_properties.push('invalid value for "bank_profile_id", the character length must be smaller than or equal to 36.')
       end
@@ -278,10 +244,6 @@ module OpenapiClient
       return false if !@unit_id.nil? && @unit_id.to_s.length < 0
       return false if !@transaction_category_id.nil? && @transaction_category_id.to_s.length > 36
       return false if !@transaction_category_id.nil? && @transaction_category_id.to_s.length < 0
-      return false if !@tenant_id.nil? && @tenant_id.to_s.length > 36
-      return false if !@tenant_id.nil? && @tenant_id.to_s.length < 0
-      return false if !@enrollment_id.nil? && @enrollment_id.to_s.length > 36
-      return false if !@enrollment_id.nil? && @enrollment_id.to_s.length < 0
       return false if !@bank_profile_id.nil? && @bank_profile_id.to_s.length > 36
       return false if !@bank_profile_id.nil? && @bank_profile_id.to_s.length < 0
       return false if !@bank_account_id.nil? && @bank_account_id.to_s.length > 36
@@ -360,34 +322,6 @@ module OpenapiClient
     end
 
     # Custom attribute writer method with validation
-    # @param [Object] tenant_id Value to be assigned
-    def tenant_id=(tenant_id)
-      if !tenant_id.nil? && tenant_id.to_s.length > 36
-        fail ArgumentError, 'invalid value for "tenant_id", the character length must be smaller than or equal to 36.'
-      end
-
-      if !tenant_id.nil? && tenant_id.to_s.length < 0
-        fail ArgumentError, 'invalid value for "tenant_id", the character length must be great than or equal to 0.'
-      end
-
-      @tenant_id = tenant_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] enrollment_id Value to be assigned
-    def enrollment_id=(enrollment_id)
-      if !enrollment_id.nil? && enrollment_id.to_s.length > 36
-        fail ArgumentError, 'invalid value for "enrollment_id", the character length must be smaller than or equal to 36.'
-      end
-
-      if !enrollment_id.nil? && enrollment_id.to_s.length < 0
-        fail ArgumentError, 'invalid value for "enrollment_id", the character length must be great than or equal to 0.'
-      end
-
-      @enrollment_id = enrollment_id
-    end
-
-    # Custom attribute writer method with validation
     # @param [Object] bank_profile_id Value to be assigned
     def bank_profile_id=(bank_profile_id)
       if !bank_profile_id.nil? && bank_profile_id.to_s.length > 36
@@ -431,8 +365,6 @@ module OpenapiClient
           unit_id == o.unit_id &&
           transaction_category_id == o.transaction_category_id &&
           currency_id == o.currency_id &&
-          tenant_id == o.tenant_id &&
-          enrollment_id == o.enrollment_id &&
           bank_profile_id == o.bank_profile_id &&
           bank_account_id == o.bank_account_id
     end
@@ -446,7 +378,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [description, price, quantity, external_description, basis_quantity, basis_amount, percent, unit_group_id, unit_id, transaction_category_id, currency_id, tenant_id, enrollment_id, bank_profile_id, bank_account_id].hash
+      [description, price, quantity, external_description, basis_quantity, basis_amount, percent, unit_group_id, unit_id, transaction_category_id, currency_id, bank_profile_id, bank_account_id].hash
     end
 
     # Builds the object from hash

@@ -23,8 +23,6 @@ module OpenapiClient
 
     attr_accessor :cost_centre_type
 
-    attr_accessor :tenant_id
-
     attr_accessor :cost_centres_group_id
 
     attr_accessor :parent_cost_centre_id
@@ -58,7 +56,6 @@ module OpenapiClient
         :'disabled' => :'disabled',
         :'description' => :'description',
         :'cost_centre_type' => :'costCentreType',
-        :'tenant_id' => :'tenantId',
         :'cost_centres_group_id' => :'costCentresGroupId',
         :'parent_cost_centre_id' => :'parentCostCentreId'
       }
@@ -76,7 +73,6 @@ module OpenapiClient
         :'disabled' => :'Boolean',
         :'description' => :'String',
         :'cost_centre_type' => :'String',
-        :'tenant_id' => :'String',
         :'cost_centres_group_id' => :'String',
         :'parent_cost_centre_id' => :'String'
       }
@@ -87,7 +83,6 @@ module OpenapiClient
       Set.new([
         :'name',
         :'description',
-        :'tenant_id',
         :'cost_centres_group_id',
         :'parent_cost_centre_id'
       ])
@@ -124,10 +119,6 @@ module OpenapiClient
         self.cost_centre_type = attributes[:'cost_centre_type']
       end
 
-      if attributes.key?(:'tenant_id')
-        self.tenant_id = attributes[:'tenant_id']
-      end
-
       if attributes.key?(:'cost_centres_group_id')
         self.cost_centres_group_id = attributes[:'cost_centres_group_id']
       end
@@ -156,14 +147,6 @@ module OpenapiClient
 
       if !@description.nil? && @description.to_s.length < 0
         invalid_properties.push('invalid value for "description", the character length must be great than or equal to 0.')
-      end
-
-      if !@tenant_id.nil? && @tenant_id.to_s.length > 36
-        invalid_properties.push('invalid value for "tenant_id", the character length must be smaller than or equal to 36.')
-      end
-
-      if !@tenant_id.nil? && @tenant_id.to_s.length < 0
-        invalid_properties.push('invalid value for "tenant_id", the character length must be great than or equal to 0.')
       end
 
       if !@cost_centres_group_id.nil? && @cost_centres_group_id.to_s.length > 36
@@ -195,8 +178,6 @@ module OpenapiClient
       return false if !@description.nil? && @description.to_s.length < 0
       cost_centre_type_validator = EnumAttributeValidator.new('String', ["Service", "Production"])
       return false unless cost_centre_type_validator.valid?(@cost_centre_type)
-      return false if !@tenant_id.nil? && @tenant_id.to_s.length > 36
-      return false if !@tenant_id.nil? && @tenant_id.to_s.length < 0
       return false if !@cost_centres_group_id.nil? && @cost_centres_group_id.to_s.length > 36
       return false if !@cost_centres_group_id.nil? && @cost_centres_group_id.to_s.length < 0
       return false if !@parent_cost_centre_id.nil? && @parent_cost_centre_id.to_s.length > 36
@@ -243,20 +224,6 @@ module OpenapiClient
     end
 
     # Custom attribute writer method with validation
-    # @param [Object] tenant_id Value to be assigned
-    def tenant_id=(tenant_id)
-      if !tenant_id.nil? && tenant_id.to_s.length > 36
-        fail ArgumentError, 'invalid value for "tenant_id", the character length must be smaller than or equal to 36.'
-      end
-
-      if !tenant_id.nil? && tenant_id.to_s.length < 0
-        fail ArgumentError, 'invalid value for "tenant_id", the character length must be great than or equal to 0.'
-      end
-
-      @tenant_id = tenant_id
-    end
-
-    # Custom attribute writer method with validation
     # @param [Object] cost_centres_group_id Value to be assigned
     def cost_centres_group_id=(cost_centres_group_id)
       if !cost_centres_group_id.nil? && cost_centres_group_id.to_s.length > 36
@@ -293,7 +260,6 @@ module OpenapiClient
           disabled == o.disabled &&
           description == o.description &&
           cost_centre_type == o.cost_centre_type &&
-          tenant_id == o.tenant_id &&
           cost_centres_group_id == o.cost_centres_group_id &&
           parent_cost_centre_id == o.parent_cost_centre_id
     end
@@ -307,7 +273,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [name, disabled, description, cost_centre_type, tenant_id, cost_centres_group_id, parent_cost_centre_id].hash
+      [name, disabled, description, cost_centre_type, cost_centres_group_id, parent_cost_centre_id].hash
     end
 
     # Builds the object from hash

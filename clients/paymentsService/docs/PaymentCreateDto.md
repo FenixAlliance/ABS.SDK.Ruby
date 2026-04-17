@@ -7,7 +7,6 @@
 | **id** | **String** |  | [optional] |
 | **timestamp** | **Time** |  | [optional] |
 | **invoice_id** | **String** |  | [optional] |
-| **tenant_id** | **String** |  | [optional] |
 | **emisor_wallet_id** | **String** |  | [optional] |
 | **receiver_wallet_id** | **String** |  | [optional] |
 | **currency_id** | **String** |  | [optional] |
@@ -59,7 +58,6 @@
 | **accounting_entry_id** | **String** |  | [optional] |
 | **payment_gateway_id** | **String** |  | [optional] |
 | **bank_account_id** | **String** |  | [optional] |
-| **enrollment_id** | **String** |  | [optional] |
 | **bank_id** | **String** |  | [optional] |
 | **payment_token_id** | **String** |  | [optional] |
 | **emisor_wallet_account_id** | **String** |  | [optional] |
@@ -74,7 +72,6 @@ instance = OpenapiClient::PaymentCreateDto.new(
   id: null,
   timestamp: null,
   invoice_id: null,
-  tenant_id: null,
   emisor_wallet_id: null,
   receiver_wallet_id: null,
   currency_id: null,
@@ -126,7 +123,6 @@ instance = OpenapiClient::PaymentCreateDto.new(
   accounting_entry_id: null,
   payment_gateway_id: null,
   bank_account_id: null,
-  enrollment_id: null,
   bank_id: null,
   payment_token_id: null,
   emisor_wallet_account_id: null,

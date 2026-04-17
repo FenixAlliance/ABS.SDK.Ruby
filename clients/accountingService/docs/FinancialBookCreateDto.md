@@ -8,7 +8,6 @@
 | **timestamp** | **Time** |  | [optional] |
 | **name** | **String** |  |  |
 | **description** | **String** |  | [optional] |
-| **tenant_id** | **String** |  | [optional] |
 
 ## Example
 
@@ -19,8 +18,7 @@ instance = OpenapiClient::FinancialBookCreateDto.new(
   id: null,
   timestamp: null,
   name: null,
-  description: null,
-  tenant_id: null
+  description: null
 )
 ```
 

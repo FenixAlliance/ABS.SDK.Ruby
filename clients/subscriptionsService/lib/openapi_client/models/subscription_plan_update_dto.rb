@@ -117,8 +117,6 @@ module OpenapiClient
 
     attr_accessor :total_tax
 
-    attr_accessor :tenant_id
-
     attr_accessor :permalink
 
     attr_accessor :brand_name
@@ -166,8 +164,6 @@ module OpenapiClient
     attr_accessor :has_variations
 
     attr_accessor :questions_count
-
-    attr_accessor :enrollment_id
 
     attr_accessor :supplier_code
 
@@ -423,7 +419,6 @@ module OpenapiClient
         :'material' => :'material',
         :'on_discount' => :'onDiscount',
         :'total_tax' => :'totalTax',
-        :'tenant_id' => :'tenantId',
         :'permalink' => :'permalink',
         :'brand_name' => :'brandName',
         :'reviews_count' => :'reviewsCount',
@@ -448,7 +443,6 @@ module OpenapiClient
         :'custom_tax_value' => :'customTaxValue',
         :'has_variations' => :'hasVariations',
         :'questions_count' => :'questionsCount',
-        :'enrollment_id' => :'enrollmentId',
         :'supplier_code' => :'supplierCode',
         :'auction_end' => :'auctionEnd',
         :'purchase_note' => :'purchaseNote',
@@ -611,7 +605,6 @@ module OpenapiClient
         :'material' => :'String',
         :'on_discount' => :'Boolean',
         :'total_tax' => :'Float',
-        :'tenant_id' => :'String',
         :'permalink' => :'String',
         :'brand_name' => :'String',
         :'reviews_count' => :'Integer',
@@ -636,7 +629,6 @@ module OpenapiClient
         :'custom_tax_value' => :'Float',
         :'has_variations' => :'Boolean',
         :'questions_count' => :'Integer',
-        :'enrollment_id' => :'String',
         :'supplier_code' => :'String',
         :'auction_end' => :'Time',
         :'purchase_note' => :'String',
@@ -774,7 +766,6 @@ module OpenapiClient
         :'brand_id',
         :'features',
         :'material',
-        :'tenant_id',
         :'permalink',
         :'brand_name',
         :'language_id',
@@ -786,7 +777,6 @@ module OpenapiClient
         :'description',
         :'ingredients',
         :'release_date',
-        :'enrollment_id',
         :'supplier_code',
         :'purchase_note',
         :'ships_to_rules',
@@ -1058,10 +1048,6 @@ module OpenapiClient
         self.total_tax = attributes[:'total_tax']
       end
 
-      if attributes.key?(:'tenant_id')
-        self.tenant_id = attributes[:'tenant_id']
-      end
-
       if attributes.key?(:'permalink')
         self.permalink = attributes[:'permalink']
       end
@@ -1156,10 +1142,6 @@ module OpenapiClient
 
       if attributes.key?(:'questions_count')
         self.questions_count = attributes[:'questions_count']
-      end
-
-      if attributes.key?(:'enrollment_id')
-        self.enrollment_id = attributes[:'enrollment_id']
       end
 
       if attributes.key?(:'supplier_code')
@@ -1834,7 +1816,6 @@ module OpenapiClient
           material == o.material &&
           on_discount == o.on_discount &&
           total_tax == o.total_tax &&
-          tenant_id == o.tenant_id &&
           permalink == o.permalink &&
           brand_name == o.brand_name &&
           reviews_count == o.reviews_count &&
@@ -1859,7 +1840,6 @@ module OpenapiClient
           custom_tax_value == o.custom_tax_value &&
           has_variations == o.has_variations &&
           questions_count == o.questions_count &&
-          enrollment_id == o.enrollment_id &&
           supplier_code == o.supplier_code &&
           auction_end == o.auction_end &&
           purchase_note == o.purchase_note &&
@@ -1971,7 +1951,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [hot, sku, upc, ean, mpn, sk_us, isbn, up_cs, ea_ns, asin, gtin, mp_ns, part, name, on_sale, isb_ns, asi_ns, gti_ns, width, model, auction, title, color, deleted, digital, pre_sale, taxable, in_stock, isb_n13, unspsc, weight, length, height, unit_id, series, featured, brands, trending, low_stock, barcode, unsps_cs, pattern, published, by_request, summary, brand_id, views_count, features, material, on_discount, total_tax, tenant_id, permalink, brand_name, reviews_count, is_daily_deal, language_id, categories, final_price, item_type_id, category_id, currency_id, reviews_avg, is_new_arrival, is_weekly_deal, is_best_seller, unit_group_id, description, ingredients, release_date, is_monthly_deal, recurrency, payment_cost, custom_tax_value, has_variations, questions_count, enrollment_id, supplier_code, auction_end, purchase_note, ships_to_rules, regular_price, images, shipping_cost, parent_item_id, item_type_name, cart_record_id, variations, tariff_heading, packaged_quantity, is_fixed_discount, discount_price, is_dealers_choice, current_stock, manage_inventory, auction_start, nutrition_facts, mozaic_cover_url, package_content, discount_amount, youtube_video_id, in_cart_quantity, is_official_choice, published_date, primary_image_url, valid_primary_image, custom_tax_amount, long_description, compare_record_id, measurement_unit, short_description, google_categories, is_deadline_discount, display_showcase_tab, tax_included_in_price, is_product_of_the_week, supplier_profile_id, shipping_country_id, is_product_of_the_month, system_requirements, is_porcentual_discount, discount_percentage, discount_dead_line, display_on_global_mozaic, display_on_brands_mozaic, custom_tax_percentage, estimated_taxes_in_usd, custom_tax_description, disable_default_policies, estimated_profit_in_usd, display_on_category_mozaic, official_description_url, energy_efficiency_rating, page_cover_background_url, estimated_base_price_in_usd, estimated_discounts_in_usd, operating_system_supported, estimated_surcharges_in_usd, deadline_discount_due_date, deadline_discount_from_date, estimated_regular_price_in_usd, estimated_tax_base_price_in_usd, display_on_banner_marketing_rotation, last_fixed_prices_update_date_time, estimated_witholding_taxes_in_usd, estimated_payment_cost_in_usd, estimated_payment_tax_in_usd, estimated_default_shipping_cost_in_usd, estimated_default_shipping_tax_in_usd, estimated_total_price_in_usd, recently_viewed_record_id, display_description_editor, primary_google_category_id, supported_operating_system, estimated_deal_savings_in_usd, primary_google_category_name, display_short_description_editor, estimated_withholding_taxes_in_usd, selected_tags, selected_types, selected_brands, selected_categories, selected_tax_policies, selected_pricing_rules, selected_refund_policies, selected_return_policies, selected_pricing_policies, selected_google_categories, selected_warranty_policies, selected_shipment_policies, selected_attributes_options, selected_selling_margin_policies, allow_subscription_trials, is_perpetual_subscription, trial_subscription_relative_expiration_in_days, standard_subscription_relative_expiration_in_days, subscriptions_certificate_id].hash
+      [hot, sku, upc, ean, mpn, sk_us, isbn, up_cs, ea_ns, asin, gtin, mp_ns, part, name, on_sale, isb_ns, asi_ns, gti_ns, width, model, auction, title, color, deleted, digital, pre_sale, taxable, in_stock, isb_n13, unspsc, weight, length, height, unit_id, series, featured, brands, trending, low_stock, barcode, unsps_cs, pattern, published, by_request, summary, brand_id, views_count, features, material, on_discount, total_tax, permalink, brand_name, reviews_count, is_daily_deal, language_id, categories, final_price, item_type_id, category_id, currency_id, reviews_avg, is_new_arrival, is_weekly_deal, is_best_seller, unit_group_id, description, ingredients, release_date, is_monthly_deal, recurrency, payment_cost, custom_tax_value, has_variations, questions_count, supplier_code, auction_end, purchase_note, ships_to_rules, regular_price, images, shipping_cost, parent_item_id, item_type_name, cart_record_id, variations, tariff_heading, packaged_quantity, is_fixed_discount, discount_price, is_dealers_choice, current_stock, manage_inventory, auction_start, nutrition_facts, mozaic_cover_url, package_content, discount_amount, youtube_video_id, in_cart_quantity, is_official_choice, published_date, primary_image_url, valid_primary_image, custom_tax_amount, long_description, compare_record_id, measurement_unit, short_description, google_categories, is_deadline_discount, display_showcase_tab, tax_included_in_price, is_product_of_the_week, supplier_profile_id, shipping_country_id, is_product_of_the_month, system_requirements, is_porcentual_discount, discount_percentage, discount_dead_line, display_on_global_mozaic, display_on_brands_mozaic, custom_tax_percentage, estimated_taxes_in_usd, custom_tax_description, disable_default_policies, estimated_profit_in_usd, display_on_category_mozaic, official_description_url, energy_efficiency_rating, page_cover_background_url, estimated_base_price_in_usd, estimated_discounts_in_usd, operating_system_supported, estimated_surcharges_in_usd, deadline_discount_due_date, deadline_discount_from_date, estimated_regular_price_in_usd, estimated_tax_base_price_in_usd, display_on_banner_marketing_rotation, last_fixed_prices_update_date_time, estimated_witholding_taxes_in_usd, estimated_payment_cost_in_usd, estimated_payment_tax_in_usd, estimated_default_shipping_cost_in_usd, estimated_default_shipping_tax_in_usd, estimated_total_price_in_usd, recently_viewed_record_id, display_description_editor, primary_google_category_id, supported_operating_system, estimated_deal_savings_in_usd, primary_google_category_name, display_short_description_editor, estimated_withholding_taxes_in_usd, selected_tags, selected_types, selected_brands, selected_categories, selected_tax_policies, selected_pricing_rules, selected_refund_policies, selected_return_policies, selected_pricing_policies, selected_google_categories, selected_warranty_policies, selected_shipment_policies, selected_attributes_options, selected_selling_margin_policies, allow_subscription_trials, is_perpetual_subscription, trial_subscription_relative_expiration_in_days, standard_subscription_relative_expiration_in_days, subscriptions_certificate_id].hash
     end
 
     # Builds the object from hash

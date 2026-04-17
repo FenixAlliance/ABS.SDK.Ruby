@@ -29,8 +29,6 @@ module OpenapiClient
 
     attr_accessor :currency_id
 
-    attr_accessor :enrollment_id
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -40,8 +38,7 @@ module OpenapiClient
         :'interest_rate' => :'interestRate',
         :'is_compund_interest_rate' => :'isCompundInterestRate',
         :'loan_type_id' => :'loanTypeId',
-        :'currency_id' => :'currencyId',
-        :'enrollment_id' => :'enrollmentId'
+        :'currency_id' => :'currencyId'
       }
     end
 
@@ -59,8 +56,7 @@ module OpenapiClient
         :'interest_rate' => :'Float',
         :'is_compund_interest_rate' => :'Boolean',
         :'loan_type_id' => :'String',
-        :'currency_id' => :'String',
-        :'enrollment_id' => :'String'
+        :'currency_id' => :'String'
       }
     end
 
@@ -68,8 +64,7 @@ module OpenapiClient
     def self.openapi_nullable
       Set.new([
         :'loan_type_id',
-        :'currency_id',
-        :'enrollment_id'
+        :'currency_id'
       ])
     end
 
@@ -115,10 +110,6 @@ module OpenapiClient
       if attributes.key?(:'currency_id')
         self.currency_id = attributes[:'currency_id']
       end
-
-      if attributes.key?(:'enrollment_id')
-        self.enrollment_id = attributes[:'enrollment_id']
-      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -147,8 +138,7 @@ module OpenapiClient
           interest_rate == o.interest_rate &&
           is_compund_interest_rate == o.is_compund_interest_rate &&
           loan_type_id == o.loan_type_id &&
-          currency_id == o.currency_id &&
-          enrollment_id == o.enrollment_id
+          currency_id == o.currency_id
     end
 
     # @see the `==` method
@@ -160,7 +150,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [loan_timestamp, payment_deadline, value, interest_rate, is_compund_interest_rate, loan_type_id, currency_id, enrollment_id].hash
+      [loan_timestamp, payment_deadline, value, interest_rate, is_compund_interest_rate, loan_type_id, currency_id].hash
     end
 
     # Builds the object from hash

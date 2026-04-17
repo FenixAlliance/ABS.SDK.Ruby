@@ -27,8 +27,6 @@ module OpenapiClient
 
     attr_accessor :social_profile_id
 
-    attr_accessor :business_id
-
     attr_accessor :item_id
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -40,7 +38,6 @@ module OpenapiClient
         :'needs_revision' => :'needsRevision',
         :'question' => :'question',
         :'social_profile_id' => :'socialProfileID',
-        :'business_id' => :'businessID',
         :'item_id' => :'itemID'
       }
     end
@@ -59,7 +56,6 @@ module OpenapiClient
         :'needs_revision' => :'Boolean',
         :'question' => :'String',
         :'social_profile_id' => :'String',
-        :'business_id' => :'String',
         :'item_id' => :'String'
       }
     end
@@ -116,12 +112,6 @@ module OpenapiClient
         self.social_profile_id = attributes[:'social_profile_id']
       end
 
-      if attributes.key?(:'business_id')
-        self.business_id = attributes[:'business_id']
-      else
-        self.business_id = nil
-      end
-
       if attributes.key?(:'item_id')
         self.item_id = attributes[:'item_id']
       else
@@ -170,18 +160,6 @@ module OpenapiClient
         invalid_properties.push('invalid value for "social_profile_id", the character length must be great than or equal to 36.')
       end
 
-      if @business_id.nil?
-        invalid_properties.push('invalid value for "business_id", business_id cannot be nil.')
-      end
-
-      if @business_id.to_s.length > 36
-        invalid_properties.push('invalid value for "business_id", the character length must be smaller than or equal to 36.')
-      end
-
-      if @business_id.to_s.length < 36
-        invalid_properties.push('invalid value for "business_id", the character length must be great than or equal to 36.')
-      end
-
       if @item_id.nil?
         invalid_properties.push('invalid value for "item_id", item_id cannot be nil.')
       end
@@ -210,9 +188,6 @@ module OpenapiClient
       return false if @question.to_s.length < 0
       return false if !@social_profile_id.nil? && @social_profile_id.to_s.length > 36
       return false if !@social_profile_id.nil? && @social_profile_id.to_s.length < 36
-      return false if @business_id.nil?
-      return false if @business_id.to_s.length > 36
-      return false if @business_id.to_s.length < 36
       return false if @item_id.nil?
       return false if @item_id.to_s.length > 36
       return false if @item_id.to_s.length < 36
@@ -270,24 +245,6 @@ module OpenapiClient
     end
 
     # Custom attribute writer method with validation
-    # @param [Object] business_id Value to be assigned
-    def business_id=(business_id)
-      if business_id.nil?
-        fail ArgumentError, 'business_id cannot be nil'
-      end
-
-      if business_id.to_s.length > 36
-        fail ArgumentError, 'invalid value for "business_id", the character length must be smaller than or equal to 36.'
-      end
-
-      if business_id.to_s.length < 36
-        fail ArgumentError, 'invalid value for "business_id", the character length must be great than or equal to 36.'
-      end
-
-      @business_id = business_id
-    end
-
-    # Custom attribute writer method with validation
     # @param [Object] item_id Value to be assigned
     def item_id=(item_id)
       if item_id.nil?
@@ -316,7 +273,6 @@ module OpenapiClient
           needs_revision == o.needs_revision &&
           question == o.question &&
           social_profile_id == o.social_profile_id &&
-          business_id == o.business_id &&
           item_id == o.item_id
     end
 
@@ -329,7 +285,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, timestamp, title, needs_revision, question, social_profile_id, business_id, item_id].hash
+      [id, timestamp, title, needs_revision, question, social_profile_id, item_id].hash
     end
 
     # Builds the object from hash

@@ -4,6 +4,8 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
+| **id** | **String** |  | [optional] |
+| **timestamp** | **Time** |  | [optional] |
 | **asset_id** | **String** |  | [optional] |
 | **asset_depreciation_policy_id** | **String** |  | [optional] |
 | **depreciation_amount** | **Float** |  | [optional] |
@@ -19,6 +21,8 @@
 require 'openapi_client'
 
 instance = OpenapiClient::AssetDepreciationRecordCreateDto.new(
+  id: null,
+  timestamp: null,
   asset_id: null,
   asset_depreciation_policy_id: null,
   depreciation_amount: null,

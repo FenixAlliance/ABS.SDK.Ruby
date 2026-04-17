@@ -4,11 +4,82 @@ All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
+| [**count_blog_post_tags_async**](BlogPostTagsApi.md#count_blog_post_tags_async) | **GET** /api/v2/ContentService/BlogPostTags/Count | Count blog post tags |
 | [**create_blog_post_tag_async**](BlogPostTagsApi.md#create_blog_post_tag_async) | **POST** /api/v2/ContentService/BlogPostTags | Create a blog post tag |
 | [**delete_blog_post_tag_async**](BlogPostTagsApi.md#delete_blog_post_tag_async) | **DELETE** /api/v2/ContentService/BlogPostTags/{blogPostTagId} | Delete a blog post tag |
 | [**get_blog_post_tag_by_id_async**](BlogPostTagsApi.md#get_blog_post_tag_by_id_async) | **GET** /api/v2/ContentService/BlogPostTags/{blogPostTagId} | Get blog post tag by ID |
 | [**get_blog_post_tags_async**](BlogPostTagsApi.md#get_blog_post_tags_async) | **GET** /api/v2/ContentService/BlogPostTags | Get blog post tags |
 | [**update_blog_post_tag_async**](BlogPostTagsApi.md#update_blog_post_tag_async) | **PUT** /api/v2/ContentService/BlogPostTags/{blogPostTagId} | Update a blog post tag |
+
+
+## count_blog_post_tags_async
+
+> <Int32Envelope> count_blog_post_tags_async(tenant_id, opts)
+
+Count blog post tags
+
+Counts all blog post tags for the specified tenant.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::BlogPostTagsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example' # String | 
+}
+
+begin
+  # Count blog post tags
+  result = api_instance.count_blog_post_tags_async(tenant_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling BlogPostTagsApi->count_blog_post_tags_async: #{e}"
+end
+```
+
+#### Using the count_blog_post_tags_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<Int32Envelope>, Integer, Hash)> count_blog_post_tags_async_with_http_info(tenant_id, opts)
+
+```ruby
+begin
+  # Count blog post tags
+  data, status_code, headers = api_instance.count_blog_post_tags_async_with_http_info(tenant_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <Int32Envelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling BlogPostTagsApi->count_blog_post_tags_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+
+### Return type
+
+[**Int32Envelope**](Int32Envelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
 
 
 ## create_blog_post_tag_async

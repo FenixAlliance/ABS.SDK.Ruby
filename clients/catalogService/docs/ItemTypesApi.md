@@ -101,7 +101,7 @@ tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 opts = {
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example', # String | 
-  item_type_create_dto: OpenapiClient::ItemTypeCreateDto.new({business_id: 'business_id_example', item_category_id: 'item_category_id_example'}) # ItemTypeCreateDto | 
+  item_type_create_dto: OpenapiClient::ItemTypeCreateDto.new({item_category_id: 'item_category_id_example'}) # ItemTypeCreateDto | 
 }
 
 begin

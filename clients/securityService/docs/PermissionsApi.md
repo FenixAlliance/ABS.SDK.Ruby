@@ -260,7 +260,7 @@ require 'openapi_client'
 
 api_instance = OpenapiClient::PermissionsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
-security_permission_create_dto = OpenapiClient::SecurityPermissionCreateDto.new({name: 'name_example', tenant_id: 'tenant_id_example'}) # SecurityPermissionCreateDto | 
+security_permission_create_dto = OpenapiClient::SecurityPermissionCreateDto.new({name: 'name_example'}) # SecurityPermissionCreateDto | 
 opts = {
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example' # String | 

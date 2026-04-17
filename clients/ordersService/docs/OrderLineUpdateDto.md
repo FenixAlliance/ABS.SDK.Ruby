@@ -10,8 +10,6 @@
 | **item_short_description** | **String** |  | [optional] |
 | **item_primary_image_url** | **String** |  | [optional] |
 | **shipping_policy_id** | **String** |  | [optional] |
-| **tenant_id** | **String** |  | [optional] |
-| **enrollment_id** | **String** |  | [optional] |
 | **currency_id** | **String** |  | [optional] |
 | **description** | **String** |  | [optional] |
 | **quantity** | **Float** |  | [optional] |
@@ -97,7 +95,6 @@
 | **shipping_location_id** | **String** |  | [optional] |
 | **location_id** | **String** |  | [optional] |
 | **quote_item_record_id** | **String** |  | [optional] |
-| **business_profile_record_id** | **String** |  | [optional] |
 | **parent_billing_item_record_id** | **String** |  | [optional] |
 
 ## Example
@@ -112,8 +109,6 @@ instance = OpenapiClient::OrderLineUpdateDto.new(
   item_short_description: null,
   item_primary_image_url: null,
   shipping_policy_id: null,
-  tenant_id: null,
-  enrollment_id: null,
   currency_id: null,
   description: null,
   quantity: null,
@@ -199,7 +194,6 @@ instance = OpenapiClient::OrderLineUpdateDto.new(
   shipping_location_id: null,
   location_id: null,
   quote_item_record_id: null,
-  business_profile_record_id: null,
   parent_billing_item_record_id: null
 )
 ```

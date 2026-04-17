@@ -27,8 +27,6 @@ module OpenapiClient
 
     attr_accessor :is_featured
 
-    attr_accessor :business_id
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -37,8 +35,7 @@ module OpenapiClient
         :'title' => :'title',
         :'description' => :'description',
         :'image_url' => :'imageURL',
-        :'is_featured' => :'isFeatured',
-        :'business_id' => :'businessID'
+        :'is_featured' => :'isFeatured'
       }
     end
 
@@ -55,8 +52,7 @@ module OpenapiClient
         :'title' => :'String',
         :'description' => :'String',
         :'image_url' => :'String',
-        :'is_featured' => :'Boolean',
-        :'business_id' => :'String'
+        :'is_featured' => :'Boolean'
       }
     end
 
@@ -108,12 +104,6 @@ module OpenapiClient
       if attributes.key?(:'is_featured')
         self.is_featured = attributes[:'is_featured']
       end
-
-      if attributes.key?(:'business_id')
-        self.business_id = attributes[:'business_id']
-      else
-        self.business_id = nil
-      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -129,14 +119,6 @@ module OpenapiClient
         invalid_properties.push('invalid value for "title", the character length must be great than or equal to 1.')
       end
 
-      if @business_id.nil?
-        invalid_properties.push('invalid value for "business_id", business_id cannot be nil.')
-      end
-
-      if @business_id.to_s.length < 1
-        invalid_properties.push('invalid value for "business_id", the character length must be great than or equal to 1.')
-      end
-
       invalid_properties
     end
 
@@ -146,8 +128,6 @@ module OpenapiClient
       warn '[DEPRECATED] the `valid?` method is obsolete'
       return false if @title.nil?
       return false if @title.to_s.length < 1
-      return false if @business_id.nil?
-      return false if @business_id.to_s.length < 1
       true
     end
 
@@ -165,20 +145,6 @@ module OpenapiClient
       @title = title
     end
 
-    # Custom attribute writer method with validation
-    # @param [Object] business_id Value to be assigned
-    def business_id=(business_id)
-      if business_id.nil?
-        fail ArgumentError, 'business_id cannot be nil'
-      end
-
-      if business_id.to_s.length < 1
-        fail ArgumentError, 'invalid value for "business_id", the character length must be great than or equal to 1.'
-      end
-
-      @business_id = business_id
-    end
-
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(o)
@@ -189,8 +155,7 @@ module OpenapiClient
           title == o.title &&
           description == o.description &&
           image_url == o.image_url &&
-          is_featured == o.is_featured &&
-          business_id == o.business_id
+          is_featured == o.is_featured
     end
 
     # @see the `==` method
@@ -202,7 +167,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, timestamp, title, description, image_url, is_featured, business_id].hash
+      [id, timestamp, title, description, image_url, is_featured].hash
     end
 
     # Builds the object from hash

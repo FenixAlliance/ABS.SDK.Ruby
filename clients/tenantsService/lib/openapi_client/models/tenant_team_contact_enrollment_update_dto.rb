@@ -15,10 +15,6 @@ require 'time'
 
 module OpenapiClient
   class TenantTeamContactEnrollmentUpdateDto
-    attr_accessor :business_id
-
-    attr_accessor :business_profile_record_id
-
     attr_accessor :business_team_id
 
     attr_accessor :contact_id
@@ -26,8 +22,6 @@ module OpenapiClient
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'business_id' => :'businessID',
-        :'business_profile_record_id' => :'businessProfileRecordID',
         :'business_team_id' => :'businessTeamID',
         :'contact_id' => :'contactID'
       }
@@ -41,8 +35,6 @@ module OpenapiClient
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'business_id' => :'String',
-        :'business_profile_record_id' => :'String',
         :'business_team_id' => :'String',
         :'contact_id' => :'String'
       }
@@ -51,8 +43,6 @@ module OpenapiClient
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
-        :'business_id',
-        :'business_profile_record_id',
         :'business_team_id',
         :'contact_id'
       ])
@@ -72,14 +62,6 @@ module OpenapiClient
         end
         h[k.to_sym] = v
       }
-
-      if attributes.key?(:'business_id')
-        self.business_id = attributes[:'business_id']
-      end
-
-      if attributes.key?(:'business_profile_record_id')
-        self.business_profile_record_id = attributes[:'business_profile_record_id']
-      end
 
       if attributes.key?(:'business_team_id')
         self.business_team_id = attributes[:'business_team_id']
@@ -110,8 +92,6 @@ module OpenapiClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          business_id == o.business_id &&
-          business_profile_record_id == o.business_profile_record_id &&
           business_team_id == o.business_team_id &&
           contact_id == o.contact_id
     end
@@ -125,7 +105,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [business_id, business_profile_record_id, business_team_id, contact_id].hash
+      [business_team_id, contact_id].hash
     end
 
     # Builds the object from hash

@@ -13,7 +13,6 @@
 | **release_date_time** | **Time** |  | [optional] |
 | **course_id** | **String** |  |  |
 | **course_unit_id** | **String** |  | [optional] |
-| **business_id** | **String** |  |  |
 
 ## Example
 
@@ -29,8 +28,7 @@ instance = OpenapiClient::CourseHandoutCreateDto.new(
   url: null,
   release_date_time: null,
   course_id: null,
-  course_unit_id: null,
-  business_id: null
+  course_unit_id: null
 )
 ```
 

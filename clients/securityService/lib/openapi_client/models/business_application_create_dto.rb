@@ -45,10 +45,6 @@ module OpenapiClient
 
     attr_accessor :terms_and_conditions_url
 
-    attr_accessor :business_id
-
-    attr_accessor :business_profile_record_id
-
     attr_accessor :require_https
 
     attr_accessor :require_app_secret
@@ -111,8 +107,6 @@ module OpenapiClient
         :'contact_email' => :'contactEmail',
         :'privacy_policy_url' => :'privacyPolicyURL',
         :'terms_and_conditions_url' => :'termsAndConditionsURL',
-        :'business_id' => :'businessID',
-        :'business_profile_record_id' => :'businessProfileRecordID',
         :'require_https' => :'requireHttps',
         :'require_app_secret' => :'requireAppSecret',
         :'enable_client_oauth_login' => :'enableClientOauthLogin',
@@ -161,8 +155,6 @@ module OpenapiClient
         :'contact_email' => :'String',
         :'privacy_policy_url' => :'String',
         :'terms_and_conditions_url' => :'String',
-        :'business_id' => :'String',
-        :'business_profile_record_id' => :'String',
         :'require_https' => :'Boolean',
         :'require_app_secret' => :'Boolean',
         :'enable_client_oauth_login' => :'Boolean',
@@ -198,8 +190,6 @@ module OpenapiClient
         :'contact_email',
         :'privacy_policy_url',
         :'terms_and_conditions_url',
-        :'business_id',
-        :'business_profile_record_id',
         :'spa_ui_engine',
         :'spa_static_files_root_path',
         :'spa_relative_app_path',
@@ -287,14 +277,6 @@ module OpenapiClient
 
       if attributes.key?(:'terms_and_conditions_url')
         self.terms_and_conditions_url = attributes[:'terms_and_conditions_url']
-      end
-
-      if attributes.key?(:'business_id')
-        self.business_id = attributes[:'business_id']
-      end
-
-      if attributes.key?(:'business_profile_record_id')
-        self.business_profile_record_id = attributes[:'business_profile_record_id']
       end
 
       if attributes.key?(:'require_https')
@@ -445,8 +427,6 @@ module OpenapiClient
           contact_email == o.contact_email &&
           privacy_policy_url == o.privacy_policy_url &&
           terms_and_conditions_url == o.terms_and_conditions_url &&
-          business_id == o.business_id &&
-          business_profile_record_id == o.business_profile_record_id &&
           require_https == o.require_https &&
           require_app_secret == o.require_app_secret &&
           enable_client_oauth_login == o.enable_client_oauth_login &&
@@ -480,7 +460,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, timestamp, name, namespace, display_name, avatar_url, website_url, is_multi_tenant, is_verified, is_disabled, is_single_page_application, is_native_or_desktop_app, contact_email, privacy_policy_url, terms_and_conditions_url, business_id, business_profile_record_id, require_https, require_app_secret, enable_client_oauth_login, enable_web_o_auth_login, enable_device_o_auth_login, allow_access_to_suite_settings, require_web_o_auth_reauthentication, require_two_factor_reauthorization, enable_embedded_browser_o_auth_login, use_strict_mode_for_redirect_uris, country_restricted, spa_ui_engine, spa_static_files_root_path, spa_relative_app_path, spa_npm_start_script, spa_npm_publish_script, spa_relative_source_path, spa_relative_output_path, use_proxy_to_spa_development_server, spa_development_server_uri, enable_git_repo_management, git_repo_url].hash
+      [id, timestamp, name, namespace, display_name, avatar_url, website_url, is_multi_tenant, is_verified, is_disabled, is_single_page_application, is_native_or_desktop_app, contact_email, privacy_policy_url, terms_and_conditions_url, require_https, require_app_secret, enable_client_oauth_login, enable_web_o_auth_login, enable_device_o_auth_login, allow_access_to_suite_settings, require_web_o_auth_reauthentication, require_two_factor_reauthorization, enable_embedded_browser_o_auth_login, use_strict_mode_for_redirect_uris, country_restricted, spa_ui_engine, spa_static_files_root_path, spa_relative_app_path, spa_npm_start_script, spa_npm_publish_script, spa_relative_source_path, spa_relative_output_path, use_proxy_to_spa_development_server, spa_development_server_uri, enable_git_repo_management, git_repo_url].hash
     end
 
     # Builds the object from hash

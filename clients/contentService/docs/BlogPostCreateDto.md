@@ -6,8 +6,6 @@
 | ---- | ---- | ----------- | ----- |
 | **id** | **String** |  | [optional] |
 | **timestamp** | **Time** |  | [optional] |
-| **tenant_id** | **String** |  | [optional] |
-| **enrollment_id** | **String** |  | [optional] |
 | **title** | **String** |  | [optional] |
 | **code** | **String** |  | [optional] |
 | **published** | **Boolean** |  | [optional] |
@@ -26,8 +24,6 @@ require 'openapi_client'
 instance = OpenapiClient::BlogPostCreateDto.new(
   id: null,
   timestamp: null,
-  tenant_id: null,
-  enrollment_id: null,
   title: null,
   code: null,
   published: null,

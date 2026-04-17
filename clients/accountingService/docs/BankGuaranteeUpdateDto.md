@@ -13,9 +13,7 @@
 | **start_date** | **Time** |  | [optional] |
 | **end_date** | **Time** |  | [optional] |
 | **validity_in_days** | **Integer** |  | [optional] |
-| **tenant_id** | **String** |  | [optional] |
 | **bank_guarantee_type** | **String** |  | [optional] |
-| **enrollment_id** | **String** |  | [optional] |
 | **contact_id** | **String** |  | [optional] |
 | **project_id** | **String** |  | [optional] |
 | **order_id** | **String** |  | [optional] |
@@ -38,9 +36,7 @@ instance = OpenapiClient::BankGuaranteeUpdateDto.new(
   start_date: null,
   end_date: null,
   validity_in_days: null,
-  tenant_id: null,
   bank_guarantee_type: null,
-  enrollment_id: null,
   contact_id: null,
   project_id: null,
   order_id: null,

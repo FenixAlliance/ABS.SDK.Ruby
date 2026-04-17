@@ -9,8 +9,6 @@
 | **name** | **String** |  | [optional] |
 | **code** | **String** |  | [optional] |
 | **title** | **String** |  | [optional] |
-| **tenant_id** | **String** |  | [optional] |
-| **enrollment_id** | **String** |  | [optional] |
 
 ## Example
 
@@ -22,9 +20,7 @@ instance = OpenapiClient::NewsletterCreateDto.new(
   timestamp: null,
   name: null,
   code: null,
-  title: null,
-  tenant_id: null,
-  enrollment_id: null
+  title: null
 )
 ```
 

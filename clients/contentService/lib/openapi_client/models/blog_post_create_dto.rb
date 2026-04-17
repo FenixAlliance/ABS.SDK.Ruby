@@ -19,10 +19,6 @@ module OpenapiClient
 
     attr_accessor :timestamp
 
-    attr_accessor :tenant_id
-
-    attr_accessor :enrollment_id
-
     attr_accessor :title
 
     attr_accessor :code
@@ -68,8 +64,6 @@ module OpenapiClient
       {
         :'id' => :'id',
         :'timestamp' => :'timestamp',
-        :'tenant_id' => :'tenantId',
-        :'enrollment_id' => :'enrollmentId',
         :'title' => :'title',
         :'code' => :'code',
         :'published' => :'published',
@@ -92,8 +86,6 @@ module OpenapiClient
       {
         :'id' => :'String',
         :'timestamp' => :'Time',
-        :'tenant_id' => :'String',
-        :'enrollment_id' => :'String',
         :'title' => :'String',
         :'code' => :'String',
         :'published' => :'Boolean',
@@ -109,8 +101,6 @@ module OpenapiClient
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
-        :'tenant_id',
-        :'enrollment_id',
         :'title',
         :'code',
         :'description',
@@ -143,14 +133,6 @@ module OpenapiClient
 
       if attributes.key?(:'timestamp')
         self.timestamp = attributes[:'timestamp']
-      end
-
-      if attributes.key?(:'tenant_id')
-        self.tenant_id = attributes[:'tenant_id']
-      end
-
-      if attributes.key?(:'enrollment_id')
-        self.enrollment_id = attributes[:'enrollment_id']
       end
 
       if attributes.key?(:'title')
@@ -224,8 +206,6 @@ module OpenapiClient
       self.class == o.class &&
           id == o.id &&
           timestamp == o.timestamp &&
-          tenant_id == o.tenant_id &&
-          enrollment_id == o.enrollment_id &&
           title == o.title &&
           code == o.code &&
           published == o.published &&
@@ -246,7 +226,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, timestamp, tenant_id, enrollment_id, title, code, published, description, html_content, featured_image_url, code_type, blog_post_category_id, web_template_id].hash
+      [id, timestamp, title, code, published, description, html_content, featured_image_url, code_type, blog_post_category_id, web_template_id].hash
     end
 
     # Builds the object from hash

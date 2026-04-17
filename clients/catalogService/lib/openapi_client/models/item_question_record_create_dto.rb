@@ -27,8 +27,6 @@ module OpenapiClient
 
     attr_accessor :social_profile_id
 
-    attr_accessor :business_id
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -37,8 +35,7 @@ module OpenapiClient
         :'title' => :'title',
         :'needs_revision' => :'needsRevision',
         :'question' => :'question',
-        :'social_profile_id' => :'socialProfileID',
-        :'business_id' => :'businessID'
+        :'social_profile_id' => :'socialProfileID'
       }
     end
 
@@ -55,15 +52,14 @@ module OpenapiClient
         :'title' => :'String',
         :'needs_revision' => :'Boolean',
         :'question' => :'String',
-        :'social_profile_id' => :'String',
-        :'business_id' => :'String'
+        :'social_profile_id' => :'String'
       }
     end
 
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
-        :'social_profile_id',
+        :'social_profile_id'
       ])
     end
 
@@ -111,12 +107,6 @@ module OpenapiClient
       if attributes.key?(:'social_profile_id')
         self.social_profile_id = attributes[:'social_profile_id']
       end
-
-      if attributes.key?(:'business_id')
-        self.business_id = attributes[:'business_id']
-      else
-        self.business_id = nil
-      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -160,18 +150,6 @@ module OpenapiClient
         invalid_properties.push('invalid value for "social_profile_id", the character length must be great than or equal to 36.')
       end
 
-      if @business_id.nil?
-        invalid_properties.push('invalid value for "business_id", business_id cannot be nil.')
-      end
-
-      if @business_id.to_s.length > 36
-        invalid_properties.push('invalid value for "business_id", the character length must be smaller than or equal to 36.')
-      end
-
-      if @business_id.to_s.length < 36
-        invalid_properties.push('invalid value for "business_id", the character length must be great than or equal to 36.')
-      end
-
       invalid_properties
     end
 
@@ -188,9 +166,6 @@ module OpenapiClient
       return false if @question.to_s.length < 0
       return false if !@social_profile_id.nil? && @social_profile_id.to_s.length > 36
       return false if !@social_profile_id.nil? && @social_profile_id.to_s.length < 36
-      return false if @business_id.nil?
-      return false if @business_id.to_s.length > 36
-      return false if @business_id.to_s.length < 36
       true
     end
 
@@ -244,24 +219,6 @@ module OpenapiClient
       @social_profile_id = social_profile_id
     end
 
-    # Custom attribute writer method with validation
-    # @param [Object] business_id Value to be assigned
-    def business_id=(business_id)
-      if business_id.nil?
-        fail ArgumentError, 'business_id cannot be nil'
-      end
-
-      if business_id.to_s.length > 36
-        fail ArgumentError, 'invalid value for "business_id", the character length must be smaller than or equal to 36.'
-      end
-
-      if business_id.to_s.length < 36
-        fail ArgumentError, 'invalid value for "business_id", the character length must be great than or equal to 36.'
-      end
-
-      @business_id = business_id
-    end
-
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(o)
@@ -272,8 +229,7 @@ module OpenapiClient
           title == o.title &&
           needs_revision == o.needs_revision &&
           question == o.question &&
-          social_profile_id == o.social_profile_id &&
-          business_id == o.business_id
+          social_profile_id == o.social_profile_id
     end
 
     # @see the `==` method
@@ -285,7 +241,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, timestamp, title, needs_revision, question, social_profile_id, business_id].hash
+      [id, timestamp, title, needs_revision, question, social_profile_id].hash
     end
 
     # Builds the object from hash

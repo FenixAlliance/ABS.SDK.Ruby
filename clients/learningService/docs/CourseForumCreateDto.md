@@ -9,7 +9,6 @@
 | **title** | **String** |  |  |
 | **description** | **String** |  | [optional] |
 | **course_id** | **String** |  |  |
-| **business_id** | **String** |  |  |
 
 ## Example
 
@@ -21,8 +20,7 @@ instance = OpenapiClient::CourseForumCreateDto.new(
   timestamp: null,
   title: null,
   description: null,
-  course_id: null,
-  business_id: null
+  course_id: null
 )
 ```
 

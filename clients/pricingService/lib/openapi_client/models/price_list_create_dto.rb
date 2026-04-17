@@ -33,10 +33,6 @@ module OpenapiClient
 
     attr_accessor :unit_group_id
 
-    attr_accessor :tenant_id
-
-    attr_accessor :enrollment_id
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -48,9 +44,7 @@ module OpenapiClient
         :'end_date' => :'endDate',
         :'currency_id' => :'currencyId',
         :'unit_id' => :'unitId',
-        :'unit_group_id' => :'unitGroupId',
-        :'tenant_id' => :'tenantId',
-        :'enrollment_id' => :'enrollmentId'
+        :'unit_group_id' => :'unitGroupId'
       }
     end
 
@@ -70,9 +64,7 @@ module OpenapiClient
         :'end_date' => :'Time',
         :'currency_id' => :'String',
         :'unit_id' => :'String',
-        :'unit_group_id' => :'String',
-        :'tenant_id' => :'String',
-        :'enrollment_id' => :'String'
+        :'unit_group_id' => :'String'
       }
     end
 
@@ -82,9 +74,7 @@ module OpenapiClient
         :'description',
         :'currency_id',
         :'unit_id',
-        :'unit_group_id',
-        :'tenant_id',
-        :'enrollment_id'
+        :'unit_group_id'
       ])
     end
 
@@ -139,14 +129,6 @@ module OpenapiClient
 
       if attributes.key?(:'unit_group_id')
         self.unit_group_id = attributes[:'unit_group_id']
-      end
-
-      if attributes.key?(:'tenant_id')
-        self.tenant_id = attributes[:'tenant_id']
-      end
-
-      if attributes.key?(:'enrollment_id')
-        self.enrollment_id = attributes[:'enrollment_id']
       end
     end
 
@@ -237,9 +219,7 @@ module OpenapiClient
           end_date == o.end_date &&
           currency_id == o.currency_id &&
           unit_id == o.unit_id &&
-          unit_group_id == o.unit_group_id &&
-          tenant_id == o.tenant_id &&
-          enrollment_id == o.enrollment_id
+          unit_group_id == o.unit_group_id
     end
 
     # @see the `==` method
@@ -251,7 +231,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, timestamp, name, description, start_date, end_date, currency_id, unit_id, unit_group_id, tenant_id, enrollment_id].hash
+      [id, timestamp, name, description, start_date, end_date, currency_id, unit_id, unit_group_id].hash
     end
 
     # Builds the object from hash

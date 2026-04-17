@@ -25,8 +25,6 @@ module OpenapiClient
 
     attr_accessor :disabled
 
-    attr_accessor :tenant_id
-
     attr_accessor :parent_cost_centres_group_id
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -37,7 +35,6 @@ module OpenapiClient
         :'name' => :'name',
         :'description' => :'description',
         :'disabled' => :'disabled',
-        :'tenant_id' => :'tenantId',
         :'parent_cost_centres_group_id' => :'parentCostCentresGroupId'
       }
     end
@@ -55,7 +52,6 @@ module OpenapiClient
         :'name' => :'String',
         :'description' => :'String',
         :'disabled' => :'Boolean',
-        :'tenant_id' => :'String',
         :'parent_cost_centres_group_id' => :'String'
       }
     end
@@ -65,7 +61,6 @@ module OpenapiClient
       Set.new([
         :'name',
         :'description',
-        :'tenant_id',
         :'parent_cost_centres_group_id'
       ])
     end
@@ -105,10 +100,6 @@ module OpenapiClient
         self.disabled = attributes[:'disabled']
       end
 
-      if attributes.key?(:'tenant_id')
-        self.tenant_id = attributes[:'tenant_id']
-      end
-
       if attributes.key?(:'parent_cost_centres_group_id')
         self.parent_cost_centres_group_id = attributes[:'parent_cost_centres_group_id']
       end
@@ -135,14 +126,6 @@ module OpenapiClient
         invalid_properties.push('invalid value for "description", the character length must be great than or equal to 0.')
       end
 
-      if !@tenant_id.nil? && @tenant_id.to_s.length > 36
-        invalid_properties.push('invalid value for "tenant_id", the character length must be smaller than or equal to 36.')
-      end
-
-      if !@tenant_id.nil? && @tenant_id.to_s.length < 0
-        invalid_properties.push('invalid value for "tenant_id", the character length must be great than or equal to 0.')
-      end
-
       if !@parent_cost_centres_group_id.nil? && @parent_cost_centres_group_id.to_s.length > 36
         invalid_properties.push('invalid value for "parent_cost_centres_group_id", the character length must be smaller than or equal to 36.')
       end
@@ -162,8 +145,6 @@ module OpenapiClient
       return false if !@name.nil? && @name.to_s.length < 0
       return false if !@description.nil? && @description.to_s.length > 250
       return false if !@description.nil? && @description.to_s.length < 0
-      return false if !@tenant_id.nil? && @tenant_id.to_s.length > 36
-      return false if !@tenant_id.nil? && @tenant_id.to_s.length < 0
       return false if !@parent_cost_centres_group_id.nil? && @parent_cost_centres_group_id.to_s.length > 36
       return false if !@parent_cost_centres_group_id.nil? && @parent_cost_centres_group_id.to_s.length < 0
       true
@@ -198,20 +179,6 @@ module OpenapiClient
     end
 
     # Custom attribute writer method with validation
-    # @param [Object] tenant_id Value to be assigned
-    def tenant_id=(tenant_id)
-      if !tenant_id.nil? && tenant_id.to_s.length > 36
-        fail ArgumentError, 'invalid value for "tenant_id", the character length must be smaller than or equal to 36.'
-      end
-
-      if !tenant_id.nil? && tenant_id.to_s.length < 0
-        fail ArgumentError, 'invalid value for "tenant_id", the character length must be great than or equal to 0.'
-      end
-
-      @tenant_id = tenant_id
-    end
-
-    # Custom attribute writer method with validation
     # @param [Object] parent_cost_centres_group_id Value to be assigned
     def parent_cost_centres_group_id=(parent_cost_centres_group_id)
       if !parent_cost_centres_group_id.nil? && parent_cost_centres_group_id.to_s.length > 36
@@ -235,7 +202,6 @@ module OpenapiClient
           name == o.name &&
           description == o.description &&
           disabled == o.disabled &&
-          tenant_id == o.tenant_id &&
           parent_cost_centres_group_id == o.parent_cost_centres_group_id
     end
 
@@ -248,7 +214,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, timestamp, name, description, disabled, tenant_id, parent_cost_centres_group_id].hash
+      [id, timestamp, name, description, disabled, parent_cost_centres_group_id].hash
     end
 
     # Builds the object from hash

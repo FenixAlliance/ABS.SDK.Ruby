@@ -25,6 +25,8 @@ module OpenapiClient
 
     attr_accessor :start_date
 
+    attr_accessor :fiscal_authority_id
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -32,7 +34,8 @@ module OpenapiClient
         :'description' => :'description',
         :'closed' => :'closed',
         :'end_date' => :'endDate',
-        :'start_date' => :'startDate'
+        :'start_date' => :'startDate',
+        :'fiscal_authority_id' => :'fiscalAuthorityId'
       }
     end
 
@@ -48,7 +51,8 @@ module OpenapiClient
         :'description' => :'String',
         :'closed' => :'Boolean',
         :'end_date' => :'Time',
-        :'start_date' => :'Time'
+        :'start_date' => :'Time',
+        :'fiscal_authority_id' => :'String'
       }
     end
 
@@ -57,6 +61,7 @@ module OpenapiClient
       Set.new([
         :'name',
         :'description',
+        :'fiscal_authority_id'
       ])
     end
 
@@ -94,6 +99,10 @@ module OpenapiClient
       if attributes.key?(:'start_date')
         self.start_date = attributes[:'start_date']
       end
+
+      if attributes.key?(:'fiscal_authority_id')
+        self.fiscal_authority_id = attributes[:'fiscal_authority_id']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -120,7 +129,8 @@ module OpenapiClient
           description == o.description &&
           closed == o.closed &&
           end_date == o.end_date &&
-          start_date == o.start_date
+          start_date == o.start_date &&
+          fiscal_authority_id == o.fiscal_authority_id
     end
 
     # @see the `==` method
@@ -132,7 +142,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [name, description, closed, end_date, start_date].hash
+      [name, description, closed, end_date, start_date, fiscal_authority_id].hash
     end
 
     # Builds the object from hash

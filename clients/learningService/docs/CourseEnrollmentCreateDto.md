@@ -9,7 +9,6 @@
 | **course_id** | **String** |  | [optional] |
 | **course_cohort_id** | **String** |  | [optional] |
 | **student_profile_id** | **String** |  | [optional] |
-| **business_profile_record_id** | **String** |  | [optional] |
 | **course_completion_certificate_id** | **String** |  | [optional] |
 
 ## Example
@@ -23,7 +22,6 @@ instance = OpenapiClient::CourseEnrollmentCreateDto.new(
   course_id: null,
   course_cohort_id: null,
   student_profile_id: null,
-  business_profile_record_id: null,
   course_completion_certificate_id: null
 )
 ```

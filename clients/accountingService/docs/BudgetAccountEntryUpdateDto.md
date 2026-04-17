@@ -4,8 +4,6 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **tenant_id** | **String** |  | [optional] |
-| **enrollment_id** | **String** |  | [optional] |
 | **description** | **String** |  | [optional] |
 | **amount** | **Float** |  | [optional] |
 | **date** | **Time** |  | [optional] |
@@ -22,8 +20,6 @@
 require 'openapi_client'
 
 instance = OpenapiClient::BudgetAccountEntryUpdateDto.new(
-  tenant_id: null,
-  enrollment_id: null,
   description: null,
   amount: null,
   date: null,

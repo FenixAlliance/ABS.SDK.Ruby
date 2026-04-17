@@ -31,7 +31,7 @@ tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 opts = {
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example', # String | 
-  course_unit_create_dto: OpenapiClient::CourseUnitCreateDto.new({title: 'title_example', course_id: 'course_id_example', course_section_id: 'course_section_id_example', business_id: 'business_id_example'}) # CourseUnitCreateDto | 
+  course_unit_create_dto: OpenapiClient::CourseUnitCreateDto.new({title: 'title_example', course_id: 'course_id_example', course_section_id: 'course_section_id_example'}) # CourseUnitCreateDto | 
 }
 
 begin

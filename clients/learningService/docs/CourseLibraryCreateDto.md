@@ -10,7 +10,6 @@
 | **description** | **String** |  | [optional] |
 | **course_id** | **String** |  |  |
 | **course_unit_id** | **String** |  | [optional] |
-| **business_id** | **String** |  |  |
 | **release_date_time** | **Time** |  | [optional] |
 
 ## Example
@@ -25,7 +24,6 @@ instance = OpenapiClient::CourseLibraryCreateDto.new(
   description: null,
   course_id: null,
   course_unit_id: null,
-  business_id: null,
   release_date_time: null
 )
 ```

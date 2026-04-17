@@ -21,18 +21,12 @@ module OpenapiClient
 
     attr_accessor :parent_account_group_id
 
-    attr_accessor :tenant_id
-
-    attr_accessor :enrollment_id
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'title' => :'title',
         :'description' => :'description',
-        :'parent_account_group_id' => :'parentAccountGroupId',
-        :'tenant_id' => :'tenantId',
-        :'enrollment_id' => :'enrollmentId'
+        :'parent_account_group_id' => :'parentAccountGroupId'
       }
     end
 
@@ -46,9 +40,7 @@ module OpenapiClient
       {
         :'title' => :'String',
         :'description' => :'String',
-        :'parent_account_group_id' => :'String',
-        :'tenant_id' => :'String',
-        :'enrollment_id' => :'String'
+        :'parent_account_group_id' => :'String'
       }
     end
 
@@ -57,9 +49,7 @@ module OpenapiClient
       Set.new([
         :'title',
         :'description',
-        :'parent_account_group_id',
-        :'tenant_id',
-        :'enrollment_id'
+        :'parent_account_group_id'
       ])
     end
 
@@ -88,14 +78,6 @@ module OpenapiClient
 
       if attributes.key?(:'parent_account_group_id')
         self.parent_account_group_id = attributes[:'parent_account_group_id']
-      end
-
-      if attributes.key?(:'tenant_id')
-        self.tenant_id = attributes[:'tenant_id']
-      end
-
-      if attributes.key?(:'enrollment_id')
-        self.enrollment_id = attributes[:'enrollment_id']
       end
     end
 
@@ -128,22 +110,6 @@ module OpenapiClient
         invalid_properties.push('invalid value for "parent_account_group_id", the character length must be great than or equal to 0.')
       end
 
-      if !@tenant_id.nil? && @tenant_id.to_s.length > 36
-        invalid_properties.push('invalid value for "tenant_id", the character length must be smaller than or equal to 36.')
-      end
-
-      if !@tenant_id.nil? && @tenant_id.to_s.length < 0
-        invalid_properties.push('invalid value for "tenant_id", the character length must be great than or equal to 0.')
-      end
-
-      if !@enrollment_id.nil? && @enrollment_id.to_s.length > 36
-        invalid_properties.push('invalid value for "enrollment_id", the character length must be smaller than or equal to 36.')
-      end
-
-      if !@enrollment_id.nil? && @enrollment_id.to_s.length < 0
-        invalid_properties.push('invalid value for "enrollment_id", the character length must be great than or equal to 0.')
-      end
-
       invalid_properties
     end
 
@@ -157,10 +123,6 @@ module OpenapiClient
       return false if !@description.nil? && @description.to_s.length < 0
       return false if !@parent_account_group_id.nil? && @parent_account_group_id.to_s.length > 36
       return false if !@parent_account_group_id.nil? && @parent_account_group_id.to_s.length < 0
-      return false if !@tenant_id.nil? && @tenant_id.to_s.length > 36
-      return false if !@tenant_id.nil? && @tenant_id.to_s.length < 0
-      return false if !@enrollment_id.nil? && @enrollment_id.to_s.length > 36
-      return false if !@enrollment_id.nil? && @enrollment_id.to_s.length < 0
       true
     end
 
@@ -206,34 +168,6 @@ module OpenapiClient
       @parent_account_group_id = parent_account_group_id
     end
 
-    # Custom attribute writer method with validation
-    # @param [Object] tenant_id Value to be assigned
-    def tenant_id=(tenant_id)
-      if !tenant_id.nil? && tenant_id.to_s.length > 36
-        fail ArgumentError, 'invalid value for "tenant_id", the character length must be smaller than or equal to 36.'
-      end
-
-      if !tenant_id.nil? && tenant_id.to_s.length < 0
-        fail ArgumentError, 'invalid value for "tenant_id", the character length must be great than or equal to 0.'
-      end
-
-      @tenant_id = tenant_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] enrollment_id Value to be assigned
-    def enrollment_id=(enrollment_id)
-      if !enrollment_id.nil? && enrollment_id.to_s.length > 36
-        fail ArgumentError, 'invalid value for "enrollment_id", the character length must be smaller than or equal to 36.'
-      end
-
-      if !enrollment_id.nil? && enrollment_id.to_s.length < 0
-        fail ArgumentError, 'invalid value for "enrollment_id", the character length must be great than or equal to 0.'
-      end
-
-      @enrollment_id = enrollment_id
-    end
-
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(o)
@@ -241,9 +175,7 @@ module OpenapiClient
       self.class == o.class &&
           title == o.title &&
           description == o.description &&
-          parent_account_group_id == o.parent_account_group_id &&
-          tenant_id == o.tenant_id &&
-          enrollment_id == o.enrollment_id
+          parent_account_group_id == o.parent_account_group_id
     end
 
     # @see the `==` method
@@ -255,7 +187,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [title, description, parent_account_group_id, tenant_id, enrollment_id].hash
+      [title, description, parent_account_group_id].hash
     end
 
     # Builds the object from hash

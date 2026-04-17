@@ -4,8 +4,9 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
+| **id** | **String** |  | [optional] |
+| **timestamp** | **Time** |  | [optional] |
 | **title** | **String** |  | [optional] |
-| **user_id** | **String** |  | [optional] |
 | **price_list_id** | **String** |  | [optional] |
 | **description** | **String** |  | [optional] |
 | **individual_id** | **String** |  | [optional] |
@@ -22,9 +23,6 @@
 | **country_id** | **String** |  | [optional] |
 | **state_id** | **String** |  | [optional] |
 | **city_id** | **String** |  | [optional] |
-| **billing_location_id** | **String** |  | [optional] |
-| **shipping_location_id** | **String** |  | [optional] |
-| **shipping_method_id** | **String** |  | [optional] |
 | **currency_id** | **String** |  | [optional] |
 | **total_detail** | **Float** |  | [optional] |
 | **total_detail_currency_id** | **String** |  | [optional] |
@@ -34,33 +32,30 @@
 | **total_discounts_currency_id** | **String** |  | [optional] |
 | **total_surcharges** | **Float** |  | [optional] |
 | **total_surcharges_currency_id** | **String** |  | [optional] |
-| **total_shipping_tax** | **Float** |  | [optional] |
-| **total_shipping_tax_currency_id** | **String** |  | [optional] |
 | **total_shipping_cost** | **Float** |  | [optional] |
 | **total_shipping_cost_currency_id** | **String** |  | [optional] |
-| **total_global_discounts** | **Float** |  | [optional] |
-| **total_global_discounts_currency_id** | **String** |  | [optional] |
-| **total_global_surcharges** | **Float** |  | [optional] |
-| **total_global_surcharges_currency_id** | **String** |  | [optional] |
+| **total_shipping_tax** | **Float** |  | [optional] |
+| **total_shipping_tax_currency_id** | **String** |  | [optional] |
 | **total_withheld_tax** | **Float** |  | [optional] |
 | **total_withheld_tax_currency_id** | **String** |  | [optional] |
 | **total_tax_base** | **Float** |  | [optional] |
 | **total_tax_base_currency_id** | **String** |  | [optional] |
 | **total_taxes** | **Float** |  | [optional] |
 | **total_taxes_currency_id** | **String** |  | [optional] |
+| **total_global_surcharges** | **Float** |  | [optional] |
+| **total_global_surcharges_currency_id** | **String** |  | [optional] |
+| **total_global_discounts** | **Float** |  | [optional] |
+| **total_global_discounts_currency_id** | **String** |  | [optional] |
 | **total** | **Float** |  | [optional] |
 | **total_currency_id** | **String** |  | [optional] |
 | **cost_calculation_method** | **String** |  | [optional] |
 | **tax_calculation_method** | **String** |  | [optional] |
 | **payment_id** | **String** |  | [optional] |
-| **tenant_id** | **String** |  | [optional] |
 | **forex_rate** | **Float** |  | [optional] |
 | **total_amount** | **Float** |  | [optional] |
 | **total_amount_in_usd** | **Float** |  | [optional] |
 | **closed** | **Boolean** |  | [optional] |
-| **account_holder_id** | **String** |  | [optional] |
 | **contact_id** | **String** |  | [optional] |
-| **enrollment_id** | **String** |  | [optional] |
 | **receipt_type** | **String** |  | [optional] |
 | **order_id** | **String** |  | [optional] |
 | **invoice_id** | **String** |  | [optional] |
@@ -71,8 +66,9 @@
 require 'openapi_client'
 
 instance = OpenapiClient::ReceiptCreateDto.new(
+  id: null,
+  timestamp: null,
   title: null,
-  user_id: null,
   price_list_id: null,
   description: null,
   individual_id: null,
@@ -89,9 +85,6 @@ instance = OpenapiClient::ReceiptCreateDto.new(
   country_id: null,
   state_id: null,
   city_id: null,
-  billing_location_id: null,
-  shipping_location_id: null,
-  shipping_method_id: null,
   currency_id: null,
   total_detail: null,
   total_detail_currency_id: null,
@@ -101,33 +94,30 @@ instance = OpenapiClient::ReceiptCreateDto.new(
   total_discounts_currency_id: null,
   total_surcharges: null,
   total_surcharges_currency_id: null,
-  total_shipping_tax: null,
-  total_shipping_tax_currency_id: null,
   total_shipping_cost: null,
   total_shipping_cost_currency_id: null,
-  total_global_discounts: null,
-  total_global_discounts_currency_id: null,
-  total_global_surcharges: null,
-  total_global_surcharges_currency_id: null,
+  total_shipping_tax: null,
+  total_shipping_tax_currency_id: null,
   total_withheld_tax: null,
   total_withheld_tax_currency_id: null,
   total_tax_base: null,
   total_tax_base_currency_id: null,
   total_taxes: null,
   total_taxes_currency_id: null,
+  total_global_surcharges: null,
+  total_global_surcharges_currency_id: null,
+  total_global_discounts: null,
+  total_global_discounts_currency_id: null,
   total: null,
   total_currency_id: null,
   cost_calculation_method: null,
   tax_calculation_method: null,
   payment_id: null,
-  tenant_id: null,
   forex_rate: null,
   total_amount: null,
   total_amount_in_usd: null,
   closed: null,
-  account_holder_id: null,
   contact_id: null,
-  enrollment_id: null,
   receipt_type: null,
   order_id: null,
   invoice_id: null

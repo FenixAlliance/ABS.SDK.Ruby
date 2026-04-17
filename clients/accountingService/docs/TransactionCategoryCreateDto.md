@@ -8,8 +8,6 @@
 | **timestamp** | **Time** |  | [optional] |
 | **name** | **String** |  | [optional] |
 | **description** | **String** |  | [optional] |
-| **enrollment_id** | **String** |  | [optional] |
-| **tenant_id** | **String** |  | [optional] |
 
 ## Example
 
@@ -20,9 +18,7 @@ instance = OpenapiClient::TransactionCategoryCreateDto.new(
   id: null,
   timestamp: null,
   name: null,
-  description: null,
-  enrollment_id: null,
-  tenant_id: null
+  description: null
 )
 ```
 

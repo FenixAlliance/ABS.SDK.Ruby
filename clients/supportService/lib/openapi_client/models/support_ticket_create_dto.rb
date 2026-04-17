@@ -21,13 +21,7 @@ module OpenapiClient
 
     attr_accessor :description
 
-    attr_accessor :account_holder_id
-
     attr_accessor :contact_id
-
-    attr_accessor :business_id
-
-    attr_accessor :business_profile_record_id
 
     attr_accessor :support_ticket_type_id
 
@@ -41,10 +35,7 @@ module OpenapiClient
         :'id' => :'id',
         :'timestamp' => :'timestamp',
         :'description' => :'description',
-        :'account_holder_id' => :'accountHolderID',
         :'contact_id' => :'contactID',
-        :'business_id' => :'businessID',
-        :'business_profile_record_id' => :'businessProfileRecordID',
         :'support_ticket_type_id' => :'supportTicketTypeID',
         :'support_entitlement_id' => :'supportEntitlementID',
         :'support_priority_id' => :'supportPriorityID'
@@ -62,10 +53,7 @@ module OpenapiClient
         :'id' => :'String',
         :'timestamp' => :'Time',
         :'description' => :'String',
-        :'account_holder_id' => :'String',
         :'contact_id' => :'String',
-        :'business_id' => :'String',
-        :'business_profile_record_id' => :'String',
         :'support_ticket_type_id' => :'String',
         :'support_entitlement_id' => :'String',
         :'support_priority_id' => :'String'
@@ -76,10 +64,7 @@ module OpenapiClient
     def self.openapi_nullable
       Set.new([
         :'description',
-        :'account_holder_id',
         :'contact_id',
-        :'business_id',
-        :'business_profile_record_id',
         :'support_ticket_type_id',
         :'support_entitlement_id',
         :'support_priority_id'
@@ -113,20 +98,8 @@ module OpenapiClient
         self.description = attributes[:'description']
       end
 
-      if attributes.key?(:'account_holder_id')
-        self.account_holder_id = attributes[:'account_holder_id']
-      end
-
       if attributes.key?(:'contact_id')
         self.contact_id = attributes[:'contact_id']
-      end
-
-      if attributes.key?(:'business_id')
-        self.business_id = attributes[:'business_id']
-      end
-
-      if attributes.key?(:'business_profile_record_id')
-        self.business_profile_record_id = attributes[:'business_profile_record_id']
       end
 
       if attributes.key?(:'support_ticket_type_id')
@@ -155,36 +128,12 @@ module OpenapiClient
         invalid_properties.push('invalid value for "description", the character length must be great than or equal to 0.')
       end
 
-      if !@account_holder_id.nil? && @account_holder_id.to_s.length > 36
-        invalid_properties.push('invalid value for "account_holder_id", the character length must be smaller than or equal to 36.')
-      end
-
-      if !@account_holder_id.nil? && @account_holder_id.to_s.length < 36
-        invalid_properties.push('invalid value for "account_holder_id", the character length must be great than or equal to 36.')
-      end
-
       if !@contact_id.nil? && @contact_id.to_s.length > 36
         invalid_properties.push('invalid value for "contact_id", the character length must be smaller than or equal to 36.')
       end
 
       if !@contact_id.nil? && @contact_id.to_s.length < 36
         invalid_properties.push('invalid value for "contact_id", the character length must be great than or equal to 36.')
-      end
-
-      if !@business_id.nil? && @business_id.to_s.length > 36
-        invalid_properties.push('invalid value for "business_id", the character length must be smaller than or equal to 36.')
-      end
-
-      if !@business_id.nil? && @business_id.to_s.length < 36
-        invalid_properties.push('invalid value for "business_id", the character length must be great than or equal to 36.')
-      end
-
-      if !@business_profile_record_id.nil? && @business_profile_record_id.to_s.length > 36
-        invalid_properties.push('invalid value for "business_profile_record_id", the character length must be smaller than or equal to 36.')
-      end
-
-      if !@business_profile_record_id.nil? && @business_profile_record_id.to_s.length < 36
-        invalid_properties.push('invalid value for "business_profile_record_id", the character length must be great than or equal to 36.')
       end
 
       if !@support_ticket_type_id.nil? && @support_ticket_type_id.to_s.length > 36
@@ -220,14 +169,8 @@ module OpenapiClient
       warn '[DEPRECATED] the `valid?` method is obsolete'
       return false if !@description.nil? && @description.to_s.length > 1000
       return false if !@description.nil? && @description.to_s.length < 0
-      return false if !@account_holder_id.nil? && @account_holder_id.to_s.length > 36
-      return false if !@account_holder_id.nil? && @account_holder_id.to_s.length < 36
       return false if !@contact_id.nil? && @contact_id.to_s.length > 36
       return false if !@contact_id.nil? && @contact_id.to_s.length < 36
-      return false if !@business_id.nil? && @business_id.to_s.length > 36
-      return false if !@business_id.nil? && @business_id.to_s.length < 36
-      return false if !@business_profile_record_id.nil? && @business_profile_record_id.to_s.length > 36
-      return false if !@business_profile_record_id.nil? && @business_profile_record_id.to_s.length < 36
       return false if !@support_ticket_type_id.nil? && @support_ticket_type_id.to_s.length > 36
       return false if !@support_ticket_type_id.nil? && @support_ticket_type_id.to_s.length < 36
       return false if !@support_entitlement_id.nil? && @support_entitlement_id.to_s.length > 36
@@ -252,20 +195,6 @@ module OpenapiClient
     end
 
     # Custom attribute writer method with validation
-    # @param [Object] account_holder_id Value to be assigned
-    def account_holder_id=(account_holder_id)
-      if !account_holder_id.nil? && account_holder_id.to_s.length > 36
-        fail ArgumentError, 'invalid value for "account_holder_id", the character length must be smaller than or equal to 36.'
-      end
-
-      if !account_holder_id.nil? && account_holder_id.to_s.length < 36
-        fail ArgumentError, 'invalid value for "account_holder_id", the character length must be great than or equal to 36.'
-      end
-
-      @account_holder_id = account_holder_id
-    end
-
-    # Custom attribute writer method with validation
     # @param [Object] contact_id Value to be assigned
     def contact_id=(contact_id)
       if !contact_id.nil? && contact_id.to_s.length > 36
@@ -277,34 +206,6 @@ module OpenapiClient
       end
 
       @contact_id = contact_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] business_id Value to be assigned
-    def business_id=(business_id)
-      if !business_id.nil? && business_id.to_s.length > 36
-        fail ArgumentError, 'invalid value for "business_id", the character length must be smaller than or equal to 36.'
-      end
-
-      if !business_id.nil? && business_id.to_s.length < 36
-        fail ArgumentError, 'invalid value for "business_id", the character length must be great than or equal to 36.'
-      end
-
-      @business_id = business_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] business_profile_record_id Value to be assigned
-    def business_profile_record_id=(business_profile_record_id)
-      if !business_profile_record_id.nil? && business_profile_record_id.to_s.length > 36
-        fail ArgumentError, 'invalid value for "business_profile_record_id", the character length must be smaller than or equal to 36.'
-      end
-
-      if !business_profile_record_id.nil? && business_profile_record_id.to_s.length < 36
-        fail ArgumentError, 'invalid value for "business_profile_record_id", the character length must be great than or equal to 36.'
-      end
-
-      @business_profile_record_id = business_profile_record_id
     end
 
     # Custom attribute writer method with validation
@@ -357,10 +258,7 @@ module OpenapiClient
           id == o.id &&
           timestamp == o.timestamp &&
           description == o.description &&
-          account_holder_id == o.account_holder_id &&
           contact_id == o.contact_id &&
-          business_id == o.business_id &&
-          business_profile_record_id == o.business_profile_record_id &&
           support_ticket_type_id == o.support_ticket_type_id &&
           support_entitlement_id == o.support_entitlement_id &&
           support_priority_id == o.support_priority_id
@@ -375,7 +273,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, timestamp, description, account_holder_id, contact_id, business_id, business_profile_record_id, support_ticket_type_id, support_entitlement_id, support_priority_id].hash
+      [id, timestamp, description, contact_id, support_ticket_type_id, support_entitlement_id, support_priority_id].hash
     end
 
     # Builds the object from hash

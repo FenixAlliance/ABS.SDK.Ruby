@@ -25,10 +25,6 @@ module OpenapiClient
 
     attr_accessor :date_time
 
-    attr_accessor :tenant_id
-
-    attr_accessor :enrollment_id
-
     attr_accessor :parent_journal_id
 
     attr_accessor :journal_type_id
@@ -43,8 +39,6 @@ module OpenapiClient
         :'name' => :'name',
         :'description' => :'description',
         :'date_time' => :'dateTime',
-        :'tenant_id' => :'tenantID',
-        :'enrollment_id' => :'enrollmentID',
         :'parent_journal_id' => :'parentJournalID',
         :'journal_type_id' => :'journalTypeID',
         :'ledger_id' => :'ledgerID'
@@ -64,8 +58,6 @@ module OpenapiClient
         :'name' => :'String',
         :'description' => :'String',
         :'date_time' => :'Time',
-        :'tenant_id' => :'String',
-        :'enrollment_id' => :'String',
         :'parent_journal_id' => :'String',
         :'journal_type_id' => :'String',
         :'ledger_id' => :'String'
@@ -76,8 +68,6 @@ module OpenapiClient
     def self.openapi_nullable
       Set.new([
         :'description',
-        :'tenant_id',
-        :'enrollment_id',
         :'parent_journal_id',
         :'journal_type_id',
         :'ledger_id'
@@ -121,14 +111,6 @@ module OpenapiClient
         self.date_time = attributes[:'date_time']
       end
 
-      if attributes.key?(:'tenant_id')
-        self.tenant_id = attributes[:'tenant_id']
-      end
-
-      if attributes.key?(:'enrollment_id')
-        self.enrollment_id = attributes[:'enrollment_id']
-      end
-
       if attributes.key?(:'parent_journal_id')
         self.parent_journal_id = attributes[:'parent_journal_id']
       end
@@ -167,22 +149,6 @@ module OpenapiClient
         invalid_properties.push('invalid value for "description", the character length must be great than or equal to 1.')
       end
 
-      if !@tenant_id.nil? && @tenant_id.to_s.length > 36
-        invalid_properties.push('invalid value for "tenant_id", the character length must be smaller than or equal to 36.')
-      end
-
-      if !@tenant_id.nil? && @tenant_id.to_s.length < 0
-        invalid_properties.push('invalid value for "tenant_id", the character length must be great than or equal to 0.')
-      end
-
-      if !@enrollment_id.nil? && @enrollment_id.to_s.length > 36
-        invalid_properties.push('invalid value for "enrollment_id", the character length must be smaller than or equal to 36.')
-      end
-
-      if !@enrollment_id.nil? && @enrollment_id.to_s.length < 0
-        invalid_properties.push('invalid value for "enrollment_id", the character length must be great than or equal to 0.')
-      end
-
       if !@parent_journal_id.nil? && @parent_journal_id.to_s.length > 36
         invalid_properties.push('invalid value for "parent_journal_id", the character length must be smaller than or equal to 36.')
       end
@@ -219,10 +185,6 @@ module OpenapiClient
       return false if @name.to_s.length < 1
       return false if !@description.nil? && @description.to_s.length > 1000
       return false if !@description.nil? && @description.to_s.length < 1
-      return false if !@tenant_id.nil? && @tenant_id.to_s.length > 36
-      return false if !@tenant_id.nil? && @tenant_id.to_s.length < 0
-      return false if !@enrollment_id.nil? && @enrollment_id.to_s.length > 36
-      return false if !@enrollment_id.nil? && @enrollment_id.to_s.length < 0
       return false if !@parent_journal_id.nil? && @parent_journal_id.to_s.length > 36
       return false if !@parent_journal_id.nil? && @parent_journal_id.to_s.length < 0
       return false if !@journal_type_id.nil? && @journal_type_id.to_s.length > 36
@@ -262,34 +224,6 @@ module OpenapiClient
       end
 
       @description = description
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] tenant_id Value to be assigned
-    def tenant_id=(tenant_id)
-      if !tenant_id.nil? && tenant_id.to_s.length > 36
-        fail ArgumentError, 'invalid value for "tenant_id", the character length must be smaller than or equal to 36.'
-      end
-
-      if !tenant_id.nil? && tenant_id.to_s.length < 0
-        fail ArgumentError, 'invalid value for "tenant_id", the character length must be great than or equal to 0.'
-      end
-
-      @tenant_id = tenant_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] enrollment_id Value to be assigned
-    def enrollment_id=(enrollment_id)
-      if !enrollment_id.nil? && enrollment_id.to_s.length > 36
-        fail ArgumentError, 'invalid value for "enrollment_id", the character length must be smaller than or equal to 36.'
-      end
-
-      if !enrollment_id.nil? && enrollment_id.to_s.length < 0
-        fail ArgumentError, 'invalid value for "enrollment_id", the character length must be great than or equal to 0.'
-      end
-
-      @enrollment_id = enrollment_id
     end
 
     # Custom attribute writer method with validation
@@ -344,8 +278,6 @@ module OpenapiClient
           name == o.name &&
           description == o.description &&
           date_time == o.date_time &&
-          tenant_id == o.tenant_id &&
-          enrollment_id == o.enrollment_id &&
           parent_journal_id == o.parent_journal_id &&
           journal_type_id == o.journal_type_id &&
           ledger_id == o.ledger_id
@@ -360,7 +292,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, timestamp, name, description, date_time, tenant_id, enrollment_id, parent_journal_id, journal_type_id, ledger_id].hash
+      [id, timestamp, name, description, date_time, parent_journal_id, journal_type_id, ledger_id].hash
     end
 
     # Builds the object from hash

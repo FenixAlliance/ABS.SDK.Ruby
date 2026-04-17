@@ -25,10 +25,6 @@ module OpenapiClient
 
     attr_accessor :parent_business_process_id
 
-    attr_accessor :tenant_id
-
-    attr_accessor :tenant_enrollment_id
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -36,9 +32,7 @@ module OpenapiClient
         :'timestamp' => :'timestamp',
         :'name' => :'name',
         :'description' => :'description',
-        :'parent_business_process_id' => :'parentBusinessProcessId',
-        :'tenant_id' => :'tenantId',
-        :'tenant_enrollment_id' => :'tenantEnrollmentId'
+        :'parent_business_process_id' => :'parentBusinessProcessId'
       }
     end
 
@@ -54,9 +48,7 @@ module OpenapiClient
         :'timestamp' => :'Time',
         :'name' => :'String',
         :'description' => :'String',
-        :'parent_business_process_id' => :'String',
-        :'tenant_id' => :'String',
-        :'tenant_enrollment_id' => :'String'
+        :'parent_business_process_id' => :'String'
       }
     end
 
@@ -65,9 +57,7 @@ module OpenapiClient
       Set.new([
         :'name',
         :'description',
-        :'parent_business_process_id',
-        :'tenant_id',
-        :'tenant_enrollment_id'
+        :'parent_business_process_id'
       ])
     end
 
@@ -105,14 +95,6 @@ module OpenapiClient
       if attributes.key?(:'parent_business_process_id')
         self.parent_business_process_id = attributes[:'parent_business_process_id']
       end
-
-      if attributes.key?(:'tenant_id')
-        self.tenant_id = attributes[:'tenant_id']
-      end
-
-      if attributes.key?(:'tenant_enrollment_id')
-        self.tenant_enrollment_id = attributes[:'tenant_enrollment_id']
-      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -144,22 +126,6 @@ module OpenapiClient
         invalid_properties.push('invalid value for "parent_business_process_id", the character length must be great than or equal to 36.')
       end
 
-      if !@tenant_id.nil? && @tenant_id.to_s.length > 36
-        invalid_properties.push('invalid value for "tenant_id", the character length must be smaller than or equal to 36.')
-      end
-
-      if !@tenant_id.nil? && @tenant_id.to_s.length < 36
-        invalid_properties.push('invalid value for "tenant_id", the character length must be great than or equal to 36.')
-      end
-
-      if !@tenant_enrollment_id.nil? && @tenant_enrollment_id.to_s.length > 36
-        invalid_properties.push('invalid value for "tenant_enrollment_id", the character length must be smaller than or equal to 36.')
-      end
-
-      if !@tenant_enrollment_id.nil? && @tenant_enrollment_id.to_s.length < 36
-        invalid_properties.push('invalid value for "tenant_enrollment_id", the character length must be great than or equal to 36.')
-      end
-
       invalid_properties
     end
 
@@ -173,10 +139,6 @@ module OpenapiClient
       return false if !@description.nil? && @description.to_s.length < 0
       return false if !@parent_business_process_id.nil? && @parent_business_process_id.to_s.length > 36
       return false if !@parent_business_process_id.nil? && @parent_business_process_id.to_s.length < 36
-      return false if !@tenant_id.nil? && @tenant_id.to_s.length > 36
-      return false if !@tenant_id.nil? && @tenant_id.to_s.length < 36
-      return false if !@tenant_enrollment_id.nil? && @tenant_enrollment_id.to_s.length > 36
-      return false if !@tenant_enrollment_id.nil? && @tenant_enrollment_id.to_s.length < 36
       true
     end
 
@@ -222,34 +184,6 @@ module OpenapiClient
       @parent_business_process_id = parent_business_process_id
     end
 
-    # Custom attribute writer method with validation
-    # @param [Object] tenant_id Value to be assigned
-    def tenant_id=(tenant_id)
-      if !tenant_id.nil? && tenant_id.to_s.length > 36
-        fail ArgumentError, 'invalid value for "tenant_id", the character length must be smaller than or equal to 36.'
-      end
-
-      if !tenant_id.nil? && tenant_id.to_s.length < 36
-        fail ArgumentError, 'invalid value for "tenant_id", the character length must be great than or equal to 36.'
-      end
-
-      @tenant_id = tenant_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] tenant_enrollment_id Value to be assigned
-    def tenant_enrollment_id=(tenant_enrollment_id)
-      if !tenant_enrollment_id.nil? && tenant_enrollment_id.to_s.length > 36
-        fail ArgumentError, 'invalid value for "tenant_enrollment_id", the character length must be smaller than or equal to 36.'
-      end
-
-      if !tenant_enrollment_id.nil? && tenant_enrollment_id.to_s.length < 36
-        fail ArgumentError, 'invalid value for "tenant_enrollment_id", the character length must be great than or equal to 36.'
-      end
-
-      @tenant_enrollment_id = tenant_enrollment_id
-    end
-
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(o)
@@ -259,9 +193,7 @@ module OpenapiClient
           timestamp == o.timestamp &&
           name == o.name &&
           description == o.description &&
-          parent_business_process_id == o.parent_business_process_id &&
-          tenant_id == o.tenant_id &&
-          tenant_enrollment_id == o.tenant_enrollment_id
+          parent_business_process_id == o.parent_business_process_id
     end
 
     # @see the `==` method
@@ -273,7 +205,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, timestamp, name, description, parent_business_process_id, tenant_id, tenant_enrollment_id].hash
+      [id, timestamp, name, description, parent_business_process_id].hash
     end
 
     # Builds the object from hash

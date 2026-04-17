@@ -12,7 +12,6 @@
 | **website_url** | **String** |  | [optional] |
 | **featured** | **Boolean** |  | [optional] |
 | **trending** | **Boolean** |  | [optional] |
-| **business_id** | **String** |  |  |
 
 ## Example
 
@@ -27,8 +26,7 @@ instance = OpenapiClient::ItemBrandCreateDto.new(
   description: null,
   website_url: null,
   featured: null,
-  trending: null,
-  business_id: null
+  trending: null
 )
 ```
 

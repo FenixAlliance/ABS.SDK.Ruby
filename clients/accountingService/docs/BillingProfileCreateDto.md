@@ -7,7 +7,6 @@
 | **id** | **String** |  | [optional] |
 | **timestamp** | **Time** |  | [optional] |
 | **contact_id** | **String** |  | [optional] |
-| **tenant_id** | **String** |  | [optional] |
 | **tax_id** | **String** |  |  |
 | **phone** | **String** |  |  |
 | **email** | **String** |  |  |
@@ -37,7 +36,6 @@ instance = OpenapiClient::BillingProfileCreateDto.new(
   id: null,
   timestamp: null,
   contact_id: null,
-  tenant_id: null,
   tax_id: null,
   phone: null,
   email: null,

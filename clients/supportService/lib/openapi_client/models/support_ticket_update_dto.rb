@@ -17,11 +17,7 @@ module OpenapiClient
   class SupportTicketUpdateDto
     attr_accessor :description
 
-    attr_accessor :account_holder_id
-
     attr_accessor :contact_id
-
-    attr_accessor :business_profile_record_id
 
     attr_accessor :support_ticket_type_id
 
@@ -33,9 +29,7 @@ module OpenapiClient
     def self.attribute_map
       {
         :'description' => :'description',
-        :'account_holder_id' => :'accountHolderID',
         :'contact_id' => :'contactID',
-        :'business_profile_record_id' => :'businessProfileRecordID',
         :'support_ticket_type_id' => :'supportTicketTypeID',
         :'support_entitlement_id' => :'supportEntitlementID',
         :'support_priority_id' => :'supportPriorityID'
@@ -51,9 +45,7 @@ module OpenapiClient
     def self.openapi_types
       {
         :'description' => :'String',
-        :'account_holder_id' => :'String',
         :'contact_id' => :'String',
-        :'business_profile_record_id' => :'String',
         :'support_ticket_type_id' => :'String',
         :'support_entitlement_id' => :'String',
         :'support_priority_id' => :'String'
@@ -64,9 +56,7 @@ module OpenapiClient
     def self.openapi_nullable
       Set.new([
         :'description',
-        :'account_holder_id',
         :'contact_id',
-        :'business_profile_record_id',
         :'support_ticket_type_id',
         :'support_entitlement_id',
         :'support_priority_id'
@@ -92,16 +82,8 @@ module OpenapiClient
         self.description = attributes[:'description']
       end
 
-      if attributes.key?(:'account_holder_id')
-        self.account_holder_id = attributes[:'account_holder_id']
-      end
-
       if attributes.key?(:'contact_id')
         self.contact_id = attributes[:'contact_id']
-      end
-
-      if attributes.key?(:'business_profile_record_id')
-        self.business_profile_record_id = attributes[:'business_profile_record_id']
       end
 
       if attributes.key?(:'support_ticket_type_id')
@@ -138,9 +120,7 @@ module OpenapiClient
       return true if self.equal?(o)
       self.class == o.class &&
           description == o.description &&
-          account_holder_id == o.account_holder_id &&
           contact_id == o.contact_id &&
-          business_profile_record_id == o.business_profile_record_id &&
           support_ticket_type_id == o.support_ticket_type_id &&
           support_entitlement_id == o.support_entitlement_id &&
           support_priority_id == o.support_priority_id
@@ -155,7 +135,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [description, account_holder_id, contact_id, business_profile_record_id, support_ticket_type_id, support_entitlement_id, support_priority_id].hash
+      [description, contact_id, support_ticket_type_id, support_entitlement_id, support_priority_id].hash
     end
 
     # Builds the object from hash

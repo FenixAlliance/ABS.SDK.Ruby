@@ -19,10 +19,6 @@ module OpenapiClient
 
     attr_accessor :timestamp
 
-    attr_accessor :business_id
-
-    attr_accessor :business_profile_record_id
-
     attr_accessor :title
 
     attr_accessor :description
@@ -32,8 +28,6 @@ module OpenapiClient
       {
         :'id' => :'id',
         :'timestamp' => :'timestamp',
-        :'business_id' => :'businessID',
-        :'business_profile_record_id' => :'businessProfileRecordID',
         :'title' => :'title',
         :'description' => :'description'
       }
@@ -49,8 +43,6 @@ module OpenapiClient
       {
         :'id' => :'String',
         :'timestamp' => :'Time',
-        :'business_id' => :'String',
-        :'business_profile_record_id' => :'String',
         :'title' => :'String',
         :'description' => :'String'
       }
@@ -59,8 +51,6 @@ module OpenapiClient
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
-        :'business_id',
-        :'business_profile_record_id',
         :'title',
         :'description'
       ])
@@ -87,14 +77,6 @@ module OpenapiClient
 
       if attributes.key?(:'timestamp')
         self.timestamp = attributes[:'timestamp']
-      end
-
-      if attributes.key?(:'business_id')
-        self.business_id = attributes[:'business_id']
-      end
-
-      if attributes.key?(:'business_profile_record_id')
-        self.business_profile_record_id = attributes[:'business_profile_record_id']
       end
 
       if attributes.key?(:'title')
@@ -128,8 +110,6 @@ module OpenapiClient
       self.class == o.class &&
           id == o.id &&
           timestamp == o.timestamp &&
-          business_id == o.business_id &&
-          business_profile_record_id == o.business_profile_record_id &&
           title == o.title &&
           description == o.description
     end
@@ -143,7 +123,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, timestamp, business_id, business_profile_record_id, title, description].hash
+      [id, timestamp, title, description].hash
     end
 
     # Builds the object from hash

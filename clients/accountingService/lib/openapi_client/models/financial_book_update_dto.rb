@@ -19,14 +19,11 @@ module OpenapiClient
 
     attr_accessor :description
 
-    attr_accessor :tenant_id
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'name' => :'name',
-        :'description' => :'description',
-        :'tenant_id' => :'tenantId'
+        :'description' => :'description'
       }
     end
 
@@ -39,8 +36,7 @@ module OpenapiClient
     def self.openapi_types
       {
         :'name' => :'String',
-        :'description' => :'String',
-        :'tenant_id' => :'String'
+        :'description' => :'String'
       }
     end
 
@@ -48,8 +44,7 @@ module OpenapiClient
     def self.openapi_nullable
       Set.new([
         :'name',
-        :'description',
-        :'tenant_id'
+        :'description'
       ])
     end
 
@@ -75,10 +70,6 @@ module OpenapiClient
       if attributes.key?(:'description')
         self.description = attributes[:'description']
       end
-
-      if attributes.key?(:'tenant_id')
-        self.tenant_id = attributes[:'tenant_id']
-      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -102,14 +93,6 @@ module OpenapiClient
         invalid_properties.push('invalid value for "description", the character length must be great than or equal to 0.')
       end
 
-      if !@tenant_id.nil? && @tenant_id.to_s.length > 36
-        invalid_properties.push('invalid value for "tenant_id", the character length must be smaller than or equal to 36.')
-      end
-
-      if !@tenant_id.nil? && @tenant_id.to_s.length < 0
-        invalid_properties.push('invalid value for "tenant_id", the character length must be great than or equal to 0.')
-      end
-
       invalid_properties
     end
 
@@ -121,8 +104,6 @@ module OpenapiClient
       return false if !@name.nil? && @name.to_s.length < 0
       return false if !@description.nil? && @description.to_s.length > 255
       return false if !@description.nil? && @description.to_s.length < 0
-      return false if !@tenant_id.nil? && @tenant_id.to_s.length > 36
-      return false if !@tenant_id.nil? && @tenant_id.to_s.length < 0
       true
     end
 
@@ -154,28 +135,13 @@ module OpenapiClient
       @description = description
     end
 
-    # Custom attribute writer method with validation
-    # @param [Object] tenant_id Value to be assigned
-    def tenant_id=(tenant_id)
-      if !tenant_id.nil? && tenant_id.to_s.length > 36
-        fail ArgumentError, 'invalid value for "tenant_id", the character length must be smaller than or equal to 36.'
-      end
-
-      if !tenant_id.nil? && tenant_id.to_s.length < 0
-        fail ArgumentError, 'invalid value for "tenant_id", the character length must be great than or equal to 0.'
-      end
-
-      @tenant_id = tenant_id
-    end
-
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
           name == o.name &&
-          description == o.description &&
-          tenant_id == o.tenant_id
+          description == o.description
     end
 
     # @see the `==` method
@@ -187,7 +153,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [name, description, tenant_id].hash
+      [name, description].hash
     end
 
     # Builds the object from hash

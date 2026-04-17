@@ -25,10 +25,6 @@ module OpenapiClient
 
     attr_accessor :image_url
 
-    attr_accessor :business_id
-
-    attr_accessor :business_profile_record_id
-
     attr_accessor :parent_item_category_id
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -39,8 +35,6 @@ module OpenapiClient
         :'title' => :'title',
         :'description' => :'description',
         :'image_url' => :'imageURL',
-        :'business_id' => :'businessID',
-        :'business_profile_record_id' => :'businessProfileRecordID',
         :'parent_item_category_id' => :'parentItemCategoryID'
       }
     end
@@ -58,8 +52,6 @@ module OpenapiClient
         :'title' => :'String',
         :'description' => :'String',
         :'image_url' => :'String',
-        :'business_id' => :'String',
-        :'business_profile_record_id' => :'String',
         :'parent_item_category_id' => :'String'
       }
     end
@@ -69,7 +61,6 @@ module OpenapiClient
       Set.new([
         :'description',
         :'image_url',
-        :'business_profile_record_id',
         :'parent_item_category_id'
       ])
     end
@@ -111,16 +102,6 @@ module OpenapiClient
         self.image_url = attributes[:'image_url']
       end
 
-      if attributes.key?(:'business_id')
-        self.business_id = attributes[:'business_id']
-      else
-        self.business_id = nil
-      end
-
-      if attributes.key?(:'business_profile_record_id')
-        self.business_profile_record_id = attributes[:'business_profile_record_id']
-      end
-
       if attributes.key?(:'parent_item_category_id')
         self.parent_item_category_id = attributes[:'parent_item_category_id']
       end
@@ -151,26 +132,6 @@ module OpenapiClient
         invalid_properties.push('invalid value for "description", the character length must be great than or equal to 0.')
       end
 
-      if @business_id.nil?
-        invalid_properties.push('invalid value for "business_id", business_id cannot be nil.')
-      end
-
-      if @business_id.to_s.length > 36
-        invalid_properties.push('invalid value for "business_id", the character length must be smaller than or equal to 36.')
-      end
-
-      if @business_id.to_s.length < 36
-        invalid_properties.push('invalid value for "business_id", the character length must be great than or equal to 36.')
-      end
-
-      if !@business_profile_record_id.nil? && @business_profile_record_id.to_s.length > 36
-        invalid_properties.push('invalid value for "business_profile_record_id", the character length must be smaller than or equal to 36.')
-      end
-
-      if !@business_profile_record_id.nil? && @business_profile_record_id.to_s.length < 36
-        invalid_properties.push('invalid value for "business_profile_record_id", the character length must be great than or equal to 36.')
-      end
-
       if !@parent_item_category_id.nil? && @parent_item_category_id.to_s.length > 36
         invalid_properties.push('invalid value for "parent_item_category_id", the character length must be smaller than or equal to 36.')
       end
@@ -191,11 +152,6 @@ module OpenapiClient
       return false if @title.to_s.length < 0
       return false if !@description.nil? && @description.to_s.length > 1000
       return false if !@description.nil? && @description.to_s.length < 0
-      return false if @business_id.nil?
-      return false if @business_id.to_s.length > 36
-      return false if @business_id.to_s.length < 36
-      return false if !@business_profile_record_id.nil? && @business_profile_record_id.to_s.length > 36
-      return false if !@business_profile_record_id.nil? && @business_profile_record_id.to_s.length < 36
       return false if !@parent_item_category_id.nil? && @parent_item_category_id.to_s.length > 36
       return false if !@parent_item_category_id.nil? && @parent_item_category_id.to_s.length < 36
       true
@@ -234,38 +190,6 @@ module OpenapiClient
     end
 
     # Custom attribute writer method with validation
-    # @param [Object] business_id Value to be assigned
-    def business_id=(business_id)
-      if business_id.nil?
-        fail ArgumentError, 'business_id cannot be nil'
-      end
-
-      if business_id.to_s.length > 36
-        fail ArgumentError, 'invalid value for "business_id", the character length must be smaller than or equal to 36.'
-      end
-
-      if business_id.to_s.length < 36
-        fail ArgumentError, 'invalid value for "business_id", the character length must be great than or equal to 36.'
-      end
-
-      @business_id = business_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] business_profile_record_id Value to be assigned
-    def business_profile_record_id=(business_profile_record_id)
-      if !business_profile_record_id.nil? && business_profile_record_id.to_s.length > 36
-        fail ArgumentError, 'invalid value for "business_profile_record_id", the character length must be smaller than or equal to 36.'
-      end
-
-      if !business_profile_record_id.nil? && business_profile_record_id.to_s.length < 36
-        fail ArgumentError, 'invalid value for "business_profile_record_id", the character length must be great than or equal to 36.'
-      end
-
-      @business_profile_record_id = business_profile_record_id
-    end
-
-    # Custom attribute writer method with validation
     # @param [Object] parent_item_category_id Value to be assigned
     def parent_item_category_id=(parent_item_category_id)
       if !parent_item_category_id.nil? && parent_item_category_id.to_s.length > 36
@@ -289,8 +213,6 @@ module OpenapiClient
           title == o.title &&
           description == o.description &&
           image_url == o.image_url &&
-          business_id == o.business_id &&
-          business_profile_record_id == o.business_profile_record_id &&
           parent_item_category_id == o.parent_item_category_id
     end
 
@@ -303,7 +225,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, timestamp, title, description, image_url, business_id, business_profile_record_id, parent_item_category_id].hash
+      [id, timestamp, title, description, image_url, parent_item_category_id].hash
     end
 
     # Builds the object from hash

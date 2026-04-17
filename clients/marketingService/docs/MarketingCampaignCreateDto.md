@@ -20,8 +20,6 @@
 | **expected_response_percent** | **Float** |  | [optional] |
 | **marketing_area_id** | **String** |  | [optional] |
 | **currency_id** | **String** |  | [optional] |
-| **tenant_id** | **String** |  | [optional] |
-| **enrollment_id** | **String** |  | [optional] |
 
 ## Example
 
@@ -44,9 +42,7 @@ instance = OpenapiClient::MarketingCampaignCreateDto.new(
   misc_cost: null,
   expected_response_percent: null,
   marketing_area_id: null,
-  currency_id: null,
-  tenant_id: null,
-  enrollment_id: null
+  currency_id: null
 )
 ```
 

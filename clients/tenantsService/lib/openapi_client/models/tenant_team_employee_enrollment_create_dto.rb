@@ -19,10 +19,6 @@ module OpenapiClient
 
     attr_accessor :timestamp
 
-    attr_accessor :business_id
-
-    attr_accessor :business_profile_record_id
-
     attr_accessor :business_team_id
 
     attr_accessor :employee_profile_id
@@ -32,8 +28,6 @@ module OpenapiClient
       {
         :'id' => :'id',
         :'timestamp' => :'timestamp',
-        :'business_id' => :'businessID',
-        :'business_profile_record_id' => :'businessProfileRecordID',
         :'business_team_id' => :'businessTeamID',
         :'employee_profile_id' => :'employeeProfileID'
       }
@@ -49,8 +43,6 @@ module OpenapiClient
       {
         :'id' => :'String',
         :'timestamp' => :'Time',
-        :'business_id' => :'String',
-        :'business_profile_record_id' => :'String',
         :'business_team_id' => :'String',
         :'employee_profile_id' => :'String'
       }
@@ -85,18 +77,6 @@ module OpenapiClient
         self.timestamp = attributes[:'timestamp']
       end
 
-      if attributes.key?(:'business_id')
-        self.business_id = attributes[:'business_id']
-      else
-        self.business_id = nil
-      end
-
-      if attributes.key?(:'business_profile_record_id')
-        self.business_profile_record_id = attributes[:'business_profile_record_id']
-      else
-        self.business_profile_record_id = nil
-      end
-
       if attributes.key?(:'business_team_id')
         self.business_team_id = attributes[:'business_team_id']
       else
@@ -115,30 +95,6 @@ module OpenapiClient
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
       invalid_properties = Array.new
-      if @business_id.nil?
-        invalid_properties.push('invalid value for "business_id", business_id cannot be nil.')
-      end
-
-      if @business_id.to_s.length > 36
-        invalid_properties.push('invalid value for "business_id", the character length must be smaller than or equal to 36.')
-      end
-
-      if @business_id.to_s.length < 36
-        invalid_properties.push('invalid value for "business_id", the character length must be great than or equal to 36.')
-      end
-
-      if @business_profile_record_id.nil?
-        invalid_properties.push('invalid value for "business_profile_record_id", business_profile_record_id cannot be nil.')
-      end
-
-      if @business_profile_record_id.to_s.length > 36
-        invalid_properties.push('invalid value for "business_profile_record_id", the character length must be smaller than or equal to 36.')
-      end
-
-      if @business_profile_record_id.to_s.length < 36
-        invalid_properties.push('invalid value for "business_profile_record_id", the character length must be great than or equal to 36.')
-      end
-
       if @business_team_id.nil?
         invalid_properties.push('invalid value for "business_team_id", business_team_id cannot be nil.')
       end
@@ -170,12 +126,6 @@ module OpenapiClient
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      return false if @business_id.nil?
-      return false if @business_id.to_s.length > 36
-      return false if @business_id.to_s.length < 36
-      return false if @business_profile_record_id.nil?
-      return false if @business_profile_record_id.to_s.length > 36
-      return false if @business_profile_record_id.to_s.length < 36
       return false if @business_team_id.nil?
       return false if @business_team_id.to_s.length > 36
       return false if @business_team_id.to_s.length < 36
@@ -183,42 +133,6 @@ module OpenapiClient
       return false if @employee_profile_id.to_s.length > 36
       return false if @employee_profile_id.to_s.length < 36
       true
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] business_id Value to be assigned
-    def business_id=(business_id)
-      if business_id.nil?
-        fail ArgumentError, 'business_id cannot be nil'
-      end
-
-      if business_id.to_s.length > 36
-        fail ArgumentError, 'invalid value for "business_id", the character length must be smaller than or equal to 36.'
-      end
-
-      if business_id.to_s.length < 36
-        fail ArgumentError, 'invalid value for "business_id", the character length must be great than or equal to 36.'
-      end
-
-      @business_id = business_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] business_profile_record_id Value to be assigned
-    def business_profile_record_id=(business_profile_record_id)
-      if business_profile_record_id.nil?
-        fail ArgumentError, 'business_profile_record_id cannot be nil'
-      end
-
-      if business_profile_record_id.to_s.length > 36
-        fail ArgumentError, 'invalid value for "business_profile_record_id", the character length must be smaller than or equal to 36.'
-      end
-
-      if business_profile_record_id.to_s.length < 36
-        fail ArgumentError, 'invalid value for "business_profile_record_id", the character length must be great than or equal to 36.'
-      end
-
-      @business_profile_record_id = business_profile_record_id
     end
 
     # Custom attribute writer method with validation
@@ -264,8 +178,6 @@ module OpenapiClient
       self.class == o.class &&
           id == o.id &&
           timestamp == o.timestamp &&
-          business_id == o.business_id &&
-          business_profile_record_id == o.business_profile_record_id &&
           business_team_id == o.business_team_id &&
           employee_profile_id == o.employee_profile_id
     end
@@ -279,7 +191,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, timestamp, business_id, business_profile_record_id, business_team_id, employee_profile_id].hash
+      [id, timestamp, business_team_id, employee_profile_id].hash
     end
 
     # Builds the object from hash

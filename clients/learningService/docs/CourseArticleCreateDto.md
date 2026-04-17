@@ -11,7 +11,6 @@
 | **content** | **String** |  | [optional] |
 | **course_id** | **String** |  |  |
 | **course_wiki_id** | **String** |  |  |
-| **business_id** | **String** |  |  |
 
 ## Example
 
@@ -25,8 +24,7 @@ instance = OpenapiClient::CourseArticleCreateDto.new(
   description: null,
   content: null,
   course_id: null,
-  course_wiki_id: null,
-  business_id: null
+  course_wiki_id: null
 )
 ```
 

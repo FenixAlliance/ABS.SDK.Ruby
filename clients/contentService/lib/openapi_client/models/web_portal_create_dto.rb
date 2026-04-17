@@ -27,15 +27,11 @@ module OpenapiClient
 
     attr_accessor :disabled
 
-    attr_accessor :business_id
-
     attr_accessor :description
 
     attr_accessor :website_theme_id
 
     attr_accessor :business_domain_id
-
-    attr_accessor :business_profile_record_id
 
     attr_accessor :business_portal_application_id
 
@@ -48,11 +44,9 @@ module OpenapiClient
         :'title' => :'title',
         :'domain' => :'domain',
         :'disabled' => :'disabled',
-        :'business_id' => :'businessID',
         :'description' => :'description',
         :'website_theme_id' => :'websiteThemeID',
         :'business_domain_id' => :'businessDomainID',
-        :'business_profile_record_id' => :'businessProfileRecordID',
         :'business_portal_application_id' => :'businessPortalApplicationID'
       }
     end
@@ -71,11 +65,9 @@ module OpenapiClient
         :'title' => :'String',
         :'domain' => :'String',
         :'disabled' => :'Boolean',
-        :'business_id' => :'String',
         :'description' => :'String',
         :'website_theme_id' => :'String',
         :'business_domain_id' => :'String',
-        :'business_profile_record_id' => :'String',
         :'business_portal_application_id' => :'String'
       }
     end
@@ -85,11 +77,9 @@ module OpenapiClient
       Set.new([
         :'title',
         :'domain',
-        :'business_id',
         :'description',
         :'website_theme_id',
         :'business_domain_id',
-        :'business_profile_record_id',
         :'business_portal_application_id'
       ])
     end
@@ -133,10 +123,6 @@ module OpenapiClient
         self.disabled = attributes[:'disabled']
       end
 
-      if attributes.key?(:'business_id')
-        self.business_id = attributes[:'business_id']
-      end
-
       if attributes.key?(:'description')
         self.description = attributes[:'description']
       end
@@ -147,10 +133,6 @@ module OpenapiClient
 
       if attributes.key?(:'business_domain_id')
         self.business_domain_id = attributes[:'business_domain_id']
-      end
-
-      if attributes.key?(:'business_profile_record_id')
-        self.business_profile_record_id = attributes[:'business_profile_record_id']
       end
 
       if attributes.key?(:'business_portal_application_id')
@@ -184,11 +166,9 @@ module OpenapiClient
           title == o.title &&
           domain == o.domain &&
           disabled == o.disabled &&
-          business_id == o.business_id &&
           description == o.description &&
           website_theme_id == o.website_theme_id &&
           business_domain_id == o.business_domain_id &&
-          business_profile_record_id == o.business_profile_record_id &&
           business_portal_application_id == o.business_portal_application_id
     end
 
@@ -201,7 +181,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, timestamp, root, title, domain, disabled, business_id, description, website_theme_id, business_domain_id, business_profile_record_id, business_portal_application_id].hash
+      [id, timestamp, root, title, domain, disabled, description, website_theme_id, business_domain_id, business_portal_application_id].hash
     end
 
     # Builds the object from hash

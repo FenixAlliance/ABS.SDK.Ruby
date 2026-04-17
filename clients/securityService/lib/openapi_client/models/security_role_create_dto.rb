@@ -21,8 +21,6 @@ module OpenapiClient
 
     attr_accessor :name
 
-    attr_accessor :tenant_id
-
     attr_accessor :description
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -31,7 +29,6 @@ module OpenapiClient
         :'id' => :'id',
         :'timestamp' => :'timestamp',
         :'name' => :'name',
-        :'tenant_id' => :'tenantId',
         :'description' => :'description'
       }
     end
@@ -47,7 +44,6 @@ module OpenapiClient
         :'id' => :'String',
         :'timestamp' => :'Time',
         :'name' => :'String',
-        :'tenant_id' => :'String',
         :'description' => :'String'
       }
     end
@@ -88,12 +84,6 @@ module OpenapiClient
         self.name = nil
       end
 
-      if attributes.key?(:'tenant_id')
-        self.tenant_id = attributes[:'tenant_id']
-      else
-        self.tenant_id = nil
-      end
-
       if attributes.key?(:'description')
         self.description = attributes[:'description']
       end
@@ -112,10 +102,6 @@ module OpenapiClient
         invalid_properties.push('invalid value for "name", the character length must be great than or equal to 1.')
       end
 
-      if @tenant_id.nil?
-        invalid_properties.push('invalid value for "tenant_id", tenant_id cannot be nil.')
-      end
-
       if !@description.nil? && @description.to_s.length > 500
         invalid_properties.push('invalid value for "description", the character length must be smaller than or equal to 500.')
       end
@@ -129,7 +115,6 @@ module OpenapiClient
       warn '[DEPRECATED] the `valid?` method is obsolete'
       return false if @name.nil?
       return false if @name.to_s.length < 1
-      return false if @tenant_id.nil?
       return false if !@description.nil? && @description.to_s.length > 500
       true
     end
@@ -166,7 +151,6 @@ module OpenapiClient
           id == o.id &&
           timestamp == o.timestamp &&
           name == o.name &&
-          tenant_id == o.tenant_id &&
           description == o.description
     end
 
@@ -179,7 +163,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, timestamp, name, tenant_id, description].hash
+      [id, timestamp, name, description].hash
     end
 
     # Builds the object from hash

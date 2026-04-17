@@ -4,7 +4,6 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **tenant_id** | **String** |  | [optional] |
 | **first_name** | **String** |  | [optional] |
 | **last_name** | **String** |  | [optional] |
 | **company_name** | **String** |  | [optional] |
@@ -48,7 +47,6 @@
 | **user_id** | **String** |  | [optional] |
 | **forex_rate** | **Float** |  | [optional] |
 | **currency_id** | **String** |  | [optional] |
-| **enrollment_id** | **String** |  | [optional] |
 | **individual_id** | **String** |  | [optional] |
 | **organization_id** | **String** |  | [optional] |
 | **total_amount_in_usd** | **Float** |  | [optional] |
@@ -69,7 +67,6 @@
 require 'openapi_client'
 
 instance = OpenapiClient::OrderUpdateDto.new(
-  tenant_id: null,
   first_name: null,
   last_name: null,
   company_name: null,
@@ -113,7 +110,6 @@ instance = OpenapiClient::OrderUpdateDto.new(
   user_id: null,
   forex_rate: null,
   currency_id: null,
-  enrollment_id: null,
   individual_id: null,
   organization_id: null,
   total_amount_in_usd: null,

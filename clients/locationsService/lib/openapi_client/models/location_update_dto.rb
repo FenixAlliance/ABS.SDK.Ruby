@@ -39,8 +39,6 @@ module OpenapiClient
 
     attr_accessor :country_id
 
-    attr_accessor :tenant_id
-
     attr_accessor :longitude
 
     attr_accessor :latitude
@@ -74,7 +72,6 @@ module OpenapiClient
         :'state_id' => :'stateId',
         :'postal_code' => :'postalCode',
         :'country_id' => :'countryId',
-        :'tenant_id' => :'tenantId',
         :'longitude' => :'longitude',
         :'latitude' => :'latitude',
         :'is_routable' => :'isRoutable',
@@ -107,7 +104,6 @@ module OpenapiClient
         :'state_id' => :'String',
         :'postal_code' => :'String',
         :'country_id' => :'String',
-        :'tenant_id' => :'String',
         :'longitude' => :'Float',
         :'latitude' => :'Float',
         :'is_routable' => :'Boolean',
@@ -135,7 +131,6 @@ module OpenapiClient
         :'state_id',
         :'postal_code',
         :'country_id',
-        :'tenant_id',
       ])
     end
 
@@ -200,10 +195,6 @@ module OpenapiClient
 
       if attributes.key?(:'country_id')
         self.country_id = attributes[:'country_id']
-      end
-
-      if attributes.key?(:'tenant_id')
-        self.tenant_id = attributes[:'tenant_id']
       end
 
       if attributes.key?(:'longitude')
@@ -275,7 +266,6 @@ module OpenapiClient
           state_id == o.state_id &&
           postal_code == o.postal_code &&
           country_id == o.country_id &&
-          tenant_id == o.tenant_id &&
           longitude == o.longitude &&
           latitude == o.latitude &&
           is_routable == o.is_routable &&
@@ -296,7 +286,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [title, email, phone, fax, address1, address2, address3, unit, city_id, state_id, postal_code, country_id, tenant_id, longitude, latitude, is_routable, is_global_primary, is_country_primary, can_generate_labels, is_default_sender_address, is_default_return_address, is_default_supping_location].hash
+      [title, email, phone, fax, address1, address2, address3, unit, city_id, state_id, postal_code, country_id, longitude, latitude, is_routable, is_global_primary, is_country_primary, can_generate_labels, is_default_sender_address, is_default_return_address, is_default_supping_location].hash
     end
 
     # Builds the object from hash

@@ -29,8 +29,6 @@ module OpenapiClient
 
     attr_accessor :business_domain_id
 
-    attr_accessor :business_profile_record_id
-
     attr_accessor :business_portal_application_id
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -43,7 +41,6 @@ module OpenapiClient
         :'description' => :'description',
         :'website_theme_id' => :'websiteThemeID',
         :'business_domain_id' => :'businessDomainID',
-        :'business_profile_record_id' => :'businessProfileRecordID',
         :'business_portal_application_id' => :'businessPortalApplicationID'
       }
     end
@@ -63,7 +60,6 @@ module OpenapiClient
         :'description' => :'String',
         :'website_theme_id' => :'String',
         :'business_domain_id' => :'String',
-        :'business_profile_record_id' => :'String',
         :'business_portal_application_id' => :'String'
       }
     end
@@ -76,7 +72,6 @@ module OpenapiClient
         :'description',
         :'website_theme_id',
         :'business_domain_id',
-        :'business_profile_record_id',
         :'business_portal_application_id'
       ])
     end
@@ -124,10 +119,6 @@ module OpenapiClient
         self.business_domain_id = attributes[:'business_domain_id']
       end
 
-      if attributes.key?(:'business_profile_record_id')
-        self.business_profile_record_id = attributes[:'business_profile_record_id']
-      end
-
       if attributes.key?(:'business_portal_application_id')
         self.business_portal_application_id = attributes[:'business_portal_application_id']
       end
@@ -160,7 +151,6 @@ module OpenapiClient
           description == o.description &&
           website_theme_id == o.website_theme_id &&
           business_domain_id == o.business_domain_id &&
-          business_profile_record_id == o.business_profile_record_id &&
           business_portal_application_id == o.business_portal_application_id
     end
 
@@ -173,7 +163,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [root, title, domain, disabled, description, website_theme_id, business_domain_id, business_profile_record_id, business_portal_application_id].hash
+      [root, title, domain, disabled, description, website_theme_id, business_domain_id, business_portal_application_id].hash
     end
 
     # Builds the object from hash

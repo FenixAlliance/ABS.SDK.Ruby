@@ -19,8 +19,6 @@ module OpenapiClient
 
     attr_accessor :timestamp
 
-    attr_accessor :tenant_id
-
     attr_accessor :user_id
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -28,7 +26,6 @@ module OpenapiClient
       {
         :'id' => :'id',
         :'timestamp' => :'timestamp',
-        :'tenant_id' => :'tenantId',
         :'user_id' => :'userId'
       }
     end
@@ -43,7 +40,6 @@ module OpenapiClient
       {
         :'id' => :'String',
         :'timestamp' => :'Time',
-        :'tenant_id' => :'String',
         :'user_id' => :'String'
       }
     end
@@ -51,7 +47,6 @@ module OpenapiClient
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
-        :'tenant_id',
         :'user_id'
       ])
     end
@@ -77,10 +72,6 @@ module OpenapiClient
 
       if attributes.key?(:'timestamp')
         self.timestamp = attributes[:'timestamp']
-      end
-
-      if attributes.key?(:'tenant_id')
-        self.tenant_id = attributes[:'tenant_id']
       end
 
       if attributes.key?(:'user_id')
@@ -110,7 +101,6 @@ module OpenapiClient
       self.class == o.class &&
           id == o.id &&
           timestamp == o.timestamp &&
-          tenant_id == o.tenant_id &&
           user_id == o.user_id
     end
 
@@ -123,7 +113,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, timestamp, tenant_id, user_id].hash
+      [id, timestamp, user_id].hash
     end
 
     # Builds the object from hash

@@ -15,6 +15,10 @@ require 'time'
 
 module OpenapiClient
   class DealUnitLineCreateDto
+    attr_accessor :id
+
+    attr_accessor :timestamp
+
     attr_accessor :closed
 
     attr_accessor :item_id
@@ -26,10 +30,6 @@ module OpenapiClient
     attr_accessor :item_primary_image_url
 
     attr_accessor :shipping_policy_id
-
-    attr_accessor :tenant_id
-
-    attr_accessor :enrollment_id
 
     attr_accessor :currency_id
 
@@ -143,21 +143,21 @@ module OpenapiClient
 
     attr_accessor :total_detail_currency_id
 
-    attr_accessor :total_profit
-
-    attr_accessor :total_profit_currency_id
-
     attr_accessor :total_discounts
 
     attr_accessor :total_discounts_currency_id
+
+    attr_accessor :total_tax_base
+
+    attr_accessor :total_tax_base_currency_id
 
     attr_accessor :total_surcharges
 
     attr_accessor :total_surcharges_currency_id
 
-    attr_accessor :total_tax_base
+    attr_accessor :total_profit
 
-    attr_accessor :total_tax_base_currency_id
+    attr_accessor :total_profit_currency_id
 
     attr_accessor :total_shipping_cost
 
@@ -201,8 +201,6 @@ module OpenapiClient
 
     attr_accessor :quote_item_record_id
 
-    attr_accessor :business_profile_record_id
-
     attr_accessor :parent_billing_item_record_id
 
     attr_accessor :deal_unit_id
@@ -232,14 +230,14 @@ module OpenapiClient
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'id' => :'id',
+        :'timestamp' => :'timestamp',
         :'closed' => :'closed',
         :'item_id' => :'itemId',
         :'item_title' => :'itemTitle',
         :'item_short_description' => :'itemShortDescription',
         :'item_primary_image_url' => :'itemPrimaryImageUrl',
         :'shipping_policy_id' => :'shippingPolicyId',
-        :'tenant_id' => :'tenantId',
-        :'enrollment_id' => :'enrollmentId',
         :'currency_id' => :'currencyId',
         :'description' => :'description',
         :'quantity' => :'quantity',
@@ -296,14 +294,14 @@ module OpenapiClient
         :'custom_global_discounts_amount_currency_id' => :'customGlobalDiscountsAmountCurrencyId',
         :'total_detail' => :'totalDetail',
         :'total_detail_currency_id' => :'totalDetailCurrencyId',
-        :'total_profit' => :'totalProfit',
-        :'total_profit_currency_id' => :'totalProfitCurrencyId',
         :'total_discounts' => :'totalDiscounts',
         :'total_discounts_currency_id' => :'totalDiscountsCurrencyId',
-        :'total_surcharges' => :'totalSurcharges',
-        :'total_surcharges_currency_id' => :'totalSurchargesCurrencyId',
         :'total_tax_base' => :'totalTaxBase',
         :'total_tax_base_currency_id' => :'totalTaxBaseCurrencyId',
+        :'total_surcharges' => :'totalSurcharges',
+        :'total_surcharges_currency_id' => :'totalSurchargesCurrencyId',
+        :'total_profit' => :'totalProfit',
+        :'total_profit_currency_id' => :'totalProfitCurrencyId',
         :'total_shipping_cost' => :'totalShippingCost',
         :'total_shipping_cost_currency_id' => :'totalShippingCostCurrencyId',
         :'total_shipping_tax' => :'totalShippingTax',
@@ -325,7 +323,6 @@ module OpenapiClient
         :'shipping_location_id' => :'shippingLocationId',
         :'location_id' => :'locationId',
         :'quote_item_record_id' => :'quoteItemRecordId',
-        :'business_profile_record_id' => :'businessProfileRecordId',
         :'parent_billing_item_record_id' => :'parentBillingItemRecordId',
         :'deal_unit_id' => :'dealUnitId'
       }
@@ -339,14 +336,14 @@ module OpenapiClient
     # Attribute type mapping.
     def self.openapi_types
       {
+        :'id' => :'String',
+        :'timestamp' => :'Time',
         :'closed' => :'Boolean',
         :'item_id' => :'String',
         :'item_title' => :'String',
         :'item_short_description' => :'String',
         :'item_primary_image_url' => :'String',
         :'shipping_policy_id' => :'String',
-        :'tenant_id' => :'String',
-        :'enrollment_id' => :'String',
         :'currency_id' => :'String',
         :'description' => :'String',
         :'quantity' => :'Float',
@@ -403,14 +400,14 @@ module OpenapiClient
         :'custom_global_discounts_amount_currency_id' => :'String',
         :'total_detail' => :'Float',
         :'total_detail_currency_id' => :'String',
-        :'total_profit' => :'Float',
-        :'total_profit_currency_id' => :'String',
         :'total_discounts' => :'Float',
         :'total_discounts_currency_id' => :'String',
-        :'total_surcharges' => :'Float',
-        :'total_surcharges_currency_id' => :'String',
         :'total_tax_base' => :'Float',
         :'total_tax_base_currency_id' => :'String',
+        :'total_surcharges' => :'Float',
+        :'total_surcharges_currency_id' => :'String',
+        :'total_profit' => :'Float',
+        :'total_profit_currency_id' => :'String',
         :'total_shipping_cost' => :'Float',
         :'total_shipping_cost_currency_id' => :'String',
         :'total_shipping_tax' => :'Float',
@@ -432,7 +429,6 @@ module OpenapiClient
         :'shipping_location_id' => :'String',
         :'location_id' => :'String',
         :'quote_item_record_id' => :'String',
-        :'business_profile_record_id' => :'String',
         :'parent_billing_item_record_id' => :'String',
         :'deal_unit_id' => :'String'
       }
@@ -446,8 +442,6 @@ module OpenapiClient
         :'item_short_description',
         :'item_primary_image_url',
         :'shipping_policy_id',
-        :'tenant_id',
-        :'enrollment_id',
         :'currency_id',
         :'description',
         :'free_reason',
@@ -480,10 +474,10 @@ module OpenapiClient
         :'custom_global_surcharges_amount_currency_id',
         :'custom_global_discounts_amount_currency_id',
         :'total_detail_currency_id',
-        :'total_profit_currency_id',
         :'total_discounts_currency_id',
-        :'total_surcharges_currency_id',
         :'total_tax_base_currency_id',
+        :'total_surcharges_currency_id',
+        :'total_profit_currency_id',
         :'total_shipping_cost_currency_id',
         :'total_shipping_tax_currency_id',
         :'total_taxes_currency_id',
@@ -498,7 +492,6 @@ module OpenapiClient
         :'shipping_location_id',
         :'location_id',
         :'quote_item_record_id',
-        :'business_profile_record_id',
         :'parent_billing_item_record_id',
         :'deal_unit_id'
       ])
@@ -518,6 +511,14 @@ module OpenapiClient
         end
         h[k.to_sym] = v
       }
+
+      if attributes.key?(:'id')
+        self.id = attributes[:'id']
+      end
+
+      if attributes.key?(:'timestamp')
+        self.timestamp = attributes[:'timestamp']
+      end
 
       if attributes.key?(:'closed')
         self.closed = attributes[:'closed']
@@ -541,14 +542,6 @@ module OpenapiClient
 
       if attributes.key?(:'shipping_policy_id')
         self.shipping_policy_id = attributes[:'shipping_policy_id']
-      end
-
-      if attributes.key?(:'tenant_id')
-        self.tenant_id = attributes[:'tenant_id']
-      end
-
-      if attributes.key?(:'enrollment_id')
-        self.enrollment_id = attributes[:'enrollment_id']
       end
 
       if attributes.key?(:'currency_id')
@@ -775,20 +768,20 @@ module OpenapiClient
         self.total_detail_currency_id = attributes[:'total_detail_currency_id']
       end
 
-      if attributes.key?(:'total_profit')
-        self.total_profit = attributes[:'total_profit']
-      end
-
-      if attributes.key?(:'total_profit_currency_id')
-        self.total_profit_currency_id = attributes[:'total_profit_currency_id']
-      end
-
       if attributes.key?(:'total_discounts')
         self.total_discounts = attributes[:'total_discounts']
       end
 
       if attributes.key?(:'total_discounts_currency_id')
         self.total_discounts_currency_id = attributes[:'total_discounts_currency_id']
+      end
+
+      if attributes.key?(:'total_tax_base')
+        self.total_tax_base = attributes[:'total_tax_base']
+      end
+
+      if attributes.key?(:'total_tax_base_currency_id')
+        self.total_tax_base_currency_id = attributes[:'total_tax_base_currency_id']
       end
 
       if attributes.key?(:'total_surcharges')
@@ -799,12 +792,12 @@ module OpenapiClient
         self.total_surcharges_currency_id = attributes[:'total_surcharges_currency_id']
       end
 
-      if attributes.key?(:'total_tax_base')
-        self.total_tax_base = attributes[:'total_tax_base']
+      if attributes.key?(:'total_profit')
+        self.total_profit = attributes[:'total_profit']
       end
 
-      if attributes.key?(:'total_tax_base_currency_id')
-        self.total_tax_base_currency_id = attributes[:'total_tax_base_currency_id']
+      if attributes.key?(:'total_profit_currency_id')
+        self.total_profit_currency_id = attributes[:'total_profit_currency_id']
       end
 
       if attributes.key?(:'total_shipping_cost')
@@ -891,10 +884,6 @@ module OpenapiClient
         self.quote_item_record_id = attributes[:'quote_item_record_id']
       end
 
-      if attributes.key?(:'business_profile_record_id')
-        self.business_profile_record_id = attributes[:'business_profile_record_id']
-      end
-
       if attributes.key?(:'parent_billing_item_record_id')
         self.parent_billing_item_record_id = attributes[:'parent_billing_item_record_id']
       end
@@ -948,14 +937,14 @@ module OpenapiClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          id == o.id &&
+          timestamp == o.timestamp &&
           closed == o.closed &&
           item_id == o.item_id &&
           item_title == o.item_title &&
           item_short_description == o.item_short_description &&
           item_primary_image_url == o.item_primary_image_url &&
           shipping_policy_id == o.shipping_policy_id &&
-          tenant_id == o.tenant_id &&
-          enrollment_id == o.enrollment_id &&
           currency_id == o.currency_id &&
           description == o.description &&
           quantity == o.quantity &&
@@ -1012,14 +1001,14 @@ module OpenapiClient
           custom_global_discounts_amount_currency_id == o.custom_global_discounts_amount_currency_id &&
           total_detail == o.total_detail &&
           total_detail_currency_id == o.total_detail_currency_id &&
-          total_profit == o.total_profit &&
-          total_profit_currency_id == o.total_profit_currency_id &&
           total_discounts == o.total_discounts &&
           total_discounts_currency_id == o.total_discounts_currency_id &&
-          total_surcharges == o.total_surcharges &&
-          total_surcharges_currency_id == o.total_surcharges_currency_id &&
           total_tax_base == o.total_tax_base &&
           total_tax_base_currency_id == o.total_tax_base_currency_id &&
+          total_surcharges == o.total_surcharges &&
+          total_surcharges_currency_id == o.total_surcharges_currency_id &&
+          total_profit == o.total_profit &&
+          total_profit_currency_id == o.total_profit_currency_id &&
           total_shipping_cost == o.total_shipping_cost &&
           total_shipping_cost_currency_id == o.total_shipping_cost_currency_id &&
           total_shipping_tax == o.total_shipping_tax &&
@@ -1041,7 +1030,6 @@ module OpenapiClient
           shipping_location_id == o.shipping_location_id &&
           location_id == o.location_id &&
           quote_item_record_id == o.quote_item_record_id &&
-          business_profile_record_id == o.business_profile_record_id &&
           parent_billing_item_record_id == o.parent_billing_item_record_id &&
           deal_unit_id == o.deal_unit_id
     end
@@ -1055,7 +1043,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [closed, item_id, item_title, item_short_description, item_primary_image_url, shipping_policy_id, tenant_id, enrollment_id, currency_id, description, quantity, free, free_reason, free_reason_code, data, data_label, data1, data1_label, data2, data2_label, data3, data3_label, data4, data4_label, data5, data5_label, data6, data6_label, data7, data7_label, data8, data8_label, data9, data9_label, item_price_id, price_list_item_id, unit_id, unit_group_id, tax_calculation_method, cost_calculation_method, forex_rates_snapshot, forex_rate, total_base_amount_in_usd, total_profit_in_usd, total_detail_amount_in_usd, total_tax_base_in_usd, total_discounts_in_usd, total_taxes_in_usd, total_withheld_taxes_in_usd, total_shipping_cost_in_usd, total_shipping_taxes_in_usd, total_warranty_cost_in_usd, total_return_cost_in_usd, total_refund_cost_in_usd, total_surcharges_in_usd, total_amount_in_usd, total_global_discounts_in_usd, total_global_surcharges_in_usd, custom_global_surcharges_amount, custom_global_surcharges_amount_currency_id, custom_global_discounts_amount, custom_global_discounts_amount_currency_id, total_detail, total_detail_currency_id, total_profit, total_profit_currency_id, total_discounts, total_discounts_currency_id, total_surcharges, total_surcharges_currency_id, total_tax_base, total_tax_base_currency_id, total_shipping_cost, total_shipping_cost_currency_id, total_shipping_tax, total_shipping_tax_currency_id, total_taxes, total_taxes_currency_id, total_withheld_tax, total_withheld_tax_currency_id, total_global_discounts, total_global_discounts_currency_id, total_global_surcharges, total_global_surcharges_currency_id, total, total_currency_id, return_policy_id, refund_policy_id, warranty_policy_id, shipment_policy_id, shipping_location_id, location_id, quote_item_record_id, business_profile_record_id, parent_billing_item_record_id, deal_unit_id].hash
+      [id, timestamp, closed, item_id, item_title, item_short_description, item_primary_image_url, shipping_policy_id, currency_id, description, quantity, free, free_reason, free_reason_code, data, data_label, data1, data1_label, data2, data2_label, data3, data3_label, data4, data4_label, data5, data5_label, data6, data6_label, data7, data7_label, data8, data8_label, data9, data9_label, item_price_id, price_list_item_id, unit_id, unit_group_id, tax_calculation_method, cost_calculation_method, forex_rates_snapshot, forex_rate, total_base_amount_in_usd, total_profit_in_usd, total_detail_amount_in_usd, total_tax_base_in_usd, total_discounts_in_usd, total_taxes_in_usd, total_withheld_taxes_in_usd, total_shipping_cost_in_usd, total_shipping_taxes_in_usd, total_warranty_cost_in_usd, total_return_cost_in_usd, total_refund_cost_in_usd, total_surcharges_in_usd, total_amount_in_usd, total_global_discounts_in_usd, total_global_surcharges_in_usd, custom_global_surcharges_amount, custom_global_surcharges_amount_currency_id, custom_global_discounts_amount, custom_global_discounts_amount_currency_id, total_detail, total_detail_currency_id, total_discounts, total_discounts_currency_id, total_tax_base, total_tax_base_currency_id, total_surcharges, total_surcharges_currency_id, total_profit, total_profit_currency_id, total_shipping_cost, total_shipping_cost_currency_id, total_shipping_tax, total_shipping_tax_currency_id, total_taxes, total_taxes_currency_id, total_withheld_tax, total_withheld_tax_currency_id, total_global_discounts, total_global_discounts_currency_id, total_global_surcharges, total_global_surcharges_currency_id, total, total_currency_id, return_policy_id, refund_policy_id, warranty_policy_id, shipment_policy_id, shipping_location_id, location_id, quote_item_record_id, parent_billing_item_record_id, deal_unit_id].hash
     end
 
     # Builds the object from hash

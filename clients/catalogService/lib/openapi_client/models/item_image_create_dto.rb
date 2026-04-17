@@ -19,10 +19,6 @@ module OpenapiClient
 
     attr_accessor :timestamp
 
-    attr_accessor :business_id
-
-    attr_accessor :business_profile_record_id
-
     attr_accessor :item_id
 
     attr_accessor :is_item_mozaic_bg
@@ -55,15 +51,11 @@ module OpenapiClient
 
     attr_accessor :parent_file_upload_id
 
-    attr_accessor :account_holder_id
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'id' => :'id',
         :'timestamp' => :'timestamp',
-        :'business_id' => :'businessID',
-        :'business_profile_record_id' => :'businessProfileRecordID',
         :'item_id' => :'itemID',
         :'is_item_mozaic_bg' => :'isItemMozaicBG',
         :'m_d5_hash' => :'mD5Hash',
@@ -79,8 +71,7 @@ module OpenapiClient
         :'file_length' => :'fileLength',
         :'valid_response' => :'validResponse',
         :'social_profile_id' => :'socialProfileID',
-        :'parent_file_upload_id' => :'parentFileUploadID',
-        :'account_holder_id' => :'accountHolderID'
+        :'parent_file_upload_id' => :'parentFileUploadID'
       }
     end
 
@@ -94,8 +85,6 @@ module OpenapiClient
       {
         :'id' => :'String',
         :'timestamp' => :'Time',
-        :'business_id' => :'String',
-        :'business_profile_record_id' => :'String',
         :'item_id' => :'String',
         :'is_item_mozaic_bg' => :'Boolean',
         :'m_d5_hash' => :'String',
@@ -111,15 +100,13 @@ module OpenapiClient
         :'file_length' => :'Integer',
         :'valid_response' => :'Boolean',
         :'social_profile_id' => :'String',
-        :'parent_file_upload_id' => :'String',
-        :'account_holder_id' => :'String'
+        :'parent_file_upload_id' => :'String'
       }
     end
 
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
-        :'business_profile_record_id',
         :'item_id',
         :'m_d5_hash',
         :'metadata',
@@ -131,8 +118,7 @@ module OpenapiClient
         :'notes',
         :'content_type',
         :'social_profile_id',
-        :'parent_file_upload_id',
-        :'account_holder_id'
+        :'parent_file_upload_id'
       ])
     end
 
@@ -157,16 +143,6 @@ module OpenapiClient
 
       if attributes.key?(:'timestamp')
         self.timestamp = attributes[:'timestamp']
-      end
-
-      if attributes.key?(:'business_id')
-        self.business_id = attributes[:'business_id']
-      else
-        self.business_id = nil
-      end
-
-      if attributes.key?(:'business_profile_record_id')
-        self.business_profile_record_id = attributes[:'business_profile_record_id']
       end
 
       if attributes.key?(:'item_id')
@@ -234,10 +210,6 @@ module OpenapiClient
       if attributes.key?(:'parent_file_upload_id')
         self.parent_file_upload_id = attributes[:'parent_file_upload_id']
       end
-
-      if attributes.key?(:'account_holder_id')
-        self.account_holder_id = attributes[:'account_holder_id']
-      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -245,26 +217,6 @@ module OpenapiClient
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
       invalid_properties = Array.new
-      if @business_id.nil?
-        invalid_properties.push('invalid value for "business_id", business_id cannot be nil.')
-      end
-
-      if @business_id.to_s.length > 36
-        invalid_properties.push('invalid value for "business_id", the character length must be smaller than or equal to 36.')
-      end
-
-      if @business_id.to_s.length < 36
-        invalid_properties.push('invalid value for "business_id", the character length must be great than or equal to 36.')
-      end
-
-      if !@business_profile_record_id.nil? && @business_profile_record_id.to_s.length > 36
-        invalid_properties.push('invalid value for "business_profile_record_id", the character length must be smaller than or equal to 36.')
-      end
-
-      if !@business_profile_record_id.nil? && @business_profile_record_id.to_s.length < 36
-        invalid_properties.push('invalid value for "business_profile_record_id", the character length must be great than or equal to 36.')
-      end
-
       if !@item_id.nil? && @item_id.to_s.length > 36
         invalid_properties.push('invalid value for "item_id", the character length must be smaller than or equal to 36.')
       end
@@ -373,14 +325,6 @@ module OpenapiClient
         invalid_properties.push('invalid value for "parent_file_upload_id", the character length must be great than or equal to 36.')
       end
 
-      if !@account_holder_id.nil? && @account_holder_id.to_s.length > 36
-        invalid_properties.push('invalid value for "account_holder_id", the character length must be smaller than or equal to 36.')
-      end
-
-      if !@account_holder_id.nil? && @account_holder_id.to_s.length < 36
-        invalid_properties.push('invalid value for "account_holder_id", the character length must be great than or equal to 36.')
-      end
-
       invalid_properties
     end
 
@@ -388,11 +332,6 @@ module OpenapiClient
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      return false if @business_id.nil?
-      return false if @business_id.to_s.length > 36
-      return false if @business_id.to_s.length < 36
-      return false if !@business_profile_record_id.nil? && @business_profile_record_id.to_s.length > 36
-      return false if !@business_profile_record_id.nil? && @business_profile_record_id.to_s.length < 36
       return false if !@item_id.nil? && @item_id.to_s.length > 36
       return false if !@item_id.nil? && @item_id.to_s.length < 36
       return false if !@m_d5_hash.nil? && @m_d5_hash.to_s.length > 32
@@ -420,41 +359,7 @@ module OpenapiClient
       return false if !@social_profile_id.nil? && @social_profile_id.to_s.length < 36
       return false if !@parent_file_upload_id.nil? && @parent_file_upload_id.to_s.length > 36
       return false if !@parent_file_upload_id.nil? && @parent_file_upload_id.to_s.length < 36
-      return false if !@account_holder_id.nil? && @account_holder_id.to_s.length > 36
-      return false if !@account_holder_id.nil? && @account_holder_id.to_s.length < 36
       true
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] business_id Value to be assigned
-    def business_id=(business_id)
-      if business_id.nil?
-        fail ArgumentError, 'business_id cannot be nil'
-      end
-
-      if business_id.to_s.length > 36
-        fail ArgumentError, 'invalid value for "business_id", the character length must be smaller than or equal to 36.'
-      end
-
-      if business_id.to_s.length < 36
-        fail ArgumentError, 'invalid value for "business_id", the character length must be great than or equal to 36.'
-      end
-
-      @business_id = business_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] business_profile_record_id Value to be assigned
-    def business_profile_record_id=(business_profile_record_id)
-      if !business_profile_record_id.nil? && business_profile_record_id.to_s.length > 36
-        fail ArgumentError, 'invalid value for "business_profile_record_id", the character length must be smaller than or equal to 36.'
-      end
-
-      if !business_profile_record_id.nil? && business_profile_record_id.to_s.length < 36
-        fail ArgumentError, 'invalid value for "business_profile_record_id", the character length must be great than or equal to 36.'
-      end
-
-      @business_profile_record_id = business_profile_record_id
     end
 
     # Custom attribute writer method with validation
@@ -647,20 +552,6 @@ module OpenapiClient
       @parent_file_upload_id = parent_file_upload_id
     end
 
-    # Custom attribute writer method with validation
-    # @param [Object] account_holder_id Value to be assigned
-    def account_holder_id=(account_holder_id)
-      if !account_holder_id.nil? && account_holder_id.to_s.length > 36
-        fail ArgumentError, 'invalid value for "account_holder_id", the character length must be smaller than or equal to 36.'
-      end
-
-      if !account_holder_id.nil? && account_holder_id.to_s.length < 36
-        fail ArgumentError, 'invalid value for "account_holder_id", the character length must be great than or equal to 36.'
-      end
-
-      @account_holder_id = account_holder_id
-    end
-
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(o)
@@ -668,8 +559,6 @@ module OpenapiClient
       self.class == o.class &&
           id == o.id &&
           timestamp == o.timestamp &&
-          business_id == o.business_id &&
-          business_profile_record_id == o.business_profile_record_id &&
           item_id == o.item_id &&
           is_item_mozaic_bg == o.is_item_mozaic_bg &&
           m_d5_hash == o.m_d5_hash &&
@@ -685,8 +574,7 @@ module OpenapiClient
           file_length == o.file_length &&
           valid_response == o.valid_response &&
           social_profile_id == o.social_profile_id &&
-          parent_file_upload_id == o.parent_file_upload_id &&
-          account_holder_id == o.account_holder_id
+          parent_file_upload_id == o.parent_file_upload_id
     end
 
     # @see the `==` method
@@ -698,7 +586,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, timestamp, business_id, business_profile_record_id, item_id, is_item_mozaic_bg, m_d5_hash, metadata, file_upload_url, file_name, title, abstract, author, key_words, notes, content_type, file_length, valid_response, social_profile_id, parent_file_upload_id, account_holder_id].hash
+      [id, timestamp, item_id, is_item_mozaic_bg, m_d5_hash, metadata, file_upload_url, file_name, title, abstract, author, key_words, notes, content_type, file_length, valid_response, social_profile_id, parent_file_upload_id].hash
     end
 
     # Builds the object from hash

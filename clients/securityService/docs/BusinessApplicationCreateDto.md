@@ -19,8 +19,6 @@
 | **contact_email** | **String** |  | [optional] |
 | **privacy_policy_url** | **String** |  | [optional] |
 | **terms_and_conditions_url** | **String** |  | [optional] |
-| **business_id** | **String** |  | [optional] |
-| **business_profile_record_id** | **String** |  | [optional] |
 | **require_https** | **Boolean** |  | [optional] |
 | **require_app_secret** | **Boolean** |  | [optional] |
 | **enable_client_oauth_login** | **Boolean** |  | [optional] |
@@ -65,8 +63,6 @@ instance = OpenapiClient::BusinessApplicationCreateDto.new(
   contact_email: null,
   privacy_policy_url: null,
   terms_and_conditions_url: null,
-  business_id: null,
-  business_profile_record_id: null,
   require_https: null,
   require_app_secret: null,
   enable_client_oauth_login: null,

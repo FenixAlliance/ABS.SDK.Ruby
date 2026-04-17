@@ -31,7 +31,7 @@ tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 opts = {
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example', # String | 
-  course_file_create_dto: OpenapiClient::CourseFileCreateDto.new({title: 'title_example', file_name: 'file_name_example', file_upload_url: 'file_upload_url_example', course_id: 'course_id_example', business_id: 'business_id_example'}) # CourseFileCreateDto | 
+  course_file_create_dto: OpenapiClient::CourseFileCreateDto.new({title: 'title_example', file_name: 'file_name_example', file_upload_url: 'file_upload_url_example', course_id: 'course_id_example'}) # CourseFileCreateDto | 
 }
 
 begin

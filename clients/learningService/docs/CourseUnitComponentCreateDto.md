@@ -11,7 +11,6 @@
 | **content** | **String** |  | [optional] |
 | **order** | **Integer** |  | [optional] |
 | **course_id** | **String** |  |  |
-| **business_id** | **String** |  |  |
 | **course_unit_id** | **String** |  | [optional] |
 
 ## Example
@@ -27,7 +26,6 @@ instance = OpenapiClient::CourseUnitComponentCreateDto.new(
   content: null,
   order: null,
   course_id: null,
-  business_id: null,
   course_unit_id: null
 )
 ```

@@ -15,27 +15,27 @@ require 'time'
 
 module OpenapiClient
   class SocialMediaPostCreateDto
+    attr_accessor :id
+
+    attr_accessor :timestamp
+
     attr_accessor :title
 
     attr_accessor :content
 
     attr_accessor :featured_image_url
 
-    attr_accessor :tenant_id
-
     attr_accessor :social_post_bucket_id
-
-    attr_accessor :enrollment_id
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'id' => :'id',
+        :'timestamp' => :'timestamp',
         :'title' => :'title',
         :'content' => :'content',
         :'featured_image_url' => :'featuredImageUrl',
-        :'tenant_id' => :'tenantId',
-        :'social_post_bucket_id' => :'socialPostBucketId',
-        :'enrollment_id' => :'enrollmentId'
+        :'social_post_bucket_id' => :'socialPostBucketId'
       }
     end
 
@@ -47,12 +47,12 @@ module OpenapiClient
     # Attribute type mapping.
     def self.openapi_types
       {
+        :'id' => :'String',
+        :'timestamp' => :'Time',
         :'title' => :'String',
         :'content' => :'String',
         :'featured_image_url' => :'String',
-        :'tenant_id' => :'String',
-        :'social_post_bucket_id' => :'String',
-        :'enrollment_id' => :'String'
+        :'social_post_bucket_id' => :'String'
       }
     end
 
@@ -62,9 +62,7 @@ module OpenapiClient
         :'title',
         :'content',
         :'featured_image_url',
-        :'tenant_id',
-        :'social_post_bucket_id',
-        :'enrollment_id'
+        :'social_post_bucket_id'
       ])
     end
 
@@ -83,6 +81,14 @@ module OpenapiClient
         h[k.to_sym] = v
       }
 
+      if attributes.key?(:'id')
+        self.id = attributes[:'id']
+      end
+
+      if attributes.key?(:'timestamp')
+        self.timestamp = attributes[:'timestamp']
+      end
+
       if attributes.key?(:'title')
         self.title = attributes[:'title']
       end
@@ -95,16 +101,8 @@ module OpenapiClient
         self.featured_image_url = attributes[:'featured_image_url']
       end
 
-      if attributes.key?(:'tenant_id')
-        self.tenant_id = attributes[:'tenant_id']
-      end
-
       if attributes.key?(:'social_post_bucket_id')
         self.social_post_bucket_id = attributes[:'social_post_bucket_id']
-      end
-
-      if attributes.key?(:'enrollment_id')
-        self.enrollment_id = attributes[:'enrollment_id']
       end
     end
 
@@ -121,28 +119,12 @@ module OpenapiClient
         invalid_properties.push('invalid value for "title", the character length must be great than or equal to 0.')
       end
 
-      if !@tenant_id.nil? && @tenant_id.to_s.length > 36
-        invalid_properties.push('invalid value for "tenant_id", the character length must be smaller than or equal to 36.')
-      end
-
-      if !@tenant_id.nil? && @tenant_id.to_s.length < 0
-        invalid_properties.push('invalid value for "tenant_id", the character length must be great than or equal to 0.')
-      end
-
       if !@social_post_bucket_id.nil? && @social_post_bucket_id.to_s.length > 36
         invalid_properties.push('invalid value for "social_post_bucket_id", the character length must be smaller than or equal to 36.')
       end
 
       if !@social_post_bucket_id.nil? && @social_post_bucket_id.to_s.length < 0
         invalid_properties.push('invalid value for "social_post_bucket_id", the character length must be great than or equal to 0.')
-      end
-
-      if !@enrollment_id.nil? && @enrollment_id.to_s.length > 36
-        invalid_properties.push('invalid value for "enrollment_id", the character length must be smaller than or equal to 36.')
-      end
-
-      if !@enrollment_id.nil? && @enrollment_id.to_s.length < 0
-        invalid_properties.push('invalid value for "enrollment_id", the character length must be great than or equal to 0.')
       end
 
       invalid_properties
@@ -154,12 +136,8 @@ module OpenapiClient
       warn '[DEPRECATED] the `valid?` method is obsolete'
       return false if !@title.nil? && @title.to_s.length > 99
       return false if !@title.nil? && @title.to_s.length < 0
-      return false if !@tenant_id.nil? && @tenant_id.to_s.length > 36
-      return false if !@tenant_id.nil? && @tenant_id.to_s.length < 0
       return false if !@social_post_bucket_id.nil? && @social_post_bucket_id.to_s.length > 36
       return false if !@social_post_bucket_id.nil? && @social_post_bucket_id.to_s.length < 0
-      return false if !@enrollment_id.nil? && @enrollment_id.to_s.length > 36
-      return false if !@enrollment_id.nil? && @enrollment_id.to_s.length < 0
       true
     end
 
@@ -178,20 +156,6 @@ module OpenapiClient
     end
 
     # Custom attribute writer method with validation
-    # @param [Object] tenant_id Value to be assigned
-    def tenant_id=(tenant_id)
-      if !tenant_id.nil? && tenant_id.to_s.length > 36
-        fail ArgumentError, 'invalid value for "tenant_id", the character length must be smaller than or equal to 36.'
-      end
-
-      if !tenant_id.nil? && tenant_id.to_s.length < 0
-        fail ArgumentError, 'invalid value for "tenant_id", the character length must be great than or equal to 0.'
-      end
-
-      @tenant_id = tenant_id
-    end
-
-    # Custom attribute writer method with validation
     # @param [Object] social_post_bucket_id Value to be assigned
     def social_post_bucket_id=(social_post_bucket_id)
       if !social_post_bucket_id.nil? && social_post_bucket_id.to_s.length > 36
@@ -205,31 +169,17 @@ module OpenapiClient
       @social_post_bucket_id = social_post_bucket_id
     end
 
-    # Custom attribute writer method with validation
-    # @param [Object] enrollment_id Value to be assigned
-    def enrollment_id=(enrollment_id)
-      if !enrollment_id.nil? && enrollment_id.to_s.length > 36
-        fail ArgumentError, 'invalid value for "enrollment_id", the character length must be smaller than or equal to 36.'
-      end
-
-      if !enrollment_id.nil? && enrollment_id.to_s.length < 0
-        fail ArgumentError, 'invalid value for "enrollment_id", the character length must be great than or equal to 0.'
-      end
-
-      @enrollment_id = enrollment_id
-    end
-
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          id == o.id &&
+          timestamp == o.timestamp &&
           title == o.title &&
           content == o.content &&
           featured_image_url == o.featured_image_url &&
-          tenant_id == o.tenant_id &&
-          social_post_bucket_id == o.social_post_bucket_id &&
-          enrollment_id == o.enrollment_id
+          social_post_bucket_id == o.social_post_bucket_id
     end
 
     # @see the `==` method
@@ -241,7 +191,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [title, content, featured_image_url, tenant_id, social_post_bucket_id, enrollment_id].hash
+      [id, timestamp, title, content, featured_image_url, social_post_bucket_id].hash
     end
 
     # Builds the object from hash

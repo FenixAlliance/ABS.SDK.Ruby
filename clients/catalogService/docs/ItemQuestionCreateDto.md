@@ -10,7 +10,6 @@
 | **needs_revision** | **Boolean** |  |  |
 | **question** | **String** |  |  |
 | **social_profile_id** | **String** |  | [optional] |
-| **business_id** | **String** |  |  |
 | **item_id** | **String** |  |  |
 
 ## Example
@@ -25,7 +24,6 @@ instance = OpenapiClient::ItemQuestionCreateDto.new(
   needs_revision: null,
   question: null,
   social_profile_id: null,
-  business_id: null,
   item_id: null
 )
 ```

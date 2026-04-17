@@ -10,7 +10,6 @@
 | **description** | **String** |  | [optional] |
 | **image_url** | **String** |  | [optional] |
 | **is_featured** | **Boolean** |  | [optional] |
-| **business_id** | **String** |  |  |
 
 ## Example
 
@@ -23,8 +22,7 @@ instance = OpenapiClient::CourseCategoryCreateDto.new(
   title: null,
   description: null,
   image_url: null,
-  is_featured: null,
-  business_id: null
+  is_featured: null
 )
 ```
 

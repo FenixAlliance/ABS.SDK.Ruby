@@ -25,11 +25,7 @@ module OpenapiClient
 
     attr_accessor :deal_unit_flow_id
 
-    attr_accessor :tenant_id
-
     attr_accessor :description
-
-    attr_accessor :enrollment_id
 
     attr_accessor :parent_business_process_stage_id
 
@@ -41,9 +37,7 @@ module OpenapiClient
         :'order' => :'order',
         :'name' => :'name',
         :'deal_unit_flow_id' => :'dealUnitFlowId',
-        :'tenant_id' => :'tenantId',
         :'description' => :'description',
-        :'enrollment_id' => :'enrollmentId',
         :'parent_business_process_stage_id' => :'parentBusinessProcessStageId'
       }
     end
@@ -61,9 +55,7 @@ module OpenapiClient
         :'order' => :'Integer',
         :'name' => :'String',
         :'deal_unit_flow_id' => :'String',
-        :'tenant_id' => :'String',
         :'description' => :'String',
-        :'enrollment_id' => :'String',
         :'parent_business_process_stage_id' => :'String'
       }
     end
@@ -73,9 +65,7 @@ module OpenapiClient
       Set.new([
         :'name',
         :'deal_unit_flow_id',
-        :'tenant_id',
         :'description',
-        :'enrollment_id',
         :'parent_business_process_stage_id'
       ])
     end
@@ -115,16 +105,8 @@ module OpenapiClient
         self.deal_unit_flow_id = attributes[:'deal_unit_flow_id']
       end
 
-      if attributes.key?(:'tenant_id')
-        self.tenant_id = attributes[:'tenant_id']
-      end
-
       if attributes.key?(:'description')
         self.description = attributes[:'description']
-      end
-
-      if attributes.key?(:'enrollment_id')
-        self.enrollment_id = attributes[:'enrollment_id']
       end
 
       if attributes.key?(:'parent_business_process_stage_id')
@@ -157,9 +139,7 @@ module OpenapiClient
           order == o.order &&
           name == o.name &&
           deal_unit_flow_id == o.deal_unit_flow_id &&
-          tenant_id == o.tenant_id &&
           description == o.description &&
-          enrollment_id == o.enrollment_id &&
           parent_business_process_stage_id == o.parent_business_process_stage_id
     end
 
@@ -172,7 +152,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, timestamp, order, name, deal_unit_flow_id, tenant_id, description, enrollment_id, parent_business_process_stage_id].hash
+      [id, timestamp, order, name, deal_unit_flow_id, description, parent_business_process_stage_id].hash
     end
 
     # Builds the object from hash

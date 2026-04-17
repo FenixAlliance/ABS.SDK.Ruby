@@ -10,7 +10,6 @@
 | **description** | **String** |  | [optional] |
 | **content** | **String** |  | [optional] |
 | **course_id** | **String** |  |  |
-| **business_id** | **String** |  |  |
 
 ## Example
 
@@ -23,8 +22,7 @@ instance = OpenapiClient::CourseNewsCreateDto.new(
   title: null,
   description: null,
   content: null,
-  course_id: null,
-  business_id: null
+  course_id: null
 )
 ```
 

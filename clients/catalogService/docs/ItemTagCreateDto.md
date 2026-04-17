@@ -8,7 +8,6 @@
 | **timestamp** | **Time** |  | [optional] |
 | **title** | **String** |  |  |
 | **description** | **String** |  | [optional] |
-| **business_id** | **String** |  |  |
 
 ## Example
 
@@ -19,8 +18,7 @@ instance = OpenapiClient::ItemTagCreateDto.new(
   id: null,
   timestamp: null,
   title: null,
-  description: null,
-  business_id: null
+  description: null
 )
 ```
 

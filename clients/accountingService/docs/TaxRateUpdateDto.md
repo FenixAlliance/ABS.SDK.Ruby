@@ -18,12 +18,10 @@
 | **cumulative_transaction_threshold** | **Float** |  | [optional] |
 | **fiscal_authority_id** | **String** |  | [optional] |
 | **fiscal_year_id** | **String** |  | [optional] |
-| **tenant_id** | **String** |  | [optional] |
 | **country_id** | **String** |  | [optional] |
 | **tax_class_id** | **String** |  | [optional] |
 | **currency_id** | **String** |  | [optional] |
 | **tax_policy_id** | **String** |  | [optional] |
-| **enrollment_id** | **String** |  | [optional] |
 
 ## Example
 
@@ -45,12 +43,10 @@ instance = OpenapiClient::TaxRateUpdateDto.new(
   cumulative_transaction_threshold: null,
   fiscal_authority_id: null,
   fiscal_year_id: null,
-  tenant_id: null,
   country_id: null,
   tax_class_id: null,
   currency_id: null,
-  tax_policy_id: null,
-  enrollment_id: null
+  tax_policy_id: null
 )
 ```
 

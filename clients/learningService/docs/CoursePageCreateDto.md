@@ -11,7 +11,6 @@
 | **content** | **String** |  | [optional] |
 | **slug** | **String** |  | [optional] |
 | **course_id** | **String** |  |  |
-| **business_id** | **String** |  |  |
 
 ## Example
 
@@ -25,8 +24,7 @@ instance = OpenapiClient::CoursePageCreateDto.new(
   description: null,
   content: null,
   slug: null,
-  course_id: null,
-  business_id: null
+  course_id: null
 )
 ```
 

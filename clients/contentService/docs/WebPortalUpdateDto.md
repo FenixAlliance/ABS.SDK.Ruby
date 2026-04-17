@@ -11,7 +11,6 @@
 | **description** | **String** |  | [optional] |
 | **website_theme_id** | **String** |  | [optional] |
 | **business_domain_id** | **String** |  | [optional] |
-| **business_profile_record_id** | **String** |  | [optional] |
 | **business_portal_application_id** | **String** |  | [optional] |
 
 ## Example
@@ -27,7 +26,6 @@ instance = OpenapiClient::WebPortalUpdateDto.new(
   description: null,
   website_theme_id: null,
   business_domain_id: null,
-  business_profile_record_id: null,
   business_portal_application_id: null
 )
 ```

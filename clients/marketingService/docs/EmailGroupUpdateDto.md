@@ -7,8 +7,6 @@
 | **name** | **String** |  | [optional] |
 | **description** | **String** |  | [optional] |
 | **enabled** | **Boolean** |  | [optional] |
-| **tenant_id** | **String** |  | [optional] |
-| **enrollment_id** | **String** |  | [optional] |
 
 ## Example
 
@@ -18,9 +16,7 @@ require 'openapi_client'
 instance = OpenapiClient::EmailGroupUpdateDto.new(
   name: null,
   description: null,
-  enabled: null,
-  tenant_id: null,
-  enrollment_id: null
+  enabled: null
 )
 ```
 

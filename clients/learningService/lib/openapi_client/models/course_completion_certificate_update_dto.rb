@@ -19,10 +19,6 @@ module OpenapiClient
 
     attr_accessor :course_enrollment_id
 
-    attr_accessor :business_id
-
-    attr_accessor :business_profile_record_id
-
     attr_accessor :course_completion_certificate_template_id
 
     attr_accessor :course_id
@@ -32,8 +28,6 @@ module OpenapiClient
       {
         :'student_profile_id' => :'studentProfileID',
         :'course_enrollment_id' => :'courseEnrollmentID',
-        :'business_id' => :'businessID',
-        :'business_profile_record_id' => :'businessProfileRecordID',
         :'course_completion_certificate_template_id' => :'courseCompletionCertificateTemplateID',
         :'course_id' => :'courseID'
       }
@@ -49,8 +43,6 @@ module OpenapiClient
       {
         :'student_profile_id' => :'String',
         :'course_enrollment_id' => :'String',
-        :'business_id' => :'String',
-        :'business_profile_record_id' => :'String',
         :'course_completion_certificate_template_id' => :'String',
         :'course_id' => :'String'
       }
@@ -61,8 +53,6 @@ module OpenapiClient
       Set.new([
         :'student_profile_id',
         :'course_enrollment_id',
-        :'business_id',
-        :'business_profile_record_id',
         :'course_completion_certificate_template_id',
         :'course_id'
       ])
@@ -89,14 +79,6 @@ module OpenapiClient
 
       if attributes.key?(:'course_enrollment_id')
         self.course_enrollment_id = attributes[:'course_enrollment_id']
-      end
-
-      if attributes.key?(:'business_id')
-        self.business_id = attributes[:'business_id']
-      end
-
-      if attributes.key?(:'business_profile_record_id')
-        self.business_profile_record_id = attributes[:'business_profile_record_id']
       end
 
       if attributes.key?(:'course_completion_certificate_template_id')
@@ -130,8 +112,6 @@ module OpenapiClient
       self.class == o.class &&
           student_profile_id == o.student_profile_id &&
           course_enrollment_id == o.course_enrollment_id &&
-          business_id == o.business_id &&
-          business_profile_record_id == o.business_profile_record_id &&
           course_completion_certificate_template_id == o.course_completion_certificate_template_id &&
           course_id == o.course_id
     end
@@ -145,7 +125,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [student_profile_id, course_enrollment_id, business_id, business_profile_record_id, course_completion_certificate_template_id, course_id].hash
+      [student_profile_id, course_enrollment_id, course_completion_certificate_template_id, course_id].hash
     end
 
     # Builds the object from hash

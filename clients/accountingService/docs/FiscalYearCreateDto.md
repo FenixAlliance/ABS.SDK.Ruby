@@ -9,10 +9,9 @@
 | **name** | **String** |  | [optional] |
 | **description** | **String** |  | [optional] |
 | **closed** | **Boolean** |  | [optional] |
-| **tenant_id** | **String** |  | [optional] |
-| **enrollment_id** | **String** |  | [optional] |
 | **end_date** | **Time** |  | [optional] |
 | **start_date** | **Time** |  | [optional] |
+| **fiscal_authority_id** | **String** |  | [optional] |
 
 ## Example
 
@@ -25,10 +24,9 @@ instance = OpenapiClient::FiscalYearCreateDto.new(
   name: null,
   description: null,
   closed: null,
-  tenant_id: null,
-  enrollment_id: null,
   end_date: null,
-  start_date: null
+  start_date: null,
+  fiscal_authority_id: null
 )
 ```
 

@@ -43,8 +43,6 @@ module OpenapiClient
 
     attr_accessor :web_portal_id
 
-    attr_accessor :business_profile_record_id
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -61,8 +59,7 @@ module OpenapiClient
         :'canonical_url' => :'canonicalUrl',
         :'image_url' => :'imageURL',
         :'image' => :'image',
-        :'web_portal_id' => :'webPortalID',
-        :'business_profile_record_id' => :'businessProfileRecordID'
+        :'web_portal_id' => :'webPortalID'
       }
     end
 
@@ -87,8 +84,7 @@ module OpenapiClient
         :'canonical_url' => :'String',
         :'image_url' => :'String',
         :'image' => :'String',
-        :'web_portal_id' => :'String',
-        :'business_profile_record_id' => :'String'
+        :'web_portal_id' => :'String'
       }
     end
 
@@ -104,8 +100,7 @@ module OpenapiClient
         :'canonical_url',
         :'image_url',
         :'image',
-        :'web_portal_id',
-        :'business_profile_record_id'
+        :'web_portal_id'
       ])
     end
 
@@ -179,10 +174,6 @@ module OpenapiClient
       if attributes.key?(:'web_portal_id')
         self.web_portal_id = attributes[:'web_portal_id']
       end
-
-      if attributes.key?(:'business_profile_record_id')
-        self.business_profile_record_id = attributes[:'business_profile_record_id']
-      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -218,8 +209,7 @@ module OpenapiClient
           canonical_url == o.canonical_url &&
           image_url == o.image_url &&
           image == o.image &&
-          web_portal_id == o.web_portal_id &&
-          business_profile_record_id == o.business_profile_record_id
+          web_portal_id == o.web_portal_id
     end
 
     # @see the `==` method
@@ -231,7 +221,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, timestamp, slug, title, description, seo_title, meta_description, cornerstone_content, allow_serach_engines, seo_key_phrases, canonical_url, image_url, image, web_portal_id, business_profile_record_id].hash
+      [id, timestamp, slug, title, description, seo_title, meta_description, cornerstone_content, allow_serach_engines, seo_key_phrases, canonical_url, image_url, image, web_portal_id].hash
     end
 
     # Builds the object from hash

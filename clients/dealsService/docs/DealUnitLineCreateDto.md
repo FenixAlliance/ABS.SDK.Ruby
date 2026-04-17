@@ -4,14 +4,14 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
+| **id** | **String** |  | [optional] |
+| **timestamp** | **Time** |  | [optional] |
 | **closed** | **Boolean** |  | [optional] |
 | **item_id** | **String** |  | [optional] |
 | **item_title** | **String** |  | [optional] |
 | **item_short_description** | **String** |  | [optional] |
 | **item_primary_image_url** | **String** |  | [optional] |
 | **shipping_policy_id** | **String** |  | [optional] |
-| **tenant_id** | **String** |  | [optional] |
-| **enrollment_id** | **String** |  | [optional] |
 | **currency_id** | **String** |  | [optional] |
 | **description** | **String** |  | [optional] |
 | **quantity** | **Float** |  | [optional] |
@@ -68,14 +68,14 @@
 | **custom_global_discounts_amount_currency_id** | **String** |  | [optional] |
 | **total_detail** | **Float** |  | [optional] |
 | **total_detail_currency_id** | **String** |  | [optional] |
-| **total_profit** | **Float** |  | [optional] |
-| **total_profit_currency_id** | **String** |  | [optional] |
 | **total_discounts** | **Float** |  | [optional] |
 | **total_discounts_currency_id** | **String** |  | [optional] |
-| **total_surcharges** | **Float** |  | [optional] |
-| **total_surcharges_currency_id** | **String** |  | [optional] |
 | **total_tax_base** | **Float** |  | [optional] |
 | **total_tax_base_currency_id** | **String** |  | [optional] |
+| **total_surcharges** | **Float** |  | [optional] |
+| **total_surcharges_currency_id** | **String** |  | [optional] |
+| **total_profit** | **Float** |  | [optional] |
+| **total_profit_currency_id** | **String** |  | [optional] |
 | **total_shipping_cost** | **Float** |  | [optional] |
 | **total_shipping_cost_currency_id** | **String** |  | [optional] |
 | **total_shipping_tax** | **Float** |  | [optional] |
@@ -97,7 +97,6 @@
 | **shipping_location_id** | **String** |  | [optional] |
 | **location_id** | **String** |  | [optional] |
 | **quote_item_record_id** | **String** |  | [optional] |
-| **business_profile_record_id** | **String** |  | [optional] |
 | **parent_billing_item_record_id** | **String** |  | [optional] |
 | **deal_unit_id** | **String** |  | [optional] |
 
@@ -107,14 +106,14 @@
 require 'openapi_client'
 
 instance = OpenapiClient::DealUnitLineCreateDto.new(
+  id: null,
+  timestamp: null,
   closed: null,
   item_id: null,
   item_title: null,
   item_short_description: null,
   item_primary_image_url: null,
   shipping_policy_id: null,
-  tenant_id: null,
-  enrollment_id: null,
   currency_id: null,
   description: null,
   quantity: null,
@@ -171,14 +170,14 @@ instance = OpenapiClient::DealUnitLineCreateDto.new(
   custom_global_discounts_amount_currency_id: null,
   total_detail: null,
   total_detail_currency_id: null,
-  total_profit: null,
-  total_profit_currency_id: null,
   total_discounts: null,
   total_discounts_currency_id: null,
-  total_surcharges: null,
-  total_surcharges_currency_id: null,
   total_tax_base: null,
   total_tax_base_currency_id: null,
+  total_surcharges: null,
+  total_surcharges_currency_id: null,
+  total_profit: null,
+  total_profit_currency_id: null,
   total_shipping_cost: null,
   total_shipping_cost_currency_id: null,
   total_shipping_tax: null,
@@ -200,7 +199,6 @@ instance = OpenapiClient::DealUnitLineCreateDto.new(
   shipping_location_id: null,
   location_id: null,
   quote_item_record_id: null,
-  business_profile_record_id: null,
   parent_billing_item_record_id: null,
   deal_unit_id: null
 )

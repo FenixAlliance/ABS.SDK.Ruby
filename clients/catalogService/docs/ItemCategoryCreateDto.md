@@ -9,8 +9,6 @@
 | **title** | **String** |  |  |
 | **description** | **String** |  | [optional] |
 | **image_url** | **String** |  | [optional] |
-| **business_id** | **String** |  |  |
-| **business_profile_record_id** | **String** |  | [optional] |
 | **parent_item_category_id** | **String** |  | [optional] |
 
 ## Example
@@ -24,8 +22,6 @@ instance = OpenapiClient::ItemCategoryCreateDto.new(
   title: null,
   description: null,
   image_url: null,
-  business_id: null,
-  business_profile_record_id: null,
   parent_item_category_id: null
 )
 ```

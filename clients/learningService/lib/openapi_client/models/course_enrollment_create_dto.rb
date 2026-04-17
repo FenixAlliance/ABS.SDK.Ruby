@@ -25,8 +25,6 @@ module OpenapiClient
 
     attr_accessor :student_profile_id
 
-    attr_accessor :business_profile_record_id
-
     attr_accessor :course_completion_certificate_id
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -37,7 +35,6 @@ module OpenapiClient
         :'course_id' => :'courseID',
         :'course_cohort_id' => :'courseCohortID',
         :'student_profile_id' => :'studentProfileID',
-        :'business_profile_record_id' => :'businessProfileRecordID',
         :'course_completion_certificate_id' => :'courseCompletionCertificateID'
       }
     end
@@ -55,7 +52,6 @@ module OpenapiClient
         :'course_id' => :'String',
         :'course_cohort_id' => :'String',
         :'student_profile_id' => :'String',
-        :'business_profile_record_id' => :'String',
         :'course_completion_certificate_id' => :'String'
       }
     end
@@ -66,7 +62,6 @@ module OpenapiClient
         :'course_id',
         :'course_cohort_id',
         :'student_profile_id',
-        :'business_profile_record_id',
         :'course_completion_certificate_id'
       ])
     end
@@ -106,10 +101,6 @@ module OpenapiClient
         self.student_profile_id = attributes[:'student_profile_id']
       end
 
-      if attributes.key?(:'business_profile_record_id')
-        self.business_profile_record_id = attributes[:'business_profile_record_id']
-      end
-
       if attributes.key?(:'course_completion_certificate_id')
         self.course_completion_certificate_id = attributes[:'course_completion_certificate_id']
       end
@@ -140,7 +131,6 @@ module OpenapiClient
           course_id == o.course_id &&
           course_cohort_id == o.course_cohort_id &&
           student_profile_id == o.student_profile_id &&
-          business_profile_record_id == o.business_profile_record_id &&
           course_completion_certificate_id == o.course_completion_certificate_id
     end
 
@@ -153,7 +143,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, timestamp, course_id, course_cohort_id, student_profile_id, business_profile_record_id, course_completion_certificate_id].hash
+      [id, timestamp, course_id, course_cohort_id, student_profile_id, course_completion_certificate_id].hash
     end
 
     # Builds the object from hash

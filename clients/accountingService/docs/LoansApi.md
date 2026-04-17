@@ -732,7 +732,7 @@ No authorization required
 
 ## update_loan_application_async
 
-> <EmptyEnvelope> update_loan_application_async(tenant_id, application_id, loan_application_update_dto, opts)
+> <EmptyEnvelope> update_loan_application_async(tenant_id, application_id, body, opts)
 
 Updates a loan application
 
@@ -747,7 +747,7 @@ require 'openapi_client'
 api_instance = OpenapiClient::LoansApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 application_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
-loan_application_update_dto = OpenapiClient::LoanApplicationUpdateDto.new # LoanApplicationUpdateDto | 
+body = { ... } # Object | 
 opts = {
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example' # String | 
@@ -755,7 +755,7 @@ opts = {
 
 begin
   # Updates a loan application
-  result = api_instance.update_loan_application_async(tenant_id, application_id, loan_application_update_dto, opts)
+  result = api_instance.update_loan_application_async(tenant_id, application_id, body, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling LoansApi->update_loan_application_async: #{e}"
@@ -766,12 +766,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<EmptyEnvelope>, Integer, Hash)> update_loan_application_async_with_http_info(tenant_id, application_id, loan_application_update_dto, opts)
+> <Array(<EmptyEnvelope>, Integer, Hash)> update_loan_application_async_with_http_info(tenant_id, application_id, body, opts)
 
 ```ruby
 begin
   # Updates a loan application
-  data, status_code, headers = api_instance.update_loan_application_async_with_http_info(tenant_id, application_id, loan_application_update_dto, opts)
+  data, status_code, headers = api_instance.update_loan_application_async_with_http_info(tenant_id, application_id, body, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <EmptyEnvelope>
@@ -786,7 +786,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
 | **application_id** | **String** |  |  |
-| **loan_application_update_dto** | [**LoanApplicationUpdateDto**](LoanApplicationUpdateDto.md) |  |  |
+| **body** | **Object** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
 

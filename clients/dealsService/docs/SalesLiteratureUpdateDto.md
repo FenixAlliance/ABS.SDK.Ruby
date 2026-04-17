@@ -9,8 +9,6 @@
 | **description** | **String** |  | [optional] |
 | **modified_date** | **Time** |  | [optional] |
 | **expiration_date** | **Time** |  | [optional] |
-| **tenant_id** | **String** |  | [optional] |
-| **enrollment_id** | **String** |  | [optional] |
 | **sales_literature_type_id** | **String** |  | [optional] |
 
 ## Example
@@ -24,8 +22,6 @@ instance = OpenapiClient::SalesLiteratureUpdateDto.new(
   description: null,
   modified_date: null,
   expiration_date: null,
-  tenant_id: null,
-  enrollment_id: null,
   sales_literature_type_id: null
 )
 ```

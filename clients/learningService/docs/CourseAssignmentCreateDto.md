@@ -11,7 +11,6 @@
 | **instructions** | **String** |  | [optional] |
 | **points** | **Float** |  | [optional] |
 | **course_id** | **String** |  |  |
-| **business_id** | **String** |  |  |
 | **course_unit_id** | **String** |  | [optional] |
 | **course_cohort_id** | **String** |  | [optional] |
 | **course_assignment_type_id** | **String** |  | [optional] |
@@ -32,7 +31,6 @@ instance = OpenapiClient::CourseAssignmentCreateDto.new(
   instructions: null,
   points: null,
   course_id: null,
-  business_id: null,
   course_unit_id: null,
   course_cohort_id: null,
   course_assignment_type_id: null,

@@ -21,8 +21,6 @@ module OpenapiClient
 
     attr_accessor :disabled
 
-    attr_accessor :business_profile_record_id
-
     attr_accessor :organization_profile_id
 
     attr_accessor :parent_department_id
@@ -33,7 +31,6 @@ module OpenapiClient
         :'name' => :'name',
         :'description' => :'description',
         :'disabled' => :'disabled',
-        :'business_profile_record_id' => :'businessProfileRecordID',
         :'organization_profile_id' => :'organizationProfileID',
         :'parent_department_id' => :'parentDepartmentID'
       }
@@ -50,7 +47,6 @@ module OpenapiClient
         :'name' => :'String',
         :'description' => :'String',
         :'disabled' => :'Boolean',
-        :'business_profile_record_id' => :'String',
         :'organization_profile_id' => :'String',
         :'parent_department_id' => :'String'
       }
@@ -61,7 +57,6 @@ module OpenapiClient
       Set.new([
         :'name',
         :'description',
-        :'business_profile_record_id',
         :'organization_profile_id',
         :'parent_department_id'
       ])
@@ -92,10 +87,6 @@ module OpenapiClient
 
       if attributes.key?(:'disabled')
         self.disabled = attributes[:'disabled']
-      end
-
-      if attributes.key?(:'business_profile_record_id')
-        self.business_profile_record_id = attributes[:'business_profile_record_id']
       end
 
       if attributes.key?(:'organization_profile_id')
@@ -130,7 +121,6 @@ module OpenapiClient
           name == o.name &&
           description == o.description &&
           disabled == o.disabled &&
-          business_profile_record_id == o.business_profile_record_id &&
           organization_profile_id == o.organization_profile_id &&
           parent_department_id == o.parent_department_id
     end
@@ -144,7 +134,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [name, description, disabled, business_profile_record_id, organization_profile_id, parent_department_id].hash
+      [name, description, disabled, organization_profile_id, parent_department_id].hash
     end
 
     # Builds the object from hash

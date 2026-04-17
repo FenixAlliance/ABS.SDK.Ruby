@@ -769,13 +769,13 @@ module OpenapiClient
     # Updates the specified loan application.
     # @param tenant_id [String] 
     # @param application_id [String] 
-    # @param loan_application_update_dto [LoanApplicationUpdateDto] 
+    # @param body [Object] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
     # @return [EmptyEnvelope]
-    def update_loan_application_async(tenant_id, application_id, loan_application_update_dto, opts = {})
-      data, _status_code, _headers = update_loan_application_async_with_http_info(tenant_id, application_id, loan_application_update_dto, opts)
+    def update_loan_application_async(tenant_id, application_id, body, opts = {})
+      data, _status_code, _headers = update_loan_application_async_with_http_info(tenant_id, application_id, body, opts)
       data
     end
 
@@ -783,12 +783,12 @@ module OpenapiClient
     # Updates the specified loan application.
     # @param tenant_id [String] 
     # @param application_id [String] 
-    # @param loan_application_update_dto [LoanApplicationUpdateDto] 
+    # @param body [Object] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
     # @return [Array<(EmptyEnvelope, Integer, Hash)>] EmptyEnvelope data, response status code and response headers
-    def update_loan_application_async_with_http_info(tenant_id, application_id, loan_application_update_dto, opts = {})
+    def update_loan_application_async_with_http_info(tenant_id, application_id, body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LoansApi.update_loan_application_async ...'
       end
@@ -800,9 +800,9 @@ module OpenapiClient
       if @api_client.config.client_side_validation && application_id.nil?
         fail ArgumentError, "Missing the required parameter 'application_id' when calling LoansApi.update_loan_application_async"
       end
-      # verify the required parameter 'loan_application_update_dto' is set
-      if @api_client.config.client_side_validation && loan_application_update_dto.nil?
-        fail ArgumentError, "Missing the required parameter 'loan_application_update_dto' when calling LoansApi.update_loan_application_async"
+      # verify the required parameter 'body' is set
+      if @api_client.config.client_side_validation && body.nil?
+        fail ArgumentError, "Missing the required parameter 'body' when calling LoansApi.update_loan_application_async"
       end
       # resource path
       local_var_path = '/api/v2/AccountingService/Loans/Applications/{applicationId}'.sub('{' + 'applicationId' + '}', CGI.escape(application_id.to_s))
@@ -827,7 +827,7 @@ module OpenapiClient
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(loan_application_update_dto)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(body)
 
       # return_type
       return_type = opts[:debug_return_type] || 'EmptyEnvelope'

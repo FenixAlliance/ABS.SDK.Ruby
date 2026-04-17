@@ -15,8 +15,6 @@ require 'time'
 
 module OpenapiClient
   class OrderUpdateDto
-    attr_accessor :tenant_id
-
     attr_accessor :first_name
 
     attr_accessor :last_name
@@ -103,8 +101,6 @@ module OpenapiClient
 
     attr_accessor :currency_id
 
-    attr_accessor :enrollment_id
-
     attr_accessor :individual_id
 
     attr_accessor :organization_id
@@ -156,7 +152,6 @@ module OpenapiClient
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'tenant_id' => :'tenantId',
         :'first_name' => :'firstName',
         :'last_name' => :'lastName',
         :'company_name' => :'companyName',
@@ -200,7 +195,6 @@ module OpenapiClient
         :'user_id' => :'userId',
         :'forex_rate' => :'forexRate',
         :'currency_id' => :'currencyId',
-        :'enrollment_id' => :'enrollmentId',
         :'individual_id' => :'individualId',
         :'organization_id' => :'organizationId',
         :'total_amount_in_usd' => :'totalAmountInUsd',
@@ -225,7 +219,6 @@ module OpenapiClient
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'tenant_id' => :'String',
         :'first_name' => :'String',
         :'last_name' => :'String',
         :'company_name' => :'String',
@@ -269,7 +262,6 @@ module OpenapiClient
         :'user_id' => :'String',
         :'forex_rate' => :'Float',
         :'currency_id' => :'String',
-        :'enrollment_id' => :'String',
         :'individual_id' => :'String',
         :'organization_id' => :'String',
         :'total_amount_in_usd' => :'Float',
@@ -289,7 +281,6 @@ module OpenapiClient
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
-        :'tenant_id',
         :'first_name',
         :'last_name',
         :'company_name',
@@ -318,7 +309,6 @@ module OpenapiClient
         :'cart_id',
         :'user_id',
         :'currency_id',
-        :'enrollment_id',
         :'individual_id',
         :'organization_id',
         :'receiver_tenant_id',
@@ -346,10 +336,6 @@ module OpenapiClient
         end
         h[k.to_sym] = v
       }
-
-      if attributes.key?(:'tenant_id')
-        self.tenant_id = attributes[:'tenant_id']
-      end
 
       if attributes.key?(:'first_name')
         self.first_name = attributes[:'first_name']
@@ -523,10 +509,6 @@ module OpenapiClient
         self.currency_id = attributes[:'currency_id']
       end
 
-      if attributes.key?(:'enrollment_id')
-        self.enrollment_id = attributes[:'enrollment_id']
-      end
-
       if attributes.key?(:'individual_id')
         self.individual_id = attributes[:'individual_id']
       end
@@ -624,7 +606,6 @@ module OpenapiClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          tenant_id == o.tenant_id &&
           first_name == o.first_name &&
           last_name == o.last_name &&
           company_name == o.company_name &&
@@ -668,7 +649,6 @@ module OpenapiClient
           user_id == o.user_id &&
           forex_rate == o.forex_rate &&
           currency_id == o.currency_id &&
-          enrollment_id == o.enrollment_id &&
           individual_id == o.individual_id &&
           organization_id == o.organization_id &&
           total_amount_in_usd == o.total_amount_in_usd &&
@@ -693,7 +673,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [tenant_id, first_name, last_name, company_name, billing_email, address_line1, address_line2, postal_code, country_id, state_id, city_id, billing_location_id, shipping_location_id, shipping_method_id, total_detail, total_detail_currency_id, total_profit, total_profit_currency_id, total_discounts, total_discounts_currency_id, total_surcharges, total_surcharges_currency_id, total_shipping_tax, total_shipping_tax_currency_id, total_shipping_cost, total_shipping_cost_currency_id, total_global_discounts, total_global_discounts_currency_id, total_global_surcharges, total_global_surcharges_currency_id, total_withheld_tax, total_withheld_tax_currency_id, total_tax_base, total_tax_base_currency_id, total_taxes, total_taxes_currency_id, total, total_currency_id, cost_calculation_method, tax_calculation_method, cart_id, user_id, forex_rate, currency_id, enrollment_id, individual_id, organization_id, total_amount_in_usd, total_taxes_in_usd, receiver_tenant_id, closed, price_list_id, payment_term_id, quote_status, effective_to, effective_from, description, title].hash
+      [first_name, last_name, company_name, billing_email, address_line1, address_line2, postal_code, country_id, state_id, city_id, billing_location_id, shipping_location_id, shipping_method_id, total_detail, total_detail_currency_id, total_profit, total_profit_currency_id, total_discounts, total_discounts_currency_id, total_surcharges, total_surcharges_currency_id, total_shipping_tax, total_shipping_tax_currency_id, total_shipping_cost, total_shipping_cost_currency_id, total_global_discounts, total_global_discounts_currency_id, total_global_surcharges, total_global_surcharges_currency_id, total_withheld_tax, total_withheld_tax_currency_id, total_tax_base, total_tax_base_currency_id, total_taxes, total_taxes_currency_id, total, total_currency_id, cost_calculation_method, tax_calculation_method, cart_id, user_id, forex_rate, currency_id, individual_id, organization_id, total_amount_in_usd, total_taxes_in_usd, receiver_tenant_id, closed, price_list_id, payment_term_id, quote_status, effective_to, effective_from, description, title].hash
     end
 
     # Builds the object from hash

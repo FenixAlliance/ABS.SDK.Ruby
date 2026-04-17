@@ -4,11 +4,82 @@ All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
+| [**count_web_page_tags_async**](WebPageTagsApi.md#count_web_page_tags_async) | **GET** /api/v2/ContentService/WebPageTags/Count | Count web page tags |
 | [**create_web_page_tag_async**](WebPageTagsApi.md#create_web_page_tag_async) | **POST** /api/v2/ContentService/WebPageTags | Create a web page tag |
 | [**delete_web_page_tag_async**](WebPageTagsApi.md#delete_web_page_tag_async) | **DELETE** /api/v2/ContentService/WebPageTags/{webPageTagId} | Delete a web page tag |
 | [**get_web_page_tag_by_id_async**](WebPageTagsApi.md#get_web_page_tag_by_id_async) | **GET** /api/v2/ContentService/WebPageTags/{webPageTagId} | Get web page tag by ID |
 | [**get_web_page_tags_async**](WebPageTagsApi.md#get_web_page_tags_async) | **GET** /api/v2/ContentService/WebPageTags | Get web page tags |
 | [**update_web_page_tag_async**](WebPageTagsApi.md#update_web_page_tag_async) | **PUT** /api/v2/ContentService/WebPageTags/{webPageTagId} | Update a web page tag |
+
+
+## count_web_page_tags_async
+
+> <Int32Envelope> count_web_page_tags_async(tenant_id, opts)
+
+Count web page tags
+
+Counts all web page tags for the specified tenant.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::WebPageTagsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example' # String | 
+}
+
+begin
+  # Count web page tags
+  result = api_instance.count_web_page_tags_async(tenant_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling WebPageTagsApi->count_web_page_tags_async: #{e}"
+end
+```
+
+#### Using the count_web_page_tags_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<Int32Envelope>, Integer, Hash)> count_web_page_tags_async_with_http_info(tenant_id, opts)
+
+```ruby
+begin
+  # Count web page tags
+  data, status_code, headers = api_instance.count_web_page_tags_async_with_http_info(tenant_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <Int32Envelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling WebPageTagsApi->count_web_page_tags_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+
+### Return type
+
+[**Int32Envelope**](Int32Envelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
 
 
 ## create_web_page_tag_async

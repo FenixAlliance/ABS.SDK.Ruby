@@ -13,8 +13,6 @@
 | **currency_id** | **String** |  | [optional] |
 | **unit_id** | **String** |  | [optional] |
 | **unit_group_id** | **String** |  | [optional] |
-| **tenant_id** | **String** |  | [optional] |
-| **enrollment_id** | **String** |  | [optional] |
 
 ## Example
 
@@ -30,9 +28,7 @@ instance = OpenapiClient::PriceListCreateDto.new(
   end_date: null,
   currency_id: null,
   unit_id: null,
-  unit_group_id: null,
-  tenant_id: null,
-  enrollment_id: null
+  unit_group_id: null
 )
 ```
 

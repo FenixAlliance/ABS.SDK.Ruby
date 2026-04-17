@@ -73,11 +73,7 @@ module OpenapiClient
 
     attr_accessor :data9_label
 
-    attr_accessor :business_id
-
     attr_accessor :contact_id
-
-    attr_accessor :business_profile_record_id
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
@@ -111,9 +107,7 @@ module OpenapiClient
         :'data8_label' => :'data8Label',
         :'data9' => :'data9',
         :'data9_label' => :'data9Label',
-        :'business_id' => :'businessID',
-        :'contact_id' => :'contactID',
-        :'business_profile_record_id' => :'businessProfileRecordID'
+        :'contact_id' => :'contactID'
       }
     end
 
@@ -154,9 +148,7 @@ module OpenapiClient
         :'data8_label' => :'String',
         :'data9' => :'String',
         :'data9_label' => :'String',
-        :'business_id' => :'String',
-        :'contact_id' => :'String',
-        :'business_profile_record_id' => :'String'
+        :'contact_id' => :'String'
       }
     end
 
@@ -186,9 +178,7 @@ module OpenapiClient
         :'data8_label',
         :'data9',
         :'data9_label',
-        :'business_id',
-        :'contact_id',
-        :'business_profile_record_id'
+        :'contact_id'
       ])
     end
 
@@ -323,16 +313,8 @@ module OpenapiClient
         self.data9_label = attributes[:'data9_label']
       end
 
-      if attributes.key?(:'business_id')
-        self.business_id = attributes[:'business_id']
-      end
-
       if attributes.key?(:'contact_id')
         self.contact_id = attributes[:'contact_id']
-      end
-
-      if attributes.key?(:'business_profile_record_id')
-        self.business_profile_record_id = attributes[:'business_profile_record_id']
       end
     end
 
@@ -385,9 +367,7 @@ module OpenapiClient
           data8_label == o.data8_label &&
           data9 == o.data9 &&
           data9_label == o.data9_label &&
-          business_id == o.business_id &&
-          contact_id == o.contact_id &&
-          business_profile_record_id == o.business_profile_record_id
+          contact_id == o.contact_id
     end
 
     # @see the `==` method
@@ -399,7 +379,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, timestamp, authorized, about, verified, submitted, avatar_url, qualified_name, verification_timestamp, data, data_label, data1, data1_label, data2, data2_label, data3, data3_label, data4, data4_label, data5, data5_label, data6, data6_label, data7, data7_label, data8, data8_label, data9, data9_label, business_id, contact_id, business_profile_record_id].hash
+      [id, timestamp, authorized, about, verified, submitted, avatar_url, qualified_name, verification_timestamp, data, data_label, data1, data1_label, data2, data2_label, data3, data3_label, data4, data4_label, data5, data5_label, data6, data6_label, data7, data7_label, data8, data8_label, data9, data9_label, contact_id].hash
     end
 
     # Builds the object from hash

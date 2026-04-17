@@ -19,8 +19,6 @@ module OpenapiClient
 
     attr_accessor :timestamp
 
-    attr_accessor :tenant_id
-
     attr_accessor :type
 
     attr_accessor :first_name
@@ -128,7 +126,6 @@ module OpenapiClient
       {
         :'id' => :'id',
         :'timestamp' => :'timestamp',
-        :'tenant_id' => :'tenantId',
         :'type' => :'type',
         :'first_name' => :'firstName',
         :'last_name' => :'lastName',
@@ -182,7 +179,6 @@ module OpenapiClient
       {
         :'id' => :'String',
         :'timestamp' => :'Time',
-        :'tenant_id' => :'String',
         :'type' => :'String',
         :'first_name' => :'String',
         :'last_name' => :'String',
@@ -290,12 +286,6 @@ module OpenapiClient
 
       if attributes.key?(:'timestamp')
         self.timestamp = attributes[:'timestamp']
-      end
-
-      if attributes.key?(:'tenant_id')
-        self.tenant_id = attributes[:'tenant_id']
-      else
-        self.tenant_id = nil
       end
 
       if attributes.key?(:'type')
@@ -470,14 +460,6 @@ module OpenapiClient
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
       invalid_properties = Array.new
-      if @tenant_id.nil?
-        invalid_properties.push('invalid value for "tenant_id", tenant_id cannot be nil.')
-      end
-
-      if @tenant_id.to_s.length < 1
-        invalid_properties.push('invalid value for "tenant_id", the character length must be great than or equal to 1.')
-      end
-
       if @type.nil?
         invalid_properties.push('invalid value for "type", type cannot be nil.')
       end
@@ -554,8 +536,6 @@ module OpenapiClient
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      return false if @tenant_id.nil?
-      return false if @tenant_id.to_s.length < 1
       return false if @type.nil?
       type_validator = EnumAttributeValidator.new('String', ["Individual", "Organization"])
       return false unless type_validator.valid?(@type)
@@ -576,20 +556,6 @@ module OpenapiClient
       return false if !@duns.nil? && @duns.to_s.length > 9
       return false if !@duns.nil? && @duns.to_s.length < 0
       true
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] tenant_id Value to be assigned
-    def tenant_id=(tenant_id)
-      if tenant_id.nil?
-        fail ArgumentError, 'tenant_id cannot be nil'
-      end
-
-      if tenant_id.to_s.length < 1
-        fail ArgumentError, 'invalid value for "tenant_id", the character length must be great than or equal to 1.'
-      end
-
-      @tenant_id = tenant_id
     end
 
     # Custom attribute writer method checking allowed values (enum).
@@ -728,7 +694,6 @@ module OpenapiClient
       self.class == o.class &&
           id == o.id &&
           timestamp == o.timestamp &&
-          tenant_id == o.tenant_id &&
           type == o.type &&
           first_name == o.first_name &&
           last_name == o.last_name &&
@@ -780,7 +745,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, timestamp, tenant_id, type, first_name, last_name, email, tax_id, primary_contact_id, qualified_name, about, country_id, state_id, city_id, mobile_phone, business_phone, postal_code, duns, job_title, web_url, currency_id, language_id, timezone_id, birthday, street_line1, street_line2, git_hub_url, twitch_url, reddit_url, tik_tok_url, website_url, twitter_url, facebook_url, you_tube_url, linked_in_url, instagram_url, github_username, instagram_username, tik_tok_username, stack_exchange_url, stack_overflow_url, parent_contact_id, fax_number].hash
+      [id, timestamp, type, first_name, last_name, email, tax_id, primary_contact_id, qualified_name, about, country_id, state_id, city_id, mobile_phone, business_phone, postal_code, duns, job_title, web_url, currency_id, language_id, timezone_id, birthday, street_line1, street_line2, git_hub_url, twitch_url, reddit_url, tik_tok_url, website_url, twitter_url, facebook_url, you_tube_url, linked_in_url, instagram_url, github_username, instagram_username, tik_tok_username, stack_exchange_url, stack_overflow_url, parent_contact_id, fax_number].hash
     end
 
     # Builds the object from hash

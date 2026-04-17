@@ -11,7 +11,6 @@
 | **content** | **String** |  | [optional] |
 | **course_id** | **String** |  |  |
 | **course_section_id** | **String** |  |  |
-| **business_id** | **String** |  |  |
 | **course_content_group_id** | **String** |  | [optional] |
 | **release_date_time** | **Time** |  | [optional] |
 
@@ -28,7 +27,6 @@ instance = OpenapiClient::CourseUnitCreateDto.new(
   content: null,
   course_id: null,
   course_section_id: null,
-  business_id: null,
   course_content_group_id: null,
   release_date_time: null
 )

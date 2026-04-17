@@ -6,8 +6,6 @@
 | ---- | ---- | ----------- | ----- |
 | **id** | **String** |  | [optional] |
 | **timestamp** | **Time** |  | [optional] |
-| **business_id** | **String** |  |  |
-| **business_profile_record_id** | **String** |  | [optional] |
 | **item_id** | **String** |  | [optional] |
 | **is_item_mozaic_bg** | **Boolean** |  | [optional] |
 | **m_d5_hash** | **String** |  | [optional] |
@@ -24,7 +22,6 @@
 | **valid_response** | **Boolean** |  | [optional] |
 | **social_profile_id** | **String** |  | [optional] |
 | **parent_file_upload_id** | **String** |  | [optional] |
-| **account_holder_id** | **String** |  | [optional] |
 
 ## Example
 
@@ -34,8 +31,6 @@ require 'openapi_client'
 instance = OpenapiClient::ItemImageCreateDto.new(
   id: null,
   timestamp: null,
-  business_id: null,
-  business_profile_record_id: null,
   item_id: null,
   is_item_mozaic_bg: null,
   m_d5_hash: null,
@@ -51,8 +46,7 @@ instance = OpenapiClient::ItemImageCreateDto.new(
   file_length: null,
   valid_response: null,
   social_profile_id: null,
-  parent_file_upload_id: null,
-  account_holder_id: null
+  parent_file_upload_id: null
 )
 ```
 

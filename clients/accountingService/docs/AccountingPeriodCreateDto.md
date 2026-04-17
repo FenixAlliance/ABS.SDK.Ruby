@@ -7,8 +7,6 @@
 | **id** | **String** |  | [optional] |
 | **timestamp** | **Time** |  | [optional] |
 | **name** | **String** |  | [optional] |
-| **tenant_id** | **String** |  | [optional] |
-| **enrollment_id** | **String** |  | [optional] |
 | **date_start** | **Time** |  | [optional] |
 | **date_end** | **Time** |  | [optional] |
 
@@ -21,8 +19,6 @@ instance = OpenapiClient::AccountingPeriodCreateDto.new(
   id: null,
   timestamp: null,
   name: null,
-  tenant_id: null,
-  enrollment_id: null,
   date_start: null,
   date_end: null
 )

@@ -21,8 +21,6 @@ module OpenapiClient
 
     attr_accessor :name
 
-    attr_accessor :tenant_id
-
     attr_accessor :fiscal_year_id
 
     attr_accessor :cost_centre_id
@@ -33,7 +31,6 @@ module OpenapiClient
         :'id' => :'id',
         :'timestamp' => :'timestamp',
         :'name' => :'name',
-        :'tenant_id' => :'tenantId',
         :'fiscal_year_id' => :'fiscalYearId',
         :'cost_centre_id' => :'costCentreId'
       }
@@ -50,7 +47,6 @@ module OpenapiClient
         :'id' => :'String',
         :'timestamp' => :'Time',
         :'name' => :'String',
-        :'tenant_id' => :'String',
         :'fiscal_year_id' => :'String',
         :'cost_centre_id' => :'String'
       }
@@ -60,7 +56,6 @@ module OpenapiClient
     def self.openapi_nullable
       Set.new([
         :'name',
-        :'tenant_id',
         :'fiscal_year_id',
         :'cost_centre_id'
       ])
@@ -91,10 +86,6 @@ module OpenapiClient
 
       if attributes.key?(:'name')
         self.name = attributes[:'name']
-      end
-
-      if attributes.key?(:'tenant_id')
-        self.tenant_id = attributes[:'tenant_id']
       end
 
       if attributes.key?(:'fiscal_year_id')
@@ -153,7 +144,6 @@ module OpenapiClient
           id == o.id &&
           timestamp == o.timestamp &&
           name == o.name &&
-          tenant_id == o.tenant_id &&
           fiscal_year_id == o.fiscal_year_id &&
           cost_centre_id == o.cost_centre_id
     end
@@ -167,7 +157,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, timestamp, name, tenant_id, fiscal_year_id, cost_centre_id].hash
+      [id, timestamp, name, fiscal_year_id, cost_centre_id].hash
     end
 
     # Builds the object from hash

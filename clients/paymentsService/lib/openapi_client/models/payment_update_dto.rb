@@ -17,8 +17,6 @@ module OpenapiClient
   class PaymentUpdateDto
     attr_accessor :invoice_id
 
-    attr_accessor :tenant_id
-
     attr_accessor :emisor_wallet_id
 
     attr_accessor :receiver_wallet_id
@@ -121,8 +119,6 @@ module OpenapiClient
 
     attr_accessor :bank_account_id
 
-    attr_accessor :enrollment_id
-
     attr_accessor :bank_id
 
     attr_accessor :payment_token_id
@@ -157,7 +153,6 @@ module OpenapiClient
     def self.attribute_map
       {
         :'invoice_id' => :'invoiceId',
-        :'tenant_id' => :'tenantId',
         :'emisor_wallet_id' => :'emisorWalletId',
         :'receiver_wallet_id' => :'receiverWalletId',
         :'currency_id' => :'currencyId',
@@ -209,7 +204,6 @@ module OpenapiClient
         :'accounting_entry_id' => :'accountingEntryId',
         :'payment_gateway_id' => :'paymentGatewayId',
         :'bank_account_id' => :'bankAccountId',
-        :'enrollment_id' => :'enrollmentId',
         :'bank_id' => :'bankId',
         :'payment_token_id' => :'paymentTokenId',
         :'emisor_wallet_account_id' => :'emisorWalletAccountId',
@@ -226,7 +220,6 @@ module OpenapiClient
     def self.openapi_types
       {
         :'invoice_id' => :'String',
-        :'tenant_id' => :'String',
         :'emisor_wallet_id' => :'String',
         :'receiver_wallet_id' => :'String',
         :'currency_id' => :'String',
@@ -278,7 +271,6 @@ module OpenapiClient
         :'accounting_entry_id' => :'String',
         :'payment_gateway_id' => :'String',
         :'bank_account_id' => :'String',
-        :'enrollment_id' => :'String',
         :'bank_id' => :'String',
         :'payment_token_id' => :'String',
         :'emisor_wallet_account_id' => :'String',
@@ -290,7 +282,6 @@ module OpenapiClient
     def self.openapi_nullable
       Set.new([
         :'invoice_id',
-        :'tenant_id',
         :'emisor_wallet_id',
         :'receiver_wallet_id',
         :'currency_id',
@@ -326,7 +317,6 @@ module OpenapiClient
         :'accounting_entry_id',
         :'payment_gateway_id',
         :'bank_account_id',
-        :'enrollment_id',
         :'bank_id',
         :'payment_token_id',
         :'emisor_wallet_account_id',
@@ -351,10 +341,6 @@ module OpenapiClient
 
       if attributes.key?(:'invoice_id')
         self.invoice_id = attributes[:'invoice_id']
-      end
-
-      if attributes.key?(:'tenant_id')
-        self.tenant_id = attributes[:'tenant_id']
       end
 
       if attributes.key?(:'emisor_wallet_id')
@@ -561,10 +547,6 @@ module OpenapiClient
         self.bank_account_id = attributes[:'bank_account_id']
       end
 
-      if attributes.key?(:'enrollment_id')
-        self.enrollment_id = attributes[:'enrollment_id']
-      end
-
       if attributes.key?(:'bank_id')
         self.bank_id = attributes[:'bank_id']
       end
@@ -593,14 +575,6 @@ module OpenapiClient
 
       if !@invoice_id.nil? && @invoice_id.to_s.length < 0
         invalid_properties.push('invalid value for "invoice_id", the character length must be great than or equal to 0.')
-      end
-
-      if !@tenant_id.nil? && @tenant_id.to_s.length > 36
-        invalid_properties.push('invalid value for "tenant_id", the character length must be smaller than or equal to 36.')
-      end
-
-      if !@tenant_id.nil? && @tenant_id.to_s.length < 0
-        invalid_properties.push('invalid value for "tenant_id", the character length must be great than or equal to 0.')
       end
 
       if !@emisor_wallet_id.nil? && @emisor_wallet_id.to_s.length > 36
@@ -683,14 +657,6 @@ module OpenapiClient
         invalid_properties.push('invalid value for "bank_account_id", the character length must be great than or equal to 0.')
       end
 
-      if !@enrollment_id.nil? && @enrollment_id.to_s.length > 36
-        invalid_properties.push('invalid value for "enrollment_id", the character length must be smaller than or equal to 36.')
-      end
-
-      if !@enrollment_id.nil? && @enrollment_id.to_s.length < 0
-        invalid_properties.push('invalid value for "enrollment_id", the character length must be great than or equal to 0.')
-      end
-
       if !@bank_id.nil? && @bank_id.to_s.length > 36
         invalid_properties.push('invalid value for "bank_id", the character length must be smaller than or equal to 36.')
       end
@@ -732,8 +698,6 @@ module OpenapiClient
       warn '[DEPRECATED] the `valid?` method is obsolete'
       return false if !@invoice_id.nil? && @invoice_id.to_s.length > 36
       return false if !@invoice_id.nil? && @invoice_id.to_s.length < 0
-      return false if !@tenant_id.nil? && @tenant_id.to_s.length > 36
-      return false if !@tenant_id.nil? && @tenant_id.to_s.length < 0
       return false if !@emisor_wallet_id.nil? && @emisor_wallet_id.to_s.length > 36
       return false if !@emisor_wallet_id.nil? && @emisor_wallet_id.to_s.length < 0
       return false if !@receiver_wallet_id.nil? && @receiver_wallet_id.to_s.length > 36
@@ -760,8 +724,6 @@ module OpenapiClient
       return false if !@payment_gateway_id.nil? && @payment_gateway_id.to_s.length < 0
       return false if !@bank_account_id.nil? && @bank_account_id.to_s.length > 36
       return false if !@bank_account_id.nil? && @bank_account_id.to_s.length < 0
-      return false if !@enrollment_id.nil? && @enrollment_id.to_s.length > 36
-      return false if !@enrollment_id.nil? && @enrollment_id.to_s.length < 0
       return false if !@bank_id.nil? && @bank_id.to_s.length > 36
       return false if !@bank_id.nil? && @bank_id.to_s.length < 0
       return false if !@payment_token_id.nil? && @payment_token_id.to_s.length > 36
@@ -785,20 +747,6 @@ module OpenapiClient
       end
 
       @invoice_id = invoice_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] tenant_id Value to be assigned
-    def tenant_id=(tenant_id)
-      if !tenant_id.nil? && tenant_id.to_s.length > 36
-        fail ArgumentError, 'invalid value for "tenant_id", the character length must be smaller than or equal to 36.'
-      end
-
-      if !tenant_id.nil? && tenant_id.to_s.length < 0
-        fail ArgumentError, 'invalid value for "tenant_id", the character length must be great than or equal to 0.'
-      end
-
-      @tenant_id = tenant_id
     end
 
     # Custom attribute writer method with validation
@@ -972,20 +920,6 @@ module OpenapiClient
     end
 
     # Custom attribute writer method with validation
-    # @param [Object] enrollment_id Value to be assigned
-    def enrollment_id=(enrollment_id)
-      if !enrollment_id.nil? && enrollment_id.to_s.length > 36
-        fail ArgumentError, 'invalid value for "enrollment_id", the character length must be smaller than or equal to 36.'
-      end
-
-      if !enrollment_id.nil? && enrollment_id.to_s.length < 0
-        fail ArgumentError, 'invalid value for "enrollment_id", the character length must be great than or equal to 0.'
-      end
-
-      @enrollment_id = enrollment_id
-    end
-
-    # Custom attribute writer method with validation
     # @param [Object] bank_id Value to be assigned
     def bank_id=(bank_id)
       if !bank_id.nil? && bank_id.to_s.length > 36
@@ -1047,7 +981,6 @@ module OpenapiClient
       return true if self.equal?(o)
       self.class == o.class &&
           invoice_id == o.invoice_id &&
-          tenant_id == o.tenant_id &&
           emisor_wallet_id == o.emisor_wallet_id &&
           receiver_wallet_id == o.receiver_wallet_id &&
           currency_id == o.currency_id &&
@@ -1099,7 +1032,6 @@ module OpenapiClient
           accounting_entry_id == o.accounting_entry_id &&
           payment_gateway_id == o.payment_gateway_id &&
           bank_account_id == o.bank_account_id &&
-          enrollment_id == o.enrollment_id &&
           bank_id == o.bank_id &&
           payment_token_id == o.payment_token_id &&
           emisor_wallet_account_id == o.emisor_wallet_account_id &&
@@ -1115,7 +1047,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [invoice_id, tenant_id, emisor_wallet_id, receiver_wallet_id, currency_id, forex_rate, total_cost, total_taxes, closed, data, data_label, data1, data1_label, response, authorization, reference_code, correlation_code, last_updated, on_behalf_of, payment_type, payment_status, base_cost, signature, signature_mismatch, is_external, marked_for_revision, forex_rates_snapshot, official_id, official_id_expedition_date, fiscal_identification_type_id, billing_address, phone, cellphone, department, city, country_id, location_id, entitlement_id, anti_fraud_score, call_record_url, called, verified, payer_picture_timestamp, payer_picture, identification_picture_timestamp, identification_picture, identification_back_picture, identification_back_picture_timestamp, ip_lookup_id, order_id, accounting_entry_id, payment_gateway_id, bank_account_id, enrollment_id, bank_id, payment_token_id, emisor_wallet_account_id, receiver_wallet_account_id].hash
+      [invoice_id, emisor_wallet_id, receiver_wallet_id, currency_id, forex_rate, total_cost, total_taxes, closed, data, data_label, data1, data1_label, response, authorization, reference_code, correlation_code, last_updated, on_behalf_of, payment_type, payment_status, base_cost, signature, signature_mismatch, is_external, marked_for_revision, forex_rates_snapshot, official_id, official_id_expedition_date, fiscal_identification_type_id, billing_address, phone, cellphone, department, city, country_id, location_id, entitlement_id, anti_fraud_score, call_record_url, called, verified, payer_picture_timestamp, payer_picture, identification_picture_timestamp, identification_picture, identification_back_picture, identification_back_picture_timestamp, ip_lookup_id, order_id, accounting_entry_id, payment_gateway_id, bank_account_id, bank_id, payment_token_id, emisor_wallet_account_id, receiver_wallet_account_id].hash
     end
 
     # Builds the object from hash

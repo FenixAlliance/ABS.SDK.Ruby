@@ -6,8 +6,6 @@
 | ---- | ---- | ----------- | ----- |
 | **id** | **String** |  | [optional] |
 | **timestamp** | **Time** |  | [optional] |
-| **business_id** | **String** |  |  |
-| **business_profile_record_id** | **String** |  | [optional] |
 | **name** | **String** |  | [optional] |
 | **description** | **String** |  | [optional] |
 | **avatar_url** | **String** |  | [optional] |
@@ -23,8 +21,6 @@ require 'openapi_client'
 instance = OpenapiClient::TenantTeamCreateDto.new(
   id: null,
   timestamp: null,
-  business_id: null,
-  business_profile_record_id: null,
   name: null,
   description: null,
   avatar_url: null,

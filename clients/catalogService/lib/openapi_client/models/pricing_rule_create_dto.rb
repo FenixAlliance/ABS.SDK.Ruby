@@ -61,10 +61,6 @@ module OpenapiClient
 
     attr_accessor :city_id
 
-    attr_accessor :business_id
-
-    attr_accessor :business_profile_record_id
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -90,9 +86,7 @@ module OpenapiClient
         :'country_state_id' => :'countryStateID',
         :'custom_state' => :'customState',
         :'custom_city' => :'customCity',
-        :'city_id' => :'cityID',
-        :'business_id' => :'businessID',
-        :'business_profile_record_id' => :'businessProfileRecordID'
+        :'city_id' => :'cityID'
       }
     end
 
@@ -126,9 +120,7 @@ module OpenapiClient
         :'country_state_id' => :'String',
         :'custom_state' => :'String',
         :'custom_city' => :'String',
-        :'city_id' => :'String',
-        :'business_id' => :'String',
-        :'business_profile_record_id' => :'String'
+        :'city_id' => :'String'
       }
     end
 
@@ -143,9 +135,7 @@ module OpenapiClient
         :'country_state_id',
         :'custom_state',
         :'custom_city',
-        :'city_id',
-        :'business_id',
-        :'business_profile_record_id'
+        :'city_id'
       ])
     end
 
@@ -255,14 +245,6 @@ module OpenapiClient
       if attributes.key?(:'city_id')
         self.city_id = attributes[:'city_id']
       end
-
-      if attributes.key?(:'business_id')
-        self.business_id = attributes[:'business_id']
-      end
-
-      if attributes.key?(:'business_profile_record_id')
-        self.business_profile_record_id = attributes[:'business_profile_record_id']
-      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -307,9 +289,7 @@ module OpenapiClient
           country_state_id == o.country_state_id &&
           custom_state == o.custom_state &&
           custom_city == o.custom_city &&
-          city_id == o.city_id &&
-          business_id == o.business_id &&
-          business_profile_record_id == o.business_profile_record_id
+          city_id == o.city_id
     end
 
     # @see the `==` method
@@ -321,7 +301,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, timestamp, code, title, description, is_free, reduce, is_enabled, is_default, allow_international, hours, days, weeks, months, years, value, percentage, currency_id, country_id, country_state_id, custom_state, custom_city, city_id, business_id, business_profile_record_id].hash
+      [id, timestamp, code, title, description, is_free, reduce, is_enabled, is_default, allow_international, hours, days, weeks, months, years, value, percentage, currency_id, country_id, country_state_id, custom_state, custom_city, city_id].hash
     end
 
     # Builds the object from hash

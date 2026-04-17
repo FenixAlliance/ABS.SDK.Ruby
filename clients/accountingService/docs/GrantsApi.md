@@ -388,7 +388,7 @@ grant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 opts = {
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example', # String | 
-  grant_update_dto: OpenapiClient::GrantUpdateDto.new # GrantUpdateDto | 
+  body: { ... } # Object | 
 }
 
 begin
@@ -426,7 +426,7 @@ end
 | **grant_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
-| **grant_update_dto** | [**GrantUpdateDto**](GrantUpdateDto.md) |  | [optional] |
+| **body** | **Object** |  | [optional] |
 
 ### Return type
 

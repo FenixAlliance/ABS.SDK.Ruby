@@ -39,10 +39,6 @@ module OpenapiClient
 
     attr_accessor :file_path
 
-    attr_accessor :business_id
-
-    attr_accessor :business_profile_record_id
-
     attr_accessor :metadata
 
     attr_accessor :support_request_id
@@ -62,8 +58,6 @@ module OpenapiClient
         :'valid_response' => :'validResponse',
         :'parent_file_upload_id' => :'parentFileUploadId',
         :'file_path' => :'filePath',
-        :'business_id' => :'businessID',
-        :'business_profile_record_id' => :'businessProfileRecordID',
         :'metadata' => :'metadata',
         :'support_request_id' => :'supportRequestID'
       }
@@ -89,8 +83,6 @@ module OpenapiClient
         :'valid_response' => :'Boolean',
         :'parent_file_upload_id' => :'String',
         :'file_path' => :'String',
-        :'business_id' => :'String',
-        :'business_profile_record_id' => :'String',
         :'metadata' => :'String',
         :'support_request_id' => :'String'
       }
@@ -107,8 +99,6 @@ module OpenapiClient
         :'key_words',
         :'parent_file_upload_id',
         :'file_path',
-        :'business_id',
-        :'business_profile_record_id',
         :'metadata',
         :'support_request_id'
       ])
@@ -177,14 +167,6 @@ module OpenapiClient
         self.file_path = attributes[:'file_path']
       end
 
-      if attributes.key?(:'business_id')
-        self.business_id = attributes[:'business_id']
-      end
-
-      if attributes.key?(:'business_profile_record_id')
-        self.business_profile_record_id = attributes[:'business_profile_record_id']
-      end
-
       if attributes.key?(:'metadata')
         self.metadata = attributes[:'metadata']
       end
@@ -199,22 +181,6 @@ module OpenapiClient
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
       invalid_properties = Array.new
-      if !@business_id.nil? && @business_id.to_s.length > 36
-        invalid_properties.push('invalid value for "business_id", the character length must be smaller than or equal to 36.')
-      end
-
-      if !@business_id.nil? && @business_id.to_s.length < 36
-        invalid_properties.push('invalid value for "business_id", the character length must be great than or equal to 36.')
-      end
-
-      if !@business_profile_record_id.nil? && @business_profile_record_id.to_s.length > 36
-        invalid_properties.push('invalid value for "business_profile_record_id", the character length must be smaller than or equal to 36.')
-      end
-
-      if !@business_profile_record_id.nil? && @business_profile_record_id.to_s.length < 36
-        invalid_properties.push('invalid value for "business_profile_record_id", the character length must be great than or equal to 36.')
-      end
-
       invalid_properties
     end
 
@@ -222,39 +188,7 @@ module OpenapiClient
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      return false if !@business_id.nil? && @business_id.to_s.length > 36
-      return false if !@business_id.nil? && @business_id.to_s.length < 36
-      return false if !@business_profile_record_id.nil? && @business_profile_record_id.to_s.length > 36
-      return false if !@business_profile_record_id.nil? && @business_profile_record_id.to_s.length < 36
       true
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] business_id Value to be assigned
-    def business_id=(business_id)
-      if !business_id.nil? && business_id.to_s.length > 36
-        fail ArgumentError, 'invalid value for "business_id", the character length must be smaller than or equal to 36.'
-      end
-
-      if !business_id.nil? && business_id.to_s.length < 36
-        fail ArgumentError, 'invalid value for "business_id", the character length must be great than or equal to 36.'
-      end
-
-      @business_id = business_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] business_profile_record_id Value to be assigned
-    def business_profile_record_id=(business_profile_record_id)
-      if !business_profile_record_id.nil? && business_profile_record_id.to_s.length > 36
-        fail ArgumentError, 'invalid value for "business_profile_record_id", the character length must be smaller than or equal to 36.'
-      end
-
-      if !business_profile_record_id.nil? && business_profile_record_id.to_s.length < 36
-        fail ArgumentError, 'invalid value for "business_profile_record_id", the character length must be great than or equal to 36.'
-      end
-
-      @business_profile_record_id = business_profile_record_id
     end
 
     # Checks equality by comparing each attribute.
@@ -274,8 +208,6 @@ module OpenapiClient
           valid_response == o.valid_response &&
           parent_file_upload_id == o.parent_file_upload_id &&
           file_path == o.file_path &&
-          business_id == o.business_id &&
-          business_profile_record_id == o.business_profile_record_id &&
           metadata == o.metadata &&
           support_request_id == o.support_request_id
     end
@@ -289,7 +221,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, timestamp, notes, title, author, is_folder, file_name, abstract, key_words, valid_response, parent_file_upload_id, file_path, business_id, business_profile_record_id, metadata, support_request_id].hash
+      [id, timestamp, notes, title, author, is_folder, file_name, abstract, key_words, valid_response, parent_file_upload_id, file_path, metadata, support_request_id].hash
     end
 
     # Builds the object from hash

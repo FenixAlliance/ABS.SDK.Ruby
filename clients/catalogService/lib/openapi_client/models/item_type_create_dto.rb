@@ -29,8 +29,6 @@ module OpenapiClient
 
     attr_accessor :google_category_taxonomy
 
-    attr_accessor :business_id
-
     attr_accessor :item_category_id
 
     attr_accessor :item_google_category_id
@@ -45,7 +43,6 @@ module OpenapiClient
         :'description' => :'description',
         :'image_url' => :'imageURL',
         :'google_category_taxonomy' => :'googleCategoryTaxonomy',
-        :'business_id' => :'businessID',
         :'item_category_id' => :'itemCategoryID',
         :'item_google_category_id' => :'itemGoogleCategoryID'
       }
@@ -66,7 +63,6 @@ module OpenapiClient
         :'description' => :'String',
         :'image_url' => :'String',
         :'google_category_taxonomy' => :'String',
-        :'business_id' => :'String',
         :'item_category_id' => :'String',
         :'item_google_category_id' => :'String'
       }
@@ -127,12 +123,6 @@ module OpenapiClient
         self.google_category_taxonomy = attributes[:'google_category_taxonomy']
       end
 
-      if attributes.key?(:'business_id')
-        self.business_id = attributes[:'business_id']
-      else
-        self.business_id = nil
-      end
-
       if attributes.key?(:'item_category_id')
         self.item_category_id = attributes[:'item_category_id']
       else
@@ -181,18 +171,6 @@ module OpenapiClient
         invalid_properties.push('invalid value for "google_category_taxonomy", the character length must be great than or equal to 0.')
       end
 
-      if @business_id.nil?
-        invalid_properties.push('invalid value for "business_id", business_id cannot be nil.')
-      end
-
-      if @business_id.to_s.length > 36
-        invalid_properties.push('invalid value for "business_id", the character length must be smaller than or equal to 36.')
-      end
-
-      if @business_id.to_s.length < 36
-        invalid_properties.push('invalid value for "business_id", the character length must be great than or equal to 36.')
-      end
-
       if @item_category_id.nil?
         invalid_properties.push('invalid value for "item_category_id", item_category_id cannot be nil.')
       end
@@ -228,9 +206,6 @@ module OpenapiClient
       return false if !@description.nil? && @description.to_s.length < 0
       return false if !@google_category_taxonomy.nil? && @google_category_taxonomy.to_s.length > 255
       return false if !@google_category_taxonomy.nil? && @google_category_taxonomy.to_s.length < 0
-      return false if @business_id.nil?
-      return false if @business_id.to_s.length > 36
-      return false if @business_id.to_s.length < 36
       return false if @item_category_id.nil?
       return false if @item_category_id.to_s.length > 36
       return false if @item_category_id.to_s.length < 36
@@ -296,24 +271,6 @@ module OpenapiClient
     end
 
     # Custom attribute writer method with validation
-    # @param [Object] business_id Value to be assigned
-    def business_id=(business_id)
-      if business_id.nil?
-        fail ArgumentError, 'business_id cannot be nil'
-      end
-
-      if business_id.to_s.length > 36
-        fail ArgumentError, 'invalid value for "business_id", the character length must be smaller than or equal to 36.'
-      end
-
-      if business_id.to_s.length < 36
-        fail ArgumentError, 'invalid value for "business_id", the character length must be great than or equal to 36.'
-      end
-
-      @business_id = business_id
-    end
-
-    # Custom attribute writer method with validation
     # @param [Object] item_category_id Value to be assigned
     def item_category_id=(item_category_id)
       if item_category_id.nil?
@@ -357,7 +314,6 @@ module OpenapiClient
           description == o.description &&
           image_url == o.image_url &&
           google_category_taxonomy == o.google_category_taxonomy &&
-          business_id == o.business_id &&
           item_category_id == o.item_category_id &&
           item_google_category_id == o.item_google_category_id
     end
@@ -371,7 +327,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, timestamp, plural_title, singular_title, description, image_url, google_category_taxonomy, business_id, item_category_id, item_google_category_id].hash
+      [id, timestamp, plural_title, singular_title, description, image_url, google_category_taxonomy, item_category_id, item_google_category_id].hash
     end
 
     # Builds the object from hash

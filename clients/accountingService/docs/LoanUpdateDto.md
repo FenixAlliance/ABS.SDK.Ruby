@@ -11,7 +11,6 @@
 | **is_compund_interest_rate** | **Boolean** |  | [optional] |
 | **loan_type_id** | **String** |  | [optional] |
 | **currency_id** | **String** |  | [optional] |
-| **enrollment_id** | **String** |  | [optional] |
 
 ## Example
 
@@ -25,8 +24,7 @@ instance = OpenapiClient::LoanUpdateDto.new(
   interest_rate: null,
   is_compund_interest_rate: null,
   loan_type_id: null,
-  currency_id: null,
-  enrollment_id: null
+  currency_id: null
 )
 ```
 

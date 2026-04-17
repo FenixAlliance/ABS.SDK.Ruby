@@ -23,15 +23,11 @@ module OpenapiClient
 
     attr_accessor :unit_id
 
-    attr_accessor :tenant_id
-
     attr_accessor :currency_id
 
     attr_accessor :price_list_id
 
     attr_accessor :unit_group_id
-
-    attr_accessor :enrollment_id
 
     attr_accessor :discount_list_id
 
@@ -48,11 +44,9 @@ module OpenapiClient
         :'timestamp' => :'timestamp',
         :'item_id' => :'itemId',
         :'unit_id' => :'unitId',
-        :'tenant_id' => :'tenantId',
         :'currency_id' => :'currencyId',
         :'price_list_id' => :'priceListId',
         :'unit_group_id' => :'unitGroupId',
-        :'enrollment_id' => :'enrollmentId',
         :'discount_list_id' => :'discountListId',
         :'rounding_policy_id' => :'roundingPolicyId',
         :'price' => :'price',
@@ -72,11 +66,9 @@ module OpenapiClient
         :'timestamp' => :'Time',
         :'item_id' => :'String',
         :'unit_id' => :'String',
-        :'tenant_id' => :'String',
         :'currency_id' => :'String',
         :'price_list_id' => :'String',
         :'unit_group_id' => :'String',
-        :'enrollment_id' => :'String',
         :'discount_list_id' => :'String',
         :'rounding_policy_id' => :'String',
         :'price' => :'Float',
@@ -88,11 +80,9 @@ module OpenapiClient
     def self.openapi_nullable
       Set.new([
         :'unit_id',
-        :'tenant_id',
         :'currency_id',
         :'price_list_id',
         :'unit_group_id',
-        :'enrollment_id',
         :'discount_list_id',
         :'rounding_policy_id',
       ])
@@ -131,10 +121,6 @@ module OpenapiClient
         self.unit_id = attributes[:'unit_id']
       end
 
-      if attributes.key?(:'tenant_id')
-        self.tenant_id = attributes[:'tenant_id']
-      end
-
       if attributes.key?(:'currency_id')
         self.currency_id = attributes[:'currency_id']
       end
@@ -145,10 +131,6 @@ module OpenapiClient
 
       if attributes.key?(:'unit_group_id')
         self.unit_group_id = attributes[:'unit_group_id']
-      end
-
-      if attributes.key?(:'enrollment_id')
-        self.enrollment_id = attributes[:'enrollment_id']
       end
 
       if attributes.key?(:'discount_list_id')
@@ -216,11 +198,9 @@ module OpenapiClient
           timestamp == o.timestamp &&
           item_id == o.item_id &&
           unit_id == o.unit_id &&
-          tenant_id == o.tenant_id &&
           currency_id == o.currency_id &&
           price_list_id == o.price_list_id &&
           unit_group_id == o.unit_group_id &&
-          enrollment_id == o.enrollment_id &&
           discount_list_id == o.discount_list_id &&
           rounding_policy_id == o.rounding_policy_id &&
           price == o.price &&
@@ -236,7 +216,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, timestamp, item_id, unit_id, tenant_id, currency_id, price_list_id, unit_group_id, enrollment_id, discount_list_id, rounding_policy_id, price, percent].hash
+      [id, timestamp, item_id, unit_id, currency_id, price_list_id, unit_group_id, discount_list_id, rounding_policy_id, price, percent].hash
     end
 
     # Builds the object from hash

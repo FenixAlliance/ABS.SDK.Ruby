@@ -17,8 +17,6 @@ module OpenapiClient
   class BillingProfileUpdateDto
     attr_accessor :contact_id
 
-    attr_accessor :tenant_id
-
     attr_accessor :tax_id
 
     attr_accessor :phone
@@ -61,7 +59,6 @@ module OpenapiClient
     def self.attribute_map
       {
         :'contact_id' => :'contactId',
-        :'tenant_id' => :'tenantId',
         :'tax_id' => :'taxId',
         :'phone' => :'phone',
         :'email' => :'email',
@@ -93,7 +90,6 @@ module OpenapiClient
     def self.openapi_types
       {
         :'contact_id' => :'String',
-        :'tenant_id' => :'String',
         :'tax_id' => :'String',
         :'phone' => :'String',
         :'email' => :'String',
@@ -120,7 +116,6 @@ module OpenapiClient
     def self.openapi_nullable
       Set.new([
         :'contact_id',
-        :'tenant_id',
         :'tax_id',
         :'phone',
         :'email',
@@ -158,10 +153,6 @@ module OpenapiClient
 
       if attributes.key?(:'contact_id')
         self.contact_id = attributes[:'contact_id']
-      end
-
-      if attributes.key?(:'tenant_id')
-        self.tenant_id = attributes[:'tenant_id']
       end
 
       if attributes.key?(:'tax_id')
@@ -262,7 +253,6 @@ module OpenapiClient
       return true if self.equal?(o)
       self.class == o.class &&
           contact_id == o.contact_id &&
-          tenant_id == o.tenant_id &&
           tax_id == o.tax_id &&
           phone == o.phone &&
           email == o.email &&
@@ -293,7 +283,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [contact_id, tenant_id, tax_id, phone, email, address, address1, address2, postal_code, business_name, commercial_name, ticker, duns, is_public_company, is_facta_customer, country_id, state_id, city_id, fiscal_identification_type_id, fiscal_authority_id, fiscal_regime_id].hash
+      [contact_id, tax_id, phone, email, address, address1, address2, postal_code, business_name, commercial_name, ticker, duns, is_public_company, is_facta_customer, country_id, state_id, city_id, fiscal_identification_type_id, fiscal_authority_id, fiscal_regime_id].hash
     end
 
     # Builds the object from hash

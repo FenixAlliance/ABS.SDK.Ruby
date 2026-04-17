@@ -33,11 +33,7 @@ module OpenapiClient
 
     attr_accessor :validity_in_days
 
-    attr_accessor :tenant_id
-
     attr_accessor :bank_guarantee_type
-
-    attr_accessor :enrollment_id
 
     attr_accessor :contact_id
 
@@ -85,9 +81,7 @@ module OpenapiClient
         :'start_date' => :'startDate',
         :'end_date' => :'endDate',
         :'validity_in_days' => :'validityInDays',
-        :'tenant_id' => :'tenantId',
         :'bank_guarantee_type' => :'bankGuaranteeType',
-        :'enrollment_id' => :'enrollmentId',
         :'contact_id' => :'contactId',
         :'project_id' => :'projectId',
         :'order_id' => :'orderId',
@@ -114,9 +108,7 @@ module OpenapiClient
         :'start_date' => :'Time',
         :'end_date' => :'Time',
         :'validity_in_days' => :'Integer',
-        :'tenant_id' => :'String',
         :'bank_guarantee_type' => :'String',
-        :'enrollment_id' => :'String',
         :'contact_id' => :'String',
         :'project_id' => :'String',
         :'order_id' => :'String',
@@ -132,8 +124,6 @@ module OpenapiClient
         :'beneficiary_name',
         :'guarantee_number',
         :'guarantee_conditions',
-        :'tenant_id',
-        :'enrollment_id',
         :'contact_id',
         :'project_id',
         :'order_id',
@@ -194,16 +184,8 @@ module OpenapiClient
         self.validity_in_days = attributes[:'validity_in_days']
       end
 
-      if attributes.key?(:'tenant_id')
-        self.tenant_id = attributes[:'tenant_id']
-      end
-
       if attributes.key?(:'bank_guarantee_type')
         self.bank_guarantee_type = attributes[:'bank_guarantee_type']
-      end
-
-      if attributes.key?(:'enrollment_id')
-        self.enrollment_id = attributes[:'enrollment_id']
       end
 
       if attributes.key?(:'contact_id')
@@ -236,22 +218,6 @@ module OpenapiClient
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
       invalid_properties = Array.new
-      if !@tenant_id.nil? && @tenant_id.to_s.length > 36
-        invalid_properties.push('invalid value for "tenant_id", the character length must be smaller than or equal to 36.')
-      end
-
-      if !@tenant_id.nil? && @tenant_id.to_s.length < 0
-        invalid_properties.push('invalid value for "tenant_id", the character length must be great than or equal to 0.')
-      end
-
-      if !@enrollment_id.nil? && @enrollment_id.to_s.length > 36
-        invalid_properties.push('invalid value for "enrollment_id", the character length must be smaller than or equal to 36.')
-      end
-
-      if !@enrollment_id.nil? && @enrollment_id.to_s.length < 0
-        invalid_properties.push('invalid value for "enrollment_id", the character length must be great than or equal to 0.')
-      end
-
       if !@contact_id.nil? && @contact_id.to_s.length > 36
         invalid_properties.push('invalid value for "contact_id", the character length must be smaller than or equal to 36.')
       end
@@ -299,12 +265,8 @@ module OpenapiClient
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      return false if !@tenant_id.nil? && @tenant_id.to_s.length > 36
-      return false if !@tenant_id.nil? && @tenant_id.to_s.length < 0
       bank_guarantee_type_validator = EnumAttributeValidator.new('String', ["Receiving", "Providing"])
       return false unless bank_guarantee_type_validator.valid?(@bank_guarantee_type)
-      return false if !@enrollment_id.nil? && @enrollment_id.to_s.length > 36
-      return false if !@enrollment_id.nil? && @enrollment_id.to_s.length < 0
       return false if !@contact_id.nil? && @contact_id.to_s.length > 36
       return false if !@contact_id.nil? && @contact_id.to_s.length < 0
       return false if !@project_id.nil? && @project_id.to_s.length > 36
@@ -318,20 +280,6 @@ module OpenapiClient
       true
     end
 
-    # Custom attribute writer method with validation
-    # @param [Object] tenant_id Value to be assigned
-    def tenant_id=(tenant_id)
-      if !tenant_id.nil? && tenant_id.to_s.length > 36
-        fail ArgumentError, 'invalid value for "tenant_id", the character length must be smaller than or equal to 36.'
-      end
-
-      if !tenant_id.nil? && tenant_id.to_s.length < 0
-        fail ArgumentError, 'invalid value for "tenant_id", the character length must be great than or equal to 0.'
-      end
-
-      @tenant_id = tenant_id
-    end
-
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] bank_guarantee_type Object to be assigned
     def bank_guarantee_type=(bank_guarantee_type)
@@ -340,20 +288,6 @@ module OpenapiClient
         fail ArgumentError, "invalid value for \"bank_guarantee_type\", must be one of #{validator.allowable_values}."
       end
       @bank_guarantee_type = bank_guarantee_type
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] enrollment_id Value to be assigned
-    def enrollment_id=(enrollment_id)
-      if !enrollment_id.nil? && enrollment_id.to_s.length > 36
-        fail ArgumentError, 'invalid value for "enrollment_id", the character length must be smaller than or equal to 36.'
-      end
-
-      if !enrollment_id.nil? && enrollment_id.to_s.length < 0
-        fail ArgumentError, 'invalid value for "enrollment_id", the character length must be great than or equal to 0.'
-      end
-
-      @enrollment_id = enrollment_id
     end
 
     # Custom attribute writer method with validation
@@ -440,9 +374,7 @@ module OpenapiClient
           start_date == o.start_date &&
           end_date == o.end_date &&
           validity_in_days == o.validity_in_days &&
-          tenant_id == o.tenant_id &&
           bank_guarantee_type == o.bank_guarantee_type &&
-          enrollment_id == o.enrollment_id &&
           contact_id == o.contact_id &&
           project_id == o.project_id &&
           order_id == o.order_id &&
@@ -460,7 +392,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [margin, charges, beneficiary_name, guarantee_number, guarantee_conditions, fixed_deposit_number, start_date, end_date, validity_in_days, tenant_id, bank_guarantee_type, enrollment_id, contact_id, project_id, order_id, bank_profile_id, bank_account_id, currency_id].hash
+      [margin, charges, beneficiary_name, guarantee_number, guarantee_conditions, fixed_deposit_number, start_date, end_date, validity_in_days, bank_guarantee_type, contact_id, project_id, order_id, bank_profile_id, bank_account_id, currency_id].hash
     end
 
     # Builds the object from hash

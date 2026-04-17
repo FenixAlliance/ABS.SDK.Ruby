@@ -6,8 +6,6 @@
 | ---- | ---- | ----------- | ----- |
 | **id** | **String** |  | [optional] |
 | **timestamp** | **Time** |  | [optional] |
-| **business_id** | **String** |  | [optional] |
-| **business_profile_record_id** | **String** |  | [optional] |
 | **name** | **String** |  | [optional] |
 | **description** | **String** |  | [optional] |
 | **asset_class** | **String** |  | [optional] |
@@ -35,8 +33,6 @@ require 'openapi_client'
 instance = OpenapiClient::AssetCreateDto.new(
   id: null,
   timestamp: null,
-  business_id: null,
-  business_profile_record_id: null,
   name: null,
   description: null,
   asset_class: null,

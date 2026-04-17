@@ -8,7 +8,6 @@
 | **timestamp** | **Time** |  | [optional] |
 | **title** | **String** |  | [optional] |
 | **description** | **String** |  | [optional] |
-| **business_id** | **String** |  | [optional] |
 
 ## Example
 
@@ -19,8 +18,7 @@ instance = OpenapiClient::SupportTicketTypeCreateDto.new(
   id: null,
   timestamp: null,
   title: null,
-  description: null,
-  business_id: null
+  description: null
 )
 ```
 

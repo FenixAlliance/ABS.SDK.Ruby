@@ -91,6 +91,7 @@ Class | Method | HTTP request | Description
 *OpenapiClient::BlogPostCategoriesApi* | [**get_blog_post_categories_async**](docs/BlogPostCategoriesApi.md#get_blog_post_categories_async) | **GET** /api/v2/ContentService/BlogPostCategories | Get blog post categories
 *OpenapiClient::BlogPostCategoriesApi* | [**get_blog_post_category_by_id_async**](docs/BlogPostCategoriesApi.md#get_blog_post_category_by_id_async) | **GET** /api/v2/ContentService/BlogPostCategories/{blogPostCategoryId} | Get blog post category by ID
 *OpenapiClient::BlogPostCategoriesApi* | [**update_blog_post_category_async**](docs/BlogPostCategoriesApi.md#update_blog_post_category_async) | **PUT** /api/v2/ContentService/BlogPostCategories/{blogPostCategoryId} | Update a blog post category
+*OpenapiClient::BlogPostTagsApi* | [**count_blog_post_tags_async**](docs/BlogPostTagsApi.md#count_blog_post_tags_async) | **GET** /api/v2/ContentService/BlogPostTags/Count | Count blog post tags
 *OpenapiClient::BlogPostTagsApi* | [**create_blog_post_tag_async**](docs/BlogPostTagsApi.md#create_blog_post_tag_async) | **POST** /api/v2/ContentService/BlogPostTags | Create a blog post tag
 *OpenapiClient::BlogPostTagsApi* | [**delete_blog_post_tag_async**](docs/BlogPostTagsApi.md#delete_blog_post_tag_async) | **DELETE** /api/v2/ContentService/BlogPostTags/{blogPostTagId} | Delete a blog post tag
 *OpenapiClient::BlogPostTagsApi* | [**get_blog_post_tag_by_id_async**](docs/BlogPostTagsApi.md#get_blog_post_tag_by_id_async) | **GET** /api/v2/ContentService/BlogPostTags/{blogPostTagId} | Get blog post tag by ID
@@ -131,10 +132,12 @@ Class | Method | HTTP request | Description
 *OpenapiClient::FenixAllianceABPWebApi* | [**resend_confirmation_email_post**](docs/FenixAllianceABPWebApi.md#resend_confirmation_email_post) | **POST** /resendConfirmationEmail | 
 *OpenapiClient::FenixAllianceABPWebApi* | [**reset_password_post**](docs/FenixAllianceABPWebApi.md#reset_password_post) | **POST** /resetPassword | 
 *OpenapiClient::FenixAllianceABPWebApi* | [**version_get**](docs/FenixAllianceABPWebApi.md#version_get) | **GET** /version | 
+*OpenapiClient::PortalsApi* | [**count_portals_async**](docs/PortalsApi.md#count_portals_async) | **GET** /api/v2/ContentService/Portals/Count | Count portals
 *OpenapiClient::PortalsApi* | [**create_web_portal_async**](docs/PortalsApi.md#create_web_portal_async) | **POST** /api/v2/ContentService/Portals | Create a new web portal
 *OpenapiClient::PortalsApi* | [**delete_web_portal_async**](docs/PortalsApi.md#delete_web_portal_async) | **DELETE** /api/v2/ContentService/Portals/{portalId} | Delete a web portal
 *OpenapiClient::PortalsApi* | [**get_current_web_portal_async**](docs/PortalsApi.md#get_current_web_portal_async) | **GET** /api/v2/ContentService/Portals/Current | Get the current portal
 *OpenapiClient::PortalsApi* | [**get_current_web_portal_options_async**](docs/PortalsApi.md#get_current_web_portal_options_async) | **GET** /api/v2/ContentService/Portals/Current/Options | Get the current portal's options
+*OpenapiClient::PortalsApi* | [**get_portals_async**](docs/PortalsApi.md#get_portals_async) | **GET** /api/v2/ContentService/Portals | Get portals
 *OpenapiClient::PortalsApi* | [**get_root_web_portal_async**](docs/PortalsApi.md#get_root_web_portal_async) | **GET** /api/v2/ContentService/Portals/Root | Get the root portal
 *OpenapiClient::PortalsApi* | [**get_web_portal_by_id_async**](docs/PortalsApi.md#get_web_portal_by_id_async) | **GET** /api/v2/ContentService/Portals/{portalId} | Get a web portal by its ID
 *OpenapiClient::PortalsApi* | [**get_web_portal_options_async**](docs/PortalsApi.md#get_web_portal_options_async) | **GET** /api/v2/ContentService/Portals/{portalId}/Options | Get a web portal's options by its ID
@@ -150,11 +153,13 @@ Class | Method | HTTP request | Description
 *OpenapiClient::WebContentsApi* | [**get_web_content_by_id_async**](docs/WebContentsApi.md#get_web_content_by_id_async) | **GET** /api/v2/ContentService/WebContents/{webContentId} | Get web content by ID
 *OpenapiClient::WebContentsApi* | [**get_web_contents_async**](docs/WebContentsApi.md#get_web_contents_async) | **GET** /api/v2/ContentService/WebContents | Get web contents
 *OpenapiClient::WebContentsApi* | [**update_web_content_async**](docs/WebContentsApi.md#update_web_content_async) | **PUT** /api/v2/ContentService/WebContents/{webContentId} | Update a web content
+*OpenapiClient::WebPageCategoriesApi* | [**count_web_page_categories_async**](docs/WebPageCategoriesApi.md#count_web_page_categories_async) | **GET** /api/v2/ContentService/WebPageCategories/Count | Count web page categories
 *OpenapiClient::WebPageCategoriesApi* | [**create_web_page_category_async**](docs/WebPageCategoriesApi.md#create_web_page_category_async) | **POST** /api/v2/ContentService/WebPageCategories | Create a web page category
 *OpenapiClient::WebPageCategoriesApi* | [**delete_web_page_category_async**](docs/WebPageCategoriesApi.md#delete_web_page_category_async) | **DELETE** /api/v2/ContentService/WebPageCategories/{webPageCategoryId} | Delete a web page category
 *OpenapiClient::WebPageCategoriesApi* | [**get_web_page_categories_async**](docs/WebPageCategoriesApi.md#get_web_page_categories_async) | **GET** /api/v2/ContentService/WebPageCategories | Get web page categories
 *OpenapiClient::WebPageCategoriesApi* | [**get_web_page_category_by_id_async**](docs/WebPageCategoriesApi.md#get_web_page_category_by_id_async) | **GET** /api/v2/ContentService/WebPageCategories/{webPageCategoryId} | Get web page category by ID
 *OpenapiClient::WebPageCategoriesApi* | [**update_web_page_category_async**](docs/WebPageCategoriesApi.md#update_web_page_category_async) | **PUT** /api/v2/ContentService/WebPageCategories/{webPageCategoryId} | Update a web page category
+*OpenapiClient::WebPageTagsApi* | [**count_web_page_tags_async**](docs/WebPageTagsApi.md#count_web_page_tags_async) | **GET** /api/v2/ContentService/WebPageTags/Count | Count web page tags
 *OpenapiClient::WebPageTagsApi* | [**create_web_page_tag_async**](docs/WebPageTagsApi.md#create_web_page_tag_async) | **POST** /api/v2/ContentService/WebPageTags | Create a web page tag
 *OpenapiClient::WebPageTagsApi* | [**delete_web_page_tag_async**](docs/WebPageTagsApi.md#delete_web_page_tag_async) | **DELETE** /api/v2/ContentService/WebPageTags/{webPageTagId} | Delete a web page tag
 *OpenapiClient::WebPageTagsApi* | [**get_web_page_tag_by_id_async**](docs/WebPageTagsApi.md#get_web_page_tag_by_id_async) | **GET** /api/v2/ContentService/WebPageTags/{webPageTagId} | Get web page tag by ID
@@ -325,6 +330,7 @@ Class | Method | HTTP request | Description
  - [OpenapiClient::WebPortalCreateDto](docs/WebPortalCreateDto.md)
  - [OpenapiClient::WebPortalDto](docs/WebPortalDto.md)
  - [OpenapiClient::WebPortalDtoEnvelope](docs/WebPortalDtoEnvelope.md)
+ - [OpenapiClient::WebPortalDtoListEnvelope](docs/WebPortalDtoListEnvelope.md)
  - [OpenapiClient::WebPortalUpdateDto](docs/WebPortalUpdateDto.md)
  - [OpenapiClient::WebTemplateCreateDto](docs/WebTemplateCreateDto.md)
  - [OpenapiClient::WebTemplateDto](docs/WebTemplateDto.md)

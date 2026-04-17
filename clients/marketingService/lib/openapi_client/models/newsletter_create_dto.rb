@@ -25,10 +25,6 @@ module OpenapiClient
 
     attr_accessor :title
 
-    attr_accessor :tenant_id
-
-    attr_accessor :enrollment_id
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -36,9 +32,7 @@ module OpenapiClient
         :'timestamp' => :'timestamp',
         :'name' => :'name',
         :'code' => :'code',
-        :'title' => :'title',
-        :'tenant_id' => :'tenantId',
-        :'enrollment_id' => :'enrollmentId'
+        :'title' => :'title'
       }
     end
 
@@ -54,9 +48,7 @@ module OpenapiClient
         :'timestamp' => :'Time',
         :'name' => :'String',
         :'code' => :'String',
-        :'title' => :'String',
-        :'tenant_id' => :'String',
-        :'enrollment_id' => :'String'
+        :'title' => :'String'
       }
     end
 
@@ -65,9 +57,7 @@ module OpenapiClient
       Set.new([
         :'name',
         :'code',
-        :'title',
-        :'tenant_id',
-        :'enrollment_id'
+        :'title'
       ])
     end
 
@@ -105,14 +95,6 @@ module OpenapiClient
       if attributes.key?(:'title')
         self.title = attributes[:'title']
       end
-
-      if attributes.key?(:'tenant_id')
-        self.tenant_id = attributes[:'tenant_id']
-      end
-
-      if attributes.key?(:'enrollment_id')
-        self.enrollment_id = attributes[:'enrollment_id']
-      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -139,9 +121,7 @@ module OpenapiClient
           timestamp == o.timestamp &&
           name == o.name &&
           code == o.code &&
-          title == o.title &&
-          tenant_id == o.tenant_id &&
-          enrollment_id == o.enrollment_id
+          title == o.title
     end
 
     # @see the `==` method
@@ -153,7 +133,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, timestamp, name, code, title, tenant_id, enrollment_id].hash
+      [id, timestamp, name, code, title].hash
     end
 
     # Builds the object from hash

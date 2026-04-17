@@ -31,7 +31,7 @@ tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 opts = {
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example', # String | 
-  tenant_team_contact_enrollment_create_dto: OpenapiClient::TenantTeamContactEnrollmentCreateDto.new({business_id: 'business_id_example', business_profile_record_id: 'business_profile_record_id_example', business_team_id: 'business_team_id_example', contact_id: 'contact_id_example'}) # TenantTeamContactEnrollmentCreateDto | 
+  tenant_team_contact_enrollment_create_dto: OpenapiClient::TenantTeamContactEnrollmentCreateDto.new({business_team_id: 'business_team_id_example', contact_id: 'contact_id_example'}) # TenantTeamContactEnrollmentCreateDto | 
 }
 
 begin

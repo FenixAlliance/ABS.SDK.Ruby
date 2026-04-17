@@ -23,16 +23,13 @@ module OpenapiClient
 
     attr_accessor :description
 
-    attr_accessor :business_id
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'id' => :'id',
         :'timestamp' => :'timestamp',
         :'name' => :'name',
-        :'description' => :'description',
-        :'business_id' => :'businessID'
+        :'description' => :'description'
       }
     end
 
@@ -47,15 +44,14 @@ module OpenapiClient
         :'id' => :'String',
         :'timestamp' => :'Time',
         :'name' => :'String',
-        :'description' => :'String',
-        :'business_id' => :'String'
+        :'description' => :'String'
       }
     end
 
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
-        :'description',
+        :'description'
       ])
     end
 
@@ -91,12 +87,6 @@ module OpenapiClient
       if attributes.key?(:'description')
         self.description = attributes[:'description']
       end
-
-      if attributes.key?(:'business_id')
-        self.business_id = attributes[:'business_id']
-      else
-        self.business_id = nil
-      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -124,18 +114,6 @@ module OpenapiClient
         invalid_properties.push('invalid value for "description", the character length must be great than or equal to 0.')
       end
 
-      if @business_id.nil?
-        invalid_properties.push('invalid value for "business_id", business_id cannot be nil.')
-      end
-
-      if @business_id.to_s.length > 36
-        invalid_properties.push('invalid value for "business_id", the character length must be smaller than or equal to 36.')
-      end
-
-      if @business_id.to_s.length < 36
-        invalid_properties.push('invalid value for "business_id", the character length must be great than or equal to 36.')
-      end
-
       invalid_properties
     end
 
@@ -148,9 +126,6 @@ module OpenapiClient
       return false if @name.to_s.length < 0
       return false if !@description.nil? && @description.to_s.length > 1000
       return false if !@description.nil? && @description.to_s.length < 0
-      return false if @business_id.nil?
-      return false if @business_id.to_s.length > 36
-      return false if @business_id.to_s.length < 36
       true
     end
 
@@ -186,24 +161,6 @@ module OpenapiClient
       @description = description
     end
 
-    # Custom attribute writer method with validation
-    # @param [Object] business_id Value to be assigned
-    def business_id=(business_id)
-      if business_id.nil?
-        fail ArgumentError, 'business_id cannot be nil'
-      end
-
-      if business_id.to_s.length > 36
-        fail ArgumentError, 'invalid value for "business_id", the character length must be smaller than or equal to 36.'
-      end
-
-      if business_id.to_s.length < 36
-        fail ArgumentError, 'invalid value for "business_id", the character length must be great than or equal to 36.'
-      end
-
-      @business_id = business_id
-    end
-
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(o)
@@ -212,8 +169,7 @@ module OpenapiClient
           id == o.id &&
           timestamp == o.timestamp &&
           name == o.name &&
-          description == o.description &&
-          business_id == o.business_id
+          description == o.description
     end
 
     # @see the `==` method
@@ -225,7 +181,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, timestamp, name, description, business_id].hash
+      [id, timestamp, name, description].hash
     end
 
     # Builds the object from hash

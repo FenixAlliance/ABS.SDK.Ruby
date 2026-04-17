@@ -19,23 +19,17 @@ module OpenapiClient
 
     attr_accessor :timestamp
 
-    attr_accessor :tenant_id
-
     attr_accessor :invoice_id
 
     attr_accessor :tax_policy_id
-
-    attr_accessor :enrollment_id
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'id' => :'id',
         :'timestamp' => :'timestamp',
-        :'tenant_id' => :'tenantId',
         :'invoice_id' => :'invoiceId',
-        :'tax_policy_id' => :'taxPolicyId',
-        :'enrollment_id' => :'enrollmentId'
+        :'tax_policy_id' => :'taxPolicyId'
       }
     end
 
@@ -49,20 +43,16 @@ module OpenapiClient
       {
         :'id' => :'String',
         :'timestamp' => :'Time',
-        :'tenant_id' => :'String',
         :'invoice_id' => :'String',
-        :'tax_policy_id' => :'String',
-        :'enrollment_id' => :'String'
+        :'tax_policy_id' => :'String'
       }
     end
 
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
-        :'tenant_id',
         :'invoice_id',
-        :'tax_policy_id',
-        :'enrollment_id'
+        :'tax_policy_id'
       ])
     end
 
@@ -89,20 +79,12 @@ module OpenapiClient
         self.timestamp = attributes[:'timestamp']
       end
 
-      if attributes.key?(:'tenant_id')
-        self.tenant_id = attributes[:'tenant_id']
-      end
-
       if attributes.key?(:'invoice_id')
         self.invoice_id = attributes[:'invoice_id']
       end
 
       if attributes.key?(:'tax_policy_id')
         self.tax_policy_id = attributes[:'tax_policy_id']
-      end
-
-      if attributes.key?(:'enrollment_id')
-        self.enrollment_id = attributes[:'enrollment_id']
       end
     end
 
@@ -128,10 +110,8 @@ module OpenapiClient
       self.class == o.class &&
           id == o.id &&
           timestamp == o.timestamp &&
-          tenant_id == o.tenant_id &&
           invoice_id == o.invoice_id &&
-          tax_policy_id == o.tax_policy_id &&
-          enrollment_id == o.enrollment_id
+          tax_policy_id == o.tax_policy_id
     end
 
     # @see the `==` method
@@ -143,7 +123,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, timestamp, tenant_id, invoice_id, tax_policy_id, enrollment_id].hash
+      [id, timestamp, invoice_id, tax_policy_id].hash
     end
 
     # Builds the object from hash

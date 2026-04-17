@@ -23,8 +23,6 @@ module OpenapiClient
 
     attr_accessor :course_id
 
-    attr_accessor :business_id
-
     attr_accessor :start_date_time
 
     attr_accessor :end_date_time
@@ -40,7 +38,6 @@ module OpenapiClient
         :'timestamp' => :'timestamp',
         :'name' => :'name',
         :'course_id' => :'courseID',
-        :'business_id' => :'businessID',
         :'start_date_time' => :'startDateTime',
         :'end_date_time' => :'endDateTime',
         :'expected_start_date_time' => :'expectedStartDateTime',
@@ -60,7 +57,6 @@ module OpenapiClient
         :'timestamp' => :'Time',
         :'name' => :'String',
         :'course_id' => :'String',
-        :'business_id' => :'String',
         :'start_date_time' => :'Time',
         :'end_date_time' => :'Time',
         :'expected_start_date_time' => :'Time',
@@ -113,12 +109,6 @@ module OpenapiClient
         self.course_id = nil
       end
 
-      if attributes.key?(:'business_id')
-        self.business_id = attributes[:'business_id']
-      else
-        self.business_id = nil
-      end
-
       if attributes.key?(:'start_date_time')
         self.start_date_time = attributes[:'start_date_time']
       end
@@ -157,14 +147,6 @@ module OpenapiClient
         invalid_properties.push('invalid value for "course_id", the character length must be great than or equal to 1.')
       end
 
-      if @business_id.nil?
-        invalid_properties.push('invalid value for "business_id", business_id cannot be nil.')
-      end
-
-      if @business_id.to_s.length < 1
-        invalid_properties.push('invalid value for "business_id", the character length must be great than or equal to 1.')
-      end
-
       invalid_properties
     end
 
@@ -176,8 +158,6 @@ module OpenapiClient
       return false if @name.to_s.length < 1
       return false if @course_id.nil?
       return false if @course_id.to_s.length < 1
-      return false if @business_id.nil?
-      return false if @business_id.to_s.length < 1
       true
     end
 
@@ -209,20 +189,6 @@ module OpenapiClient
       @course_id = course_id
     end
 
-    # Custom attribute writer method with validation
-    # @param [Object] business_id Value to be assigned
-    def business_id=(business_id)
-      if business_id.nil?
-        fail ArgumentError, 'business_id cannot be nil'
-      end
-
-      if business_id.to_s.length < 1
-        fail ArgumentError, 'invalid value for "business_id", the character length must be great than or equal to 1.'
-      end
-
-      @business_id = business_id
-    end
-
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(o)
@@ -232,7 +198,6 @@ module OpenapiClient
           timestamp == o.timestamp &&
           name == o.name &&
           course_id == o.course_id &&
-          business_id == o.business_id &&
           start_date_time == o.start_date_time &&
           end_date_time == o.end_date_time &&
           expected_start_date_time == o.expected_start_date_time &&
@@ -248,7 +213,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, timestamp, name, course_id, business_id, start_date_time, end_date_time, expected_start_date_time, expected_end_date_time].hash
+      [id, timestamp, name, course_id, start_date_time, end_date_time, expected_start_date_time, expected_end_date_time].hash
     end
 
     # Builds the object from hash

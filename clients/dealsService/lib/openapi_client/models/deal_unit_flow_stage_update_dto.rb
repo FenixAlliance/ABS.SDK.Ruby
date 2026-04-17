@@ -21,8 +21,6 @@ module OpenapiClient
 
     attr_accessor :description
 
-    attr_accessor :enrollment_id
-
     attr_accessor :deal_unit_flow_id
 
     attr_accessor :parent_business_process_stage_id
@@ -33,7 +31,6 @@ module OpenapiClient
         :'order' => :'order',
         :'name' => :'name',
         :'description' => :'description',
-        :'enrollment_id' => :'enrollmentId',
         :'deal_unit_flow_id' => :'dealUnitFlowId',
         :'parent_business_process_stage_id' => :'parentBusinessProcessStageId'
       }
@@ -50,7 +47,6 @@ module OpenapiClient
         :'order' => :'Integer',
         :'name' => :'String',
         :'description' => :'String',
-        :'enrollment_id' => :'String',
         :'deal_unit_flow_id' => :'String',
         :'parent_business_process_stage_id' => :'String'
       }
@@ -61,7 +57,6 @@ module OpenapiClient
       Set.new([
         :'name',
         :'description',
-        :'enrollment_id',
         :'deal_unit_flow_id',
         :'parent_business_process_stage_id'
       ])
@@ -92,10 +87,6 @@ module OpenapiClient
 
       if attributes.key?(:'description')
         self.description = attributes[:'description']
-      end
-
-      if attributes.key?(:'enrollment_id')
-        self.enrollment_id = attributes[:'enrollment_id']
       end
 
       if attributes.key?(:'deal_unit_flow_id')
@@ -130,7 +121,6 @@ module OpenapiClient
           order == o.order &&
           name == o.name &&
           description == o.description &&
-          enrollment_id == o.enrollment_id &&
           deal_unit_flow_id == o.deal_unit_flow_id &&
           parent_business_process_stage_id == o.parent_business_process_stage_id
     end
@@ -144,7 +134,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [order, name, description, enrollment_id, deal_unit_flow_id, parent_business_process_stage_id].hash
+      [order, name, description, deal_unit_flow_id, parent_business_process_stage_id].hash
     end
 
     # Builds the object from hash

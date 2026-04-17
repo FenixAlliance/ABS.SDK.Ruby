@@ -21,15 +21,12 @@ module OpenapiClient
 
     attr_accessor :type
 
-    attr_accessor :business_profile_record_id
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'title' => :'title',
         :'description' => :'description',
-        :'type' => :'type',
-        :'business_profile_record_id' => :'businessProfileRecordID'
+        :'type' => :'type'
       }
     end
 
@@ -43,8 +40,7 @@ module OpenapiClient
       {
         :'title' => :'String',
         :'description' => :'String',
-        :'type' => :'String',
-        :'business_profile_record_id' => :'String'
+        :'type' => :'String'
       }
     end
 
@@ -53,8 +49,7 @@ module OpenapiClient
       Set.new([
         :'title',
         :'description',
-        :'type',
-        :'business_profile_record_id'
+        :'type'
       ])
     end
 
@@ -84,10 +79,6 @@ module OpenapiClient
       if attributes.key?(:'type')
         self.type = attributes[:'type']
       end
-
-      if attributes.key?(:'business_profile_record_id')
-        self.business_profile_record_id = attributes[:'business_profile_record_id']
-      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -112,8 +103,7 @@ module OpenapiClient
       self.class == o.class &&
           title == o.title &&
           description == o.description &&
-          type == o.type &&
-          business_profile_record_id == o.business_profile_record_id
+          type == o.type
     end
 
     # @see the `==` method
@@ -125,7 +115,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [title, description, type, business_profile_record_id].hash
+      [title, description, type].hash
     end
 
     # Builds the object from hash

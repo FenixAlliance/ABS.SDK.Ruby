@@ -37,10 +37,6 @@ module OpenapiClient
 
     attr_accessor :currency_id
 
-    attr_accessor :tenant_id
-
-    attr_accessor :enrollment_id
-
     attr_accessor :marketing_list_type
 
     attr_accessor :marketing_list_target
@@ -81,8 +77,6 @@ module OpenapiClient
         :'modified_on' => :'modifiedOn',
         :'last_used_on' => :'lastUsedOn',
         :'currency_id' => :'currencyId',
-        :'tenant_id' => :'tenantId',
-        :'enrollment_id' => :'enrollmentId',
         :'marketing_list_type' => :'marketingListType',
         :'marketing_list_target' => :'marketingListTarget'
       }
@@ -107,8 +101,6 @@ module OpenapiClient
         :'modified_on' => :'Time',
         :'last_used_on' => :'Time',
         :'currency_id' => :'String',
-        :'tenant_id' => :'String',
-        :'enrollment_id' => :'String',
         :'marketing_list_type' => :'String',
         :'marketing_list_target' => :'String'
       }
@@ -122,8 +114,6 @@ module OpenapiClient
         :'description',
         :'source',
         :'currency_id',
-        :'tenant_id',
-        :'enrollment_id',
       ])
     end
 
@@ -184,14 +174,6 @@ module OpenapiClient
 
       if attributes.key?(:'currency_id')
         self.currency_id = attributes[:'currency_id']
-      end
-
-      if attributes.key?(:'tenant_id')
-        self.tenant_id = attributes[:'tenant_id']
-      end
-
-      if attributes.key?(:'enrollment_id')
-        self.enrollment_id = attributes[:'enrollment_id']
       end
 
       if attributes.key?(:'marketing_list_type')
@@ -258,8 +240,6 @@ module OpenapiClient
           modified_on == o.modified_on &&
           last_used_on == o.last_used_on &&
           currency_id == o.currency_id &&
-          tenant_id == o.tenant_id &&
-          enrollment_id == o.enrollment_id &&
           marketing_list_type == o.marketing_list_type &&
           marketing_list_target == o.marketing_list_target
     end
@@ -273,7 +253,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, timestamp, locked, name, purpose, description, source, cost, modified_on, last_used_on, currency_id, tenant_id, enrollment_id, marketing_list_type, marketing_list_target].hash
+      [id, timestamp, locked, name, purpose, description, source, cost, modified_on, last_used_on, currency_id, marketing_list_type, marketing_list_target].hash
     end
 
     # Builds the object from hash

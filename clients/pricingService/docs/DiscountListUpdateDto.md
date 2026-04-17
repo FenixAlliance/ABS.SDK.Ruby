@@ -6,8 +6,6 @@
 | ---- | ---- | ----------- | ----- |
 | **name** | **String** |  | [optional] |
 | **currency_id** | **String** |  | [optional] |
-| **tenant_id** | **String** |  | [optional] |
-| **enrollment_id** | **String** |  | [optional] |
 
 ## Example
 
@@ -16,9 +14,7 @@ require 'openapi_client'
 
 instance = OpenapiClient::DiscountListUpdateDto.new(
   name: null,
-  currency_id: null,
-  tenant_id: null,
-  enrollment_id: null
+  currency_id: null
 )
 ```
 
