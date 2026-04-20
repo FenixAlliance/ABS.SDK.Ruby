@@ -400,8 +400,8 @@ module OpenapiClient
         invalid_properties.push('invalid value for "years", must be greater than or equal to 0.')
       end
 
-      if !@value.nil? && @value > 1.7976931348623157E+308
-        invalid_properties.push('invalid value for "value", must be smaller than or equal to 1.7976931348623157E+308.')
+      if !@value.nil? && @value > 999999999999999
+        invalid_properties.push('invalid value for "value", must be smaller than or equal to 999999999999999.')
       end
 
       if !@value.nil? && @value < 0
@@ -519,7 +519,7 @@ module OpenapiClient
       return false if !@months.nil? && @months < 0
       return false if !@years.nil? && @years > 2147483647
       return false if !@years.nil? && @years < 0
-      return false if !@value.nil? && @value > 1.7976931348623157E+308
+      return false if !@value.nil? && @value > 999999999999999
       return false if !@value.nil? && @value < 0
       return false if !@percentage.nil? && @percentage > 100
       return false if !@percentage.nil? && @percentage < 0
@@ -727,8 +727,8 @@ module OpenapiClient
         fail ArgumentError, 'value cannot be nil'
       end
 
-      if value > 1.7976931348623157E+308
-        fail ArgumentError, 'invalid value for "value", must be smaller than or equal to 1.7976931348623157E+308.'
+      if value > 999999999999999
+        fail ArgumentError, 'invalid value for "value", must be smaller than or equal to 999999999999999.'
       end
 
       if value < 0

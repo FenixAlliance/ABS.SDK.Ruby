@@ -212,8 +212,8 @@ module OpenapiClient
         invalid_properties.push('invalid value for "name", the character length must be great than or equal to 0.')
       end
 
-      if !@starting_at_amount_in_usd.nil? && @starting_at_amount_in_usd > 1.7976931348623157E+308
-        invalid_properties.push('invalid value for "starting_at_amount_in_usd", must be smaller than or equal to 1.7976931348623157E+308.')
+      if !@starting_at_amount_in_usd.nil? && @starting_at_amount_in_usd > 999999999999999
+        invalid_properties.push('invalid value for "starting_at_amount_in_usd", must be smaller than or equal to 999999999999999.')
       end
 
       if !@starting_at_amount_in_usd.nil? && @starting_at_amount_in_usd < 0
@@ -232,7 +232,7 @@ module OpenapiClient
       return false if @name.nil?
       return false if @name.to_s.length > 255
       return false if @name.to_s.length < 0
-      return false if !@starting_at_amount_in_usd.nil? && @starting_at_amount_in_usd > 1.7976931348623157E+308
+      return false if !@starting_at_amount_in_usd.nil? && @starting_at_amount_in_usd > 999999999999999
       return false if !@starting_at_amount_in_usd.nil? && @starting_at_amount_in_usd < 0
       true
     end
@@ -272,8 +272,8 @@ module OpenapiClient
     # Custom attribute writer method with validation
     # @param [Object] starting_at_amount_in_usd Value to be assigned
     def starting_at_amount_in_usd=(starting_at_amount_in_usd)
-      if !starting_at_amount_in_usd.nil? && starting_at_amount_in_usd > 1.7976931348623157E+308
-        fail ArgumentError, 'invalid value for "starting_at_amount_in_usd", must be smaller than or equal to 1.7976931348623157E+308.'
+      if !starting_at_amount_in_usd.nil? && starting_at_amount_in_usd > 999999999999999
+        fail ArgumentError, 'invalid value for "starting_at_amount_in_usd", must be smaller than or equal to 999999999999999.'
       end
 
       if !starting_at_amount_in_usd.nil? && starting_at_amount_in_usd < 0

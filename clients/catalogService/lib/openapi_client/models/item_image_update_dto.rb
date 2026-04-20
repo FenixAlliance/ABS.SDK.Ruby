@@ -300,10 +300,6 @@ module OpenapiClient
         invalid_properties.push('invalid value for "content_type", the character length must be great than or equal to 0.')
       end
 
-      if !@file_length.nil? && @file_length > -9223372036854775616
-        invalid_properties.push('invalid value for "file_length", must be smaller than or equal to -9223372036854775616.')
-      end
-
       if !@file_length.nil? && @file_length < 0
         invalid_properties.push('invalid value for "file_length", must be greater than or equal to 0.')
       end
@@ -349,7 +345,6 @@ module OpenapiClient
       return false if @content_type.nil?
       return false if @content_type.to_s.length > 100
       return false if @content_type.to_s.length < 0
-      return false if !@file_length.nil? && @file_length > -9223372036854775616
       return false if !@file_length.nil? && @file_length < 0
       return false if !@parent_file_upload_id.nil? && @parent_file_upload_id.to_s.length > 36
       return false if !@parent_file_upload_id.nil? && @parent_file_upload_id.to_s.length < 0
@@ -531,10 +526,6 @@ module OpenapiClient
     def file_length=(file_length)
       if file_length.nil?
         fail ArgumentError, 'file_length cannot be nil'
-      end
-
-      if file_length > -9223372036854775616
-        fail ArgumentError, 'invalid value for "file_length", must be smaller than or equal to -9223372036854775616.'
       end
 
       if file_length < 0

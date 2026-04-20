@@ -58,6 +58,8 @@
 | **cornerstone_content** | **Boolean** |  | [optional] |
 | **is_essential_content** | **Boolean** |  | [optional] |
 | **allow_search_engine_indexing** | **Boolean** |  | [optional] |
+| **blog_post_category_id** | **String** |  | [optional] |
+| **web_template_id** | **String** |  | [optional] |
 
 ## Example
 
@@ -118,7 +120,9 @@ instance = OpenapiClient::BlogPostUpdateDto.new(
   allow_trackbacks: null,
   cornerstone_content: null,
   is_essential_content: null,
-  allow_search_engine_indexing: null
+  allow_search_engine_indexing: null,
+  blog_post_category_id: null,
+  web_template_id: null
 )
 ```
 

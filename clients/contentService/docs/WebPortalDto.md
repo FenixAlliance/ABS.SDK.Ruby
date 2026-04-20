@@ -12,9 +12,9 @@
 | **disabled** | **Boolean** |  | [optional] |
 | **tenant_id** | **String** |  | [optional] |
 | **description** | **String** |  | [optional] |
+| **enrollment_id** | **String** |  | [optional] |
 | **website_theme_id** | **String** |  | [optional] |
 | **business_domain_id** | **String** |  | [optional] |
-| **business_profile_record_id** | **String** |  | [optional] |
 | **business_portal_application_id** | **String** |  | [optional] |
 
 ## Example
@@ -31,9 +31,9 @@ instance = OpenapiClient::WebPortalDto.new(
   disabled: null,
   tenant_id: null,
   description: null,
+  enrollment_id: null,
   website_theme_id: null,
   business_domain_id: null,
-  business_profile_record_id: null,
   business_portal_application_id: null
 )
 ```

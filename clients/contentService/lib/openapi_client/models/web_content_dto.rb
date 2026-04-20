@@ -605,7 +605,7 @@ module OpenapiClient
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      code_type_validator = EnumAttributeValidator.new('String', ["Razor", "CSharp", "CSHtml", "Liquid", "Html5", "Markdown"])
+      code_type_validator = EnumAttributeValidator.new('String', ["Razor", "CSharp", "CSHtml", "Liquid", "Html5", "Markdown", "Markup"])
       return false unless code_type_validator.valid?(@code_type)
       true
     end
@@ -613,7 +613,7 @@ module OpenapiClient
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] code_type Object to be assigned
     def code_type=(code_type)
-      validator = EnumAttributeValidator.new('String', ["Razor", "CSharp", "CSHtml", "Liquid", "Html5", "Markdown"])
+      validator = EnumAttributeValidator.new('String', ["Razor", "CSharp", "CSHtml", "Liquid", "Html5", "Markdown", "Markup"])
       unless validator.valid?(code_type)
         fail ArgumentError, "invalid value for \"code_type\", must be one of #{validator.allowable_values}."
       end

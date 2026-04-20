@@ -159,8 +159,8 @@ module OpenapiClient
         invalid_properties.push('invalid value for "description", the character length must be great than or equal to 1.')
       end
 
-      if !@amount.nil? && @amount > 1.7976931348623157E+308
-        invalid_properties.push('invalid value for "amount", must be smaller than or equal to 1.7976931348623157E+308.')
+      if !@amount.nil? && @amount > 999999999999999
+        invalid_properties.push('invalid value for "amount", must be smaller than or equal to 999999999999999.')
       end
 
       if !@amount.nil? && @amount < 0.01
@@ -192,7 +192,7 @@ module OpenapiClient
       warn '[DEPRECATED] the `valid?` method is obsolete'
       return false if !@description.nil? && @description.to_s.length > 1000
       return false if !@description.nil? && @description.to_s.length < 1
-      return false if !@amount.nil? && @amount > 1.7976931348623157E+308
+      return false if !@amount.nil? && @amount > 999999999999999
       return false if !@amount.nil? && @amount < 0.01
       return false if !@credit_account_id.nil? && @credit_account_id.to_s.length > 36
       return false if !@credit_account_id.nil? && @credit_account_id.to_s.length < 36
@@ -224,8 +224,8 @@ module OpenapiClient
         fail ArgumentError, 'amount cannot be nil'
       end
 
-      if amount > 1.7976931348623157E+308
-        fail ArgumentError, 'invalid value for "amount", must be smaller than or equal to 1.7976931348623157E+308.'
+      if amount > 999999999999999
+        fail ArgumentError, 'invalid value for "amount", must be smaller than or equal to 999999999999999.'
       end
 
       if amount < 0.01

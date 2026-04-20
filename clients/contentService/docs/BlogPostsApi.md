@@ -1,6 +1,6 @@
 # OpenapiClient::BlogPostsApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://absuite.net*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
@@ -42,7 +42,7 @@ require 'openapi_client'
 api_instance = OpenapiClient::BlogPostsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
-  blog_post_create_dto: OpenapiClient::BlogPostCreateDto.new # BlogPostCreateDto | 
+  blog_post_create_dto: OpenapiClient::BlogPostCreateDto.new({title: 'title_example'}) # BlogPostCreateDto | 
 }
 
 begin

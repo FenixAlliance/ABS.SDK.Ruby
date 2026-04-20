@@ -21,13 +21,13 @@ module OpenapiClient
 
     attr_accessor :title
 
-    attr_accessor :code
-
     attr_accessor :published
 
     attr_accessor :description
 
-    attr_accessor :html_content
+    attr_accessor :code
+
+    attr_accessor :markup
 
     attr_accessor :featured_image_url
 
@@ -65,14 +65,14 @@ module OpenapiClient
         :'id' => :'id',
         :'timestamp' => :'timestamp',
         :'title' => :'title',
-        :'code' => :'code',
         :'published' => :'published',
         :'description' => :'description',
-        :'html_content' => :'htmlContent',
+        :'code' => :'code',
+        :'markup' => :'markup',
         :'featured_image_url' => :'featuredImageUrl',
         :'code_type' => :'codeType',
-        :'blog_post_category_id' => :'blogPostCategoryID',
-        :'web_template_id' => :'webTemplateID'
+        :'blog_post_category_id' => :'blogPostCategoryId',
+        :'web_template_id' => :'webTemplateId'
       }
     end
 
@@ -87,10 +87,10 @@ module OpenapiClient
         :'id' => :'String',
         :'timestamp' => :'Time',
         :'title' => :'String',
-        :'code' => :'String',
         :'published' => :'Boolean',
         :'description' => :'String',
-        :'html_content' => :'String',
+        :'code' => :'String',
+        :'markup' => :'String',
         :'featured_image_url' => :'String',
         :'code_type' => :'String',
         :'blog_post_category_id' => :'String',
@@ -101,10 +101,9 @@ module OpenapiClient
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
-        :'title',
-        :'code',
         :'description',
-        :'html_content',
+        :'code',
+        :'markup',
         :'featured_image_url',
         :'code_type',
         :'blog_post_category_id',
@@ -137,10 +136,8 @@ module OpenapiClient
 
       if attributes.key?(:'title')
         self.title = attributes[:'title']
-      end
-
-      if attributes.key?(:'code')
-        self.code = attributes[:'code']
+      else
+        self.title = nil
       end
 
       if attributes.key?(:'published')
@@ -151,8 +148,12 @@ module OpenapiClient
         self.description = attributes[:'description']
       end
 
-      if attributes.key?(:'html_content')
-        self.html_content = attributes[:'html_content']
+      if attributes.key?(:'code')
+        self.code = attributes[:'code']
+      end
+
+      if attributes.key?(:'markup')
+        self.markup = attributes[:'markup']
       end
 
       if attributes.key?(:'featured_image_url')
@@ -177,6 +178,18 @@ module OpenapiClient
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
       invalid_properties = Array.new
+      if @title.nil?
+        invalid_properties.push('invalid value for "title", title cannot be nil.')
+      end
+
+      if @title.to_s.length > 100
+        invalid_properties.push('invalid value for "title", the character length must be smaller than or equal to 100.')
+      end
+
+      if @title.to_s.length < 3
+        invalid_properties.push('invalid value for "title", the character length must be great than or equal to 3.')
+      end
+
       invalid_properties
     end
 
@@ -184,15 +197,36 @@ module OpenapiClient
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      code_type_validator = EnumAttributeValidator.new('String', ["Razor", "CSharp", "CSHtml", "Liquid", "Html5", "Markdown"])
+      return false if @title.nil?
+      return false if @title.to_s.length > 100
+      return false if @title.to_s.length < 3
+      code_type_validator = EnumAttributeValidator.new('String', ["Razor", "CSharp", "CSHtml", "Liquid", "Html5", "Markdown", "Markup"])
       return false unless code_type_validator.valid?(@code_type)
       true
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] title Value to be assigned
+    def title=(title)
+      if title.nil?
+        fail ArgumentError, 'title cannot be nil'
+      end
+
+      if title.to_s.length > 100
+        fail ArgumentError, 'invalid value for "title", the character length must be smaller than or equal to 100.'
+      end
+
+      if title.to_s.length < 3
+        fail ArgumentError, 'invalid value for "title", the character length must be great than or equal to 3.'
+      end
+
+      @title = title
     end
 
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] code_type Object to be assigned
     def code_type=(code_type)
-      validator = EnumAttributeValidator.new('String', ["Razor", "CSharp", "CSHtml", "Liquid", "Html5", "Markdown"])
+      validator = EnumAttributeValidator.new('String', ["Razor", "CSharp", "CSHtml", "Liquid", "Html5", "Markdown", "Markup"])
       unless validator.valid?(code_type)
         fail ArgumentError, "invalid value for \"code_type\", must be one of #{validator.allowable_values}."
       end
@@ -207,10 +241,10 @@ module OpenapiClient
           id == o.id &&
           timestamp == o.timestamp &&
           title == o.title &&
-          code == o.code &&
           published == o.published &&
           description == o.description &&
-          html_content == o.html_content &&
+          code == o.code &&
+          markup == o.markup &&
           featured_image_url == o.featured_image_url &&
           code_type == o.code_type &&
           blog_post_category_id == o.blog_post_category_id &&
@@ -226,7 +260,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, timestamp, title, code, published, description, html_content, featured_image_url, code_type, blog_post_category_id, web_template_id].hash
+      [id, timestamp, title, published, description, code, markup, featured_image_url, code_type, blog_post_category_id, web_template_id].hash
     end
 
     # Builds the object from hash

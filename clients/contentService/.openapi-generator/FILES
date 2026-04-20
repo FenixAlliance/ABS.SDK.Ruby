@@ -335,5 +335,4 @@ lib/openapi_client/models/web_template_dto_list_envelope.rb
 lib/openapi_client/models/web_template_update_dto.rb
 lib/openapi_client/version.rb
 openapi_client.gemspec
-spec/models/web_portal_dto_list_envelope_spec.rb
 spec/spec_helper.rb

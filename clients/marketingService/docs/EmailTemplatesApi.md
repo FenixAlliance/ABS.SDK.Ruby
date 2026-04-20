@@ -1,6 +1,6 @@
 # OpenapiClient::EmailTemplatesApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://absuite.net*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
@@ -28,7 +28,7 @@ require 'openapi_client'
 
 api_instance = OpenapiClient::EmailTemplatesApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
-email_template_create_dto = OpenapiClient::EmailTemplateCreateDto.new # EmailTemplateCreateDto | 
+email_template_create_dto = OpenapiClient::EmailTemplateCreateDto.new({title: 'title_example'}) # EmailTemplateCreateDto | 
 opts = {
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example' # String | 

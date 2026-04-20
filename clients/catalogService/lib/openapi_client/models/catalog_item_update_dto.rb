@@ -1541,48 +1541,48 @@ module OpenapiClient
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
       invalid_properties = Array.new
-      if !@estimated_witholding_taxes_in_usd.nil? && @estimated_witholding_taxes_in_usd > 1.7976931348623157E+308
-        invalid_properties.push('invalid value for "estimated_witholding_taxes_in_usd", must be smaller than or equal to 1.7976931348623157E+308.')
+      if !@estimated_witholding_taxes_in_usd.nil? && @estimated_witholding_taxes_in_usd > 999999999999999
+        invalid_properties.push('invalid value for "estimated_witholding_taxes_in_usd", must be smaller than or equal to 999999999999999.')
       end
 
       if !@estimated_witholding_taxes_in_usd.nil? && @estimated_witholding_taxes_in_usd < 0
         invalid_properties.push('invalid value for "estimated_witholding_taxes_in_usd", must be greater than or equal to 0.')
       end
 
-      if !@estimated_payment_cost_in_usd.nil? && @estimated_payment_cost_in_usd > 1.7976931348623157E+308
-        invalid_properties.push('invalid value for "estimated_payment_cost_in_usd", must be smaller than or equal to 1.7976931348623157E+308.')
+      if !@estimated_payment_cost_in_usd.nil? && @estimated_payment_cost_in_usd > 999999999999999
+        invalid_properties.push('invalid value for "estimated_payment_cost_in_usd", must be smaller than or equal to 999999999999999.')
       end
 
       if !@estimated_payment_cost_in_usd.nil? && @estimated_payment_cost_in_usd < 0
         invalid_properties.push('invalid value for "estimated_payment_cost_in_usd", must be greater than or equal to 0.')
       end
 
-      if !@estimated_payment_tax_in_usd.nil? && @estimated_payment_tax_in_usd > 1.7976931348623157E+308
-        invalid_properties.push('invalid value for "estimated_payment_tax_in_usd", must be smaller than or equal to 1.7976931348623157E+308.')
+      if !@estimated_payment_tax_in_usd.nil? && @estimated_payment_tax_in_usd > 999999999999999
+        invalid_properties.push('invalid value for "estimated_payment_tax_in_usd", must be smaller than or equal to 999999999999999.')
       end
 
       if !@estimated_payment_tax_in_usd.nil? && @estimated_payment_tax_in_usd < 0
         invalid_properties.push('invalid value for "estimated_payment_tax_in_usd", must be greater than or equal to 0.')
       end
 
-      if !@estimated_default_shipping_cost_in_usd.nil? && @estimated_default_shipping_cost_in_usd > 1.7976931348623157E+308
-        invalid_properties.push('invalid value for "estimated_default_shipping_cost_in_usd", must be smaller than or equal to 1.7976931348623157E+308.')
+      if !@estimated_default_shipping_cost_in_usd.nil? && @estimated_default_shipping_cost_in_usd > 999999999999999
+        invalid_properties.push('invalid value for "estimated_default_shipping_cost_in_usd", must be smaller than or equal to 999999999999999.')
       end
 
       if !@estimated_default_shipping_cost_in_usd.nil? && @estimated_default_shipping_cost_in_usd < 0
         invalid_properties.push('invalid value for "estimated_default_shipping_cost_in_usd", must be greater than or equal to 0.')
       end
 
-      if !@estimated_default_shipping_tax_in_usd.nil? && @estimated_default_shipping_tax_in_usd > 1.7976931348623157E+308
-        invalid_properties.push('invalid value for "estimated_default_shipping_tax_in_usd", must be smaller than or equal to 1.7976931348623157E+308.')
+      if !@estimated_default_shipping_tax_in_usd.nil? && @estimated_default_shipping_tax_in_usd > 999999999999999
+        invalid_properties.push('invalid value for "estimated_default_shipping_tax_in_usd", must be smaller than or equal to 999999999999999.')
       end
 
       if !@estimated_default_shipping_tax_in_usd.nil? && @estimated_default_shipping_tax_in_usd < 0
         invalid_properties.push('invalid value for "estimated_default_shipping_tax_in_usd", must be greater than or equal to 0.')
       end
 
-      if !@estimated_total_price_in_usd.nil? && @estimated_total_price_in_usd > 1.7976931348623157E+308
-        invalid_properties.push('invalid value for "estimated_total_price_in_usd", must be smaller than or equal to 1.7976931348623157E+308.')
+      if !@estimated_total_price_in_usd.nil? && @estimated_total_price_in_usd > 999999999999999
+        invalid_properties.push('invalid value for "estimated_total_price_in_usd", must be smaller than or equal to 999999999999999.')
       end
 
       if !@estimated_total_price_in_usd.nil? && @estimated_total_price_in_usd < 0
@@ -1596,17 +1596,17 @@ module OpenapiClient
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      return false if !@estimated_witholding_taxes_in_usd.nil? && @estimated_witholding_taxes_in_usd > 1.7976931348623157E+308
+      return false if !@estimated_witholding_taxes_in_usd.nil? && @estimated_witholding_taxes_in_usd > 999999999999999
       return false if !@estimated_witholding_taxes_in_usd.nil? && @estimated_witholding_taxes_in_usd < 0
-      return false if !@estimated_payment_cost_in_usd.nil? && @estimated_payment_cost_in_usd > 1.7976931348623157E+308
+      return false if !@estimated_payment_cost_in_usd.nil? && @estimated_payment_cost_in_usd > 999999999999999
       return false if !@estimated_payment_cost_in_usd.nil? && @estimated_payment_cost_in_usd < 0
-      return false if !@estimated_payment_tax_in_usd.nil? && @estimated_payment_tax_in_usd > 1.7976931348623157E+308
+      return false if !@estimated_payment_tax_in_usd.nil? && @estimated_payment_tax_in_usd > 999999999999999
       return false if !@estimated_payment_tax_in_usd.nil? && @estimated_payment_tax_in_usd < 0
-      return false if !@estimated_default_shipping_cost_in_usd.nil? && @estimated_default_shipping_cost_in_usd > 1.7976931348623157E+308
+      return false if !@estimated_default_shipping_cost_in_usd.nil? && @estimated_default_shipping_cost_in_usd > 999999999999999
       return false if !@estimated_default_shipping_cost_in_usd.nil? && @estimated_default_shipping_cost_in_usd < 0
-      return false if !@estimated_default_shipping_tax_in_usd.nil? && @estimated_default_shipping_tax_in_usd > 1.7976931348623157E+308
+      return false if !@estimated_default_shipping_tax_in_usd.nil? && @estimated_default_shipping_tax_in_usd > 999999999999999
       return false if !@estimated_default_shipping_tax_in_usd.nil? && @estimated_default_shipping_tax_in_usd < 0
-      return false if !@estimated_total_price_in_usd.nil? && @estimated_total_price_in_usd > 1.7976931348623157E+308
+      return false if !@estimated_total_price_in_usd.nil? && @estimated_total_price_in_usd > 999999999999999
       return false if !@estimated_total_price_in_usd.nil? && @estimated_total_price_in_usd < 0
       true
     end
@@ -1618,8 +1618,8 @@ module OpenapiClient
         fail ArgumentError, 'estimated_witholding_taxes_in_usd cannot be nil'
       end
 
-      if estimated_witholding_taxes_in_usd > 1.7976931348623157E+308
-        fail ArgumentError, 'invalid value for "estimated_witholding_taxes_in_usd", must be smaller than or equal to 1.7976931348623157E+308.'
+      if estimated_witholding_taxes_in_usd > 999999999999999
+        fail ArgumentError, 'invalid value for "estimated_witholding_taxes_in_usd", must be smaller than or equal to 999999999999999.'
       end
 
       if estimated_witholding_taxes_in_usd < 0
@@ -1636,8 +1636,8 @@ module OpenapiClient
         fail ArgumentError, 'estimated_payment_cost_in_usd cannot be nil'
       end
 
-      if estimated_payment_cost_in_usd > 1.7976931348623157E+308
-        fail ArgumentError, 'invalid value for "estimated_payment_cost_in_usd", must be smaller than or equal to 1.7976931348623157E+308.'
+      if estimated_payment_cost_in_usd > 999999999999999
+        fail ArgumentError, 'invalid value for "estimated_payment_cost_in_usd", must be smaller than or equal to 999999999999999.'
       end
 
       if estimated_payment_cost_in_usd < 0
@@ -1654,8 +1654,8 @@ module OpenapiClient
         fail ArgumentError, 'estimated_payment_tax_in_usd cannot be nil'
       end
 
-      if estimated_payment_tax_in_usd > 1.7976931348623157E+308
-        fail ArgumentError, 'invalid value for "estimated_payment_tax_in_usd", must be smaller than or equal to 1.7976931348623157E+308.'
+      if estimated_payment_tax_in_usd > 999999999999999
+        fail ArgumentError, 'invalid value for "estimated_payment_tax_in_usd", must be smaller than or equal to 999999999999999.'
       end
 
       if estimated_payment_tax_in_usd < 0
@@ -1672,8 +1672,8 @@ module OpenapiClient
         fail ArgumentError, 'estimated_default_shipping_cost_in_usd cannot be nil'
       end
 
-      if estimated_default_shipping_cost_in_usd > 1.7976931348623157E+308
-        fail ArgumentError, 'invalid value for "estimated_default_shipping_cost_in_usd", must be smaller than or equal to 1.7976931348623157E+308.'
+      if estimated_default_shipping_cost_in_usd > 999999999999999
+        fail ArgumentError, 'invalid value for "estimated_default_shipping_cost_in_usd", must be smaller than or equal to 999999999999999.'
       end
 
       if estimated_default_shipping_cost_in_usd < 0
@@ -1690,8 +1690,8 @@ module OpenapiClient
         fail ArgumentError, 'estimated_default_shipping_tax_in_usd cannot be nil'
       end
 
-      if estimated_default_shipping_tax_in_usd > 1.7976931348623157E+308
-        fail ArgumentError, 'invalid value for "estimated_default_shipping_tax_in_usd", must be smaller than or equal to 1.7976931348623157E+308.'
+      if estimated_default_shipping_tax_in_usd > 999999999999999
+        fail ArgumentError, 'invalid value for "estimated_default_shipping_tax_in_usd", must be smaller than or equal to 999999999999999.'
       end
 
       if estimated_default_shipping_tax_in_usd < 0
@@ -1708,8 +1708,8 @@ module OpenapiClient
         fail ArgumentError, 'estimated_total_price_in_usd cannot be nil'
       end
 
-      if estimated_total_price_in_usd > 1.7976931348623157E+308
-        fail ArgumentError, 'invalid value for "estimated_total_price_in_usd", must be smaller than or equal to 1.7976931348623157E+308.'
+      if estimated_total_price_in_usd > 999999999999999
+        fail ArgumentError, 'invalid value for "estimated_total_price_in_usd", must be smaller than or equal to 999999999999999.'
       end
 
       if estimated_total_price_in_usd < 0

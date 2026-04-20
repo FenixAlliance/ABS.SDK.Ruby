@@ -123,6 +123,10 @@ module OpenapiClient
 
     attr_accessor :allow_search_engine_indexing
 
+    attr_accessor :blog_post_category_id
+
+    attr_accessor :web_template_id
+
     class EnumAttributeValidator
       attr_reader :datatype
       attr_reader :allowable_values
@@ -201,7 +205,9 @@ module OpenapiClient
         :'allow_trackbacks' => :'allowTrackbacks',
         :'cornerstone_content' => :'cornerstoneContent',
         :'is_essential_content' => :'isEssentialContent',
-        :'allow_search_engine_indexing' => :'allowSearchEngineIndexing'
+        :'allow_search_engine_indexing' => :'allowSearchEngineIndexing',
+        :'blog_post_category_id' => :'blogPostCategoryId',
+        :'web_template_id' => :'webTemplateId'
       }
     end
 
@@ -266,7 +272,9 @@ module OpenapiClient
         :'allow_trackbacks' => :'Boolean',
         :'cornerstone_content' => :'Boolean',
         :'is_essential_content' => :'Boolean',
-        :'allow_search_engine_indexing' => :'Boolean'
+        :'allow_search_engine_indexing' => :'Boolean',
+        :'blog_post_category_id' => :'String',
+        :'web_template_id' => :'String'
       }
     end
 
@@ -308,6 +316,8 @@ module OpenapiClient
         :'js_files',
         :'razor_generated_code',
         :'c_sharp_generated_code',
+        :'blog_post_category_id',
+        :'web_template_id'
       ])
     end
 
@@ -541,6 +551,14 @@ module OpenapiClient
       if attributes.key?(:'allow_search_engine_indexing')
         self.allow_search_engine_indexing = attributes[:'allow_search_engine_indexing']
       end
+
+      if attributes.key?(:'blog_post_category_id')
+        self.blog_post_category_id = attributes[:'blog_post_category_id']
+      end
+
+      if attributes.key?(:'web_template_id')
+        self.web_template_id = attributes[:'web_template_id']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -555,7 +573,7 @@ module OpenapiClient
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      code_type_validator = EnumAttributeValidator.new('String', ["Razor", "CSharp", "CSHtml", "Liquid", "Html5", "Markdown"])
+      code_type_validator = EnumAttributeValidator.new('String', ["Razor", "CSharp", "CSHtml", "Liquid", "Html5", "Markdown", "Markup"])
       return false unless code_type_validator.valid?(@code_type)
       true
     end
@@ -563,7 +581,7 @@ module OpenapiClient
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] code_type Object to be assigned
     def code_type=(code_type)
-      validator = EnumAttributeValidator.new('String', ["Razor", "CSharp", "CSHtml", "Liquid", "Html5", "Markdown"])
+      validator = EnumAttributeValidator.new('String', ["Razor", "CSharp", "CSHtml", "Liquid", "Html5", "Markdown", "Markup"])
       unless validator.valid?(code_type)
         fail ArgumentError, "invalid value for \"code_type\", must be one of #{validator.allowable_values}."
       end
@@ -628,7 +646,9 @@ module OpenapiClient
           allow_trackbacks == o.allow_trackbacks &&
           cornerstone_content == o.cornerstone_content &&
           is_essential_content == o.is_essential_content &&
-          allow_search_engine_indexing == o.allow_search_engine_indexing
+          allow_search_engine_indexing == o.allow_search_engine_indexing &&
+          blog_post_category_id == o.blog_post_category_id &&
+          web_template_id == o.web_template_id
     end
 
     # @see the `==` method
@@ -640,7 +660,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [order, slug, name, title, excerpt, password, description, highlight_image, canonical_url, seo_title, seo_key_words, seo_key_phrases, meta_description, twitter_image, twitter_title, twitter_description, facebook_image, facebook_title, facebook_description, featured_image_url, content, code, namespace, type_name, generated_code, compilation_path, html_content, code_type, c_sharp_content, razor_content, css_content, js_content, css_files, js_files, razor_generated_code, c_sharp_generated_code, precompiled_logic_size, precompiled_logic_size_long, precompiled_view_size, precompiled_view_size_long, precompiled_logic_view_size, template, default, enable, enable_comments, display_social_box, published, in_trash_can, system_locked, allow_pingbacks, allow_trackbacks, cornerstone_content, is_essential_content, allow_search_engine_indexing].hash
+      [order, slug, name, title, excerpt, password, description, highlight_image, canonical_url, seo_title, seo_key_words, seo_key_phrases, meta_description, twitter_image, twitter_title, twitter_description, facebook_image, facebook_title, facebook_description, featured_image_url, content, code, namespace, type_name, generated_code, compilation_path, html_content, code_type, c_sharp_content, razor_content, css_content, js_content, css_files, js_files, razor_generated_code, c_sharp_generated_code, precompiled_logic_size, precompiled_logic_size_long, precompiled_view_size, precompiled_view_size_long, precompiled_logic_view_size, template, default, enable, enable_comments, display_social_box, published, in_trash_can, system_locked, allow_pingbacks, allow_trackbacks, cornerstone_content, is_essential_content, allow_search_engine_indexing, blog_post_category_id, web_template_id].hash
     end
 
     # Builds the object from hash

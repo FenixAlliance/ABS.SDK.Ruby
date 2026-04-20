@@ -31,11 +31,11 @@ module OpenapiClient
 
     attr_accessor :description
 
+    attr_accessor :enrollment_id
+
     attr_accessor :website_theme_id
 
     attr_accessor :business_domain_id
-
-    attr_accessor :business_profile_record_id
 
     attr_accessor :business_portal_application_id
 
@@ -50,10 +50,10 @@ module OpenapiClient
         :'disabled' => :'disabled',
         :'tenant_id' => :'tenantId',
         :'description' => :'description',
-        :'website_theme_id' => :'websiteThemeID',
-        :'business_domain_id' => :'businessDomainID',
-        :'business_profile_record_id' => :'businessProfileRecordID',
-        :'business_portal_application_id' => :'businessPortalApplicationID'
+        :'enrollment_id' => :'enrollmentId',
+        :'website_theme_id' => :'websiteThemeId',
+        :'business_domain_id' => :'businessDomainId',
+        :'business_portal_application_id' => :'businessPortalApplicationId'
       }
     end
 
@@ -73,9 +73,9 @@ module OpenapiClient
         :'disabled' => :'Boolean',
         :'tenant_id' => :'String',
         :'description' => :'String',
+        :'enrollment_id' => :'String',
         :'website_theme_id' => :'String',
         :'business_domain_id' => :'String',
-        :'business_profile_record_id' => :'String',
         :'business_portal_application_id' => :'String'
       }
     end
@@ -89,9 +89,9 @@ module OpenapiClient
         :'domain',
         :'tenant_id',
         :'description',
+        :'enrollment_id',
         :'website_theme_id',
         :'business_domain_id',
-        :'business_profile_record_id',
         :'business_portal_application_id'
       ])
     end
@@ -143,16 +143,16 @@ module OpenapiClient
         self.description = attributes[:'description']
       end
 
+      if attributes.key?(:'enrollment_id')
+        self.enrollment_id = attributes[:'enrollment_id']
+      end
+
       if attributes.key?(:'website_theme_id')
         self.website_theme_id = attributes[:'website_theme_id']
       end
 
       if attributes.key?(:'business_domain_id')
         self.business_domain_id = attributes[:'business_domain_id']
-      end
-
-      if attributes.key?(:'business_profile_record_id')
-        self.business_profile_record_id = attributes[:'business_profile_record_id']
       end
 
       if attributes.key?(:'business_portal_application_id')
@@ -188,9 +188,9 @@ module OpenapiClient
           disabled == o.disabled &&
           tenant_id == o.tenant_id &&
           description == o.description &&
+          enrollment_id == o.enrollment_id &&
           website_theme_id == o.website_theme_id &&
           business_domain_id == o.business_domain_id &&
-          business_profile_record_id == o.business_profile_record_id &&
           business_portal_application_id == o.business_portal_application_id
     end
 
@@ -203,7 +203,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, timestamp, root, title, domain, disabled, tenant_id, description, website_theme_id, business_domain_id, business_profile_record_id, business_portal_application_id].hash
+      [id, timestamp, root, title, domain, disabled, tenant_id, description, enrollment_id, website_theme_id, business_domain_id, business_portal_application_id].hash
     end
 
     # Builds the object from hash
