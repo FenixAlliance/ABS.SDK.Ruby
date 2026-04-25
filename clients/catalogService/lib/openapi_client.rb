@@ -119,7 +119,7 @@ require 'openapi_client/models/two_factor_response'
 require 'openapi_client/models/update_product_primary_image_async_request'
 
 # APIs
-require 'openapi_client/api/fenix_alliance_abp_web_api'
+require 'openapi_client/api/fenix_alliance_abs_web_api'
 require 'openapi_client/api/item_attachments_api'
 require 'openapi_client/api/item_attributes_api'
 require 'openapi_client/api/item_brands_api'

@@ -56,7 +56,7 @@ require 'openapi_client/models/two_factor_response'
 # APIs
 require 'openapi_client/api/countries_api'
 require 'openapi_client/api/currencies_api'
-require 'openapi_client/api/fenix_alliance_abp_web_api'
+require 'openapi_client/api/fenix_alliance_abs_web_api'
 require 'openapi_client/api/languages_api'
 require 'openapi_client/api/timezones_api'
 

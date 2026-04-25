@@ -74,7 +74,7 @@ require 'openapi_client/models/user_dto'
 # APIs
 require 'openapi_client/api/deal_unit_flows_api'
 require 'openapi_client/api/deal_units_api'
-require 'openapi_client/api/fenix_alliance_abp_web_api'
+require 'openapi_client/api/fenix_alliance_abs_web_api'
 require 'openapi_client/api/sales_literatures_api'
 
 module OpenapiClient

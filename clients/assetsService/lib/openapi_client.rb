@@ -73,7 +73,7 @@ require 'openapi_client/api/asset_categories_api'
 require 'openapi_client/api/asset_transfers_api'
 require 'openapi_client/api/asset_types_api'
 require 'openapi_client/api/assets_api'
-require 'openapi_client/api/fenix_alliance_abp_web_api'
+require 'openapi_client/api/fenix_alliance_abs_web_api'
 
 module OpenapiClient
   class << self

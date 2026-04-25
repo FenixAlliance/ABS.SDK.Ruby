@@ -114,7 +114,7 @@ require 'openapi_client/api/course_units_api'
 require 'openapi_client/api/course_updates_api'
 require 'openapi_client/api/course_wikis_api'
 require 'openapi_client/api/courses_api'
-require 'openapi_client/api/fenix_alliance_abp_web_api'
+require 'openapi_client/api/fenix_alliance_abs_web_api'
 require 'openapi_client/api/instructor_profiles_api'
 require 'openapi_client/api/student_profiles_api'
 

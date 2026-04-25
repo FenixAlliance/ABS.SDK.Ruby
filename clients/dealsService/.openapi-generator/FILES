@@ -38,7 +38,7 @@ docs/ExtendedDealUnitDtoEnvelope.md
 docs/ExtendedDealUnitDtoListEnvelope.md
 docs/ExtendedSalesLiteratureDto.md
 docs/ExtendedSalesLiteratureDtoListEnvelope.md
-docs/FenixAllianceABPWebApi.md
+docs/FenixAllianceABSWebApi.md
 docs/ForexRates.md
 docs/ForgotPasswordRequest.md
 docs/HttpValidationProblemDetails.md
@@ -67,7 +67,7 @@ git_push.sh
 lib/openapi_client.rb
 lib/openapi_client/api/deal_unit_flows_api.rb
 lib/openapi_client/api/deal_units_api.rb
-lib/openapi_client/api/fenix_alliance_abp_web_api.rb
+lib/openapi_client/api/fenix_alliance_abs_web_api.rb
 lib/openapi_client/api/sales_literatures_api.rb
 lib/openapi_client/api_client.rb
 lib/openapi_client/api_error.rb
@@ -127,4 +127,5 @@ lib/openapi_client/models/two_factor_response.rb
 lib/openapi_client/models/user_dto.rb
 lib/openapi_client/version.rb
 openapi_client.gemspec
+spec/api/fenix_alliance_abs_web_api_spec.rb
 spec/spec_helper.rb

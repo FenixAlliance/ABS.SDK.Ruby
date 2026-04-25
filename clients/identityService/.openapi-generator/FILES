@@ -12,7 +12,7 @@ docs/AuthorizationResult.md
 docs/AuthorizationResultEnvelope.md
 docs/CheckerApi.md
 docs/ErrorEnvelope.md
-docs/FenixAllianceABPWebApi.md
+docs/FenixAllianceABSWebApi.md
 docs/ForgotPasswordRequest.md
 docs/HttpValidationProblemDetails.md
 docs/InfoRequest.md
@@ -45,7 +45,7 @@ git_push.sh
 lib/openapi_client.rb
 lib/openapi_client/api/applications_api.rb
 lib/openapi_client/api/checker_api.rb
-lib/openapi_client/api/fenix_alliance_abp_web_api.rb
+lib/openapi_client/api/fenix_alliance_abs_web_api.rb
 lib/openapi_client/api/o_auth_api.rb
 lib/openapi_client/api/resource_api.rb
 lib/openapi_client/api/user_info_api.rb
@@ -83,4 +83,5 @@ lib/openapi_client/models/user_create_dto.rb
 lib/openapi_client/models/user_create_dto_envelope.rb
 lib/openapi_client/version.rb
 openapi_client.gemspec
+spec/api/fenix_alliance_abs_web_api_spec.rb
 spec/spec_helper.rb

@@ -84,7 +84,7 @@ docs/CourseWikiUpdateDto.md
 docs/CourseWikisApi.md
 docs/CoursesApi.md
 docs/ErrorEnvelope.md
-docs/FenixAllianceABPWebApi.md
+docs/FenixAllianceABSWebApi.md
 docs/ForgotPasswordRequest.md
 docs/HttpValidationProblemDetails.md
 docs/InfoRequest.md
@@ -124,7 +124,7 @@ lib/openapi_client/api/course_units_api.rb
 lib/openapi_client/api/course_updates_api.rb
 lib/openapi_client/api/course_wikis_api.rb
 lib/openapi_client/api/courses_api.rb
-lib/openapi_client/api/fenix_alliance_abp_web_api.rb
+lib/openapi_client/api/fenix_alliance_abs_web_api.rb
 lib/openapi_client/api/instructor_profiles_api.rb
 lib/openapi_client/api/student_profiles_api.rb
 lib/openapi_client/api_client.rb
@@ -209,4 +209,5 @@ lib/openapi_client/models/two_factor_request.rb
 lib/openapi_client/models/two_factor_response.rb
 lib/openapi_client/version.rb
 openapi_client.gemspec
+spec/api/fenix_alliance_abs_web_api_spec.rb
 spec/spec_helper.rb

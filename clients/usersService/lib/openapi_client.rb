@@ -72,7 +72,7 @@ require 'openapi_client/models/wallet_dto'
 require 'openapi_client/models/wallet_dto_envelope'
 
 # APIs
-require 'openapi_client/api/fenix_alliance_abp_web_api'
+require 'openapi_client/api/fenix_alliance_abs_web_api'
 require 'openapi_client/api/options_api'
 require 'openapi_client/api/users_api'
 

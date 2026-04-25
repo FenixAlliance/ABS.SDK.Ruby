@@ -63,7 +63,7 @@ docs/EmptyEnvelope.md
 docs/ErrorEnvelope.md
 docs/FacebookIntegrationOptions.md
 docs/Favicons.md
-docs/FenixAllianceABPWebApi.md
+docs/FenixAllianceABSWebApi.md
 docs/FenixAllianceIntegrationsOptions.md
 docs/FooterOptions.md
 docs/ForgotPasswordRequest.md
@@ -174,7 +174,7 @@ lib/openapi_client/api/blog_post_categories_api.rb
 lib/openapi_client/api/blog_post_tags_api.rb
 lib/openapi_client/api/blog_posts_api.rb
 lib/openapi_client/api/business_domains_api.rb
-lib/openapi_client/api/fenix_alliance_abp_web_api.rb
+lib/openapi_client/api/fenix_alliance_abs_web_api.rb
 lib/openapi_client/api/portals_api.rb
 lib/openapi_client/api/themes_api.rb
 lib/openapi_client/api/web_contents_api.rb
@@ -335,4 +335,5 @@ lib/openapi_client/models/web_template_dto_list_envelope.rb
 lib/openapi_client/models/web_template_update_dto.rb
 lib/openapi_client/version.rb
 openapi_client.gemspec
+spec/api/fenix_alliance_abs_web_api_spec.rb
 spec/spec_helper.rb

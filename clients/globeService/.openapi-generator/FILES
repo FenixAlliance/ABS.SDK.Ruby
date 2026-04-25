@@ -28,7 +28,7 @@ docs/CurrencyDto.md
 docs/CurrencyDtoEnvelope.md
 docs/CurrencyDtoListEnvelope.md
 docs/ErrorEnvelope.md
-docs/FenixAllianceABPWebApi.md
+docs/FenixAllianceABSWebApi.md
 docs/ForgotPasswordRequest.md
 docs/HttpValidationProblemDetails.md
 docs/InfoRequest.md
@@ -50,7 +50,7 @@ git_push.sh
 lib/openapi_client.rb
 lib/openapi_client/api/countries_api.rb
 lib/openapi_client/api/currencies_api.rb
-lib/openapi_client/api/fenix_alliance_abp_web_api.rb
+lib/openapi_client/api/fenix_alliance_abs_web_api.rb
 lib/openapi_client/api/languages_api.rb
 lib/openapi_client/api/timezones_api.rb
 lib/openapi_client/api_client.rb
@@ -93,4 +93,5 @@ lib/openapi_client/models/two_factor_request.rb
 lib/openapi_client/models/two_factor_response.rb
 lib/openapi_client/version.rb
 openapi_client.gemspec
+spec/api/fenix_alliance_abs_web_api_spec.rb
 spec/spec_helper.rb
