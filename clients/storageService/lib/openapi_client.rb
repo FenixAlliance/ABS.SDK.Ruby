@@ -39,7 +39,7 @@ require 'openapi_client/models/two_factor_response'
 # APIs
 require 'openapi_client/api/avatars_api'
 require 'openapi_client/api/blobs_api'
-require 'openapi_client/api/fenix_alliance_abp_web_api'
+require 'openapi_client/api/fenix_alliance_abs_web_api'
 require 'openapi_client/api/files_api'
 require 'openapi_client/api/radzen_editor_api'
 require 'openapi_client/api/uploads_api'

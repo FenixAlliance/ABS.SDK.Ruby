@@ -127,5 +127,4 @@ lib/openapi_client/models/two_factor_response.rb
 lib/openapi_client/models/user_dto.rb
 lib/openapi_client/version.rb
 openapi_client.gemspec
-spec/api/fenix_alliance_abs_web_api_spec.rb
 spec/spec_helper.rb

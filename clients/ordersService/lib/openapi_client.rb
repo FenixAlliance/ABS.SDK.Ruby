@@ -54,7 +54,7 @@ require 'openapi_client/models/two_factor_response'
 require 'openapi_client/models/user_dto'
 
 # APIs
-require 'openapi_client/api/fenix_alliance_abp_web_api'
+require 'openapi_client/api/fenix_alliance_abs_web_api'
 require 'openapi_client/api/orders_api'
 
 module OpenapiClient

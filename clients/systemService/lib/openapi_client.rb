@@ -80,7 +80,7 @@ require 'openapi_client/models/wallet_dto'
 # APIs
 require 'openapi_client/api/antiforgery_api'
 require 'openapi_client/api/emails_api'
-require 'openapi_client/api/fenix_alliance_abp_web_api'
+require 'openapi_client/api/fenix_alliance_abs_web_api'
 require 'openapi_client/api/licensing_api'
 require 'openapi_client/api/migrations_api'
 require 'openapi_client/api/modules_api'

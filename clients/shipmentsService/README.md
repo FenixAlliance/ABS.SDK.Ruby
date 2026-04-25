@@ -58,13 +58,15 @@ Please follow the [installation](#installation) procedure and then run the follo
 # Load the gem
 require 'openapi_client'
 
-api_instance = OpenapiClient::FenixAllianceABPWebApi.new
-forgot_password_request = OpenapiClient::ForgotPasswordRequest.new({email: 'email_example'}) # ForgotPasswordRequest | 
+api_instance = OpenapiClient::FenixAllianceABSWebApi.new
+opts = {
+  return_url: 'return_url_example' # String | 
+}
 
 begin
-  api_instance.forgot_password_post(forgot_password_request)
+  api_instance.account_logout_post(opts)
 rescue OpenapiClient::ApiError => e
-  puts "Exception when calling FenixAllianceABPWebApi->forgot_password_post: #{e}"
+  puts "Exception when calling FenixAllianceABSWebApi->account_logout_post: #{e}"
 end
 
 ```
@@ -75,19 +77,23 @@ All URIs are relative to *https://absuite.net*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*OpenapiClient::FenixAllianceABPWebApi* | [**forgot_password_post**](docs/FenixAllianceABPWebApi.md#forgot_password_post) | **POST** /forgotPassword | 
-*OpenapiClient::FenixAllianceABPWebApi* | [**health_get**](docs/FenixAllianceABPWebApi.md#health_get) | **GET** /health | 
-*OpenapiClient::FenixAllianceABPWebApi* | [**hello_get**](docs/FenixAllianceABPWebApi.md#hello_get) | **GET** /hello | 
-*OpenapiClient::FenixAllianceABPWebApi* | [**login_post**](docs/FenixAllianceABPWebApi.md#login_post) | **POST** /login | 
-*OpenapiClient::FenixAllianceABPWebApi* | [**manage2fa_post**](docs/FenixAllianceABPWebApi.md#manage2fa_post) | **POST** /manage/2fa | 
-*OpenapiClient::FenixAllianceABPWebApi* | [**manage_info_get**](docs/FenixAllianceABPWebApi.md#manage_info_get) | **GET** /manage/info | 
-*OpenapiClient::FenixAllianceABPWebApi* | [**manage_info_post**](docs/FenixAllianceABPWebApi.md#manage_info_post) | **POST** /manage/info | 
-*OpenapiClient::FenixAllianceABPWebApi* | [**map_identity_api_confirm_email**](docs/FenixAllianceABPWebApi.md#map_identity_api_confirm_email) | **GET** /confirmEmail | 
-*OpenapiClient::FenixAllianceABPWebApi* | [**refresh_post**](docs/FenixAllianceABPWebApi.md#refresh_post) | **POST** /refresh | 
-*OpenapiClient::FenixAllianceABPWebApi* | [**register_post**](docs/FenixAllianceABPWebApi.md#register_post) | **POST** /register | 
-*OpenapiClient::FenixAllianceABPWebApi* | [**resend_confirmation_email_post**](docs/FenixAllianceABPWebApi.md#resend_confirmation_email_post) | **POST** /resendConfirmationEmail | 
-*OpenapiClient::FenixAllianceABPWebApi* | [**reset_password_post**](docs/FenixAllianceABPWebApi.md#reset_password_post) | **POST** /resetPassword | 
-*OpenapiClient::FenixAllianceABPWebApi* | [**version_get**](docs/FenixAllianceABPWebApi.md#version_get) | **GET** /version | 
+*OpenapiClient::FenixAllianceABSWebApi* | [**account_logout_post**](docs/FenixAllianceABSWebApi.md#account_logout_post) | **POST** /Account/Logout | 
+*OpenapiClient::FenixAllianceABSWebApi* | [**account_manage_download_personal_data_post**](docs/FenixAllianceABSWebApi.md#account_manage_download_personal_data_post) | **POST** /Account/Manage/DownloadPersonalData | 
+*OpenapiClient::FenixAllianceABSWebApi* | [**account_manage_link_external_login_post**](docs/FenixAllianceABSWebApi.md#account_manage_link_external_login_post) | **POST** /Account/Manage/LinkExternalLogin | 
+*OpenapiClient::FenixAllianceABSWebApi* | [**account_perform_external_login_post**](docs/FenixAllianceABSWebApi.md#account_perform_external_login_post) | **POST** /Account/PerformExternalLogin | 
+*OpenapiClient::FenixAllianceABSWebApi* | [**forgot_password_post**](docs/FenixAllianceABSWebApi.md#forgot_password_post) | **POST** /forgotPassword | 
+*OpenapiClient::FenixAllianceABSWebApi* | [**health_get**](docs/FenixAllianceABSWebApi.md#health_get) | **GET** /health | 
+*OpenapiClient::FenixAllianceABSWebApi* | [**hello_get**](docs/FenixAllianceABSWebApi.md#hello_get) | **GET** /hello | 
+*OpenapiClient::FenixAllianceABSWebApi* | [**login_post**](docs/FenixAllianceABSWebApi.md#login_post) | **POST** /login | 
+*OpenapiClient::FenixAllianceABSWebApi* | [**manage2fa_post**](docs/FenixAllianceABSWebApi.md#manage2fa_post) | **POST** /manage/2fa | 
+*OpenapiClient::FenixAllianceABSWebApi* | [**manage_info_get**](docs/FenixAllianceABSWebApi.md#manage_info_get) | **GET** /manage/info | 
+*OpenapiClient::FenixAllianceABSWebApi* | [**manage_info_post**](docs/FenixAllianceABSWebApi.md#manage_info_post) | **POST** /manage/info | 
+*OpenapiClient::FenixAllianceABSWebApi* | [**map_identity_api_confirm_email**](docs/FenixAllianceABSWebApi.md#map_identity_api_confirm_email) | **GET** /confirmEmail | 
+*OpenapiClient::FenixAllianceABSWebApi* | [**refresh_post**](docs/FenixAllianceABSWebApi.md#refresh_post) | **POST** /refresh | 
+*OpenapiClient::FenixAllianceABSWebApi* | [**register_post**](docs/FenixAllianceABSWebApi.md#register_post) | **POST** /register | 
+*OpenapiClient::FenixAllianceABSWebApi* | [**resend_confirmation_email_post**](docs/FenixAllianceABSWebApi.md#resend_confirmation_email_post) | **POST** /resendConfirmationEmail | 
+*OpenapiClient::FenixAllianceABSWebApi* | [**reset_password_post**](docs/FenixAllianceABSWebApi.md#reset_password_post) | **POST** /resetPassword | 
+*OpenapiClient::FenixAllianceABSWebApi* | [**version_get**](docs/FenixAllianceABSWebApi.md#version_get) | **GET** /version | 
 *OpenapiClient::ShipmentsApi* | [**get_shipments_async**](docs/ShipmentsApi.md#get_shipments_async) | **GET** /api/v2/ShipmentsService/Shipments | Retrieve a list of shipments
 
 

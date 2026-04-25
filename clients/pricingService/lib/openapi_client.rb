@@ -60,7 +60,7 @@ require 'openapi_client/models/two_factor_response'
 
 # APIs
 require 'openapi_client/api/discount_lists_api'
-require 'openapi_client/api/fenix_alliance_abp_web_api'
+require 'openapi_client/api/fenix_alliance_abs_web_api'
 require 'openapi_client/api/price_lists_api'
 require 'openapi_client/api/prices_api'
 

@@ -9,7 +9,7 @@ Rakefile
 docs/AccessTokenResponse.md
 docs/Envelope.md
 docs/ErrorEnvelope.md
-docs/FenixAllianceABPWebApi.md
+docs/FenixAllianceABSWebApi.md
 docs/ForgotPasswordRequest.md
 docs/HttpValidationProblemDetails.md
 docs/InfoRequest.md
@@ -36,7 +36,7 @@ docs/TwoFactorRequest.md
 docs/TwoFactorResponse.md
 git_push.sh
 lib/openapi_client.rb
-lib/openapi_client/api/fenix_alliance_abp_web_api.rb
+lib/openapi_client/api/fenix_alliance_abs_web_api.rb
 lib/openapi_client/api/subscription_plans_api.rb
 lib/openapi_client/api/subscriptions_api.rb
 lib/openapi_client/api_client.rb
@@ -69,4 +69,5 @@ lib/openapi_client/models/two_factor_request.rb
 lib/openapi_client/models/two_factor_response.rb
 lib/openapi_client/version.rb
 openapi_client.gemspec
+spec/api/fenix_alliance_abs_web_api_spec.rb
 spec/spec_helper.rb

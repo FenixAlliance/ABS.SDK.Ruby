@@ -70,7 +70,7 @@ require 'openapi_client/models/webhook_request_dto_list_envelope'
 
 # APIs
 require 'openapi_client/api/applications_api'
-require 'openapi_client/api/fenix_alliance_abp_web_api'
+require 'openapi_client/api/fenix_alliance_abs_web_api'
 require 'openapi_client/api/logs_api'
 require 'openapi_client/api/o_auth_applications_api'
 require 'openapi_client/api/permissions_api'

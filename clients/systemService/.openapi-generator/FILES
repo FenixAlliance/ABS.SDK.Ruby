@@ -19,7 +19,7 @@ docs/ExtendedTenantDtoListEnvelope.md
 docs/ExtendedUserDto.md
 docs/ExtendedUserDtoEnvelope.md
 docs/ExtendedUserDtoListEnvelope.md
-docs/FenixAllianceABPWebApi.md
+docs/FenixAllianceABSWebApi.md
 docs/ForgotPasswordRequest.md
 docs/HttpValidationProblemDetails.md
 docs/ISwaggerContact.md
@@ -78,7 +78,7 @@ git_push.sh
 lib/openapi_client.rb
 lib/openapi_client/api/antiforgery_api.rb
 lib/openapi_client/api/emails_api.rb
-lib/openapi_client/api/fenix_alliance_abp_web_api.rb
+lib/openapi_client/api/fenix_alliance_abs_web_api.rb
 lib/openapi_client/api/licensing_api.rb
 lib/openapi_client/api/migrations_api.rb
 lib/openapi_client/api/modules_api.rb
@@ -149,4 +149,5 @@ lib/openapi_client/models/user_update_dto.rb
 lib/openapi_client/models/wallet_dto.rb
 lib/openapi_client/version.rb
 openapi_client.gemspec
+spec/api/fenix_alliance_abs_web_api_spec.rb
 spec/spec_helper.rb

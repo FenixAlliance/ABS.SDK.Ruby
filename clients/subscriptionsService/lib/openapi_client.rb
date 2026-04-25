@@ -44,7 +44,7 @@ require 'openapi_client/models/two_factor_request'
 require 'openapi_client/models/two_factor_response'
 
 # APIs
-require 'openapi_client/api/fenix_alliance_abp_web_api'
+require 'openapi_client/api/fenix_alliance_abs_web_api'
 require 'openapi_client/api/subscription_plans_api'
 require 'openapi_client/api/subscriptions_api'
 
