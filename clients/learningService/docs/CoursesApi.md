@@ -66,7 +66,7 @@ tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 opts = {
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example', # String | 
-  course_create_dto: OpenapiClient::CourseCreateDto.new # CourseCreateDto | 
+  course_create_dto: OpenapiClient::CourseCreateDto.new({title: 'title_example', description: 'description_example'}) # CourseCreateDto | 
 }
 
 begin
@@ -475,7 +475,7 @@ No authorization required
 
 ## get_course_by_id_async
 
-> <CourseDto> get_course_by_id_async(tenant_id, course_id, opts)
+> <CourseDto> get_course_by_id_async(course_id, opts)
 
 Get course by ID
 
@@ -488,16 +488,16 @@ require 'time'
 require 'openapi_client'
 
 api_instance = OpenapiClient::CoursesApi.new
-tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 course_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
+  tenant_id: '38400000-8cf0-11bd-b23e-10b96e4ef00d', # String | 
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example' # String | 
 }
 
 begin
   # Get course by ID
-  result = api_instance.get_course_by_id_async(tenant_id, course_id, opts)
+  result = api_instance.get_course_by_id_async(course_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling CoursesApi->get_course_by_id_async: #{e}"
@@ -508,12 +508,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CourseDto>, Integer, Hash)> get_course_by_id_async_with_http_info(tenant_id, course_id, opts)
+> <Array(<CourseDto>, Integer, Hash)> get_course_by_id_async_with_http_info(course_id, opts)
 
 ```ruby
 begin
   # Get course by ID
-  data, status_code, headers = api_instance.get_course_by_id_async_with_http_info(tenant_id, course_id, opts)
+  data, status_code, headers = api_instance.get_course_by_id_async_with_http_info(course_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <CourseDto>
@@ -526,8 +526,8 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **tenant_id** | **String** |  |  |
 | **course_id** | **String** |  |  |
+| **tenant_id** | **String** |  | [optional] |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
 

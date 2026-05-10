@@ -94,6 +94,60 @@ Class | Method | HTTP request | Description
 *OpenapiClient::FenixAllianceABSWebApi* | [**resend_confirmation_email_post**](docs/FenixAllianceABSWebApi.md#resend_confirmation_email_post) | **POST** /resendConfirmationEmail | 
 *OpenapiClient::FenixAllianceABSWebApi* | [**reset_password_post**](docs/FenixAllianceABSWebApi.md#reset_password_post) | **POST** /resetPassword | 
 *OpenapiClient::FenixAllianceABSWebApi* | [**version_get**](docs/FenixAllianceABSWebApi.md#version_get) | **GET** /version | 
+*OpenapiClient::HelpdeskApi* | [**create_inquiry_request_async**](docs/HelpdeskApi.md#create_inquiry_request_async) | **POST** /api/v2/SupportService/InquiryRequests | Create an inquiry request
+*OpenapiClient::HelpdeskApi* | [**create_knowledge_article_async**](docs/HelpdeskApi.md#create_knowledge_article_async) | **POST** /api/v2/SupportService/KnowledgeArticles | Create a knowledge article
+*OpenapiClient::HelpdeskApi* | [**create_maintenance_visit_async**](docs/HelpdeskApi.md#create_maintenance_visit_async) | **POST** /api/v2/SupportService/MaintenanceVisits | Create a maintenance visit
+*OpenapiClient::HelpdeskApi* | [**create_refund_request_async**](docs/HelpdeskApi.md#create_refund_request_async) | **POST** /api/v2/SupportService/RefundRequests | Create a refund request
+*OpenapiClient::HelpdeskApi* | [**create_return_request_async**](docs/HelpdeskApi.md#create_return_request_async) | **POST** /api/v2/SupportService/ReturnRequests | Create a return request
+*OpenapiClient::HelpdeskApi* | [**create_warranty_request_async**](docs/HelpdeskApi.md#create_warranty_request_async) | **POST** /api/v2/SupportService/WarrantyRequests | Create a warranty request
+*OpenapiClient::HelpdeskApi* | [**delete_inquiry_request_async**](docs/HelpdeskApi.md#delete_inquiry_request_async) | **DELETE** /api/v2/SupportService/InquiryRequests/{inquiryRequestId} | Delete an inquiry request
+*OpenapiClient::HelpdeskApi* | [**delete_knowledge_article_async**](docs/HelpdeskApi.md#delete_knowledge_article_async) | **DELETE** /api/v2/SupportService/KnowledgeArticles/{knowledgeArticleId} | Delete a knowledge article
+*OpenapiClient::HelpdeskApi* | [**delete_maintenance_visit_async**](docs/HelpdeskApi.md#delete_maintenance_visit_async) | **DELETE** /api/v2/SupportService/MaintenanceVisits/{maintenanceVisitId} | Delete a maintenance visit
+*OpenapiClient::HelpdeskApi* | [**delete_refund_request_async**](docs/HelpdeskApi.md#delete_refund_request_async) | **DELETE** /api/v2/SupportService/RefundRequests/{refundRequestId} | Delete a refund request
+*OpenapiClient::HelpdeskApi* | [**delete_return_request_async**](docs/HelpdeskApi.md#delete_return_request_async) | **DELETE** /api/v2/SupportService/ReturnRequests/{returnRequestId} | Delete a return request
+*OpenapiClient::HelpdeskApi* | [**delete_warranty_request_async**](docs/HelpdeskApi.md#delete_warranty_request_async) | **DELETE** /api/v2/SupportService/WarrantyRequests/{warrantyRequestId} | Delete a warranty request
+*OpenapiClient::HelpdeskApi* | [**get_inquiry_request_async**](docs/HelpdeskApi.md#get_inquiry_request_async) | **GET** /api/v2/SupportService/InquiryRequests/{inquiryRequestId} | Retrieve an inquiry request by ID
+*OpenapiClient::HelpdeskApi* | [**get_inquiry_requests_async**](docs/HelpdeskApi.md#get_inquiry_requests_async) | **GET** /api/v2/SupportService/InquiryRequests | Retrieve inquiry requests
+*OpenapiClient::HelpdeskApi* | [**get_inquiry_requests_count_async**](docs/HelpdeskApi.md#get_inquiry_requests_count_async) | **GET** /api/v2/SupportService/InquiryRequests/Count | Get inquiry requests count
+*OpenapiClient::HelpdeskApi* | [**get_knowledge_article_async**](docs/HelpdeskApi.md#get_knowledge_article_async) | **GET** /api/v2/SupportService/KnowledgeArticles/{knowledgeArticleId} | Retrieve a knowledge article by ID
+*OpenapiClient::HelpdeskApi* | [**get_knowledge_articles_async**](docs/HelpdeskApi.md#get_knowledge_articles_async) | **GET** /api/v2/SupportService/KnowledgeArticles | Retrieve knowledge articles
+*OpenapiClient::HelpdeskApi* | [**get_knowledge_articles_count_async**](docs/HelpdeskApi.md#get_knowledge_articles_count_async) | **GET** /api/v2/SupportService/KnowledgeArticles/Count | Get knowledge articles count
+*OpenapiClient::HelpdeskApi* | [**get_maintenance_visit_async**](docs/HelpdeskApi.md#get_maintenance_visit_async) | **GET** /api/v2/SupportService/MaintenanceVisits/{maintenanceVisitId} | Retrieve a maintenance visit by ID
+*OpenapiClient::HelpdeskApi* | [**get_maintenance_visits_async**](docs/HelpdeskApi.md#get_maintenance_visits_async) | **GET** /api/v2/SupportService/MaintenanceVisits | Retrieve maintenance visits
+*OpenapiClient::HelpdeskApi* | [**get_maintenance_visits_count_async**](docs/HelpdeskApi.md#get_maintenance_visits_count_async) | **GET** /api/v2/SupportService/MaintenanceVisits/Count | Get maintenance visits count
+*OpenapiClient::HelpdeskApi* | [**get_refund_request_async**](docs/HelpdeskApi.md#get_refund_request_async) | **GET** /api/v2/SupportService/RefundRequests/{refundRequestId} | Retrieve a refund request by ID
+*OpenapiClient::HelpdeskApi* | [**get_refund_requests_async**](docs/HelpdeskApi.md#get_refund_requests_async) | **GET** /api/v2/SupportService/RefundRequests | Retrieve refund requests
+*OpenapiClient::HelpdeskApi* | [**get_refund_requests_count_async**](docs/HelpdeskApi.md#get_refund_requests_count_async) | **GET** /api/v2/SupportService/RefundRequests/Count | Get refund requests count
+*OpenapiClient::HelpdeskApi* | [**get_return_request_async**](docs/HelpdeskApi.md#get_return_request_async) | **GET** /api/v2/SupportService/ReturnRequests/{returnRequestId} | Retrieve a return request by ID
+*OpenapiClient::HelpdeskApi* | [**get_return_requests_async**](docs/HelpdeskApi.md#get_return_requests_async) | **GET** /api/v2/SupportService/ReturnRequests | Retrieve return requests
+*OpenapiClient::HelpdeskApi* | [**get_return_requests_count_async**](docs/HelpdeskApi.md#get_return_requests_count_async) | **GET** /api/v2/SupportService/ReturnRequests/Count | Get return requests count
+*OpenapiClient::HelpdeskApi* | [**get_warranty_request_async**](docs/HelpdeskApi.md#get_warranty_request_async) | **GET** /api/v2/SupportService/WarrantyRequests/{warrantyRequestId} | Retrieve a warranty request by ID
+*OpenapiClient::HelpdeskApi* | [**get_warranty_requests_async**](docs/HelpdeskApi.md#get_warranty_requests_async) | **GET** /api/v2/SupportService/WarrantyRequests | Retrieve warranty requests
+*OpenapiClient::HelpdeskApi* | [**get_warranty_requests_count_async**](docs/HelpdeskApi.md#get_warranty_requests_count_async) | **GET** /api/v2/SupportService/WarrantyRequests/Count | Get warranty requests count
+*OpenapiClient::HelpdeskApi* | [**update_inquiry_request_async**](docs/HelpdeskApi.md#update_inquiry_request_async) | **PUT** /api/v2/SupportService/InquiryRequests/{inquiryRequestId} | Update an inquiry request
+*OpenapiClient::HelpdeskApi* | [**update_knowledge_article_async**](docs/HelpdeskApi.md#update_knowledge_article_async) | **PUT** /api/v2/SupportService/KnowledgeArticles/{knowledgeArticleId} | Update a knowledge article
+*OpenapiClient::HelpdeskApi* | [**update_maintenance_visit_async**](docs/HelpdeskApi.md#update_maintenance_visit_async) | **PUT** /api/v2/SupportService/MaintenanceVisits/{maintenanceVisitId} | Update a maintenance visit
+*OpenapiClient::HelpdeskApi* | [**update_refund_request_async**](docs/HelpdeskApi.md#update_refund_request_async) | **PUT** /api/v2/SupportService/RefundRequests/{refundRequestId} | Update a refund request
+*OpenapiClient::HelpdeskApi* | [**update_return_request_async**](docs/HelpdeskApi.md#update_return_request_async) | **PUT** /api/v2/SupportService/ReturnRequests/{returnRequestId} | Update a return request
+*OpenapiClient::HelpdeskApi* | [**update_warranty_request_async**](docs/HelpdeskApi.md#update_warranty_request_async) | **PUT** /api/v2/SupportService/WarrantyRequests/{warrantyRequestId} | Update a warranty request
+*OpenapiClient::PoliciesApi* | [**create_refund_policy_async**](docs/PoliciesApi.md#create_refund_policy_async) | **POST** /api/v2/SupportService/RefundPolicies | Create a new refund policy
+*OpenapiClient::PoliciesApi* | [**create_return_policy_async**](docs/PoliciesApi.md#create_return_policy_async) | **POST** /api/v2/SupportService/ReturnPolicies | Create a new return policy
+*OpenapiClient::PoliciesApi* | [**create_warranty_policy_async**](docs/PoliciesApi.md#create_warranty_policy_async) | **POST** /api/v2/SupportService/WarrantyPolicies | Create a new warranty policy
+*OpenapiClient::PoliciesApi* | [**delete_refund_policy_async**](docs/PoliciesApi.md#delete_refund_policy_async) | **DELETE** /api/v2/SupportService/RefundPolicies/{refundPolicyId} | Delete a refund policy
+*OpenapiClient::PoliciesApi* | [**delete_return_policy_async**](docs/PoliciesApi.md#delete_return_policy_async) | **DELETE** /api/v2/SupportService/ReturnPolicies/{returnPolicyId} | Delete a return policy
+*OpenapiClient::PoliciesApi* | [**delete_warranty_policy_async**](docs/PoliciesApi.md#delete_warranty_policy_async) | **DELETE** /api/v2/SupportService/WarrantyPolicies/{warrantyPolicyId} | Delete a warranty policy
+*OpenapiClient::PoliciesApi* | [**get_refund_policies_async**](docs/PoliciesApi.md#get_refund_policies_async) | **GET** /api/v2/SupportService/RefundPolicies | Retrieve a list of refund policies
+*OpenapiClient::PoliciesApi* | [**get_refund_policies_count_async**](docs/PoliciesApi.md#get_refund_policies_count_async) | **GET** /api/v2/SupportService/RefundPolicies/Count | Get the count of refund policies
+*OpenapiClient::PoliciesApi* | [**get_refund_policy_async**](docs/PoliciesApi.md#get_refund_policy_async) | **GET** /api/v2/SupportService/RefundPolicies/{refundPolicyId} | Retrieve a refund policy by ID
+*OpenapiClient::PoliciesApi* | [**get_return_policies_async**](docs/PoliciesApi.md#get_return_policies_async) | **GET** /api/v2/SupportService/ReturnPolicies | Retrieve a list of return policies
+*OpenapiClient::PoliciesApi* | [**get_return_policies_count_async**](docs/PoliciesApi.md#get_return_policies_count_async) | **GET** /api/v2/SupportService/ReturnPolicies/Count | Get the count of return policies
+*OpenapiClient::PoliciesApi* | [**get_return_policy_async**](docs/PoliciesApi.md#get_return_policy_async) | **GET** /api/v2/SupportService/ReturnPolicies/{returnPolicyId} | Retrieve a return policy by ID
+*OpenapiClient::PoliciesApi* | [**get_warranty_policies_async**](docs/PoliciesApi.md#get_warranty_policies_async) | **GET** /api/v2/SupportService/WarrantyPolicies | Retrieve a list of warranty policies
+*OpenapiClient::PoliciesApi* | [**get_warranty_policies_count_async**](docs/PoliciesApi.md#get_warranty_policies_count_async) | **GET** /api/v2/SupportService/WarrantyPolicies/Count | Get the count of warranty policies
+*OpenapiClient::PoliciesApi* | [**get_warranty_policy_async**](docs/PoliciesApi.md#get_warranty_policy_async) | **GET** /api/v2/SupportService/WarrantyPolicies/{warrantyPolicyId} | Retrieve a warranty policy by ID
+*OpenapiClient::PoliciesApi* | [**update_refund_policy_async**](docs/PoliciesApi.md#update_refund_policy_async) | **PUT** /api/v2/SupportService/RefundPolicies/{refundPolicyId} | Update a refund policy
+*OpenapiClient::PoliciesApi* | [**update_return_policy_async**](docs/PoliciesApi.md#update_return_policy_async) | **PUT** /api/v2/SupportService/ReturnPolicies/{returnPolicyId} | Update a return policy
+*OpenapiClient::PoliciesApi* | [**update_warranty_policy_async**](docs/PoliciesApi.md#update_warranty_policy_async) | **PUT** /api/v2/SupportService/WarrantyPolicies/{warrantyPolicyId} | Update a warranty policy
 *OpenapiClient::SupportEntitlementsApi* | [**create_support_entitlement_async**](docs/SupportEntitlementsApi.md#create_support_entitlement_async) | **POST** /api/v2/SupportService/SupportEntitlements | Create a new support entitlement
 *OpenapiClient::SupportEntitlementsApi* | [**delete_support_entitlement_async**](docs/SupportEntitlementsApi.md#delete_support_entitlement_async) | **DELETE** /api/v2/SupportService/SupportEntitlements/{supportEntitlementId} | Delete a support entitlement
 *OpenapiClient::SupportEntitlementsApi* | [**get_support_entitlement_async**](docs/SupportEntitlementsApi.md#get_support_entitlement_async) | **GET** /api/v2/SupportService/SupportEntitlements/{supportEntitlementId} | Retrieve a support entitlement by ID
@@ -151,14 +205,53 @@ Class | Method | HTTP request | Description
  - [OpenapiClient::HttpValidationProblemDetails](docs/HttpValidationProblemDetails.md)
  - [OpenapiClient::InfoRequest](docs/InfoRequest.md)
  - [OpenapiClient::InfoResponse](docs/InfoResponse.md)
+ - [OpenapiClient::InquiryRequestCreateDto](docs/InquiryRequestCreateDto.md)
+ - [OpenapiClient::InquiryRequestDto](docs/InquiryRequestDto.md)
+ - [OpenapiClient::InquiryRequestDtoEnvelope](docs/InquiryRequestDtoEnvelope.md)
+ - [OpenapiClient::InquiryRequestDtoListEnvelope](docs/InquiryRequestDtoListEnvelope.md)
+ - [OpenapiClient::InquiryRequestUpdateDto](docs/InquiryRequestUpdateDto.md)
  - [OpenapiClient::Int32Envelope](docs/Int32Envelope.md)
+ - [OpenapiClient::ItemRefundPolicyCreateDto](docs/ItemRefundPolicyCreateDto.md)
+ - [OpenapiClient::ItemRefundPolicyDto](docs/ItemRefundPolicyDto.md)
+ - [OpenapiClient::ItemRefundPolicyDtoEnvelope](docs/ItemRefundPolicyDtoEnvelope.md)
+ - [OpenapiClient::ItemRefundPolicyDtoListEnvelope](docs/ItemRefundPolicyDtoListEnvelope.md)
+ - [OpenapiClient::ItemRefundPolicyUpdateDto](docs/ItemRefundPolicyUpdateDto.md)
+ - [OpenapiClient::ItemReturnPolicyCreateDto](docs/ItemReturnPolicyCreateDto.md)
+ - [OpenapiClient::ItemReturnPolicyDto](docs/ItemReturnPolicyDto.md)
+ - [OpenapiClient::ItemReturnPolicyDtoEnvelope](docs/ItemReturnPolicyDtoEnvelope.md)
+ - [OpenapiClient::ItemReturnPolicyDtoListEnvelope](docs/ItemReturnPolicyDtoListEnvelope.md)
+ - [OpenapiClient::ItemReturnPolicyUpdateDto](docs/ItemReturnPolicyUpdateDto.md)
+ - [OpenapiClient::ItemWarrantyPolicyCreateDto](docs/ItemWarrantyPolicyCreateDto.md)
+ - [OpenapiClient::ItemWarrantyPolicyDto](docs/ItemWarrantyPolicyDto.md)
+ - [OpenapiClient::ItemWarrantyPolicyDtoEnvelope](docs/ItemWarrantyPolicyDtoEnvelope.md)
+ - [OpenapiClient::ItemWarrantyPolicyDtoListEnvelope](docs/ItemWarrantyPolicyDtoListEnvelope.md)
+ - [OpenapiClient::ItemWarrantyPolicyUpdateDto](docs/ItemWarrantyPolicyUpdateDto.md)
+ - [OpenapiClient::KnowledgeArticleCreateDto](docs/KnowledgeArticleCreateDto.md)
+ - [OpenapiClient::KnowledgeArticleDto](docs/KnowledgeArticleDto.md)
+ - [OpenapiClient::KnowledgeArticleDtoEnvelope](docs/KnowledgeArticleDtoEnvelope.md)
+ - [OpenapiClient::KnowledgeArticleDtoListEnvelope](docs/KnowledgeArticleDtoListEnvelope.md)
+ - [OpenapiClient::KnowledgeArticleUpdateDto](docs/KnowledgeArticleUpdateDto.md)
  - [OpenapiClient::LoginRequest](docs/LoginRequest.md)
+ - [OpenapiClient::MaintenanceVisitCreateDto](docs/MaintenanceVisitCreateDto.md)
+ - [OpenapiClient::MaintenanceVisitDto](docs/MaintenanceVisitDto.md)
+ - [OpenapiClient::MaintenanceVisitDtoEnvelope](docs/MaintenanceVisitDtoEnvelope.md)
+ - [OpenapiClient::MaintenanceVisitDtoListEnvelope](docs/MaintenanceVisitDtoListEnvelope.md)
  - [OpenapiClient::PrivateMessageDto](docs/PrivateMessageDto.md)
  - [OpenapiClient::PrivateMessageDtoListEnvelope](docs/PrivateMessageDtoListEnvelope.md)
  - [OpenapiClient::RefreshRequest](docs/RefreshRequest.md)
+ - [OpenapiClient::RefundRequestCreateDto](docs/RefundRequestCreateDto.md)
+ - [OpenapiClient::RefundRequestDto](docs/RefundRequestDto.md)
+ - [OpenapiClient::RefundRequestDtoEnvelope](docs/RefundRequestDtoEnvelope.md)
+ - [OpenapiClient::RefundRequestDtoListEnvelope](docs/RefundRequestDtoListEnvelope.md)
+ - [OpenapiClient::RefundRequestUpdateDto](docs/RefundRequestUpdateDto.md)
  - [OpenapiClient::RegisterRequest](docs/RegisterRequest.md)
  - [OpenapiClient::ResendConfirmationEmailRequest](docs/ResendConfirmationEmailRequest.md)
  - [OpenapiClient::ResetPasswordRequest](docs/ResetPasswordRequest.md)
+ - [OpenapiClient::ReturnRequestCreateDto](docs/ReturnRequestCreateDto.md)
+ - [OpenapiClient::ReturnRequestDto](docs/ReturnRequestDto.md)
+ - [OpenapiClient::ReturnRequestDtoEnvelope](docs/ReturnRequestDtoEnvelope.md)
+ - [OpenapiClient::ReturnRequestDtoListEnvelope](docs/ReturnRequestDtoListEnvelope.md)
+ - [OpenapiClient::ReturnRequestUpdateDto](docs/ReturnRequestUpdateDto.md)
  - [OpenapiClient::SupportEntitlementCreateDto](docs/SupportEntitlementCreateDto.md)
  - [OpenapiClient::SupportEntitlementDto](docs/SupportEntitlementDto.md)
  - [OpenapiClient::SupportEntitlementDtoEnvelope](docs/SupportEntitlementDtoEnvelope.md)
@@ -195,6 +288,11 @@ Class | Method | HTTP request | Description
  - [OpenapiClient::SupportTicketUpdateDto](docs/SupportTicketUpdateDto.md)
  - [OpenapiClient::TwoFactorRequest](docs/TwoFactorRequest.md)
  - [OpenapiClient::TwoFactorResponse](docs/TwoFactorResponse.md)
+ - [OpenapiClient::WarrantyRequestCreateDto](docs/WarrantyRequestCreateDto.md)
+ - [OpenapiClient::WarrantyRequestDto](docs/WarrantyRequestDto.md)
+ - [OpenapiClient::WarrantyRequestDtoEnvelope](docs/WarrantyRequestDtoEnvelope.md)
+ - [OpenapiClient::WarrantyRequestDtoListEnvelope](docs/WarrantyRequestDtoListEnvelope.md)
+ - [OpenapiClient::WarrantyRequestUpdateDto](docs/WarrantyRequestUpdateDto.md)
 
 
 ## Documentation for Authorization

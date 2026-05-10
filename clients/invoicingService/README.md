@@ -149,7 +149,6 @@ Class | Method | HTTP request | Description
  - [OpenapiClient::ErrorEnvelope](docs/ErrorEnvelope.md)
  - [OpenapiClient::ExtendedInvoiceDto](docs/ExtendedInvoiceDto.md)
  - [OpenapiClient::ExtendedInvoiceDtoListEnvelope](docs/ExtendedInvoiceDtoListEnvelope.md)
- - [OpenapiClient::ForexRates](docs/ForexRates.md)
  - [OpenapiClient::ForgotPasswordRequest](docs/ForgotPasswordRequest.md)
  - [OpenapiClient::HttpValidationProblemDetails](docs/HttpValidationProblemDetails.md)
  - [OpenapiClient::InfoRequest](docs/InfoRequest.md)

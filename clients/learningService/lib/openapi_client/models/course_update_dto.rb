@@ -17,10 +17,64 @@ module OpenapiClient
   class CourseUpdateDto
     attr_accessor :title
 
+    attr_accessor :description
+
+    attr_accessor :sku
+
+    attr_accessor :summary
+
+    attr_accessor :code
+
+    attr_accessor :version
+
+    attr_accessor :course_category_id
+
+    attr_accessor :instructor_profile_id
+
+    attr_accessor :currency_id
+
+    attr_accessor :regular_price
+
+    attr_accessor :max_course_enrollments
+
+    attr_accessor :total_effort_in_weeks
+
+    attr_accessor :total_hours_per_week
+
+    attr_accessor :total_effort_in_hours
+
+    attr_accessor :start_date_time
+
+    attr_accessor :end_date_time
+
+    attr_accessor :inscriptions_start_date_time
+
+    attr_accessor :inscriptions_end_date_time
+
+    attr_accessor :published
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'title' => :'title'
+        :'title' => :'title',
+        :'description' => :'description',
+        :'sku' => :'sku',
+        :'summary' => :'summary',
+        :'code' => :'code',
+        :'version' => :'version',
+        :'course_category_id' => :'courseCategoryID',
+        :'instructor_profile_id' => :'instructorProfileID',
+        :'currency_id' => :'currencyID',
+        :'regular_price' => :'regularPrice',
+        :'max_course_enrollments' => :'maxCourseEnrollments',
+        :'total_effort_in_weeks' => :'totalEffortInWeeks',
+        :'total_hours_per_week' => :'totalHoursPerWeek',
+        :'total_effort_in_hours' => :'totalEffortInHours',
+        :'start_date_time' => :'startDateTime',
+        :'end_date_time' => :'endDateTime',
+        :'inscriptions_start_date_time' => :'inscriptionsStartDateTime',
+        :'inscriptions_end_date_time' => :'inscriptionsEndDateTime',
+        :'published' => :'published'
       }
     end
 
@@ -32,14 +86,50 @@ module OpenapiClient
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'title' => :'String'
+        :'title' => :'String',
+        :'description' => :'String',
+        :'sku' => :'String',
+        :'summary' => :'String',
+        :'code' => :'String',
+        :'version' => :'String',
+        :'course_category_id' => :'String',
+        :'instructor_profile_id' => :'String',
+        :'currency_id' => :'String',
+        :'regular_price' => :'Float',
+        :'max_course_enrollments' => :'Integer',
+        :'total_effort_in_weeks' => :'Integer',
+        :'total_hours_per_week' => :'Integer',
+        :'total_effort_in_hours' => :'Integer',
+        :'start_date_time' => :'Time',
+        :'end_date_time' => :'Time',
+        :'inscriptions_start_date_time' => :'Time',
+        :'inscriptions_end_date_time' => :'Time',
+        :'published' => :'Boolean'
       }
     end
 
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
-        :'title'
+        :'title',
+        :'description',
+        :'sku',
+        :'summary',
+        :'code',
+        :'version',
+        :'course_category_id',
+        :'instructor_profile_id',
+        :'currency_id',
+        :'regular_price',
+        :'max_course_enrollments',
+        :'total_effort_in_weeks',
+        :'total_hours_per_week',
+        :'total_effort_in_hours',
+        :'start_date_time',
+        :'end_date_time',
+        :'inscriptions_start_date_time',
+        :'inscriptions_end_date_time',
+        :'published'
       ])
     end
 
@@ -60,6 +150,78 @@ module OpenapiClient
 
       if attributes.key?(:'title')
         self.title = attributes[:'title']
+      end
+
+      if attributes.key?(:'description')
+        self.description = attributes[:'description']
+      end
+
+      if attributes.key?(:'sku')
+        self.sku = attributes[:'sku']
+      end
+
+      if attributes.key?(:'summary')
+        self.summary = attributes[:'summary']
+      end
+
+      if attributes.key?(:'code')
+        self.code = attributes[:'code']
+      end
+
+      if attributes.key?(:'version')
+        self.version = attributes[:'version']
+      end
+
+      if attributes.key?(:'course_category_id')
+        self.course_category_id = attributes[:'course_category_id']
+      end
+
+      if attributes.key?(:'instructor_profile_id')
+        self.instructor_profile_id = attributes[:'instructor_profile_id']
+      end
+
+      if attributes.key?(:'currency_id')
+        self.currency_id = attributes[:'currency_id']
+      end
+
+      if attributes.key?(:'regular_price')
+        self.regular_price = attributes[:'regular_price']
+      end
+
+      if attributes.key?(:'max_course_enrollments')
+        self.max_course_enrollments = attributes[:'max_course_enrollments']
+      end
+
+      if attributes.key?(:'total_effort_in_weeks')
+        self.total_effort_in_weeks = attributes[:'total_effort_in_weeks']
+      end
+
+      if attributes.key?(:'total_hours_per_week')
+        self.total_hours_per_week = attributes[:'total_hours_per_week']
+      end
+
+      if attributes.key?(:'total_effort_in_hours')
+        self.total_effort_in_hours = attributes[:'total_effort_in_hours']
+      end
+
+      if attributes.key?(:'start_date_time')
+        self.start_date_time = attributes[:'start_date_time']
+      end
+
+      if attributes.key?(:'end_date_time')
+        self.end_date_time = attributes[:'end_date_time']
+      end
+
+      if attributes.key?(:'inscriptions_start_date_time')
+        self.inscriptions_start_date_time = attributes[:'inscriptions_start_date_time']
+      end
+
+      if attributes.key?(:'inscriptions_end_date_time')
+        self.inscriptions_end_date_time = attributes[:'inscriptions_end_date_time']
+      end
+
+      if attributes.key?(:'published')
+        self.published = attributes[:'published']
       end
     end
 
@@ -83,7 +245,25 @@ module OpenapiClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          title == o.title
+          title == o.title &&
+          description == o.description &&
+          sku == o.sku &&
+          summary == o.summary &&
+          code == o.code &&
+          version == o.version &&
+          course_category_id == o.course_category_id &&
+          instructor_profile_id == o.instructor_profile_id &&
+          currency_id == o.currency_id &&
+          regular_price == o.regular_price &&
+          max_course_enrollments == o.max_course_enrollments &&
+          total_effort_in_weeks == o.total_effort_in_weeks &&
+          total_hours_per_week == o.total_hours_per_week &&
+          total_effort_in_hours == o.total_effort_in_hours &&
+          start_date_time == o.start_date_time &&
+          end_date_time == o.end_date_time &&
+          inscriptions_start_date_time == o.inscriptions_start_date_time &&
+          inscriptions_end_date_time == o.inscriptions_end_date_time &&
+          published == o.published
     end
 
     # @see the `==` method
@@ -95,7 +275,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [title].hash
+      [title, description, sku, summary, code, version, course_category_id, instructor_profile_id, currency_id, regular_price, max_course_enrollments, total_effort_in_weeks, total_hours_per_week, total_effort_in_hours, start_date_time, end_date_time, inscriptions_start_date_time, inscriptions_end_date_time, published].hash
     end
 
     # Builds the object from hash

@@ -4,6 +4,15 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
+| **closed** | **Boolean** |  | [optional] |
+| **title** | **String** |  | [optional] |
+| **user_id** | **String** |  | [optional] |
+| **price_list_id** | **String** |  | [optional] |
+| **description** | **String** |  | [optional] |
+| **individual_id** | **String** |  | [optional] |
+| **payment_term_id** | **String** |  | [optional] |
+| **organization_id** | **String** |  | [optional] |
+| **receiver_tenant_id** | **String** |  | [optional] |
 | **first_name** | **String** |  | [optional] |
 | **last_name** | **String** |  | [optional] |
 | **company_name** | **String** |  | [optional] |
@@ -17,6 +26,8 @@
 | **billing_location_id** | **String** |  | [optional] |
 | **shipping_location_id** | **String** |  | [optional] |
 | **shipping_method_id** | **String** |  | [optional] |
+| **forex_rate** | **Float** |  | [optional] |
+| **currency_id** | **String** |  | [optional] |
 | **total_detail** | **Float** |  | [optional] |
 | **total_detail_currency_id** | **String** |  | [optional] |
 | **total_profit** | **Float** |  | [optional] |
@@ -44,22 +55,11 @@
 | **cost_calculation_method** | **String** |  | [optional] |
 | **tax_calculation_method** | **String** |  | [optional] |
 | **cart_id** | **String** |  | [optional] |
-| **user_id** | **String** |  | [optional] |
-| **forex_rate** | **Float** |  | [optional] |
-| **currency_id** | **String** |  | [optional] |
-| **individual_id** | **String** |  | [optional] |
-| **organization_id** | **String** |  | [optional] |
 | **total_amount_in_usd** | **Float** |  | [optional] |
 | **total_taxes_in_usd** | **Float** |  | [optional] |
-| **receiver_tenant_id** | **String** |  | [optional] |
-| **closed** | **Boolean** |  | [optional] |
-| **price_list_id** | **String** |  | [optional] |
-| **payment_term_id** | **String** |  | [optional] |
 | **quote_status** | **String** |  | [optional] |
 | **effective_to** | **Time** |  | [optional] |
 | **effective_from** | **Time** |  | [optional] |
-| **description** | **String** |  | [optional] |
-| **title** | **String** |  | [optional] |
 
 ## Example
 
@@ -67,6 +67,15 @@
 require 'openapi_client'
 
 instance = OpenapiClient::OrderUpdateDto.new(
+  closed: null,
+  title: null,
+  user_id: null,
+  price_list_id: null,
+  description: null,
+  individual_id: null,
+  payment_term_id: null,
+  organization_id: null,
+  receiver_tenant_id: null,
   first_name: null,
   last_name: null,
   company_name: null,
@@ -80,6 +89,8 @@ instance = OpenapiClient::OrderUpdateDto.new(
   billing_location_id: null,
   shipping_location_id: null,
   shipping_method_id: null,
+  forex_rate: null,
+  currency_id: null,
   total_detail: null,
   total_detail_currency_id: null,
   total_profit: null,
@@ -107,22 +118,11 @@ instance = OpenapiClient::OrderUpdateDto.new(
   cost_calculation_method: null,
   tax_calculation_method: null,
   cart_id: null,
-  user_id: null,
-  forex_rate: null,
-  currency_id: null,
-  individual_id: null,
-  organization_id: null,
   total_amount_in_usd: null,
   total_taxes_in_usd: null,
-  receiver_tenant_id: null,
-  closed: null,
-  price_list_id: null,
-  payment_term_id: null,
   quote_status: null,
   effective_to: null,
-  effective_from: null,
-  description: null,
-  title: null
+  effective_from: null
 )
 ```
 

@@ -153,6 +153,11 @@ Class | Method | HTTP request | Description
 *OpenapiClient::BankingApi* | [**update_bank_account**](docs/BankingApi.md#update_bank_account) | **PUT** /api/v2/AccountingService/Banking/{bankId}/Accounts/{accountId} | Updates a bank account
 *OpenapiClient::BankingApi* | [**update_bank_guarantee**](docs/BankingApi.md#update_bank_guarantee) | **PUT** /api/v2/AccountingService/Banking/{bankId}/Guarantees/{guaranteeId} | Updates a bank guarantee
 *OpenapiClient::BankingApi* | [**update_bank_transaction**](docs/BankingApi.md#update_bank_transaction) | **PUT** /api/v2/AccountingService/Banking/{bankId}/Transactions/{transactionId} | Updates a bank transaction
+*OpenapiClient::BillableLineTaxesApi* | [**create_billable_line_tax**](docs/BillableLineTaxesApi.md#create_billable_line_tax) | **POST** /api/v2/AccountingService/BillableLines/{billableLineId}/Taxes | Create a new tax for a billable line.
+*OpenapiClient::BillableLineTaxesApi* | [**delete_billable_line_tax**](docs/BillableLineTaxesApi.md#delete_billable_line_tax) | **DELETE** /api/v2/AccountingService/BillableLines/{billableLineId}/Taxes/{taxId} | Delete a tax from a billable line.
+*OpenapiClient::BillableLineTaxesApi* | [**get_billable_line_taxes**](docs/BillableLineTaxesApi.md#get_billable_line_taxes) | **GET** /api/v2/AccountingService/BillableLines/{billableLineId}/Taxes | Get taxes for a billable line.
+*OpenapiClient::BillableLineTaxesApi* | [**get_billable_line_taxes_count**](docs/BillableLineTaxesApi.md#get_billable_line_taxes_count) | **GET** /api/v2/AccountingService/BillableLines/{billableLineId}/Taxes/Count | Get the count of taxes for a billable line.
+*OpenapiClient::BillableLineTaxesApi* | [**update_billable_line_tax**](docs/BillableLineTaxesApi.md#update_billable_line_tax) | **PUT** /api/v2/AccountingService/BillableLines/{billableLineId}/Taxes/{taxId} | Update a tax for a billable line.
 *OpenapiClient::BillingProfilesApi* | [**create_billing_profile_async**](docs/BillingProfilesApi.md#create_billing_profile_async) | **POST** /api/v2/AccountingService/BillingProfiles | Creates a new billing profile
 *OpenapiClient::BillingProfilesApi* | [**delete_billing_profile_async**](docs/BillingProfilesApi.md#delete_billing_profile_async) | **DELETE** /api/v2/AccountingService/BillingProfiles/{billingProfileId} | Deletes a billing profile
 *OpenapiClient::BillingProfilesApi* | [**get_billing_profile_by_id_async**](docs/BillingProfilesApi.md#get_billing_profile_by_id_async) | **GET** /api/v2/AccountingService/BillingProfiles/{billingProfileId} | Gets a billing profile by id
@@ -426,6 +431,10 @@ Class | Method | HTTP request | Description
  - [OpenapiClient::AccountingPeriodDtoEnvelope](docs/AccountingPeriodDtoEnvelope.md)
  - [OpenapiClient::AccountingPeriodDtoListEnvelope](docs/AccountingPeriodDtoListEnvelope.md)
  - [OpenapiClient::AccountingPeriodUpdateDto](docs/AccountingPeriodUpdateDto.md)
+ - [OpenapiClient::AppliedItemTaxRecordCreateDto](docs/AppliedItemTaxRecordCreateDto.md)
+ - [OpenapiClient::AppliedItemTaxRecordDto](docs/AppliedItemTaxRecordDto.md)
+ - [OpenapiClient::AppliedItemTaxRecordDtoIReadOnlyListEnvelope](docs/AppliedItemTaxRecordDtoIReadOnlyListEnvelope.md)
+ - [OpenapiClient::AppliedItemTaxRecordUpdateDto](docs/AppliedItemTaxRecordUpdateDto.md)
  - [OpenapiClient::AppliedTaxPolicyRecordCreateDto](docs/AppliedTaxPolicyRecordCreateDto.md)
  - [OpenapiClient::AppliedTaxPolicyRecordDto](docs/AppliedTaxPolicyRecordDto.md)
  - [OpenapiClient::AppliedTaxPolicyRecordDtoEnvelope](docs/AppliedTaxPolicyRecordDtoEnvelope.md)

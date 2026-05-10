@@ -17,9 +17,15 @@ module OpenapiClient
   class ShipmentDto
     attr_accessor :id
 
+    attr_accessor :timestamp
+
     attr_accessor :tracking_code
 
     attr_accessor :is_international
+
+    attr_accessor :shipped
+
+    attr_accessor :delivered
 
     attr_accessor :shipment_timestamp
 
@@ -29,16 +35,50 @@ module OpenapiClient
 
     attr_accessor :expected_delivery_date
 
+    attr_accessor :shipping_terms
+
+    attr_accessor :order_id
+
+    attr_accessor :business_id
+
+    class EnumAttributeValidator
+      attr_reader :datatype
+      attr_reader :allowable_values
+
+      def initialize(datatype, allowable_values)
+        @allowable_values = allowable_values.map do |value|
+          case datatype.to_s
+          when /Integer/i
+            value.to_i
+          when /Float/i
+            value.to_f
+          else
+            value
+          end
+        end
+      end
+
+      def valid?(value)
+        !value || allowable_values.include?(value)
+      end
+    end
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'id' => :'id',
+        :'timestamp' => :'timestamp',
         :'tracking_code' => :'trackingCode',
         :'is_international' => :'isInternational',
+        :'shipped' => :'shipped',
+        :'delivered' => :'delivered',
         :'shipment_timestamp' => :'shipmentTimestamp',
         :'delivery_timestamp' => :'deliveryTimestamp',
         :'expected_shipping_date' => :'expectedShippingDate',
-        :'expected_delivery_date' => :'expectedDeliveryDate'
+        :'expected_delivery_date' => :'expectedDeliveryDate',
+        :'shipping_terms' => :'shippingTerms',
+        :'order_id' => :'orderID',
+        :'business_id' => :'businessID'
       }
     end
 
@@ -51,12 +91,18 @@ module OpenapiClient
     def self.openapi_types
       {
         :'id' => :'String',
+        :'timestamp' => :'Time',
         :'tracking_code' => :'String',
         :'is_international' => :'Boolean',
+        :'shipped' => :'Boolean',
+        :'delivered' => :'Boolean',
         :'shipment_timestamp' => :'Time',
         :'delivery_timestamp' => :'Time',
         :'expected_shipping_date' => :'Time',
-        :'expected_delivery_date' => :'Time'
+        :'expected_delivery_date' => :'Time',
+        :'shipping_terms' => :'String',
+        :'order_id' => :'String',
+        :'business_id' => :'String'
       }
     end
 
@@ -64,7 +110,10 @@ module OpenapiClient
     def self.openapi_nullable
       Set.new([
         :'id',
+        :'timestamp',
         :'tracking_code',
+        :'order_id',
+        :'business_id'
       ])
     end
 
@@ -87,12 +136,24 @@ module OpenapiClient
         self.id = attributes[:'id']
       end
 
+      if attributes.key?(:'timestamp')
+        self.timestamp = attributes[:'timestamp']
+      end
+
       if attributes.key?(:'tracking_code')
         self.tracking_code = attributes[:'tracking_code']
       end
 
       if attributes.key?(:'is_international')
         self.is_international = attributes[:'is_international']
+      end
+
+      if attributes.key?(:'shipped')
+        self.shipped = attributes[:'shipped']
+      end
+
+      if attributes.key?(:'delivered')
+        self.delivered = attributes[:'delivered']
       end
 
       if attributes.key?(:'shipment_timestamp')
@@ -110,6 +171,18 @@ module OpenapiClient
       if attributes.key?(:'expected_delivery_date')
         self.expected_delivery_date = attributes[:'expected_delivery_date']
       end
+
+      if attributes.key?(:'shipping_terms')
+        self.shipping_terms = attributes[:'shipping_terms']
+      end
+
+      if attributes.key?(:'order_id')
+        self.order_id = attributes[:'order_id']
+      end
+
+      if attributes.key?(:'business_id')
+        self.business_id = attributes[:'business_id']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -124,7 +197,19 @@ module OpenapiClient
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
+      shipping_terms_validator = EnumAttributeValidator.new('String', ["NC", "EXW", "FCA", "FOB", "FAS", "CFR", "CIF", "CPT", "CIP", "DDP", "DAP", "DPU"])
+      return false unless shipping_terms_validator.valid?(@shipping_terms)
       true
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] shipping_terms Object to be assigned
+    def shipping_terms=(shipping_terms)
+      validator = EnumAttributeValidator.new('String', ["NC", "EXW", "FCA", "FOB", "FAS", "CFR", "CIF", "CPT", "CIP", "DDP", "DAP", "DPU"])
+      unless validator.valid?(shipping_terms)
+        fail ArgumentError, "invalid value for \"shipping_terms\", must be one of #{validator.allowable_values}."
+      end
+      @shipping_terms = shipping_terms
     end
 
     # Checks equality by comparing each attribute.
@@ -133,12 +218,18 @@ module OpenapiClient
       return true if self.equal?(o)
       self.class == o.class &&
           id == o.id &&
+          timestamp == o.timestamp &&
           tracking_code == o.tracking_code &&
           is_international == o.is_international &&
+          shipped == o.shipped &&
+          delivered == o.delivered &&
           shipment_timestamp == o.shipment_timestamp &&
           delivery_timestamp == o.delivery_timestamp &&
           expected_shipping_date == o.expected_shipping_date &&
-          expected_delivery_date == o.expected_delivery_date
+          expected_delivery_date == o.expected_delivery_date &&
+          shipping_terms == o.shipping_terms &&
+          order_id == o.order_id &&
+          business_id == o.business_id
     end
 
     # @see the `==` method
@@ -150,7 +241,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, tracking_code, is_international, shipment_timestamp, delivery_timestamp, expected_shipping_date, expected_delivery_date].hash
+      [id, timestamp, tracking_code, is_international, shipped, delivered, shipment_timestamp, delivery_timestamp, expected_shipping_date, expected_delivery_date, shipping_terms, order_id, business_id].hash
     end
 
     # Builds the object from hash

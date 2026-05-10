@@ -69,6 +69,8 @@ module OpenapiClient
 
     attr_accessor :forex_rate
 
+    attr_accessor :forex_rates_snapshot
+
     attr_accessor :currency_id
 
     attr_accessor :total_detail
@@ -221,6 +223,7 @@ module OpenapiClient
         :'tax_calculation_method' => :'taxCalculationMethod',
         :'cost_calculation_method' => :'costCalculationMethod',
         :'forex_rate' => :'forexRate',
+        :'forex_rates_snapshot' => :'forexRatesSnapshot',
         :'currency_id' => :'currencyId',
         :'total_detail' => :'totalDetail',
         :'total_detail_currency_id' => :'totalDetailCurrencyId',
@@ -309,6 +312,7 @@ module OpenapiClient
         :'tax_calculation_method' => :'String',
         :'cost_calculation_method' => :'String',
         :'forex_rate' => :'Float',
+        :'forex_rates_snapshot' => :'String',
         :'currency_id' => :'String',
         :'total_detail' => :'Float',
         :'total_detail_currency_id' => :'String',
@@ -388,6 +392,7 @@ module OpenapiClient
         :'state_id',
         :'city_id',
         :'customer_notes',
+        :'forex_rates_snapshot',
         :'currency_id',
         :'total_detail_currency_id',
         :'total_profit_currency_id',
@@ -529,6 +534,10 @@ module OpenapiClient
 
       if attributes.key?(:'forex_rate')
         self.forex_rate = attributes[:'forex_rate']
+      end
+
+      if attributes.key?(:'forex_rates_snapshot')
+        self.forex_rates_snapshot = attributes[:'forex_rates_snapshot']
       end
 
       if attributes.key?(:'currency_id')
@@ -827,6 +836,7 @@ module OpenapiClient
           tax_calculation_method == o.tax_calculation_method &&
           cost_calculation_method == o.cost_calculation_method &&
           forex_rate == o.forex_rate &&
+          forex_rates_snapshot == o.forex_rates_snapshot &&
           currency_id == o.currency_id &&
           total_detail == o.total_detail &&
           total_detail_currency_id == o.total_detail_currency_id &&
@@ -888,7 +898,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, timestamp, closed, type, title, user_id, tenant_id, description, price_list_id, enrollment_id, individual_id, organization_id, receiver_tenant_id, first_name, last_name, company_name, billing_email, address_line1, address_line2, postal_code, country_id, state_id, city_id, customer_notes, tax_calculation_method, cost_calculation_method, forex_rate, currency_id, total_detail, total_detail_currency_id, total_profit, total_profit_currency_id, total_discounts, total_discounts_currency_id, total_surcharges, total_surcharges_currency_id, total_tax_base, total_tax_base_currency_id, total_taxes, total_taxes_currency_id, total_shipping_cost, total_shipping_cost_currency_id, total_shipping_tax, total_shipping_tax_currency_id, total_withheld_tax, total_withheld_tax_currency_id, total_global_discounts, total_global_discounts_currency_id, total_global_surcharges, total_global_surcharges_currency_id, total, total_currency_id, total_detail_in_usd, total_profit_in_usd, total_discounts_in_usd, total_surcharges_in_usd, total_tax_base_in_usd, total_taxes_in_usd, total_withheld_taxes_in_usd, total_shipping_cost_in_usd, total_shipping_taxes_in_usd, total_global_discounts_in_usd, total_global_surcharges_in_usd, total_in_usd, cart_id, deal_unit_id, effective_to, effective_from, quote_status, freight_terms, custom_discounts_amount, user, tenant, individual, organization, receiver_tenant, enrollment].hash
+      [id, timestamp, closed, type, title, user_id, tenant_id, description, price_list_id, enrollment_id, individual_id, organization_id, receiver_tenant_id, first_name, last_name, company_name, billing_email, address_line1, address_line2, postal_code, country_id, state_id, city_id, customer_notes, tax_calculation_method, cost_calculation_method, forex_rate, forex_rates_snapshot, currency_id, total_detail, total_detail_currency_id, total_profit, total_profit_currency_id, total_discounts, total_discounts_currency_id, total_surcharges, total_surcharges_currency_id, total_tax_base, total_tax_base_currency_id, total_taxes, total_taxes_currency_id, total_shipping_cost, total_shipping_cost_currency_id, total_shipping_tax, total_shipping_tax_currency_id, total_withheld_tax, total_withheld_tax_currency_id, total_global_discounts, total_global_discounts_currency_id, total_global_surcharges, total_global_surcharges_currency_id, total, total_currency_id, total_detail_in_usd, total_profit_in_usd, total_discounts_in_usd, total_surcharges_in_usd, total_tax_base_in_usd, total_taxes_in_usd, total_withheld_taxes_in_usd, total_shipping_cost_in_usd, total_shipping_taxes_in_usd, total_global_discounts_in_usd, total_global_surcharges_in_usd, total_in_usd, cart_id, deal_unit_id, effective_to, effective_from, quote_status, freight_terms, custom_discounts_amount, user, tenant, individual, organization, receiver_tenant, enrollment].hash
     end
 
     # Builds the object from hash

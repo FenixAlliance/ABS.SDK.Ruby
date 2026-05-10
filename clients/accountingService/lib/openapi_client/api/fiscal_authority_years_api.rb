@@ -21,7 +21,7 @@ module OpenapiClient
     end
     # Create a fiscal year
     # Creates a new fiscal year associated with a fiscal authority.
-    # @param tenant_id [Object] 
+    # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
@@ -34,7 +34,7 @@ module OpenapiClient
 
     # Create a fiscal year
     # Creates a new fiscal year associated with a fiscal authority.
-    # @param tenant_id [Object] 
+    # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
@@ -98,7 +98,7 @@ module OpenapiClient
 
     # Delete a fiscal year
     # Deletes a fiscal year identified by its unique identifier.
-    # @param tenant_id [Object] 
+    # @param tenant_id [String] 
     # @param fiscal_year_id [String] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
@@ -111,7 +111,7 @@ module OpenapiClient
 
     # Delete a fiscal year
     # Deletes a fiscal year identified by its unique identifier.
-    # @param tenant_id [Object] 
+    # @param tenant_id [String] 
     # @param fiscal_year_id [String] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
@@ -174,7 +174,7 @@ module OpenapiClient
 
     # Get fiscal year by ID for an authority
     # Retrieves a specific fiscal year by its unique identifier within a fiscal authority.
-    # @param tenant_id [Object] 
+    # @param tenant_id [String] 
     # @param fiscal_authority_id [String] 
     # @param fiscal_year_id [String] 
     # @param [Hash] opts the optional parameters
@@ -188,7 +188,7 @@ module OpenapiClient
 
     # Get fiscal year by ID for an authority
     # Retrieves a specific fiscal year by its unique identifier within a fiscal authority.
-    # @param tenant_id [Object] 
+    # @param tenant_id [String] 
     # @param fiscal_authority_id [String] 
     # @param fiscal_year_id [String] 
     # @param [Hash] opts the optional parameters
@@ -256,7 +256,7 @@ module OpenapiClient
 
     # Get fiscal years for an authority
     # Retrieves all fiscal years associated with the specified fiscal authority.
-    # @param tenant_id [Object] 
+    # @param tenant_id [String] 
     # @param fiscal_authority_id [String] 
     # @param authority_id [String] 
     # @param [Hash] opts the optional parameters
@@ -270,7 +270,7 @@ module OpenapiClient
 
     # Get fiscal years for an authority
     # Retrieves all fiscal years associated with the specified fiscal authority.
-    # @param tenant_id [Object] 
+    # @param tenant_id [String] 
     # @param fiscal_authority_id [String] 
     # @param authority_id [String] 
     # @param [Hash] opts the optional parameters
@@ -339,7 +339,7 @@ module OpenapiClient
 
     # Get fiscal years count for an authority
     # Returns the total count of fiscal years for the specified fiscal authority.
-    # @param tenant_id [Object] 
+    # @param tenant_id [String] 
     # @param fiscal_authority_id [String] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
@@ -352,7 +352,7 @@ module OpenapiClient
 
     # Get fiscal years count for an authority
     # Returns the total count of fiscal years for the specified fiscal authority.
-    # @param tenant_id [Object] 
+    # @param tenant_id [String] 
     # @param fiscal_authority_id [String] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
@@ -415,7 +415,7 @@ module OpenapiClient
 
     # Update a fiscal year
     # Updates an existing fiscal year identified by its unique identifier.
-    # @param tenant_id [Object] 
+    # @param tenant_id [String] 
     # @param fiscal_year_id [String] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
@@ -429,7 +429,7 @@ module OpenapiClient
 
     # Update a fiscal year
     # Updates an existing fiscal year identified by its unique identifier.
-    # @param tenant_id [Object] 
+    # @param tenant_id [String] 
     # @param fiscal_year_id [String] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 

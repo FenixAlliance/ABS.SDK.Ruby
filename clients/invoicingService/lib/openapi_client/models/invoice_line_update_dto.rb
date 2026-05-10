@@ -15,19 +15,105 @@ require 'time'
 
 module OpenapiClient
   class InvoiceLineUpdateDto
-    attr_accessor :price
+    attr_accessor :closed
 
-    attr_accessor :unit_id
+    attr_accessor :title
 
-    attr_accessor :percent
+    attr_accessor :user_id
 
-    attr_accessor :unit_group_id
+    attr_accessor :price_list_id
+
+    attr_accessor :description
+
+    attr_accessor :individual_id
+
+    attr_accessor :payment_term_id
+
+    attr_accessor :organization_id
+
+    attr_accessor :receiver_tenant_id
+
+    attr_accessor :first_name
+
+    attr_accessor :last_name
+
+    attr_accessor :company_name
+
+    attr_accessor :billing_email
+
+    attr_accessor :address_line1
+
+    attr_accessor :address_line2
+
+    attr_accessor :postal_code
+
+    attr_accessor :country_id
+
+    attr_accessor :state_id
+
+    attr_accessor :city_id
+
+    attr_accessor :billing_location_id
+
+    attr_accessor :shipping_location_id
+
+    attr_accessor :shipping_method_id
+
+    attr_accessor :forex_rate
 
     attr_accessor :currency_id
 
-    attr_accessor :discount_list_id
+    attr_accessor :total_detail
 
-    attr_accessor :rounding_policy_id
+    attr_accessor :total_detail_currency_id
+
+    attr_accessor :total_profit
+
+    attr_accessor :total_profit_currency_id
+
+    attr_accessor :total_discounts
+
+    attr_accessor :total_discounts_currency_id
+
+    attr_accessor :total_surcharges
+
+    attr_accessor :total_surcharges_currency_id
+
+    attr_accessor :total_shipping_tax
+
+    attr_accessor :total_shipping_tax_currency_id
+
+    attr_accessor :total_shipping_cost
+
+    attr_accessor :total_shipping_cost_currency_id
+
+    attr_accessor :total_global_discounts
+
+    attr_accessor :total_global_discounts_currency_id
+
+    attr_accessor :total_global_surcharges
+
+    attr_accessor :total_global_surcharges_currency_id
+
+    attr_accessor :total_withheld_tax
+
+    attr_accessor :total_withheld_tax_currency_id
+
+    attr_accessor :total_tax_base
+
+    attr_accessor :total_tax_base_currency_id
+
+    attr_accessor :total_taxes
+
+    attr_accessor :total_taxes_currency_id
+
+    attr_accessor :total
+
+    attr_accessor :total_currency_id
+
+    attr_accessor :cost_calculation_method
+
+    attr_accessor :tax_calculation_method
 
     attr_accessor :quantity
 
@@ -41,16 +127,81 @@ module OpenapiClient
 
     attr_accessor :tax_base_amount_in_usd
 
+    class EnumAttributeValidator
+      attr_reader :datatype
+      attr_reader :allowable_values
+
+      def initialize(datatype, allowable_values)
+        @allowable_values = allowable_values.map do |value|
+          case datatype.to_s
+          when /Integer/i
+            value.to_i
+          when /Float/i
+            value.to_f
+          else
+            value
+          end
+        end
+      end
+
+      def valid?(value)
+        !value || allowable_values.include?(value)
+      end
+    end
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'price' => :'price',
-        :'unit_id' => :'unitId',
-        :'percent' => :'percent',
-        :'unit_group_id' => :'unitGroupId',
+        :'closed' => :'closed',
+        :'title' => :'title',
+        :'user_id' => :'userId',
+        :'price_list_id' => :'priceListId',
+        :'description' => :'description',
+        :'individual_id' => :'individualId',
+        :'payment_term_id' => :'paymentTermId',
+        :'organization_id' => :'organizationId',
+        :'receiver_tenant_id' => :'receiverTenantId',
+        :'first_name' => :'firstName',
+        :'last_name' => :'lastName',
+        :'company_name' => :'companyName',
+        :'billing_email' => :'billingEmail',
+        :'address_line1' => :'addressLine1',
+        :'address_line2' => :'addressLine2',
+        :'postal_code' => :'postalCode',
+        :'country_id' => :'countryId',
+        :'state_id' => :'stateId',
+        :'city_id' => :'cityId',
+        :'billing_location_id' => :'billingLocationId',
+        :'shipping_location_id' => :'shippingLocationId',
+        :'shipping_method_id' => :'shippingMethodId',
+        :'forex_rate' => :'forexRate',
         :'currency_id' => :'currencyId',
-        :'discount_list_id' => :'discountListId',
-        :'rounding_policy_id' => :'roundingPolicyId',
+        :'total_detail' => :'totalDetail',
+        :'total_detail_currency_id' => :'totalDetailCurrencyId',
+        :'total_profit' => :'totalProfit',
+        :'total_profit_currency_id' => :'totalProfitCurrencyId',
+        :'total_discounts' => :'totalDiscounts',
+        :'total_discounts_currency_id' => :'totalDiscountsCurrencyId',
+        :'total_surcharges' => :'totalSurcharges',
+        :'total_surcharges_currency_id' => :'totalSurchargesCurrencyId',
+        :'total_shipping_tax' => :'totalShippingTax',
+        :'total_shipping_tax_currency_id' => :'totalShippingTaxCurrencyId',
+        :'total_shipping_cost' => :'totalShippingCost',
+        :'total_shipping_cost_currency_id' => :'totalShippingCostCurrencyId',
+        :'total_global_discounts' => :'totalGlobalDiscounts',
+        :'total_global_discounts_currency_id' => :'totalGlobalDiscountsCurrencyId',
+        :'total_global_surcharges' => :'totalGlobalSurcharges',
+        :'total_global_surcharges_currency_id' => :'totalGlobalSurchargesCurrencyId',
+        :'total_withheld_tax' => :'totalWithheldTax',
+        :'total_withheld_tax_currency_id' => :'totalWithheldTaxCurrencyId',
+        :'total_tax_base' => :'totalTaxBase',
+        :'total_tax_base_currency_id' => :'totalTaxBaseCurrencyId',
+        :'total_taxes' => :'totalTaxes',
+        :'total_taxes_currency_id' => :'totalTaxesCurrencyId',
+        :'total' => :'total',
+        :'total_currency_id' => :'totalCurrencyId',
+        :'cost_calculation_method' => :'costCalculationMethod',
+        :'tax_calculation_method' => :'taxCalculationMethod',
         :'quantity' => :'quantity',
         :'item_id' => :'itemId',
         :'item_price_id' => :'itemPriceId',
@@ -68,13 +219,56 @@ module OpenapiClient
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'price' => :'Float',
-        :'unit_id' => :'String',
-        :'percent' => :'Float',
-        :'unit_group_id' => :'String',
+        :'closed' => :'Boolean',
+        :'title' => :'String',
+        :'user_id' => :'String',
+        :'price_list_id' => :'String',
+        :'description' => :'String',
+        :'individual_id' => :'String',
+        :'payment_term_id' => :'String',
+        :'organization_id' => :'String',
+        :'receiver_tenant_id' => :'String',
+        :'first_name' => :'String',
+        :'last_name' => :'String',
+        :'company_name' => :'String',
+        :'billing_email' => :'String',
+        :'address_line1' => :'String',
+        :'address_line2' => :'String',
+        :'postal_code' => :'String',
+        :'country_id' => :'String',
+        :'state_id' => :'String',
+        :'city_id' => :'String',
+        :'billing_location_id' => :'String',
+        :'shipping_location_id' => :'String',
+        :'shipping_method_id' => :'String',
+        :'forex_rate' => :'Float',
         :'currency_id' => :'String',
-        :'discount_list_id' => :'String',
-        :'rounding_policy_id' => :'String',
+        :'total_detail' => :'Float',
+        :'total_detail_currency_id' => :'String',
+        :'total_profit' => :'Float',
+        :'total_profit_currency_id' => :'String',
+        :'total_discounts' => :'Float',
+        :'total_discounts_currency_id' => :'String',
+        :'total_surcharges' => :'Float',
+        :'total_surcharges_currency_id' => :'String',
+        :'total_shipping_tax' => :'Float',
+        :'total_shipping_tax_currency_id' => :'String',
+        :'total_shipping_cost' => :'Float',
+        :'total_shipping_cost_currency_id' => :'String',
+        :'total_global_discounts' => :'Float',
+        :'total_global_discounts_currency_id' => :'String',
+        :'total_global_surcharges' => :'Float',
+        :'total_global_surcharges_currency_id' => :'String',
+        :'total_withheld_tax' => :'Float',
+        :'total_withheld_tax_currency_id' => :'String',
+        :'total_tax_base' => :'Float',
+        :'total_tax_base_currency_id' => :'String',
+        :'total_taxes' => :'Float',
+        :'total_taxes_currency_id' => :'String',
+        :'total' => :'Float',
+        :'total_currency_id' => :'String',
+        :'cost_calculation_method' => :'String',
+        :'tax_calculation_method' => :'String',
         :'quantity' => :'Integer',
         :'item_id' => :'String',
         :'item_price_id' => :'String',
@@ -87,11 +281,40 @@ module OpenapiClient
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
-        :'unit_id',
-        :'unit_group_id',
+        :'title',
+        :'user_id',
+        :'price_list_id',
+        :'description',
+        :'individual_id',
+        :'payment_term_id',
+        :'organization_id',
+        :'receiver_tenant_id',
+        :'first_name',
+        :'last_name',
+        :'company_name',
+        :'billing_email',
+        :'address_line1',
+        :'address_line2',
+        :'postal_code',
+        :'country_id',
+        :'state_id',
+        :'city_id',
+        :'billing_location_id',
+        :'shipping_location_id',
+        :'shipping_method_id',
         :'currency_id',
-        :'discount_list_id',
-        :'rounding_policy_id',
+        :'total_detail_currency_id',
+        :'total_profit_currency_id',
+        :'total_discounts_currency_id',
+        :'total_surcharges_currency_id',
+        :'total_shipping_tax_currency_id',
+        :'total_shipping_cost_currency_id',
+        :'total_global_discounts_currency_id',
+        :'total_global_surcharges_currency_id',
+        :'total_withheld_tax_currency_id',
+        :'total_tax_base_currency_id',
+        :'total_taxes_currency_id',
+        :'total_currency_id',
         :'item_id',
         :'item_price_id',
         :'invoice_line_id',
@@ -113,32 +336,204 @@ module OpenapiClient
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'price')
-        self.price = attributes[:'price']
+      if attributes.key?(:'closed')
+        self.closed = attributes[:'closed']
       end
 
-      if attributes.key?(:'unit_id')
-        self.unit_id = attributes[:'unit_id']
+      if attributes.key?(:'title')
+        self.title = attributes[:'title']
       end
 
-      if attributes.key?(:'percent')
-        self.percent = attributes[:'percent']
+      if attributes.key?(:'user_id')
+        self.user_id = attributes[:'user_id']
       end
 
-      if attributes.key?(:'unit_group_id')
-        self.unit_group_id = attributes[:'unit_group_id']
+      if attributes.key?(:'price_list_id')
+        self.price_list_id = attributes[:'price_list_id']
+      end
+
+      if attributes.key?(:'description')
+        self.description = attributes[:'description']
+      end
+
+      if attributes.key?(:'individual_id')
+        self.individual_id = attributes[:'individual_id']
+      end
+
+      if attributes.key?(:'payment_term_id')
+        self.payment_term_id = attributes[:'payment_term_id']
+      end
+
+      if attributes.key?(:'organization_id')
+        self.organization_id = attributes[:'organization_id']
+      end
+
+      if attributes.key?(:'receiver_tenant_id')
+        self.receiver_tenant_id = attributes[:'receiver_tenant_id']
+      end
+
+      if attributes.key?(:'first_name')
+        self.first_name = attributes[:'first_name']
+      end
+
+      if attributes.key?(:'last_name')
+        self.last_name = attributes[:'last_name']
+      end
+
+      if attributes.key?(:'company_name')
+        self.company_name = attributes[:'company_name']
+      end
+
+      if attributes.key?(:'billing_email')
+        self.billing_email = attributes[:'billing_email']
+      end
+
+      if attributes.key?(:'address_line1')
+        self.address_line1 = attributes[:'address_line1']
+      end
+
+      if attributes.key?(:'address_line2')
+        self.address_line2 = attributes[:'address_line2']
+      end
+
+      if attributes.key?(:'postal_code')
+        self.postal_code = attributes[:'postal_code']
+      end
+
+      if attributes.key?(:'country_id')
+        self.country_id = attributes[:'country_id']
+      end
+
+      if attributes.key?(:'state_id')
+        self.state_id = attributes[:'state_id']
+      end
+
+      if attributes.key?(:'city_id')
+        self.city_id = attributes[:'city_id']
+      end
+
+      if attributes.key?(:'billing_location_id')
+        self.billing_location_id = attributes[:'billing_location_id']
+      end
+
+      if attributes.key?(:'shipping_location_id')
+        self.shipping_location_id = attributes[:'shipping_location_id']
+      end
+
+      if attributes.key?(:'shipping_method_id')
+        self.shipping_method_id = attributes[:'shipping_method_id']
+      end
+
+      if attributes.key?(:'forex_rate')
+        self.forex_rate = attributes[:'forex_rate']
       end
 
       if attributes.key?(:'currency_id')
         self.currency_id = attributes[:'currency_id']
       end
 
-      if attributes.key?(:'discount_list_id')
-        self.discount_list_id = attributes[:'discount_list_id']
+      if attributes.key?(:'total_detail')
+        self.total_detail = attributes[:'total_detail']
       end
 
-      if attributes.key?(:'rounding_policy_id')
-        self.rounding_policy_id = attributes[:'rounding_policy_id']
+      if attributes.key?(:'total_detail_currency_id')
+        self.total_detail_currency_id = attributes[:'total_detail_currency_id']
+      end
+
+      if attributes.key?(:'total_profit')
+        self.total_profit = attributes[:'total_profit']
+      end
+
+      if attributes.key?(:'total_profit_currency_id')
+        self.total_profit_currency_id = attributes[:'total_profit_currency_id']
+      end
+
+      if attributes.key?(:'total_discounts')
+        self.total_discounts = attributes[:'total_discounts']
+      end
+
+      if attributes.key?(:'total_discounts_currency_id')
+        self.total_discounts_currency_id = attributes[:'total_discounts_currency_id']
+      end
+
+      if attributes.key?(:'total_surcharges')
+        self.total_surcharges = attributes[:'total_surcharges']
+      end
+
+      if attributes.key?(:'total_surcharges_currency_id')
+        self.total_surcharges_currency_id = attributes[:'total_surcharges_currency_id']
+      end
+
+      if attributes.key?(:'total_shipping_tax')
+        self.total_shipping_tax = attributes[:'total_shipping_tax']
+      end
+
+      if attributes.key?(:'total_shipping_tax_currency_id')
+        self.total_shipping_tax_currency_id = attributes[:'total_shipping_tax_currency_id']
+      end
+
+      if attributes.key?(:'total_shipping_cost')
+        self.total_shipping_cost = attributes[:'total_shipping_cost']
+      end
+
+      if attributes.key?(:'total_shipping_cost_currency_id')
+        self.total_shipping_cost_currency_id = attributes[:'total_shipping_cost_currency_id']
+      end
+
+      if attributes.key?(:'total_global_discounts')
+        self.total_global_discounts = attributes[:'total_global_discounts']
+      end
+
+      if attributes.key?(:'total_global_discounts_currency_id')
+        self.total_global_discounts_currency_id = attributes[:'total_global_discounts_currency_id']
+      end
+
+      if attributes.key?(:'total_global_surcharges')
+        self.total_global_surcharges = attributes[:'total_global_surcharges']
+      end
+
+      if attributes.key?(:'total_global_surcharges_currency_id')
+        self.total_global_surcharges_currency_id = attributes[:'total_global_surcharges_currency_id']
+      end
+
+      if attributes.key?(:'total_withheld_tax')
+        self.total_withheld_tax = attributes[:'total_withheld_tax']
+      end
+
+      if attributes.key?(:'total_withheld_tax_currency_id')
+        self.total_withheld_tax_currency_id = attributes[:'total_withheld_tax_currency_id']
+      end
+
+      if attributes.key?(:'total_tax_base')
+        self.total_tax_base = attributes[:'total_tax_base']
+      end
+
+      if attributes.key?(:'total_tax_base_currency_id')
+        self.total_tax_base_currency_id = attributes[:'total_tax_base_currency_id']
+      end
+
+      if attributes.key?(:'total_taxes')
+        self.total_taxes = attributes[:'total_taxes']
+      end
+
+      if attributes.key?(:'total_taxes_currency_id')
+        self.total_taxes_currency_id = attributes[:'total_taxes_currency_id']
+      end
+
+      if attributes.key?(:'total')
+        self.total = attributes[:'total']
+      end
+
+      if attributes.key?(:'total_currency_id')
+        self.total_currency_id = attributes[:'total_currency_id']
+      end
+
+      if attributes.key?(:'cost_calculation_method')
+        self.cost_calculation_method = attributes[:'cost_calculation_method']
+      end
+
+      if attributes.key?(:'tax_calculation_method')
+        self.tax_calculation_method = attributes[:'tax_calculation_method']
       end
 
       if attributes.key?(:'quantity')
@@ -178,7 +573,31 @@ module OpenapiClient
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
+      cost_calculation_method_validator = EnumAttributeValidator.new('String', ["Automatic", "Custom"])
+      return false unless cost_calculation_method_validator.valid?(@cost_calculation_method)
+      tax_calculation_method_validator = EnumAttributeValidator.new('String', ["Included", "Excluded"])
+      return false unless tax_calculation_method_validator.valid?(@tax_calculation_method)
       true
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] cost_calculation_method Object to be assigned
+    def cost_calculation_method=(cost_calculation_method)
+      validator = EnumAttributeValidator.new('String', ["Automatic", "Custom"])
+      unless validator.valid?(cost_calculation_method)
+        fail ArgumentError, "invalid value for \"cost_calculation_method\", must be one of #{validator.allowable_values}."
+      end
+      @cost_calculation_method = cost_calculation_method
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] tax_calculation_method Object to be assigned
+    def tax_calculation_method=(tax_calculation_method)
+      validator = EnumAttributeValidator.new('String', ["Included", "Excluded"])
+      unless validator.valid?(tax_calculation_method)
+        fail ArgumentError, "invalid value for \"tax_calculation_method\", must be one of #{validator.allowable_values}."
+      end
+      @tax_calculation_method = tax_calculation_method
     end
 
     # Checks equality by comparing each attribute.
@@ -186,13 +605,56 @@ module OpenapiClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          price == o.price &&
-          unit_id == o.unit_id &&
-          percent == o.percent &&
-          unit_group_id == o.unit_group_id &&
+          closed == o.closed &&
+          title == o.title &&
+          user_id == o.user_id &&
+          price_list_id == o.price_list_id &&
+          description == o.description &&
+          individual_id == o.individual_id &&
+          payment_term_id == o.payment_term_id &&
+          organization_id == o.organization_id &&
+          receiver_tenant_id == o.receiver_tenant_id &&
+          first_name == o.first_name &&
+          last_name == o.last_name &&
+          company_name == o.company_name &&
+          billing_email == o.billing_email &&
+          address_line1 == o.address_line1 &&
+          address_line2 == o.address_line2 &&
+          postal_code == o.postal_code &&
+          country_id == o.country_id &&
+          state_id == o.state_id &&
+          city_id == o.city_id &&
+          billing_location_id == o.billing_location_id &&
+          shipping_location_id == o.shipping_location_id &&
+          shipping_method_id == o.shipping_method_id &&
+          forex_rate == o.forex_rate &&
           currency_id == o.currency_id &&
-          discount_list_id == o.discount_list_id &&
-          rounding_policy_id == o.rounding_policy_id &&
+          total_detail == o.total_detail &&
+          total_detail_currency_id == o.total_detail_currency_id &&
+          total_profit == o.total_profit &&
+          total_profit_currency_id == o.total_profit_currency_id &&
+          total_discounts == o.total_discounts &&
+          total_discounts_currency_id == o.total_discounts_currency_id &&
+          total_surcharges == o.total_surcharges &&
+          total_surcharges_currency_id == o.total_surcharges_currency_id &&
+          total_shipping_tax == o.total_shipping_tax &&
+          total_shipping_tax_currency_id == o.total_shipping_tax_currency_id &&
+          total_shipping_cost == o.total_shipping_cost &&
+          total_shipping_cost_currency_id == o.total_shipping_cost_currency_id &&
+          total_global_discounts == o.total_global_discounts &&
+          total_global_discounts_currency_id == o.total_global_discounts_currency_id &&
+          total_global_surcharges == o.total_global_surcharges &&
+          total_global_surcharges_currency_id == o.total_global_surcharges_currency_id &&
+          total_withheld_tax == o.total_withheld_tax &&
+          total_withheld_tax_currency_id == o.total_withheld_tax_currency_id &&
+          total_tax_base == o.total_tax_base &&
+          total_tax_base_currency_id == o.total_tax_base_currency_id &&
+          total_taxes == o.total_taxes &&
+          total_taxes_currency_id == o.total_taxes_currency_id &&
+          total == o.total &&
+          total_currency_id == o.total_currency_id &&
+          cost_calculation_method == o.cost_calculation_method &&
+          tax_calculation_method == o.tax_calculation_method &&
           quantity == o.quantity &&
           item_id == o.item_id &&
           item_price_id == o.item_price_id &&
@@ -210,7 +672,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [price, unit_id, percent, unit_group_id, currency_id, discount_list_id, rounding_policy_id, quantity, item_id, item_price_id, invoice_line_id, tax_amount_in_usd, tax_base_amount_in_usd].hash
+      [closed, title, user_id, price_list_id, description, individual_id, payment_term_id, organization_id, receiver_tenant_id, first_name, last_name, company_name, billing_email, address_line1, address_line2, postal_code, country_id, state_id, city_id, billing_location_id, shipping_location_id, shipping_method_id, forex_rate, currency_id, total_detail, total_detail_currency_id, total_profit, total_profit_currency_id, total_discounts, total_discounts_currency_id, total_surcharges, total_surcharges_currency_id, total_shipping_tax, total_shipping_tax_currency_id, total_shipping_cost, total_shipping_cost_currency_id, total_global_discounts, total_global_discounts_currency_id, total_global_surcharges, total_global_surcharges_currency_id, total_withheld_tax, total_withheld_tax_currency_id, total_tax_base, total_tax_base_currency_id, total_taxes, total_taxes_currency_id, total, total_currency_id, cost_calculation_method, tax_calculation_method, quantity, item_id, item_price_id, invoice_line_id, tax_amount_in_usd, tax_base_amount_in_usd].hash
     end
 
     # Builds the object from hash

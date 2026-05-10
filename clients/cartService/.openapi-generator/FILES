@@ -19,12 +19,10 @@ docs/CountryDtoEnvelope.md
 docs/CountrySwitchRequest.md
 docs/CurrencyDto.md
 docs/CurrencyDtoEnvelope.md
-docs/CurrencyId.md
 docs/CurrencySwitchRequest.md
 docs/EmptyEnvelope.md
 docs/ErrorEnvelope.md
 docs/FenixAllianceABSWebApi.md
-docs/ForexRates.md
 docs/ForgotPasswordRequest.md
 docs/HttpValidationProblemDetails.md
 docs/InfoRequest.md
@@ -38,7 +36,6 @@ docs/ItemToCompareCartRecordDto.md
 docs/ItemToCompareCartRecordDtoEnvelope.md
 docs/ItemToCompareCartRecordDtoListEnvelope.md
 docs/LoginRequest.md
-docs/Money.md
 docs/NewWishListRequest.md
 docs/ProductToWishListRequest.md
 docs/RecordsApi.md
@@ -74,11 +71,9 @@ lib/openapi_client/models/country_dto_envelope.rb
 lib/openapi_client/models/country_switch_request.rb
 lib/openapi_client/models/currency_dto.rb
 lib/openapi_client/models/currency_dto_envelope.rb
-lib/openapi_client/models/currency_id.rb
 lib/openapi_client/models/currency_switch_request.rb
 lib/openapi_client/models/empty_envelope.rb
 lib/openapi_client/models/error_envelope.rb
-lib/openapi_client/models/forex_rates.rb
 lib/openapi_client/models/forgot_password_request.rb
 lib/openapi_client/models/http_validation_problem_details.rb
 lib/openapi_client/models/info_request.rb
@@ -92,7 +87,6 @@ lib/openapi_client/models/item_to_compare_cart_record_dto.rb
 lib/openapi_client/models/item_to_compare_cart_record_dto_envelope.rb
 lib/openapi_client/models/item_to_compare_cart_record_dto_list_envelope.rb
 lib/openapi_client/models/login_request.rb
-lib/openapi_client/models/money.rb
 lib/openapi_client/models/new_wish_list_request.rb
 lib/openapi_client/models/product_to_wish_list_request.rb
 lib/openapi_client/models/refresh_request.rb

@@ -27,7 +27,7 @@ require 'time'
 require 'openapi_client'
 
 api_instance = OpenapiClient::FiscalResponsibilityRecordsApi.new
-tenant_id = { ... } # Object | 
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example', # String | 
@@ -65,7 +65,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **tenant_id** | [**Object**](.md) |  |  |
+| **tenant_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
 | **fiscal_responsibility_record_create_dto** | [**FiscalResponsibilityRecordCreateDto**](FiscalResponsibilityRecordCreateDto.md) |  | [optional] |
@@ -99,7 +99,7 @@ require 'time'
 require 'openapi_client'
 
 api_instance = OpenapiClient::FiscalResponsibilityRecordsApi.new
-tenant_id = { ... } # Object | 
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 fiscal_responsibility_record_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
@@ -137,7 +137,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **tenant_id** | [**Object**](.md) |  |  |
+| **tenant_id** | **String** |  |  |
 | **fiscal_responsibility_record_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
@@ -171,7 +171,7 @@ require 'time'
 require 'openapi_client'
 
 api_instance = OpenapiClient::FiscalResponsibilityRecordsApi.new
-tenant_id = { ... } # Object | 
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 fiscal_authority_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 fiscal_responsibility_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 fiscal_responsibility_record_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
@@ -211,7 +211,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **tenant_id** | [**Object**](.md) |  |  |
+| **tenant_id** | **String** |  |  |
 | **fiscal_authority_id** | **String** |  |  |
 | **fiscal_responsibility_id** | **String** |  |  |
 | **fiscal_responsibility_record_id** | **String** |  |  |
@@ -247,7 +247,7 @@ require 'time'
 require 'openapi_client'
 
 api_instance = OpenapiClient::FiscalResponsibilityRecordsApi.new
-tenant_id = { ... } # Object | 
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 fiscal_authority_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 fiscal_responsibility_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
@@ -286,7 +286,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **tenant_id** | [**Object**](.md) |  |  |
+| **tenant_id** | **String** |  |  |
 | **fiscal_authority_id** | **String** |  |  |
 | **fiscal_responsibility_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
@@ -321,7 +321,7 @@ require 'time'
 require 'openapi_client'
 
 api_instance = OpenapiClient::FiscalResponsibilityRecordsApi.new
-tenant_id = { ... } # Object | 
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 fiscal_authority_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 fiscal_responsibility_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
@@ -360,7 +360,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **tenant_id** | [**Object**](.md) |  |  |
+| **tenant_id** | **String** |  |  |
 | **fiscal_authority_id** | **String** |  |  |
 | **fiscal_responsibility_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
@@ -395,7 +395,7 @@ require 'time'
 require 'openapi_client'
 
 api_instance = OpenapiClient::FiscalResponsibilityRecordsApi.new
-tenant_id = { ... } # Object | 
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 fiscal_responsibility_record_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
@@ -434,7 +434,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **tenant_id** | [**Object**](.md) |  |  |
+| **tenant_id** | **String** |  |  |
 | **fiscal_responsibility_record_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |

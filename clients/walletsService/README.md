@@ -94,8 +94,14 @@ Class | Method | HTTP request | Description
 *OpenapiClient::FenixAllianceABSWebApi* | [**resend_confirmation_email_post**](docs/FenixAllianceABSWebApi.md#resend_confirmation_email_post) | **POST** /resendConfirmationEmail | 
 *OpenapiClient::FenixAllianceABSWebApi* | [**reset_password_post**](docs/FenixAllianceABSWebApi.md#reset_password_post) | **POST** /resetPassword | 
 *OpenapiClient::FenixAllianceABSWebApi* | [**version_get**](docs/FenixAllianceABSWebApi.md#version_get) | **GET** /version | 
+*OpenapiClient::WalletsApi* | [**create_wallet_bank_account_async**](docs/WalletsApi.md#create_wallet_bank_account_async) | **POST** /api/v2/WalletsService/Wallets/{walletId}/BankAccounts | Create Wallet Bank Account
 *OpenapiClient::WalletsApi* | [**create_wallet_location_async**](docs/WalletsApi.md#create_wallet_location_async) | **POST** /api/v2/WalletsService/Wallets/{walletId}/Locations | Create Wallet Location
+*OpenapiClient::WalletsApi* | [**create_wallet_payment_async**](docs/WalletsApi.md#create_wallet_payment_async) | **POST** /api/v2/WalletsService/Wallets/{walletId}/Payments | Create Wallet Payment
+*OpenapiClient::WalletsApi* | [**create_wallet_token_async**](docs/WalletsApi.md#create_wallet_token_async) | **POST** /api/v2/WalletsService/Wallets/{walletId}/Tokens | Create Wallet Token
+*OpenapiClient::WalletsApi* | [**create_wallet_withdraw_request_async**](docs/WalletsApi.md#create_wallet_withdraw_request_async) | **POST** /api/v2/WalletsService/Wallets/{walletId}/Withdraws | Create Wallet Withdraw Request
+*OpenapiClient::WalletsApi* | [**delete_wallet_bank_account_async**](docs/WalletsApi.md#delete_wallet_bank_account_async) | **DELETE** /api/v2/WalletsService/Wallets/{walletId}/BankAccounts/{bankAccountId} | Delete Wallet Bank Account
 *OpenapiClient::WalletsApi* | [**delete_wallet_location_async**](docs/WalletsApi.md#delete_wallet_location_async) | **DELETE** /api/v2/WalletsService/Wallets/{walletId}/Locations/{locationId} | Delete Wallet Location
+*OpenapiClient::WalletsApi* | [**delete_wallet_token_async**](docs/WalletsApi.md#delete_wallet_token_async) | **DELETE** /api/v2/WalletsService/Wallets/{walletId}/Tokens/{tokenId} | Delete Wallet Token
 *OpenapiClient::WalletsApi* | [**get_incoming_payments_async**](docs/WalletsApi.md#get_incoming_payments_async) | **GET** /api/v2/WalletsService/Wallets/{walletId}/Payments/Incoming | Get Incoming Payments
 *OpenapiClient::WalletsApi* | [**get_incoming_payments_count_async**](docs/WalletsApi.md#get_incoming_payments_count_async) | **GET** /api/v2/WalletsService/Wallets/{walletId}/Payments/Incoming/Count | Get Incoming Payments Count
 *OpenapiClient::WalletsApi* | [**get_incoming_wallet_invoices_async**](docs/WalletsApi.md#get_incoming_wallet_invoices_async) | **GET** /api/v2/WalletsService/Wallets/{walletId}/Invoices/Incoming | Get Incoming Wallet Invoices
@@ -104,6 +110,11 @@ Class | Method | HTTP request | Description
 *OpenapiClient::WalletsApi* | [**get_outgoing_payments_count_async**](docs/WalletsApi.md#get_outgoing_payments_count_async) | **GET** /api/v2/WalletsService/Wallets/{walletId}/Payments/Outgoing/Count | Get Outgoing Payments Count
 *OpenapiClient::WalletsApi* | [**get_outgoing_wallet_invoices_async**](docs/WalletsApi.md#get_outgoing_wallet_invoices_async) | **GET** /api/v2/WalletsService/Wallets/{walletId}/Invoices/Outgoing | Get Outgoing Wallet Invoices
 *OpenapiClient::WalletsApi* | [**get_outgoing_wallet_invoices_count_async**](docs/WalletsApi.md#get_outgoing_wallet_invoices_count_async) | **GET** /api/v2/WalletsService/Wallets/{walletId}/Invoices/Outgoing/Count | Get Outgoing Wallet Invoices Count
+*OpenapiClient::WalletsApi* | [**get_wallet_bank_account_async**](docs/WalletsApi.md#get_wallet_bank_account_async) | **GET** /api/v2/WalletsService/Wallets/{walletId}/BankAccounts/{bankAccountId} | Get Wallet Bank Account
+*OpenapiClient::WalletsApi* | [**get_wallet_bank_accounts_async**](docs/WalletsApi.md#get_wallet_bank_accounts_async) | **GET** /api/v2/WalletsService/Wallets/{walletId}/BankAccounts | Get Wallet Bank Accounts
+*OpenapiClient::WalletsApi* | [**get_wallet_bank_accounts_count_async**](docs/WalletsApi.md#get_wallet_bank_accounts_count_async) | **GET** /api/v2/WalletsService/Wallets/{walletId}/BankAccounts/Count | Get Wallet Bank Accounts Count
+*OpenapiClient::WalletsApi* | [**get_wallet_chargebacks_async**](docs/WalletsApi.md#get_wallet_chargebacks_async) | **GET** /api/v2/WalletsService/Wallets/{walletId}/Chargebacks | Get Wallet Chargebacks
+*OpenapiClient::WalletsApi* | [**get_wallet_chargebacks_count_async**](docs/WalletsApi.md#get_wallet_chargebacks_count_async) | **GET** /api/v2/WalletsService/Wallets/{walletId}/Chargebacks/Count | Get Wallet Chargebacks Count
 *OpenapiClient::WalletsApi* | [**get_wallet_details_async**](docs/WalletsApi.md#get_wallet_details_async) | **GET** /api/v2/WalletsService/Wallets/{walletId} | Get Wallet Details
 *OpenapiClient::WalletsApi* | [**get_wallet_extended_orders_async**](docs/WalletsApi.md#get_wallet_extended_orders_async) | **GET** /api/v2/WalletsService/Wallets/{walletId}/Orders/Extended | Get Wallet Extended Orders
 *OpenapiClient::WalletsApi* | [**get_wallet_invoices_async**](docs/WalletsApi.md#get_wallet_invoices_async) | **GET** /api/v2/WalletsService/Wallets/{walletId}/Invoices | Get Wallet Invoices
@@ -115,12 +126,30 @@ Class | Method | HTTP request | Description
 *OpenapiClient::WalletsApi* | [**get_wallet_orders_count_async**](docs/WalletsApi.md#get_wallet_orders_count_async) | **GET** /api/v2/WalletsService/Wallets/{walletId}/Orders/Count | Get Wallet Orders Count
 *OpenapiClient::WalletsApi* | [**get_wallet_payments_async**](docs/WalletsApi.md#get_wallet_payments_async) | **GET** /api/v2/WalletsService/Wallets/{walletId}/Payments | Get Wallet Payments
 *OpenapiClient::WalletsApi* | [**get_wallet_payments_count_async**](docs/WalletsApi.md#get_wallet_payments_count_async) | **GET** /api/v2/WalletsService/Wallets/{walletId}/Payments/Count | Get Wallet Payments Count
+*OpenapiClient::WalletsApi* | [**get_wallet_quotes_async**](docs/WalletsApi.md#get_wallet_quotes_async) | **GET** /api/v2/WalletsService/Wallets/{walletId}/Quotes | Get Wallet Quotes
+*OpenapiClient::WalletsApi* | [**get_wallet_quotes_count_async**](docs/WalletsApi.md#get_wallet_quotes_count_async) | **GET** /api/v2/WalletsService/Wallets/{walletId}/Quotes/Count | Get Wallet Quotes Count
+*OpenapiClient::WalletsApi* | [**get_wallet_refunds_async**](docs/WalletsApi.md#get_wallet_refunds_async) | **GET** /api/v2/WalletsService/Wallets/{walletId}/Refunds | Get Wallet Refunds
+*OpenapiClient::WalletsApi* | [**get_wallet_refunds_count_async**](docs/WalletsApi.md#get_wallet_refunds_count_async) | **GET** /api/v2/WalletsService/Wallets/{walletId}/Refunds/Count | Get Wallet Refunds Count
+*OpenapiClient::WalletsApi* | [**get_wallet_token_async**](docs/WalletsApi.md#get_wallet_token_async) | **GET** /api/v2/WalletsService/Wallets/{walletId}/Tokens/{tokenId} | Get Wallet Token
+*OpenapiClient::WalletsApi* | [**get_wallet_tokens_async**](docs/WalletsApi.md#get_wallet_tokens_async) | **GET** /api/v2/WalletsService/Wallets/{walletId}/Tokens | Get Wallet Tokens
+*OpenapiClient::WalletsApi* | [**get_wallet_tokens_count_async**](docs/WalletsApi.md#get_wallet_tokens_count_async) | **GET** /api/v2/WalletsService/Wallets/{walletId}/Tokens/Count | Get Wallet Tokens Count
+*OpenapiClient::WalletsApi* | [**get_wallet_withdraw_requests_async**](docs/WalletsApi.md#get_wallet_withdraw_requests_async) | **GET** /api/v2/WalletsService/Wallets/{walletId}/WithdrawRequests | Get Wallet Withdraw Requests
+*OpenapiClient::WalletsApi* | [**get_wallet_withdraw_requests_count_async**](docs/WalletsApi.md#get_wallet_withdraw_requests_count_async) | **GET** /api/v2/WalletsService/Wallets/{walletId}/WithdrawRequests/Count | Get Wallet Withdraw Requests Count
+*OpenapiClient::WalletsApi* | [**get_wallet_withdraws_async**](docs/WalletsApi.md#get_wallet_withdraws_async) | **GET** /api/v2/WalletsService/Wallets/{walletId}/Withdraws | Get Wallet Withdraws
+*OpenapiClient::WalletsApi* | [**get_wallet_withdraws_count_async**](docs/WalletsApi.md#get_wallet_withdraws_count_async) | **GET** /api/v2/WalletsService/Wallets/{walletId}/Withdraws/Count | Get Wallet Withdraws Count
+*OpenapiClient::WalletsApi* | [**update_wallet_bank_account_async**](docs/WalletsApi.md#update_wallet_bank_account_async) | **PUT** /api/v2/WalletsService/Wallets/{walletId}/BankAccounts/{bankAccountId} | Update Wallet Bank Account
 *OpenapiClient::WalletsApi* | [**update_wallet_location_async**](docs/WalletsApi.md#update_wallet_location_async) | **PUT** /api/v2/WalletsService/Wallets/{walletId}/Locations/{locationId} | Update Wallet Location
+*OpenapiClient::WalletsApi* | [**update_wallet_token_async**](docs/WalletsApi.md#update_wallet_token_async) | **PUT** /api/v2/WalletsService/Wallets/{walletId}/Tokens/{tokenId} | Update Wallet Token
 
 
 ## Documentation for Models
 
  - [OpenapiClient::AccessTokenResponse](docs/AccessTokenResponse.md)
+ - [OpenapiClient::BankAccountCreateDto](docs/BankAccountCreateDto.md)
+ - [OpenapiClient::BankAccountDto](docs/BankAccountDto.md)
+ - [OpenapiClient::BankAccountDtoEnvelope](docs/BankAccountDtoEnvelope.md)
+ - [OpenapiClient::BankAccountDtoListEnvelope](docs/BankAccountDtoListEnvelope.md)
+ - [OpenapiClient::BankAccountUpdateDto](docs/BankAccountUpdateDto.md)
  - [OpenapiClient::ContactDto](docs/ContactDto.md)
  - [OpenapiClient::EmptyEnvelope](docs/EmptyEnvelope.md)
  - [OpenapiClient::ErrorEnvelope](docs/ErrorEnvelope.md)
@@ -141,8 +170,20 @@ Class | Method | HTTP request | Description
  - [OpenapiClient::LoginRequest](docs/LoginRequest.md)
  - [OpenapiClient::OrderDto](docs/OrderDto.md)
  - [OpenapiClient::OrderDtoListEnvelope](docs/OrderDtoListEnvelope.md)
+ - [OpenapiClient::PaymentChargebackDto](docs/PaymentChargebackDto.md)
+ - [OpenapiClient::PaymentChargebackDtoListEnvelope](docs/PaymentChargebackDtoListEnvelope.md)
+ - [OpenapiClient::PaymentCreateDto](docs/PaymentCreateDto.md)
  - [OpenapiClient::PaymentDto](docs/PaymentDto.md)
  - [OpenapiClient::PaymentDtoListEnvelope](docs/PaymentDtoListEnvelope.md)
+ - [OpenapiClient::PaymentRefundDto](docs/PaymentRefundDto.md)
+ - [OpenapiClient::PaymentRefundDtoListEnvelope](docs/PaymentRefundDtoListEnvelope.md)
+ - [OpenapiClient::PaymentTokenCreateDto](docs/PaymentTokenCreateDto.md)
+ - [OpenapiClient::PaymentTokenDto](docs/PaymentTokenDto.md)
+ - [OpenapiClient::PaymentTokenDtoEnvelope](docs/PaymentTokenDtoEnvelope.md)
+ - [OpenapiClient::PaymentTokenDtoListEnvelope](docs/PaymentTokenDtoListEnvelope.md)
+ - [OpenapiClient::PaymentTokenUpdateDto](docs/PaymentTokenUpdateDto.md)
+ - [OpenapiClient::QuoteDto](docs/QuoteDto.md)
+ - [OpenapiClient::QuoteDtoListEnvelope](docs/QuoteDtoListEnvelope.md)
  - [OpenapiClient::RefreshRequest](docs/RefreshRequest.md)
  - [OpenapiClient::RegisterRequest](docs/RegisterRequest.md)
  - [OpenapiClient::ResendConfirmationEmailRequest](docs/ResendConfirmationEmailRequest.md)
@@ -154,6 +195,11 @@ Class | Method | HTTP request | Description
  - [OpenapiClient::UserDto](docs/UserDto.md)
  - [OpenapiClient::WalletDto](docs/WalletDto.md)
  - [OpenapiClient::WalletDtoEnvelope](docs/WalletDtoEnvelope.md)
+ - [OpenapiClient::WalletWithdrawDto](docs/WalletWithdrawDto.md)
+ - [OpenapiClient::WalletWithdrawDtoListEnvelope](docs/WalletWithdrawDtoListEnvelope.md)
+ - [OpenapiClient::WalletWithdrawRequestCreateDto](docs/WalletWithdrawRequestCreateDto.md)
+ - [OpenapiClient::WalletWithdrawRequestDto](docs/WalletWithdrawRequestDto.md)
+ - [OpenapiClient::WalletWithdrawRequestDtoListEnvelope](docs/WalletWithdrawRequestDtoListEnvelope.md)
 
 
 ## Documentation for Authorization

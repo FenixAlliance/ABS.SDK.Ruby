@@ -21,7 +21,7 @@ module OpenapiClient
     end
     # Create a fiscal responsibility record
     # Creates a new fiscal responsibility record for a fiscal responsibility.
-    # @param tenant_id [Object] 
+    # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
@@ -34,7 +34,7 @@ module OpenapiClient
 
     # Create a fiscal responsibility record
     # Creates a new fiscal responsibility record for a fiscal responsibility.
-    # @param tenant_id [Object] 
+    # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
@@ -98,7 +98,7 @@ module OpenapiClient
 
     # Delete a fiscal responsibility record
     # Deletes a fiscal responsibility record identified by its unique identifier.
-    # @param tenant_id [Object] 
+    # @param tenant_id [String] 
     # @param fiscal_responsibility_record_id [String] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
@@ -111,7 +111,7 @@ module OpenapiClient
 
     # Delete a fiscal responsibility record
     # Deletes a fiscal responsibility record identified by its unique identifier.
-    # @param tenant_id [Object] 
+    # @param tenant_id [String] 
     # @param fiscal_responsibility_record_id [String] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
@@ -174,7 +174,7 @@ module OpenapiClient
 
     # Get fiscal responsibility record by ID
     # Retrieves a specific fiscal responsibility record by its unique identifier.
-    # @param tenant_id [Object] 
+    # @param tenant_id [String] 
     # @param fiscal_authority_id [String] 
     # @param fiscal_responsibility_id [String] 
     # @param fiscal_responsibility_record_id [String] 
@@ -189,7 +189,7 @@ module OpenapiClient
 
     # Get fiscal responsibility record by ID
     # Retrieves a specific fiscal responsibility record by its unique identifier.
-    # @param tenant_id [Object] 
+    # @param tenant_id [String] 
     # @param fiscal_authority_id [String] 
     # @param fiscal_responsibility_id [String] 
     # @param fiscal_responsibility_record_id [String] 
@@ -262,7 +262,7 @@ module OpenapiClient
 
     # Get fiscal responsibility records
     # Retrieves all fiscal responsibility records for the specified fiscal responsibility.
-    # @param tenant_id [Object] 
+    # @param tenant_id [String] 
     # @param fiscal_authority_id [String] 
     # @param fiscal_responsibility_id [String] 
     # @param [Hash] opts the optional parameters
@@ -276,7 +276,7 @@ module OpenapiClient
 
     # Get fiscal responsibility records
     # Retrieves all fiscal responsibility records for the specified fiscal responsibility.
-    # @param tenant_id [Object] 
+    # @param tenant_id [String] 
     # @param fiscal_authority_id [String] 
     # @param fiscal_responsibility_id [String] 
     # @param [Hash] opts the optional parameters
@@ -344,7 +344,7 @@ module OpenapiClient
 
     # Get fiscal responsibility records count
     # Returns the total count of fiscal responsibility records for the specified fiscal responsibility.
-    # @param tenant_id [Object] 
+    # @param tenant_id [String] 
     # @param fiscal_authority_id [String] 
     # @param fiscal_responsibility_id [String] 
     # @param [Hash] opts the optional parameters
@@ -358,7 +358,7 @@ module OpenapiClient
 
     # Get fiscal responsibility records count
     # Returns the total count of fiscal responsibility records for the specified fiscal responsibility.
-    # @param tenant_id [Object] 
+    # @param tenant_id [String] 
     # @param fiscal_authority_id [String] 
     # @param fiscal_responsibility_id [String] 
     # @param [Hash] opts the optional parameters
@@ -426,7 +426,7 @@ module OpenapiClient
 
     # Update a fiscal responsibility record
     # Updates an existing fiscal responsibility record identified by its unique identifier.
-    # @param tenant_id [Object] 
+    # @param tenant_id [String] 
     # @param fiscal_responsibility_record_id [String] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
@@ -440,7 +440,7 @@ module OpenapiClient
 
     # Update a fiscal responsibility record
     # Updates an existing fiscal responsibility record identified by its unique identifier.
-    # @param tenant_id [Object] 
+    # @param tenant_id [String] 
     # @param fiscal_responsibility_record_id [String] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 

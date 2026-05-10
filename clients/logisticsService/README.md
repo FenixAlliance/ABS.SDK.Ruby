@@ -95,6 +95,54 @@ Class | Method | HTTP request | Description
 *OpenapiClient::FenixAllianceABSWebApi* | [**reset_password_post**](docs/FenixAllianceABSWebApi.md#reset_password_post) | **POST** /resetPassword | 
 *OpenapiClient::FenixAllianceABSWebApi* | [**version_get**](docs/FenixAllianceABSWebApi.md#version_get) | **GET** /version | 
 *OpenapiClient::StockApi* | [**get_contacts_async**](docs/StockApi.md#get_contacts_async) | **GET** /api/v2/LogisticsService/Stock | Get all stock-related contacts
+*OpenapiClient::WarehousingApi* | [**create_item_packing_slip_async**](docs/WarehousingApi.md#create_item_packing_slip_async) | **POST** /api/v2/LogisticsService/ItemPackingSlips | Create an item packing slip
+*OpenapiClient::WarehousingApi* | [**create_item_packing_slip_entry_async**](docs/WarehousingApi.md#create_item_packing_slip_entry_async) | **POST** /api/v2/LogisticsService/ItemPackingSlips/{packingSlipId}/Entries | Create a packing slip entry
+*OpenapiClient::WarehousingApi* | [**create_item_pick_list_async**](docs/WarehousingApi.md#create_item_pick_list_async) | **POST** /api/v2/LogisticsService/ItemPickLists | Create an item pick list
+*OpenapiClient::WarehousingApi* | [**create_item_pick_list_entry_async**](docs/WarehousingApi.md#create_item_pick_list_entry_async) | **POST** /api/v2/LogisticsService/ItemPickLists/{pickListId}/Entries | Create a pick list entry
+*OpenapiClient::WarehousingApi* | [**create_item_restock_async**](docs/WarehousingApi.md#create_item_restock_async) | **POST** /api/v2/LogisticsService/ItemRestocks | Create an item restock
+*OpenapiClient::WarehousingApi* | [**create_item_restock_entry_async**](docs/WarehousingApi.md#create_item_restock_entry_async) | **POST** /api/v2/LogisticsService/ItemRestocks/{restockId}/Entries | Create a restock entry
+*OpenapiClient::WarehousingApi* | [**create_item_retain_sample_async**](docs/WarehousingApi.md#create_item_retain_sample_async) | **POST** /api/v2/LogisticsService/ItemRetainSamples | Create an item retain sample
+*OpenapiClient::WarehousingApi* | [**create_warehouse_async**](docs/WarehousingApi.md#create_warehouse_async) | **POST** /api/v2/LogisticsService/Warehouses | Create a warehouse
+*OpenapiClient::WarehousingApi* | [**delete_item_packing_slip_async**](docs/WarehousingApi.md#delete_item_packing_slip_async) | **DELETE** /api/v2/LogisticsService/ItemPackingSlips/{packingSlipId} | Delete an item packing slip
+*OpenapiClient::WarehousingApi* | [**delete_item_packing_slip_entry_async**](docs/WarehousingApi.md#delete_item_packing_slip_entry_async) | **DELETE** /api/v2/LogisticsService/ItemPackingSlips/{packingSlipId}/Entries/{entryId} | Delete a packing slip entry
+*OpenapiClient::WarehousingApi* | [**delete_item_pick_list_async**](docs/WarehousingApi.md#delete_item_pick_list_async) | **DELETE** /api/v2/LogisticsService/ItemPickLists/{pickListId} | Delete an item pick list
+*OpenapiClient::WarehousingApi* | [**delete_item_pick_list_entry_async**](docs/WarehousingApi.md#delete_item_pick_list_entry_async) | **DELETE** /api/v2/LogisticsService/ItemPickLists/{pickListId}/Entries/{entryId} | Delete a pick list entry
+*OpenapiClient::WarehousingApi* | [**delete_item_restock_async**](docs/WarehousingApi.md#delete_item_restock_async) | **DELETE** /api/v2/LogisticsService/ItemRestocks/{restockId} | Delete an item restock
+*OpenapiClient::WarehousingApi* | [**delete_item_restock_entry_async**](docs/WarehousingApi.md#delete_item_restock_entry_async) | **DELETE** /api/v2/LogisticsService/ItemRestocks/{restockId}/Entries/{entryId} | Delete a restock entry
+*OpenapiClient::WarehousingApi* | [**delete_item_retain_sample_async**](docs/WarehousingApi.md#delete_item_retain_sample_async) | **DELETE** /api/v2/LogisticsService/ItemRetainSamples/{retainSampleId} | Delete an item retain sample
+*OpenapiClient::WarehousingApi* | [**delete_warehouse_async**](docs/WarehousingApi.md#delete_warehouse_async) | **DELETE** /api/v2/LogisticsService/Warehouses/{warehouseId} | Delete a warehouse
+*OpenapiClient::WarehousingApi* | [**get_item_packing_slip_by_id_async**](docs/WarehousingApi.md#get_item_packing_slip_by_id_async) | **GET** /api/v2/LogisticsService/ItemPackingSlips/{packingSlipId} | Get item packing slip by ID
+*OpenapiClient::WarehousingApi* | [**get_item_packing_slip_entries_async**](docs/WarehousingApi.md#get_item_packing_slip_entries_async) | **GET** /api/v2/LogisticsService/ItemPackingSlips/{packingSlipId}/Entries | Get packing slip entries
+*OpenapiClient::WarehousingApi* | [**get_item_packing_slip_entries_count_async**](docs/WarehousingApi.md#get_item_packing_slip_entries_count_async) | **GET** /api/v2/LogisticsService/ItemPackingSlips/{packingSlipId}/Entries/Count | Get packing slip entries count
+*OpenapiClient::WarehousingApi* | [**get_item_packing_slip_entry_by_id_async**](docs/WarehousingApi.md#get_item_packing_slip_entry_by_id_async) | **GET** /api/v2/LogisticsService/ItemPackingSlips/{packingSlipId}/Entries/{entryId} | Get packing slip entry by ID
+*OpenapiClient::WarehousingApi* | [**get_item_packing_slips_async**](docs/WarehousingApi.md#get_item_packing_slips_async) | **GET** /api/v2/LogisticsService/ItemPackingSlips | Get all item packing slips
+*OpenapiClient::WarehousingApi* | [**get_item_packing_slips_count_async**](docs/WarehousingApi.md#get_item_packing_slips_count_async) | **GET** /api/v2/LogisticsService/ItemPackingSlips/Count | Get item packing slips count
+*OpenapiClient::WarehousingApi* | [**get_item_pick_list_by_id_async**](docs/WarehousingApi.md#get_item_pick_list_by_id_async) | **GET** /api/v2/LogisticsService/ItemPickLists/{pickListId} | Get item pick list by ID
+*OpenapiClient::WarehousingApi* | [**get_item_pick_list_entries_async**](docs/WarehousingApi.md#get_item_pick_list_entries_async) | **GET** /api/v2/LogisticsService/ItemPickLists/{pickListId}/Entries | Get pick list entries
+*OpenapiClient::WarehousingApi* | [**get_item_pick_list_entries_count_async**](docs/WarehousingApi.md#get_item_pick_list_entries_count_async) | **GET** /api/v2/LogisticsService/ItemPickLists/{pickListId}/Entries/Count | Get pick list entries count
+*OpenapiClient::WarehousingApi* | [**get_item_pick_list_entry_by_id_async**](docs/WarehousingApi.md#get_item_pick_list_entry_by_id_async) | **GET** /api/v2/LogisticsService/ItemPickLists/{pickListId}/Entries/{entryId} | Get pick list entry by ID
+*OpenapiClient::WarehousingApi* | [**get_item_pick_lists_async**](docs/WarehousingApi.md#get_item_pick_lists_async) | **GET** /api/v2/LogisticsService/ItemPickLists | Get all item pick lists
+*OpenapiClient::WarehousingApi* | [**get_item_pick_lists_count_async**](docs/WarehousingApi.md#get_item_pick_lists_count_async) | **GET** /api/v2/LogisticsService/ItemPickLists/Count | Get item pick lists count
+*OpenapiClient::WarehousingApi* | [**get_item_restock_by_id_async**](docs/WarehousingApi.md#get_item_restock_by_id_async) | **GET** /api/v2/LogisticsService/ItemRestocks/{restockId} | Get item restock by ID
+*OpenapiClient::WarehousingApi* | [**get_item_restock_entries_async**](docs/WarehousingApi.md#get_item_restock_entries_async) | **GET** /api/v2/LogisticsService/ItemRestocks/{restockId}/Entries | Get restock entries
+*OpenapiClient::WarehousingApi* | [**get_item_restock_entries_count_async**](docs/WarehousingApi.md#get_item_restock_entries_count_async) | **GET** /api/v2/LogisticsService/ItemRestocks/{restockId}/Entries/Count | Get restock entries count
+*OpenapiClient::WarehousingApi* | [**get_item_restock_entry_by_id_async**](docs/WarehousingApi.md#get_item_restock_entry_by_id_async) | **GET** /api/v2/LogisticsService/ItemRestocks/{restockId}/Entries/{entryId} | Get restock entry by ID
+*OpenapiClient::WarehousingApi* | [**get_item_restocks_async**](docs/WarehousingApi.md#get_item_restocks_async) | **GET** /api/v2/LogisticsService/ItemRestocks | Get all item restocks
+*OpenapiClient::WarehousingApi* | [**get_item_restocks_count_async**](docs/WarehousingApi.md#get_item_restocks_count_async) | **GET** /api/v2/LogisticsService/ItemRestocks/Count | Get item restocks count
+*OpenapiClient::WarehousingApi* | [**get_item_retain_sample_by_id_async**](docs/WarehousingApi.md#get_item_retain_sample_by_id_async) | **GET** /api/v2/LogisticsService/ItemRetainSamples/{retainSampleId} | Get item retain sample by ID
+*OpenapiClient::WarehousingApi* | [**get_item_retain_samples_async**](docs/WarehousingApi.md#get_item_retain_samples_async) | **GET** /api/v2/LogisticsService/ItemRetainSamples | Get all item retain samples
+*OpenapiClient::WarehousingApi* | [**get_item_retain_samples_count_async**](docs/WarehousingApi.md#get_item_retain_samples_count_async) | **GET** /api/v2/LogisticsService/ItemRetainSamples/Count | Get item retain samples count
+*OpenapiClient::WarehousingApi* | [**get_warehouse_by_id_async**](docs/WarehousingApi.md#get_warehouse_by_id_async) | **GET** /api/v2/LogisticsService/Warehouses/{warehouseId} | Get warehouse by ID
+*OpenapiClient::WarehousingApi* | [**get_warehouses_async**](docs/WarehousingApi.md#get_warehouses_async) | **GET** /api/v2/LogisticsService/Warehouses | Get all warehouses
+*OpenapiClient::WarehousingApi* | [**get_warehouses_count_async**](docs/WarehousingApi.md#get_warehouses_count_async) | **GET** /api/v2/LogisticsService/Warehouses/Count | Get warehouses count
+*OpenapiClient::WarehousingApi* | [**update_item_packing_slip_async**](docs/WarehousingApi.md#update_item_packing_slip_async) | **PUT** /api/v2/LogisticsService/ItemPackingSlips/{packingSlipId} | Update an item packing slip
+*OpenapiClient::WarehousingApi* | [**update_item_packing_slip_entry_async**](docs/WarehousingApi.md#update_item_packing_slip_entry_async) | **PUT** /api/v2/LogisticsService/ItemPackingSlips/{packingSlipId}/Entries/{entryId} | Update a packing slip entry
+*OpenapiClient::WarehousingApi* | [**update_item_pick_list_async**](docs/WarehousingApi.md#update_item_pick_list_async) | **PUT** /api/v2/LogisticsService/ItemPickLists/{pickListId} | Update an item pick list
+*OpenapiClient::WarehousingApi* | [**update_item_pick_list_entry_async**](docs/WarehousingApi.md#update_item_pick_list_entry_async) | **PUT** /api/v2/LogisticsService/ItemPickLists/{pickListId}/Entries/{entryId} | Update a pick list entry
+*OpenapiClient::WarehousingApi* | [**update_item_restock_async**](docs/WarehousingApi.md#update_item_restock_async) | **PUT** /api/v2/LogisticsService/ItemRestocks/{restockId} | Update an item restock
+*OpenapiClient::WarehousingApi* | [**update_item_restock_entry_async**](docs/WarehousingApi.md#update_item_restock_entry_async) | **PUT** /api/v2/LogisticsService/ItemRestocks/{restockId}/Entries/{entryId} | Update a restock entry
+*OpenapiClient::WarehousingApi* | [**update_item_retain_sample_async**](docs/WarehousingApi.md#update_item_retain_sample_async) | **PUT** /api/v2/LogisticsService/ItemRetainSamples/{retainSampleId} | Update an item retain sample
+*OpenapiClient::WarehousingApi* | [**update_warehouse_async**](docs/WarehousingApi.md#update_warehouse_async) | **PUT** /api/v2/LogisticsService/Warehouses/{warehouseId} | Update a warehouse
 
 
 ## Documentation for Models
@@ -102,11 +150,48 @@ Class | Method | HTTP request | Description
  - [OpenapiClient::AccessTokenResponse](docs/AccessTokenResponse.md)
  - [OpenapiClient::ContactDto](docs/ContactDto.md)
  - [OpenapiClient::ContactDtoListEnvelope](docs/ContactDtoListEnvelope.md)
+ - [OpenapiClient::EmptyEnvelope](docs/EmptyEnvelope.md)
  - [OpenapiClient::ErrorEnvelope](docs/ErrorEnvelope.md)
  - [OpenapiClient::ForgotPasswordRequest](docs/ForgotPasswordRequest.md)
  - [OpenapiClient::HttpValidationProblemDetails](docs/HttpValidationProblemDetails.md)
  - [OpenapiClient::InfoRequest](docs/InfoRequest.md)
  - [OpenapiClient::InfoResponse](docs/InfoResponse.md)
+ - [OpenapiClient::Int32Envelope](docs/Int32Envelope.md)
+ - [OpenapiClient::ItemPackingSlipCreateDto](docs/ItemPackingSlipCreateDto.md)
+ - [OpenapiClient::ItemPackingSlipDto](docs/ItemPackingSlipDto.md)
+ - [OpenapiClient::ItemPackingSlipDtoEnvelope](docs/ItemPackingSlipDtoEnvelope.md)
+ - [OpenapiClient::ItemPackingSlipDtoListEnvelope](docs/ItemPackingSlipDtoListEnvelope.md)
+ - [OpenapiClient::ItemPackingSlipEntryCreateDto](docs/ItemPackingSlipEntryCreateDto.md)
+ - [OpenapiClient::ItemPackingSlipEntryDto](docs/ItemPackingSlipEntryDto.md)
+ - [OpenapiClient::ItemPackingSlipEntryDtoEnvelope](docs/ItemPackingSlipEntryDtoEnvelope.md)
+ - [OpenapiClient::ItemPackingSlipEntryDtoListEnvelope](docs/ItemPackingSlipEntryDtoListEnvelope.md)
+ - [OpenapiClient::ItemPackingSlipEntryUpdateDto](docs/ItemPackingSlipEntryUpdateDto.md)
+ - [OpenapiClient::ItemPackingSlipUpdateDto](docs/ItemPackingSlipUpdateDto.md)
+ - [OpenapiClient::ItemPickListCreateDto](docs/ItemPickListCreateDto.md)
+ - [OpenapiClient::ItemPickListDto](docs/ItemPickListDto.md)
+ - [OpenapiClient::ItemPickListDtoEnvelope](docs/ItemPickListDtoEnvelope.md)
+ - [OpenapiClient::ItemPickListDtoListEnvelope](docs/ItemPickListDtoListEnvelope.md)
+ - [OpenapiClient::ItemPickListEntryCreateDto](docs/ItemPickListEntryCreateDto.md)
+ - [OpenapiClient::ItemPickListEntryDto](docs/ItemPickListEntryDto.md)
+ - [OpenapiClient::ItemPickListEntryDtoEnvelope](docs/ItemPickListEntryDtoEnvelope.md)
+ - [OpenapiClient::ItemPickListEntryDtoListEnvelope](docs/ItemPickListEntryDtoListEnvelope.md)
+ - [OpenapiClient::ItemPickListEntryUpdateDto](docs/ItemPickListEntryUpdateDto.md)
+ - [OpenapiClient::ItemPickListUpdateDto](docs/ItemPickListUpdateDto.md)
+ - [OpenapiClient::ItemRestockCreateDto](docs/ItemRestockCreateDto.md)
+ - [OpenapiClient::ItemRestockDto](docs/ItemRestockDto.md)
+ - [OpenapiClient::ItemRestockDtoEnvelope](docs/ItemRestockDtoEnvelope.md)
+ - [OpenapiClient::ItemRestockDtoListEnvelope](docs/ItemRestockDtoListEnvelope.md)
+ - [OpenapiClient::ItemRestockEntryCreateDto](docs/ItemRestockEntryCreateDto.md)
+ - [OpenapiClient::ItemRestockEntryDto](docs/ItemRestockEntryDto.md)
+ - [OpenapiClient::ItemRestockEntryDtoEnvelope](docs/ItemRestockEntryDtoEnvelope.md)
+ - [OpenapiClient::ItemRestockEntryDtoListEnvelope](docs/ItemRestockEntryDtoListEnvelope.md)
+ - [OpenapiClient::ItemRestockEntryUpdateDto](docs/ItemRestockEntryUpdateDto.md)
+ - [OpenapiClient::ItemRestockUpdateDto](docs/ItemRestockUpdateDto.md)
+ - [OpenapiClient::ItemRetainSampleCreateDto](docs/ItemRetainSampleCreateDto.md)
+ - [OpenapiClient::ItemRetainSampleDto](docs/ItemRetainSampleDto.md)
+ - [OpenapiClient::ItemRetainSampleDtoEnvelope](docs/ItemRetainSampleDtoEnvelope.md)
+ - [OpenapiClient::ItemRetainSampleDtoListEnvelope](docs/ItemRetainSampleDtoListEnvelope.md)
+ - [OpenapiClient::ItemRetainSampleUpdateDto](docs/ItemRetainSampleUpdateDto.md)
  - [OpenapiClient::LoginRequest](docs/LoginRequest.md)
  - [OpenapiClient::RefreshRequest](docs/RefreshRequest.md)
  - [OpenapiClient::RegisterRequest](docs/RegisterRequest.md)
@@ -114,6 +199,11 @@ Class | Method | HTTP request | Description
  - [OpenapiClient::ResetPasswordRequest](docs/ResetPasswordRequest.md)
  - [OpenapiClient::TwoFactorRequest](docs/TwoFactorRequest.md)
  - [OpenapiClient::TwoFactorResponse](docs/TwoFactorResponse.md)
+ - [OpenapiClient::WarehouseCreateDto](docs/WarehouseCreateDto.md)
+ - [OpenapiClient::WarehouseDto](docs/WarehouseDto.md)
+ - [OpenapiClient::WarehouseDtoEnvelope](docs/WarehouseDtoEnvelope.md)
+ - [OpenapiClient::WarehouseDtoListEnvelope](docs/WarehouseDtoListEnvelope.md)
+ - [OpenapiClient::WarehouseUpdateDto](docs/WarehouseUpdateDto.md)
 
 
 ## Documentation for Authorization

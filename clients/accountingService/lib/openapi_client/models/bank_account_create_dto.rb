@@ -19,25 +19,7 @@ module OpenapiClient
 
     attr_accessor :timestamp
 
-    attr_accessor :group
-
-    attr_accessor :frozen
-
     attr_accessor :name
-
-    attr_accessor :code
-
-    attr_accessor :path
-
-    attr_accessor :prefix
-
-    attr_accessor :currency_id
-
-    attr_accessor :account_type_id
-
-    attr_accessor :parent_account_id
-
-    attr_accessor :account_category
 
     attr_accessor :iban
 
@@ -53,43 +35,12 @@ module OpenapiClient
 
     attr_accessor :bank_profile_id
 
-    class EnumAttributeValidator
-      attr_reader :datatype
-      attr_reader :allowable_values
-
-      def initialize(datatype, allowable_values)
-        @allowable_values = allowable_values.map do |value|
-          case datatype.to_s
-          when /Integer/i
-            value.to_i
-          when /Float/i
-            value.to_f
-          else
-            value
-          end
-        end
-      end
-
-      def valid?(value)
-        !value || allowable_values.include?(value)
-      end
-    end
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'id' => :'id',
         :'timestamp' => :'timestamp',
-        :'group' => :'group',
-        :'frozen' => :'frozen',
         :'name' => :'name',
-        :'code' => :'code',
-        :'path' => :'path',
-        :'prefix' => :'prefix',
-        :'currency_id' => :'currencyId',
-        :'account_type_id' => :'accountTypeId',
-        :'parent_account_id' => :'parentAccountId',
-        :'account_category' => :'accountCategory',
         :'iban' => :'iban',
         :'swift' => :'swift',
         :'branch_code' => :'branchCode',
@@ -110,16 +61,7 @@ module OpenapiClient
       {
         :'id' => :'String',
         :'timestamp' => :'Time',
-        :'group' => :'Boolean',
-        :'frozen' => :'Boolean',
         :'name' => :'String',
-        :'code' => :'String',
-        :'path' => :'String',
-        :'prefix' => :'String',
-        :'currency_id' => :'String',
-        :'account_type_id' => :'String',
-        :'parent_account_id' => :'String',
-        :'account_category' => :'String',
         :'iban' => :'String',
         :'swift' => :'String',
         :'branch_code' => :'String',
@@ -133,11 +75,7 @@ module OpenapiClient
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
-        :'code',
-        :'path',
-        :'prefix',
-        :'account_type_id',
-        :'parent_account_id',
+        :'name',
         :'iban',
         :'swift',
         :'branch_code',
@@ -171,50 +109,8 @@ module OpenapiClient
         self.timestamp = attributes[:'timestamp']
       end
 
-      if attributes.key?(:'group')
-        self.group = attributes[:'group']
-      end
-
-      if attributes.key?(:'frozen')
-        self.frozen = attributes[:'frozen']
-      end
-
       if attributes.key?(:'name')
         self.name = attributes[:'name']
-      else
-        self.name = nil
-      end
-
-      if attributes.key?(:'code')
-        self.code = attributes[:'code']
-      end
-
-      if attributes.key?(:'path')
-        self.path = attributes[:'path']
-      end
-
-      if attributes.key?(:'prefix')
-        self.prefix = attributes[:'prefix']
-      end
-
-      if attributes.key?(:'currency_id')
-        self.currency_id = attributes[:'currency_id']
-      else
-        self.currency_id = nil
-      end
-
-      if attributes.key?(:'account_type_id')
-        self.account_type_id = attributes[:'account_type_id']
-      end
-
-      if attributes.key?(:'parent_account_id')
-        self.parent_account_id = attributes[:'parent_account_id']
-      end
-
-      if attributes.key?(:'account_category')
-        self.account_category = attributes[:'account_category']
-      else
-        self.account_category = nil
       end
 
       if attributes.key?(:'iban')
@@ -251,26 +147,6 @@ module OpenapiClient
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
       invalid_properties = Array.new
-      if @name.nil?
-        invalid_properties.push('invalid value for "name", name cannot be nil.')
-      end
-
-      if @name.to_s.length < 1
-        invalid_properties.push('invalid value for "name", the character length must be great than or equal to 1.')
-      end
-
-      if @currency_id.nil?
-        invalid_properties.push('invalid value for "currency_id", currency_id cannot be nil.')
-      end
-
-      if @currency_id.to_s.length < 1
-        invalid_properties.push('invalid value for "currency_id", the character length must be great than or equal to 1.')
-      end
-
-      if @account_category.nil?
-        invalid_properties.push('invalid value for "account_category", account_category cannot be nil.')
-      end
-
       if !@bank_id.nil? && @bank_id.to_s.length > 36
         invalid_properties.push('invalid value for "bank_id", the character length must be smaller than or equal to 36.')
       end
@@ -294,56 +170,11 @@ module OpenapiClient
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      return false if @name.nil?
-      return false if @name.to_s.length < 1
-      return false if @currency_id.nil?
-      return false if @currency_id.to_s.length < 1
-      return false if @account_category.nil?
-      account_category_validator = EnumAttributeValidator.new('String', ["Assets", "Equity", "Revenue", "Expense", "Liabilities"])
-      return false unless account_category_validator.valid?(@account_category)
       return false if !@bank_id.nil? && @bank_id.to_s.length > 36
       return false if !@bank_id.nil? && @bank_id.to_s.length < 0
       return false if !@bank_profile_id.nil? && @bank_profile_id.to_s.length > 36
       return false if !@bank_profile_id.nil? && @bank_profile_id.to_s.length < 0
       true
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] name Value to be assigned
-    def name=(name)
-      if name.nil?
-        fail ArgumentError, 'name cannot be nil'
-      end
-
-      if name.to_s.length < 1
-        fail ArgumentError, 'invalid value for "name", the character length must be great than or equal to 1.'
-      end
-
-      @name = name
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] currency_id Value to be assigned
-    def currency_id=(currency_id)
-      if currency_id.nil?
-        fail ArgumentError, 'currency_id cannot be nil'
-      end
-
-      if currency_id.to_s.length < 1
-        fail ArgumentError, 'invalid value for "currency_id", the character length must be great than or equal to 1.'
-      end
-
-      @currency_id = currency_id
-    end
-
-    # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] account_category Object to be assigned
-    def account_category=(account_category)
-      validator = EnumAttributeValidator.new('String', ["Assets", "Equity", "Revenue", "Expense", "Liabilities"])
-      unless validator.valid?(account_category)
-        fail ArgumentError, "invalid value for \"account_category\", must be one of #{validator.allowable_values}."
-      end
-      @account_category = account_category
     end
 
     # Custom attribute writer method with validation
@@ -381,16 +212,7 @@ module OpenapiClient
       self.class == o.class &&
           id == o.id &&
           timestamp == o.timestamp &&
-          group == o.group &&
-          frozen == o.frozen &&
           name == o.name &&
-          code == o.code &&
-          path == o.path &&
-          prefix == o.prefix &&
-          currency_id == o.currency_id &&
-          account_type_id == o.account_type_id &&
-          parent_account_id == o.parent_account_id &&
-          account_category == o.account_category &&
           iban == o.iban &&
           swift == o.swift &&
           branch_code == o.branch_code &&
@@ -409,7 +231,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, timestamp, group, frozen, name, code, path, prefix, currency_id, account_type_id, parent_account_id, account_category, iban, swift, branch_code, bank_account_number, qualified_name, bank_id, bank_profile_id].hash
+      [id, timestamp, name, iban, swift, branch_code, bank_account_number, qualified_name, bank_id, bank_profile_id].hash
     end
 
     # Builds the object from hash

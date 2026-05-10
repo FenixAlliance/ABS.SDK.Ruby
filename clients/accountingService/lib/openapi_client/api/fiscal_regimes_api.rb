@@ -21,7 +21,7 @@ module OpenapiClient
     end
     # Create a fiscal regime
     # Creates a new fiscal regime for a fiscal authority.
-    # @param tenant_id [Object] 
+    # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
@@ -34,7 +34,7 @@ module OpenapiClient
 
     # Create a fiscal regime
     # Creates a new fiscal regime for a fiscal authority.
-    # @param tenant_id [Object] 
+    # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
@@ -98,7 +98,7 @@ module OpenapiClient
 
     # Delete a fiscal regime
     # Deletes a fiscal regime identified by its unique identifier.
-    # @param tenant_id [Object] 
+    # @param tenant_id [String] 
     # @param regime_id [String] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
@@ -111,7 +111,7 @@ module OpenapiClient
 
     # Delete a fiscal regime
     # Deletes a fiscal regime identified by its unique identifier.
-    # @param tenant_id [Object] 
+    # @param tenant_id [String] 
     # @param regime_id [String] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
@@ -174,7 +174,7 @@ module OpenapiClient
 
     # Get fiscal regime by ID
     # Retrieves a specific fiscal regime by its unique identifier.
-    # @param tenant_id [Object] 
+    # @param tenant_id [String] 
     # @param fiscal_authority_id [String] 
     # @param regime_id [String] 
     # @param [Hash] opts the optional parameters
@@ -188,7 +188,7 @@ module OpenapiClient
 
     # Get fiscal regime by ID
     # Retrieves a specific fiscal regime by its unique identifier.
-    # @param tenant_id [Object] 
+    # @param tenant_id [String] 
     # @param fiscal_authority_id [String] 
     # @param regime_id [String] 
     # @param [Hash] opts the optional parameters
@@ -401,7 +401,7 @@ module OpenapiClient
 
     # Update a fiscal regime
     # Updates an existing fiscal regime identified by its unique identifier.
-    # @param tenant_id [Object] 
+    # @param tenant_id [String] 
     # @param regime_id [String] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
@@ -415,7 +415,7 @@ module OpenapiClient
 
     # Update a fiscal regime
     # Updates an existing fiscal regime identified by its unique identifier.
-    # @param tenant_id [Object] 
+    # @param tenant_id [String] 
     # @param regime_id [String] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 

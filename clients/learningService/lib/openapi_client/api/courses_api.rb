@@ -462,32 +462,28 @@ module OpenapiClient
 
     # Get course by ID
     # Retrieves a specific course by its ID.
-    # @param tenant_id [String] 
     # @param course_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [String] :tenant_id 
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
     # @return [CourseDto]
-    def get_course_by_id_async(tenant_id, course_id, opts = {})
-      data, _status_code, _headers = get_course_by_id_async_with_http_info(tenant_id, course_id, opts)
+    def get_course_by_id_async(course_id, opts = {})
+      data, _status_code, _headers = get_course_by_id_async_with_http_info(course_id, opts)
       data
     end
 
     # Get course by ID
     # Retrieves a specific course by its ID.
-    # @param tenant_id [String] 
     # @param course_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [String] :tenant_id 
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
     # @return [Array<(CourseDto, Integer, Hash)>] CourseDto data, response status code and response headers
-    def get_course_by_id_async_with_http_info(tenant_id, course_id, opts = {})
+    def get_course_by_id_async_with_http_info(course_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CoursesApi.get_course_by_id_async ...'
-      end
-      # verify the required parameter 'tenant_id' is set
-      if @api_client.config.client_side_validation && tenant_id.nil?
-        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling CoursesApi.get_course_by_id_async"
       end
       # verify the required parameter 'course_id' is set
       if @api_client.config.client_side_validation && course_id.nil?
@@ -498,7 +494,7 @@ module OpenapiClient
 
       # query parameters
       query_params = opts[:query_params] || {}
-      query_params[:'tenantId'] = tenant_id
+      query_params[:'tenantId'] = opts[:'tenant_id'] if !opts[:'tenant_id'].nil?
       query_params[:'api-version'] = opts[:'api_version'] if !opts[:'api_version'].nil?
 
       # header parameters

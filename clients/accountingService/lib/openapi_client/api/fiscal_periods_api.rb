@@ -21,7 +21,7 @@ module OpenapiClient
     end
     # Create a fiscal period
     # Creates a new fiscal period associated with a fiscal year.
-    # @param tenant_id [Object] 
+    # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
@@ -34,7 +34,7 @@ module OpenapiClient
 
     # Create a fiscal period
     # Creates a new fiscal period associated with a fiscal year.
-    # @param tenant_id [Object] 
+    # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
@@ -98,7 +98,7 @@ module OpenapiClient
 
     # Delete a fiscal period
     # Deletes a fiscal period identified by its unique identifier.
-    # @param tenant_id [Object] 
+    # @param tenant_id [String] 
     # @param fiscal_period_id [String] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
@@ -111,7 +111,7 @@ module OpenapiClient
 
     # Delete a fiscal period
     # Deletes a fiscal period identified by its unique identifier.
-    # @param tenant_id [Object] 
+    # @param tenant_id [String] 
     # @param fiscal_period_id [String] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
@@ -174,7 +174,7 @@ module OpenapiClient
 
     # Get fiscal period by ID
     # Retrieves a specific fiscal period by its unique identifier within a fiscal year.
-    # @param tenant_id [Object] 
+    # @param tenant_id [String] 
     # @param fiscal_authority_id [String] 
     # @param fiscal_year_id [String] 
     # @param fiscal_period_id [String] 
@@ -189,7 +189,7 @@ module OpenapiClient
 
     # Get fiscal period by ID
     # Retrieves a specific fiscal period by its unique identifier within a fiscal year.
-    # @param tenant_id [Object] 
+    # @param tenant_id [String] 
     # @param fiscal_authority_id [String] 
     # @param fiscal_year_id [String] 
     # @param fiscal_period_id [String] 
@@ -262,7 +262,7 @@ module OpenapiClient
 
     # Get fiscal periods for a fiscal year
     # Retrieves all fiscal periods for the specified fiscal year within a fiscal authority.
-    # @param tenant_id [Object] 
+    # @param tenant_id [String] 
     # @param fiscal_authority_id [String] 
     # @param fiscal_year_id [String] 
     # @param authority_id [String] 
@@ -277,7 +277,7 @@ module OpenapiClient
 
     # Get fiscal periods for a fiscal year
     # Retrieves all fiscal periods for the specified fiscal year within a fiscal authority.
-    # @param tenant_id [Object] 
+    # @param tenant_id [String] 
     # @param fiscal_authority_id [String] 
     # @param fiscal_year_id [String] 
     # @param authority_id [String] 
@@ -351,7 +351,7 @@ module OpenapiClient
 
     # Get fiscal periods count
     # Returns the total count of fiscal periods for the specified fiscal year.
-    # @param tenant_id [Object] 
+    # @param tenant_id [String] 
     # @param fiscal_authority_id [String] 
     # @param fiscal_year_id [String] 
     # @param [Hash] opts the optional parameters
@@ -365,7 +365,7 @@ module OpenapiClient
 
     # Get fiscal periods count
     # Returns the total count of fiscal periods for the specified fiscal year.
-    # @param tenant_id [Object] 
+    # @param tenant_id [String] 
     # @param fiscal_authority_id [String] 
     # @param fiscal_year_id [String] 
     # @param [Hash] opts the optional parameters
@@ -433,7 +433,7 @@ module OpenapiClient
 
     # Update a fiscal period
     # Updates an existing fiscal period identified by its unique identifier.
-    # @param tenant_id [Object] 
+    # @param tenant_id [String] 
     # @param fiscal_period_id [String] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
@@ -447,7 +447,7 @@ module OpenapiClient
 
     # Update a fiscal period
     # Updates an existing fiscal period identified by its unique identifier.
-    # @param tenant_id [Object] 
+    # @param tenant_id [String] 
     # @param fiscal_period_id [String] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 

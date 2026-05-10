@@ -21,6 +21,130 @@ module OpenapiClient
 
     attr_accessor :closed
 
+    attr_accessor :type
+
+    attr_accessor :title
+
+    attr_accessor :user_id
+
+    attr_accessor :tenant_id
+
+    attr_accessor :description
+
+    attr_accessor :price_list_id
+
+    attr_accessor :enrollment_id
+
+    attr_accessor :individual_id
+
+    attr_accessor :organization_id
+
+    attr_accessor :receiver_tenant_id
+
+    attr_accessor :first_name
+
+    attr_accessor :last_name
+
+    attr_accessor :company_name
+
+    attr_accessor :billing_email
+
+    attr_accessor :address_line1
+
+    attr_accessor :address_line2
+
+    attr_accessor :postal_code
+
+    attr_accessor :country_id
+
+    attr_accessor :state_id
+
+    attr_accessor :city_id
+
+    attr_accessor :customer_notes
+
+    attr_accessor :tax_calculation_method
+
+    attr_accessor :cost_calculation_method
+
+    attr_accessor :forex_rate
+
+    attr_accessor :forex_rates_snapshot
+
+    attr_accessor :currency_id
+
+    attr_accessor :total_detail
+
+    attr_accessor :total_detail_currency_id
+
+    attr_accessor :total_profit
+
+    attr_accessor :total_profit_currency_id
+
+    attr_accessor :total_discounts
+
+    attr_accessor :total_discounts_currency_id
+
+    attr_accessor :total_surcharges
+
+    attr_accessor :total_surcharges_currency_id
+
+    attr_accessor :total_tax_base
+
+    attr_accessor :total_tax_base_currency_id
+
+    attr_accessor :total_taxes
+
+    attr_accessor :total_taxes_currency_id
+
+    attr_accessor :total_shipping_cost
+
+    attr_accessor :total_shipping_cost_currency_id
+
+    attr_accessor :total_shipping_tax
+
+    attr_accessor :total_shipping_tax_currency_id
+
+    attr_accessor :total_withheld_tax
+
+    attr_accessor :total_withheld_tax_currency_id
+
+    attr_accessor :total_global_discounts
+
+    attr_accessor :total_global_discounts_currency_id
+
+    attr_accessor :total_global_surcharges
+
+    attr_accessor :total_global_surcharges_currency_id
+
+    attr_accessor :total
+
+    attr_accessor :total_currency_id
+
+    attr_accessor :total_detail_in_usd
+
+    attr_accessor :total_profit_in_usd
+
+    attr_accessor :total_discounts_in_usd
+
+    attr_accessor :total_surcharges_in_usd
+
+    attr_accessor :total_tax_base_in_usd
+
+    attr_accessor :total_taxes_in_usd
+
+    attr_accessor :total_withheld_taxes_in_usd
+
+    attr_accessor :total_shipping_cost_in_usd
+
+    attr_accessor :total_shipping_taxes_in_usd
+
+    attr_accessor :total_global_discounts_in_usd
+
+    attr_accessor :total_global_surcharges_in_usd
+
+    attr_accessor :total_in_usd
+
     attr_accessor :item_id
 
     attr_accessor :item_title
@@ -30,14 +154,6 @@ module OpenapiClient
     attr_accessor :item_primary_image_url
 
     attr_accessor :shipping_policy_id
-
-    attr_accessor :tenant_id
-
-    attr_accessor :enrollment_id
-
-    attr_accessor :currency_id
-
-    attr_accessor :description
 
     attr_accessor :quantity
 
@@ -95,43 +211,11 @@ module OpenapiClient
 
     attr_accessor :unit_group_id
 
-    attr_accessor :tax_calculation_method
-
-    attr_accessor :cost_calculation_method
-
-    attr_accessor :forex_rates
-
-    attr_accessor :forex_rate
-
-    attr_accessor :total_detail_in_usd
-
-    attr_accessor :total_profit_in_usd
-
-    attr_accessor :total_discounts_in_usd
-
-    attr_accessor :total_surcharges_in_usd
-
-    attr_accessor :total_tax_base_in_usd
-
-    attr_accessor :total_taxes_in_usd
-
-    attr_accessor :total_withheld_taxes_in_usd
-
-    attr_accessor :total_shipping_cost_in_usd
-
-    attr_accessor :total_shipping_taxes_in_usd
-
     attr_accessor :total_warranty_cost_in_usd
 
     attr_accessor :total_return_cost_in_usd
 
     attr_accessor :total_refund_cost_in_usd
-
-    attr_accessor :total_in_usd
-
-    attr_accessor :total_global_discounts_in_usd
-
-    attr_accessor :total_global_surcharges_in_usd
 
     attr_accessor :custom_global_surcharges_amount
 
@@ -154,80 +238,6 @@ module OpenapiClient
     attr_accessor :business_profile_record_id
 
     attr_accessor :parent_billing_item_record_id
-
-    attr_accessor :currency
-
-    attr_accessor :total_detail
-
-    attr_accessor :total_detail_currency_id
-
-    attr_accessor :total_detail_amount
-
-    attr_accessor :total_profit
-
-    attr_accessor :total_profit_currency_id
-
-    attr_accessor :total_profit_amount
-
-    attr_accessor :total_discounts
-
-    attr_accessor :total_discounts_currency_id
-
-    attr_accessor :total_discounts_amount
-
-    attr_accessor :total_surcharges
-
-    attr_accessor :total_surcharges_currency_id
-
-    attr_accessor :total_surcharges_amount
-
-    attr_accessor :total_tax_base
-
-    attr_accessor :total_tax_base_currency_id
-
-    attr_accessor :total_tax_base_amount
-
-    attr_accessor :total_taxes
-
-    attr_accessor :total_taxes_currency_id
-
-    attr_accessor :total_taxes_amount
-
-    attr_accessor :total_shipping_cost
-
-    attr_accessor :total_shipping_cost_currency_id
-
-    attr_accessor :total_shipping_cost_amount
-
-    attr_accessor :total_shipping_tax
-
-    attr_accessor :total_shipping_tax_currency_id
-
-    attr_accessor :total_shipping_tax_amount
-
-    attr_accessor :total_withheld_tax
-
-    attr_accessor :total_withheld_tax_currency_id
-
-    attr_accessor :total_withheld_tax_amount
-
-    attr_accessor :total_global_discounts
-
-    attr_accessor :total_global_discounts_currency_id
-
-    attr_accessor :total_global_discounts_amount
-
-    attr_accessor :total_global_surcharges
-
-    attr_accessor :total_global_surcharges_currency_id
-
-    attr_accessor :total_global_surcharges_amount
-
-    attr_accessor :total
-
-    attr_accessor :total_currency_id
-
-    attr_accessor :total_amount
 
     attr_accessor :quote_id
 
@@ -259,15 +269,73 @@ module OpenapiClient
         :'id' => :'id',
         :'timestamp' => :'timestamp',
         :'closed' => :'closed',
+        :'type' => :'type',
+        :'title' => :'title',
+        :'user_id' => :'userId',
+        :'tenant_id' => :'tenantId',
+        :'description' => :'description',
+        :'price_list_id' => :'priceListId',
+        :'enrollment_id' => :'enrollmentId',
+        :'individual_id' => :'individualId',
+        :'organization_id' => :'organizationId',
+        :'receiver_tenant_id' => :'receiverTenantId',
+        :'first_name' => :'firstName',
+        :'last_name' => :'lastName',
+        :'company_name' => :'companyName',
+        :'billing_email' => :'billingEmail',
+        :'address_line1' => :'addressLine1',
+        :'address_line2' => :'addressLine2',
+        :'postal_code' => :'postalCode',
+        :'country_id' => :'countryId',
+        :'state_id' => :'stateId',
+        :'city_id' => :'cityId',
+        :'customer_notes' => :'customerNotes',
+        :'tax_calculation_method' => :'taxCalculationMethod',
+        :'cost_calculation_method' => :'costCalculationMethod',
+        :'forex_rate' => :'forexRate',
+        :'forex_rates_snapshot' => :'forexRatesSnapshot',
+        :'currency_id' => :'currencyId',
+        :'total_detail' => :'totalDetail',
+        :'total_detail_currency_id' => :'totalDetailCurrencyId',
+        :'total_profit' => :'totalProfit',
+        :'total_profit_currency_id' => :'totalProfitCurrencyId',
+        :'total_discounts' => :'totalDiscounts',
+        :'total_discounts_currency_id' => :'totalDiscountsCurrencyId',
+        :'total_surcharges' => :'totalSurcharges',
+        :'total_surcharges_currency_id' => :'totalSurchargesCurrencyId',
+        :'total_tax_base' => :'totalTaxBase',
+        :'total_tax_base_currency_id' => :'totalTaxBaseCurrencyId',
+        :'total_taxes' => :'totalTaxes',
+        :'total_taxes_currency_id' => :'totalTaxesCurrencyId',
+        :'total_shipping_cost' => :'totalShippingCost',
+        :'total_shipping_cost_currency_id' => :'totalShippingCostCurrencyId',
+        :'total_shipping_tax' => :'totalShippingTax',
+        :'total_shipping_tax_currency_id' => :'totalShippingTaxCurrencyId',
+        :'total_withheld_tax' => :'totalWithheldTax',
+        :'total_withheld_tax_currency_id' => :'totalWithheldTaxCurrencyId',
+        :'total_global_discounts' => :'totalGlobalDiscounts',
+        :'total_global_discounts_currency_id' => :'totalGlobalDiscountsCurrencyId',
+        :'total_global_surcharges' => :'totalGlobalSurcharges',
+        :'total_global_surcharges_currency_id' => :'totalGlobalSurchargesCurrencyId',
+        :'total' => :'total',
+        :'total_currency_id' => :'totalCurrencyId',
+        :'total_detail_in_usd' => :'totalDetailInUsd',
+        :'total_profit_in_usd' => :'totalProfitInUsd',
+        :'total_discounts_in_usd' => :'totalDiscountsInUsd',
+        :'total_surcharges_in_usd' => :'totalSurchargesInUsd',
+        :'total_tax_base_in_usd' => :'totalTaxBaseInUsd',
+        :'total_taxes_in_usd' => :'totalTaxesInUsd',
+        :'total_withheld_taxes_in_usd' => :'totalWithheldTaxesInUsd',
+        :'total_shipping_cost_in_usd' => :'totalShippingCostInUsd',
+        :'total_shipping_taxes_in_usd' => :'totalShippingTaxesInUsd',
+        :'total_global_discounts_in_usd' => :'totalGlobalDiscountsInUsd',
+        :'total_global_surcharges_in_usd' => :'totalGlobalSurchargesInUsd',
+        :'total_in_usd' => :'totalInUsd',
         :'item_id' => :'itemId',
         :'item_title' => :'itemTitle',
         :'item_short_description' => :'itemShortDescription',
         :'item_primary_image_url' => :'itemPrimaryImageUrl',
         :'shipping_policy_id' => :'shippingPolicyId',
-        :'tenant_id' => :'tenantId',
-        :'enrollment_id' => :'enrollmentId',
-        :'currency_id' => :'currencyId',
-        :'description' => :'description',
         :'quantity' => :'quantity',
         :'free' => :'free',
         :'free_reason' => :'freeReason',
@@ -296,25 +364,9 @@ module OpenapiClient
         :'price_list_item_id' => :'priceListItemId',
         :'unit_id' => :'unitId',
         :'unit_group_id' => :'unitGroupId',
-        :'tax_calculation_method' => :'taxCalculationMethod',
-        :'cost_calculation_method' => :'costCalculationMethod',
-        :'forex_rates' => :'forexRates',
-        :'forex_rate' => :'forexRate',
-        :'total_detail_in_usd' => :'totalDetailInUsd',
-        :'total_profit_in_usd' => :'totalProfitInUsd',
-        :'total_discounts_in_usd' => :'totalDiscountsInUsd',
-        :'total_surcharges_in_usd' => :'totalSurchargesInUsd',
-        :'total_tax_base_in_usd' => :'totalTaxBaseInUsd',
-        :'total_taxes_in_usd' => :'totalTaxesInUsd',
-        :'total_withheld_taxes_in_usd' => :'totalWithheldTaxesInUsd',
-        :'total_shipping_cost_in_usd' => :'totalShippingCostInUsd',
-        :'total_shipping_taxes_in_usd' => :'totalShippingTaxesInUsd',
         :'total_warranty_cost_in_usd' => :'totalWarrantyCostInUsd',
         :'total_return_cost_in_usd' => :'totalReturnCostInUsd',
         :'total_refund_cost_in_usd' => :'totalRefundCostInUsd',
-        :'total_in_usd' => :'totalInUsd',
-        :'total_global_discounts_in_usd' => :'totalGlobalDiscountsInUsd',
-        :'total_global_surcharges_in_usd' => :'totalGlobalSurchargesInUsd',
         :'custom_global_surcharges_amount' => :'customGlobalSurchargesAmount',
         :'custom_global_discounts_amount' => :'customGlobalDiscountsAmount',
         :'return_policy_id' => :'returnPolicyId',
@@ -326,43 +378,6 @@ module OpenapiClient
         :'quote_item_record_id' => :'quoteItemRecordId',
         :'business_profile_record_id' => :'businessProfileRecordId',
         :'parent_billing_item_record_id' => :'parentBillingItemRecordId',
-        :'currency' => :'currency',
-        :'total_detail' => :'totalDetail',
-        :'total_detail_currency_id' => :'totalDetailCurrencyId',
-        :'total_detail_amount' => :'totalDetailAmount',
-        :'total_profit' => :'totalProfit',
-        :'total_profit_currency_id' => :'totalProfitCurrencyId',
-        :'total_profit_amount' => :'totalProfitAmount',
-        :'total_discounts' => :'totalDiscounts',
-        :'total_discounts_currency_id' => :'totalDiscountsCurrencyId',
-        :'total_discounts_amount' => :'totalDiscountsAmount',
-        :'total_surcharges' => :'totalSurcharges',
-        :'total_surcharges_currency_id' => :'totalSurchargesCurrencyId',
-        :'total_surcharges_amount' => :'totalSurchargesAmount',
-        :'total_tax_base' => :'totalTaxBase',
-        :'total_tax_base_currency_id' => :'totalTaxBaseCurrencyId',
-        :'total_tax_base_amount' => :'totalTaxBaseAmount',
-        :'total_taxes' => :'totalTaxes',
-        :'total_taxes_currency_id' => :'totalTaxesCurrencyId',
-        :'total_taxes_amount' => :'totalTaxesAmount',
-        :'total_shipping_cost' => :'totalShippingCost',
-        :'total_shipping_cost_currency_id' => :'totalShippingCostCurrencyId',
-        :'total_shipping_cost_amount' => :'totalShippingCostAmount',
-        :'total_shipping_tax' => :'totalShippingTax',
-        :'total_shipping_tax_currency_id' => :'totalShippingTaxCurrencyId',
-        :'total_shipping_tax_amount' => :'totalShippingTaxAmount',
-        :'total_withheld_tax' => :'totalWithheldTax',
-        :'total_withheld_tax_currency_id' => :'totalWithheldTaxCurrencyId',
-        :'total_withheld_tax_amount' => :'totalWithheldTaxAmount',
-        :'total_global_discounts' => :'totalGlobalDiscounts',
-        :'total_global_discounts_currency_id' => :'totalGlobalDiscountsCurrencyId',
-        :'total_global_discounts_amount' => :'totalGlobalDiscountsAmount',
-        :'total_global_surcharges' => :'totalGlobalSurcharges',
-        :'total_global_surcharges_currency_id' => :'totalGlobalSurchargesCurrencyId',
-        :'total_global_surcharges_amount' => :'totalGlobalSurchargesAmount',
-        :'total' => :'total',
-        :'total_currency_id' => :'totalCurrencyId',
-        :'total_amount' => :'totalAmount',
         :'quote_id' => :'quoteId'
       }
     end
@@ -378,15 +393,73 @@ module OpenapiClient
         :'id' => :'String',
         :'timestamp' => :'Time',
         :'closed' => :'Boolean',
+        :'type' => :'String',
+        :'title' => :'String',
+        :'user_id' => :'String',
+        :'tenant_id' => :'String',
+        :'description' => :'String',
+        :'price_list_id' => :'String',
+        :'enrollment_id' => :'String',
+        :'individual_id' => :'String',
+        :'organization_id' => :'String',
+        :'receiver_tenant_id' => :'String',
+        :'first_name' => :'String',
+        :'last_name' => :'String',
+        :'company_name' => :'String',
+        :'billing_email' => :'String',
+        :'address_line1' => :'String',
+        :'address_line2' => :'String',
+        :'postal_code' => :'String',
+        :'country_id' => :'String',
+        :'state_id' => :'String',
+        :'city_id' => :'String',
+        :'customer_notes' => :'String',
+        :'tax_calculation_method' => :'String',
+        :'cost_calculation_method' => :'String',
+        :'forex_rate' => :'Float',
+        :'forex_rates_snapshot' => :'String',
+        :'currency_id' => :'String',
+        :'total_detail' => :'Float',
+        :'total_detail_currency_id' => :'String',
+        :'total_profit' => :'Float',
+        :'total_profit_currency_id' => :'String',
+        :'total_discounts' => :'Float',
+        :'total_discounts_currency_id' => :'String',
+        :'total_surcharges' => :'Float',
+        :'total_surcharges_currency_id' => :'String',
+        :'total_tax_base' => :'Float',
+        :'total_tax_base_currency_id' => :'String',
+        :'total_taxes' => :'Float',
+        :'total_taxes_currency_id' => :'String',
+        :'total_shipping_cost' => :'Float',
+        :'total_shipping_cost_currency_id' => :'String',
+        :'total_shipping_tax' => :'Float',
+        :'total_shipping_tax_currency_id' => :'String',
+        :'total_withheld_tax' => :'Float',
+        :'total_withheld_tax_currency_id' => :'String',
+        :'total_global_discounts' => :'Float',
+        :'total_global_discounts_currency_id' => :'String',
+        :'total_global_surcharges' => :'Float',
+        :'total_global_surcharges_currency_id' => :'String',
+        :'total' => :'Float',
+        :'total_currency_id' => :'String',
+        :'total_detail_in_usd' => :'Float',
+        :'total_profit_in_usd' => :'Float',
+        :'total_discounts_in_usd' => :'Float',
+        :'total_surcharges_in_usd' => :'Float',
+        :'total_tax_base_in_usd' => :'Float',
+        :'total_taxes_in_usd' => :'Float',
+        :'total_withheld_taxes_in_usd' => :'Float',
+        :'total_shipping_cost_in_usd' => :'Float',
+        :'total_shipping_taxes_in_usd' => :'Float',
+        :'total_global_discounts_in_usd' => :'Float',
+        :'total_global_surcharges_in_usd' => :'Float',
+        :'total_in_usd' => :'Float',
         :'item_id' => :'String',
         :'item_title' => :'String',
         :'item_short_description' => :'String',
         :'item_primary_image_url' => :'String',
         :'shipping_policy_id' => :'String',
-        :'tenant_id' => :'String',
-        :'enrollment_id' => :'String',
-        :'currency_id' => :'String',
-        :'description' => :'String',
         :'quantity' => :'Float',
         :'free' => :'Boolean',
         :'free_reason' => :'String',
@@ -415,25 +488,9 @@ module OpenapiClient
         :'price_list_item_id' => :'String',
         :'unit_id' => :'String',
         :'unit_group_id' => :'String',
-        :'tax_calculation_method' => :'String',
-        :'cost_calculation_method' => :'String',
-        :'forex_rates' => :'ForexRates',
-        :'forex_rate' => :'Float',
-        :'total_detail_in_usd' => :'Float',
-        :'total_profit_in_usd' => :'Float',
-        :'total_discounts_in_usd' => :'Float',
-        :'total_surcharges_in_usd' => :'Float',
-        :'total_tax_base_in_usd' => :'Float',
-        :'total_taxes_in_usd' => :'Float',
-        :'total_withheld_taxes_in_usd' => :'Float',
-        :'total_shipping_cost_in_usd' => :'Float',
-        :'total_shipping_taxes_in_usd' => :'Float',
         :'total_warranty_cost_in_usd' => :'Float',
         :'total_return_cost_in_usd' => :'Float',
         :'total_refund_cost_in_usd' => :'Float',
-        :'total_in_usd' => :'Float',
-        :'total_global_discounts_in_usd' => :'Float',
-        :'total_global_surcharges_in_usd' => :'Float',
         :'custom_global_surcharges_amount' => :'Float',
         :'custom_global_discounts_amount' => :'Float',
         :'return_policy_id' => :'String',
@@ -445,43 +502,6 @@ module OpenapiClient
         :'quote_item_record_id' => :'String',
         :'business_profile_record_id' => :'String',
         :'parent_billing_item_record_id' => :'String',
-        :'currency' => :'CurrencyId',
-        :'total_detail' => :'Float',
-        :'total_detail_currency_id' => :'String',
-        :'total_detail_amount' => :'Money',
-        :'total_profit' => :'Float',
-        :'total_profit_currency_id' => :'String',
-        :'total_profit_amount' => :'Money',
-        :'total_discounts' => :'Float',
-        :'total_discounts_currency_id' => :'String',
-        :'total_discounts_amount' => :'Money',
-        :'total_surcharges' => :'Float',
-        :'total_surcharges_currency_id' => :'String',
-        :'total_surcharges_amount' => :'Money',
-        :'total_tax_base' => :'Float',
-        :'total_tax_base_currency_id' => :'String',
-        :'total_tax_base_amount' => :'Money',
-        :'total_taxes' => :'Float',
-        :'total_taxes_currency_id' => :'String',
-        :'total_taxes_amount' => :'Money',
-        :'total_shipping_cost' => :'Float',
-        :'total_shipping_cost_currency_id' => :'String',
-        :'total_shipping_cost_amount' => :'Money',
-        :'total_shipping_tax' => :'Float',
-        :'total_shipping_tax_currency_id' => :'String',
-        :'total_shipping_tax_amount' => :'Money',
-        :'total_withheld_tax' => :'Float',
-        :'total_withheld_tax_currency_id' => :'String',
-        :'total_withheld_tax_amount' => :'Money',
-        :'total_global_discounts' => :'Float',
-        :'total_global_discounts_currency_id' => :'String',
-        :'total_global_discounts_amount' => :'Money',
-        :'total_global_surcharges' => :'Float',
-        :'total_global_surcharges_currency_id' => :'String',
-        :'total_global_surcharges_amount' => :'Money',
-        :'total' => :'Float',
-        :'total_currency_id' => :'String',
-        :'total_amount' => :'Money',
         :'quote_id' => :'String'
       }
     end
@@ -491,15 +511,46 @@ module OpenapiClient
       Set.new([
         :'id',
         :'timestamp',
+        :'type',
+        :'title',
+        :'user_id',
+        :'tenant_id',
+        :'description',
+        :'price_list_id',
+        :'enrollment_id',
+        :'individual_id',
+        :'organization_id',
+        :'receiver_tenant_id',
+        :'first_name',
+        :'last_name',
+        :'company_name',
+        :'billing_email',
+        :'address_line1',
+        :'address_line2',
+        :'postal_code',
+        :'country_id',
+        :'state_id',
+        :'city_id',
+        :'customer_notes',
+        :'forex_rates_snapshot',
+        :'currency_id',
+        :'total_detail_currency_id',
+        :'total_profit_currency_id',
+        :'total_discounts_currency_id',
+        :'total_surcharges_currency_id',
+        :'total_tax_base_currency_id',
+        :'total_taxes_currency_id',
+        :'total_shipping_cost_currency_id',
+        :'total_shipping_tax_currency_id',
+        :'total_withheld_tax_currency_id',
+        :'total_global_discounts_currency_id',
+        :'total_global_surcharges_currency_id',
+        :'total_currency_id',
         :'item_id',
         :'item_title',
         :'item_short_description',
         :'item_primary_image_url',
         :'shipping_policy_id',
-        :'tenant_id',
-        :'enrollment_id',
-        :'currency_id',
-        :'description',
         :'free_reason',
         :'free_reason_code',
         :'data',
@@ -535,18 +586,6 @@ module OpenapiClient
         :'quote_item_record_id',
         :'business_profile_record_id',
         :'parent_billing_item_record_id',
-        :'total_detail_currency_id',
-        :'total_profit_currency_id',
-        :'total_discounts_currency_id',
-        :'total_surcharges_currency_id',
-        :'total_tax_base_currency_id',
-        :'total_taxes_currency_id',
-        :'total_shipping_cost_currency_id',
-        :'total_shipping_tax_currency_id',
-        :'total_withheld_tax_currency_id',
-        :'total_global_discounts_currency_id',
-        :'total_global_surcharges_currency_id',
-        :'total_currency_id',
         :'quote_id'
       ])
     end
@@ -578,6 +617,254 @@ module OpenapiClient
         self.closed = attributes[:'closed']
       end
 
+      if attributes.key?(:'type')
+        self.type = attributes[:'type']
+      end
+
+      if attributes.key?(:'title')
+        self.title = attributes[:'title']
+      end
+
+      if attributes.key?(:'user_id')
+        self.user_id = attributes[:'user_id']
+      end
+
+      if attributes.key?(:'tenant_id')
+        self.tenant_id = attributes[:'tenant_id']
+      end
+
+      if attributes.key?(:'description')
+        self.description = attributes[:'description']
+      end
+
+      if attributes.key?(:'price_list_id')
+        self.price_list_id = attributes[:'price_list_id']
+      end
+
+      if attributes.key?(:'enrollment_id')
+        self.enrollment_id = attributes[:'enrollment_id']
+      end
+
+      if attributes.key?(:'individual_id')
+        self.individual_id = attributes[:'individual_id']
+      end
+
+      if attributes.key?(:'organization_id')
+        self.organization_id = attributes[:'organization_id']
+      end
+
+      if attributes.key?(:'receiver_tenant_id')
+        self.receiver_tenant_id = attributes[:'receiver_tenant_id']
+      end
+
+      if attributes.key?(:'first_name')
+        self.first_name = attributes[:'first_name']
+      end
+
+      if attributes.key?(:'last_name')
+        self.last_name = attributes[:'last_name']
+      end
+
+      if attributes.key?(:'company_name')
+        self.company_name = attributes[:'company_name']
+      end
+
+      if attributes.key?(:'billing_email')
+        self.billing_email = attributes[:'billing_email']
+      end
+
+      if attributes.key?(:'address_line1')
+        self.address_line1 = attributes[:'address_line1']
+      end
+
+      if attributes.key?(:'address_line2')
+        self.address_line2 = attributes[:'address_line2']
+      end
+
+      if attributes.key?(:'postal_code')
+        self.postal_code = attributes[:'postal_code']
+      end
+
+      if attributes.key?(:'country_id')
+        self.country_id = attributes[:'country_id']
+      end
+
+      if attributes.key?(:'state_id')
+        self.state_id = attributes[:'state_id']
+      end
+
+      if attributes.key?(:'city_id')
+        self.city_id = attributes[:'city_id']
+      end
+
+      if attributes.key?(:'customer_notes')
+        self.customer_notes = attributes[:'customer_notes']
+      end
+
+      if attributes.key?(:'tax_calculation_method')
+        self.tax_calculation_method = attributes[:'tax_calculation_method']
+      end
+
+      if attributes.key?(:'cost_calculation_method')
+        self.cost_calculation_method = attributes[:'cost_calculation_method']
+      end
+
+      if attributes.key?(:'forex_rate')
+        self.forex_rate = attributes[:'forex_rate']
+      end
+
+      if attributes.key?(:'forex_rates_snapshot')
+        self.forex_rates_snapshot = attributes[:'forex_rates_snapshot']
+      end
+
+      if attributes.key?(:'currency_id')
+        self.currency_id = attributes[:'currency_id']
+      end
+
+      if attributes.key?(:'total_detail')
+        self.total_detail = attributes[:'total_detail']
+      end
+
+      if attributes.key?(:'total_detail_currency_id')
+        self.total_detail_currency_id = attributes[:'total_detail_currency_id']
+      end
+
+      if attributes.key?(:'total_profit')
+        self.total_profit = attributes[:'total_profit']
+      end
+
+      if attributes.key?(:'total_profit_currency_id')
+        self.total_profit_currency_id = attributes[:'total_profit_currency_id']
+      end
+
+      if attributes.key?(:'total_discounts')
+        self.total_discounts = attributes[:'total_discounts']
+      end
+
+      if attributes.key?(:'total_discounts_currency_id')
+        self.total_discounts_currency_id = attributes[:'total_discounts_currency_id']
+      end
+
+      if attributes.key?(:'total_surcharges')
+        self.total_surcharges = attributes[:'total_surcharges']
+      end
+
+      if attributes.key?(:'total_surcharges_currency_id')
+        self.total_surcharges_currency_id = attributes[:'total_surcharges_currency_id']
+      end
+
+      if attributes.key?(:'total_tax_base')
+        self.total_tax_base = attributes[:'total_tax_base']
+      end
+
+      if attributes.key?(:'total_tax_base_currency_id')
+        self.total_tax_base_currency_id = attributes[:'total_tax_base_currency_id']
+      end
+
+      if attributes.key?(:'total_taxes')
+        self.total_taxes = attributes[:'total_taxes']
+      end
+
+      if attributes.key?(:'total_taxes_currency_id')
+        self.total_taxes_currency_id = attributes[:'total_taxes_currency_id']
+      end
+
+      if attributes.key?(:'total_shipping_cost')
+        self.total_shipping_cost = attributes[:'total_shipping_cost']
+      end
+
+      if attributes.key?(:'total_shipping_cost_currency_id')
+        self.total_shipping_cost_currency_id = attributes[:'total_shipping_cost_currency_id']
+      end
+
+      if attributes.key?(:'total_shipping_tax')
+        self.total_shipping_tax = attributes[:'total_shipping_tax']
+      end
+
+      if attributes.key?(:'total_shipping_tax_currency_id')
+        self.total_shipping_tax_currency_id = attributes[:'total_shipping_tax_currency_id']
+      end
+
+      if attributes.key?(:'total_withheld_tax')
+        self.total_withheld_tax = attributes[:'total_withheld_tax']
+      end
+
+      if attributes.key?(:'total_withheld_tax_currency_id')
+        self.total_withheld_tax_currency_id = attributes[:'total_withheld_tax_currency_id']
+      end
+
+      if attributes.key?(:'total_global_discounts')
+        self.total_global_discounts = attributes[:'total_global_discounts']
+      end
+
+      if attributes.key?(:'total_global_discounts_currency_id')
+        self.total_global_discounts_currency_id = attributes[:'total_global_discounts_currency_id']
+      end
+
+      if attributes.key?(:'total_global_surcharges')
+        self.total_global_surcharges = attributes[:'total_global_surcharges']
+      end
+
+      if attributes.key?(:'total_global_surcharges_currency_id')
+        self.total_global_surcharges_currency_id = attributes[:'total_global_surcharges_currency_id']
+      end
+
+      if attributes.key?(:'total')
+        self.total = attributes[:'total']
+      end
+
+      if attributes.key?(:'total_currency_id')
+        self.total_currency_id = attributes[:'total_currency_id']
+      end
+
+      if attributes.key?(:'total_detail_in_usd')
+        self.total_detail_in_usd = attributes[:'total_detail_in_usd']
+      end
+
+      if attributes.key?(:'total_profit_in_usd')
+        self.total_profit_in_usd = attributes[:'total_profit_in_usd']
+      end
+
+      if attributes.key?(:'total_discounts_in_usd')
+        self.total_discounts_in_usd = attributes[:'total_discounts_in_usd']
+      end
+
+      if attributes.key?(:'total_surcharges_in_usd')
+        self.total_surcharges_in_usd = attributes[:'total_surcharges_in_usd']
+      end
+
+      if attributes.key?(:'total_tax_base_in_usd')
+        self.total_tax_base_in_usd = attributes[:'total_tax_base_in_usd']
+      end
+
+      if attributes.key?(:'total_taxes_in_usd')
+        self.total_taxes_in_usd = attributes[:'total_taxes_in_usd']
+      end
+
+      if attributes.key?(:'total_withheld_taxes_in_usd')
+        self.total_withheld_taxes_in_usd = attributes[:'total_withheld_taxes_in_usd']
+      end
+
+      if attributes.key?(:'total_shipping_cost_in_usd')
+        self.total_shipping_cost_in_usd = attributes[:'total_shipping_cost_in_usd']
+      end
+
+      if attributes.key?(:'total_shipping_taxes_in_usd')
+        self.total_shipping_taxes_in_usd = attributes[:'total_shipping_taxes_in_usd']
+      end
+
+      if attributes.key?(:'total_global_discounts_in_usd')
+        self.total_global_discounts_in_usd = attributes[:'total_global_discounts_in_usd']
+      end
+
+      if attributes.key?(:'total_global_surcharges_in_usd')
+        self.total_global_surcharges_in_usd = attributes[:'total_global_surcharges_in_usd']
+      end
+
+      if attributes.key?(:'total_in_usd')
+        self.total_in_usd = attributes[:'total_in_usd']
+      end
+
       if attributes.key?(:'item_id')
         self.item_id = attributes[:'item_id']
       end
@@ -596,22 +883,6 @@ module OpenapiClient
 
       if attributes.key?(:'shipping_policy_id')
         self.shipping_policy_id = attributes[:'shipping_policy_id']
-      end
-
-      if attributes.key?(:'tenant_id')
-        self.tenant_id = attributes[:'tenant_id']
-      end
-
-      if attributes.key?(:'enrollment_id')
-        self.enrollment_id = attributes[:'enrollment_id']
-      end
-
-      if attributes.key?(:'currency_id')
-        self.currency_id = attributes[:'currency_id']
-      end
-
-      if attributes.key?(:'description')
-        self.description = attributes[:'description']
       end
 
       if attributes.key?(:'quantity')
@@ -726,58 +997,6 @@ module OpenapiClient
         self.unit_group_id = attributes[:'unit_group_id']
       end
 
-      if attributes.key?(:'tax_calculation_method')
-        self.tax_calculation_method = attributes[:'tax_calculation_method']
-      end
-
-      if attributes.key?(:'cost_calculation_method')
-        self.cost_calculation_method = attributes[:'cost_calculation_method']
-      end
-
-      if attributes.key?(:'forex_rates')
-        self.forex_rates = attributes[:'forex_rates']
-      end
-
-      if attributes.key?(:'forex_rate')
-        self.forex_rate = attributes[:'forex_rate']
-      end
-
-      if attributes.key?(:'total_detail_in_usd')
-        self.total_detail_in_usd = attributes[:'total_detail_in_usd']
-      end
-
-      if attributes.key?(:'total_profit_in_usd')
-        self.total_profit_in_usd = attributes[:'total_profit_in_usd']
-      end
-
-      if attributes.key?(:'total_discounts_in_usd')
-        self.total_discounts_in_usd = attributes[:'total_discounts_in_usd']
-      end
-
-      if attributes.key?(:'total_surcharges_in_usd')
-        self.total_surcharges_in_usd = attributes[:'total_surcharges_in_usd']
-      end
-
-      if attributes.key?(:'total_tax_base_in_usd')
-        self.total_tax_base_in_usd = attributes[:'total_tax_base_in_usd']
-      end
-
-      if attributes.key?(:'total_taxes_in_usd')
-        self.total_taxes_in_usd = attributes[:'total_taxes_in_usd']
-      end
-
-      if attributes.key?(:'total_withheld_taxes_in_usd')
-        self.total_withheld_taxes_in_usd = attributes[:'total_withheld_taxes_in_usd']
-      end
-
-      if attributes.key?(:'total_shipping_cost_in_usd')
-        self.total_shipping_cost_in_usd = attributes[:'total_shipping_cost_in_usd']
-      end
-
-      if attributes.key?(:'total_shipping_taxes_in_usd')
-        self.total_shipping_taxes_in_usd = attributes[:'total_shipping_taxes_in_usd']
-      end
-
       if attributes.key?(:'total_warranty_cost_in_usd')
         self.total_warranty_cost_in_usd = attributes[:'total_warranty_cost_in_usd']
       end
@@ -788,18 +1007,6 @@ module OpenapiClient
 
       if attributes.key?(:'total_refund_cost_in_usd')
         self.total_refund_cost_in_usd = attributes[:'total_refund_cost_in_usd']
-      end
-
-      if attributes.key?(:'total_in_usd')
-        self.total_in_usd = attributes[:'total_in_usd']
-      end
-
-      if attributes.key?(:'total_global_discounts_in_usd')
-        self.total_global_discounts_in_usd = attributes[:'total_global_discounts_in_usd']
-      end
-
-      if attributes.key?(:'total_global_surcharges_in_usd')
-        self.total_global_surcharges_in_usd = attributes[:'total_global_surcharges_in_usd']
       end
 
       if attributes.key?(:'custom_global_surcharges_amount')
@@ -844,154 +1051,6 @@ module OpenapiClient
 
       if attributes.key?(:'parent_billing_item_record_id')
         self.parent_billing_item_record_id = attributes[:'parent_billing_item_record_id']
-      end
-
-      if attributes.key?(:'currency')
-        self.currency = attributes[:'currency']
-      end
-
-      if attributes.key?(:'total_detail')
-        self.total_detail = attributes[:'total_detail']
-      end
-
-      if attributes.key?(:'total_detail_currency_id')
-        self.total_detail_currency_id = attributes[:'total_detail_currency_id']
-      end
-
-      if attributes.key?(:'total_detail_amount')
-        self.total_detail_amount = attributes[:'total_detail_amount']
-      end
-
-      if attributes.key?(:'total_profit')
-        self.total_profit = attributes[:'total_profit']
-      end
-
-      if attributes.key?(:'total_profit_currency_id')
-        self.total_profit_currency_id = attributes[:'total_profit_currency_id']
-      end
-
-      if attributes.key?(:'total_profit_amount')
-        self.total_profit_amount = attributes[:'total_profit_amount']
-      end
-
-      if attributes.key?(:'total_discounts')
-        self.total_discounts = attributes[:'total_discounts']
-      end
-
-      if attributes.key?(:'total_discounts_currency_id')
-        self.total_discounts_currency_id = attributes[:'total_discounts_currency_id']
-      end
-
-      if attributes.key?(:'total_discounts_amount')
-        self.total_discounts_amount = attributes[:'total_discounts_amount']
-      end
-
-      if attributes.key?(:'total_surcharges')
-        self.total_surcharges = attributes[:'total_surcharges']
-      end
-
-      if attributes.key?(:'total_surcharges_currency_id')
-        self.total_surcharges_currency_id = attributes[:'total_surcharges_currency_id']
-      end
-
-      if attributes.key?(:'total_surcharges_amount')
-        self.total_surcharges_amount = attributes[:'total_surcharges_amount']
-      end
-
-      if attributes.key?(:'total_tax_base')
-        self.total_tax_base = attributes[:'total_tax_base']
-      end
-
-      if attributes.key?(:'total_tax_base_currency_id')
-        self.total_tax_base_currency_id = attributes[:'total_tax_base_currency_id']
-      end
-
-      if attributes.key?(:'total_tax_base_amount')
-        self.total_tax_base_amount = attributes[:'total_tax_base_amount']
-      end
-
-      if attributes.key?(:'total_taxes')
-        self.total_taxes = attributes[:'total_taxes']
-      end
-
-      if attributes.key?(:'total_taxes_currency_id')
-        self.total_taxes_currency_id = attributes[:'total_taxes_currency_id']
-      end
-
-      if attributes.key?(:'total_taxes_amount')
-        self.total_taxes_amount = attributes[:'total_taxes_amount']
-      end
-
-      if attributes.key?(:'total_shipping_cost')
-        self.total_shipping_cost = attributes[:'total_shipping_cost']
-      end
-
-      if attributes.key?(:'total_shipping_cost_currency_id')
-        self.total_shipping_cost_currency_id = attributes[:'total_shipping_cost_currency_id']
-      end
-
-      if attributes.key?(:'total_shipping_cost_amount')
-        self.total_shipping_cost_amount = attributes[:'total_shipping_cost_amount']
-      end
-
-      if attributes.key?(:'total_shipping_tax')
-        self.total_shipping_tax = attributes[:'total_shipping_tax']
-      end
-
-      if attributes.key?(:'total_shipping_tax_currency_id')
-        self.total_shipping_tax_currency_id = attributes[:'total_shipping_tax_currency_id']
-      end
-
-      if attributes.key?(:'total_shipping_tax_amount')
-        self.total_shipping_tax_amount = attributes[:'total_shipping_tax_amount']
-      end
-
-      if attributes.key?(:'total_withheld_tax')
-        self.total_withheld_tax = attributes[:'total_withheld_tax']
-      end
-
-      if attributes.key?(:'total_withheld_tax_currency_id')
-        self.total_withheld_tax_currency_id = attributes[:'total_withheld_tax_currency_id']
-      end
-
-      if attributes.key?(:'total_withheld_tax_amount')
-        self.total_withheld_tax_amount = attributes[:'total_withheld_tax_amount']
-      end
-
-      if attributes.key?(:'total_global_discounts')
-        self.total_global_discounts = attributes[:'total_global_discounts']
-      end
-
-      if attributes.key?(:'total_global_discounts_currency_id')
-        self.total_global_discounts_currency_id = attributes[:'total_global_discounts_currency_id']
-      end
-
-      if attributes.key?(:'total_global_discounts_amount')
-        self.total_global_discounts_amount = attributes[:'total_global_discounts_amount']
-      end
-
-      if attributes.key?(:'total_global_surcharges')
-        self.total_global_surcharges = attributes[:'total_global_surcharges']
-      end
-
-      if attributes.key?(:'total_global_surcharges_currency_id')
-        self.total_global_surcharges_currency_id = attributes[:'total_global_surcharges_currency_id']
-      end
-
-      if attributes.key?(:'total_global_surcharges_amount')
-        self.total_global_surcharges_amount = attributes[:'total_global_surcharges_amount']
-      end
-
-      if attributes.key?(:'total')
-        self.total = attributes[:'total']
-      end
-
-      if attributes.key?(:'total_currency_id')
-        self.total_currency_id = attributes[:'total_currency_id']
-      end
-
-      if attributes.key?(:'total_amount')
-        self.total_amount = attributes[:'total_amount']
       end
 
       if attributes.key?(:'quote_id')
@@ -1046,15 +1105,73 @@ module OpenapiClient
           id == o.id &&
           timestamp == o.timestamp &&
           closed == o.closed &&
+          type == o.type &&
+          title == o.title &&
+          user_id == o.user_id &&
+          tenant_id == o.tenant_id &&
+          description == o.description &&
+          price_list_id == o.price_list_id &&
+          enrollment_id == o.enrollment_id &&
+          individual_id == o.individual_id &&
+          organization_id == o.organization_id &&
+          receiver_tenant_id == o.receiver_tenant_id &&
+          first_name == o.first_name &&
+          last_name == o.last_name &&
+          company_name == o.company_name &&
+          billing_email == o.billing_email &&
+          address_line1 == o.address_line1 &&
+          address_line2 == o.address_line2 &&
+          postal_code == o.postal_code &&
+          country_id == o.country_id &&
+          state_id == o.state_id &&
+          city_id == o.city_id &&
+          customer_notes == o.customer_notes &&
+          tax_calculation_method == o.tax_calculation_method &&
+          cost_calculation_method == o.cost_calculation_method &&
+          forex_rate == o.forex_rate &&
+          forex_rates_snapshot == o.forex_rates_snapshot &&
+          currency_id == o.currency_id &&
+          total_detail == o.total_detail &&
+          total_detail_currency_id == o.total_detail_currency_id &&
+          total_profit == o.total_profit &&
+          total_profit_currency_id == o.total_profit_currency_id &&
+          total_discounts == o.total_discounts &&
+          total_discounts_currency_id == o.total_discounts_currency_id &&
+          total_surcharges == o.total_surcharges &&
+          total_surcharges_currency_id == o.total_surcharges_currency_id &&
+          total_tax_base == o.total_tax_base &&
+          total_tax_base_currency_id == o.total_tax_base_currency_id &&
+          total_taxes == o.total_taxes &&
+          total_taxes_currency_id == o.total_taxes_currency_id &&
+          total_shipping_cost == o.total_shipping_cost &&
+          total_shipping_cost_currency_id == o.total_shipping_cost_currency_id &&
+          total_shipping_tax == o.total_shipping_tax &&
+          total_shipping_tax_currency_id == o.total_shipping_tax_currency_id &&
+          total_withheld_tax == o.total_withheld_tax &&
+          total_withheld_tax_currency_id == o.total_withheld_tax_currency_id &&
+          total_global_discounts == o.total_global_discounts &&
+          total_global_discounts_currency_id == o.total_global_discounts_currency_id &&
+          total_global_surcharges == o.total_global_surcharges &&
+          total_global_surcharges_currency_id == o.total_global_surcharges_currency_id &&
+          total == o.total &&
+          total_currency_id == o.total_currency_id &&
+          total_detail_in_usd == o.total_detail_in_usd &&
+          total_profit_in_usd == o.total_profit_in_usd &&
+          total_discounts_in_usd == o.total_discounts_in_usd &&
+          total_surcharges_in_usd == o.total_surcharges_in_usd &&
+          total_tax_base_in_usd == o.total_tax_base_in_usd &&
+          total_taxes_in_usd == o.total_taxes_in_usd &&
+          total_withheld_taxes_in_usd == o.total_withheld_taxes_in_usd &&
+          total_shipping_cost_in_usd == o.total_shipping_cost_in_usd &&
+          total_shipping_taxes_in_usd == o.total_shipping_taxes_in_usd &&
+          total_global_discounts_in_usd == o.total_global_discounts_in_usd &&
+          total_global_surcharges_in_usd == o.total_global_surcharges_in_usd &&
+          total_in_usd == o.total_in_usd &&
           item_id == o.item_id &&
           item_title == o.item_title &&
           item_short_description == o.item_short_description &&
           item_primary_image_url == o.item_primary_image_url &&
           shipping_policy_id == o.shipping_policy_id &&
-          tenant_id == o.tenant_id &&
-          enrollment_id == o.enrollment_id &&
-          currency_id == o.currency_id &&
-          description == o.description &&
           quantity == o.quantity &&
           free == o.free &&
           free_reason == o.free_reason &&
@@ -1083,25 +1200,9 @@ module OpenapiClient
           price_list_item_id == o.price_list_item_id &&
           unit_id == o.unit_id &&
           unit_group_id == o.unit_group_id &&
-          tax_calculation_method == o.tax_calculation_method &&
-          cost_calculation_method == o.cost_calculation_method &&
-          forex_rates == o.forex_rates &&
-          forex_rate == o.forex_rate &&
-          total_detail_in_usd == o.total_detail_in_usd &&
-          total_profit_in_usd == o.total_profit_in_usd &&
-          total_discounts_in_usd == o.total_discounts_in_usd &&
-          total_surcharges_in_usd == o.total_surcharges_in_usd &&
-          total_tax_base_in_usd == o.total_tax_base_in_usd &&
-          total_taxes_in_usd == o.total_taxes_in_usd &&
-          total_withheld_taxes_in_usd == o.total_withheld_taxes_in_usd &&
-          total_shipping_cost_in_usd == o.total_shipping_cost_in_usd &&
-          total_shipping_taxes_in_usd == o.total_shipping_taxes_in_usd &&
           total_warranty_cost_in_usd == o.total_warranty_cost_in_usd &&
           total_return_cost_in_usd == o.total_return_cost_in_usd &&
           total_refund_cost_in_usd == o.total_refund_cost_in_usd &&
-          total_in_usd == o.total_in_usd &&
-          total_global_discounts_in_usd == o.total_global_discounts_in_usd &&
-          total_global_surcharges_in_usd == o.total_global_surcharges_in_usd &&
           custom_global_surcharges_amount == o.custom_global_surcharges_amount &&
           custom_global_discounts_amount == o.custom_global_discounts_amount &&
           return_policy_id == o.return_policy_id &&
@@ -1113,43 +1214,6 @@ module OpenapiClient
           quote_item_record_id == o.quote_item_record_id &&
           business_profile_record_id == o.business_profile_record_id &&
           parent_billing_item_record_id == o.parent_billing_item_record_id &&
-          currency == o.currency &&
-          total_detail == o.total_detail &&
-          total_detail_currency_id == o.total_detail_currency_id &&
-          total_detail_amount == o.total_detail_amount &&
-          total_profit == o.total_profit &&
-          total_profit_currency_id == o.total_profit_currency_id &&
-          total_profit_amount == o.total_profit_amount &&
-          total_discounts == o.total_discounts &&
-          total_discounts_currency_id == o.total_discounts_currency_id &&
-          total_discounts_amount == o.total_discounts_amount &&
-          total_surcharges == o.total_surcharges &&
-          total_surcharges_currency_id == o.total_surcharges_currency_id &&
-          total_surcharges_amount == o.total_surcharges_amount &&
-          total_tax_base == o.total_tax_base &&
-          total_tax_base_currency_id == o.total_tax_base_currency_id &&
-          total_tax_base_amount == o.total_tax_base_amount &&
-          total_taxes == o.total_taxes &&
-          total_taxes_currency_id == o.total_taxes_currency_id &&
-          total_taxes_amount == o.total_taxes_amount &&
-          total_shipping_cost == o.total_shipping_cost &&
-          total_shipping_cost_currency_id == o.total_shipping_cost_currency_id &&
-          total_shipping_cost_amount == o.total_shipping_cost_amount &&
-          total_shipping_tax == o.total_shipping_tax &&
-          total_shipping_tax_currency_id == o.total_shipping_tax_currency_id &&
-          total_shipping_tax_amount == o.total_shipping_tax_amount &&
-          total_withheld_tax == o.total_withheld_tax &&
-          total_withheld_tax_currency_id == o.total_withheld_tax_currency_id &&
-          total_withheld_tax_amount == o.total_withheld_tax_amount &&
-          total_global_discounts == o.total_global_discounts &&
-          total_global_discounts_currency_id == o.total_global_discounts_currency_id &&
-          total_global_discounts_amount == o.total_global_discounts_amount &&
-          total_global_surcharges == o.total_global_surcharges &&
-          total_global_surcharges_currency_id == o.total_global_surcharges_currency_id &&
-          total_global_surcharges_amount == o.total_global_surcharges_amount &&
-          total == o.total &&
-          total_currency_id == o.total_currency_id &&
-          total_amount == o.total_amount &&
           quote_id == o.quote_id
     end
 
@@ -1162,7 +1226,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, timestamp, closed, item_id, item_title, item_short_description, item_primary_image_url, shipping_policy_id, tenant_id, enrollment_id, currency_id, description, quantity, free, free_reason, free_reason_code, data, data_label, data1, data1_label, data2, data2_label, data3, data3_label, data4, data4_label, data5, data5_label, data6, data6_label, data7, data7_label, data8, data8_label, data9, data9_label, item_price_id, price_list_item_id, unit_id, unit_group_id, tax_calculation_method, cost_calculation_method, forex_rates, forex_rate, total_detail_in_usd, total_profit_in_usd, total_discounts_in_usd, total_surcharges_in_usd, total_tax_base_in_usd, total_taxes_in_usd, total_withheld_taxes_in_usd, total_shipping_cost_in_usd, total_shipping_taxes_in_usd, total_warranty_cost_in_usd, total_return_cost_in_usd, total_refund_cost_in_usd, total_in_usd, total_global_discounts_in_usd, total_global_surcharges_in_usd, custom_global_surcharges_amount, custom_global_discounts_amount, return_policy_id, refund_policy_id, warranty_policy_id, shipment_policy_id, shipping_location_id, location_id, quote_item_record_id, business_profile_record_id, parent_billing_item_record_id, currency, total_detail, total_detail_currency_id, total_detail_amount, total_profit, total_profit_currency_id, total_profit_amount, total_discounts, total_discounts_currency_id, total_discounts_amount, total_surcharges, total_surcharges_currency_id, total_surcharges_amount, total_tax_base, total_tax_base_currency_id, total_tax_base_amount, total_taxes, total_taxes_currency_id, total_taxes_amount, total_shipping_cost, total_shipping_cost_currency_id, total_shipping_cost_amount, total_shipping_tax, total_shipping_tax_currency_id, total_shipping_tax_amount, total_withheld_tax, total_withheld_tax_currency_id, total_withheld_tax_amount, total_global_discounts, total_global_discounts_currency_id, total_global_discounts_amount, total_global_surcharges, total_global_surcharges_currency_id, total_global_surcharges_amount, total, total_currency_id, total_amount, quote_id].hash
+      [id, timestamp, closed, type, title, user_id, tenant_id, description, price_list_id, enrollment_id, individual_id, organization_id, receiver_tenant_id, first_name, last_name, company_name, billing_email, address_line1, address_line2, postal_code, country_id, state_id, city_id, customer_notes, tax_calculation_method, cost_calculation_method, forex_rate, forex_rates_snapshot, currency_id, total_detail, total_detail_currency_id, total_profit, total_profit_currency_id, total_discounts, total_discounts_currency_id, total_surcharges, total_surcharges_currency_id, total_tax_base, total_tax_base_currency_id, total_taxes, total_taxes_currency_id, total_shipping_cost, total_shipping_cost_currency_id, total_shipping_tax, total_shipping_tax_currency_id, total_withheld_tax, total_withheld_tax_currency_id, total_global_discounts, total_global_discounts_currency_id, total_global_surcharges, total_global_surcharges_currency_id, total, total_currency_id, total_detail_in_usd, total_profit_in_usd, total_discounts_in_usd, total_surcharges_in_usd, total_tax_base_in_usd, total_taxes_in_usd, total_withheld_taxes_in_usd, total_shipping_cost_in_usd, total_shipping_taxes_in_usd, total_global_discounts_in_usd, total_global_surcharges_in_usd, total_in_usd, item_id, item_title, item_short_description, item_primary_image_url, shipping_policy_id, quantity, free, free_reason, free_reason_code, data, data_label, data1, data1_label, data2, data2_label, data3, data3_label, data4, data4_label, data5, data5_label, data6, data6_label, data7, data7_label, data8, data8_label, data9, data9_label, item_price_id, price_list_item_id, unit_id, unit_group_id, total_warranty_cost_in_usd, total_return_cost_in_usd, total_refund_cost_in_usd, custom_global_surcharges_amount, custom_global_discounts_amount, return_policy_id, refund_policy_id, warranty_policy_id, shipment_policy_id, shipping_location_id, location_id, quote_item_record_id, business_profile_record_id, parent_billing_item_record_id, quote_id].hash
     end
 
     # Builds the object from hash

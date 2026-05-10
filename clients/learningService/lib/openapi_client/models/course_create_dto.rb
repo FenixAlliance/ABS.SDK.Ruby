@@ -21,12 +21,63 @@ module OpenapiClient
 
     attr_accessor :title
 
+    attr_accessor :description
+
+    attr_accessor :sku
+
+    attr_accessor :summary
+
+    attr_accessor :code
+
+    attr_accessor :version
+
+    attr_accessor :course_category_id
+
+    attr_accessor :instructor_profile_id
+
+    attr_accessor :currency_id
+
+    attr_accessor :regular_price
+
+    attr_accessor :max_course_enrollments
+
+    attr_accessor :total_effort_in_weeks
+
+    attr_accessor :total_hours_per_week
+
+    attr_accessor :total_effort_in_hours
+
+    attr_accessor :start_date_time
+
+    attr_accessor :end_date_time
+
+    attr_accessor :inscriptions_start_date_time
+
+    attr_accessor :inscriptions_end_date_time
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'id' => :'id',
         :'timestamp' => :'timestamp',
-        :'title' => :'title'
+        :'title' => :'title',
+        :'description' => :'description',
+        :'sku' => :'sku',
+        :'summary' => :'summary',
+        :'code' => :'code',
+        :'version' => :'version',
+        :'course_category_id' => :'courseCategoryID',
+        :'instructor_profile_id' => :'instructorProfileID',
+        :'currency_id' => :'currencyID',
+        :'regular_price' => :'regularPrice',
+        :'max_course_enrollments' => :'maxCourseEnrollments',
+        :'total_effort_in_weeks' => :'totalEffortInWeeks',
+        :'total_hours_per_week' => :'totalHoursPerWeek',
+        :'total_effort_in_hours' => :'totalEffortInHours',
+        :'start_date_time' => :'startDateTime',
+        :'end_date_time' => :'endDateTime',
+        :'inscriptions_start_date_time' => :'inscriptionsStartDateTime',
+        :'inscriptions_end_date_time' => :'inscriptionsEndDateTime'
       }
     end
 
@@ -40,14 +91,41 @@ module OpenapiClient
       {
         :'id' => :'String',
         :'timestamp' => :'Time',
-        :'title' => :'String'
+        :'title' => :'String',
+        :'description' => :'String',
+        :'sku' => :'String',
+        :'summary' => :'String',
+        :'code' => :'String',
+        :'version' => :'String',
+        :'course_category_id' => :'String',
+        :'instructor_profile_id' => :'String',
+        :'currency_id' => :'String',
+        :'regular_price' => :'Float',
+        :'max_course_enrollments' => :'Integer',
+        :'total_effort_in_weeks' => :'Integer',
+        :'total_hours_per_week' => :'Integer',
+        :'total_effort_in_hours' => :'Integer',
+        :'start_date_time' => :'Time',
+        :'end_date_time' => :'Time',
+        :'inscriptions_start_date_time' => :'Time',
+        :'inscriptions_end_date_time' => :'Time'
       }
     end
 
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
-        :'title'
+        :'sku',
+        :'summary',
+        :'code',
+        :'version',
+        :'course_category_id',
+        :'instructor_profile_id',
+        :'currency_id',
+        :'start_date_time',
+        :'end_date_time',
+        :'inscriptions_start_date_time',
+        :'inscriptions_end_date_time'
       ])
     end
 
@@ -76,6 +154,78 @@ module OpenapiClient
 
       if attributes.key?(:'title')
         self.title = attributes[:'title']
+      else
+        self.title = nil
+      end
+
+      if attributes.key?(:'description')
+        self.description = attributes[:'description']
+      else
+        self.description = nil
+      end
+
+      if attributes.key?(:'sku')
+        self.sku = attributes[:'sku']
+      end
+
+      if attributes.key?(:'summary')
+        self.summary = attributes[:'summary']
+      end
+
+      if attributes.key?(:'code')
+        self.code = attributes[:'code']
+      end
+
+      if attributes.key?(:'version')
+        self.version = attributes[:'version']
+      end
+
+      if attributes.key?(:'course_category_id')
+        self.course_category_id = attributes[:'course_category_id']
+      end
+
+      if attributes.key?(:'instructor_profile_id')
+        self.instructor_profile_id = attributes[:'instructor_profile_id']
+      end
+
+      if attributes.key?(:'currency_id')
+        self.currency_id = attributes[:'currency_id']
+      end
+
+      if attributes.key?(:'regular_price')
+        self.regular_price = attributes[:'regular_price']
+      end
+
+      if attributes.key?(:'max_course_enrollments')
+        self.max_course_enrollments = attributes[:'max_course_enrollments']
+      end
+
+      if attributes.key?(:'total_effort_in_weeks')
+        self.total_effort_in_weeks = attributes[:'total_effort_in_weeks']
+      end
+
+      if attributes.key?(:'total_hours_per_week')
+        self.total_hours_per_week = attributes[:'total_hours_per_week']
+      end
+
+      if attributes.key?(:'total_effort_in_hours')
+        self.total_effort_in_hours = attributes[:'total_effort_in_hours']
+      end
+
+      if attributes.key?(:'start_date_time')
+        self.start_date_time = attributes[:'start_date_time']
+      end
+
+      if attributes.key?(:'end_date_time')
+        self.end_date_time = attributes[:'end_date_time']
+      end
+
+      if attributes.key?(:'inscriptions_start_date_time')
+        self.inscriptions_start_date_time = attributes[:'inscriptions_start_date_time']
+      end
+
+      if attributes.key?(:'inscriptions_end_date_time')
+        self.inscriptions_end_date_time = attributes[:'inscriptions_end_date_time']
       end
     end
 
@@ -84,6 +234,22 @@ module OpenapiClient
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
       invalid_properties = Array.new
+      if @title.nil?
+        invalid_properties.push('invalid value for "title", title cannot be nil.')
+      end
+
+      if @title.to_s.length < 1
+        invalid_properties.push('invalid value for "title", the character length must be great than or equal to 1.')
+      end
+
+      if @description.nil?
+        invalid_properties.push('invalid value for "description", description cannot be nil.')
+      end
+
+      if @description.to_s.length < 1
+        invalid_properties.push('invalid value for "description", the character length must be great than or equal to 1.')
+      end
+
       invalid_properties
     end
 
@@ -91,7 +257,39 @@ module OpenapiClient
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
+      return false if @title.nil?
+      return false if @title.to_s.length < 1
+      return false if @description.nil?
+      return false if @description.to_s.length < 1
       true
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] title Value to be assigned
+    def title=(title)
+      if title.nil?
+        fail ArgumentError, 'title cannot be nil'
+      end
+
+      if title.to_s.length < 1
+        fail ArgumentError, 'invalid value for "title", the character length must be great than or equal to 1.'
+      end
+
+      @title = title
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] description Value to be assigned
+    def description=(description)
+      if description.nil?
+        fail ArgumentError, 'description cannot be nil'
+      end
+
+      if description.to_s.length < 1
+        fail ArgumentError, 'invalid value for "description", the character length must be great than or equal to 1.'
+      end
+
+      @description = description
     end
 
     # Checks equality by comparing each attribute.
@@ -101,7 +299,24 @@ module OpenapiClient
       self.class == o.class &&
           id == o.id &&
           timestamp == o.timestamp &&
-          title == o.title
+          title == o.title &&
+          description == o.description &&
+          sku == o.sku &&
+          summary == o.summary &&
+          code == o.code &&
+          version == o.version &&
+          course_category_id == o.course_category_id &&
+          instructor_profile_id == o.instructor_profile_id &&
+          currency_id == o.currency_id &&
+          regular_price == o.regular_price &&
+          max_course_enrollments == o.max_course_enrollments &&
+          total_effort_in_weeks == o.total_effort_in_weeks &&
+          total_hours_per_week == o.total_hours_per_week &&
+          total_effort_in_hours == o.total_effort_in_hours &&
+          start_date_time == o.start_date_time &&
+          end_date_time == o.end_date_time &&
+          inscriptions_start_date_time == o.inscriptions_start_date_time &&
+          inscriptions_end_date_time == o.inscriptions_end_date_time
     end
 
     # @see the `==` method
@@ -113,7 +328,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, timestamp, title].hash
+      [id, timestamp, title, description, sku, summary, code, version, course_category_id, instructor_profile_id, currency_id, regular_price, max_course_enrollments, total_effort_in_weeks, total_hours_per_week, total_effort_in_hours, start_date_time, end_date_time, inscriptions_start_date_time, inscriptions_end_date_time].hash
     end
 
     # Builds the object from hash

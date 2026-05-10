@@ -123,6 +123,12 @@ Class | Method | HTTP request | Description
 *OpenapiClient::MarketingCampaignsApi* | [**get_marketing_campaign_o_data_async**](docs/MarketingCampaignsApi.md#get_marketing_campaign_o_data_async) | **GET** /api/v2/MarketingService/MarketingCampaigns | Get marketing campaigns
 *OpenapiClient::MarketingCampaignsApi* | [**get_marketing_campaigns_count_async**](docs/MarketingCampaignsApi.md#get_marketing_campaigns_count_async) | **GET** /api/v2/MarketingService/MarketingCampaigns/Count | Get marketing campaigns count
 *OpenapiClient::MarketingCampaignsApi* | [**update_marketing_campaign_async**](docs/MarketingCampaignsApi.md#update_marketing_campaign_async) | **PUT** /api/v2/MarketingService/MarketingCampaigns/{marketingcampaignId} | Update a marketing campaign
+*OpenapiClient::MarketingLeadsApi* | [**create_marketing_lead_async**](docs/MarketingLeadsApi.md#create_marketing_lead_async) | **POST** /api/v2/MarketingService/MarketingLeads | Create a marketing lead
+*OpenapiClient::MarketingLeadsApi* | [**delete_marketing_lead_async**](docs/MarketingLeadsApi.md#delete_marketing_lead_async) | **DELETE** /api/v2/MarketingService/MarketingLeads/{marketingLeadId} | Delete a marketing lead
+*OpenapiClient::MarketingLeadsApi* | [**get_marketing_lead_details_async**](docs/MarketingLeadsApi.md#get_marketing_lead_details_async) | **GET** /api/v2/MarketingService/MarketingLeads/{marketingLeadId} | Get marketing lead by ID
+*OpenapiClient::MarketingLeadsApi* | [**get_marketing_leads_count_async**](docs/MarketingLeadsApi.md#get_marketing_leads_count_async) | **GET** /api/v2/MarketingService/MarketingLeads/Count | Get marketing leads count
+*OpenapiClient::MarketingLeadsApi* | [**get_marketing_leads_o_data_async**](docs/MarketingLeadsApi.md#get_marketing_leads_o_data_async) | **GET** /api/v2/MarketingService/MarketingLeads | Get marketing leads
+*OpenapiClient::MarketingLeadsApi* | [**update_marketing_lead_async**](docs/MarketingLeadsApi.md#update_marketing_lead_async) | **PUT** /api/v2/MarketingService/MarketingLeads/{marketingLeadId} | Update a marketing lead
 *OpenapiClient::MarketingListsApi* | [**create_marketing_list_async**](docs/MarketingListsApi.md#create_marketing_list_async) | **POST** /api/v2/MarketingService/MarketingLists | Create a marketing list
 *OpenapiClient::MarketingListsApi* | [**delete_marketing_list_async**](docs/MarketingListsApi.md#delete_marketing_list_async) | **DELETE** /api/v2/MarketingService/MarketingLists/{marketinglistId} | Delete a marketing list
 *OpenapiClient::MarketingListsApi* | [**get_marketing_list_details_async**](docs/MarketingListsApi.md#get_marketing_list_details_async) | **GET** /api/v2/MarketingService/MarketingLists/{marketinglistId} | Get marketing list by ID
@@ -180,6 +186,11 @@ Class | Method | HTTP request | Description
  - [OpenapiClient::MarketingCampaignDto](docs/MarketingCampaignDto.md)
  - [OpenapiClient::MarketingCampaignDtoEnvelope](docs/MarketingCampaignDtoEnvelope.md)
  - [OpenapiClient::MarketingCampaignUpdateDto](docs/MarketingCampaignUpdateDto.md)
+ - [OpenapiClient::MarketingLeadCreateDto](docs/MarketingLeadCreateDto.md)
+ - [OpenapiClient::MarketingLeadDto](docs/MarketingLeadDto.md)
+ - [OpenapiClient::MarketingLeadDtoEnvelope](docs/MarketingLeadDtoEnvelope.md)
+ - [OpenapiClient::MarketingLeadDtoListEnvelope](docs/MarketingLeadDtoListEnvelope.md)
+ - [OpenapiClient::MarketingLeadUpdateDto](docs/MarketingLeadUpdateDto.md)
  - [OpenapiClient::MarketingListCreateDto](docs/MarketingListCreateDto.md)
  - [OpenapiClient::MarketingListDto](docs/MarketingListDto.md)
  - [OpenapiClient::MarketingListDtoEnvelope](docs/MarketingListDtoEnvelope.md)

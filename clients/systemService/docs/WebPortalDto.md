@@ -1,0 +1,40 @@
+# OpenapiClient::WebPortalDto
+
+## Properties
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **id** | **String** |  | [optional] |
+| **timestamp** | **Time** |  | [optional] |
+| **root** | **Boolean** |  | [optional] |
+| **title** | **String** |  | [optional] |
+| **domain** | **String** |  | [optional] |
+| **disabled** | **Boolean** |  | [optional] |
+| **tenant_id** | **String** |  | [optional] |
+| **description** | **String** |  | [optional] |
+| **enrollment_id** | **String** |  | [optional] |
+| **website_theme_id** | **String** |  | [optional] |
+| **business_domain_id** | **String** |  | [optional] |
+| **business_portal_application_id** | **String** |  | [optional] |
+
+## Example
+
+```ruby
+require 'openapi_client'
+
+instance = OpenapiClient::WebPortalDto.new(
+  id: null,
+  timestamp: null,
+  root: null,
+  title: null,
+  domain: null,
+  disabled: null,
+  tenant_id: null,
+  description: null,
+  enrollment_id: null,
+  website_theme_id: null,
+  business_domain_id: null,
+  business_portal_application_id: null
+)
+```
+

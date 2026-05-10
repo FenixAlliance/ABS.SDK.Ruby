@@ -8,7 +8,6 @@ README.md
 Rakefile
 docs/AccessTokenResponse.md
 docs/ContactDto.md
-docs/CurrencyId.md
 docs/DealUnitCreateDto.md
 docs/DealUnitDto.md
 docs/DealUnitDtoEnvelope.md
@@ -39,14 +38,12 @@ docs/ExtendedDealUnitDtoListEnvelope.md
 docs/ExtendedSalesLiteratureDto.md
 docs/ExtendedSalesLiteratureDtoListEnvelope.md
 docs/FenixAllianceABSWebApi.md
-docs/ForexRates.md
 docs/ForgotPasswordRequest.md
 docs/HttpValidationProblemDetails.md
 docs/InfoRequest.md
 docs/InfoResponse.md
 docs/Int32Envelope.md
 docs/LoginRequest.md
-docs/Money.md
 docs/RefreshRequest.md
 docs/RegisterRequest.md
 docs/ResendConfirmationEmailRequest.md
@@ -74,7 +71,6 @@ lib/openapi_client/api_error.rb
 lib/openapi_client/configuration.rb
 lib/openapi_client/models/access_token_response.rb
 lib/openapi_client/models/contact_dto.rb
-lib/openapi_client/models/currency_id.rb
 lib/openapi_client/models/deal_unit_create_dto.rb
 lib/openapi_client/models/deal_unit_dto.rb
 lib/openapi_client/models/deal_unit_dto_envelope.rb
@@ -102,14 +98,12 @@ lib/openapi_client/models/extended_deal_unit_dto_envelope.rb
 lib/openapi_client/models/extended_deal_unit_dto_list_envelope.rb
 lib/openapi_client/models/extended_sales_literature_dto.rb
 lib/openapi_client/models/extended_sales_literature_dto_list_envelope.rb
-lib/openapi_client/models/forex_rates.rb
 lib/openapi_client/models/forgot_password_request.rb
 lib/openapi_client/models/http_validation_problem_details.rb
 lib/openapi_client/models/info_request.rb
 lib/openapi_client/models/info_response.rb
 lib/openapi_client/models/int32_envelope.rb
 lib/openapi_client/models/login_request.rb
-lib/openapi_client/models/money.rb
 lib/openapi_client/models/refresh_request.rb
 lib/openapi_client/models/register_request.rb
 lib/openapi_client/models/resend_confirmation_email_request.rb

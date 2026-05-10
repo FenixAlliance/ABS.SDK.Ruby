@@ -38,6 +38,10 @@ docs/AccountingPeriodDtoListEnvelope.md
 docs/AccountingPeriodUpdateDto.md
 docs/AccountingPeriodsApi.md
 docs/AccountsApi.md
+docs/AppliedItemTaxRecordCreateDto.md
+docs/AppliedItemTaxRecordDto.md
+docs/AppliedItemTaxRecordDtoIReadOnlyListEnvelope.md
+docs/AppliedItemTaxRecordUpdateDto.md
 docs/AppliedTaxPolicyRecordCreateDto.md
 docs/AppliedTaxPolicyRecordDto.md
 docs/AppliedTaxPolicyRecordDtoEnvelope.md
@@ -64,6 +68,7 @@ docs/BankTransactionDtoListEnvelope.md
 docs/BankTransactionUpdateDto.md
 docs/BankUpdateDto.md
 docs/BankingApi.md
+docs/BillableLineTaxesApi.md
 docs/BillingProfileCreateDto.md
 docs/BillingProfileDto.md
 docs/BillingProfileDtoEnvelope.md
@@ -287,6 +292,7 @@ lib/openapi_client/api/account_groups_api.rb
 lib/openapi_client/api/accounting_periods_api.rb
 lib/openapi_client/api/accounts_api.rb
 lib/openapi_client/api/banking_api.rb
+lib/openapi_client/api/billable_line_taxes_api.rb
 lib/openapi_client/api/billing_profiles_api.rb
 lib/openapi_client/api/budgets_api.rb
 lib/openapi_client/api/commissions_api.rb
@@ -346,6 +352,10 @@ lib/openapi_client/models/accounting_period_dto.rb
 lib/openapi_client/models/accounting_period_dto_envelope.rb
 lib/openapi_client/models/accounting_period_dto_list_envelope.rb
 lib/openapi_client/models/accounting_period_update_dto.rb
+lib/openapi_client/models/applied_item_tax_record_create_dto.rb
+lib/openapi_client/models/applied_item_tax_record_dto.rb
+lib/openapi_client/models/applied_item_tax_record_dto_i_read_only_list_envelope.rb
+lib/openapi_client/models/applied_item_tax_record_update_dto.rb
 lib/openapi_client/models/applied_tax_policy_record_create_dto.rb
 lib/openapi_client/models/applied_tax_policy_record_dto.rb
 lib/openapi_client/models/applied_tax_policy_record_dto_envelope.rb
@@ -563,5 +573,9 @@ lib/openapi_client/models/two_factor_response.rb
 lib/openapi_client/models/update_ledger_dto.rb
 lib/openapi_client/version.rb
 openapi_client.gemspec
-spec/api/fenix_alliance_abs_web_api_spec.rb
+spec/api/billable_line_taxes_api_spec.rb
+spec/models/applied_item_tax_record_create_dto_spec.rb
+spec/models/applied_item_tax_record_dto_i_read_only_list_envelope_spec.rb
+spec/models/applied_item_tax_record_dto_spec.rb
+spec/models/applied_item_tax_record_update_dto_spec.rb
 spec/spec_helper.rb

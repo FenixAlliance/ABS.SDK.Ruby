@@ -21,7 +21,7 @@ module OpenapiClient
     end
     # Create an invoice enumeration range
     # Creates a new invoice enumeration range for a fiscal authority.
-    # @param tenant_id [Object] 
+    # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
@@ -34,7 +34,7 @@ module OpenapiClient
 
     # Create an invoice enumeration range
     # Creates a new invoice enumeration range for a fiscal authority.
-    # @param tenant_id [Object] 
+    # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
@@ -98,7 +98,7 @@ module OpenapiClient
 
     # Delete an invoice enumeration range
     # Deletes an invoice enumeration range identified by its unique identifier.
-    # @param tenant_id [Object] 
+    # @param tenant_id [String] 
     # @param enumeration_range_id [String] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
@@ -111,7 +111,7 @@ module OpenapiClient
 
     # Delete an invoice enumeration range
     # Deletes an invoice enumeration range identified by its unique identifier.
-    # @param tenant_id [Object] 
+    # @param tenant_id [String] 
     # @param enumeration_range_id [String] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
@@ -174,7 +174,7 @@ module OpenapiClient
 
     # Get invoice enumeration range by ID
     # Retrieves a specific invoice enumeration range by its unique identifier.
-    # @param tenant_id [Object] 
+    # @param tenant_id [String] 
     # @param fiscal_authority_id [String] 
     # @param enumeration_range_id [String] 
     # @param [Hash] opts the optional parameters
@@ -188,7 +188,7 @@ module OpenapiClient
 
     # Get invoice enumeration range by ID
     # Retrieves a specific invoice enumeration range by its unique identifier.
-    # @param tenant_id [Object] 
+    # @param tenant_id [String] 
     # @param fiscal_authority_id [String] 
     # @param enumeration_range_id [String] 
     # @param [Hash] opts the optional parameters
@@ -401,7 +401,7 @@ module OpenapiClient
 
     # Update an invoice enumeration range
     # Updates an existing invoice enumeration range identified by its unique identifier.
-    # @param tenant_id [Object] 
+    # @param tenant_id [String] 
     # @param enumeration_range_id [String] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
@@ -415,7 +415,7 @@ module OpenapiClient
 
     # Update an invoice enumeration range
     # Updates an existing invoice enumeration range identified by its unique identifier.
-    # @param tenant_id [Object] 
+    # @param tenant_id [String] 
     # @param enumeration_range_id [String] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 

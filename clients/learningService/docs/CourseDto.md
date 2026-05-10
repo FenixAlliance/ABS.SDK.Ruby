@@ -167,6 +167,20 @@
 | **selected_shipment_policies** | **Array&lt;String&gt;** |  | [optional] |
 | **selected_attributes_options** | **Array&lt;String&gt;** |  | [optional] |
 | **selected_selling_margin_policies** | **Array&lt;String&gt;** |  | [optional] |
+| **code** | **String** |  | [optional] |
+| **version** | **String** |  | [optional] |
+| **course_category_id** | **String** |  | [optional] |
+| **course_category_name** | **String** |  | [optional] |
+| **instructor_profile_id** | **String** |  | [optional] |
+| **instructor_profile_name** | **String** |  | [optional] |
+| **max_course_enrollments** | **Integer** |  | [optional] |
+| **total_effort_in_weeks** | **Integer** |  | [optional] |
+| **total_hours_per_week** | **Integer** |  | [optional] |
+| **total_effort_in_hours** | **Integer** |  | [optional] |
+| **start_date_time** | **Time** |  | [optional] |
+| **end_date_time** | **Time** |  | [optional] |
+| **inscriptions_start_date_time** | **Time** |  | [optional] |
+| **inscriptions_end_date_time** | **Time** |  | [optional] |
 
 ## Example
 
@@ -336,7 +350,21 @@ instance = OpenapiClient::CourseDto.new(
   selected_warranty_policies: null,
   selected_shipment_policies: null,
   selected_attributes_options: null,
-  selected_selling_margin_policies: null
+  selected_selling_margin_policies: null,
+  code: null,
+  version: null,
+  course_category_id: null,
+  course_category_name: null,
+  instructor_profile_id: null,
+  instructor_profile_name: null,
+  max_course_enrollments: null,
+  total_effort_in_weeks: null,
+  total_hours_per_week: null,
+  total_effort_in_hours: null,
+  start_date_time: null,
+  end_date_time: null,
+  inscriptions_start_date_time: null,
+  inscriptions_end_date_time: null
 )
 ```
 

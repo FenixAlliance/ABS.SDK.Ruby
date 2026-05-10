@@ -27,7 +27,7 @@ require 'time'
 require 'openapi_client'
 
 api_instance = OpenapiClient::FiscalPeriodsApi.new
-tenant_id = { ... } # Object | 
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example', # String | 
@@ -65,7 +65,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **tenant_id** | [**Object**](.md) |  |  |
+| **tenant_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
 | **fiscal_period_create_dto** | [**FiscalPeriodCreateDto**](FiscalPeriodCreateDto.md) |  | [optional] |
@@ -99,7 +99,7 @@ require 'time'
 require 'openapi_client'
 
 api_instance = OpenapiClient::FiscalPeriodsApi.new
-tenant_id = { ... } # Object | 
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 fiscal_period_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
@@ -137,7 +137,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **tenant_id** | [**Object**](.md) |  |  |
+| **tenant_id** | **String** |  |  |
 | **fiscal_period_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
@@ -171,7 +171,7 @@ require 'time'
 require 'openapi_client'
 
 api_instance = OpenapiClient::FiscalPeriodsApi.new
-tenant_id = { ... } # Object | 
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 fiscal_authority_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 fiscal_year_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 fiscal_period_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
@@ -211,7 +211,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **tenant_id** | [**Object**](.md) |  |  |
+| **tenant_id** | **String** |  |  |
 | **fiscal_authority_id** | **String** |  |  |
 | **fiscal_year_id** | **String** |  |  |
 | **fiscal_period_id** | **String** |  |  |
@@ -247,7 +247,7 @@ require 'time'
 require 'openapi_client'
 
 api_instance = OpenapiClient::FiscalPeriodsApi.new
-tenant_id = { ... } # Object | 
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 fiscal_authority_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 fiscal_year_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 authority_id = 'authority_id_example' # String | 
@@ -287,7 +287,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **tenant_id** | [**Object**](.md) |  |  |
+| **tenant_id** | **String** |  |  |
 | **fiscal_authority_id** | **String** |  |  |
 | **fiscal_year_id** | **String** |  |  |
 | **authority_id** | **String** |  |  |
@@ -323,7 +323,7 @@ require 'time'
 require 'openapi_client'
 
 api_instance = OpenapiClient::FiscalPeriodsApi.new
-tenant_id = { ... } # Object | 
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 fiscal_authority_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 fiscal_year_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
@@ -362,7 +362,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **tenant_id** | [**Object**](.md) |  |  |
+| **tenant_id** | **String** |  |  |
 | **fiscal_authority_id** | **String** |  |  |
 | **fiscal_year_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
@@ -397,7 +397,7 @@ require 'time'
 require 'openapi_client'
 
 api_instance = OpenapiClient::FiscalPeriodsApi.new
-tenant_id = { ... } # Object | 
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 fiscal_period_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
@@ -436,7 +436,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **tenant_id** | [**Object**](.md) |  |  |
+| **tenant_id** | **String** |  |  |
 | **fiscal_period_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |

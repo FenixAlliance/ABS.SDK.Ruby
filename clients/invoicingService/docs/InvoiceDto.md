@@ -31,6 +31,7 @@
 | **tax_calculation_method** | **String** |  | [optional] |
 | **cost_calculation_method** | **String** |  | [optional] |
 | **forex_rate** | **Float** |  | [optional] |
+| **forex_rates_snapshot** | **String** |  | [optional] |
 | **currency_id** | **String** |  | [optional] |
 | **total_detail** | **Float** |  | [optional] |
 | **total_detail_currency_id** | **String** |  | [optional] |
@@ -117,6 +118,7 @@ instance = OpenapiClient::InvoiceDto.new(
   tax_calculation_method: null,
   cost_calculation_method: null,
   forex_rate: null,
+  forex_rates_snapshot: null,
   currency_id: null,
   total_detail: null,
   total_detail_currency_id: null,

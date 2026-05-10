@@ -1,0 +1,438 @@
+# OpenapiClient::CourseAssignmentComponentsApi
+
+All URIs are relative to *https://absuite.net*
+
+| Method | HTTP request | Description |
+| ------ | ------------ | ----------- |
+| [**create_course_assignment_component_async**](CourseAssignmentComponentsApi.md#create_course_assignment_component_async) | **POST** /api/v2/LearningService/CourseAssignmentComponents | Create a course assignment component |
+| [**delete_course_assignment_component_async**](CourseAssignmentComponentsApi.md#delete_course_assignment_component_async) | **DELETE** /api/v2/LearningService/CourseAssignmentComponents/{componentId} | Delete a course assignment component |
+| [**get_course_assignment_component_by_id_async**](CourseAssignmentComponentsApi.md#get_course_assignment_component_by_id_async) | **GET** /api/v2/LearningService/CourseAssignmentComponents/{componentId} | Get course assignment component by ID |
+| [**get_course_assignment_components_async**](CourseAssignmentComponentsApi.md#get_course_assignment_components_async) | **GET** /api/v2/LearningService/CourseAssignmentComponents | Get all course assignment components |
+| [**get_course_assignment_components_count_async**](CourseAssignmentComponentsApi.md#get_course_assignment_components_count_async) | **GET** /api/v2/LearningService/CourseAssignmentComponents/Count | Get course assignment components count |
+| [**update_course_assignment_component_async**](CourseAssignmentComponentsApi.md#update_course_assignment_component_async) | **PUT** /api/v2/LearningService/CourseAssignmentComponents/{componentId} | Update a course assignment component |
+
+
+## create_course_assignment_component_async
+
+> create_course_assignment_component_async(tenant_id, opts)
+
+Create a course assignment component
+
+Creates a new course assignment component for the specified tenant.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::CourseAssignmentComponentsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  course_assignment_component_create_dto: OpenapiClient::CourseAssignmentComponentCreateDto.new({title: 'title_example', course_assignment_id: 'course_assignment_id_example', course_id: 'course_id_example'}) # CourseAssignmentComponentCreateDto | 
+}
+
+begin
+  # Create a course assignment component
+  api_instance.create_course_assignment_component_async(tenant_id, opts)
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling CourseAssignmentComponentsApi->create_course_assignment_component_async: #{e}"
+end
+```
+
+#### Using the create_course_assignment_component_async_with_http_info variant
+
+This returns an Array which contains the response data (`nil` in this case), status code and headers.
+
+> <Array(nil, Integer, Hash)> create_course_assignment_component_async_with_http_info(tenant_id, opts)
+
+```ruby
+begin
+  # Create a course assignment component
+  data, status_code, headers = api_instance.create_course_assignment_component_async_with_http_info(tenant_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => nil
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling CourseAssignmentComponentsApi->create_course_assignment_component_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **course_assignment_component_create_dto** | [**CourseAssignmentComponentCreateDto**](CourseAssignmentComponentCreateDto.md) |  | [optional] |
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
+- **Accept**: application/json, application/xml
+
+
+## delete_course_assignment_component_async
+
+> delete_course_assignment_component_async(tenant_id, component_id, opts)
+
+Delete a course assignment component
+
+Deletes a course assignment component by its ID.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::CourseAssignmentComponentsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+component_id = 'component_id_example' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example' # String | 
+}
+
+begin
+  # Delete a course assignment component
+  api_instance.delete_course_assignment_component_async(tenant_id, component_id, opts)
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling CourseAssignmentComponentsApi->delete_course_assignment_component_async: #{e}"
+end
+```
+
+#### Using the delete_course_assignment_component_async_with_http_info variant
+
+This returns an Array which contains the response data (`nil` in this case), status code and headers.
+
+> <Array(nil, Integer, Hash)> delete_course_assignment_component_async_with_http_info(tenant_id, component_id, opts)
+
+```ruby
+begin
+  # Delete a course assignment component
+  data, status_code, headers = api_instance.delete_course_assignment_component_async_with_http_info(tenant_id, component_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => nil
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling CourseAssignmentComponentsApi->delete_course_assignment_component_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **component_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## get_course_assignment_component_by_id_async
+
+> <CourseAssignmentComponentDto> get_course_assignment_component_by_id_async(component_id, opts)
+
+Get course assignment component by ID
+
+Retrieves a specific course assignment component by its ID.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::CourseAssignmentComponentsApi.new
+component_id = 'component_id_example' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example' # String | 
+}
+
+begin
+  # Get course assignment component by ID
+  result = api_instance.get_course_assignment_component_by_id_async(component_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling CourseAssignmentComponentsApi->get_course_assignment_component_by_id_async: #{e}"
+end
+```
+
+#### Using the get_course_assignment_component_by_id_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<CourseAssignmentComponentDto>, Integer, Hash)> get_course_assignment_component_by_id_async_with_http_info(component_id, opts)
+
+```ruby
+begin
+  # Get course assignment component by ID
+  data, status_code, headers = api_instance.get_course_assignment_component_by_id_async_with_http_info(component_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <CourseAssignmentComponentDto>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling CourseAssignmentComponentsApi->get_course_assignment_component_by_id_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **component_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+
+### Return type
+
+[**CourseAssignmentComponentDto**](CourseAssignmentComponentDto.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## get_course_assignment_components_async
+
+> <Array<CourseAssignmentComponentDto>> get_course_assignment_components_async(tenant_id, opts)
+
+Get all course assignment components
+
+Retrieves all course assignment components for the specified tenant.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::CourseAssignmentComponentsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example' # String | 
+}
+
+begin
+  # Get all course assignment components
+  result = api_instance.get_course_assignment_components_async(tenant_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling CourseAssignmentComponentsApi->get_course_assignment_components_async: #{e}"
+end
+```
+
+#### Using the get_course_assignment_components_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<Array<CourseAssignmentComponentDto>>, Integer, Hash)> get_course_assignment_components_async_with_http_info(tenant_id, opts)
+
+```ruby
+begin
+  # Get all course assignment components
+  data, status_code, headers = api_instance.get_course_assignment_components_async_with_http_info(tenant_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <Array<CourseAssignmentComponentDto>>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling CourseAssignmentComponentsApi->get_course_assignment_components_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+
+### Return type
+
+[**Array&lt;CourseAssignmentComponentDto&gt;**](CourseAssignmentComponentDto.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## get_course_assignment_components_count_async
+
+> Integer get_course_assignment_components_count_async(tenant_id, opts)
+
+Get course assignment components count
+
+Returns the count of course assignment components for the specified tenant.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::CourseAssignmentComponentsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example' # String | 
+}
+
+begin
+  # Get course assignment components count
+  result = api_instance.get_course_assignment_components_count_async(tenant_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling CourseAssignmentComponentsApi->get_course_assignment_components_count_async: #{e}"
+end
+```
+
+#### Using the get_course_assignment_components_count_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(Integer, Integer, Hash)> get_course_assignment_components_count_async_with_http_info(tenant_id, opts)
+
+```ruby
+begin
+  # Get course assignment components count
+  data, status_code, headers = api_instance.get_course_assignment_components_count_async_with_http_info(tenant_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => Integer
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling CourseAssignmentComponentsApi->get_course_assignment_components_count_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+
+### Return type
+
+**Integer**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## update_course_assignment_component_async
+
+> update_course_assignment_component_async(tenant_id, component_id, opts)
+
+Update a course assignment component
+
+Updates an existing course assignment component.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::CourseAssignmentComponentsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+component_id = 'component_id_example' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  course_assignment_component_update_dto: OpenapiClient::CourseAssignmentComponentUpdateDto.new # CourseAssignmentComponentUpdateDto | 
+}
+
+begin
+  # Update a course assignment component
+  api_instance.update_course_assignment_component_async(tenant_id, component_id, opts)
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling CourseAssignmentComponentsApi->update_course_assignment_component_async: #{e}"
+end
+```
+
+#### Using the update_course_assignment_component_async_with_http_info variant
+
+This returns an Array which contains the response data (`nil` in this case), status code and headers.
+
+> <Array(nil, Integer, Hash)> update_course_assignment_component_async_with_http_info(tenant_id, component_id, opts)
+
+```ruby
+begin
+  # Update a course assignment component
+  data, status_code, headers = api_instance.update_course_assignment_component_async_with_http_info(tenant_id, component_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => nil
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling CourseAssignmentComponentsApi->update_course_assignment_component_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **component_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **course_assignment_component_update_dto** | [**CourseAssignmentComponentUpdateDto**](CourseAssignmentComponentUpdateDto.md) |  | [optional] |
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
+- **Accept**: application/json, application/xml
+

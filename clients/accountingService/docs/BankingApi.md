@@ -122,7 +122,7 @@ bank_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 opts = {
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example', # String | 
-  bank_account_create_dto: OpenapiClient::BankAccountCreateDto.new({name: 'name_example', currency_id: 'currency_id_example', account_category: 'Assets'}) # BankAccountCreateDto | 
+  bank_account_create_dto: OpenapiClient::BankAccountCreateDto.new # BankAccountCreateDto | 
 }
 
 begin
@@ -1575,7 +1575,7 @@ account_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 opts = {
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example', # String | 
-  bank_account_update_dto: OpenapiClient::BankAccountUpdateDto.new({name: 'name_example', currency_id: 'currency_id_example'}) # BankAccountUpdateDto | 
+  bank_account_update_dto: OpenapiClient::BankAccountUpdateDto.new # BankAccountUpdateDto | 
 }
 
 begin

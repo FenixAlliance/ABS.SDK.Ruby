@@ -19,47 +19,7 @@ module OpenapiClient
 
     attr_accessor :timestamp
 
-    attr_accessor :group
-
-    attr_accessor :frozen
-
     attr_accessor :name
-
-    attr_accessor :code
-
-    attr_accessor :path
-
-    attr_accessor :title
-
-    attr_accessor :prefix
-
-    attr_accessor :balance
-
-    attr_accessor :currency_id
-
-    attr_accessor :account_type
-
-    attr_accessor :account_type_id
-
-    attr_accessor :debits_balance
-
-    attr_accessor :credits_balance
-
-    attr_accessor :parent_account_id
-
-    attr_accessor :tenant_id
-
-    attr_accessor :enrollment_id
-
-    attr_accessor :children_accounts_count
-
-    attr_accessor :account_category
-
-    attr_accessor :balance_amount
-
-    attr_accessor :credits_balance_amount
-
-    attr_accessor :debits_balance_amount
 
     attr_accessor :iban
 
@@ -75,61 +35,28 @@ module OpenapiClient
 
     attr_accessor :bank_profile_id
 
-    class EnumAttributeValidator
-      attr_reader :datatype
-      attr_reader :allowable_values
+    attr_accessor :wallet_id
 
-      def initialize(datatype, allowable_values)
-        @allowable_values = allowable_values.map do |value|
-          case datatype.to_s
-          when /Integer/i
-            value.to_i
-          when /Float/i
-            value.to_f
-          else
-            value
-          end
-        end
-      end
+    attr_accessor :tenant_id
 
-      def valid?(value)
-        !value || allowable_values.include?(value)
-      end
-    end
+    attr_accessor :enrollment_id
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'id' => :'id',
         :'timestamp' => :'timestamp',
-        :'group' => :'group',
-        :'frozen' => :'frozen',
         :'name' => :'name',
-        :'code' => :'code',
-        :'path' => :'path',
-        :'title' => :'title',
-        :'prefix' => :'prefix',
-        :'balance' => :'balance',
-        :'currency_id' => :'currencyId',
-        :'account_type' => :'accountType',
-        :'account_type_id' => :'accountTypeId',
-        :'debits_balance' => :'debitsBalance',
-        :'credits_balance' => :'creditsBalance',
-        :'parent_account_id' => :'parentAccountId',
-        :'tenant_id' => :'tenantId',
-        :'enrollment_id' => :'enrollmentId',
-        :'children_accounts_count' => :'childrenAccountsCount',
-        :'account_category' => :'accountCategory',
-        :'balance_amount' => :'balanceAmount',
-        :'credits_balance_amount' => :'creditsBalanceAmount',
-        :'debits_balance_amount' => :'debitsBalanceAmount',
         :'iban' => :'iban',
         :'swift' => :'swift',
         :'branch_code' => :'branchCode',
         :'bank_account_number' => :'bankAccountNumber',
         :'qualified_name' => :'qualifiedName',
         :'bank_id' => :'bankId',
-        :'bank_profile_id' => :'bankProfileId'
+        :'bank_profile_id' => :'bankProfileId',
+        :'wallet_id' => :'walletId',
+        :'tenant_id' => :'tenantId',
+        :'enrollment_id' => :'enrollmentId'
       }
     end
 
@@ -143,34 +70,17 @@ module OpenapiClient
       {
         :'id' => :'String',
         :'timestamp' => :'Time',
-        :'group' => :'Boolean',
-        :'frozen' => :'Boolean',
         :'name' => :'String',
-        :'code' => :'String',
-        :'path' => :'String',
-        :'title' => :'String',
-        :'prefix' => :'String',
-        :'balance' => :'Float',
-        :'currency_id' => :'String',
-        :'account_type' => :'String',
-        :'account_type_id' => :'String',
-        :'debits_balance' => :'Float',
-        :'credits_balance' => :'Float',
-        :'parent_account_id' => :'String',
-        :'tenant_id' => :'String',
-        :'enrollment_id' => :'String',
-        :'children_accounts_count' => :'Integer',
-        :'account_category' => :'String',
-        :'balance_amount' => :'Money',
-        :'credits_balance_amount' => :'Money',
-        :'debits_balance_amount' => :'Money',
         :'iban' => :'String',
         :'swift' => :'String',
         :'branch_code' => :'String',
         :'bank_account_number' => :'String',
         :'qualified_name' => :'String',
         :'bank_id' => :'String',
-        :'bank_profile_id' => :'String'
+        :'bank_profile_id' => :'String',
+        :'wallet_id' => :'String',
+        :'tenant_id' => :'String',
+        :'enrollment_id' => :'String'
       }
     end
 
@@ -180,23 +90,16 @@ module OpenapiClient
         :'id',
         :'timestamp',
         :'name',
-        :'code',
-        :'path',
-        :'title',
-        :'prefix',
-        :'currency_id',
-        :'account_type',
-        :'account_type_id',
-        :'parent_account_id',
-        :'tenant_id',
-        :'enrollment_id',
         :'iban',
         :'swift',
         :'branch_code',
         :'bank_account_number',
         :'qualified_name',
         :'bank_id',
-        :'bank_profile_id'
+        :'bank_profile_id',
+        :'wallet_id',
+        :'tenant_id',
+        :'enrollment_id'
       ])
     end
 
@@ -223,88 +126,8 @@ module OpenapiClient
         self.timestamp = attributes[:'timestamp']
       end
 
-      if attributes.key?(:'group')
-        self.group = attributes[:'group']
-      end
-
-      if attributes.key?(:'frozen')
-        self.frozen = attributes[:'frozen']
-      end
-
       if attributes.key?(:'name')
         self.name = attributes[:'name']
-      end
-
-      if attributes.key?(:'code')
-        self.code = attributes[:'code']
-      end
-
-      if attributes.key?(:'path')
-        self.path = attributes[:'path']
-      end
-
-      if attributes.key?(:'title')
-        self.title = attributes[:'title']
-      end
-
-      if attributes.key?(:'prefix')
-        self.prefix = attributes[:'prefix']
-      end
-
-      if attributes.key?(:'balance')
-        self.balance = attributes[:'balance']
-      end
-
-      if attributes.key?(:'currency_id')
-        self.currency_id = attributes[:'currency_id']
-      end
-
-      if attributes.key?(:'account_type')
-        self.account_type = attributes[:'account_type']
-      end
-
-      if attributes.key?(:'account_type_id')
-        self.account_type_id = attributes[:'account_type_id']
-      end
-
-      if attributes.key?(:'debits_balance')
-        self.debits_balance = attributes[:'debits_balance']
-      end
-
-      if attributes.key?(:'credits_balance')
-        self.credits_balance = attributes[:'credits_balance']
-      end
-
-      if attributes.key?(:'parent_account_id')
-        self.parent_account_id = attributes[:'parent_account_id']
-      end
-
-      if attributes.key?(:'tenant_id')
-        self.tenant_id = attributes[:'tenant_id']
-      end
-
-      if attributes.key?(:'enrollment_id')
-        self.enrollment_id = attributes[:'enrollment_id']
-      end
-
-      if attributes.key?(:'children_accounts_count')
-        self.children_accounts_count = attributes[:'children_accounts_count']
-      end
-
-      if attributes.key?(:'account_category')
-        self.account_category = attributes[:'account_category']
-      end
-
-      if attributes.key?(:'balance_amount')
-        self.balance_amount = attributes[:'balance_amount']
-      end
-
-      if attributes.key?(:'credits_balance_amount')
-        self.credits_balance_amount = attributes[:'credits_balance_amount']
-      end
-
-      if attributes.key?(:'debits_balance_amount')
-        self.debits_balance_amount = attributes[:'debits_balance_amount']
       end
 
       if attributes.key?(:'iban')
@@ -334,6 +157,18 @@ module OpenapiClient
       if attributes.key?(:'bank_profile_id')
         self.bank_profile_id = attributes[:'bank_profile_id']
       end
+
+      if attributes.key?(:'wallet_id')
+        self.wallet_id = attributes[:'wallet_id']
+      end
+
+      if attributes.key?(:'tenant_id')
+        self.tenant_id = attributes[:'tenant_id']
+      end
+
+      if attributes.key?(:'enrollment_id')
+        self.enrollment_id = attributes[:'enrollment_id']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -348,19 +183,7 @@ module OpenapiClient
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      account_category_validator = EnumAttributeValidator.new('String', ["Assets", "Equity", "Revenue", "Expense", "Liabilities"])
-      return false unless account_category_validator.valid?(@account_category)
       true
-    end
-
-    # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] account_category Object to be assigned
-    def account_category=(account_category)
-      validator = EnumAttributeValidator.new('String', ["Assets", "Equity", "Revenue", "Expense", "Liabilities"])
-      unless validator.valid?(account_category)
-        fail ArgumentError, "invalid value for \"account_category\", must be one of #{validator.allowable_values}."
-      end
-      @account_category = account_category
     end
 
     # Checks equality by comparing each attribute.
@@ -370,34 +193,17 @@ module OpenapiClient
       self.class == o.class &&
           id == o.id &&
           timestamp == o.timestamp &&
-          group == o.group &&
-          frozen == o.frozen &&
           name == o.name &&
-          code == o.code &&
-          path == o.path &&
-          title == o.title &&
-          prefix == o.prefix &&
-          balance == o.balance &&
-          currency_id == o.currency_id &&
-          account_type == o.account_type &&
-          account_type_id == o.account_type_id &&
-          debits_balance == o.debits_balance &&
-          credits_balance == o.credits_balance &&
-          parent_account_id == o.parent_account_id &&
-          tenant_id == o.tenant_id &&
-          enrollment_id == o.enrollment_id &&
-          children_accounts_count == o.children_accounts_count &&
-          account_category == o.account_category &&
-          balance_amount == o.balance_amount &&
-          credits_balance_amount == o.credits_balance_amount &&
-          debits_balance_amount == o.debits_balance_amount &&
           iban == o.iban &&
           swift == o.swift &&
           branch_code == o.branch_code &&
           bank_account_number == o.bank_account_number &&
           qualified_name == o.qualified_name &&
           bank_id == o.bank_id &&
-          bank_profile_id == o.bank_profile_id
+          bank_profile_id == o.bank_profile_id &&
+          wallet_id == o.wallet_id &&
+          tenant_id == o.tenant_id &&
+          enrollment_id == o.enrollment_id
     end
 
     # @see the `==` method
@@ -409,7 +215,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, timestamp, group, frozen, name, code, path, title, prefix, balance, currency_id, account_type, account_type_id, debits_balance, credits_balance, parent_account_id, tenant_id, enrollment_id, children_accounts_count, account_category, balance_amount, credits_balance_amount, debits_balance_amount, iban, swift, branch_code, bank_account_number, qualified_name, bank_id, bank_profile_id].hash
+      [id, timestamp, name, iban, swift, branch_code, bank_account_number, qualified_name, bank_id, bank_profile_id, wallet_id, tenant_id, enrollment_id].hash
     end
 
     # Builds the object from hash

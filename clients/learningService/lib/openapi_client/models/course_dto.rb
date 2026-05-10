@@ -341,6 +341,34 @@ module OpenapiClient
 
     attr_accessor :selected_selling_margin_policies
 
+    attr_accessor :code
+
+    attr_accessor :version
+
+    attr_accessor :course_category_id
+
+    attr_accessor :course_category_name
+
+    attr_accessor :instructor_profile_id
+
+    attr_accessor :instructor_profile_name
+
+    attr_accessor :max_course_enrollments
+
+    attr_accessor :total_effort_in_weeks
+
+    attr_accessor :total_hours_per_week
+
+    attr_accessor :total_effort_in_hours
+
+    attr_accessor :start_date_time
+
+    attr_accessor :end_date_time
+
+    attr_accessor :inscriptions_start_date_time
+
+    attr_accessor :inscriptions_end_date_time
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -506,7 +534,21 @@ module OpenapiClient
         :'selected_warranty_policies' => :'selectedWarrantyPolicies',
         :'selected_shipment_policies' => :'selectedShipmentPolicies',
         :'selected_attributes_options' => :'selectedAttributesOptions',
-        :'selected_selling_margin_policies' => :'selectedSellingMarginPolicies'
+        :'selected_selling_margin_policies' => :'selectedSellingMarginPolicies',
+        :'code' => :'code',
+        :'version' => :'version',
+        :'course_category_id' => :'courseCategoryID',
+        :'course_category_name' => :'courseCategoryName',
+        :'instructor_profile_id' => :'instructorProfileID',
+        :'instructor_profile_name' => :'instructorProfileName',
+        :'max_course_enrollments' => :'maxCourseEnrollments',
+        :'total_effort_in_weeks' => :'totalEffortInWeeks',
+        :'total_hours_per_week' => :'totalHoursPerWeek',
+        :'total_effort_in_hours' => :'totalEffortInHours',
+        :'start_date_time' => :'startDateTime',
+        :'end_date_time' => :'endDateTime',
+        :'inscriptions_start_date_time' => :'inscriptionsStartDateTime',
+        :'inscriptions_end_date_time' => :'inscriptionsEndDateTime'
       }
     end
 
@@ -680,7 +722,21 @@ module OpenapiClient
         :'selected_warranty_policies' => :'Array<String>',
         :'selected_shipment_policies' => :'Array<String>',
         :'selected_attributes_options' => :'Array<String>',
-        :'selected_selling_margin_policies' => :'Array<String>'
+        :'selected_selling_margin_policies' => :'Array<String>',
+        :'code' => :'String',
+        :'version' => :'String',
+        :'course_category_id' => :'String',
+        :'course_category_name' => :'String',
+        :'instructor_profile_id' => :'String',
+        :'instructor_profile_name' => :'String',
+        :'max_course_enrollments' => :'Integer',
+        :'total_effort_in_weeks' => :'Integer',
+        :'total_hours_per_week' => :'Integer',
+        :'total_effort_in_hours' => :'Integer',
+        :'start_date_time' => :'Time',
+        :'end_date_time' => :'Time',
+        :'inscriptions_start_date_time' => :'Time',
+        :'inscriptions_end_date_time' => :'Time'
       }
     end
 
@@ -805,7 +861,17 @@ module OpenapiClient
         :'selected_warranty_policies',
         :'selected_shipment_policies',
         :'selected_attributes_options',
-        :'selected_selling_margin_policies'
+        :'selected_selling_margin_policies',
+        :'code',
+        :'version',
+        :'course_category_id',
+        :'course_category_name',
+        :'instructor_profile_id',
+        :'instructor_profile_name',
+        :'start_date_time',
+        :'end_date_time',
+        :'inscriptions_start_date_time',
+        :'inscriptions_end_date_time'
       ])
     end
 
@@ -1505,6 +1571,62 @@ module OpenapiClient
           self.selected_selling_margin_policies = value
         end
       end
+
+      if attributes.key?(:'code')
+        self.code = attributes[:'code']
+      end
+
+      if attributes.key?(:'version')
+        self.version = attributes[:'version']
+      end
+
+      if attributes.key?(:'course_category_id')
+        self.course_category_id = attributes[:'course_category_id']
+      end
+
+      if attributes.key?(:'course_category_name')
+        self.course_category_name = attributes[:'course_category_name']
+      end
+
+      if attributes.key?(:'instructor_profile_id')
+        self.instructor_profile_id = attributes[:'instructor_profile_id']
+      end
+
+      if attributes.key?(:'instructor_profile_name')
+        self.instructor_profile_name = attributes[:'instructor_profile_name']
+      end
+
+      if attributes.key?(:'max_course_enrollments')
+        self.max_course_enrollments = attributes[:'max_course_enrollments']
+      end
+
+      if attributes.key?(:'total_effort_in_weeks')
+        self.total_effort_in_weeks = attributes[:'total_effort_in_weeks']
+      end
+
+      if attributes.key?(:'total_hours_per_week')
+        self.total_hours_per_week = attributes[:'total_hours_per_week']
+      end
+
+      if attributes.key?(:'total_effort_in_hours')
+        self.total_effort_in_hours = attributes[:'total_effort_in_hours']
+      end
+
+      if attributes.key?(:'start_date_time')
+        self.start_date_time = attributes[:'start_date_time']
+      end
+
+      if attributes.key?(:'end_date_time')
+        self.end_date_time = attributes[:'end_date_time']
+      end
+
+      if attributes.key?(:'inscriptions_start_date_time')
+        self.inscriptions_start_date_time = attributes[:'inscriptions_start_date_time']
+      end
+
+      if attributes.key?(:'inscriptions_end_date_time')
+        self.inscriptions_end_date_time = attributes[:'inscriptions_end_date_time']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -1689,7 +1811,21 @@ module OpenapiClient
           selected_warranty_policies == o.selected_warranty_policies &&
           selected_shipment_policies == o.selected_shipment_policies &&
           selected_attributes_options == o.selected_attributes_options &&
-          selected_selling_margin_policies == o.selected_selling_margin_policies
+          selected_selling_margin_policies == o.selected_selling_margin_policies &&
+          code == o.code &&
+          version == o.version &&
+          course_category_id == o.course_category_id &&
+          course_category_name == o.course_category_name &&
+          instructor_profile_id == o.instructor_profile_id &&
+          instructor_profile_name == o.instructor_profile_name &&
+          max_course_enrollments == o.max_course_enrollments &&
+          total_effort_in_weeks == o.total_effort_in_weeks &&
+          total_hours_per_week == o.total_hours_per_week &&
+          total_effort_in_hours == o.total_effort_in_hours &&
+          start_date_time == o.start_date_time &&
+          end_date_time == o.end_date_time &&
+          inscriptions_start_date_time == o.inscriptions_start_date_time &&
+          inscriptions_end_date_time == o.inscriptions_end_date_time
     end
 
     # @see the `==` method
@@ -1701,7 +1837,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, timestamp, sku, upc, ean, mpn, sk_us, isbn, up_cs, ea_ns, asin, gtin, mp_ns, part, name, isb_ns, asi_ns, gti_ns, model, title, color, isb_n13, unspsc, unit_id, series, barcode, unsps_cs, pattern, summary, brand_id, features, material, tenant_id, permalink, brand_name, language_id, item_type_id, category_id, currency_id, unit_group_id, description, ingredients, release_date, enrollment_id, supplier_code, ships_to_rules, purchase_note, parent_item_id, item_type_name, discriminator, tariff_heading, nutrition_facts, mozaic_cover_url, package_content, youtube_video_id, primary_image_url, long_description, measurement_unit, short_description, google_categories, supplier_profile_id, shipping_country_id, system_requirements, custom_tax_description, official_description_url, energy_efficiency_rating, page_cover_background_url, primary_google_category_id, operating_system_supported, supported_operating_system, primary_google_category_name, hot, on_sale, auction, deleted, digital, pre_sale, taxable, in_stock, featured, trending, low_stock, published, by_request, on_discount, is_daily_deal, is_new_arrival, is_weekly_deal, is_best_seller, is_monthly_deal, has_variations, is_fixed_discount, is_dealers_choice, manage_inventory, is_official_choice, valid_primary_image, is_deadline_discount, display_showcase_tab, tax_included_in_price, is_product_of_the_week, is_product_of_the_month, is_percentage_discount, display_on_global_mozaic, display_on_brands_mozaic, disable_default_policies, display_on_category_mozaic, display_description_editor, display_short_description_editor, display_on_banner_marketing_rotation, auction_end, auction_start, published_date, deadline_discount_from_date, deadline_discount_due_date, last_fixed_prices_update_date_time, images, views_count, reviews_count, questions_count, packaged_quantity, reviews_avg, recurrency, current_stock, width, weight, length, height, regular_price, discount_price, custom_tax_value, discount_amount, in_cart_quantity, custom_tax_amount, discount_percentage, custom_tax_percentage, estimated_taxes_in_usd, estimated_profit_in_usd, estimated_base_price_in_usd, estimated_discounts_in_usd, estimated_surcharges_in_usd, estimated_payment_tax_in_usd, estimated_total_price_in_usd, estimated_payment_cost_in_usd, estimated_deal_savings_in_usd, estimated_regular_price_in_usd, estimated_tax_base_price_in_usd, estimated_withholding_taxes_in_usd, estimated_default_shipping_tax_in_usd, estimated_default_shipping_cost_in_usd, selected_tags, selected_types, selected_brands, selected_categories, selected_tax_policies, selected_pricing_rules, selected_refund_policies, selected_return_policies, selected_pricing_policies, selected_google_categories, selected_warranty_policies, selected_shipment_policies, selected_attributes_options, selected_selling_margin_policies].hash
+      [id, timestamp, sku, upc, ean, mpn, sk_us, isbn, up_cs, ea_ns, asin, gtin, mp_ns, part, name, isb_ns, asi_ns, gti_ns, model, title, color, isb_n13, unspsc, unit_id, series, barcode, unsps_cs, pattern, summary, brand_id, features, material, tenant_id, permalink, brand_name, language_id, item_type_id, category_id, currency_id, unit_group_id, description, ingredients, release_date, enrollment_id, supplier_code, ships_to_rules, purchase_note, parent_item_id, item_type_name, discriminator, tariff_heading, nutrition_facts, mozaic_cover_url, package_content, youtube_video_id, primary_image_url, long_description, measurement_unit, short_description, google_categories, supplier_profile_id, shipping_country_id, system_requirements, custom_tax_description, official_description_url, energy_efficiency_rating, page_cover_background_url, primary_google_category_id, operating_system_supported, supported_operating_system, primary_google_category_name, hot, on_sale, auction, deleted, digital, pre_sale, taxable, in_stock, featured, trending, low_stock, published, by_request, on_discount, is_daily_deal, is_new_arrival, is_weekly_deal, is_best_seller, is_monthly_deal, has_variations, is_fixed_discount, is_dealers_choice, manage_inventory, is_official_choice, valid_primary_image, is_deadline_discount, display_showcase_tab, tax_included_in_price, is_product_of_the_week, is_product_of_the_month, is_percentage_discount, display_on_global_mozaic, display_on_brands_mozaic, disable_default_policies, display_on_category_mozaic, display_description_editor, display_short_description_editor, display_on_banner_marketing_rotation, auction_end, auction_start, published_date, deadline_discount_from_date, deadline_discount_due_date, last_fixed_prices_update_date_time, images, views_count, reviews_count, questions_count, packaged_quantity, reviews_avg, recurrency, current_stock, width, weight, length, height, regular_price, discount_price, custom_tax_value, discount_amount, in_cart_quantity, custom_tax_amount, discount_percentage, custom_tax_percentage, estimated_taxes_in_usd, estimated_profit_in_usd, estimated_base_price_in_usd, estimated_discounts_in_usd, estimated_surcharges_in_usd, estimated_payment_tax_in_usd, estimated_total_price_in_usd, estimated_payment_cost_in_usd, estimated_deal_savings_in_usd, estimated_regular_price_in_usd, estimated_tax_base_price_in_usd, estimated_withholding_taxes_in_usd, estimated_default_shipping_tax_in_usd, estimated_default_shipping_cost_in_usd, selected_tags, selected_types, selected_brands, selected_categories, selected_tax_policies, selected_pricing_rules, selected_refund_policies, selected_return_policies, selected_pricing_policies, selected_google_categories, selected_warranty_policies, selected_shipment_policies, selected_attributes_options, selected_selling_margin_policies, code, version, course_category_id, course_category_name, instructor_profile_id, instructor_profile_name, max_course_enrollments, total_effort_in_weeks, total_hours_per_week, total_effort_in_hours, start_date_time, end_date_time, inscriptions_start_date_time, inscriptions_end_date_time].hash
     end
 
     # Builds the object from hash
