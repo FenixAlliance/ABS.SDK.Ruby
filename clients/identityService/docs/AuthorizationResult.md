@@ -1,4 +1,4 @@
-# OpenapiClient::AuthorizationResult
+# OpenapiClient::AuthResult
 
 ## Properties
 
@@ -18,7 +18,7 @@
 ```ruby
 require 'openapi_client'
 
-instance = OpenapiClient::AuthorizationResult.new(
+instance = OpenapiClient::AuthResult.new(
   user_id: null,
   tenant_id: null,
   portal_id: null,

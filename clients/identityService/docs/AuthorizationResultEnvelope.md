@@ -9,7 +9,7 @@
 | **correlation_id** | **String** |  | [optional] |
 | **timestamp** | **Time** |  | [optional][readonly] |
 | **activity_id** | **String** |  | [optional][readonly] |
-| **result** | [**AuthorizationResult**](AuthorizationResult.md) |  | [optional] |
+| **result** | [**AuthResult**](AuthResult.md) |  | [optional] |
 
 ## Example
 

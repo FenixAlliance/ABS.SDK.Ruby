@@ -52,7 +52,7 @@ module OpenapiClient
         :'correlation_id' => :'String',
         :'timestamp' => :'Time',
         :'activity_id' => :'String',
-        :'result' => :'AuthorizationResult'
+        :'result' => :'AuthResult'
       }
     end
 

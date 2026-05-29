@@ -118,7 +118,7 @@ Class | Method | HTTP request | Description
 ## Documentation for Models
 
  - [OpenapiClient::AccessTokenResponse](docs/AccessTokenResponse.md)
- - [OpenapiClient::AuthorizationResult](docs/AuthorizationResult.md)
+ - [OpenapiClient::AuthResult](docs/AuthResult.md)
  - [OpenapiClient::AuthorizationResultEnvelope](docs/AuthorizationResultEnvelope.md)
  - [OpenapiClient::ErrorEnvelope](docs/ErrorEnvelope.md)
  - [OpenapiClient::ForgotPasswordRequest](docs/ForgotPasswordRequest.md)
