@@ -9,10 +9,11 @@ Rakefile
 docs/AccessTokenResponse.md
 docs/ApplicationsApi.md
 docs/AuthResult.md
-docs/AuthorizationResultEnvelope.md
+docs/AuthResultEnvelope.md
 docs/CheckerApi.md
+docs/CompletionsApi.md
 docs/ErrorEnvelope.md
-docs/FenixAllianceABSWebApi.md
+docs/FenixAlliancePortalsWebsiteApi.md
 docs/ForgotPasswordRequest.md
 docs/HttpValidationProblemDetails.md
 docs/InfoRequest.md
@@ -45,7 +46,8 @@ git_push.sh
 lib/openapi_client.rb
 lib/openapi_client/api/applications_api.rb
 lib/openapi_client/api/checker_api.rb
-lib/openapi_client/api/fenix_alliance_abs_web_api.rb
+lib/openapi_client/api/completions_api.rb
+lib/openapi_client/api/fenix_alliance_portals_website_api.rb
 lib/openapi_client/api/o_auth_api.rb
 lib/openapi_client/api/resource_api.rb
 lib/openapi_client/api/user_info_api.rb
@@ -53,8 +55,8 @@ lib/openapi_client/api_client.rb
 lib/openapi_client/api_error.rb
 lib/openapi_client/configuration.rb
 lib/openapi_client/models/access_token_response.rb
-lib/openapi_client/models/authorization_result.rb
-lib/openapi_client/models/authorization_result_envelope.rb
+lib/openapi_client/models/auth_result.rb
+lib/openapi_client/models/auth_result_envelope.rb
 lib/openapi_client/models/error_envelope.rb
 lib/openapi_client/models/forgot_password_request.rb
 lib/openapi_client/models/http_validation_problem_details.rb
@@ -83,4 +85,8 @@ lib/openapi_client/models/user_create_dto.rb
 lib/openapi_client/models/user_create_dto_envelope.rb
 lib/openapi_client/version.rb
 openapi_client.gemspec
+spec/api/completions_api_spec.rb
+spec/api/fenix_alliance_portals_website_api_spec.rb
+spec/models/auth_result_envelope_spec.rb
+spec/models/auth_result_spec.rb
 spec/spec_helper.rb

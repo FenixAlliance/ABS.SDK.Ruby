@@ -1,6 +1,6 @@
 # OpenapiClient::CourseCertificatesApi
 
-All URIs are relative to *https://absuite.net*
+All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
@@ -11,9 +11,11 @@ All URIs are relative to *https://absuite.net*
 | [**get_course_certificate_async**](CourseCertificatesApi.md#get_course_certificate_async) | **GET** /api/v2/LearningService/CourseCertificates/{courseCertificateId} | Get course certificate by ID |
 | [**get_course_certificate_template_async**](CourseCertificatesApi.md#get_course_certificate_template_async) | **GET** /api/v2/LearningService/CourseCertificates/Template/{courseCertificateTemplateId} | Get certificate template by ID |
 | [**get_course_certificate_templates_async**](CourseCertificatesApi.md#get_course_certificate_templates_async) | **GET** /api/v2/LearningService/CourseCertificates/Template | Get all certificate templates |
+| [**get_course_certificate_templates_count_async**](CourseCertificatesApi.md#get_course_certificate_templates_count_async) | **GET** /api/v2/LearningService/CourseCertificates/Template/Count | Get certificate templates count |
 | [**get_course_certificates_async**](CourseCertificatesApi.md#get_course_certificates_async) | **GET** /api/v2/LearningService/CourseCertificates | Get all course certificates |
 | [**get_course_certificates_count_async**](CourseCertificatesApi.md#get_course_certificates_count_async) | **GET** /api/v2/LearningService/CourseCertificates/Count | Get course certificates count |
 | [**update_course_certificate_async**](CourseCertificatesApi.md#update_course_certificate_async) | **PUT** /api/v2/LearningService/CourseCertificates/{courseCertificateId} | Update a course certificate |
+| [**update_course_certificate_template_async**](CourseCertificatesApi.md#update_course_certificate_template_async) | **PUT** /api/v2/LearningService/CourseCertificates/Template/{courseCertificateTemplateId} | Update a certificate template |
 
 
 ## create_course_certificate_async
@@ -514,6 +516,76 @@ No authorization required
 - **Accept**: application/json, application/xml
 
 
+## get_course_certificate_templates_count_async
+
+> Integer get_course_certificate_templates_count_async(tenant_id, opts)
+
+Get certificate templates count
+
+Returns the count of course certificate templates for the specified tenant.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::CourseCertificatesApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example' # String | 
+}
+
+begin
+  # Get certificate templates count
+  result = api_instance.get_course_certificate_templates_count_async(tenant_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling CourseCertificatesApi->get_course_certificate_templates_count_async: #{e}"
+end
+```
+
+#### Using the get_course_certificate_templates_count_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(Integer, Integer, Hash)> get_course_certificate_templates_count_async_with_http_info(tenant_id, opts)
+
+```ruby
+begin
+  # Get certificate templates count
+  data, status_code, headers = api_instance.get_course_certificate_templates_count_async_with_http_info(tenant_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => Integer
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling CourseCertificatesApi->get_course_certificate_templates_count_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+
+### Return type
+
+**Integer**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
 ## get_course_certificates_async
 
 > <Array<CourseCompletionCertificateDto>> get_course_certificates_async(tenant_id, opts)
@@ -712,6 +784,79 @@ end
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
 | **course_completion_certificate_update_dto** | [**CourseCompletionCertificateUpdateDto**](CourseCompletionCertificateUpdateDto.md) |  | [optional] |
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
+- **Accept**: application/json, application/xml
+
+
+## update_course_certificate_template_async
+
+> update_course_certificate_template_async(tenant_id, course_certificate_template_id, opts)
+
+Update a certificate template
+
+Updates an existing course certificate template for the specified tenant.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::CourseCertificatesApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+course_certificate_template_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  course_certificate_template_update_dto: OpenapiClient::CourseCertificateTemplateUpdateDto.new # CourseCertificateTemplateUpdateDto | 
+}
+
+begin
+  # Update a certificate template
+  api_instance.update_course_certificate_template_async(tenant_id, course_certificate_template_id, opts)
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling CourseCertificatesApi->update_course_certificate_template_async: #{e}"
+end
+```
+
+#### Using the update_course_certificate_template_async_with_http_info variant
+
+This returns an Array which contains the response data (`nil` in this case), status code and headers.
+
+> <Array(nil, Integer, Hash)> update_course_certificate_template_async_with_http_info(tenant_id, course_certificate_template_id, opts)
+
+```ruby
+begin
+  # Update a certificate template
+  data, status_code, headers = api_instance.update_course_certificate_template_async_with_http_info(tenant_id, course_certificate_template_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => nil
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling CourseCertificatesApi->update_course_certificate_template_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **course_certificate_template_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **course_certificate_template_update_dto** | [**CourseCertificateTemplateUpdateDto**](CourseCertificateTemplateUpdateDto.md) |  | [optional] |
 
 ### Return type
 

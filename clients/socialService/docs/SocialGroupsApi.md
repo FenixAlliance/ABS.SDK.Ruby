@@ -1,6 +1,6 @@
 # OpenapiClient::SocialGroupsApi
 
-All URIs are relative to *https://absuite.net*
+All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
@@ -84,7 +84,7 @@ No authorization required
 
 ## create_social_group_async
 
-> <EmptyEnvelope> create_social_group_async(tenant_id, opts)
+> <EmptyEnvelope> create_social_group_async(tenant_id, social_profile_id, opts)
 
 Create a social group
 
@@ -98,6 +98,7 @@ require 'openapi_client'
 
 api_instance = OpenapiClient::SocialGroupsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+social_profile_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example', # String | 
@@ -106,7 +107,7 @@ opts = {
 
 begin
   # Create a social group
-  result = api_instance.create_social_group_async(tenant_id, opts)
+  result = api_instance.create_social_group_async(tenant_id, social_profile_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling SocialGroupsApi->create_social_group_async: #{e}"
@@ -117,12 +118,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<EmptyEnvelope>, Integer, Hash)> create_social_group_async_with_http_info(tenant_id, opts)
+> <Array(<EmptyEnvelope>, Integer, Hash)> create_social_group_async_with_http_info(tenant_id, social_profile_id, opts)
 
 ```ruby
 begin
   # Create a social group
-  data, status_code, headers = api_instance.create_social_group_async_with_http_info(tenant_id, opts)
+  data, status_code, headers = api_instance.create_social_group_async_with_http_info(tenant_id, social_profile_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <EmptyEnvelope>
@@ -136,6 +137,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
+| **social_profile_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
 | **social_group_create_dto** | [**SocialGroupCreateDto**](SocialGroupCreateDto.md) |  | [optional] |
@@ -156,7 +158,7 @@ No authorization required
 
 ## delete_social_group_async
 
-> <EmptyEnvelope> delete_social_group_async(tenant_id, social_group_id, opts)
+> <EmptyEnvelope> delete_social_group_async(tenant_id, social_profile_id, social_group_id, opts)
 
 Delete a social group
 
@@ -170,6 +172,7 @@ require 'openapi_client'
 
 api_instance = OpenapiClient::SocialGroupsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+social_profile_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 social_group_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
@@ -178,7 +181,7 @@ opts = {
 
 begin
   # Delete a social group
-  result = api_instance.delete_social_group_async(tenant_id, social_group_id, opts)
+  result = api_instance.delete_social_group_async(tenant_id, social_profile_id, social_group_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling SocialGroupsApi->delete_social_group_async: #{e}"
@@ -189,12 +192,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<EmptyEnvelope>, Integer, Hash)> delete_social_group_async_with_http_info(tenant_id, social_group_id, opts)
+> <Array(<EmptyEnvelope>, Integer, Hash)> delete_social_group_async_with_http_info(tenant_id, social_profile_id, social_group_id, opts)
 
 ```ruby
 begin
   # Delete a social group
-  data, status_code, headers = api_instance.delete_social_group_async_with_http_info(tenant_id, social_group_id, opts)
+  data, status_code, headers = api_instance.delete_social_group_async_with_http_info(tenant_id, social_profile_id, social_group_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <EmptyEnvelope>
@@ -208,6 +211,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
+| **social_profile_id** | **String** |  |  |
 | **social_group_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
@@ -370,7 +374,7 @@ No authorization required
 
 ## update_social_group_async
 
-> <EmptyEnvelope> update_social_group_async(tenant_id, social_group_id, opts)
+> <EmptyEnvelope> update_social_group_async(tenant_id, social_profile_id, social_group_id, opts)
 
 Update a social group
 
@@ -384,6 +388,7 @@ require 'openapi_client'
 
 api_instance = OpenapiClient::SocialGroupsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+social_profile_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 social_group_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
@@ -393,7 +398,7 @@ opts = {
 
 begin
   # Update a social group
-  result = api_instance.update_social_group_async(tenant_id, social_group_id, opts)
+  result = api_instance.update_social_group_async(tenant_id, social_profile_id, social_group_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling SocialGroupsApi->update_social_group_async: #{e}"
@@ -404,12 +409,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<EmptyEnvelope>, Integer, Hash)> update_social_group_async_with_http_info(tenant_id, social_group_id, opts)
+> <Array(<EmptyEnvelope>, Integer, Hash)> update_social_group_async_with_http_info(tenant_id, social_profile_id, social_group_id, opts)
 
 ```ruby
 begin
   # Update a social group
-  data, status_code, headers = api_instance.update_social_group_async_with_http_info(tenant_id, social_group_id, opts)
+  data, status_code, headers = api_instance.update_social_group_async_with_http_info(tenant_id, social_profile_id, social_group_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <EmptyEnvelope>
@@ -423,6 +428,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
+| **social_profile_id** | **String** |  |  |
 | **social_group_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |

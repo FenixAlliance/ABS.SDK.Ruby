@@ -1,6 +1,6 @@
 # OpenapiClient::ItemsApi
 
-All URIs are relative to *https://absuite.net*
+All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
@@ -84,7 +84,7 @@ All URIs are relative to *https://absuite.net*
 
 ## count_stock_item_tags_by_item_id
 
-> <Int32Envelope> count_stock_item_tags_by_item_id(item_id, opts)
+> <Int32Envelope> count_stock_item_tags_by_item_id(tenant_id, item_id, opts)
 
 Count tags for a stock item
 
@@ -97,6 +97,7 @@ require 'time'
 require 'openapi_client'
 
 api_instance = OpenapiClient::ItemsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 item_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
@@ -105,7 +106,7 @@ opts = {
 
 begin
   # Count tags for a stock item
-  result = api_instance.count_stock_item_tags_by_item_id(item_id, opts)
+  result = api_instance.count_stock_item_tags_by_item_id(tenant_id, item_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling ItemsApi->count_stock_item_tags_by_item_id: #{e}"
@@ -116,12 +117,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Int32Envelope>, Integer, Hash)> count_stock_item_tags_by_item_id_with_http_info(item_id, opts)
+> <Array(<Int32Envelope>, Integer, Hash)> count_stock_item_tags_by_item_id_with_http_info(tenant_id, item_id, opts)
 
 ```ruby
 begin
   # Count tags for a stock item
-  data, status_code, headers = api_instance.count_stock_item_tags_by_item_id_with_http_info(item_id, opts)
+  data, status_code, headers = api_instance.count_stock_item_tags_by_item_id_with_http_info(tenant_id, item_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Int32Envelope>
@@ -134,6 +135,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
 | **item_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
@@ -2280,7 +2282,7 @@ No authorization required
 
 ## get_stock_item_tag_by_id
 
-> <ItemTagDtoEnvelope> get_stock_item_tag_by_id(item_id, item_tag_id, opts)
+> <ItemTagDtoEnvelope> get_stock_item_tag_by_id(tenant_id, item_id, item_tag_id, opts)
 
 Get tag by ID for a stock item
 
@@ -2293,6 +2295,7 @@ require 'time'
 require 'openapi_client'
 
 api_instance = OpenapiClient::ItemsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 item_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 item_tag_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
@@ -2302,7 +2305,7 @@ opts = {
 
 begin
   # Get tag by ID for a stock item
-  result = api_instance.get_stock_item_tag_by_id(item_id, item_tag_id, opts)
+  result = api_instance.get_stock_item_tag_by_id(tenant_id, item_id, item_tag_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling ItemsApi->get_stock_item_tag_by_id: #{e}"
@@ -2313,12 +2316,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<ItemTagDtoEnvelope>, Integer, Hash)> get_stock_item_tag_by_id_with_http_info(item_id, item_tag_id, opts)
+> <Array(<ItemTagDtoEnvelope>, Integer, Hash)> get_stock_item_tag_by_id_with_http_info(tenant_id, item_id, item_tag_id, opts)
 
 ```ruby
 begin
   # Get tag by ID for a stock item
-  data, status_code, headers = api_instance.get_stock_item_tag_by_id_with_http_info(item_id, item_tag_id, opts)
+  data, status_code, headers = api_instance.get_stock_item_tag_by_id_with_http_info(tenant_id, item_id, item_tag_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ItemTagDtoEnvelope>
@@ -2331,6 +2334,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
 | **item_id** | **String** |  |  |
 | **item_tag_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
@@ -2352,7 +2356,7 @@ No authorization required
 
 ## get_stock_item_tags_by_item_id
 
-> <ItemTagDtoListEnvelope> get_stock_item_tags_by_item_id(item_id, opts)
+> <ItemTagDtoListEnvelope> get_stock_item_tags_by_item_id(tenant_id, item_id, opts)
 
 Get tags for a stock item
 
@@ -2365,6 +2369,7 @@ require 'time'
 require 'openapi_client'
 
 api_instance = OpenapiClient::ItemsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 item_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
@@ -2373,7 +2378,7 @@ opts = {
 
 begin
   # Get tags for a stock item
-  result = api_instance.get_stock_item_tags_by_item_id(item_id, opts)
+  result = api_instance.get_stock_item_tags_by_item_id(tenant_id, item_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling ItemsApi->get_stock_item_tags_by_item_id: #{e}"
@@ -2384,12 +2389,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<ItemTagDtoListEnvelope>, Integer, Hash)> get_stock_item_tags_by_item_id_with_http_info(item_id, opts)
+> <Array(<ItemTagDtoListEnvelope>, Integer, Hash)> get_stock_item_tags_by_item_id_with_http_info(tenant_id, item_id, opts)
 
 ```ruby
 begin
   # Get tags for a stock item
-  data, status_code, headers = api_instance.get_stock_item_tags_by_item_id_with_http_info(item_id, opts)
+  data, status_code, headers = api_instance.get_stock_item_tags_by_item_id_with_http_info(tenant_id, item_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ItemTagDtoListEnvelope>
@@ -2402,6 +2407,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
 | **item_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
@@ -2564,7 +2570,7 @@ No authorization required
 
 ## get_stock_item_type_by_id
 
-> <ItemTypeDtoEnvelope> get_stock_item_type_by_id(item_id, item_type_id, opts)
+> <ItemTypeDtoEnvelope> get_stock_item_type_by_id(tenant_id, item_id, item_type_id, opts)
 
 Get type by ID for a stock item
 
@@ -2577,6 +2583,7 @@ require 'time'
 require 'openapi_client'
 
 api_instance = OpenapiClient::ItemsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 item_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 item_type_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
@@ -2586,7 +2593,7 @@ opts = {
 
 begin
   # Get type by ID for a stock item
-  result = api_instance.get_stock_item_type_by_id(item_id, item_type_id, opts)
+  result = api_instance.get_stock_item_type_by_id(tenant_id, item_id, item_type_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling ItemsApi->get_stock_item_type_by_id: #{e}"
@@ -2597,12 +2604,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<ItemTypeDtoEnvelope>, Integer, Hash)> get_stock_item_type_by_id_with_http_info(item_id, item_type_id, opts)
+> <Array(<ItemTypeDtoEnvelope>, Integer, Hash)> get_stock_item_type_by_id_with_http_info(tenant_id, item_id, item_type_id, opts)
 
 ```ruby
 begin
   # Get type by ID for a stock item
-  data, status_code, headers = api_instance.get_stock_item_type_by_id_with_http_info(item_id, item_type_id, opts)
+  data, status_code, headers = api_instance.get_stock_item_type_by_id_with_http_info(tenant_id, item_id, item_type_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ItemTypeDtoEnvelope>
@@ -2615,6 +2622,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
 | **item_id** | **String** |  |  |
 | **item_type_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
@@ -2636,7 +2644,7 @@ No authorization required
 
 ## get_stock_item_types_by_item_id
 
-> <ItemTypeDtoListEnvelope> get_stock_item_types_by_item_id(item_id, opts)
+> <ItemTypeDtoListEnvelope> get_stock_item_types_by_item_id(tenant_id, item_id, opts)
 
 Get types for a stock item
 
@@ -2649,6 +2657,7 @@ require 'time'
 require 'openapi_client'
 
 api_instance = OpenapiClient::ItemsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 item_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
@@ -2657,7 +2666,7 @@ opts = {
 
 begin
   # Get types for a stock item
-  result = api_instance.get_stock_item_types_by_item_id(item_id, opts)
+  result = api_instance.get_stock_item_types_by_item_id(tenant_id, item_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling ItemsApi->get_stock_item_types_by_item_id: #{e}"
@@ -2668,12 +2677,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<ItemTypeDtoListEnvelope>, Integer, Hash)> get_stock_item_types_by_item_id_with_http_info(item_id, opts)
+> <Array(<ItemTypeDtoListEnvelope>, Integer, Hash)> get_stock_item_types_by_item_id_with_http_info(tenant_id, item_id, opts)
 
 ```ruby
 begin
   # Get types for a stock item
-  data, status_code, headers = api_instance.get_stock_item_types_by_item_id_with_http_info(item_id, opts)
+  data, status_code, headers = api_instance.get_stock_item_types_by_item_id_with_http_info(tenant_id, item_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ItemTypeDtoListEnvelope>
@@ -2686,6 +2695,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
 | **item_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |

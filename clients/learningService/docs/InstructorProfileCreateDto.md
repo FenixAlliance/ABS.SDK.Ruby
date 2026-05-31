@@ -6,13 +6,10 @@
 | ---- | ---- | ----------- | ----- |
 | **id** | **String** |  | [optional] |
 | **timestamp** | **Time** |  | [optional] |
-| **authorized** | **Boolean** |  | [optional] |
+| **type** | **String** |  | [optional] |
+| **contact_id** | **String** |  | [optional] |
 | **about** | **String** |  | [optional] |
-| **verified** | **Boolean** |  | [optional] |
-| **submitted** | **Boolean** |  | [optional] |
 | **avatar_url** | **String** |  | [optional] |
-| **qualified_name** | **String** |  | [optional] |
-| **verification_timestamp** | **Time** |  | [optional] |
 | **data** | **String** |  | [optional] |
 | **data_label** | **String** |  | [optional] |
 | **data1** | **String** |  | [optional] |
@@ -33,6 +30,7 @@
 | **data8_label** | **String** |  | [optional] |
 | **data9** | **String** |  | [optional] |
 | **data9_label** | **String** |  | [optional] |
+| **authorized** | **Boolean** |  | [optional] |
 | **contact_id** | **String** |  | [optional] |
 
 ## Example
@@ -43,13 +41,10 @@ require 'openapi_client'
 instance = OpenapiClient::InstructorProfileCreateDto.new(
   id: null,
   timestamp: null,
-  authorized: null,
+  type: null,
+  contact_id: null,
   about: null,
-  verified: null,
-  submitted: null,
   avatar_url: null,
-  qualified_name: null,
-  verification_timestamp: null,
   data: null,
   data_label: null,
   data1: null,
@@ -70,6 +65,7 @@ instance = OpenapiClient::InstructorProfileCreateDto.new(
   data8_label: null,
   data9: null,
   data9_label: null,
+  authorized: null,
   contact_id: null
 )
 ```

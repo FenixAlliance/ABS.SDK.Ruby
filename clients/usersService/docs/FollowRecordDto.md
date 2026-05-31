@@ -5,6 +5,7 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **id** | **String** |  | [optional] |
+| **timestamp** | **Time** |  | [optional] |
 | **type** | **String** |  | [optional] |
 | **follower_id** | **String** |  | [optional] |
 | **followed_id** | **String** |  | [optional] |
@@ -17,6 +18,7 @@ require 'openapi_client'
 
 instance = OpenapiClient::FollowRecordDto.new(
   id: null,
+  timestamp: null,
   type: null,
   follower_id: null,
   followed_id: null,

@@ -1,6 +1,6 @@
 # OpenapiClient::LicensingApi
 
-All URIs are relative to *https://absuite.net*
+All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
@@ -16,7 +16,7 @@ All URIs are relative to *https://absuite.net*
 
 ## get_license_assignments_async
 
-> <SuiteLicenseAssignmentDtoListEnvelope> get_license_assignments_async(license_id, tenant_id, opts)
+> <SuiteLicenseAssignmentDtoListEnvelope> get_license_assignments_async(tenant_id, license_id, opts)
 
 Retrieve license assignments
 
@@ -29,8 +29,8 @@ require 'time'
 require 'openapi_client'
 
 api_instance = OpenapiClient::LicensingApi.new
-license_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+license_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example' # String | 
@@ -38,7 +38,7 @@ opts = {
 
 begin
   # Retrieve license assignments
-  result = api_instance.get_license_assignments_async(license_id, tenant_id, opts)
+  result = api_instance.get_license_assignments_async(tenant_id, license_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling LicensingApi->get_license_assignments_async: #{e}"
@@ -49,12 +49,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<SuiteLicenseAssignmentDtoListEnvelope>, Integer, Hash)> get_license_assignments_async_with_http_info(license_id, tenant_id, opts)
+> <Array(<SuiteLicenseAssignmentDtoListEnvelope>, Integer, Hash)> get_license_assignments_async_with_http_info(tenant_id, license_id, opts)
 
 ```ruby
 begin
   # Retrieve license assignments
-  data, status_code, headers = api_instance.get_license_assignments_async_with_http_info(license_id, tenant_id, opts)
+  data, status_code, headers = api_instance.get_license_assignments_async_with_http_info(tenant_id, license_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <SuiteLicenseAssignmentDtoListEnvelope>
@@ -67,8 +67,8 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **license_id** | **String** |  |  |
 | **tenant_id** | **String** |  |  |
+| **license_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
 
@@ -88,7 +88,7 @@ No authorization required
 
 ## get_license_attributes_async
 
-> <SuiteLicenseAssignmentDtoListEnvelope> get_license_attributes_async(license_id, tenant_id, opts)
+> <SuiteLicenseAssignmentDtoListEnvelope> get_license_attributes_async(tenant_id, license_id, opts)
 
 Retrieve license attributes
 
@@ -101,8 +101,8 @@ require 'time'
 require 'openapi_client'
 
 api_instance = OpenapiClient::LicensingApi.new
-license_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+license_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example' # String | 
@@ -110,7 +110,7 @@ opts = {
 
 begin
   # Retrieve license attributes
-  result = api_instance.get_license_attributes_async(license_id, tenant_id, opts)
+  result = api_instance.get_license_attributes_async(tenant_id, license_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling LicensingApi->get_license_attributes_async: #{e}"
@@ -121,12 +121,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<SuiteLicenseAssignmentDtoListEnvelope>, Integer, Hash)> get_license_attributes_async_with_http_info(license_id, tenant_id, opts)
+> <Array(<SuiteLicenseAssignmentDtoListEnvelope>, Integer, Hash)> get_license_attributes_async_with_http_info(tenant_id, license_id, opts)
 
 ```ruby
 begin
   # Retrieve license attributes
-  data, status_code, headers = api_instance.get_license_attributes_async_with_http_info(license_id, tenant_id, opts)
+  data, status_code, headers = api_instance.get_license_attributes_async_with_http_info(tenant_id, license_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <SuiteLicenseAssignmentDtoListEnvelope>
@@ -139,8 +139,8 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **license_id** | **String** |  |  |
 | **tenant_id** | **String** |  |  |
+| **license_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
 
@@ -160,7 +160,7 @@ No authorization required
 
 ## get_license_by_id_async
 
-> <SuiteLicenseDtoEnvelope> get_license_by_id_async(license_id, opts)
+> <SuiteLicenseDtoEnvelope> get_license_by_id_async(tenant_id, license_id, opts)
 
 Retrieve a license by ID
 
@@ -173,6 +173,7 @@ require 'time'
 require 'openapi_client'
 
 api_instance = OpenapiClient::LicensingApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 license_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
@@ -181,7 +182,7 @@ opts = {
 
 begin
   # Retrieve a license by ID
-  result = api_instance.get_license_by_id_async(license_id, opts)
+  result = api_instance.get_license_by_id_async(tenant_id, license_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling LicensingApi->get_license_by_id_async: #{e}"
@@ -192,12 +193,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<SuiteLicenseDtoEnvelope>, Integer, Hash)> get_license_by_id_async_with_http_info(license_id, opts)
+> <Array(<SuiteLicenseDtoEnvelope>, Integer, Hash)> get_license_by_id_async_with_http_info(tenant_id, license_id, opts)
 
 ```ruby
 begin
   # Retrieve a license by ID
-  data, status_code, headers = api_instance.get_license_by_id_async_with_http_info(license_id, opts)
+  data, status_code, headers = api_instance.get_license_by_id_async_with_http_info(tenant_id, license_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <SuiteLicenseDtoEnvelope>
@@ -210,6 +211,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
 | **license_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
@@ -230,7 +232,7 @@ No authorization required
 
 ## get_license_features_async
 
-> <SuiteLicenseAssignmentDtoListEnvelope> get_license_features_async(license_id, tenant_id, opts)
+> <SuiteLicenseAssignmentDtoListEnvelope> get_license_features_async(tenant_id, license_id, opts)
 
 Retrieve license features
 
@@ -243,8 +245,8 @@ require 'time'
 require 'openapi_client'
 
 api_instance = OpenapiClient::LicensingApi.new
-license_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+license_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example' # String | 
@@ -252,7 +254,7 @@ opts = {
 
 begin
   # Retrieve license features
-  result = api_instance.get_license_features_async(license_id, tenant_id, opts)
+  result = api_instance.get_license_features_async(tenant_id, license_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling LicensingApi->get_license_features_async: #{e}"
@@ -263,12 +265,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<SuiteLicenseAssignmentDtoListEnvelope>, Integer, Hash)> get_license_features_async_with_http_info(license_id, tenant_id, opts)
+> <Array(<SuiteLicenseAssignmentDtoListEnvelope>, Integer, Hash)> get_license_features_async_with_http_info(tenant_id, license_id, opts)
 
 ```ruby
 begin
   # Retrieve license features
-  data, status_code, headers = api_instance.get_license_features_async_with_http_info(license_id, tenant_id, opts)
+  data, status_code, headers = api_instance.get_license_features_async_with_http_info(tenant_id, license_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <SuiteLicenseAssignmentDtoListEnvelope>
@@ -281,8 +283,8 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **license_id** | **String** |  |  |
 | **tenant_id** | **String** |  |  |
+| **license_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
 
@@ -302,7 +304,7 @@ No authorization required
 
 ## get_license_records_quota_async
 
-> <SuiteLicenseAssignmentDtoListEnvelope> get_license_records_quota_async(license_id, tenant_id, opts)
+> <SuiteLicenseAssignmentDtoListEnvelope> get_license_records_quota_async(tenant_id, license_id, opts)
 
 Retrieve license record quota
 
@@ -315,8 +317,8 @@ require 'time'
 require 'openapi_client'
 
 api_instance = OpenapiClient::LicensingApi.new
-license_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+license_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example' # String | 
@@ -324,7 +326,7 @@ opts = {
 
 begin
   # Retrieve license record quota
-  result = api_instance.get_license_records_quota_async(license_id, tenant_id, opts)
+  result = api_instance.get_license_records_quota_async(tenant_id, license_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling LicensingApi->get_license_records_quota_async: #{e}"
@@ -335,12 +337,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<SuiteLicenseAssignmentDtoListEnvelope>, Integer, Hash)> get_license_records_quota_async_with_http_info(license_id, tenant_id, opts)
+> <Array(<SuiteLicenseAssignmentDtoListEnvelope>, Integer, Hash)> get_license_records_quota_async_with_http_info(tenant_id, license_id, opts)
 
 ```ruby
 begin
   # Retrieve license record quota
-  data, status_code, headers = api_instance.get_license_records_quota_async_with_http_info(license_id, tenant_id, opts)
+  data, status_code, headers = api_instance.get_license_records_quota_async_with_http_info(tenant_id, license_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <SuiteLicenseAssignmentDtoListEnvelope>
@@ -353,8 +355,8 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **license_id** | **String** |  |  |
 | **tenant_id** | **String** |  |  |
+| **license_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
 

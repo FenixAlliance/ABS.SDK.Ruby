@@ -5,6 +5,7 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **id** | **String** |  | [optional] |
+| **timestamp** | **Time** |  | [optional] |
 | **code** | **String** |  | [optional] |
 | **name** | **String** |  | [optional] |
 | **symbol** | **String** |  | [optional] |
@@ -17,6 +18,7 @@ require 'openapi_client'
 
 instance = OpenapiClient::CurrencyDto.new(
   id: null,
+  timestamp: null,
   code: null,
   name: null,
   symbol: null,

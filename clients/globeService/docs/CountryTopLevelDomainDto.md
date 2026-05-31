@@ -5,6 +5,7 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **id** | **String** |  | [optional] |
+| **timestamp** | **Time** |  | [optional] |
 | **domain** | **String** |  | [optional] |
 | **country_id** | **String** |  | [optional] |
 
@@ -15,6 +16,7 @@ require 'openapi_client'
 
 instance = OpenapiClient::CountryTopLevelDomainDto.new(
   id: null,
+  timestamp: null,
   domain: null,
   country_id: null
 )

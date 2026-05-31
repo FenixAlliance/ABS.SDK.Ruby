@@ -1,6 +1,6 @@
 # OpenapiClient::ApplicationsApi
 
-All URIs are relative to *https://absuite.net*
+All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
@@ -9,6 +9,8 @@ All URIs are relative to *https://absuite.net*
 | [**get_business_application_by_id_async**](ApplicationsApi.md#get_business_application_by_id_async) | **GET** /api/v2/SecurityService/Applications/{applicationId} | Get business application by ID |
 | [**get_business_applications_async**](ApplicationsApi.md#get_business_applications_async) | **GET** /api/v2/SecurityService/Applications | Get all business applications |
 | [**get_business_applications_count_async**](ApplicationsApi.md#get_business_applications_count_async) | **GET** /api/v2/SecurityService/Applications/Count | Get business applications count |
+| [**get_permissions_by_application_async**](ApplicationsApi.md#get_permissions_by_application_async) | **GET** /api/v2/SecurityService/Applications/{applicationId}/Permissions | Get permissions by application |
+| [**get_roles_by_application_async**](ApplicationsApi.md#get_roles_by_application_async) | **GET** /api/v2/SecurityService/Applications/{applicationId}/Roles | Get roles by application |
 | [**update_business_application_async**](ApplicationsApi.md#update_business_application_async) | **PUT** /api/v2/SecurityService/Applications/{applicationId} | Update an existing business application |
 
 
@@ -357,6 +359,150 @@ end
 ### Return type
 
 [**Int32Envelope**](Int32Envelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## get_permissions_by_application_async
+
+> <SecurityPermissionDtoListEnvelope> get_permissions_by_application_async(tenant_id, application_id, opts)
+
+Get permissions by application
+
+Retrieves all security permissions granted to a specific business application.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::ApplicationsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+application_id = 'application_id_example' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example' # String | 
+}
+
+begin
+  # Get permissions by application
+  result = api_instance.get_permissions_by_application_async(tenant_id, application_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ApplicationsApi->get_permissions_by_application_async: #{e}"
+end
+```
+
+#### Using the get_permissions_by_application_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<SecurityPermissionDtoListEnvelope>, Integer, Hash)> get_permissions_by_application_async_with_http_info(tenant_id, application_id, opts)
+
+```ruby
+begin
+  # Get permissions by application
+  data, status_code, headers = api_instance.get_permissions_by_application_async_with_http_info(tenant_id, application_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <SecurityPermissionDtoListEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ApplicationsApi->get_permissions_by_application_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **application_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+
+### Return type
+
+[**SecurityPermissionDtoListEnvelope**](SecurityPermissionDtoListEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## get_roles_by_application_async
+
+> <SecurityRoleDtoListEnvelope> get_roles_by_application_async(tenant_id, application_id, opts)
+
+Get roles by application
+
+Retrieves all security roles granted to a specific business application.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::ApplicationsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+application_id = 'application_id_example' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example' # String | 
+}
+
+begin
+  # Get roles by application
+  result = api_instance.get_roles_by_application_async(tenant_id, application_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ApplicationsApi->get_roles_by_application_async: #{e}"
+end
+```
+
+#### Using the get_roles_by_application_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<SecurityRoleDtoListEnvelope>, Integer, Hash)> get_roles_by_application_async_with_http_info(tenant_id, application_id, opts)
+
+```ruby
+begin
+  # Get roles by application
+  data, status_code, headers = api_instance.get_roles_by_application_async_with_http_info(tenant_id, application_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <SecurityRoleDtoListEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ApplicationsApi->get_roles_by_application_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **application_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+
+### Return type
+
+[**SecurityRoleDtoListEnvelope**](SecurityRoleDtoListEnvelope.md)
 
 ### Authorization
 

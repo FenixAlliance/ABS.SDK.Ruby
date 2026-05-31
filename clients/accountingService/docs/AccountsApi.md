@@ -1,9 +1,10 @@
 # OpenapiClient::AccountsApi
 
-All URIs are relative to *https://absuite.net*
+All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
+| [**aggregate_accounts_balance_async**](AccountsApi.md#aggregate_accounts_balance_async) | **GET** /api/v2/AccountingService/Accounts/Aggregate/Balance | Aggregate accounts balance |
 | [**balance_account_async**](AccountsApi.md#balance_account_async) | **POST** /api/v2/AccountingService/Accounts/{accountId}/Balance | Balance account |
 | [**balance_root_account_async**](AccountsApi.md#balance_root_account_async) | **POST** /api/v2/AccountingService/Accounts/Root/Balance | Balance root account |
 | [**create_account_async**](AccountsApi.md#create_account_async) | **POST** /api/v2/AccountingService/Accounts | Get root accounts |
@@ -26,19 +27,94 @@ All URIs are relative to *https://absuite.net*
 | [**get_account_entry_async**](AccountsApi.md#get_account_entry_async) | **GET** /api/v2/AccountingService/Accounts/{accountId}/Entries/{entryId} | Get account entry |
 | [**get_account_relations_async**](AccountsApi.md#get_account_relations_async) | **GET** /api/v2/AccountingService/Accounts/Relations | Get account relations |
 | [**get_account_relations_count_async**](AccountsApi.md#get_account_relations_count_async) | **GET** /api/v2/AccountingService/Accounts/Relations/Count | Get account relations count |
+| [**get_account_type_by_id_async**](AccountsApi.md#get_account_type_by_id_async) | **GET** /api/v2/AccountingService/Accounts/Types/{accountTypeId} | Get account type by ID |
 | [**get_account_types_async**](AccountsApi.md#get_account_types_async) | **GET** /api/v2/AccountingService/Accounts/Types | Get account types |
 | [**get_account_types_count_async**](AccountsApi.md#get_account_types_count_async) | **GET** /api/v2/AccountingService/Accounts/Types/Count | Get account types count |
 | [**get_accounts_async**](AccountsApi.md#get_accounts_async) | **GET** /api/v2/AccountingService/Accounts | Creates a new account |
 | [**get_accounts_count_async**](AccountsApi.md#get_accounts_count_async) | **GET** /api/v2/AccountingService/Accounts/Count | Get the number of accounts |
+| [**get_charts_of_accounts_async**](AccountsApi.md#get_charts_of_accounts_async) | **GET** /api/v2/AccountingService/Accounts/ChartsOfAccounts | Get charts of accounts |
 | [**get_child_accounts_async**](AccountsApi.md#get_child_accounts_async) | **GET** /api/v2/AccountingService/Accounts/{accountId}/Children | Get child accounts |
 | [**get_credit_account_entries_async**](AccountsApi.md#get_credit_account_entries_async) | **GET** /api/v2/AccountingService/Accounts/{accountId}/Entries/Credit | Get credit account entries |
 | [**get_debit_account_entries_async**](AccountsApi.md#get_debit_account_entries_async) | **GET** /api/v2/AccountingService/Accounts/{accountId}/Entries/Debit | Get debit account entries |
 | [**get_root_accounts_async**](AccountsApi.md#get_root_accounts_async) | **GET** /api/v2/AccountingService/Accounts/Root | Get root accounts |
 | [**patch_account_async**](AccountsApi.md#patch_account_async) | **PATCH** /api/v2/AccountingService/Accounts/{accountId} | Patch an account |
+| [**seed_chart_of_accounts_async**](AccountsApi.md#seed_chart_of_accounts_async) | **POST** /api/v2/AccountingService/Accounts/ChartsOfAccounts/Seed | Seed chart of accounts |
 | [**update_account_async**](AccountsApi.md#update_account_async) | **PUT** /api/v2/AccountingService/Accounts/{accountId} | Update an account |
 | [**update_account_entry_async**](AccountsApi.md#update_account_entry_async) | **PUT** /api/v2/AccountingService/Accounts/{accountId}/Entries/{entryId} | Update account entry |
 | [**update_account_relation_async**](AccountsApi.md#update_account_relation_async) | **PUT** /api/v2/AccountingService/Accounts/Relations/{accountRelationId} | Update account relation |
 | [**update_account_type_async**](AccountsApi.md#update_account_type_async) | **PUT** /api/v2/AccountingService/Accounts/Types/{accountTypeId} | Update account type |
+
+
+## aggregate_accounts_balance_async
+
+> <MoneyEnvelope> aggregate_accounts_balance_async(tenant_id, opts)
+
+Aggregate accounts balance
+
+Returns the sum of all account balances matching OData filters, normalized to the target currency using stored USD values.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::AccountsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  currency_id: 'currency_id_example', # String | 
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example' # String | 
+}
+
+begin
+  # Aggregate accounts balance
+  result = api_instance.aggregate_accounts_balance_async(tenant_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling AccountsApi->aggregate_accounts_balance_async: #{e}"
+end
+```
+
+#### Using the aggregate_accounts_balance_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<MoneyEnvelope>, Integer, Hash)> aggregate_accounts_balance_async_with_http_info(tenant_id, opts)
+
+```ruby
+begin
+  # Aggregate accounts balance
+  data, status_code, headers = api_instance.aggregate_accounts_balance_async_with_http_info(tenant_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <MoneyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling AccountsApi->aggregate_accounts_balance_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **currency_id** | **String** |  | [optional] |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+
+### Return type
+
+[**MoneyEnvelope**](MoneyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
 
 
 ## balance_account_async
@@ -553,7 +629,7 @@ No authorization required
 
 ## create_account_type_async
 
-> <EmptyEnvelope> create_account_type_async(tenant_id, account_id, opts)
+> <EmptyEnvelope> create_account_type_async(tenant_id, opts)
 
 Create account type
 
@@ -567,7 +643,6 @@ require 'openapi_client'
 
 api_instance = OpenapiClient::AccountsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
-account_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example', # String | 
@@ -576,7 +651,7 @@ opts = {
 
 begin
   # Create account type
-  result = api_instance.create_account_type_async(tenant_id, account_id, opts)
+  result = api_instance.create_account_type_async(tenant_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling AccountsApi->create_account_type_async: #{e}"
@@ -587,12 +662,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<EmptyEnvelope>, Integer, Hash)> create_account_type_async_with_http_info(tenant_id, account_id, opts)
+> <Array(<EmptyEnvelope>, Integer, Hash)> create_account_type_async_with_http_info(tenant_id, opts)
 
 ```ruby
 begin
   # Create account type
-  data, status_code, headers = api_instance.create_account_type_async_with_http_info(tenant_id, account_id, opts)
+  data, status_code, headers = api_instance.create_account_type_async_with_http_info(tenant_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <EmptyEnvelope>
@@ -606,7 +681,6 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
-| **account_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
 | **account_type_create_dto** | [**AccountTypeCreateDto**](AccountTypeCreateDto.md) |  | [optional] |
@@ -847,7 +921,7 @@ No authorization required
 
 ## delete_account_type_async
 
-> <EmptyEnvelope> delete_account_type_async(tenant_id, account_type_id, account_id, opts)
+> <EmptyEnvelope> delete_account_type_async(tenant_id, account_type_id, opts)
 
 Delete account type
 
@@ -862,7 +936,6 @@ require 'openapi_client'
 api_instance = OpenapiClient::AccountsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 account_type_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
-account_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example' # String | 
@@ -870,7 +943,7 @@ opts = {
 
 begin
   # Delete account type
-  result = api_instance.delete_account_type_async(tenant_id, account_type_id, account_id, opts)
+  result = api_instance.delete_account_type_async(tenant_id, account_type_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling AccountsApi->delete_account_type_async: #{e}"
@@ -881,12 +954,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<EmptyEnvelope>, Integer, Hash)> delete_account_type_async_with_http_info(tenant_id, account_type_id, account_id, opts)
+> <Array(<EmptyEnvelope>, Integer, Hash)> delete_account_type_async_with_http_info(tenant_id, account_type_id, opts)
 
 ```ruby
 begin
   # Delete account type
-  data, status_code, headers = api_instance.delete_account_type_async_with_http_info(tenant_id, account_type_id, account_id, opts)
+  data, status_code, headers = api_instance.delete_account_type_async_with_http_info(tenant_id, account_type_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <EmptyEnvelope>
@@ -901,7 +974,6 @@ end
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
 | **account_type_id** | **String** |  |  |
-| **account_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
 
@@ -1643,13 +1715,13 @@ No authorization required
 - **Accept**: application/json, application/xml
 
 
-## get_account_types_async
+## get_account_type_by_id_async
 
-> <AccountTypeDtoListEnvelope> get_account_types_async(tenant_id, account_type_id, opts)
+> <AccountTypeDtoEnvelope> get_account_type_by_id_async(tenant_id, account_type_id, opts)
 
-Get account types
+Get account type by ID
 
-Get account types.
+Get account type by ID.
 
 ### Examples
 
@@ -1666,8 +1738,79 @@ opts = {
 }
 
 begin
+  # Get account type by ID
+  result = api_instance.get_account_type_by_id_async(tenant_id, account_type_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling AccountsApi->get_account_type_by_id_async: #{e}"
+end
+```
+
+#### Using the get_account_type_by_id_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<AccountTypeDtoEnvelope>, Integer, Hash)> get_account_type_by_id_async_with_http_info(tenant_id, account_type_id, opts)
+
+```ruby
+begin
+  # Get account type by ID
+  data, status_code, headers = api_instance.get_account_type_by_id_async_with_http_info(tenant_id, account_type_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <AccountTypeDtoEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling AccountsApi->get_account_type_by_id_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **account_type_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+
+### Return type
+
+[**AccountTypeDtoEnvelope**](AccountTypeDtoEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## get_account_types_async
+
+> <AccountTypeDtoListEnvelope> get_account_types_async(tenant_id, opts)
+
+Get account types
+
+Get account types.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::AccountsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example' # String | 
+}
+
+begin
   # Get account types
-  result = api_instance.get_account_types_async(tenant_id, account_type_id, opts)
+  result = api_instance.get_account_types_async(tenant_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling AccountsApi->get_account_types_async: #{e}"
@@ -1678,12 +1821,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<AccountTypeDtoListEnvelope>, Integer, Hash)> get_account_types_async_with_http_info(tenant_id, account_type_id, opts)
+> <Array(<AccountTypeDtoListEnvelope>, Integer, Hash)> get_account_types_async_with_http_info(tenant_id, opts)
 
 ```ruby
 begin
   # Get account types
-  data, status_code, headers = api_instance.get_account_types_async_with_http_info(tenant_id, account_type_id, opts)
+  data, status_code, headers = api_instance.get_account_types_async_with_http_info(tenant_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <AccountTypeDtoListEnvelope>
@@ -1697,7 +1840,6 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
-| **account_type_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
 
@@ -1717,7 +1859,7 @@ No authorization required
 
 ## get_account_types_count_async
 
-> <Int32Envelope> get_account_types_count_async(tenant_id, account_type_id, opts)
+> <Int32Envelope> get_account_types_count_async(tenant_id, opts)
 
 Get account types count
 
@@ -1731,7 +1873,6 @@ require 'openapi_client'
 
 api_instance = OpenapiClient::AccountsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
-account_type_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example' # String | 
@@ -1739,7 +1880,7 @@ opts = {
 
 begin
   # Get account types count
-  result = api_instance.get_account_types_count_async(tenant_id, account_type_id, opts)
+  result = api_instance.get_account_types_count_async(tenant_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling AccountsApi->get_account_types_count_async: #{e}"
@@ -1750,12 +1891,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Int32Envelope>, Integer, Hash)> get_account_types_count_async_with_http_info(tenant_id, account_type_id, opts)
+> <Array(<Int32Envelope>, Integer, Hash)> get_account_types_count_async_with_http_info(tenant_id, opts)
 
 ```ruby
 begin
   # Get account types count
-  data, status_code, headers = api_instance.get_account_types_count_async_with_http_info(tenant_id, account_type_id, opts)
+  data, status_code, headers = api_instance.get_account_types_count_async_with_http_info(tenant_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Int32Envelope>
@@ -1769,7 +1910,6 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
-| **account_type_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
 
@@ -1916,6 +2056,74 @@ end
 ### Return type
 
 [**Int32Envelope**](Int32Envelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## get_charts_of_accounts_async
+
+> <ChartOfAccountsListEnvelope> get_charts_of_accounts_async(opts)
+
+Get charts of accounts
+
+Get available charts of accounts.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::AccountsApi.new
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example' # String | 
+}
+
+begin
+  # Get charts of accounts
+  result = api_instance.get_charts_of_accounts_async(opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling AccountsApi->get_charts_of_accounts_async: #{e}"
+end
+```
+
+#### Using the get_charts_of_accounts_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<ChartOfAccountsListEnvelope>, Integer, Hash)> get_charts_of_accounts_async_with_http_info(opts)
+
+```ruby
+begin
+  # Get charts of accounts
+  data, status_code, headers = api_instance.get_charts_of_accounts_async_with_http_info(opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <ChartOfAccountsListEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling AccountsApi->get_charts_of_accounts_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+
+### Return type
+
+[**ChartOfAccountsListEnvelope**](ChartOfAccountsListEnvelope.md)
 
 ### Authorization
 
@@ -2287,6 +2495,78 @@ No authorization required
 - **Accept**: application/json, application/xml
 
 
+## seed_chart_of_accounts_async
+
+> <EmptyEnvelope> seed_chart_of_accounts_async(tenant_id, opts)
+
+Seed chart of accounts
+
+Seed a chart of accounts from a file URL.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::AccountsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  seed_chart_of_accounts_request: OpenapiClient::SeedChartOfAccountsRequest.new # SeedChartOfAccountsRequest | 
+}
+
+begin
+  # Seed chart of accounts
+  result = api_instance.seed_chart_of_accounts_async(tenant_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling AccountsApi->seed_chart_of_accounts_async: #{e}"
+end
+```
+
+#### Using the seed_chart_of_accounts_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> seed_chart_of_accounts_async_with_http_info(tenant_id, opts)
+
+```ruby
+begin
+  # Seed chart of accounts
+  data, status_code, headers = api_instance.seed_chart_of_accounts_async_with_http_info(tenant_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling AccountsApi->seed_chart_of_accounts_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **seed_chart_of_accounts_request** | [**SeedChartOfAccountsRequest**](SeedChartOfAccountsRequest.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
+- **Accept**: application/json, application/xml
+
+
 ## update_account_async
 
 > <AccountDtoEnvelope> update_account_async(tenant_id, account_id, opts)
@@ -2515,7 +2795,7 @@ No authorization required
 
 ## update_account_type_async
 
-> <EmptyEnvelope> update_account_type_async(tenant_id, account_type_id, account_id, opts)
+> <EmptyEnvelope> update_account_type_async(tenant_id, account_type_id, opts)
 
 Update account type
 
@@ -2530,7 +2810,6 @@ require 'openapi_client'
 api_instance = OpenapiClient::AccountsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 account_type_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
-account_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example', # String | 
@@ -2539,7 +2818,7 @@ opts = {
 
 begin
   # Update account type
-  result = api_instance.update_account_type_async(tenant_id, account_type_id, account_id, opts)
+  result = api_instance.update_account_type_async(tenant_id, account_type_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling AccountsApi->update_account_type_async: #{e}"
@@ -2550,12 +2829,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<EmptyEnvelope>, Integer, Hash)> update_account_type_async_with_http_info(tenant_id, account_type_id, account_id, opts)
+> <Array(<EmptyEnvelope>, Integer, Hash)> update_account_type_async_with_http_info(tenant_id, account_type_id, opts)
 
 ```ruby
 begin
   # Update account type
-  data, status_code, headers = api_instance.update_account_type_async_with_http_info(tenant_id, account_type_id, account_id, opts)
+  data, status_code, headers = api_instance.update_account_type_async_with_http_info(tenant_id, account_type_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <EmptyEnvelope>
@@ -2570,7 +2849,6 @@ end
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
 | **account_type_id** | **String** |  |  |
-| **account_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
 | **account_type_update_dto** | [**AccountTypeUpdateDto**](AccountTypeUpdateDto.md) |  | [optional] |

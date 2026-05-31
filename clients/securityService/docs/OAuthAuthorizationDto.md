@@ -5,6 +5,7 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **id** | **String** |  | [optional] |
+| **timestamp** | **Time** |  | [optional] |
 | **concurrency_token** | **String** |  | [optional] |
 | **creation_date** | **Time** |  | [optional] |
 | **properties** | **String** |  | [optional] |
@@ -22,6 +23,7 @@ require 'openapi_client'
 
 instance = OpenapiClient::OAuthAuthorizationDto.new(
   id: null,
+  timestamp: null,
   concurrency_token: null,
   creation_date: null,
   properties: null,

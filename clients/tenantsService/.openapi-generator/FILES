@@ -10,6 +10,7 @@ docs/AccessTokenResponse.md
 docs/BooleanEnvelope.md
 docs/CartDto.md
 docs/CartDtoEnvelope.md
+docs/CompletionsApi.md
 docs/DepartmentsApi.md
 docs/EmployeeEnrollmentsApi.md
 docs/EmptyEnvelope.md
@@ -19,7 +20,7 @@ docs/ExtendedTenantDto.md
 docs/ExtendedTenantDtoEnvelope.md
 docs/ExtendedTenantEnrollmentDto.md
 docs/ExtendedTenantEnrollmentDtoEnvelope.md
-docs/FenixAllianceABSWebApi.md
+docs/FenixAlliancePortalsWebsiteApi.md
 docs/ForgotPasswordRequest.md
 docs/HttpValidationProblemDetails.md
 docs/IndustriesApi.md
@@ -161,10 +162,11 @@ docs/WebPortalDto.md
 docs/WebPortalDtoListEnvelope.md
 git_push.sh
 lib/openapi_client.rb
+lib/openapi_client/api/completions_api.rb
 lib/openapi_client/api/departments_api.rb
 lib/openapi_client/api/employee_enrollments_api.rb
 lib/openapi_client/api/enrollments_api.rb
-lib/openapi_client/api/fenix_alliance_abs_web_api.rb
+lib/openapi_client/api/fenix_alliance_portals_website_api.rb
 lib/openapi_client/api/industries_api.rb
 lib/openapi_client/api/invitations_api.rb
 lib/openapi_client/api/options_api.rb
@@ -319,4 +321,6 @@ lib/openapi_client/models/web_portal_dto.rb
 lib/openapi_client/models/web_portal_dto_list_envelope.rb
 lib/openapi_client/version.rb
 openapi_client.gemspec
+spec/api/completions_api_spec.rb
+spec/api/fenix_alliance_portals_website_api_spec.rb
 spec/spec_helper.rb

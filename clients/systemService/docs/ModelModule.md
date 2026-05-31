@@ -30,6 +30,7 @@
 | **swagger_specs** | [**Array&lt;ISwaggerSpec&gt;**](ISwaggerSpec.md) |  | [optional] |
 | **url** | **String** |  | [optional] |
 | **assembly_paths** | **Array&lt;String&gt;** |  | [optional] |
+| **required_permissions** | **Array&lt;String&gt;** |  | [optional][readonly] |
 | **marked_for_deletion** | **Boolean** |  | [optional] |
 | **version** | **String** |  | [optional] |
 
@@ -65,6 +66,7 @@ instance = OpenapiClient::ModelModule.new(
   swagger_specs: null,
   url: null,
   assembly_paths: null,
+  required_permissions: null,
   marked_for_deletion: null,
   version: null
 )

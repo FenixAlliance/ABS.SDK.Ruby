@@ -1,6 +1,6 @@
 # OpenapiClient::FiscalResponsibilitiesApi
 
-All URIs are relative to *https://absuite.net*
+All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
@@ -158,7 +158,7 @@ No authorization required
 
 ## get_fiscal_responsibilities
 
-> <FiscalResponsibilityDtoListEnvelope> get_fiscal_responsibilities(fiscal_authority_id, authority_id, opts)
+> <FiscalResponsibilityDtoListEnvelope> get_fiscal_responsibilities(tenant_id, fiscal_authority_id, authority_id, opts)
 
 Get fiscal responsibilities for an authority
 
@@ -171,6 +171,7 @@ require 'time'
 require 'openapi_client'
 
 api_instance = OpenapiClient::FiscalResponsibilitiesApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 fiscal_authority_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 authority_id = 'authority_id_example' # String | 
 opts = {
@@ -180,7 +181,7 @@ opts = {
 
 begin
   # Get fiscal responsibilities for an authority
-  result = api_instance.get_fiscal_responsibilities(fiscal_authority_id, authority_id, opts)
+  result = api_instance.get_fiscal_responsibilities(tenant_id, fiscal_authority_id, authority_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling FiscalResponsibilitiesApi->get_fiscal_responsibilities: #{e}"
@@ -191,12 +192,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<FiscalResponsibilityDtoListEnvelope>, Integer, Hash)> get_fiscal_responsibilities_with_http_info(fiscal_authority_id, authority_id, opts)
+> <Array(<FiscalResponsibilityDtoListEnvelope>, Integer, Hash)> get_fiscal_responsibilities_with_http_info(tenant_id, fiscal_authority_id, authority_id, opts)
 
 ```ruby
 begin
   # Get fiscal responsibilities for an authority
-  data, status_code, headers = api_instance.get_fiscal_responsibilities_with_http_info(fiscal_authority_id, authority_id, opts)
+  data, status_code, headers = api_instance.get_fiscal_responsibilities_with_http_info(tenant_id, fiscal_authority_id, authority_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <FiscalResponsibilityDtoListEnvelope>
@@ -209,6 +210,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
 | **fiscal_authority_id** | **String** |  |  |
 | **authority_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
@@ -230,7 +232,7 @@ No authorization required
 
 ## get_fiscal_responsibilities_count
 
-> <Int32Envelope> get_fiscal_responsibilities_count(fiscal_authority_id, opts)
+> <Int32Envelope> get_fiscal_responsibilities_count(tenant_id, fiscal_authority_id, opts)
 
 Get fiscal responsibilities count
 
@@ -243,6 +245,7 @@ require 'time'
 require 'openapi_client'
 
 api_instance = OpenapiClient::FiscalResponsibilitiesApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 fiscal_authority_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
@@ -251,7 +254,7 @@ opts = {
 
 begin
   # Get fiscal responsibilities count
-  result = api_instance.get_fiscal_responsibilities_count(fiscal_authority_id, opts)
+  result = api_instance.get_fiscal_responsibilities_count(tenant_id, fiscal_authority_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling FiscalResponsibilitiesApi->get_fiscal_responsibilities_count: #{e}"
@@ -262,12 +265,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Int32Envelope>, Integer, Hash)> get_fiscal_responsibilities_count_with_http_info(fiscal_authority_id, opts)
+> <Array(<Int32Envelope>, Integer, Hash)> get_fiscal_responsibilities_count_with_http_info(tenant_id, fiscal_authority_id, opts)
 
 ```ruby
 begin
   # Get fiscal responsibilities count
-  data, status_code, headers = api_instance.get_fiscal_responsibilities_count_with_http_info(fiscal_authority_id, opts)
+  data, status_code, headers = api_instance.get_fiscal_responsibilities_count_with_http_info(tenant_id, fiscal_authority_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Int32Envelope>
@@ -280,6 +283,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
 | **fiscal_authority_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |

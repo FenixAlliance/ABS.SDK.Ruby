@@ -6,12 +6,10 @@
 | ---- | ---- | ----------- | ----- |
 | **id** | **String** |  | [optional] |
 | **timestamp** | **Time** |  | [optional] |
+| **type** | **String** |  | [optional] |
+| **contact_id** | **String** |  | [optional] |
 | **about** | **String** |  | [optional] |
-| **verified** | **Boolean** |  | [optional] |
-| **submitted** | **Boolean** |  | [optional] |
 | **avatar_url** | **String** |  | [optional] |
-| **qualified_name** | **String** |  | [optional] |
-| **verification_timestamp** | **Time** |  | [optional] |
 | **data** | **String** |  | [optional] |
 | **data_label** | **String** |  | [optional] |
 | **data1** | **String** |  | [optional] |
@@ -42,12 +40,10 @@ require 'openapi_client'
 instance = OpenapiClient::StudentProfileCreateDto.new(
   id: null,
   timestamp: null,
+  type: null,
+  contact_id: null,
   about: null,
-  verified: null,
-  submitted: null,
   avatar_url: null,
-  qualified_name: null,
-  verification_timestamp: null,
   data: null,
   data_label: null,
   data1: null,

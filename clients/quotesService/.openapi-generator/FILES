@@ -8,13 +8,14 @@ README.md
 Rakefile
 docs/AccessTokenResponse.md
 docs/BooleanEnvelope.md
+docs/CompletionsApi.md
 docs/ContactDto.md
 docs/EmailDispatchRequest.md
 docs/EmptyEnvelope.md
 docs/ErrorEnvelope.md
 docs/ExtendedQuoteDto.md
 docs/ExtendedQuoteDtoListEnvelope.md
-docs/FenixAllianceABSWebApi.md
+docs/FenixAlliancePortalsWebsiteApi.md
 docs/ForgotPasswordRequest.md
 docs/HttpValidationProblemDetails.md
 docs/InfoRequest.md
@@ -44,7 +45,8 @@ docs/TwoFactorResponse.md
 docs/UserDto.md
 git_push.sh
 lib/openapi_client.rb
-lib/openapi_client/api/fenix_alliance_abs_web_api.rb
+lib/openapi_client/api/completions_api.rb
+lib/openapi_client/api/fenix_alliance_portals_website_api.rb
 lib/openapi_client/api/quotes_api.rb
 lib/openapi_client/api_client.rb
 lib/openapi_client/api_error.rb
@@ -85,4 +87,6 @@ lib/openapi_client/models/two_factor_response.rb
 lib/openapi_client/models/user_dto.rb
 lib/openapi_client/version.rb
 openapi_client.gemspec
+spec/api/completions_api_spec.rb
+spec/api/fenix_alliance_portals_website_api_spec.rb
 spec/spec_helper.rb

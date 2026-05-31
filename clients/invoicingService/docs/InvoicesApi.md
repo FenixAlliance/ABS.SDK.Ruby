@@ -1,6 +1,6 @@
 # OpenapiClient::InvoicesApi
 
-All URIs are relative to *https://absuite.net*
+All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
@@ -51,7 +51,7 @@ All URIs are relative to *https://absuite.net*
 
 ## aggregate_invoice_discounts
 
-> <MoneyEnvelope> aggregate_invoice_discounts(request_body, opts)
+> <MoneyEnvelope> aggregate_invoice_discounts(tenant_id, request_body, opts)
 
 Aggregate invoice discounts.
 
@@ -64,6 +64,7 @@ require 'time'
 require 'openapi_client'
 
 api_instance = OpenapiClient::InvoicesApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 request_body = ['property_example'] # Array<String> | 
 opts = {
   currency_id: 'currency_id_example' # String | 
@@ -71,7 +72,7 @@ opts = {
 
 begin
   # Aggregate invoice discounts.
-  result = api_instance.aggregate_invoice_discounts(request_body, opts)
+  result = api_instance.aggregate_invoice_discounts(tenant_id, request_body, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling InvoicesApi->aggregate_invoice_discounts: #{e}"
@@ -82,12 +83,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<MoneyEnvelope>, Integer, Hash)> aggregate_invoice_discounts_with_http_info(request_body, opts)
+> <Array(<MoneyEnvelope>, Integer, Hash)> aggregate_invoice_discounts_with_http_info(tenant_id, request_body, opts)
 
 ```ruby
 begin
   # Aggregate invoice discounts.
-  data, status_code, headers = api_instance.aggregate_invoice_discounts_with_http_info(request_body, opts)
+  data, status_code, headers = api_instance.aggregate_invoice_discounts_with_http_info(tenant_id, request_body, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <MoneyEnvelope>
@@ -100,6 +101,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
 | **request_body** | [**Array&lt;String&gt;**](String.md) |  |  |
 | **currency_id** | **String** |  | [optional] |
 
@@ -119,7 +121,7 @@ No authorization required
 
 ## aggregate_invoice_global_surcharges
 
-> <MoneyEnvelope> aggregate_invoice_global_surcharges(request_body, opts)
+> <MoneyEnvelope> aggregate_invoice_global_surcharges(tenant_id, request_body, opts)
 
 Aggregate invoice global surcharges.
 
@@ -132,6 +134,7 @@ require 'time'
 require 'openapi_client'
 
 api_instance = OpenapiClient::InvoicesApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 request_body = ['property_example'] # Array<String> | 
 opts = {
   currency_id: 'currency_id_example' # String | 
@@ -139,7 +142,7 @@ opts = {
 
 begin
   # Aggregate invoice global surcharges.
-  result = api_instance.aggregate_invoice_global_surcharges(request_body, opts)
+  result = api_instance.aggregate_invoice_global_surcharges(tenant_id, request_body, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling InvoicesApi->aggregate_invoice_global_surcharges: #{e}"
@@ -150,12 +153,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<MoneyEnvelope>, Integer, Hash)> aggregate_invoice_global_surcharges_with_http_info(request_body, opts)
+> <Array(<MoneyEnvelope>, Integer, Hash)> aggregate_invoice_global_surcharges_with_http_info(tenant_id, request_body, opts)
 
 ```ruby
 begin
   # Aggregate invoice global surcharges.
-  data, status_code, headers = api_instance.aggregate_invoice_global_surcharges_with_http_info(request_body, opts)
+  data, status_code, headers = api_instance.aggregate_invoice_global_surcharges_with_http_info(tenant_id, request_body, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <MoneyEnvelope>
@@ -168,6 +171,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
 | **request_body** | [**Array&lt;String&gt;**](String.md) |  |  |
 | **currency_id** | **String** |  | [optional] |
 
@@ -187,7 +191,7 @@ No authorization required
 
 ## aggregate_invoice_tax_bases
 
-> <MoneyEnvelope> aggregate_invoice_tax_bases(request_body, opts)
+> <MoneyEnvelope> aggregate_invoice_tax_bases(tenant_id, request_body, opts)
 
 Aggregate invoice tax bases.
 
@@ -200,6 +204,7 @@ require 'time'
 require 'openapi_client'
 
 api_instance = OpenapiClient::InvoicesApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 request_body = ['property_example'] # Array<String> | 
 opts = {
   currency_id: 'currency_id_example' # String | 
@@ -207,7 +212,7 @@ opts = {
 
 begin
   # Aggregate invoice tax bases.
-  result = api_instance.aggregate_invoice_tax_bases(request_body, opts)
+  result = api_instance.aggregate_invoice_tax_bases(tenant_id, request_body, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling InvoicesApi->aggregate_invoice_tax_bases: #{e}"
@@ -218,12 +223,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<MoneyEnvelope>, Integer, Hash)> aggregate_invoice_tax_bases_with_http_info(request_body, opts)
+> <Array(<MoneyEnvelope>, Integer, Hash)> aggregate_invoice_tax_bases_with_http_info(tenant_id, request_body, opts)
 
 ```ruby
 begin
   # Aggregate invoice tax bases.
-  data, status_code, headers = api_instance.aggregate_invoice_tax_bases_with_http_info(request_body, opts)
+  data, status_code, headers = api_instance.aggregate_invoice_tax_bases_with_http_info(tenant_id, request_body, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <MoneyEnvelope>
@@ -236,6 +241,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
 | **request_body** | [**Array&lt;String&gt;**](String.md) |  |  |
 | **currency_id** | **String** |  | [optional] |
 
@@ -255,7 +261,7 @@ No authorization required
 
 ## aggregate_invoice_taxes
 
-> <MoneyEnvelope> aggregate_invoice_taxes(request_body, opts)
+> <MoneyEnvelope> aggregate_invoice_taxes(tenant_id, request_body, opts)
 
 Aggregate invoice taxes.
 
@@ -268,6 +274,7 @@ require 'time'
 require 'openapi_client'
 
 api_instance = OpenapiClient::InvoicesApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 request_body = ['property_example'] # Array<String> | 
 opts = {
   currency_id: 'currency_id_example' # String | 
@@ -275,7 +282,7 @@ opts = {
 
 begin
   # Aggregate invoice taxes.
-  result = api_instance.aggregate_invoice_taxes(request_body, opts)
+  result = api_instance.aggregate_invoice_taxes(tenant_id, request_body, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling InvoicesApi->aggregate_invoice_taxes: #{e}"
@@ -286,12 +293,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<MoneyEnvelope>, Integer, Hash)> aggregate_invoice_taxes_with_http_info(request_body, opts)
+> <Array(<MoneyEnvelope>, Integer, Hash)> aggregate_invoice_taxes_with_http_info(tenant_id, request_body, opts)
 
 ```ruby
 begin
   # Aggregate invoice taxes.
-  data, status_code, headers = api_instance.aggregate_invoice_taxes_with_http_info(request_body, opts)
+  data, status_code, headers = api_instance.aggregate_invoice_taxes_with_http_info(tenant_id, request_body, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <MoneyEnvelope>
@@ -304,6 +311,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
 | **request_body** | [**Array&lt;String&gt;**](String.md) |  |  |
 | **currency_id** | **String** |  | [optional] |
 
@@ -323,7 +331,7 @@ No authorization required
 
 ## aggregate_invoice_totals
 
-> <MoneyEnvelope> aggregate_invoice_totals(request_body, opts)
+> <MoneyEnvelope> aggregate_invoice_totals(tenant_id, request_body, opts)
 
 Aggregate invoice totals.
 
@@ -336,6 +344,7 @@ require 'time'
 require 'openapi_client'
 
 api_instance = OpenapiClient::InvoicesApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 request_body = ['property_example'] # Array<String> | 
 opts = {
   currency_id: 'currency_id_example' # String | 
@@ -343,7 +352,7 @@ opts = {
 
 begin
   # Aggregate invoice totals.
-  result = api_instance.aggregate_invoice_totals(request_body, opts)
+  result = api_instance.aggregate_invoice_totals(tenant_id, request_body, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling InvoicesApi->aggregate_invoice_totals: #{e}"
@@ -354,12 +363,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<MoneyEnvelope>, Integer, Hash)> aggregate_invoice_totals_with_http_info(request_body, opts)
+> <Array(<MoneyEnvelope>, Integer, Hash)> aggregate_invoice_totals_with_http_info(tenant_id, request_body, opts)
 
 ```ruby
 begin
   # Aggregate invoice totals.
-  data, status_code, headers = api_instance.aggregate_invoice_totals_with_http_info(request_body, opts)
+  data, status_code, headers = api_instance.aggregate_invoice_totals_with_http_info(tenant_id, request_body, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <MoneyEnvelope>
@@ -372,6 +381,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
 | **request_body** | [**Array&lt;String&gt;**](String.md) |  |  |
 | **currency_id** | **String** |  | [optional] |
 
@@ -2015,7 +2025,7 @@ No authorization required
 
 ## get_invoice_payments
 
-> <PaymentDtoIReadOnlyListEnvelope> get_invoice_payments(invoice_id)
+> <PaymentDtoIReadOnlyListEnvelope> get_invoice_payments(tenant_id, invoice_id)
 
 Get payments for an invoice.
 
@@ -2028,11 +2038,12 @@ require 'time'
 require 'openapi_client'
 
 api_instance = OpenapiClient::InvoicesApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 invoice_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 
 begin
   # Get payments for an invoice.
-  result = api_instance.get_invoice_payments(invoice_id)
+  result = api_instance.get_invoice_payments(tenant_id, invoice_id)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling InvoicesApi->get_invoice_payments: #{e}"
@@ -2043,12 +2054,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<PaymentDtoIReadOnlyListEnvelope>, Integer, Hash)> get_invoice_payments_with_http_info(invoice_id)
+> <Array(<PaymentDtoIReadOnlyListEnvelope>, Integer, Hash)> get_invoice_payments_with_http_info(tenant_id, invoice_id)
 
 ```ruby
 begin
   # Get payments for an invoice.
-  data, status_code, headers = api_instance.get_invoice_payments_with_http_info(invoice_id)
+  data, status_code, headers = api_instance.get_invoice_payments_with_http_info(tenant_id, invoice_id)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <PaymentDtoIReadOnlyListEnvelope>
@@ -2061,6 +2072,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
 | **invoice_id** | **String** |  |  |
 
 ### Return type
@@ -2079,7 +2091,7 @@ No authorization required
 
 ## get_invoice_payments_count
 
-> <Int32Envelope> get_invoice_payments_count(invoice_id)
+> <Int32Envelope> get_invoice_payments_count(tenant_id, invoice_id)
 
 Get the count of payments for an invoice.
 
@@ -2092,11 +2104,12 @@ require 'time'
 require 'openapi_client'
 
 api_instance = OpenapiClient::InvoicesApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 invoice_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 
 begin
   # Get the count of payments for an invoice.
-  result = api_instance.get_invoice_payments_count(invoice_id)
+  result = api_instance.get_invoice_payments_count(tenant_id, invoice_id)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling InvoicesApi->get_invoice_payments_count: #{e}"
@@ -2107,12 +2120,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Int32Envelope>, Integer, Hash)> get_invoice_payments_count_with_http_info(invoice_id)
+> <Array(<Int32Envelope>, Integer, Hash)> get_invoice_payments_count_with_http_info(tenant_id, invoice_id)
 
 ```ruby
 begin
   # Get the count of payments for an invoice.
-  data, status_code, headers = api_instance.get_invoice_payments_count_with_http_info(invoice_id)
+  data, status_code, headers = api_instance.get_invoice_payments_count_with_http_info(tenant_id, invoice_id)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Int32Envelope>
@@ -2125,6 +2138,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
 | **invoice_id** | **String** |  |  |
 
 ### Return type

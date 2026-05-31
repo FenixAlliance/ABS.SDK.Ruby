@@ -1,6 +1,6 @@
 # OpenapiClient::FiscalEnumerationRangesApi
 
-All URIs are relative to *https://absuite.net*
+All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
@@ -232,7 +232,7 @@ No authorization required
 
 ## get_invoice_enumeration_ranges
 
-> <InvoiceEnumerationRangeDtoListEnvelope> get_invoice_enumeration_ranges(fiscal_authority_id, authority_id, opts)
+> <InvoiceEnumerationRangeDtoListEnvelope> get_invoice_enumeration_ranges(tenant_id, fiscal_authority_id, authority_id, opts)
 
 Get invoice enumeration ranges for an authority
 
@@ -245,6 +245,7 @@ require 'time'
 require 'openapi_client'
 
 api_instance = OpenapiClient::FiscalEnumerationRangesApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 fiscal_authority_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 authority_id = 'authority_id_example' # String | 
 opts = {
@@ -254,7 +255,7 @@ opts = {
 
 begin
   # Get invoice enumeration ranges for an authority
-  result = api_instance.get_invoice_enumeration_ranges(fiscal_authority_id, authority_id, opts)
+  result = api_instance.get_invoice_enumeration_ranges(tenant_id, fiscal_authority_id, authority_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling FiscalEnumerationRangesApi->get_invoice_enumeration_ranges: #{e}"
@@ -265,12 +266,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<InvoiceEnumerationRangeDtoListEnvelope>, Integer, Hash)> get_invoice_enumeration_ranges_with_http_info(fiscal_authority_id, authority_id, opts)
+> <Array(<InvoiceEnumerationRangeDtoListEnvelope>, Integer, Hash)> get_invoice_enumeration_ranges_with_http_info(tenant_id, fiscal_authority_id, authority_id, opts)
 
 ```ruby
 begin
   # Get invoice enumeration ranges for an authority
-  data, status_code, headers = api_instance.get_invoice_enumeration_ranges_with_http_info(fiscal_authority_id, authority_id, opts)
+  data, status_code, headers = api_instance.get_invoice_enumeration_ranges_with_http_info(tenant_id, fiscal_authority_id, authority_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <InvoiceEnumerationRangeDtoListEnvelope>
@@ -283,6 +284,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
 | **fiscal_authority_id** | **String** |  |  |
 | **authority_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
@@ -304,7 +306,7 @@ No authorization required
 
 ## get_invoice_enumeration_ranges_count
 
-> <Int32Envelope> get_invoice_enumeration_ranges_count(fiscal_authority_id, opts)
+> <Int32Envelope> get_invoice_enumeration_ranges_count(tenant_id, fiscal_authority_id, opts)
 
 Get invoice enumeration ranges count
 
@@ -317,6 +319,7 @@ require 'time'
 require 'openapi_client'
 
 api_instance = OpenapiClient::FiscalEnumerationRangesApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 fiscal_authority_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
@@ -325,7 +328,7 @@ opts = {
 
 begin
   # Get invoice enumeration ranges count
-  result = api_instance.get_invoice_enumeration_ranges_count(fiscal_authority_id, opts)
+  result = api_instance.get_invoice_enumeration_ranges_count(tenant_id, fiscal_authority_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling FiscalEnumerationRangesApi->get_invoice_enumeration_ranges_count: #{e}"
@@ -336,12 +339,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Int32Envelope>, Integer, Hash)> get_invoice_enumeration_ranges_count_with_http_info(fiscal_authority_id, opts)
+> <Array(<Int32Envelope>, Integer, Hash)> get_invoice_enumeration_ranges_count_with_http_info(tenant_id, fiscal_authority_id, opts)
 
 ```ruby
 begin
   # Get invoice enumeration ranges count
-  data, status_code, headers = api_instance.get_invoice_enumeration_ranges_count_with_http_info(fiscal_authority_id, opts)
+  data, status_code, headers = api_instance.get_invoice_enumeration_ranges_count_with_http_info(tenant_id, fiscal_authority_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Int32Envelope>
@@ -354,6 +357,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
 | **fiscal_authority_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |

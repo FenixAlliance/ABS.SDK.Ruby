@@ -1,6 +1,6 @@
 # OpenapiClient::SocialProfilesApi
 
-All URIs are relative to *https://absuite.net*
+All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
@@ -23,6 +23,7 @@ All URIs are relative to *https://absuite.net*
 | [**get_followers_async**](SocialProfilesApi.md#get_followers_async) | **GET** /api/v2/SocialService/SocialProfiles/{socialProfileId}/Followers | Get Followers |
 | [**get_follows_async**](SocialProfilesApi.md#get_follows_async) | **GET** /api/v2/SocialService/SocialProfiles/{socialProfileId}/Follows | Get Follows |
 | [**get_messages_async**](SocialProfilesApi.md#get_messages_async) | **GET** /api/v2/SocialService/SocialProfiles/{conversationId}/Messages | Get Messages |
+| [**get_notification_by_id_async**](SocialProfilesApi.md#get_notification_by_id_async) | **GET** /api/v2/SocialService/SocialProfiles/{socialProfileId}/Notifications/{notificationId} | Get Notification |
 | [**get_notifications_async**](SocialProfilesApi.md#get_notifications_async) | **GET** /api/v2/SocialService/SocialProfiles/{socialProfileId}/Notifications | Get Notifications |
 | [**get_social_profile_async**](SocialProfilesApi.md#get_social_profile_async) | **GET** /api/v2/SocialService/SocialProfiles/{socialProfileId} | Get Social Profile |
 | [**get_social_profiles_async**](SocialProfilesApi.md#get_social_profiles_async) | **GET** /api/v2/SocialService/SocialProfiles | Get Social Profiles |
@@ -382,7 +383,7 @@ No authorization required
 
 ## count_messages_async
 
-> <Int32Envelope> count_messages_async(conversation_id, opts)
+> <Int32Envelope> count_messages_async(social_profile_id, conversation_id, opts)
 
 Count Messages
 
@@ -395,6 +396,7 @@ require 'time'
 require 'openapi_client'
 
 api_instance = OpenapiClient::SocialProfilesApi.new
+social_profile_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 conversation_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
@@ -403,7 +405,7 @@ opts = {
 
 begin
   # Count Messages
-  result = api_instance.count_messages_async(conversation_id, opts)
+  result = api_instance.count_messages_async(social_profile_id, conversation_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling SocialProfilesApi->count_messages_async: #{e}"
@@ -414,12 +416,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Int32Envelope>, Integer, Hash)> count_messages_async_with_http_info(conversation_id, opts)
+> <Array(<Int32Envelope>, Integer, Hash)> count_messages_async_with_http_info(social_profile_id, conversation_id, opts)
 
 ```ruby
 begin
   # Count Messages
-  data, status_code, headers = api_instance.count_messages_async_with_http_info(conversation_id, opts)
+  data, status_code, headers = api_instance.count_messages_async_with_http_info(social_profile_id, conversation_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Int32Envelope>
@@ -432,6 +434,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
+| **social_profile_id** | **String** |  |  |
 | **conversation_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
@@ -1304,7 +1307,7 @@ No authorization required
 
 ## get_messages_async
 
-> <PrivateMessageDtoListEnvelope> get_messages_async(conversation_id, opts)
+> <PrivateMessageDtoListEnvelope> get_messages_async(social_profile_id, conversation_id, opts)
 
 Get Messages
 
@@ -1317,6 +1320,7 @@ require 'time'
 require 'openapi_client'
 
 api_instance = OpenapiClient::SocialProfilesApi.new
+social_profile_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 conversation_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
@@ -1325,7 +1329,7 @@ opts = {
 
 begin
   # Get Messages
-  result = api_instance.get_messages_async(conversation_id, opts)
+  result = api_instance.get_messages_async(social_profile_id, conversation_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling SocialProfilesApi->get_messages_async: #{e}"
@@ -1336,12 +1340,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<PrivateMessageDtoListEnvelope>, Integer, Hash)> get_messages_async_with_http_info(conversation_id, opts)
+> <Array(<PrivateMessageDtoListEnvelope>, Integer, Hash)> get_messages_async_with_http_info(social_profile_id, conversation_id, opts)
 
 ```ruby
 begin
   # Get Messages
-  data, status_code, headers = api_instance.get_messages_async_with_http_info(conversation_id, opts)
+  data, status_code, headers = api_instance.get_messages_async_with_http_info(social_profile_id, conversation_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <PrivateMessageDtoListEnvelope>
@@ -1354,6 +1358,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
+| **social_profile_id** | **String** |  |  |
 | **conversation_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
@@ -1361,6 +1366,78 @@ end
 ### Return type
 
 [**PrivateMessageDtoListEnvelope**](PrivateMessageDtoListEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## get_notification_by_id_async
+
+> <NotificationDtoEnvelope> get_notification_by_id_async(social_profile_id, notification_id, opts)
+
+Get Notification
+
+Get a notification by ID for a social profile.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::SocialProfilesApi.new
+social_profile_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+notification_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example' # String | 
+}
+
+begin
+  # Get Notification
+  result = api_instance.get_notification_by_id_async(social_profile_id, notification_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling SocialProfilesApi->get_notification_by_id_async: #{e}"
+end
+```
+
+#### Using the get_notification_by_id_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<NotificationDtoEnvelope>, Integer, Hash)> get_notification_by_id_async_with_http_info(social_profile_id, notification_id, opts)
+
+```ruby
+begin
+  # Get Notification
+  data, status_code, headers = api_instance.get_notification_by_id_async_with_http_info(social_profile_id, notification_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <NotificationDtoEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling SocialProfilesApi->get_notification_by_id_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **social_profile_id** | **String** |  |  |
+| **notification_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+
+### Return type
+
+[**NotificationDtoEnvelope**](NotificationDtoEnvelope.md)
 
 ### Authorization
 

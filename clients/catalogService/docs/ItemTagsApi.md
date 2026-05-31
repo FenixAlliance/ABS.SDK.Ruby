@@ -1,6 +1,6 @@
 # OpenapiClient::ItemTagsApi
 
-All URIs are relative to *https://absuite.net*
+All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
@@ -171,6 +171,7 @@ require 'openapi_client'
 api_instance = OpenapiClient::ItemTagsApi.new
 item_tag_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
+  tenant_id: '38400000-8cf0-11bd-b23e-10b96e4ef00d', # String | 
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example' # String | 
 }
@@ -207,6 +208,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **item_tag_id** | **String** |  |  |
+| **tenant_id** | **String** |  | [optional] |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
 
@@ -226,7 +228,7 @@ No authorization required
 
 ## get_item_tags_async
 
-> <ItemTagDtoListEnvelope> get_item_tags_async(tenant_id, opts)
+> <ItemTagDtoListEnvelope> get_item_tags_async(opts)
 
 Get all item tags
 
@@ -239,15 +241,15 @@ require 'time'
 require 'openapi_client'
 
 api_instance = OpenapiClient::ItemTagsApi.new
-tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
+  tenant_id: '38400000-8cf0-11bd-b23e-10b96e4ef00d', # String | 
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example' # String | 
 }
 
 begin
   # Get all item tags
-  result = api_instance.get_item_tags_async(tenant_id, opts)
+  result = api_instance.get_item_tags_async(opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling ItemTagsApi->get_item_tags_async: #{e}"
@@ -258,12 +260,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<ItemTagDtoListEnvelope>, Integer, Hash)> get_item_tags_async_with_http_info(tenant_id, opts)
+> <Array(<ItemTagDtoListEnvelope>, Integer, Hash)> get_item_tags_async_with_http_info(opts)
 
 ```ruby
 begin
   # Get all item tags
-  data, status_code, headers = api_instance.get_item_tags_async_with_http_info(tenant_id, opts)
+  data, status_code, headers = api_instance.get_item_tags_async_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ItemTagDtoListEnvelope>
@@ -276,7 +278,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **tenant_id** | **String** |  |  |
+| **tenant_id** | **String** |  | [optional] |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
 

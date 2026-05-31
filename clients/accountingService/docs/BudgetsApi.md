@@ -1,6 +1,6 @@
 # OpenapiClient::BudgetsApi
 
-All URIs are relative to *https://absuite.net*
+All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
@@ -12,6 +12,7 @@ All URIs are relative to *https://absuite.net*
 | [**get_budget_account_entry_async**](BudgetsApi.md#get_budget_account_entry_async) | **GET** /api/v2/AccountingService/Budgets/{budgetId}/AccountEntries/{entryId} | Gets a budget account entry by id |
 | [**get_budget_details_async**](BudgetsApi.md#get_budget_details_async) | **GET** /api/v2/AccountingService/Budgets/{budgetId} | Gets a budget by id |
 | [**get_budgets_async**](BudgetsApi.md#get_budgets_async) | **GET** /api/v2/AccountingService/Budgets | Gets all budgets |
+| [**get_budgets_count_async**](BudgetsApi.md#get_budgets_count_async) | **GET** /api/v2/AccountingService/Budgets/Count | Get the count of budgets |
 | [**update_budget_account_entry_async**](BudgetsApi.md#update_budget_account_entry_async) | **PUT** /api/v2/AccountingService/Budgets/{budgetId}/AccountEntries/{entryId} | Updates a budget account entry |
 | [**update_budget_async**](BudgetsApi.md#update_budget_async) | **PUT** /api/v2/AccountingService/Budgets/{budgetId} | Updates a budget |
 
@@ -585,6 +586,76 @@ end
 ### Return type
 
 [**BudgetDtoIReadOnlyListEnvelope**](BudgetDtoIReadOnlyListEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## get_budgets_count_async
+
+> <Int32Envelope> get_budgets_count_async(tenant_id, opts)
+
+Get the count of budgets
+
+Get the count of budgets.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::BudgetsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example' # String | 
+}
+
+begin
+  # Get the count of budgets
+  result = api_instance.get_budgets_count_async(tenant_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling BudgetsApi->get_budgets_count_async: #{e}"
+end
+```
+
+#### Using the get_budgets_count_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<Int32Envelope>, Integer, Hash)> get_budgets_count_async_with_http_info(tenant_id, opts)
+
+```ruby
+begin
+  # Get the count of budgets
+  data, status_code, headers = api_instance.get_budgets_count_async_with_http_info(tenant_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <Int32Envelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling BudgetsApi->get_budgets_count_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+
+### Return type
+
+[**Int32Envelope**](Int32Envelope.md)
 
 ### Authorization
 

@@ -1,6 +1,6 @@
 # OpenapiClient::EmployersApi
 
-All URIs are relative to *https://absuite.net*
+All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
@@ -388,7 +388,7 @@ employer_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 opts = {
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example', # String | 
-  body: { ... } # Object | 
+  employer_profile_update_dto: OpenapiClient::EmployerProfileUpdateDto.new # EmployerProfileUpdateDto | 
 }
 
 begin
@@ -426,7 +426,7 @@ end
 | **employer_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
-| **body** | **Object** |  | [optional] |
+| **employer_profile_update_dto** | [**EmployerProfileUpdateDto**](EmployerProfileUpdateDto.md) |  | [optional] |
 
 ### Return type
 

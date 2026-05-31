@@ -1,9 +1,11 @@
 # OpenapiClient::JournalsApi
 
-All URIs are relative to *https://absuite.net*
+All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
+| [**aggregate_journal_entry_credits_async**](JournalsApi.md#aggregate_journal_entry_credits_async) | **GET** /api/v2/AccountingService/Journals/{journalId}/Entries/Aggregate/Credits | Aggregate journal entry credits |
+| [**aggregate_journal_entry_debits_async**](JournalsApi.md#aggregate_journal_entry_debits_async) | **GET** /api/v2/AccountingService/Journals/{journalId}/Entries/Aggregate/Debits | Aggregate journal entry debits |
 | [**count_journals_async**](JournalsApi.md#count_journals_async) | **GET** /api/v2/AccountingService/Journals/Count | Count journals |
 | [**create_journal_async**](JournalsApi.md#create_journal_async) | **POST** /api/v2/AccountingService/Journals | Create journal |
 | [**create_journal_entry_async**](JournalsApi.md#create_journal_entry_async) | **POST** /api/v2/AccountingService/Journals/{journalId}/Entries | Create journal entry |
@@ -15,6 +17,154 @@ All URIs are relative to *https://absuite.net*
 | [**get_journals_async**](JournalsApi.md#get_journals_async) | **GET** /api/v2/AccountingService/Journals | Get all journals |
 | [**update_journal_async**](JournalsApi.md#update_journal_async) | **PUT** /api/v2/AccountingService/Journals/{journalId} | Update journal |
 | [**update_journal_entry_async**](JournalsApi.md#update_journal_entry_async) | **PUT** /api/v2/AccountingService/Journals/{journalId}/Entries/{entryId} | Update journal entry |
+
+
+## aggregate_journal_entry_credits_async
+
+> <MoneyEnvelope> aggregate_journal_entry_credits_async(tenant_id, journal_id, opts)
+
+Aggregate journal entry credits
+
+Returns the sum of all credit amounts for entries in the specified journal, normalized to the target currency.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::JournalsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+journal_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  currency_id: 'currency_id_example', # String | 
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example' # String | 
+}
+
+begin
+  # Aggregate journal entry credits
+  result = api_instance.aggregate_journal_entry_credits_async(tenant_id, journal_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling JournalsApi->aggregate_journal_entry_credits_async: #{e}"
+end
+```
+
+#### Using the aggregate_journal_entry_credits_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<MoneyEnvelope>, Integer, Hash)> aggregate_journal_entry_credits_async_with_http_info(tenant_id, journal_id, opts)
+
+```ruby
+begin
+  # Aggregate journal entry credits
+  data, status_code, headers = api_instance.aggregate_journal_entry_credits_async_with_http_info(tenant_id, journal_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <MoneyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling JournalsApi->aggregate_journal_entry_credits_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **journal_id** | **String** |  |  |
+| **currency_id** | **String** |  | [optional] |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+
+### Return type
+
+[**MoneyEnvelope**](MoneyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## aggregate_journal_entry_debits_async
+
+> <MoneyEnvelope> aggregate_journal_entry_debits_async(tenant_id, journal_id, opts)
+
+Aggregate journal entry debits
+
+Returns the sum of all debit amounts for entries in the specified journal, normalized to the target currency.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::JournalsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+journal_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  currency_id: 'currency_id_example', # String | 
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example' # String | 
+}
+
+begin
+  # Aggregate journal entry debits
+  result = api_instance.aggregate_journal_entry_debits_async(tenant_id, journal_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling JournalsApi->aggregate_journal_entry_debits_async: #{e}"
+end
+```
+
+#### Using the aggregate_journal_entry_debits_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<MoneyEnvelope>, Integer, Hash)> aggregate_journal_entry_debits_async_with_http_info(tenant_id, journal_id, opts)
+
+```ruby
+begin
+  # Aggregate journal entry debits
+  data, status_code, headers = api_instance.aggregate_journal_entry_debits_async_with_http_info(tenant_id, journal_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <MoneyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling JournalsApi->aggregate_journal_entry_debits_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **journal_id** | **String** |  |  |
+| **currency_id** | **String** |  | [optional] |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+
+### Return type
+
+[**MoneyEnvelope**](MoneyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
 
 
 ## count_journals_async

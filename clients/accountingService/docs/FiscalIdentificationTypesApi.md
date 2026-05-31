@@ -1,6 +1,6 @@
 # OpenapiClient::FiscalIdentificationTypesApi
 
-All URIs are relative to *https://absuite.net*
+All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
@@ -232,7 +232,7 @@ No authorization required
 
 ## get_fiscal_identification_types
 
-> <FiscalIdentificationTypeDtoListEnvelope> get_fiscal_identification_types(authority_id, opts)
+> <FiscalIdentificationTypeDtoListEnvelope> get_fiscal_identification_types(tenant_id, authority_id, opts)
 
 Get fiscal identification types for an authority
 
@@ -245,6 +245,7 @@ require 'time'
 require 'openapi_client'
 
 api_instance = OpenapiClient::FiscalIdentificationTypesApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 authority_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
@@ -253,7 +254,7 @@ opts = {
 
 begin
   # Get fiscal identification types for an authority
-  result = api_instance.get_fiscal_identification_types(authority_id, opts)
+  result = api_instance.get_fiscal_identification_types(tenant_id, authority_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling FiscalIdentificationTypesApi->get_fiscal_identification_types: #{e}"
@@ -264,12 +265,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<FiscalIdentificationTypeDtoListEnvelope>, Integer, Hash)> get_fiscal_identification_types_with_http_info(authority_id, opts)
+> <Array(<FiscalIdentificationTypeDtoListEnvelope>, Integer, Hash)> get_fiscal_identification_types_with_http_info(tenant_id, authority_id, opts)
 
 ```ruby
 begin
   # Get fiscal identification types for an authority
-  data, status_code, headers = api_instance.get_fiscal_identification_types_with_http_info(authority_id, opts)
+  data, status_code, headers = api_instance.get_fiscal_identification_types_with_http_info(tenant_id, authority_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <FiscalIdentificationTypeDtoListEnvelope>
@@ -282,6 +283,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
 | **authority_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
@@ -302,7 +304,7 @@ No authorization required
 
 ## get_fiscal_identification_types_count
 
-> <Int32Envelope> get_fiscal_identification_types_count(authority_id, opts)
+> <Int32Envelope> get_fiscal_identification_types_count(tenant_id, authority_id, opts)
 
 Get fiscal identification types count
 
@@ -315,6 +317,7 @@ require 'time'
 require 'openapi_client'
 
 api_instance = OpenapiClient::FiscalIdentificationTypesApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 authority_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
@@ -323,7 +326,7 @@ opts = {
 
 begin
   # Get fiscal identification types count
-  result = api_instance.get_fiscal_identification_types_count(authority_id, opts)
+  result = api_instance.get_fiscal_identification_types_count(tenant_id, authority_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling FiscalIdentificationTypesApi->get_fiscal_identification_types_count: #{e}"
@@ -334,12 +337,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Int32Envelope>, Integer, Hash)> get_fiscal_identification_types_count_with_http_info(authority_id, opts)
+> <Array(<Int32Envelope>, Integer, Hash)> get_fiscal_identification_types_count_with_http_info(tenant_id, authority_id, opts)
 
 ```ruby
 begin
   # Get fiscal identification types count
-  data, status_code, headers = api_instance.get_fiscal_identification_types_count_with_http_info(authority_id, opts)
+  data, status_code, headers = api_instance.get_fiscal_identification_types_count_with_http_info(tenant_id, authority_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Int32Envelope>
@@ -352,6 +355,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
 | **authority_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |

@@ -1,11 +1,11 @@
 # OpenapiClient::TenantsApi
 
-All URIs are relative to *https://absuite.net*
+All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
-| [**admin_preview_tenant_email**](TenantsApi.md#admin_preview_tenant_email) | **POST** /api/v2/SystemService/Tenants/{tenantId}/Emails/Preview | Preview the rendered email for a user. |
-| [**admin_send_tenant_email**](TenantsApi.md#admin_send_tenant_email) | **POST** /api/v2/SystemService/Tenants/{tenantId}/Emails/Send | Send an email to a user. |
+| [**admin_preview_tenant_email**](TenantsApi.md#admin_preview_tenant_email) | **POST** /api/v2/SystemService/Tenants/{tenantId}/Emails/Preview | Preview the rendered email for a tenant. |
+| [**admin_send_tenant_email**](TenantsApi.md#admin_send_tenant_email) | **POST** /api/v2/SystemService/Tenants/{tenantId}/Emails/Send | Send an email to a tenant. |
 | [**create_tenant**](TenantsApi.md#create_tenant) | **POST** /api/v2/SystemService/Tenants | Create a new tenant. |
 | [**delete_tenant**](TenantsApi.md#delete_tenant) | **DELETE** /api/v2/SystemService/Tenants/{tenantId} | Delete a specific tenant by ID. |
 | [**get_all_extended_tenants**](TenantsApi.md#get_all_extended_tenants) | **GET** /api/v2/SystemService/Tenants/Extended | Get all extended tenants available on this suite server instance. |
@@ -20,9 +20,9 @@ All URIs are relative to *https://absuite.net*
 
 > admin_preview_tenant_email(tenant_id, opts)
 
-Preview the rendered email for a user.
+Preview the rendered email for a tenant.
 
-This action is only available for users with the 'business_owner' role (global administrators).
+This action is only available for global administrators.
 
 ### Examples
 
@@ -39,7 +39,7 @@ opts = {
 }
 
 begin
-  # Preview the rendered email for a user.
+  # Preview the rendered email for a tenant.
   api_instance.admin_preview_tenant_email(tenant_id, opts)
 rescue OpenapiClient::ApiError => e
   puts "Error when calling TenantsApi->admin_preview_tenant_email: #{e}"
@@ -54,7 +54,7 @@ This returns an Array which contains the response data (`nil` in this case), sta
 
 ```ruby
 begin
-  # Preview the rendered email for a user.
+  # Preview the rendered email for a tenant.
   data, status_code, headers = api_instance.admin_preview_tenant_email_with_http_info(tenant_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
@@ -91,9 +91,9 @@ No authorization required
 
 > admin_send_tenant_email(tenant_id, opts)
 
-Send an email to a user.
+Send an email to a tenant.
 
-This action is only available for users with the 'business_owner' role (global administrators).
+This action is only available for global administrators.
 
 ### Examples
 
@@ -110,7 +110,7 @@ opts = {
 }
 
 begin
-  # Send an email to a user.
+  # Send an email to a tenant.
   api_instance.admin_send_tenant_email(tenant_id, opts)
 rescue OpenapiClient::ApiError => e
   puts "Error when calling TenantsApi->admin_send_tenant_email: #{e}"
@@ -125,7 +125,7 @@ This returns an Array which contains the response data (`nil` in this case), sta
 
 ```ruby
 begin
-  # Send an email to a user.
+  # Send an email to a tenant.
   data, status_code, headers = api_instance.admin_send_tenant_email_with_http_info(tenant_id, opts)
   p status_code # => 2xx
   p headers # => { ... }

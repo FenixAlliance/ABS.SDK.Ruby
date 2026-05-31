@@ -14,6 +14,8 @@
 | **forex_rate** | **Float** |  | [optional] |
 | **credit** | **Float** |  | [optional] |
 | **debit** | **Float** |  | [optional] |
+| **credit_in_usd** | **Float** |  | [optional] |
+| **debit_in_usd** | **Float** |  | [optional] |
 | **currency_id** | **String** |  | [optional] |
 | **tenant_id** | **String** |  | [optional] |
 | **enrollment_id** | **String** |  | [optional] |
@@ -28,6 +30,8 @@
 | **parent_journal_entry_id** | **String** |  | [optional] |
 | **credit_amount** | [**Money**](Money.md) |  | [optional] |
 | **debit_amount** | [**Money**](Money.md) |  | [optional] |
+| **credit_amount_in_usd** | [**Money**](Money.md) |  | [optional] |
+| **debit_amount_in_usd** | [**Money**](Money.md) |  | [optional] |
 
 ## Example
 
@@ -45,6 +49,8 @@ instance = OpenapiClient::JournalEntryDto.new(
   forex_rate: null,
   credit: null,
   debit: null,
+  credit_in_usd: null,
+  debit_in_usd: null,
   currency_id: null,
   tenant_id: null,
   enrollment_id: null,
@@ -58,7 +64,9 @@ instance = OpenapiClient::JournalEntryDto.new(
   invoice_code: null,
   parent_journal_entry_id: null,
   credit_amount: null,
-  debit_amount: null
+  debit_amount: null,
+  credit_amount_in_usd: null,
+  debit_amount_in_usd: null
 )
 ```
 

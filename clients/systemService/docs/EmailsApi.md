@@ -1,6 +1,6 @@
 # OpenapiClient::EmailsApi
 
-All URIs are relative to *https://absuite.net*
+All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
@@ -79,7 +79,7 @@ No authorization required
 
 ## admin_send_basic_email
 
-> <TenantDtoListEnvelope> admin_send_basic_email(opts)
+> <Envelope> admin_send_basic_email(opts)
 
 Send a basic transactional email to recipients.
 
@@ -111,7 +111,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<TenantDtoListEnvelope>, Integer, Hash)> admin_send_basic_email_with_http_info(opts)
+> <Array(<Envelope>, Integer, Hash)> admin_send_basic_email_with_http_info(opts)
 
 ```ruby
 begin
@@ -119,7 +119,7 @@ begin
   data, status_code, headers = api_instance.admin_send_basic_email_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <TenantDtoListEnvelope>
+  p data # => <Envelope>
 rescue OpenapiClient::ApiError => e
   puts "Error when calling EmailsApi->admin_send_basic_email_with_http_info: #{e}"
 end
@@ -135,7 +135,7 @@ end
 
 ### Return type
 
-[**TenantDtoListEnvelope**](TenantDtoListEnvelope.md)
+[**Envelope**](Envelope.md)
 
 ### Authorization
 

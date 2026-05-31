@@ -1,6 +1,6 @@
 # OpenapiClient::OAuthApi
 
-All URIs are relative to *https://absuite.net*
+All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
@@ -83,7 +83,7 @@ No authorization required
 
 ## get
 
-> <AuthorizationResultEnvelope> get(opts)
+> <AuthResultEnvelope> get(opts)
 
 Get current user identity
 
@@ -115,7 +115,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<AuthorizationResultEnvelope>, Integer, Hash)> get_with_http_info(opts)
+> <Array(<AuthResultEnvelope>, Integer, Hash)> get_with_http_info(opts)
 
 ```ruby
 begin
@@ -123,7 +123,7 @@ begin
   data, status_code, headers = api_instance.get_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <AuthorizationResultEnvelope>
+  p data # => <AuthResultEnvelope>
 rescue OpenapiClient::ApiError => e
   puts "Error when calling OAuthApi->get_with_http_info: #{e}"
 end
@@ -139,7 +139,7 @@ end
 
 ### Return type
 
-[**AuthorizationResultEnvelope**](AuthorizationResultEnvelope.md)
+[**AuthResultEnvelope**](AuthResultEnvelope.md)
 
 ### Authorization
 

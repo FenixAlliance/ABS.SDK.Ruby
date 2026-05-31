@@ -1,6 +1,6 @@
 # OpenapiClient::ItemQuestionsApi
 
-All URIs are relative to *https://absuite.net*
+All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
@@ -171,6 +171,7 @@ require 'openapi_client'
 api_instance = OpenapiClient::ItemQuestionsApi.new
 item_question_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
+  tenant_id: '38400000-8cf0-11bd-b23e-10b96e4ef00d', # String | 
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example' # String | 
 }
@@ -207,6 +208,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **item_question_id** | **String** |  |  |
+| **tenant_id** | **String** |  | [optional] |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
 
@@ -226,7 +228,7 @@ No authorization required
 
 ## get_item_questions_async
 
-> <ItemQuestionDtoListEnvelope> get_item_questions_async(tenant_id, opts)
+> <ItemQuestionDtoListEnvelope> get_item_questions_async(opts)
 
 Get all item questions
 
@@ -239,15 +241,15 @@ require 'time'
 require 'openapi_client'
 
 api_instance = OpenapiClient::ItemQuestionsApi.new
-tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
+  tenant_id: '38400000-8cf0-11bd-b23e-10b96e4ef00d', # String | 
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example' # String | 
 }
 
 begin
   # Get all item questions
-  result = api_instance.get_item_questions_async(tenant_id, opts)
+  result = api_instance.get_item_questions_async(opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling ItemQuestionsApi->get_item_questions_async: #{e}"
@@ -258,12 +260,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<ItemQuestionDtoListEnvelope>, Integer, Hash)> get_item_questions_async_with_http_info(tenant_id, opts)
+> <Array(<ItemQuestionDtoListEnvelope>, Integer, Hash)> get_item_questions_async_with_http_info(opts)
 
 ```ruby
 begin
   # Get all item questions
-  data, status_code, headers = api_instance.get_item_questions_async_with_http_info(tenant_id, opts)
+  data, status_code, headers = api_instance.get_item_questions_async_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ItemQuestionDtoListEnvelope>
@@ -276,7 +278,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **tenant_id** | **String** |  |  |
+| **tenant_id** | **String** |  | [optional] |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
 

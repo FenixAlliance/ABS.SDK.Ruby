@@ -14,6 +14,7 @@ docs/CartDtoEnvelope.md
 docs/CartUpdateRequest.md
 docs/CartsApi.md
 docs/CompareApi.md
+docs/CompletionsApi.md
 docs/CountryDto.md
 docs/CountryDtoEnvelope.md
 docs/CountrySwitchRequest.md
@@ -22,7 +23,7 @@ docs/CurrencyDtoEnvelope.md
 docs/CurrencySwitchRequest.md
 docs/EmptyEnvelope.md
 docs/ErrorEnvelope.md
-docs/FenixAllianceABSWebApi.md
+docs/FenixAlliancePortalsWebsiteApi.md
 docs/ForgotPasswordRequest.md
 docs/HttpValidationProblemDetails.md
 docs/InfoRequest.md
@@ -54,7 +55,8 @@ git_push.sh
 lib/openapi_client.rb
 lib/openapi_client/api/carts_api.rb
 lib/openapi_client/api/compare_api.rb
-lib/openapi_client/api/fenix_alliance_abs_web_api.rb
+lib/openapi_client/api/completions_api.rb
+lib/openapi_client/api/fenix_alliance_portals_website_api.rb
 lib/openapi_client/api/records_api.rb
 lib/openapi_client/api/wish_lists_api.rb
 lib/openapi_client/api_client.rb
@@ -101,4 +103,6 @@ lib/openapi_client/models/wish_list_item_record_dto.rb
 lib/openapi_client/models/wish_list_update_dto.rb
 lib/openapi_client/version.rb
 openapi_client.gemspec
+spec/api/completions_api_spec.rb
+spec/api/fenix_alliance_portals_website_api_spec.rb
 spec/spec_helper.rb

@@ -1,6 +1,6 @@
 # OpenapiClient::PaymentsApi
 
-All URIs are relative to *https://absuite.net*
+All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
@@ -148,7 +148,7 @@ No authorization required
 
 ## get_payment_async
 
-> <PaymentDtoListEnvelope> get_payment_async(payment_id)
+> <PaymentDtoListEnvelope> get_payment_async(tenant_id, payment_id)
 
 Gets a payment by ID (deprecated)
 
@@ -161,11 +161,12 @@ require 'time'
 require 'openapi_client'
 
 api_instance = OpenapiClient::PaymentsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 payment_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 
 begin
   # Gets a payment by ID (deprecated)
-  result = api_instance.get_payment_async(payment_id)
+  result = api_instance.get_payment_async(tenant_id, payment_id)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling PaymentsApi->get_payment_async: #{e}"
@@ -176,12 +177,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<PaymentDtoListEnvelope>, Integer, Hash)> get_payment_async_with_http_info(payment_id)
+> <Array(<PaymentDtoListEnvelope>, Integer, Hash)> get_payment_async_with_http_info(tenant_id, payment_id)
 
 ```ruby
 begin
   # Gets a payment by ID (deprecated)
-  data, status_code, headers = api_instance.get_payment_async_with_http_info(payment_id)
+  data, status_code, headers = api_instance.get_payment_async_with_http_info(tenant_id, payment_id)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <PaymentDtoListEnvelope>
@@ -194,6 +195,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
 | **payment_id** | **String** |  |  |
 
 ### Return type
@@ -212,7 +214,7 @@ No authorization required
 
 ## get_payment_async_v2
 
-> <PaymentDtoListEnvelope> get_payment_async_v2(payment_id)
+> <PaymentDtoListEnvelope> get_payment_async_v2(tenant_id, payment_id)
 
 Gets a payment by ID
 
@@ -225,11 +227,12 @@ require 'time'
 require 'openapi_client'
 
 api_instance = OpenapiClient::PaymentsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 payment_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 
 begin
   # Gets a payment by ID
-  result = api_instance.get_payment_async_v2(payment_id)
+  result = api_instance.get_payment_async_v2(tenant_id, payment_id)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling PaymentsApi->get_payment_async_v2: #{e}"
@@ -240,12 +243,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<PaymentDtoListEnvelope>, Integer, Hash)> get_payment_async_v2_with_http_info(payment_id)
+> <Array(<PaymentDtoListEnvelope>, Integer, Hash)> get_payment_async_v2_with_http_info(tenant_id, payment_id)
 
 ```ruby
 begin
   # Gets a payment by ID
-  data, status_code, headers = api_instance.get_payment_async_v2_with_http_info(payment_id)
+  data, status_code, headers = api_instance.get_payment_async_v2_with_http_info(tenant_id, payment_id)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <PaymentDtoListEnvelope>
@@ -258,6 +261,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
 | **payment_id** | **String** |  |  |
 
 ### Return type

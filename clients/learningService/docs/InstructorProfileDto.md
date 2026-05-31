@@ -6,12 +6,16 @@
 | ---- | ---- | ----------- | ----- |
 | **id** | **String** |  | [optional] |
 | **timestamp** | **Time** |  | [optional] |
-| **authorized** | **Boolean** |  | [optional] |
+| **contact_id** | **String** |  | [optional] |
+| **tenant_id** | **String** |  | [optional] |
+| **type** | **String** |  | [optional] |
+| **enrollment_id** | **String** |  | [optional] |
 | **about** | **String** |  | [optional] |
 | **verified** | **Boolean** |  | [optional] |
 | **submitted** | **Boolean** |  | [optional] |
 | **avatar_url** | **String** |  | [optional] |
-| **qualified_name** | **String** |  | [optional] |
+| **contact** | [**ContactDto**](ContactDto.md) |  | [optional] |
+| **qualified_name** | **String** |  | [optional][readonly] |
 | **verification_timestamp** | **Time** |  | [optional] |
 | **data** | **String** |  | [optional] |
 | **data_label** | **String** |  | [optional] |
@@ -33,6 +37,7 @@
 | **data8_label** | **String** |  | [optional] |
 | **data9** | **String** |  | [optional] |
 | **data9_label** | **String** |  | [optional] |
+| **authorized** | **Boolean** |  | [optional] |
 | **business_id** | **String** |  | [optional] |
 | **contact_id** | **String** |  | [optional] |
 | **business_profile_record_id** | **String** |  | [optional] |
@@ -45,11 +50,15 @@ require 'openapi_client'
 instance = OpenapiClient::InstructorProfileDto.new(
   id: null,
   timestamp: null,
-  authorized: null,
+  contact_id: null,
+  tenant_id: null,
+  type: null,
+  enrollment_id: null,
   about: null,
   verified: null,
   submitted: null,
   avatar_url: null,
+  contact: null,
   qualified_name: null,
   verification_timestamp: null,
   data: null,
@@ -72,6 +81,7 @@ instance = OpenapiClient::InstructorProfileDto.new(
   data8_label: null,
   data9: null,
   data9_label: null,
+  authorized: null,
   business_id: null,
   contact_id: null,
   business_profile_record_id: null

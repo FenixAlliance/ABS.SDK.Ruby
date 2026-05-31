@@ -1,6 +1,6 @@
 # OpenapiClient::ItemTypesApi
 
-All URIs are relative to *https://absuite.net*
+All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
@@ -14,7 +14,7 @@ All URIs are relative to *https://absuite.net*
 
 ## count_item_types_async
 
-> <Int32Envelope> count_item_types_async(tenant_id, opts)
+> <Int32Envelope> count_item_types_async(opts)
 
 Count item types
 
@@ -27,15 +27,15 @@ require 'time'
 require 'openapi_client'
 
 api_instance = OpenapiClient::ItemTypesApi.new
-tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
+  tenant_id: '38400000-8cf0-11bd-b23e-10b96e4ef00d', # String | 
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example' # String | 
 }
 
 begin
   # Count item types
-  result = api_instance.count_item_types_async(tenant_id, opts)
+  result = api_instance.count_item_types_async(opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling ItemTypesApi->count_item_types_async: #{e}"
@@ -46,12 +46,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Int32Envelope>, Integer, Hash)> count_item_types_async_with_http_info(tenant_id, opts)
+> <Array(<Int32Envelope>, Integer, Hash)> count_item_types_async_with_http_info(opts)
 
 ```ruby
 begin
   # Count item types
-  data, status_code, headers = api_instance.count_item_types_async_with_http_info(tenant_id, opts)
+  data, status_code, headers = api_instance.count_item_types_async_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Int32Envelope>
@@ -64,7 +64,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **tenant_id** | **String** |  |  |
+| **tenant_id** | **String** |  | [optional] |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
 
@@ -243,6 +243,7 @@ require 'openapi_client'
 api_instance = OpenapiClient::ItemTypesApi.new
 item_type_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
+  tenant_id: '38400000-8cf0-11bd-b23e-10b96e4ef00d', # String | 
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example' # String | 
 }
@@ -279,6 +280,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **item_type_id** | **String** |  |  |
+| **tenant_id** | **String** |  | [optional] |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
 
@@ -298,7 +300,7 @@ No authorization required
 
 ## get_item_types_async
 
-> <ItemTypeDtoListEnvelope> get_item_types_async(tenant_id, opts)
+> <ItemTypeDtoListEnvelope> get_item_types_async(opts)
 
 Get all item types
 
@@ -311,15 +313,15 @@ require 'time'
 require 'openapi_client'
 
 api_instance = OpenapiClient::ItemTypesApi.new
-tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
+  tenant_id: '38400000-8cf0-11bd-b23e-10b96e4ef00d', # String | 
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example' # String | 
 }
 
 begin
   # Get all item types
-  result = api_instance.get_item_types_async(tenant_id, opts)
+  result = api_instance.get_item_types_async(opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling ItemTypesApi->get_item_types_async: #{e}"
@@ -330,12 +332,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<ItemTypeDtoListEnvelope>, Integer, Hash)> get_item_types_async_with_http_info(tenant_id, opts)
+> <Array(<ItemTypeDtoListEnvelope>, Integer, Hash)> get_item_types_async_with_http_info(opts)
 
 ```ruby
 begin
   # Get all item types
-  data, status_code, headers = api_instance.get_item_types_async_with_http_info(tenant_id, opts)
+  data, status_code, headers = api_instance.get_item_types_async_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ItemTypeDtoListEnvelope>
@@ -348,7 +350,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **tenant_id** | **String** |  |  |
+| **tenant_id** | **String** |  | [optional] |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
 

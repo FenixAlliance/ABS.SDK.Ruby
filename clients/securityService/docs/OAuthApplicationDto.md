@@ -5,6 +5,7 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **id** | **String** |  | [optional] |
+| **timestamp** | **Time** |  | [optional] |
 | **application_type** | **String** |  | [optional] |
 | **client_id** | **String** |  | [optional] |
 | **concurrency_token** | **String** |  | [optional] |
@@ -32,6 +33,7 @@ require 'openapi_client'
 
 instance = OpenapiClient::OAuthApplicationDto.new(
   id: null,
+  timestamp: null,
   application_type: null,
   client_id: null,
   concurrency_token: null,

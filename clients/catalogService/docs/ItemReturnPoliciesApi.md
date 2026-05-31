@@ -1,6 +1,6 @@
 # OpenapiClient::ItemReturnPoliciesApi
 
-All URIs are relative to *https://absuite.net*
+All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
@@ -27,6 +27,7 @@ require 'openapi_client'
 
 api_instance = OpenapiClient::ItemReturnPoliciesApi.new
 opts = {
+  tenant_id: '38400000-8cf0-11bd-b23e-10b96e4ef00d', # String | 
   item_id: '38400000-8cf0-11bd-b23e-10b96e4ef00d', # String | 
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example' # String | 
@@ -63,6 +64,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  | [optional] |
 | **item_id** | **String** |  | [optional] |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
@@ -97,6 +99,7 @@ require 'openapi_client'
 
 api_instance = OpenapiClient::ItemReturnPoliciesApi.new
 opts = {
+  tenant_id: '38400000-8cf0-11bd-b23e-10b96e4ef00d', # String | 
   item_id: '38400000-8cf0-11bd-b23e-10b96e4ef00d', # String | 
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example' # String | 
@@ -133,6 +136,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  | [optional] |
 | **item_id** | **String** |  | [optional] |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
@@ -168,6 +172,7 @@ require 'openapi_client'
 api_instance = OpenapiClient::ItemReturnPoliciesApi.new
 item_return_policy_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
+  tenant_id: '38400000-8cf0-11bd-b23e-10b96e4ef00d', # String | 
   item_id: '38400000-8cf0-11bd-b23e-10b96e4ef00d', # String | 
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example' # String | 
@@ -205,6 +210,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **item_return_policy_id** | **String** |  |  |
+| **tenant_id** | **String** |  | [optional] |
 | **item_id** | **String** |  | [optional] |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
