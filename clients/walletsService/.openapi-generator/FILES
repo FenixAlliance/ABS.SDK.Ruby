@@ -133,5 +133,4 @@ lib/openapi_client/models/wallet_withdraw_request_dto.rb
 lib/openapi_client/models/wallet_withdraw_request_dto_list_envelope.rb
 lib/openapi_client/version.rb
 openapi_client.gemspec
-spec/models/operation_spec.rb
 spec/spec_helper.rb

@@ -127,5 +127,4 @@ lib/openapi_client/models/two_factor_request.rb
 lib/openapi_client/models/two_factor_response.rb
 lib/openapi_client/version.rb
 openapi_client.gemspec
-spec/models/operation_spec.rb
 spec/spec_helper.rb
