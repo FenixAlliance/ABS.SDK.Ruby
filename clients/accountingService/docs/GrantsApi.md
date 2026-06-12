@@ -9,6 +9,7 @@ All URIs are relative to *http://localhost*
 | [**get_grant_details_async**](GrantsApi.md#get_grant_details_async) | **GET** /api/v2/AccountingService/Grants/{grantId} | Get grant by ID |
 | [**get_grants_async**](GrantsApi.md#get_grants_async) | **GET** /api/v2/AccountingService/Grants | Get all grants |
 | [**get_grants_count_async**](GrantsApi.md#get_grants_count_async) | **GET** /api/v2/AccountingService/Grants/Count | Count grants |
+| [**patch_grant_async**](GrantsApi.md#patch_grant_async) | **PATCH** /api/v2/AccountingService/Grants/{grantId} | Patch a grant |
 | [**update_grant_async**](GrantsApi.md#update_grant_async) | **PUT** /api/v2/AccountingService/Grants/{grantId} | Update grant |
 
 
@@ -365,6 +366,80 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_grant_async
+
+> <EmptyEnvelope> patch_grant_async(tenant_id, grant_id, opts)
+
+Patch a grant
+
+Partially updates a grant.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::GrantsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+grant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch a grant
+  result = api_instance.patch_grant_async(tenant_id, grant_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling GrantsApi->patch_grant_async: #{e}"
+end
+```
+
+#### Using the patch_grant_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_grant_async_with_http_info(tenant_id, grant_id, opts)
+
+```ruby
+begin
+  # Patch a grant
+  data, status_code, headers = api_instance.patch_grant_async_with_http_info(tenant_id, grant_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling GrantsApi->patch_grant_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **grant_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

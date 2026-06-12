@@ -8,6 +8,7 @@ All URIs are relative to *http://localhost*
 | [**delete_item_tag_async**](ItemTagsApi.md#delete_item_tag_async) | **DELETE** /api/v2/CatalogService/ItemTags/{itemTagId} | Delete an item tag |
 | [**get_item_tag_by_id_async**](ItemTagsApi.md#get_item_tag_by_id_async) | **GET** /api/v2/CatalogService/ItemTags/{itemTagId} | Get item tag by ID |
 | [**get_item_tags_async**](ItemTagsApi.md#get_item_tags_async) | **GET** /api/v2/CatalogService/ItemTags | Get all item tags |
+| [**patch_item_tag_async**](ItemTagsApi.md#patch_item_tag_async) | **PATCH** /api/v2/CatalogService/ItemTags/{itemTagId} | Patch an item tag |
 | [**update_item_tag_async**](ItemTagsApi.md#update_item_tag_async) | **PUT** /api/v2/CatalogService/ItemTags/{itemTagId} | Update an item tag |
 
 
@@ -293,6 +294,79 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_item_tag_async
+
+> patch_item_tag_async(tenant_id, item_tag_id, opts)
+
+Patch an item tag
+
+Partially updates an existing item tag for the specified tenant.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::ItemTagsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+item_tag_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch an item tag
+  api_instance.patch_item_tag_async(tenant_id, item_tag_id, opts)
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ItemTagsApi->patch_item_tag_async: #{e}"
+end
+```
+
+#### Using the patch_item_tag_async_with_http_info variant
+
+This returns an Array which contains the response data (`nil` in this case), status code and headers.
+
+> <Array(nil, Integer, Hash)> patch_item_tag_async_with_http_info(tenant_id, item_tag_id, opts)
+
+```ruby
+begin
+  # Patch an item tag
+  data, status_code, headers = api_instance.patch_item_tag_async_with_http_info(tenant_id, item_tag_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => nil
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ItemTagsApi->patch_item_tag_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **item_tag_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

@@ -9,6 +9,7 @@ All URIs are relative to *http://localhost*
 | [**delete_item_attribute_async**](ItemAttributesApi.md#delete_item_attribute_async) | **DELETE** /api/v2/CatalogService/ItemAttributes/{itemAttributeId} | Delete an item attribute |
 | [**get_item_attribute_by_id_async**](ItemAttributesApi.md#get_item_attribute_by_id_async) | **GET** /api/v2/CatalogService/ItemAttributes/{itemAttributeId} | Get item attribute by ID |
 | [**get_item_attributes_async**](ItemAttributesApi.md#get_item_attributes_async) | **GET** /api/v2/CatalogService/ItemAttributes | Get all item attributes |
+| [**patch_item_attribute_async**](ItemAttributesApi.md#patch_item_attribute_async) | **PATCH** /api/v2/CatalogService/ItemAttributes/{itemAttributeId} | Patch an item attribute |
 | [**update_item_attribute_async**](ItemAttributesApi.md#update_item_attribute_async) | **PUT** /api/v2/CatalogService/ItemAttributes/{itemAttributeId} | Update an item attribute |
 
 
@@ -364,6 +365,79 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_item_attribute_async
+
+> patch_item_attribute_async(tenant_id, item_attribute_id, opts)
+
+Patch an item attribute
+
+Partially updates an existing item attribute for the specified tenant.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::ItemAttributesApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+item_attribute_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch an item attribute
+  api_instance.patch_item_attribute_async(tenant_id, item_attribute_id, opts)
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ItemAttributesApi->patch_item_attribute_async: #{e}"
+end
+```
+
+#### Using the patch_item_attribute_async_with_http_info variant
+
+This returns an Array which contains the response data (`nil` in this case), status code and headers.
+
+> <Array(nil, Integer, Hash)> patch_item_attribute_async_with_http_info(tenant_id, item_attribute_id, opts)
+
+```ruby
+begin
+  # Patch an item attribute
+  data, status_code, headers = api_instance.patch_item_attribute_async_with_http_info(tenant_id, item_attribute_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => nil
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ItemAttributesApi->patch_item_attribute_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **item_attribute_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

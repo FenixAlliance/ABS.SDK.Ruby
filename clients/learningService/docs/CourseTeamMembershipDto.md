@@ -10,6 +10,7 @@
 | **instructor_profile_id** | **String** |  | [optional] |
 | **course_team_membership_type** | **String** |  | [optional] |
 | **tenant_id** | **String** |  | [optional] |
+| **enrollment_id** | **String** |  | [optional] |
 
 ## Example
 
@@ -22,7 +23,8 @@ instance = OpenapiClient::CourseTeamMembershipDto.new(
   course_id: null,
   instructor_profile_id: null,
   course_team_membership_type: null,
-  tenant_id: null
+  tenant_id: null,
+  enrollment_id: null
 )
 ```
 

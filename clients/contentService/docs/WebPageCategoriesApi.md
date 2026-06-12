@@ -9,6 +9,7 @@ All URIs are relative to *http://localhost*
 | [**delete_web_page_category_async**](WebPageCategoriesApi.md#delete_web_page_category_async) | **DELETE** /api/v2/ContentService/WebPageCategories/{webPageCategoryId} | Delete a web page category |
 | [**get_web_page_categories_async**](WebPageCategoriesApi.md#get_web_page_categories_async) | **GET** /api/v2/ContentService/WebPageCategories | Get web page categories |
 | [**get_web_page_category_by_id_async**](WebPageCategoriesApi.md#get_web_page_category_by_id_async) | **GET** /api/v2/ContentService/WebPageCategories/{webPageCategoryId} | Get web page category by ID |
+| [**patch_web_page_category_async**](WebPageCategoriesApi.md#patch_web_page_category_async) | **PATCH** /api/v2/ContentService/WebPageCategories/{webPageCategoryId} | Patch a web page category |
 | [**update_web_page_category_async**](WebPageCategoriesApi.md#update_web_page_category_async) | **PUT** /api/v2/ContentService/WebPageCategories/{webPageCategoryId} | Update a web page category |
 
 
@@ -365,6 +366,80 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_web_page_category_async
+
+> <EmptyEnvelope> patch_web_page_category_async(tenant_id, web_page_category_id, opts)
+
+Patch a web page category
+
+Partially updates an existing web page category for the specified tenant.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::WebPageCategoriesApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+web_page_category_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch a web page category
+  result = api_instance.patch_web_page_category_async(tenant_id, web_page_category_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling WebPageCategoriesApi->patch_web_page_category_async: #{e}"
+end
+```
+
+#### Using the patch_web_page_category_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_web_page_category_async_with_http_info(tenant_id, web_page_category_id, opts)
+
+```ruby
+begin
+  # Patch a web page category
+  data, status_code, headers = api_instance.patch_web_page_category_async_with_http_info(tenant_id, web_page_category_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling WebPageCategoriesApi->patch_web_page_category_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **web_page_category_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

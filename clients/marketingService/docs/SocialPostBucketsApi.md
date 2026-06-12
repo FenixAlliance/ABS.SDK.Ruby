@@ -9,6 +9,7 @@ All URIs are relative to *http://localhost*
 | [**get_social_post_bucket_details_async**](SocialPostBucketsApi.md#get_social_post_bucket_details_async) | **GET** /api/v2/MarketingService/SocialPostBuckets/{socialpostbucketId} | Get social post bucket by ID |
 | [**get_social_post_buckets_count_async**](SocialPostBucketsApi.md#get_social_post_buckets_count_async) | **GET** /api/v2/MarketingService/SocialPostBuckets/Count | Get social post buckets count |
 | [**get_social_post_buckets_o_data_async**](SocialPostBucketsApi.md#get_social_post_buckets_o_data_async) | **GET** /api/v2/MarketingService/SocialPostBuckets | Get social post buckets |
+| [**patch_social_post_bucket_async**](SocialPostBucketsApi.md#patch_social_post_bucket_async) | **PATCH** /api/v2/MarketingService/SocialPostBuckets/{socialpostbucketId} | Patch a social post bucket |
 | [**update_social_post_bucket_async**](SocialPostBucketsApi.md#update_social_post_bucket_async) | **PUT** /api/v2/MarketingService/SocialPostBuckets/{socialpostbucketId} | Update a social post bucket |
 
 
@@ -365,6 +366,80 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_social_post_bucket_async
+
+> <EmptyEnvelope> patch_social_post_bucket_async(tenant_id, socialpostbucket_id, opts)
+
+Patch a social post bucket
+
+Partially updates a social post bucket by its ID using JSON Patch.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::SocialPostBucketsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+socialpostbucket_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch a social post bucket
+  result = api_instance.patch_social_post_bucket_async(tenant_id, socialpostbucket_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling SocialPostBucketsApi->patch_social_post_bucket_async: #{e}"
+end
+```
+
+#### Using the patch_social_post_bucket_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_social_post_bucket_async_with_http_info(tenant_id, socialpostbucket_id, opts)
+
+```ruby
+begin
+  # Patch a social post bucket
+  data, status_code, headers = api_instance.patch_social_post_bucket_async_with_http_info(tenant_id, socialpostbucket_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling SocialPostBucketsApi->patch_social_post_bucket_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **socialpostbucket_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

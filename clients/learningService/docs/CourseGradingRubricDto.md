@@ -11,6 +11,7 @@
 | **enable_points** | **Boolean** |  | [optional] |
 | **course_id** | **String** |  | [optional] |
 | **tenant_id** | **String** |  | [optional] |
+| **enrollment_id** | **String** |  | [optional] |
 
 ## Example
 
@@ -24,7 +25,8 @@ instance = OpenapiClient::CourseGradingRubricDto.new(
   description: null,
   enable_points: null,
   course_id: null,
-  tenant_id: null
+  tenant_id: null,
+  enrollment_id: null
 )
 ```
 

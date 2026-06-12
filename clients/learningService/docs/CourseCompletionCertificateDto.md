@@ -8,8 +8,8 @@
 | **timestamp** | **Time** |  | [optional] |
 | **student_profile_id** | **String** |  | [optional] |
 | **course_enrollment_id** | **String** |  | [optional] |
-| **business_id** | **String** |  | [optional] |
-| **business_profile_record_id** | **String** |  | [optional] |
+| **tenant_id** | **String** |  | [optional] |
+| **enrollment_id** | **String** |  | [optional] |
 | **course_completion_certificate_template_id** | **String** |  | [optional] |
 | **course_id** | **String** |  | [optional] |
 | **student_name** | **String** |  | [optional] |
@@ -29,8 +29,8 @@ instance = OpenapiClient::CourseCompletionCertificateDto.new(
   timestamp: null,
   student_profile_id: null,
   course_enrollment_id: null,
-  business_id: null,
-  business_profile_record_id: null,
+  tenant_id: null,
+  enrollment_id: null,
   course_completion_certificate_template_id: null,
   course_id: null,
   student_name: null,

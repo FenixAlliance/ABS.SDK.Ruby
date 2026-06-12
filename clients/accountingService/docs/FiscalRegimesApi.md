@@ -9,6 +9,7 @@ All URIs are relative to *http://localhost*
 | [**get_fiscal_regime**](FiscalRegimesApi.md#get_fiscal_regime) | **GET** /api/v2/AccountingService/Fiscals/Authorities/{fiscalAuthorityId}/FiscalRegimes/{regimeId} | Get fiscal regime by ID |
 | [**get_fiscal_regimes**](FiscalRegimesApi.md#get_fiscal_regimes) | **GET** /api/v2/AccountingService/Fiscals/Authorities/{authorityId}/FiscalRegimes | Get fiscal regimes for an authority |
 | [**get_fiscal_regimes_count**](FiscalRegimesApi.md#get_fiscal_regimes_count) | **GET** /api/v2/AccountingService/Fiscals/Authorities/{fiscalAuthorityId}/FiscalRegimes/Count | Get fiscal regimes count |
+| [**patch_fiscal_regime_async**](FiscalRegimesApi.md#patch_fiscal_regime_async) | **PATCH** /api/v2/AccountingService/Fiscals/Authorities/FiscalRegimes/{regimeId} | Patch a fiscal regime |
 | [**update_fiscal_regime**](FiscalRegimesApi.md#update_fiscal_regime) | **PUT** /api/v2/AccountingService/Fiscals/Authorities/FiscalRegimes/{regimeId} | Update a fiscal regime |
 
 
@@ -373,6 +374,80 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_fiscal_regime_async
+
+> <EmptyEnvelope> patch_fiscal_regime_async(tenant_id, regime_id, opts)
+
+Patch a fiscal regime
+
+Partially updates a fiscal regime.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::FiscalRegimesApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+regime_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch a fiscal regime
+  result = api_instance.patch_fiscal_regime_async(tenant_id, regime_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling FiscalRegimesApi->patch_fiscal_regime_async: #{e}"
+end
+```
+
+#### Using the patch_fiscal_regime_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_fiscal_regime_async_with_http_info(tenant_id, regime_id, opts)
+
+```ruby
+begin
+  # Patch a fiscal regime
+  data, status_code, headers = api_instance.patch_fiscal_regime_async_with_http_info(tenant_id, regime_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling FiscalRegimesApi->patch_fiscal_regime_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **regime_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

@@ -18,6 +18,7 @@
 | **duns** | **String** |  | [optional] |
 | **is_public_company** | **Boolean** |  | [optional] |
 | **is_facta_customer** | **Boolean** |  | [optional] |
+| **tax_payer_type** | **String** |  | [optional] |
 | **country_id** | **String** |  | [optional] |
 | **state_id** | **String** |  | [optional] |
 | **city_id** | **String** |  | [optional] |
@@ -45,6 +46,7 @@ instance = OpenapiClient::BillingProfileUpdateDto.new(
   duns: null,
   is_public_company: null,
   is_facta_customer: null,
+  tax_payer_type: null,
   country_id: null,
   state_id: null,
   city_id: null,

@@ -9,8 +9,6 @@
 | **name** | **String** |  | [optional] |
 | **description** | **String** |  | [optional] |
 | **date_time** | **Time** |  | [optional] |
-| **tenant_id** | **String** |  | [optional] |
-| **enrollment_id** | **String** |  | [optional] |
 | **ledger_type_id** | **String** |  | [optional] |
 
 ## Example
@@ -24,8 +22,6 @@ instance = OpenapiClient::CreateLedgerDto.new(
   name: null,
   description: null,
   date_time: null,
-  tenant_id: null,
-  enrollment_id: null,
   ledger_type_id: null
 )
 ```

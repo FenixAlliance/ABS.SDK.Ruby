@@ -13,7 +13,9 @@
 | **markup** | **String** |  | [optional] |
 | **featured_image_url** | **String** |  | [optional] |
 | **code_type** | **String** |  | [optional] |
+| **slug** | **String** |  | [optional] |
 | **web_template_id** | **String** |  | [optional] |
+| **parent_web_content_id** | **String** |  | [optional] |
 
 ## Example
 
@@ -30,7 +32,9 @@ instance = OpenapiClient::WebPageCreateDto.new(
   markup: null,
   featured_image_url: null,
   code_type: null,
-  web_template_id: null
+  slug: null,
+  web_template_id: null,
+  parent_web_content_id: null
 )
 ```
 

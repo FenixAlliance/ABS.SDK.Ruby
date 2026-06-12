@@ -9,7 +9,7 @@
 | **name** | **String** |  | [optional] |
 | **code** | **String** |  | [optional] |
 | **description** | **String** |  | [optional] |
-| **business_id** | **String** |  | [optional] |
+| **tenant_id** | **String** |  | [optional] |
 
 ## Example
 
@@ -22,7 +22,7 @@ instance = OpenapiClient::ItemFamilyDto.new(
   name: null,
   code: null,
   description: null,
-  business_id: null
+  tenant_id: null
 )
 ```
 

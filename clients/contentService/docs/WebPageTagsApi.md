@@ -9,6 +9,7 @@ All URIs are relative to *http://localhost*
 | [**delete_web_page_tag_async**](WebPageTagsApi.md#delete_web_page_tag_async) | **DELETE** /api/v2/ContentService/WebPageTags/{webPageTagId} | Delete a web page tag |
 | [**get_web_page_tag_by_id_async**](WebPageTagsApi.md#get_web_page_tag_by_id_async) | **GET** /api/v2/ContentService/WebPageTags/{webPageTagId} | Get web page tag by ID |
 | [**get_web_page_tags_async**](WebPageTagsApi.md#get_web_page_tags_async) | **GET** /api/v2/ContentService/WebPageTags | Get web page tags |
+| [**patch_web_page_tag_async**](WebPageTagsApi.md#patch_web_page_tag_async) | **PATCH** /api/v2/ContentService/WebPageTags/{webPageTagId} | Patch a web page tag |
 | [**update_web_page_tag_async**](WebPageTagsApi.md#update_web_page_tag_async) | **PUT** /api/v2/ContentService/WebPageTags/{webPageTagId} | Update a web page tag |
 
 
@@ -365,6 +366,80 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_web_page_tag_async
+
+> <EmptyEnvelope> patch_web_page_tag_async(tenant_id, web_page_tag_id, opts)
+
+Patch a web page tag
+
+Partially updates an existing web page tag for the specified tenant.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::WebPageTagsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+web_page_tag_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch a web page tag
+  result = api_instance.patch_web_page_tag_async(tenant_id, web_page_tag_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling WebPageTagsApi->patch_web_page_tag_async: #{e}"
+end
+```
+
+#### Using the patch_web_page_tag_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_web_page_tag_async_with_http_info(tenant_id, web_page_tag_id, opts)
+
+```ruby
+begin
+  # Patch a web page tag
+  data, status_code, headers = api_instance.patch_web_page_tag_async_with_http_info(tenant_id, web_page_tag_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling WebPageTagsApi->patch_web_page_tag_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **web_page_tag_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

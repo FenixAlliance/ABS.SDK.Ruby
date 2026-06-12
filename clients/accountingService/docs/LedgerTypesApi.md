@@ -9,6 +9,7 @@ All URIs are relative to *http://localhost*
 | [**get_ledger_type_details_async**](LedgerTypesApi.md#get_ledger_type_details_async) | **GET** /api/v2/AccountingService/LedgerTypes/{ledgerTypeId} | Gets a ledger type by ID |
 | [**get_ledger_types_async**](LedgerTypesApi.md#get_ledger_types_async) | **GET** /api/v2/AccountingService/LedgerTypes | Retrieves all ledger types |
 | [**get_ledger_types_count_async**](LedgerTypesApi.md#get_ledger_types_count_async) | **GET** /api/v2/AccountingService/LedgerTypes/Count | Counts ledger types |
+| [**patch_ledger_type_async**](LedgerTypesApi.md#patch_ledger_type_async) | **PATCH** /api/v2/AccountingService/LedgerTypes/{ledgerTypeId} | Patches a ledger type |
 | [**update_ledger_type_async**](LedgerTypesApi.md#update_ledger_type_async) | **PUT** /api/v2/AccountingService/LedgerTypes/{ledgerTypeId} | Updates a ledger type |
 
 
@@ -365,6 +366,80 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_ledger_type_async
+
+> <EmptyEnvelope> patch_ledger_type_async(tenant_id, ledger_type_id, opts)
+
+Patches a ledger type
+
+Partially updates the specified ledger type using a JSON Patch document.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::LedgerTypesApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+ledger_type_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patches a ledger type
+  result = api_instance.patch_ledger_type_async(tenant_id, ledger_type_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling LedgerTypesApi->patch_ledger_type_async: #{e}"
+end
+```
+
+#### Using the patch_ledger_type_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_ledger_type_async_with_http_info(tenant_id, ledger_type_id, opts)
+
+```ruby
+begin
+  # Patches a ledger type
+  data, status_code, headers = api_instance.patch_ledger_type_async_with_http_info(tenant_id, ledger_type_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling LedgerTypesApi->patch_ledger_type_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **ledger_type_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

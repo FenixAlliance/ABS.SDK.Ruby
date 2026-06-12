@@ -15,6 +15,7 @@
 | **prefix** | **String** |  | [optional] |
 | **balance** | **Float** |  | [optional] |
 | **currency_id** | **String** |  | [optional] |
+| **contact_id** | **String** |  | [optional] |
 | **account_type** | **String** |  | [optional] |
 | **qualified_name** | **String** |  | [optional] |
 | **account_type_id** | **String** |  | [optional] |
@@ -53,6 +54,7 @@ instance = OpenapiClient::AccountDto.new(
   prefix: null,
   balance: null,
   currency_id: null,
+  contact_id: null,
   account_type: null,
   qualified_name: null,
   account_type_id: null,

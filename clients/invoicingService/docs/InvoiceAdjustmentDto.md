@@ -10,6 +10,8 @@
 | **invoice_id** | **String** |  | [optional] |
 | **currency_id** | **String** |  | [optional] |
 | **enrollment_id** | **String** |  | [optional] |
+| **priority** | **Integer** |  | [optional] |
+| **code** | **String** |  | [optional] |
 | **description** | **String** |  | [optional] |
 | **surcharge_percent** | **Float** |  | [optional] |
 | **surcharge_amount** | **Float** |  | [optional] |
@@ -31,6 +33,8 @@ instance = OpenapiClient::InvoiceAdjustmentDto.new(
   invoice_id: null,
   currency_id: null,
   enrollment_id: null,
+  priority: null,
+  code: null,
   description: null,
   surcharge_percent: null,
   surcharge_amount: null,

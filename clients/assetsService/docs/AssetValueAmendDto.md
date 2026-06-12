@@ -4,19 +4,18 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **id** | **Object** |  | [optional] |
+| **id** | **String** |  | [optional] |
 | **timestamp** | **Time** |  | [optional] |
-| **business_id** | **Object** |  | [optional] |
-| **business_profile_record_id** | **Object** |  | [optional] |
-| **asset_id** | **Object** |  | [optional] |
+| **tenant_id** | **String** |  | [optional] |
+| **enrollment_id** | **String** |  | [optional] |
+| **asset_id** | **String** |  | [optional] |
 | **asset_name** | **String** |  | [optional] |
 | **previous_value** | **Float** |  | [optional] |
 | **new_value** | **Float** |  | [optional] |
 | **amendment_amount** | **Float** |  | [optional] |
 | **reason** | **String** |  | [optional] |
 | **amendment_date** | **Time** |  | [optional] |
-| **approved_by** | **String** |  | [optional] |
-| **approval_date** | **Time** |  | [optional] |
+| **currency_id** | **String** |  | [optional] |
 
 ## Example
 
@@ -26,8 +25,8 @@ require 'openapi_client'
 instance = OpenapiClient::AssetValueAmendDto.new(
   id: null,
   timestamp: null,
-  business_id: null,
-  business_profile_record_id: null,
+  tenant_id: null,
+  enrollment_id: null,
   asset_id: null,
   asset_name: null,
   previous_value: null,
@@ -35,8 +34,7 @@ instance = OpenapiClient::AssetValueAmendDto.new(
   amendment_amount: null,
   reason: null,
   amendment_date: null,
-  approved_by: null,
-  approval_date: null
+  currency_id: null
 )
 ```
 

@@ -13,6 +13,7 @@
 | **expected_end_date_time** | **Time** |  | [optional] |
 | **course_id** | **String** |  | [optional] |
 | **tenant_id** | **String** |  | [optional] |
+| **enrollment_id** | **String** |  | [optional] |
 
 ## Example
 
@@ -28,7 +29,8 @@ instance = OpenapiClient::CourseCohortDto.new(
   expected_start_date_time: null,
   expected_end_date_time: null,
   course_id: null,
-  tenant_id: null
+  tenant_id: null,
+  enrollment_id: null
 )
 ```
 

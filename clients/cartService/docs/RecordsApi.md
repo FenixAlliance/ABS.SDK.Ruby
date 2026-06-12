@@ -12,6 +12,7 @@ All URIs are relative to *http://localhost*
 | [**get_items_in_cart_async**](RecordsApi.md#get_items_in_cart_async) | **GET** /api/v2/CartService/Records/{cartId} | Get all items in a cart |
 | [**increase_item_cart_record**](RecordsApi.md#increase_item_cart_record) | **PUT** /api/v2/CartService/Records/{recordId}/Increase | Increase cart record quantity |
 | [**is_item_already_in_cart**](RecordsApi.md#is_item_already_in_cart) | **GET** /api/v2/CartService/Records/IsInCart | Check if an item is in a cart |
+| [**patch_item_cart_record**](RecordsApi.md#patch_item_cart_record) | **PATCH** /api/v2/CartService/Records/{recordId} | Patch a cart record |
 | [**remove_product_from_cart_by_params**](RecordsApi.md#remove_product_from_cart_by_params) | **DELETE** /api/v2/CartService/Records | Remove a product from a cart |
 | [**remove_product_from_cart_by_record_id**](RecordsApi.md#remove_product_from_cart_by_record_id) | **DELETE** /api/v2/CartService/Records/{recordId} | Remove a product from a cart by record ID |
 | [**update_item_cart_record**](RecordsApi.md#update_item_cart_record) | **PUT** /api/v2/CartService/Records/{recordId} | Update a cart record |
@@ -584,6 +585,78 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_item_cart_record
+
+> <EmptyEnvelope> patch_item_cart_record(record_id, opts)
+
+Patch a cart record
+
+Partially updates the specified item cart record using a JSON Patch document.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::RecordsApi.new
+record_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch a cart record
+  result = api_instance.patch_item_cart_record(record_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling RecordsApi->patch_item_cart_record: #{e}"
+end
+```
+
+#### Using the patch_item_cart_record_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_item_cart_record_with_http_info(record_id, opts)
+
+```ruby
+begin
+  # Patch a cart record
+  data, status_code, headers = api_instance.patch_item_cart_record_with_http_info(record_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling RecordsApi->patch_item_cart_record_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **record_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

@@ -9,6 +9,7 @@ All URIs are relative to *http://localhost*
 | [**delete_web_template_async**](WebTemplatesApi.md#delete_web_template_async) | **DELETE** /api/v2/ContentService/WebTemplates/{webTemplateId} | Delete a web template |
 | [**get_web_template_by_id_async**](WebTemplatesApi.md#get_web_template_by_id_async) | **GET** /api/v2/ContentService/WebTemplates/{webTemplateId} | Get web template by ID |
 | [**get_web_templates_async**](WebTemplatesApi.md#get_web_templates_async) | **GET** /api/v2/ContentService/WebTemplates | Get web templates |
+| [**patch_web_template_async**](WebTemplatesApi.md#patch_web_template_async) | **PATCH** /api/v2/ContentService/WebTemplates/{webTemplateId} | Patch a web template |
 | [**update_web_template_async**](WebTemplatesApi.md#update_web_template_async) | **PUT** /api/v2/ContentService/WebTemplates/{webTemplateId} | Update a web template |
 
 
@@ -363,6 +364,79 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_web_template_async
+
+> patch_web_template_async(tenant_id, web_template_id, opts)
+
+Patch a web template
+
+Partially updates an existing web template for the specified tenant.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::WebTemplatesApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+web_template_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch a web template
+  api_instance.patch_web_template_async(tenant_id, web_template_id, opts)
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling WebTemplatesApi->patch_web_template_async: #{e}"
+end
+```
+
+#### Using the patch_web_template_async_with_http_info variant
+
+This returns an Array which contains the response data (`nil` in this case), status code and headers.
+
+> <Array(nil, Integer, Hash)> patch_web_template_async_with_http_info(tenant_id, web_template_id, opts)
+
+```ruby
+begin
+  # Patch a web template
+  data, status_code, headers = api_instance.patch_web_template_async_with_http_info(tenant_id, web_template_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => nil
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling WebTemplatesApi->patch_web_template_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **web_template_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

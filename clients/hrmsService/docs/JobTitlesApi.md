@@ -9,6 +9,7 @@ All URIs are relative to *http://localhost*
 | [**get_job_title_by_id_async**](JobTitlesApi.md#get_job_title_by_id_async) | **GET** /api/v2/HrmsService/JobTitles/{jobTitleId} | Get job title by ID |
 | [**get_job_titles_async**](JobTitlesApi.md#get_job_titles_async) | **GET** /api/v2/HrmsService/JobTitles | Get job titles |
 | [**get_job_titles_count_async**](JobTitlesApi.md#get_job_titles_count_async) | **GET** /api/v2/HrmsService/JobTitles/Count | Count job titles |
+| [**patch_job_title_async**](JobTitlesApi.md#patch_job_title_async) | **PATCH** /api/v2/HrmsService/JobTitles/{jobTitleId} | Patch a job title |
 | [**update_job_title_async**](JobTitlesApi.md#update_job_title_async) | **PUT** /api/v2/HrmsService/JobTitles/{jobTitleId} | Update a job title |
 
 
@@ -365,6 +366,80 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_job_title_async
+
+> <EmptyEnvelope> patch_job_title_async(tenant_id, job_title_id, opts)
+
+Patch a job title
+
+Partially updates an existing job title for the specified tenant.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::JobTitlesApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+job_title_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch a job title
+  result = api_instance.patch_job_title_async(tenant_id, job_title_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling JobTitlesApi->patch_job_title_async: #{e}"
+end
+```
+
+#### Using the patch_job_title_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_job_title_async_with_http_info(tenant_id, job_title_id, opts)
+
+```ruby
+begin
+  # Patch a job title
+  data, status_code, headers = api_instance.patch_job_title_async_with_http_info(tenant_id, job_title_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling JobTitlesApi->patch_job_title_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **job_title_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

@@ -16,6 +16,8 @@ All URIs are relative to *http://localhost*
 | [**issue_seaway_bill_async**](SeawayBillsApi.md#issue_seaway_bill_async) | **POST** /api/v2/LogisticsService/SeawayBills/{billId}/Issue | Issue a seaway bill |
 | [**mark_seaway_bill_arrived_async**](SeawayBillsApi.md#mark_seaway_bill_arrived_async) | **POST** /api/v2/LogisticsService/SeawayBills/{billId}/MarkArrived | Mark seaway bill arrived |
 | [**mark_seaway_bill_in_transit_async**](SeawayBillsApi.md#mark_seaway_bill_in_transit_async) | **POST** /api/v2/LogisticsService/SeawayBills/{billId}/MarkInTransit | Mark seaway bill in transit |
+| [**patch_seaway_bill_async**](SeawayBillsApi.md#patch_seaway_bill_async) | **PATCH** /api/v2/LogisticsService/SeawayBills/{billId} | Patch a seaway bill |
+| [**patch_seaway_bill_line_async**](SeawayBillsApi.md#patch_seaway_bill_line_async) | **PATCH** /api/v2/LogisticsService/SeawayBills/{billId}/Lines/{lineId} | Patch a seaway bill line |
 | [**release_seaway_bill_async**](SeawayBillsApi.md#release_seaway_bill_async) | **POST** /api/v2/LogisticsService/SeawayBills/{billId}/Release | Release a seaway bill |
 | [**remove_seaway_bill_line_async**](SeawayBillsApi.md#remove_seaway_bill_line_async) | **DELETE** /api/v2/LogisticsService/SeawayBills/{billId}/Lines/{lineId} | Remove a seaway bill line |
 | [**update_seaway_bill_async**](SeawayBillsApi.md#update_seaway_bill_async) | **PUT** /api/v2/LogisticsService/SeawayBills/{billId} | Update a seaway bill |
@@ -881,6 +883,156 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_seaway_bill_async
+
+> <EmptyEnvelope> patch_seaway_bill_async(tenant_id, bill_id, opts)
+
+Patch a seaway bill
+
+Partially updates an existing seaway bill using a JSON Patch document.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::SeawayBillsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+bill_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch a seaway bill
+  result = api_instance.patch_seaway_bill_async(tenant_id, bill_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling SeawayBillsApi->patch_seaway_bill_async: #{e}"
+end
+```
+
+#### Using the patch_seaway_bill_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_seaway_bill_async_with_http_info(tenant_id, bill_id, opts)
+
+```ruby
+begin
+  # Patch a seaway bill
+  data, status_code, headers = api_instance.patch_seaway_bill_async_with_http_info(tenant_id, bill_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling SeawayBillsApi->patch_seaway_bill_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **bill_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
+- **Accept**: application/json, application/xml
+
+
+## patch_seaway_bill_line_async
+
+> <EmptyEnvelope> patch_seaway_bill_line_async(tenant_id, bill_id, line_id, opts)
+
+Patch a seaway bill line
+
+Partially updates a line on a seaway bill using a JSON Patch document.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::SeawayBillsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+bill_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+line_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch a seaway bill line
+  result = api_instance.patch_seaway_bill_line_async(tenant_id, bill_id, line_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling SeawayBillsApi->patch_seaway_bill_line_async: #{e}"
+end
+```
+
+#### Using the patch_seaway_bill_line_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_seaway_bill_line_async_with_http_info(tenant_id, bill_id, line_id, opts)
+
+```ruby
+begin
+  # Patch a seaway bill line
+  data, status_code, headers = api_instance.patch_seaway_bill_line_async_with_http_info(tenant_id, bill_id, line_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling SeawayBillsApi->patch_seaway_bill_line_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **bill_id** | **String** |  |  |
+| **line_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

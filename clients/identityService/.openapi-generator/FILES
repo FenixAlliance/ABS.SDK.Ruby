@@ -85,8 +85,4 @@ lib/openapi_client/models/user_create_dto.rb
 lib/openapi_client/models/user_create_dto_envelope.rb
 lib/openapi_client/version.rb
 openapi_client.gemspec
-spec/api/completions_api_spec.rb
-spec/api/fenix_alliance_portals_website_api_spec.rb
-spec/models/auth_result_envelope_spec.rb
-spec/models/auth_result_spec.rb
 spec/spec_helper.rb

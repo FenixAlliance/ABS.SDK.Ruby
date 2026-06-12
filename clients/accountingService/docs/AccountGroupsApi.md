@@ -9,6 +9,7 @@ All URIs are relative to *http://localhost*
 | [**get_account_group**](AccountGroupsApi.md#get_account_group) | **GET** /api/v2/AccountingService/AccountGroups/{accountGroupId} | Gets the current tenant account group |
 | [**get_account_groups**](AccountGroupsApi.md#get_account_groups) | **GET** /api/v2/AccountingService/AccountGroups | Gets the current tenant account groups |
 | [**get_account_groups_count_async**](AccountGroupsApi.md#get_account_groups_count_async) | **GET** /api/v2/AccountingService/AccountGroups/Count | Gets the current tenant accounts count |
+| [**patch_account_group_async**](AccountGroupsApi.md#patch_account_group_async) | **PATCH** /api/v2/AccountingService/AccountGroups/{accountGroupId} | Patch an account group |
 | [**update_account_group**](AccountGroupsApi.md#update_account_group) | **PUT** /api/v2/AccountingService/AccountGroups/{accountGroupId} | Updates an existing account group |
 
 
@@ -364,6 +365,80 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_account_group_async
+
+> <EmptyEnvelope> patch_account_group_async(tenant_id, account_group_id, opts)
+
+Patch an account group
+
+Partially updates an account group.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::AccountGroupsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+account_group_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch an account group
+  result = api_instance.patch_account_group_async(tenant_id, account_group_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling AccountGroupsApi->patch_account_group_async: #{e}"
+end
+```
+
+#### Using the patch_account_group_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_account_group_async_with_http_info(tenant_id, account_group_id, opts)
+
+```ruby
+begin
+  # Patch an account group
+  data, status_code, headers = api_instance.patch_account_group_async_with_http_info(tenant_id, account_group_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling AccountGroupsApi->patch_account_group_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **account_group_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

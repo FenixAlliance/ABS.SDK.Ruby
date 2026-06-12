@@ -14,6 +14,8 @@ All URIs are relative to *http://localhost*
 | [**get_transaction_category**](TransactionsApi.md#get_transaction_category) | **GET** /api/v2/AccountingService/Transactions/Categories/{categoryId} | Get transaction category by ID |
 | [**get_transactions**](TransactionsApi.md#get_transactions) | **GET** /api/v2/AccountingService/Transactions | Get all transactions for a tenant |
 | [**get_transactions_count**](TransactionsApi.md#get_transactions_count) | **GET** /api/v2/AccountingService/Transactions/Count | Get transactions count |
+| [**patch_transaction**](TransactionsApi.md#patch_transaction) | **PATCH** /api/v2/AccountingService/Transactions/{transactionId} | Patch a transaction |
+| [**patch_transaction_category**](TransactionsApi.md#patch_transaction_category) | **PATCH** /api/v2/AccountingService/Transactions/Categories/{categoryId} | Patch a transaction category |
 | [**update_transaction**](TransactionsApi.md#update_transaction) | **PUT** /api/v2/AccountingService/Transactions/{transactionId} | Update a transaction |
 | [**update_transaction_category**](TransactionsApi.md#update_transaction_category) | **PUT** /api/v2/AccountingService/Transactions/Categories/{categoryId} | Update a transaction category |
 
@@ -727,6 +729,154 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_transaction
+
+> <EmptyEnvelope> patch_transaction(tenant_id, transaction_id, opts)
+
+Patch a transaction
+
+Partially updates an existing transaction identified by its unique identifier.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::TransactionsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+transaction_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch a transaction
+  result = api_instance.patch_transaction(tenant_id, transaction_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling TransactionsApi->patch_transaction: #{e}"
+end
+```
+
+#### Using the patch_transaction_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_transaction_with_http_info(tenant_id, transaction_id, opts)
+
+```ruby
+begin
+  # Patch a transaction
+  data, status_code, headers = api_instance.patch_transaction_with_http_info(tenant_id, transaction_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling TransactionsApi->patch_transaction_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **transaction_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
+- **Accept**: application/json, application/xml
+
+
+## patch_transaction_category
+
+> <EmptyEnvelope> patch_transaction_category(tenant_id, category_id, opts)
+
+Patch a transaction category
+
+Partially updates an existing transaction category identified by its unique identifier.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::TransactionsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+category_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch a transaction category
+  result = api_instance.patch_transaction_category(tenant_id, category_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling TransactionsApi->patch_transaction_category: #{e}"
+end
+```
+
+#### Using the patch_transaction_category_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_transaction_category_with_http_info(tenant_id, category_id, opts)
+
+```ruby
+begin
+  # Patch a transaction category
+  data, status_code, headers = api_instance.patch_transaction_category_with_http_info(tenant_id, category_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling TransactionsApi->patch_transaction_category_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **category_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

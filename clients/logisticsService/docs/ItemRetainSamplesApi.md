@@ -9,6 +9,7 @@ All URIs are relative to *http://localhost*
 | [**get_item_retain_sample_by_id_async**](ItemRetainSamplesApi.md#get_item_retain_sample_by_id_async) | **GET** /api/v2/LogisticsService/ItemRetainSamples/{retainSampleId} | Get item retain sample by ID |
 | [**get_item_retain_samples_async**](ItemRetainSamplesApi.md#get_item_retain_samples_async) | **GET** /api/v2/LogisticsService/ItemRetainSamples | Get all item retain samples |
 | [**get_item_retain_samples_count_async**](ItemRetainSamplesApi.md#get_item_retain_samples_count_async) | **GET** /api/v2/LogisticsService/ItemRetainSamples/Count | Get item retain samples count |
+| [**patch_item_retain_sample_async**](ItemRetainSamplesApi.md#patch_item_retain_sample_async) | **PATCH** /api/v2/LogisticsService/ItemRetainSamples/{retainSampleId} | Patch an item retain sample |
 | [**update_item_retain_sample_async**](ItemRetainSamplesApi.md#update_item_retain_sample_async) | **PUT** /api/v2/LogisticsService/ItemRetainSamples/{retainSampleId} | Update an item retain sample |
 
 
@@ -365,6 +366,80 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_item_retain_sample_async
+
+> <EmptyEnvelope> patch_item_retain_sample_async(tenant_id, retain_sample_id, opts)
+
+Patch an item retain sample
+
+Applies a JSON Patch document to an item retain sample.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::ItemRetainSamplesApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+retain_sample_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch an item retain sample
+  result = api_instance.patch_item_retain_sample_async(tenant_id, retain_sample_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ItemRetainSamplesApi->patch_item_retain_sample_async: #{e}"
+end
+```
+
+#### Using the patch_item_retain_sample_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_item_retain_sample_async_with_http_info(tenant_id, retain_sample_id, opts)
+
+```ruby
+begin
+  # Patch an item retain sample
+  data, status_code, headers = api_instance.patch_item_retain_sample_async_with_http_info(tenant_id, retain_sample_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ItemRetainSamplesApi->patch_item_retain_sample_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **retain_sample_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

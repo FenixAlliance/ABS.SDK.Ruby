@@ -8,6 +8,7 @@ All URIs are relative to *http://localhost*
 | [**delete_item_image_async**](ItemImagesApi.md#delete_item_image_async) | **DELETE** /api/v2/CatalogService/ItemImages/{itemImageId} | Delete an item image |
 | [**get_item_image_by_id_async**](ItemImagesApi.md#get_item_image_by_id_async) | **GET** /api/v2/CatalogService/ItemImages/{itemImageId} | Get item image by ID |
 | [**get_item_images_async**](ItemImagesApi.md#get_item_images_async) | **GET** /api/v2/CatalogService/ItemImages | Get all item images |
+| [**patch_item_image_async**](ItemImagesApi.md#patch_item_image_async) | **PATCH** /api/v2/CatalogService/ItemImages/{itemImageId} | Patch an item image |
 | [**update_item_image_async**](ItemImagesApi.md#update_item_image_async) | **PUT** /api/v2/CatalogService/ItemImages/{itemImageId} | Update an item image |
 
 
@@ -293,6 +294,79 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_item_image_async
+
+> patch_item_image_async(tenant_id, item_image_id, opts)
+
+Patch an item image
+
+Partially updates an existing item image for the specified tenant using a JSON Patch document.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::ItemImagesApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+item_image_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch an item image
+  api_instance.patch_item_image_async(tenant_id, item_image_id, opts)
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ItemImagesApi->patch_item_image_async: #{e}"
+end
+```
+
+#### Using the patch_item_image_async_with_http_info variant
+
+This returns an Array which contains the response data (`nil` in this case), status code and headers.
+
+> <Array(nil, Integer, Hash)> patch_item_image_async_with_http_info(tenant_id, item_image_id, opts)
+
+```ruby
+begin
+  # Patch an item image
+  data, status_code, headers = api_instance.patch_item_image_async_with_http_info(tenant_id, item_image_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => nil
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ItemImagesApi->patch_item_image_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **item_image_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

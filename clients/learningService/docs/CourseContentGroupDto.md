@@ -8,7 +8,8 @@
 | **timestamp** | **Time** |  | [optional] |
 | **name** | **String** |  | [optional] |
 | **course_id** | **String** |  | [optional] |
-| **business_id** | **String** |  | [optional] |
+| **tenant_id** | **String** |  | [optional] |
+| **enrollment_id** | **String** |  | [optional] |
 
 ## Example
 
@@ -20,7 +21,8 @@ instance = OpenapiClient::CourseContentGroupDto.new(
   timestamp: null,
   name: null,
   course_id: null,
-  business_id: null
+  tenant_id: null,
+  enrollment_id: null
 )
 ```
 

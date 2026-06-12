@@ -14,6 +14,8 @@ All URIs are relative to *http://localhost*
 | [**get_item_pick_list_entry_by_id_async**](ItemPickListsApi.md#get_item_pick_list_entry_by_id_async) | **GET** /api/v2/LogisticsService/ItemPickLists/{pickListId}/Entries/{entryId} | Get pick list entry by ID |
 | [**get_item_pick_lists_async**](ItemPickListsApi.md#get_item_pick_lists_async) | **GET** /api/v2/LogisticsService/ItemPickLists | Get all item pick lists |
 | [**get_item_pick_lists_count_async**](ItemPickListsApi.md#get_item_pick_lists_count_async) | **GET** /api/v2/LogisticsService/ItemPickLists/Count | Get item pick lists count |
+| [**patch_item_pick_list_async**](ItemPickListsApi.md#patch_item_pick_list_async) | **PATCH** /api/v2/LogisticsService/ItemPickLists/{pickListId} | Patch an item pick list |
+| [**patch_item_pick_list_entry_async**](ItemPickListsApi.md#patch_item_pick_list_entry_async) | **PATCH** /api/v2/LogisticsService/ItemPickLists/{pickListId}/Entries/{entryId} | Patch a pick list entry |
 | [**update_item_pick_list_async**](ItemPickListsApi.md#update_item_pick_list_async) | **PUT** /api/v2/LogisticsService/ItemPickLists/{pickListId} | Update an item pick list |
 | [**update_item_pick_list_entry_async**](ItemPickListsApi.md#update_item_pick_list_entry_async) | **PUT** /api/v2/LogisticsService/ItemPickLists/{pickListId}/Entries/{entryId} | Update a pick list entry |
 
@@ -737,6 +739,156 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_item_pick_list_async
+
+> <EmptyEnvelope> patch_item_pick_list_async(tenant_id, pick_list_id, opts)
+
+Patch an item pick list
+
+Applies a JSON Patch document to an item pick list.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::ItemPickListsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+pick_list_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch an item pick list
+  result = api_instance.patch_item_pick_list_async(tenant_id, pick_list_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ItemPickListsApi->patch_item_pick_list_async: #{e}"
+end
+```
+
+#### Using the patch_item_pick_list_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_item_pick_list_async_with_http_info(tenant_id, pick_list_id, opts)
+
+```ruby
+begin
+  # Patch an item pick list
+  data, status_code, headers = api_instance.patch_item_pick_list_async_with_http_info(tenant_id, pick_list_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ItemPickListsApi->patch_item_pick_list_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **pick_list_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
+- **Accept**: application/json, application/xml
+
+
+## patch_item_pick_list_entry_async
+
+> <EmptyEnvelope> patch_item_pick_list_entry_async(tenant_id, pick_list_id, entry_id, opts)
+
+Patch a pick list entry
+
+Applies a JSON Patch document to a pick list entry.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::ItemPickListsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+pick_list_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+entry_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch a pick list entry
+  result = api_instance.patch_item_pick_list_entry_async(tenant_id, pick_list_id, entry_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ItemPickListsApi->patch_item_pick_list_entry_async: #{e}"
+end
+```
+
+#### Using the patch_item_pick_list_entry_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_item_pick_list_entry_async_with_http_info(tenant_id, pick_list_id, entry_id, opts)
+
+```ruby
+begin
+  # Patch a pick list entry
+  data, status_code, headers = api_instance.patch_item_pick_list_entry_async_with_http_info(tenant_id, pick_list_id, entry_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ItemPickListsApi->patch_item_pick_list_entry_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **pick_list_id** | **String** |  |  |
+| **entry_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

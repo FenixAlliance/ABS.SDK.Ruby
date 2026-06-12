@@ -20,6 +20,7 @@
 | **duns** | **String** |  | [optional] |
 | **is_public_company** | **Boolean** |  | [optional] |
 | **is_facta_customer** | **Boolean** |  | [optional] |
+| **tax_payer_type** | **String** |  | [optional] |
 | **country_id** | **String** |  |  |
 | **state_id** | **String** |  |  |
 | **city_id** | **String** |  |  |
@@ -49,6 +50,7 @@ instance = OpenapiClient::BillingProfileCreateDto.new(
   duns: null,
   is_public_company: null,
   is_facta_customer: null,
+  tax_payer_type: null,
   country_id: null,
   state_id: null,
   city_id: null,

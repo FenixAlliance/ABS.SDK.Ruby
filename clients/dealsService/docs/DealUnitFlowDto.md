@@ -10,7 +10,7 @@
 | **description** | **String** |  | [optional] |
 | **parent_business_process_id** | **String** |  | [optional] |
 | **tenant_id** | **String** |  | [optional] |
-| **tenant_enrollment_id** | **String** |  | [optional] |
+| **enrollment_id** | **String** |  | [optional] |
 
 ## Example
 
@@ -24,7 +24,7 @@ instance = OpenapiClient::DealUnitFlowDto.new(
   description: null,
   parent_business_process_id: null,
   tenant_id: null,
-  tenant_enrollment_id: null
+  enrollment_id: null
 )
 ```
 

@@ -9,6 +9,7 @@ All URIs are relative to *http://localhost*
 | [**get_asset_transfer_async**](AssetTransfersApi.md#get_asset_transfer_async) | **GET** /api/v2/AssetsService/AssetTransfers/{transferId} | Gets a single asset transfer by ID |
 | [**get_asset_transfers_async**](AssetTransfersApi.md#get_asset_transfers_async) | **GET** /api/v2/AssetsService/AssetTransfers | Gets a list of asset transfers |
 | [**get_asset_transfers_count_async**](AssetTransfersApi.md#get_asset_transfers_count_async) | **GET** /api/v2/AssetsService/AssetTransfers/Count | Gets the count of asset transfers |
+| [**patch_asset_transfer_async**](AssetTransfersApi.md#patch_asset_transfer_async) | **PATCH** /api/v2/AssetsService/AssetTransfers/{transferId} | Partially updates an existing asset transfer |
 | [**update_asset_transfer_async**](AssetTransfersApi.md#update_asset_transfer_async) | **PUT** /api/v2/AssetsService/AssetTransfers/{transferId} | Updates an existing asset transfer |
 
 
@@ -337,6 +338,76 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_asset_transfer_async
+
+> <EmptyEnvelope> patch_asset_transfer_async(tenant_id, transfer_id, opts)
+
+Partially updates an existing asset transfer
+
+Applies a JSON Patch document to an existing asset transfer for the authenticated tenant.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::AssetTransfersApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+transfer_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Partially updates an existing asset transfer
+  result = api_instance.patch_asset_transfer_async(tenant_id, transfer_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling AssetTransfersApi->patch_asset_transfer_async: #{e}"
+end
+```
+
+#### Using the patch_asset_transfer_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_asset_transfer_async_with_http_info(tenant_id, transfer_id, opts)
+
+```ruby
+begin
+  # Partially updates an existing asset transfer
+  data, status_code, headers = api_instance.patch_asset_transfer_async_with_http_info(tenant_id, transfer_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling AssetTransfersApi->patch_asset_transfer_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **transfer_id** | **String** |  |  |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

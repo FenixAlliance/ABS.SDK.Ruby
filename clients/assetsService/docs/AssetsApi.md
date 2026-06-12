@@ -34,6 +34,12 @@ All URIs are relative to *http://localhost*
 | [**get_asset_value_amends_count**](AssetsApi.md#get_asset_value_amends_count) | **GET** /api/v2/AssetsService/Assets/{assetId}/ValueAmends/Count | Gets count of value amendments for a specific asset |
 | [**get_assets**](AssetsApi.md#get_assets) | **GET** /api/v2/AssetsService/Assets | Gets all assets for the current tenant |
 | [**get_assets_count**](AssetsApi.md#get_assets_count) | **GET** /api/v2/AssetsService/Assets/count | Gets the count of assets |
+| [**patch_asset**](AssetsApi.md#patch_asset) | **PATCH** /api/v2/AssetsService/Assets/{assetId} | Partially updates an existing asset |
+| [**patch_asset_asset_category**](AssetsApi.md#patch_asset_asset_category) | **PATCH** /api/v2/AssetsService/Assets/Categories/{categoryId} | Partially updates an existing asset category |
+| [**patch_asset_depreciation_record**](AssetsApi.md#patch_asset_depreciation_record) | **PATCH** /api/v2/AssetsService/Assets/{assetId}/DepreciationRecords/{recordId} | Partially updates a depreciation record for an asset |
+| [**patch_asset_repair**](AssetsApi.md#patch_asset_repair) | **PATCH** /api/v2/AssetsService/Assets/{assetId}/Repairs/{repairId} | Partially updates a repair for an asset |
+| [**patch_asset_transfer**](AssetsApi.md#patch_asset_transfer) | **PATCH** /api/v2/AssetsService/Assets/{assetId}/Transfers/{transferId} | Partially updates a transfer for an asset |
+| [**patch_asset_value_amend**](AssetsApi.md#patch_asset_value_amend) | **PATCH** /api/v2/AssetsService/Assets/{assetId}/ValueAmends/{amendId} | Partially updates a value amendment for an asset |
 | [**update_asset**](AssetsApi.md#update_asset) | **PUT** /api/v2/AssetsService/Assets/{assetId} | Updates an existing asset |
 | [**update_asset_asset_category**](AssetsApi.md#update_asset_asset_category) | **PUT** /api/v2/AssetsService/Assets/Categories/{categoryId} | Updates an existing asset category |
 | [**update_asset_depreciation_record**](AssetsApi.md#update_asset_depreciation_record) | **PUT** /api/v2/AssetsService/Assets/{assetId}/DepreciationRecords/{recordId} | Updates a depreciation record for an asset |
@@ -2045,6 +2051,434 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_asset
+
+> <EmptyEnvelope> patch_asset(tenant_id, asset_id, opts)
+
+Partially updates an existing asset
+
+Applies a JSON Patch document to an existing asset for the authenticated tenant.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::AssetsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+asset_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Partially updates an existing asset
+  result = api_instance.patch_asset(tenant_id, asset_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling AssetsApi->patch_asset: #{e}"
+end
+```
+
+#### Using the patch_asset_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_asset_with_http_info(tenant_id, asset_id, opts)
+
+```ruby
+begin
+  # Partially updates an existing asset
+  data, status_code, headers = api_instance.patch_asset_with_http_info(tenant_id, asset_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling AssetsApi->patch_asset_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **asset_id** | **String** |  |  |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
+- **Accept**: application/json, application/xml
+
+
+## patch_asset_asset_category
+
+> <EmptyEnvelope> patch_asset_asset_category(tenant_id, category_id, opts)
+
+Partially updates an existing asset category
+
+Applies a JSON Patch document to an existing asset category for the authenticated tenant.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::AssetsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+category_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Partially updates an existing asset category
+  result = api_instance.patch_asset_asset_category(tenant_id, category_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling AssetsApi->patch_asset_asset_category: #{e}"
+end
+```
+
+#### Using the patch_asset_asset_category_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_asset_asset_category_with_http_info(tenant_id, category_id, opts)
+
+```ruby
+begin
+  # Partially updates an existing asset category
+  data, status_code, headers = api_instance.patch_asset_asset_category_with_http_info(tenant_id, category_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling AssetsApi->patch_asset_asset_category_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **category_id** | **String** |  |  |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
+- **Accept**: application/json, application/xml
+
+
+## patch_asset_depreciation_record
+
+> <EmptyEnvelope> patch_asset_depreciation_record(tenant_id, asset_id, record_id, opts)
+
+Partially updates a depreciation record for an asset
+
+Applies a JSON Patch document to an existing depreciation record for the specified asset.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::AssetsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+asset_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+record_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Partially updates a depreciation record for an asset
+  result = api_instance.patch_asset_depreciation_record(tenant_id, asset_id, record_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling AssetsApi->patch_asset_depreciation_record: #{e}"
+end
+```
+
+#### Using the patch_asset_depreciation_record_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_asset_depreciation_record_with_http_info(tenant_id, asset_id, record_id, opts)
+
+```ruby
+begin
+  # Partially updates a depreciation record for an asset
+  data, status_code, headers = api_instance.patch_asset_depreciation_record_with_http_info(tenant_id, asset_id, record_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling AssetsApi->patch_asset_depreciation_record_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **asset_id** | **String** |  |  |
+| **record_id** | **String** |  |  |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
+- **Accept**: application/json, application/xml
+
+
+## patch_asset_repair
+
+> <EmptyEnvelope> patch_asset_repair(tenant_id, asset_id, repair_id, opts)
+
+Partially updates a repair for an asset
+
+Applies a JSON Patch document to an existing repair record for the specified asset.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::AssetsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+asset_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+repair_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Partially updates a repair for an asset
+  result = api_instance.patch_asset_repair(tenant_id, asset_id, repair_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling AssetsApi->patch_asset_repair: #{e}"
+end
+```
+
+#### Using the patch_asset_repair_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_asset_repair_with_http_info(tenant_id, asset_id, repair_id, opts)
+
+```ruby
+begin
+  # Partially updates a repair for an asset
+  data, status_code, headers = api_instance.patch_asset_repair_with_http_info(tenant_id, asset_id, repair_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling AssetsApi->patch_asset_repair_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **asset_id** | **String** |  |  |
+| **repair_id** | **String** |  |  |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
+- **Accept**: application/json, application/xml
+
+
+## patch_asset_transfer
+
+> <EmptyEnvelope> patch_asset_transfer(tenant_id, asset_id, transfer_id, opts)
+
+Partially updates a transfer for an asset
+
+Applies a JSON Patch document to an existing transfer record for the specified asset.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::AssetsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+asset_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+transfer_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Partially updates a transfer for an asset
+  result = api_instance.patch_asset_transfer(tenant_id, asset_id, transfer_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling AssetsApi->patch_asset_transfer: #{e}"
+end
+```
+
+#### Using the patch_asset_transfer_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_asset_transfer_with_http_info(tenant_id, asset_id, transfer_id, opts)
+
+```ruby
+begin
+  # Partially updates a transfer for an asset
+  data, status_code, headers = api_instance.patch_asset_transfer_with_http_info(tenant_id, asset_id, transfer_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling AssetsApi->patch_asset_transfer_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **asset_id** | **String** |  |  |
+| **transfer_id** | **String** |  |  |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
+- **Accept**: application/json, application/xml
+
+
+## patch_asset_value_amend
+
+> <EmptyEnvelope> patch_asset_value_amend(tenant_id, asset_id, amend_id, opts)
+
+Partially updates a value amendment for an asset
+
+Applies a JSON Patch document to an existing value amendment record for the specified asset.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::AssetsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+asset_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+amend_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Partially updates a value amendment for an asset
+  result = api_instance.patch_asset_value_amend(tenant_id, asset_id, amend_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling AssetsApi->patch_asset_value_amend: #{e}"
+end
+```
+
+#### Using the patch_asset_value_amend_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_asset_value_amend_with_http_info(tenant_id, asset_id, amend_id, opts)
+
+```ruby
+begin
+  # Partially updates a value amendment for an asset
+  data, status_code, headers = api_instance.patch_asset_value_amend_with_http_info(tenant_id, asset_id, amend_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling AssetsApi->patch_asset_value_amend_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **asset_id** | **String** |  |  |
+| **amend_id** | **String** |  |  |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

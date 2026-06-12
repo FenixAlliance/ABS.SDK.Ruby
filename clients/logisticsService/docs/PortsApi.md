@@ -9,6 +9,7 @@ All URIs are relative to *http://localhost*
 | [**get_port_by_id_async**](PortsApi.md#get_port_by_id_async) | **GET** /api/v2/LogisticsService/Ports/{portId} | Get port by ID |
 | [**get_ports_async**](PortsApi.md#get_ports_async) | **GET** /api/v2/LogisticsService/Ports | Get all ports |
 | [**get_ports_count_async**](PortsApi.md#get_ports_count_async) | **GET** /api/v2/LogisticsService/Ports/Count | Get ports count |
+| [**patch_port_async**](PortsApi.md#patch_port_async) | **PATCH** /api/v2/LogisticsService/Ports/{portId} | Patch a port |
 | [**update_port_async**](PortsApi.md#update_port_async) | **PUT** /api/v2/LogisticsService/Ports/{portId} | Update a port |
 
 
@@ -365,6 +366,80 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_port_async
+
+> <EmptyEnvelope> patch_port_async(tenant_id, port_id, opts)
+
+Patch a port
+
+Partially updates an existing port using JSON Patch.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::PortsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+port_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch a port
+  result = api_instance.patch_port_async(tenant_id, port_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling PortsApi->patch_port_async: #{e}"
+end
+```
+
+#### Using the patch_port_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_port_async_with_http_info(tenant_id, port_id, opts)
+
+```ruby
+begin
+  # Patch a port
+  data, status_code, headers = api_instance.patch_port_async_with_http_info(tenant_id, port_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling PortsApi->patch_port_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **port_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

@@ -9,6 +9,7 @@ All URIs are relative to *http://localhost*
 | [**get_expense_type**](ExpenseTypesApi.md#get_expense_type) | **GET** /api/v2/AccountingService/ExpenseTypes/{expenseTypeId} | Get an expense type by id |
 | [**get_expense_types**](ExpenseTypesApi.md#get_expense_types) | **GET** /api/v2/AccountingService/ExpenseTypes | Get all expense types for a tenant |
 | [**get_expense_types_count**](ExpenseTypesApi.md#get_expense_types_count) | **GET** /api/v2/AccountingService/ExpenseTypes/Count | Get the count of expense types for a tenant |
+| [**patch_expense_type**](ExpenseTypesApi.md#patch_expense_type) | **PATCH** /api/v2/AccountingService/ExpenseTypes/{expenseTypeId} | Patch an expense type |
 | [**update_expense_type**](ExpenseTypesApi.md#update_expense_type) | **PUT** /api/v2/AccountingService/ExpenseTypes/{expenseTypeId} | Update an expense type |
 
 
@@ -365,6 +366,80 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_expense_type
+
+> <EmptyEnvelope> patch_expense_type(tenant_id, expense_type_id, opts)
+
+Patch an expense type
+
+Partially updates an existing expense type.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::ExpenseTypesApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+expense_type_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch an expense type
+  result = api_instance.patch_expense_type(tenant_id, expense_type_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ExpenseTypesApi->patch_expense_type: #{e}"
+end
+```
+
+#### Using the patch_expense_type_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_expense_type_with_http_info(tenant_id, expense_type_id, opts)
+
+```ruby
+begin
+  # Patch an expense type
+  data, status_code, headers = api_instance.patch_expense_type_with_http_info(tenant_id, expense_type_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ExpenseTypesApi->patch_expense_type_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **expense_type_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

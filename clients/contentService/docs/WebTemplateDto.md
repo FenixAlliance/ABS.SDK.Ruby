@@ -17,6 +17,8 @@
 | **razor_content** | **String** |  | [optional] |
 | **highlight_image** | **String** |  | [optional] |
 | **order** | **Integer** |  | [optional] |
+| **tenant_id** | **String** |  | [optional] |
+| **enrollment_id** | **String** |  | [optional] |
 
 ## Example
 
@@ -36,7 +38,9 @@ instance = OpenapiClient::WebTemplateDto.new(
   js_content: null,
   razor_content: null,
   highlight_image: null,
-  order: null
+  order: null,
+  tenant_id: null,
+  enrollment_id: null
 )
 ```
 

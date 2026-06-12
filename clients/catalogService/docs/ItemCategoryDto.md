@@ -15,8 +15,8 @@
 | **enable_for_licenses** | **Boolean** |  | [optional] |
 | **enable_for_services** | **Boolean** |  | [optional] |
 | **enable_for_subscriptions** | **Boolean** |  | [optional] |
-| **business_id** | **String** |  | [optional] |
-| **business_profile_record_id** | **String** |  | [optional] |
+| **tenant_id** | **String** |  | [optional] |
+| **enrollment_id** | **String** |  | [optional] |
 | **parent_item_category_id** | **String** |  | [optional] |
 
 ## Example
@@ -36,8 +36,8 @@ instance = OpenapiClient::ItemCategoryDto.new(
   enable_for_licenses: null,
   enable_for_services: null,
   enable_for_subscriptions: null,
-  business_id: null,
-  business_profile_record_id: null,
+  tenant_id: null,
+  enrollment_id: null,
   parent_item_category_id: null
 )
 ```

@@ -13,7 +13,7 @@
 | **logo_url** | **String** |  | [optional] |
 | **featured** | **Boolean** |  | [optional] |
 | **trending** | **Boolean** |  | [optional] |
-| **business_id** | **String** |  | [optional] |
+| **tenant_id** | **String** |  | [optional] |
 
 ## Example
 
@@ -30,7 +30,7 @@ instance = OpenapiClient::ItemBrandDto.new(
   logo_url: null,
   featured: null,
   trending: null,
-  business_id: null
+  tenant_id: null
 )
 ```
 

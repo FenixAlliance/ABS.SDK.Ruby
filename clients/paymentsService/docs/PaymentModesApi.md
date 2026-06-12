@@ -9,6 +9,7 @@ All URIs are relative to *http://localhost*
 | [**get_payment_mode_details_async**](PaymentModesApi.md#get_payment_mode_details_async) | **GET** /api/v2/PaymentsService/PaymentModes/{paymentModeId} | Gets a payment mode by ID |
 | [**get_payment_modes_async**](PaymentModesApi.md#get_payment_modes_async) | **GET** /api/v2/PaymentsService/PaymentModes | Retrieves all payment modes |
 | [**get_payment_modes_count_async**](PaymentModesApi.md#get_payment_modes_count_async) | **GET** /api/v2/PaymentsService/PaymentModes/Count | Counts payment modes |
+| [**patch_payment_mode_async**](PaymentModesApi.md#patch_payment_mode_async) | **PATCH** /api/v2/PaymentsService/PaymentModes/{paymentModeId} | Patch a payment mode |
 | [**update_payment_mode_async**](PaymentModesApi.md#update_payment_mode_async) | **PUT** /api/v2/PaymentsService/PaymentModes/{paymentModeId} | Updates a payment mode |
 
 
@@ -365,6 +366,80 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_payment_mode_async
+
+> <EmptyEnvelope> patch_payment_mode_async(tenant_id, payment_mode_id, opts)
+
+Patch a payment mode
+
+Patch a payment mode
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::PaymentModesApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+payment_mode_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch a payment mode
+  result = api_instance.patch_payment_mode_async(tenant_id, payment_mode_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling PaymentModesApi->patch_payment_mode_async: #{e}"
+end
+```
+
+#### Using the patch_payment_mode_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_payment_mode_async_with_http_info(tenant_id, payment_mode_id, opts)
+
+```ruby
+begin
+  # Patch a payment mode
+  data, status_code, headers = api_instance.patch_payment_mode_async_with_http_info(tenant_id, payment_mode_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling PaymentModesApi->patch_payment_mode_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **payment_mode_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

@@ -7,6 +7,8 @@
 | **id** | **String** |  | [optional] |
 | **timestamp** | **Time** |  | [optional] |
 | **currency_id** | **String** |  | [optional] |
+| **priority** | **Integer** |  | [optional] |
+| **code** | **String** |  | [optional] |
 | **description** | **String** |  | [optional] |
 | **surcharge_percent** | **Float** |  | [optional] |
 | **surcharge_amount** | **Float** |  | [optional] |
@@ -25,6 +27,8 @@ instance = OpenapiClient::InvoiceAdjustmentCreateDto.new(
   id: null,
   timestamp: null,
   currency_id: null,
+  priority: null,
+  code: null,
   description: null,
   surcharge_percent: null,
   surcharge_amount: null,

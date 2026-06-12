@@ -18,6 +18,9 @@ All URIs are relative to *http://localhost*
 | [**get_cost_centre_groups_count**](CostCentresApi.md#get_cost_centre_groups_count) | **GET** /api/v2/AccountingService/CostCentres/CostCentreGroups/Count | Get the count of cost centre groups for a tenant |
 | [**get_cost_centres**](CostCentresApi.md#get_cost_centres) | **GET** /api/v2/AccountingService/CostCentres | Get all cost centres for a tenant |
 | [**get_cost_centres_count**](CostCentresApi.md#get_cost_centres_count) | **GET** /api/v2/AccountingService/CostCentres/Count | Get the count of cost centres for a tenant |
+| [**patch_cost_centre**](CostCentresApi.md#patch_cost_centre) | **PATCH** /api/v2/AccountingService/CostCentres/{costCentreId} | Patch a cost centre |
+| [**patch_cost_centre_budget**](CostCentresApi.md#patch_cost_centre_budget) | **PATCH** /api/v2/AccountingService/CostCentres/CostCentreBudgets/{budgetId} | Patch a cost centre budget |
+| [**patch_cost_centre_group**](CostCentresApi.md#patch_cost_centre_group) | **PATCH** /api/v2/AccountingService/CostCentres/CostCentreGroups/{groupId} | Patch a cost centre group |
 | [**update_cost_centre**](CostCentresApi.md#update_cost_centre) | **PUT** /api/v2/AccountingService/CostCentres/{costCentreId} | Update a cost centre |
 | [**update_cost_centre_budget**](CostCentresApi.md#update_cost_centre_budget) | **PUT** /api/v2/AccountingService/CostCentres/CostCentreBudgets/{budgetId} | Update a cost centre budget |
 | [**update_cost_centre_group**](CostCentresApi.md#update_cost_centre_group) | **PUT** /api/v2/AccountingService/CostCentres/CostCentreGroups/{groupId} | Update a cost centre group |
@@ -1018,6 +1021,228 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_cost_centre
+
+> <EmptyEnvelope> patch_cost_centre(tenant_id, cost_centre_id, opts)
+
+Patch a cost centre
+
+Partially updates an existing cost centre.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::CostCentresApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+cost_centre_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch a cost centre
+  result = api_instance.patch_cost_centre(tenant_id, cost_centre_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling CostCentresApi->patch_cost_centre: #{e}"
+end
+```
+
+#### Using the patch_cost_centre_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_cost_centre_with_http_info(tenant_id, cost_centre_id, opts)
+
+```ruby
+begin
+  # Patch a cost centre
+  data, status_code, headers = api_instance.patch_cost_centre_with_http_info(tenant_id, cost_centre_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling CostCentresApi->patch_cost_centre_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **cost_centre_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
+- **Accept**: application/json, application/xml
+
+
+## patch_cost_centre_budget
+
+> <EmptyEnvelope> patch_cost_centre_budget(tenant_id, budget_id, opts)
+
+Patch a cost centre budget
+
+Partially updates an existing cost centre budget.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::CostCentresApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+budget_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch a cost centre budget
+  result = api_instance.patch_cost_centre_budget(tenant_id, budget_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling CostCentresApi->patch_cost_centre_budget: #{e}"
+end
+```
+
+#### Using the patch_cost_centre_budget_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_cost_centre_budget_with_http_info(tenant_id, budget_id, opts)
+
+```ruby
+begin
+  # Patch a cost centre budget
+  data, status_code, headers = api_instance.patch_cost_centre_budget_with_http_info(tenant_id, budget_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling CostCentresApi->patch_cost_centre_budget_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **budget_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
+- **Accept**: application/json, application/xml
+
+
+## patch_cost_centre_group
+
+> <EmptyEnvelope> patch_cost_centre_group(tenant_id, group_id, opts)
+
+Patch a cost centre group
+
+Partially updates an existing cost centre group.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::CostCentresApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+group_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch a cost centre group
+  result = api_instance.patch_cost_centre_group(tenant_id, group_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling CostCentresApi->patch_cost_centre_group: #{e}"
+end
+```
+
+#### Using the patch_cost_centre_group_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_cost_centre_group_with_http_info(tenant_id, group_id, opts)
+
+```ruby
+begin
+  # Patch a cost centre group
+  data, status_code, headers = api_instance.patch_cost_centre_group_with_http_info(tenant_id, group_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling CostCentresApi->patch_cost_centre_group_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **group_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

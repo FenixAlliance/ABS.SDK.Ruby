@@ -17,6 +17,8 @@ All URIs are relative to *http://localhost*
 | [**mark_airway_bill_arrived_async**](AirwayBillsApi.md#mark_airway_bill_arrived_async) | **POST** /api/v2/LogisticsService/AirwayBills/{billId}/MarkArrived | Mark airway bill arrived |
 | [**mark_airway_bill_delivered_async**](AirwayBillsApi.md#mark_airway_bill_delivered_async) | **POST** /api/v2/LogisticsService/AirwayBills/{billId}/MarkDelivered | Mark airway bill delivered |
 | [**mark_airway_bill_in_transit_async**](AirwayBillsApi.md#mark_airway_bill_in_transit_async) | **POST** /api/v2/LogisticsService/AirwayBills/{billId}/MarkInTransit | Mark airway bill in transit |
+| [**patch_airway_bill_async**](AirwayBillsApi.md#patch_airway_bill_async) | **PATCH** /api/v2/LogisticsService/AirwayBills/{billId} | Patch an airway bill |
+| [**patch_airway_bill_line_async**](AirwayBillsApi.md#patch_airway_bill_line_async) | **PATCH** /api/v2/LogisticsService/AirwayBills/{billId}/Lines/{lineId} | Patch an airway bill line |
 | [**remove_airway_bill_line_async**](AirwayBillsApi.md#remove_airway_bill_line_async) | **DELETE** /api/v2/LogisticsService/AirwayBills/{billId}/Lines/{lineId} | Remove an airway bill line |
 | [**update_airway_bill_async**](AirwayBillsApi.md#update_airway_bill_async) | **PUT** /api/v2/LogisticsService/AirwayBills/{billId} | Update an airway bill |
 | [**update_airway_bill_line_async**](AirwayBillsApi.md#update_airway_bill_line_async) | **PUT** /api/v2/LogisticsService/AirwayBills/{billId}/Lines/{lineId} | Update an airway bill line |
@@ -953,6 +955,156 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_airway_bill_async
+
+> <EmptyEnvelope> patch_airway_bill_async(tenant_id, bill_id, opts)
+
+Patch an airway bill
+
+Partially updates an existing airway bill using a JSON Patch document.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::AirwayBillsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+bill_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch an airway bill
+  result = api_instance.patch_airway_bill_async(tenant_id, bill_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling AirwayBillsApi->patch_airway_bill_async: #{e}"
+end
+```
+
+#### Using the patch_airway_bill_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_airway_bill_async_with_http_info(tenant_id, bill_id, opts)
+
+```ruby
+begin
+  # Patch an airway bill
+  data, status_code, headers = api_instance.patch_airway_bill_async_with_http_info(tenant_id, bill_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling AirwayBillsApi->patch_airway_bill_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **bill_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
+- **Accept**: application/json, application/xml
+
+
+## patch_airway_bill_line_async
+
+> <EmptyEnvelope> patch_airway_bill_line_async(tenant_id, bill_id, line_id, opts)
+
+Patch an airway bill line
+
+Partially updates a line on an airway bill using a JSON Patch document.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::AirwayBillsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+bill_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+line_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch an airway bill line
+  result = api_instance.patch_airway_bill_line_async(tenant_id, bill_id, line_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling AirwayBillsApi->patch_airway_bill_line_async: #{e}"
+end
+```
+
+#### Using the patch_airway_bill_line_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_airway_bill_line_async_with_http_info(tenant_id, bill_id, line_id, opts)
+
+```ruby
+begin
+  # Patch an airway bill line
+  data, status_code, headers = api_instance.patch_airway_bill_line_async_with_http_info(tenant_id, bill_id, line_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling AirwayBillsApi->patch_airway_bill_line_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **bill_id** | **String** |  |  |
+| **line_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

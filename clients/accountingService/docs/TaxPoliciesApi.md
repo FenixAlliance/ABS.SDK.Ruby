@@ -19,6 +19,9 @@ All URIs are relative to *http://localhost*
 | [**get_tax_policies_by_authority**](TaxPoliciesApi.md#get_tax_policies_by_authority) | **GET** /api/v2/AccountingService/TaxPolicies/ByAuthority/{authorityId} | Get tax policies by fiscal authority |
 | [**get_tax_policies_count**](TaxPoliciesApi.md#get_tax_policies_count) | **GET** /api/v2/AccountingService/TaxPolicies/Count | Get tax policies count |
 | [**get_tax_policy**](TaxPoliciesApi.md#get_tax_policy) | **GET** /api/v2/AccountingService/TaxPolicies/{id} | Get tax policy by ID |
+| [**patch_applied_tax_policy_record**](TaxPoliciesApi.md#patch_applied_tax_policy_record) | **PATCH** /api/v2/AccountingService/TaxPolicies/{taxPolicyId}/AppliedTaxPolicyRecords/{appliedTaxPolicyRecordId} | Patch an applied tax policy record |
+| [**patch_item_tax_policy_record**](TaxPoliciesApi.md#patch_item_tax_policy_record) | **PATCH** /api/v2/AccountingService/TaxPolicies/{taxPolicyId}/ItemTaxPolicyRecords/{itemTaxPolicyRecordId} | Patch an item tax policy record |
+| [**patch_tax_policy**](TaxPoliciesApi.md#patch_tax_policy) | **PATCH** /api/v2/AccountingService/TaxPolicies/{id} | Patch a tax policy |
 | [**update_applied_tax_policy_record**](TaxPoliciesApi.md#update_applied_tax_policy_record) | **PUT** /api/v2/AccountingService/TaxPolicies/{taxPolicyId}/AppliedTaxPolicyRecords/{appliedTaxPolicyRecordId} | Update an applied tax policy record |
 | [**update_item_tax_policy_record**](TaxPoliciesApi.md#update_item_tax_policy_record) | **PUT** /api/v2/AccountingService/TaxPolicies/{taxPolicyId}/ItemTaxPolicyRecords/{itemTaxPolicyRecordId} | Update an item tax policy record |
 | [**update_tax_policy**](TaxPoliciesApi.md#update_tax_policy) | **PUT** /api/v2/AccountingService/TaxPolicies/{id} | Update a tax policy |
@@ -1109,6 +1112,232 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_applied_tax_policy_record
+
+> <EmptyEnvelope> patch_applied_tax_policy_record(tenant_id, tax_policy_id, applied_tax_policy_record_id, opts)
+
+Patch an applied tax policy record
+
+Partially updates an existing applied tax policy record identified by its unique identifier.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::TaxPoliciesApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+tax_policy_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+applied_tax_policy_record_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch an applied tax policy record
+  result = api_instance.patch_applied_tax_policy_record(tenant_id, tax_policy_id, applied_tax_policy_record_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling TaxPoliciesApi->patch_applied_tax_policy_record: #{e}"
+end
+```
+
+#### Using the patch_applied_tax_policy_record_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_applied_tax_policy_record_with_http_info(tenant_id, tax_policy_id, applied_tax_policy_record_id, opts)
+
+```ruby
+begin
+  # Patch an applied tax policy record
+  data, status_code, headers = api_instance.patch_applied_tax_policy_record_with_http_info(tenant_id, tax_policy_id, applied_tax_policy_record_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling TaxPoliciesApi->patch_applied_tax_policy_record_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **tax_policy_id** | **String** |  |  |
+| **applied_tax_policy_record_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
+- **Accept**: application/json, application/xml
+
+
+## patch_item_tax_policy_record
+
+> <EmptyEnvelope> patch_item_tax_policy_record(tenant_id, tax_policy_id, item_tax_policy_record_id, opts)
+
+Patch an item tax policy record
+
+Partially updates an existing item tax policy record identified by its unique identifier.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::TaxPoliciesApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+tax_policy_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+item_tax_policy_record_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch an item tax policy record
+  result = api_instance.patch_item_tax_policy_record(tenant_id, tax_policy_id, item_tax_policy_record_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling TaxPoliciesApi->patch_item_tax_policy_record: #{e}"
+end
+```
+
+#### Using the patch_item_tax_policy_record_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_item_tax_policy_record_with_http_info(tenant_id, tax_policy_id, item_tax_policy_record_id, opts)
+
+```ruby
+begin
+  # Patch an item tax policy record
+  data, status_code, headers = api_instance.patch_item_tax_policy_record_with_http_info(tenant_id, tax_policy_id, item_tax_policy_record_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling TaxPoliciesApi->patch_item_tax_policy_record_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **tax_policy_id** | **String** |  |  |
+| **item_tax_policy_record_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
+- **Accept**: application/json, application/xml
+
+
+## patch_tax_policy
+
+> <EmptyEnvelope> patch_tax_policy(tenant_id, id, opts)
+
+Patch a tax policy
+
+Partially updates an existing tax policy identified by its unique identifier.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::TaxPoliciesApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch a tax policy
+  result = api_instance.patch_tax_policy(tenant_id, id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling TaxPoliciesApi->patch_tax_policy: #{e}"
+end
+```
+
+#### Using the patch_tax_policy_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_tax_policy_with_http_info(tenant_id, id, opts)
+
+```ruby
+begin
+  # Patch a tax policy
+  data, status_code, headers = api_instance.patch_tax_policy_with_http_info(tenant_id, id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling TaxPoliciesApi->patch_tax_policy_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

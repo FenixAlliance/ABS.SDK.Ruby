@@ -17,6 +17,8 @@ All URIs are relative to *http://localhost*
 | [**issue_road_waybill_async**](RoadWaybillsApi.md#issue_road_waybill_async) | **POST** /api/v2/LogisticsService/RoadWaybills/{waybillId}/Issue | Issue a road waybill |
 | [**mark_road_waybill_delivered_async**](RoadWaybillsApi.md#mark_road_waybill_delivered_async) | **POST** /api/v2/LogisticsService/RoadWaybills/{waybillId}/MarkDelivered | Mark road waybill delivered |
 | [**mark_road_waybill_in_transit_async**](RoadWaybillsApi.md#mark_road_waybill_in_transit_async) | **POST** /api/v2/LogisticsService/RoadWaybills/{waybillId}/MarkInTransit | Mark road waybill in transit |
+| [**patch_road_waybill_async**](RoadWaybillsApi.md#patch_road_waybill_async) | **PATCH** /api/v2/LogisticsService/RoadWaybills/{waybillId} | Patch a road waybill |
+| [**patch_road_waybill_line_async**](RoadWaybillsApi.md#patch_road_waybill_line_async) | **PATCH** /api/v2/LogisticsService/RoadWaybills/{waybillId}/Lines/{lineId} | Patch a road waybill line |
 | [**remove_road_waybill_line_async**](RoadWaybillsApi.md#remove_road_waybill_line_async) | **DELETE** /api/v2/LogisticsService/RoadWaybills/{waybillId}/Lines/{lineId} | Remove a road waybill line |
 | [**update_road_waybill_async**](RoadWaybillsApi.md#update_road_waybill_async) | **PUT** /api/v2/LogisticsService/RoadWaybills/{waybillId} | Update a road waybill |
 | [**update_road_waybill_line_async**](RoadWaybillsApi.md#update_road_waybill_line_async) | **PUT** /api/v2/LogisticsService/RoadWaybills/{waybillId}/Lines/{lineId} | Update a road waybill line |
@@ -953,6 +955,156 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_road_waybill_async
+
+> <EmptyEnvelope> patch_road_waybill_async(tenant_id, waybill_id, opts)
+
+Patch a road waybill
+
+Partially updates an existing road waybill using a JSON Patch document.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::RoadWaybillsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+waybill_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch a road waybill
+  result = api_instance.patch_road_waybill_async(tenant_id, waybill_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling RoadWaybillsApi->patch_road_waybill_async: #{e}"
+end
+```
+
+#### Using the patch_road_waybill_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_road_waybill_async_with_http_info(tenant_id, waybill_id, opts)
+
+```ruby
+begin
+  # Patch a road waybill
+  data, status_code, headers = api_instance.patch_road_waybill_async_with_http_info(tenant_id, waybill_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling RoadWaybillsApi->patch_road_waybill_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **waybill_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
+- **Accept**: application/json, application/xml
+
+
+## patch_road_waybill_line_async
+
+> <EmptyEnvelope> patch_road_waybill_line_async(tenant_id, waybill_id, line_id, opts)
+
+Patch a road waybill line
+
+Partially updates a line on a road waybill using a JSON Patch document.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::RoadWaybillsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+waybill_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+line_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch a road waybill line
+  result = api_instance.patch_road_waybill_line_async(tenant_id, waybill_id, line_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling RoadWaybillsApi->patch_road_waybill_line_async: #{e}"
+end
+```
+
+#### Using the patch_road_waybill_line_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_road_waybill_line_async_with_http_info(tenant_id, waybill_id, line_id, opts)
+
+```ruby
+begin
+  # Patch a road waybill line
+  data, status_code, headers = api_instance.patch_road_waybill_line_async_with_http_info(tenant_id, waybill_id, line_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling RoadWaybillsApi->patch_road_waybill_line_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **waybill_id** | **String** |  |  |
+| **line_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

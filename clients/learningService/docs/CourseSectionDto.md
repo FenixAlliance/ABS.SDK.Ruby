@@ -13,6 +13,7 @@
 | **release_date_time** | **Time** |  | [optional] |
 | **hide_from_students** | **Boolean** |  | [optional] |
 | **tenant_id** | **String** |  | [optional] |
+| **enrollment_id** | **String** |  | [optional] |
 
 ## Example
 
@@ -28,7 +29,8 @@ instance = OpenapiClient::CourseSectionDto.new(
   course_id: null,
   release_date_time: null,
   hide_from_students: null,
-  tenant_id: null
+  tenant_id: null,
+  enrollment_id: null
 )
 ```
 

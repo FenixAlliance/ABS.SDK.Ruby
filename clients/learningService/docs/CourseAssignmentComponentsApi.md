@@ -9,6 +9,7 @@ All URIs are relative to *http://localhost*
 | [**get_course_assignment_component_by_id_async**](CourseAssignmentComponentsApi.md#get_course_assignment_component_by_id_async) | **GET** /api/v2/LearningService/CourseAssignmentComponents/{componentId} | Get course assignment component by ID |
 | [**get_course_assignment_components_async**](CourseAssignmentComponentsApi.md#get_course_assignment_components_async) | **GET** /api/v2/LearningService/CourseAssignmentComponents | Get all course assignment components |
 | [**get_course_assignment_components_count_async**](CourseAssignmentComponentsApi.md#get_course_assignment_components_count_async) | **GET** /api/v2/LearningService/CourseAssignmentComponents/Count | Get course assignment components count |
+| [**patch_course_assignment_component_async**](CourseAssignmentComponentsApi.md#patch_course_assignment_component_async) | **PATCH** /api/v2/LearningService/CourseAssignmentComponents/{componentId} | Patch a course assignment component |
 | [**update_course_assignment_component_async**](CourseAssignmentComponentsApi.md#update_course_assignment_component_async) | **PUT** /api/v2/LearningService/CourseAssignmentComponents/{componentId} | Update a course assignment component |
 
 
@@ -361,6 +362,80 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_course_assignment_component_async
+
+> <EmptyEnvelope> patch_course_assignment_component_async(tenant_id, component_id, opts)
+
+Patch a course assignment component
+
+Partially updates a course assignment component for the specified tenant.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::CourseAssignmentComponentsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+component_id = 'component_id_example' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch a course assignment component
+  result = api_instance.patch_course_assignment_component_async(tenant_id, component_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling CourseAssignmentComponentsApi->patch_course_assignment_component_async: #{e}"
+end
+```
+
+#### Using the patch_course_assignment_component_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_course_assignment_component_async_with_http_info(tenant_id, component_id, opts)
+
+```ruby
+begin
+  # Patch a course assignment component
+  data, status_code, headers = api_instance.patch_course_assignment_component_async_with_http_info(tenant_id, component_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling CourseAssignmentComponentsApi->patch_course_assignment_component_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **component_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

@@ -9,6 +9,7 @@ All URIs are relative to *http://localhost*
 | [**get_tax_class**](TaxClassesApi.md#get_tax_class) | **GET** /api/v2/AccountingService/TaxClasses/{id} | Get tax class by ID |
 | [**get_tax_classes**](TaxClassesApi.md#get_tax_classes) | **GET** /api/v2/AccountingService/TaxClasses | Get all tax classes for a tenant |
 | [**get_tax_classes_count**](TaxClassesApi.md#get_tax_classes_count) | **GET** /api/v2/AccountingService/TaxClasses/Count | Get tax classes count |
+| [**patch_tax_class**](TaxClassesApi.md#patch_tax_class) | **PATCH** /api/v2/AccountingService/TaxClasses/{id} | Patch a tax class |
 | [**update_tax_class**](TaxClassesApi.md#update_tax_class) | **PUT** /api/v2/AccountingService/TaxClasses/{id} | Update a tax class |
 
 
@@ -365,6 +366,80 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_tax_class
+
+> <EmptyEnvelope> patch_tax_class(tenant_id, id, opts)
+
+Patch a tax class
+
+Partially updates an existing tax class identified by its unique identifier.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::TaxClassesApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch a tax class
+  result = api_instance.patch_tax_class(tenant_id, id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling TaxClassesApi->patch_tax_class: #{e}"
+end
+```
+
+#### Using the patch_tax_class_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_tax_class_with_http_info(tenant_id, id, opts)
+
+```ruby
+begin
+  # Patch a tax class
+  data, status_code, headers = api_instance.patch_tax_class_with_http_info(tenant_id, id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling TaxClassesApi->patch_tax_class_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

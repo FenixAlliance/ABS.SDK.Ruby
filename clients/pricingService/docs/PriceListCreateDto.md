@@ -8,11 +8,14 @@
 | **timestamp** | **Time** |  | [optional] |
 | **name** | **String** |  |  |
 | **description** | **String** |  | [optional] |
+| **context** | **String** |  | [optional] |
 | **start_date** | **Time** |  | [optional] |
 | **end_date** | **Time** |  | [optional] |
 | **currency_id** | **String** |  | [optional] |
 | **unit_id** | **String** |  | [optional] |
 | **unit_group_id** | **String** |  | [optional] |
+| **partner_visible** | **Boolean** |  | [optional] |
+| **unit_of_measure_dependant** | **Boolean** |  | [optional] |
 
 ## Example
 
@@ -24,11 +27,14 @@ instance = OpenapiClient::PriceListCreateDto.new(
   timestamp: null,
   name: null,
   description: null,
+  context: null,
   start_date: null,
   end_date: null,
   currency_id: null,
   unit_id: null,
-  unit_group_id: null
+  unit_group_id: null,
+  partner_visible: null,
+  unit_of_measure_dependant: null
 )
 ```
 

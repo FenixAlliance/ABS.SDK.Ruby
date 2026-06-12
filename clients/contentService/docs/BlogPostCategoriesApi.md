@@ -9,6 +9,7 @@ All URIs are relative to *http://localhost*
 | [**delete_blog_post_category_async**](BlogPostCategoriesApi.md#delete_blog_post_category_async) | **DELETE** /api/v2/ContentService/BlogPostCategories/{blogPostCategoryId} | Delete a blog post category |
 | [**get_blog_post_categories_async**](BlogPostCategoriesApi.md#get_blog_post_categories_async) | **GET** /api/v2/ContentService/BlogPostCategories | Get blog post categories |
 | [**get_blog_post_category_by_id_async**](BlogPostCategoriesApi.md#get_blog_post_category_by_id_async) | **GET** /api/v2/ContentService/BlogPostCategories/{blogPostCategoryId} | Get blog post category by ID |
+| [**patch_blog_post_category_async**](BlogPostCategoriesApi.md#patch_blog_post_category_async) | **PATCH** /api/v2/ContentService/BlogPostCategories/{blogPostCategoryId} | Patch a blog post category |
 | [**update_blog_post_category_async**](BlogPostCategoriesApi.md#update_blog_post_category_async) | **PUT** /api/v2/ContentService/BlogPostCategories/{blogPostCategoryId} | Update a blog post category |
 
 
@@ -365,6 +366,80 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_blog_post_category_async
+
+> <EmptyEnvelope> patch_blog_post_category_async(tenant_id, blog_post_category_id, opts)
+
+Patch a blog post category
+
+Partially updates an existing blog post category for the specified tenant.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::BlogPostCategoriesApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+blog_post_category_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch a blog post category
+  result = api_instance.patch_blog_post_category_async(tenant_id, blog_post_category_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling BlogPostCategoriesApi->patch_blog_post_category_async: #{e}"
+end
+```
+
+#### Using the patch_blog_post_category_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_blog_post_category_async_with_http_info(tenant_id, blog_post_category_id, opts)
+
+```ruby
+begin
+  # Patch a blog post category
+  data, status_code, headers = api_instance.patch_blog_post_category_async_with_http_info(tenant_id, blog_post_category_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling BlogPostCategoriesApi->patch_blog_post_category_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **blog_post_category_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

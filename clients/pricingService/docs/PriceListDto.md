@@ -10,6 +10,7 @@
 | **start_date** | **Time** |  | [optional] |
 | **end_date** | **Time** |  | [optional] |
 | **description** | **String** |  | [optional] |
+| **context** | **String** |  | [optional] |
 | **currency_id** | **String** |  | [optional] |
 | **tenant_id** | **String** |  | [optional] |
 | **unit_id** | **String** |  | [optional] |
@@ -30,6 +31,7 @@ instance = OpenapiClient::PriceListDto.new(
   start_date: null,
   end_date: null,
   description: null,
+  context: null,
   currency_id: null,
   tenant_id: null,
   unit_id: null,

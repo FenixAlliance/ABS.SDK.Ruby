@@ -9,6 +9,7 @@ All URIs are relative to *http://localhost*
 | [**get_payroll_by_id_async**](PayrollsApi.md#get_payroll_by_id_async) | **GET** /api/v2/HrmsService/Payrolls/{payrollId} | Get payroll by ID |
 | [**get_payrolls_async**](PayrollsApi.md#get_payrolls_async) | **GET** /api/v2/HrmsService/Payrolls | Get payrolls |
 | [**get_payrolls_count_async**](PayrollsApi.md#get_payrolls_count_async) | **GET** /api/v2/HrmsService/Payrolls/Count | Count payrolls |
+| [**patch_payroll_async**](PayrollsApi.md#patch_payroll_async) | **PATCH** /api/v2/HrmsService/Payrolls/{payrollId} | Patch a payroll |
 | [**update_payroll_async**](PayrollsApi.md#update_payroll_async) | **PUT** /api/v2/HrmsService/Payrolls/{payrollId} | Update a payroll |
 
 
@@ -365,6 +366,80 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_payroll_async
+
+> <EmptyEnvelope> patch_payroll_async(tenant_id, payroll_id, opts)
+
+Patch a payroll
+
+Partially updates an existing payroll for the specified tenant.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::PayrollsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+payroll_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch a payroll
+  result = api_instance.patch_payroll_async(tenant_id, payroll_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling PayrollsApi->patch_payroll_async: #{e}"
+end
+```
+
+#### Using the patch_payroll_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_payroll_async_with_http_info(tenant_id, payroll_id, opts)
+
+```ruby
+begin
+  # Patch a payroll
+  data, status_code, headers = api_instance.patch_payroll_async_with_http_info(tenant_id, payroll_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling PayrollsApi->patch_payroll_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **payroll_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

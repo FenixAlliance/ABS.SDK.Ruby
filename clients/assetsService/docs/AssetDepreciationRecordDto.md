@@ -4,14 +4,20 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **id** | **Object** |  | [optional] |
+| **id** | **String** |  | [optional] |
 | **timestamp** | **Time** |  | [optional] |
-| **business_id** | **Object** |  | [optional] |
-| **business_profile_record_id** | **Object** |  | [optional] |
-| **asset_id** | **Object** |  | [optional] |
+| **tenant_id** | **String** |  | [optional] |
+| **enrollment_id** | **String** |  | [optional] |
+| **asset_id** | **String** |  | [optional] |
 | **asset_name** | **String** |  | [optional] |
 | **asset_depreciation_policy_id** | **String** |  | [optional] |
 | **asset_depreciation_policy_name** | **String** |  | [optional] |
+| **financial_book_id** | **String** |  | [optional] |
+| **start_date** | **Time** |  | [optional] |
+| **total_depreciations** | **Integer** |  | [optional] |
+| **depreciation_frequency** | **Integer** |  | [optional] |
+| **depreciation_rate** | **Float** |  | [optional] |
+| **expected_value_aul** | **Float** |  | [optional] |
 | **depreciation_amount** | **Float** |  | [optional] |
 | **accumulated_depreciation** | **Float** |  | [optional] |
 | **book_value** | **Float** |  | [optional] |
@@ -28,12 +34,18 @@ require 'openapi_client'
 instance = OpenapiClient::AssetDepreciationRecordDto.new(
   id: null,
   timestamp: null,
-  business_id: null,
-  business_profile_record_id: null,
+  tenant_id: null,
+  enrollment_id: null,
   asset_id: null,
   asset_name: null,
   asset_depreciation_policy_id: null,
   asset_depreciation_policy_name: null,
+  financial_book_id: null,
+  start_date: null,
+  total_depreciations: null,
+  depreciation_frequency: null,
+  depreciation_rate: null,
+  expected_value_aul: null,
   depreciation_amount: null,
   accumulated_depreciation: null,
   book_value: null,

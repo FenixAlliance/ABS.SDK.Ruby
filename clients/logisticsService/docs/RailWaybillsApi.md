@@ -16,6 +16,8 @@ All URIs are relative to *http://localhost*
 | [**issue_rail_waybill_async**](RailWaybillsApi.md#issue_rail_waybill_async) | **POST** /api/v2/LogisticsService/RailWaybills/{waybillId}/Issue | Issue a rail waybill |
 | [**mark_rail_waybill_delivered_async**](RailWaybillsApi.md#mark_rail_waybill_delivered_async) | **POST** /api/v2/LogisticsService/RailWaybills/{waybillId}/MarkDelivered | Mark rail waybill delivered |
 | [**mark_rail_waybill_in_transit_async**](RailWaybillsApi.md#mark_rail_waybill_in_transit_async) | **POST** /api/v2/LogisticsService/RailWaybills/{waybillId}/MarkInTransit | Mark rail waybill in transit |
+| [**patch_rail_waybill_async**](RailWaybillsApi.md#patch_rail_waybill_async) | **PATCH** /api/v2/LogisticsService/RailWaybills/{waybillId} | Patch a rail waybill |
+| [**patch_rail_waybill_line_async**](RailWaybillsApi.md#patch_rail_waybill_line_async) | **PATCH** /api/v2/LogisticsService/RailWaybills/{waybillId}/Lines/{lineId} | Patch a rail waybill line |
 | [**remove_rail_waybill_line_async**](RailWaybillsApi.md#remove_rail_waybill_line_async) | **DELETE** /api/v2/LogisticsService/RailWaybills/{waybillId}/Lines/{lineId} | Remove a rail waybill line |
 | [**update_rail_waybill_async**](RailWaybillsApi.md#update_rail_waybill_async) | **PUT** /api/v2/LogisticsService/RailWaybills/{waybillId} | Update a rail waybill |
 | [**update_rail_waybill_line_async**](RailWaybillsApi.md#update_rail_waybill_line_async) | **PUT** /api/v2/LogisticsService/RailWaybills/{waybillId}/Lines/{lineId} | Update a rail waybill line |
@@ -880,6 +882,156 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_rail_waybill_async
+
+> <EmptyEnvelope> patch_rail_waybill_async(tenant_id, waybill_id, opts)
+
+Patch a rail waybill
+
+Partially updates an existing rail waybill using a JSON Patch document.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::RailWaybillsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+waybill_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch a rail waybill
+  result = api_instance.patch_rail_waybill_async(tenant_id, waybill_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling RailWaybillsApi->patch_rail_waybill_async: #{e}"
+end
+```
+
+#### Using the patch_rail_waybill_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_rail_waybill_async_with_http_info(tenant_id, waybill_id, opts)
+
+```ruby
+begin
+  # Patch a rail waybill
+  data, status_code, headers = api_instance.patch_rail_waybill_async_with_http_info(tenant_id, waybill_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling RailWaybillsApi->patch_rail_waybill_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **waybill_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
+- **Accept**: application/json, application/xml
+
+
+## patch_rail_waybill_line_async
+
+> <EmptyEnvelope> patch_rail_waybill_line_async(tenant_id, waybill_id, line_id, opts)
+
+Patch a rail waybill line
+
+Partially updates a line on a rail waybill using a JSON Patch document.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::RailWaybillsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+waybill_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+line_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch a rail waybill line
+  result = api_instance.patch_rail_waybill_line_async(tenant_id, waybill_id, line_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling RailWaybillsApi->patch_rail_waybill_line_async: #{e}"
+end
+```
+
+#### Using the patch_rail_waybill_line_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_rail_waybill_line_async_with_http_info(tenant_id, waybill_id, line_id, opts)
+
+```ruby
+begin
+  # Patch a rail waybill line
+  data, status_code, headers = api_instance.patch_rail_waybill_line_async_with_http_info(tenant_id, waybill_id, line_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling RailWaybillsApi->patch_rail_waybill_line_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **waybill_id** | **String** |  |  |
+| **line_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

@@ -17,6 +17,8 @@ All URIs are relative to *http://localhost*
 | [**get_order_lines_count**](OrdersApi.md#get_order_lines_count) | **GET** /api/v2/OrdersService/Orders/{orderId}/Lines/Count | Gets the count of order lines for an order. |
 | [**get_orders**](OrdersApi.md#get_orders) | **GET** /api/v2/OrdersService/Orders | Gets a list of orders for a tenant. |
 | [**get_orders_count**](OrdersApi.md#get_orders_count) | **GET** /api/v2/OrdersService/Orders/Count | Gets the count of orders for a tenant. |
+| [**patch_order**](OrdersApi.md#patch_order) | **PATCH** /api/v2/OrdersService/Orders/{orderId} | Partially updates an existing order. |
+| [**patch_order_line**](OrdersApi.md#patch_order_line) | **PATCH** /api/v2/OrdersService/Orders/{orderId}/Lines/{orderLineId} | Partially updates an order line. |
 | [**preview_order_email_template**](OrdersApi.md#preview_order_email_template) | **POST** /api/v2/OrdersService/Orders/{orderId}/Emails/Preview | Preview the rendered email for an Order. |
 | [**send_order_email**](OrdersApi.md#send_order_email) | **POST** /api/v2/OrdersService/Orders/{orderId}/Emails/Send | Send a transactional email for an order. |
 | [**submit_cart**](OrdersApi.md#submit_cart) | **POST** /api/v2/OrdersService/Orders/SubmitCart | Submits a cart and creates an order. |
@@ -889,6 +891,148 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_order
+
+> <EmptyEnvelope> patch_order(tenant_id, order_id, opts)
+
+Partially updates an existing order.
+
+Applies a JSON Patch document to partially update an existing order.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::OrdersApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+order_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Partially updates an existing order.
+  result = api_instance.patch_order(tenant_id, order_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling OrdersApi->patch_order: #{e}"
+end
+```
+
+#### Using the patch_order_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_order_with_http_info(tenant_id, order_id, opts)
+
+```ruby
+begin
+  # Partially updates an existing order.
+  data, status_code, headers = api_instance.patch_order_with_http_info(tenant_id, order_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling OrdersApi->patch_order_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **order_id** | **String** |  |  |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
+- **Accept**: application/json, application/xml
+
+
+## patch_order_line
+
+> <EmptyEnvelope> patch_order_line(tenant_id, order_id, order_line_id, opts)
+
+Partially updates an order line.
+
+Applies a JSON Patch document to partially update a specific order line.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::OrdersApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+order_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+order_line_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Partially updates an order line.
+  result = api_instance.patch_order_line(tenant_id, order_id, order_line_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling OrdersApi->patch_order_line: #{e}"
+end
+```
+
+#### Using the patch_order_line_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_order_line_with_http_info(tenant_id, order_id, order_line_id, opts)
+
+```ruby
+begin
+  # Partially updates an order line.
+  data, status_code, headers = api_instance.patch_order_line_with_http_info(tenant_id, order_id, order_line_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling OrdersApi->patch_order_line_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **order_id** | **String** |  |  |
+| **order_line_id** | **String** |  |  |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

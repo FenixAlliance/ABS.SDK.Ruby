@@ -18,6 +18,8 @@ All URIs are relative to *http://localhost*
 | [**get_truck_trips_count_async**](TrucksApi.md#get_truck_trips_count_async) | **GET** /api/v2/LogisticsService/Trucks/{truckId}/Trips/Count | Get truck trips count |
 | [**get_trucks_async**](TrucksApi.md#get_trucks_async) | **GET** /api/v2/LogisticsService/Trucks | Get all trucks |
 | [**get_trucks_count_async**](TrucksApi.md#get_trucks_count_async) | **GET** /api/v2/LogisticsService/Trucks/Count | Get trucks count |
+| [**patch_truck_async**](TrucksApi.md#patch_truck_async) | **PATCH** /api/v2/LogisticsService/Trucks/{truckId} | Patch a truck |
+| [**patch_truck_trip_async**](TrucksApi.md#patch_truck_trip_async) | **PATCH** /api/v2/LogisticsService/Trucks/{truckId}/Trips/{tripId} | Patch a truck trip |
 | [**update_truck_async**](TrucksApi.md#update_truck_async) | **PUT** /api/v2/LogisticsService/Trucks/{truckId} | Update a truck |
 | [**update_truck_trip_async**](TrucksApi.md#update_truck_trip_async) | **PUT** /api/v2/LogisticsService/Trucks/{truckId}/Trips/{tripId} | Update a truck trip |
 
@@ -1037,6 +1039,156 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_truck_async
+
+> <EmptyEnvelope> patch_truck_async(tenant_id, truck_id, opts)
+
+Patch a truck
+
+Partially updates an existing truck using JSON Patch.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::TrucksApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+truck_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch a truck
+  result = api_instance.patch_truck_async(tenant_id, truck_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling TrucksApi->patch_truck_async: #{e}"
+end
+```
+
+#### Using the patch_truck_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_truck_async_with_http_info(tenant_id, truck_id, opts)
+
+```ruby
+begin
+  # Patch a truck
+  data, status_code, headers = api_instance.patch_truck_async_with_http_info(tenant_id, truck_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling TrucksApi->patch_truck_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **truck_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
+- **Accept**: application/json, application/xml
+
+
+## patch_truck_trip_async
+
+> <EmptyEnvelope> patch_truck_trip_async(tenant_id, truck_id, trip_id, opts)
+
+Patch a truck trip
+
+Partially updates an existing truck trip using JSON Patch.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::TrucksApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+truck_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+trip_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch a truck trip
+  result = api_instance.patch_truck_trip_async(tenant_id, truck_id, trip_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling TrucksApi->patch_truck_trip_async: #{e}"
+end
+```
+
+#### Using the patch_truck_trip_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_truck_trip_async_with_http_info(tenant_id, truck_id, trip_id, opts)
+
+```ruby
+begin
+  # Patch a truck trip
+  data, status_code, headers = api_instance.patch_truck_trip_async_with_http_info(tenant_id, truck_id, trip_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling TrucksApi->patch_truck_trip_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **truck_id** | **String** |  |  |
+| **trip_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

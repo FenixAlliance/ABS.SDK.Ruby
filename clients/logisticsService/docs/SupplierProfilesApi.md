@@ -9,6 +9,7 @@ All URIs are relative to *http://localhost*
 | [**get_supplier_profile_by_id_async**](SupplierProfilesApi.md#get_supplier_profile_by_id_async) | **GET** /api/v2/LogisticsService/SupplierProfiles/{supplierProfileId} | Get supplier profile by ID |
 | [**get_supplier_profiles_async**](SupplierProfilesApi.md#get_supplier_profiles_async) | **GET** /api/v2/LogisticsService/SupplierProfiles | Get all supplier profiles |
 | [**get_supplier_profiles_count_async**](SupplierProfilesApi.md#get_supplier_profiles_count_async) | **GET** /api/v2/LogisticsService/SupplierProfiles/Count | Get supplier profiles count |
+| [**patch_supplier_profile_async**](SupplierProfilesApi.md#patch_supplier_profile_async) | **PATCH** /api/v2/LogisticsService/SupplierProfiles/{supplierProfileId} | Patch a supplier profile |
 | [**update_supplier_profile_async**](SupplierProfilesApi.md#update_supplier_profile_async) | **PUT** /api/v2/LogisticsService/SupplierProfiles/{supplierProfileId} | Update a supplier profile |
 
 
@@ -365,6 +366,80 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_supplier_profile_async
+
+> <EmptyEnvelope> patch_supplier_profile_async(tenant_id, supplier_profile_id, opts)
+
+Patch a supplier profile
+
+Applies a JSON Patch document to a supplier profile.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::SupplierProfilesApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+supplier_profile_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch a supplier profile
+  result = api_instance.patch_supplier_profile_async(tenant_id, supplier_profile_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling SupplierProfilesApi->patch_supplier_profile_async: #{e}"
+end
+```
+
+#### Using the patch_supplier_profile_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_supplier_profile_async_with_http_info(tenant_id, supplier_profile_id, opts)
+
+```ruby
+begin
+  # Patch a supplier profile
+  data, status_code, headers = api_instance.patch_supplier_profile_async_with_http_info(tenant_id, supplier_profile_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling SupplierProfilesApi->patch_supplier_profile_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **supplier_profile_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

@@ -9,6 +9,7 @@ All URIs are relative to *http://localhost*
 | [**get_fiscal_responsibility_record**](FiscalResponsibilityRecordsApi.md#get_fiscal_responsibility_record) | **GET** /api/v2/AccountingService/Fiscals/Authorities/{fiscalAuthorityId}/FiscalResponsibilities/{fiscalResponsibilityId}/FiscalResponsibilityRecords/{fiscalResponsibilityRecordId} | Get fiscal responsibility record by ID |
 | [**get_fiscal_responsibility_records**](FiscalResponsibilityRecordsApi.md#get_fiscal_responsibility_records) | **GET** /api/v2/AccountingService/Fiscals/Authorities/{fiscalAuthorityId}/FiscalResponsibilities/{fiscalResponsibilityId}/FiscalResponsibilityRecords | Get fiscal responsibility records |
 | [**get_fiscal_responsibility_records_count**](FiscalResponsibilityRecordsApi.md#get_fiscal_responsibility_records_count) | **GET** /api/v2/AccountingService/Fiscals/Authorities/{fiscalAuthorityId}/FiscalResponsibilities/{fiscalResponsibilityId}/FiscalResponsibilityRecords/Count | Get fiscal responsibility records count |
+| [**patch_fiscal_responsibility_record_async**](FiscalResponsibilityRecordsApi.md#patch_fiscal_responsibility_record_async) | **PATCH** /api/v2/AccountingService/Fiscals/Authorities/FiscalResponsibilityRecords/{fiscalResponsibilityRecordId} | Patch a fiscal responsibility record |
 | [**update_fiscal_responsibility_record**](FiscalResponsibilityRecordsApi.md#update_fiscal_responsibility_record) | **PUT** /api/v2/AccountingService/Fiscals/Authorities/FiscalResponsibilityRecords/{fiscalResponsibilityRecordId} | Update a fiscal responsibility record |
 
 
@@ -377,6 +378,80 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_fiscal_responsibility_record_async
+
+> <EmptyEnvelope> patch_fiscal_responsibility_record_async(tenant_id, fiscal_responsibility_record_id, opts)
+
+Patch a fiscal responsibility record
+
+Partially updates a fiscal responsibility record.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::FiscalResponsibilityRecordsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+fiscal_responsibility_record_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch a fiscal responsibility record
+  result = api_instance.patch_fiscal_responsibility_record_async(tenant_id, fiscal_responsibility_record_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling FiscalResponsibilityRecordsApi->patch_fiscal_responsibility_record_async: #{e}"
+end
+```
+
+#### Using the patch_fiscal_responsibility_record_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_fiscal_responsibility_record_async_with_http_info(tenant_id, fiscal_responsibility_record_id, opts)
+
+```ruby
+begin
+  # Patch a fiscal responsibility record
+  data, status_code, headers = api_instance.patch_fiscal_responsibility_record_async_with_http_info(tenant_id, fiscal_responsibility_record_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling FiscalResponsibilityRecordsApi->patch_fiscal_responsibility_record_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **fiscal_responsibility_record_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

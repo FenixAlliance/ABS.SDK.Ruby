@@ -9,6 +9,7 @@ All URIs are relative to *http://localhost*
 | [**get_expense_claim**](ExpenseClaimsApi.md#get_expense_claim) | **GET** /api/v2/AccountingService/ExpenseClaims/{expenseClaimId} | Get an expense claim by id |
 | [**get_expense_claims**](ExpenseClaimsApi.md#get_expense_claims) | **GET** /api/v2/AccountingService/ExpenseClaims | Get all expense claims for a tenant |
 | [**get_expense_claims_count**](ExpenseClaimsApi.md#get_expense_claims_count) | **GET** /api/v2/AccountingService/ExpenseClaims/Count | Get the count of expense claims for a tenant |
+| [**patch_expense_claim**](ExpenseClaimsApi.md#patch_expense_claim) | **PATCH** /api/v2/AccountingService/ExpenseClaims/{expenseClaimId} | Patch an expense claim |
 | [**update_expense_claim**](ExpenseClaimsApi.md#update_expense_claim) | **PUT** /api/v2/AccountingService/ExpenseClaims/{expenseClaimId} | Update an expense claim |
 
 
@@ -365,6 +366,80 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_expense_claim
+
+> <EmptyEnvelope> patch_expense_claim(tenant_id, expense_claim_id, opts)
+
+Patch an expense claim
+
+Partially updates an existing expense claim.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::ExpenseClaimsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+expense_claim_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch an expense claim
+  result = api_instance.patch_expense_claim(tenant_id, expense_claim_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ExpenseClaimsApi->patch_expense_claim: #{e}"
+end
+```
+
+#### Using the patch_expense_claim_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_expense_claim_with_http_info(tenant_id, expense_claim_id, opts)
+
+```ruby
+begin
+  # Patch an expense claim
+  data, status_code, headers = api_instance.patch_expense_claim_with_http_info(tenant_id, expense_claim_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ExpenseClaimsApi->patch_expense_claim_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **expense_claim_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

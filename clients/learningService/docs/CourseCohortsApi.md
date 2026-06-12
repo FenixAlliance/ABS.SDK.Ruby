@@ -9,6 +9,7 @@ All URIs are relative to *http://localhost*
 | [**get_course_cohort_by_id_async**](CourseCohortsApi.md#get_course_cohort_by_id_async) | **GET** /api/v2/LearningService/CourseCohorts/{cohortId} | Get course cohort by ID |
 | [**get_course_cohorts_async**](CourseCohortsApi.md#get_course_cohorts_async) | **GET** /api/v2/LearningService/CourseCohorts | Get all course cohorts |
 | [**get_course_cohorts_count_async**](CourseCohortsApi.md#get_course_cohorts_count_async) | **GET** /api/v2/LearningService/CourseCohorts/Count | Get course cohorts count |
+| [**patch_course_cohort_async**](CourseCohortsApi.md#patch_course_cohort_async) | **PATCH** /api/v2/LearningService/CourseCohorts/{cohortId} | Patch a course cohort |
 | [**update_course_cohort_async**](CourseCohortsApi.md#update_course_cohort_async) | **PUT** /api/v2/LearningService/CourseCohorts/{cohortId} | Update a course cohort |
 
 
@@ -361,6 +362,80 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_course_cohort_async
+
+> <EmptyEnvelope> patch_course_cohort_async(tenant_id, cohort_id, opts)
+
+Patch a course cohort
+
+Partially updates a course cohort for the specified tenant.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::CourseCohortsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+cohort_id = 'cohort_id_example' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch a course cohort
+  result = api_instance.patch_course_cohort_async(tenant_id, cohort_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling CourseCohortsApi->patch_course_cohort_async: #{e}"
+end
+```
+
+#### Using the patch_course_cohort_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_course_cohort_async_with_http_info(tenant_id, cohort_id, opts)
+
+```ruby
+begin
+  # Patch a course cohort
+  data, status_code, headers = api_instance.patch_course_cohort_async_with_http_info(tenant_id, cohort_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling CourseCohortsApi->patch_course_cohort_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **cohort_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

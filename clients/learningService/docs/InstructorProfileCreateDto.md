@@ -31,7 +31,6 @@
 | **data9** | **String** |  | [optional] |
 | **data9_label** | **String** |  | [optional] |
 | **authorized** | **Boolean** |  | [optional] |
-| **contact_id** | **String** |  | [optional] |
 
 ## Example
 
@@ -65,8 +64,7 @@ instance = OpenapiClient::InstructorProfileCreateDto.new(
   data8_label: null,
   data9: null,
   data9_label: null,
-  authorized: null,
-  contact_id: null
+  authorized: null
 )
 ```
 

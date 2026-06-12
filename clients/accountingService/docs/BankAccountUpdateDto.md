@@ -9,9 +9,9 @@
 | **swift** | **String** |  | [optional] |
 | **branch_code** | **String** |  | [optional] |
 | **bank_account_number** | **String** |  | [optional] |
-| **qualified_name** | **String** |  | [optional] |
 | **bank_id** | **String** |  | [optional] |
 | **bank_profile_id** | **String** |  | [optional] |
+| **wallet_id** | **String** |  | [optional] |
 
 ## Example
 
@@ -24,9 +24,9 @@ instance = OpenapiClient::BankAccountUpdateDto.new(
   swift: null,
   branch_code: null,
   bank_account_number: null,
-  qualified_name: null,
   bank_id: null,
-  bank_profile_id: null
+  bank_profile_id: null,
+  wallet_id: null
 )
 ```
 

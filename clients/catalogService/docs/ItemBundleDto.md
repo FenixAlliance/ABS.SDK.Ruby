@@ -10,7 +10,7 @@
 | **code** | **String** |  | [optional] |
 | **description** | **String** |  | [optional] |
 | **disabled** | **Boolean** |  | [optional] |
-| **business_id** | **String** |  | [optional] |
+| **tenant_id** | **String** |  | [optional] |
 
 ## Example
 
@@ -24,7 +24,7 @@ instance = OpenapiClient::ItemBundleDto.new(
   code: null,
   description: null,
   disabled: null,
-  business_id: null
+  tenant_id: null
 )
 ```
 

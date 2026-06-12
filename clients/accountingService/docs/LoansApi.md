@@ -19,6 +19,9 @@ All URIs are relative to *http://localhost*
 | [**get_loan_types_count_async**](LoansApi.md#get_loan_types_count_async) | **GET** /api/v2/AccountingService/Loans/Types/Count | Counts loan types |
 | [**get_loans_async**](LoansApi.md#get_loans_async) | **GET** /api/v2/AccountingService/Loans | Gets all loans |
 | [**get_loans_count_async**](LoansApi.md#get_loans_count_async) | **GET** /api/v2/AccountingService/Loans/Count | Counts loans |
+| [**patch_loan_application_async**](LoansApi.md#patch_loan_application_async) | **PATCH** /api/v2/AccountingService/Loans/Applications/{applicationId} | Patches a loan application |
+| [**patch_loan_async**](LoansApi.md#patch_loan_async) | **PATCH** /api/v2/AccountingService/Loans/{loanId} | Patches a loan |
+| [**patch_loan_type_async**](LoansApi.md#patch_loan_type_async) | **PATCH** /api/v2/AccountingService/Loans/Types/{loanTypeId} | Patches a loan type |
 | [**update_loan_application_async**](LoansApi.md#update_loan_application_async) | **PUT** /api/v2/AccountingService/Loans/Applications/{applicationId} | Updates a loan application |
 | [**update_loan_async**](LoansApi.md#update_loan_async) | **PUT** /api/v2/AccountingService/Loans/{loanId} | Updates a loan |
 | [**update_loan_type_async**](LoansApi.md#update_loan_type_async) | **PUT** /api/v2/AccountingService/Loans/Types/{loanTypeId} | Updates a loan type |
@@ -1089,6 +1092,228 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_loan_application_async
+
+> <EmptyEnvelope> patch_loan_application_async(tenant_id, application_id, opts)
+
+Patches a loan application
+
+Partially updates the specified loan application using a JSON Patch document.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::LoansApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+application_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patches a loan application
+  result = api_instance.patch_loan_application_async(tenant_id, application_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling LoansApi->patch_loan_application_async: #{e}"
+end
+```
+
+#### Using the patch_loan_application_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_loan_application_async_with_http_info(tenant_id, application_id, opts)
+
+```ruby
+begin
+  # Patches a loan application
+  data, status_code, headers = api_instance.patch_loan_application_async_with_http_info(tenant_id, application_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling LoansApi->patch_loan_application_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **application_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
+- **Accept**: application/json, application/xml
+
+
+## patch_loan_async
+
+> <EmptyEnvelope> patch_loan_async(tenant_id, loan_id, opts)
+
+Patches a loan
+
+Partially updates the specified loan using a JSON Patch document.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::LoansApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+loan_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patches a loan
+  result = api_instance.patch_loan_async(tenant_id, loan_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling LoansApi->patch_loan_async: #{e}"
+end
+```
+
+#### Using the patch_loan_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_loan_async_with_http_info(tenant_id, loan_id, opts)
+
+```ruby
+begin
+  # Patches a loan
+  data, status_code, headers = api_instance.patch_loan_async_with_http_info(tenant_id, loan_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling LoansApi->patch_loan_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **loan_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
+- **Accept**: application/json, application/xml
+
+
+## patch_loan_type_async
+
+> <EmptyEnvelope> patch_loan_type_async(tenant_id, loan_type_id, opts)
+
+Patches a loan type
+
+Partially updates the specified loan type using a JSON Patch document.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::LoansApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+loan_type_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patches a loan type
+  result = api_instance.patch_loan_type_async(tenant_id, loan_type_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling LoansApi->patch_loan_type_async: #{e}"
+end
+```
+
+#### Using the patch_loan_type_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_loan_type_async_with_http_info(tenant_id, loan_type_id, opts)
+
+```ruby
+begin
+  # Patches a loan type
+  data, status_code, headers = api_instance.patch_loan_type_async_with_http_info(tenant_id, loan_type_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling LoansApi->patch_loan_type_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **loan_type_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

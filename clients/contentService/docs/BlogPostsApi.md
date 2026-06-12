@@ -17,6 +17,7 @@ All URIs are relative to *http://localhost*
 | [**get_comments_for_blog_post_async**](BlogPostsApi.md#get_comments_for_blog_post_async) | **GET** /api/v2/ContentService/BlogPosts/{blogPostId}/Comments | Get comments for a blog post |
 | [**get_replies_for_comment_async**](BlogPostsApi.md#get_replies_for_comment_async) | **GET** /api/v2/ContentService/BlogPosts/{blogPostId}/Comments/{commentId}/Replies | Get replies for a comment |
 | [**get_tags_for_blog_post_async**](BlogPostsApi.md#get_tags_for_blog_post_async) | **GET** /api/v2/ContentService/BlogPosts/{blogPostId}/Tags | Get tags for a blog post |
+| [**patch_blog_post_async**](BlogPostsApi.md#patch_blog_post_async) | **PATCH** /api/v2/ContentService/BlogPosts/{blogPostId} | Patch a blog post |
 | [**relate_category_to_blog_post_async**](BlogPostsApi.md#relate_category_to_blog_post_async) | **POST** /api/v2/ContentService/BlogPosts/{blogPostId}/Categories/{categoryId} | Relate an existing category to a blog post |
 | [**relate_tag_to_blog_post_async**](BlogPostsApi.md#relate_tag_to_blog_post_async) | **POST** /api/v2/ContentService/BlogPosts/{blogPostId}/Tags/{tagId} | Relate an existing tag to a blog post |
 | [**reply_to_comment_async**](BlogPostsApi.md#reply_to_comment_async) | **POST** /api/v2/ContentService/BlogPosts/{blogPostId}/Comments/{commentId}/Reply | Reply to a blog post comment |
@@ -888,6 +889,76 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_blog_post_async
+
+> <EmptyEnvelope> patch_blog_post_async(tenant_id, blog_post_id, opts)
+
+Patch a blog post
+
+Partially updates an existing blog post for the specified tenant.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::BlogPostsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+blog_post_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch a blog post
+  result = api_instance.patch_blog_post_async(tenant_id, blog_post_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling BlogPostsApi->patch_blog_post_async: #{e}"
+end
+```
+
+#### Using the patch_blog_post_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_blog_post_async_with_http_info(tenant_id, blog_post_id, opts)
+
+```ruby
+begin
+  # Patch a blog post
+  data, status_code, headers = api_instance.patch_blog_post_async_with_http_info(tenant_id, blog_post_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling BlogPostsApi->patch_blog_post_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **blog_post_id** | **String** |  |  |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

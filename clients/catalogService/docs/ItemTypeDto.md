@@ -11,7 +11,7 @@
 | **description** | **String** |  | [optional] |
 | **image_url** | **String** |  | [optional] |
 | **google_category_taxonomy** | **String** |  | [optional] |
-| **business_id** | **String** |  |  |
+| **tenant_id** | **String** |  |  |
 | **item_category_id** | **String** |  |  |
 | **item_google_category_id** | **String** |  | [optional] |
 
@@ -28,7 +28,7 @@ instance = OpenapiClient::ItemTypeDto.new(
   description: null,
   image_url: null,
   google_category_taxonomy: null,
-  business_id: null,
+  tenant_id: null,
   item_category_id: null,
   item_google_category_id: null
 )

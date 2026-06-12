@@ -9,6 +9,7 @@ All URIs are relative to *http://localhost*
 | [**get_marketing_area_by_id_async**](MarketingAreasApi.md#get_marketing_area_by_id_async) | **GET** /api/v2/MarketingService/MarketingAreas/{marketingAreaId} | Get marketing area by ID |
 | [**get_marketing_areas_async**](MarketingAreasApi.md#get_marketing_areas_async) | **GET** /api/v2/MarketingService/MarketingAreas | Get marketing areas |
 | [**get_marketing_areas_count_async**](MarketingAreasApi.md#get_marketing_areas_count_async) | **GET** /api/v2/MarketingService/MarketingAreas/Count | Count marketing areas |
+| [**patch_marketing_area_async**](MarketingAreasApi.md#patch_marketing_area_async) | **PATCH** /api/v2/MarketingService/MarketingAreas/{marketingAreaId} | Patch a marketing area |
 | [**update_marketing_area_async**](MarketingAreasApi.md#update_marketing_area_async) | **PUT** /api/v2/MarketingService/MarketingAreas/{marketingAreaId} | Update a marketing area |
 
 
@@ -365,6 +366,80 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_marketing_area_async
+
+> <EmptyEnvelope> patch_marketing_area_async(tenant_id, marketing_area_id, opts)
+
+Patch a marketing area
+
+Partially updates a marketing area by its ID using JSON Patch.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::MarketingAreasApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+marketing_area_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch a marketing area
+  result = api_instance.patch_marketing_area_async(tenant_id, marketing_area_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling MarketingAreasApi->patch_marketing_area_async: #{e}"
+end
+```
+
+#### Using the patch_marketing_area_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_marketing_area_async_with_http_info(tenant_id, marketing_area_id, opts)
+
+```ruby
+begin
+  # Patch a marketing area
+  data, status_code, headers = api_instance.patch_marketing_area_async_with_http_info(tenant_id, marketing_area_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling MarketingAreasApi->patch_marketing_area_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **marketing_area_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

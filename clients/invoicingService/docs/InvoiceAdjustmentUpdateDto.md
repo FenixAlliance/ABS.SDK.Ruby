@@ -5,6 +5,8 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **currency_id** | **String** |  | [optional] |
+| **priority** | **Integer** |  | [optional] |
+| **code** | **String** |  | [optional] |
 | **description** | **String** |  | [optional] |
 | **surcharge_percent** | **Float** |  | [optional] |
 | **surcharge_amount** | **Float** |  | [optional] |
@@ -21,6 +23,8 @@ require 'openapi_client'
 
 instance = OpenapiClient::InvoiceAdjustmentUpdateDto.new(
   currency_id: null,
+  priority: null,
+  code: null,
   description: null,
   surcharge_percent: null,
   surcharge_amount: null,

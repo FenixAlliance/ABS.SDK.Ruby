@@ -13,6 +13,8 @@ All URIs are relative to *http://localhost*
 | [**get_price_list_prices_async**](PriceListsApi.md#get_price_list_prices_async) | **GET** /api/v2/PricingService/PriceLists/{priceListId}/Prices | Retrieves prices in a price list |
 | [**get_price_lists_async**](PriceListsApi.md#get_price_lists_async) | **GET** /api/v2/PricingService/PriceLists | Retrieves all price lists |
 | [**get_price_lists_count_async**](PriceListsApi.md#get_price_lists_count_async) | **GET** /api/v2/PricingService/PriceLists/Count | Counts price lists |
+| [**patch_price_list_async**](PriceListsApi.md#patch_price_list_async) | **PATCH** /api/v2/PricingService/PriceLists/{priceListId} | Patches a price list |
+| [**patch_price_list_price_async**](PriceListsApi.md#patch_price_list_price_async) | **PATCH** /api/v2/PricingService/PriceLists/{priceListId}/Prices/{priceId} | Patches a price list entry |
 | [**update_price_list_async**](PriceListsApi.md#update_price_list_async) | **PUT** /api/v2/PricingService/PriceLists/{priceListId} | Updates a price list |
 | [**update_price_list_price_async**](PriceListsApi.md#update_price_list_price_async) | **PUT** /api/v2/PricingService/PriceLists/{priceListId}/Prices/{priceId} | Updates a price list entry |
 
@@ -618,6 +620,148 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_price_list_async
+
+> <EmptyEnvelope> patch_price_list_async(tenant_id, price_list_id, opts)
+
+Patches a price list
+
+Partially updates the specified price list using a JSON Patch document.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::PriceListsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+price_list_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patches a price list
+  result = api_instance.patch_price_list_async(tenant_id, price_list_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling PriceListsApi->patch_price_list_async: #{e}"
+end
+```
+
+#### Using the patch_price_list_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_price_list_async_with_http_info(tenant_id, price_list_id, opts)
+
+```ruby
+begin
+  # Patches a price list
+  data, status_code, headers = api_instance.patch_price_list_async_with_http_info(tenant_id, price_list_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling PriceListsApi->patch_price_list_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **price_list_id** | **String** |  |  |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
+- **Accept**: application/json, application/xml
+
+
+## patch_price_list_price_async
+
+> <EmptyEnvelope> patch_price_list_price_async(tenant_id, price_list_id, price_id, opts)
+
+Patches a price list entry
+
+Partially updates the specified price entry in a price list using a JSON Patch document.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::PriceListsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+price_list_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+price_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patches a price list entry
+  result = api_instance.patch_price_list_price_async(tenant_id, price_list_id, price_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling PriceListsApi->patch_price_list_price_async: #{e}"
+end
+```
+
+#### Using the patch_price_list_price_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_price_list_price_async_with_http_info(tenant_id, price_list_id, price_id, opts)
+
+```ruby
+begin
+  # Patches a price list entry
+  data, status_code, headers = api_instance.patch_price_list_price_async_with_http_info(tenant_id, price_list_id, price_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling PriceListsApi->patch_price_list_price_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **price_list_id** | **String** |  |  |
+| **price_id** | **String** |  |  |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

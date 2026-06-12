@@ -4,6 +4,8 @@ All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
+| [**batch_update_stock_items**](ItemsApi.md#batch_update_stock_items) | **POST** /api/v2/CatalogService/Items/Batch | Bulk-update stock items |
+| [**bulk_upsert_stock_items**](ItemsApi.md#bulk_upsert_stock_items) | **POST** /api/v2/CatalogService/Items/BulkUpsert | Bulk upsert stock items from rows |
 | [**count_stock_item_tags_by_item_id**](ItemsApi.md#count_stock_item_tags_by_item_id) | **GET** /api/v2/CatalogService/Items/{itemId}/Tags/Count | Count tags for a stock item |
 | [**count_stock_items_by_business**](ItemsApi.md#count_stock_items_by_business) | **GET** /api/v2/CatalogService/Items/Count | Count stock items by business |
 | [**create_stock_item**](ItemsApi.md#create_stock_item) | **POST** /api/v2/CatalogService/Items | Create a new stock item |
@@ -46,6 +48,8 @@ All URIs are relative to *http://localhost*
 | [**get_stock_items_odata_max_price**](ItemsApi.md#get_stock_items_odata_max_price) | **GET** /api/v2/CatalogService/Items/MaxPrice | Get max price of stock items |
 | [**get_stock_items_odata_min_price**](ItemsApi.md#get_stock_items_odata_min_price) | **GET** /api/v2/CatalogService/Items/MinPrice | Get min price of stock items |
 | [**get_stock_items_query**](ItemsApi.md#get_stock_items_query) | **GET** /api/v2/CatalogService/Items | Get all stock items |
+| [**patch_stock_item**](ItemsApi.md#patch_stock_item) | **PATCH** /api/v2/CatalogService/Items/{itemId} | Patch a stock item |
+| [**recalculate_stock_item_prices**](ItemsApi.md#recalculate_stock_item_prices) | **POST** /api/v2/CatalogService/Items/RecalculatePrices | Recalculate stock item prices |
 | [**relate_attachment_to_stock_item**](ItemsApi.md#relate_attachment_to_stock_item) | **POST** /api/v2/CatalogService/Items/{itemId}/Attachments/{itemAttachmentId} | Relate attachment to stock item |
 | [**relate_attribute_option_to_stock_item**](ItemsApi.md#relate_attribute_option_to_stock_item) | **POST** /api/v2/CatalogService/Items/{itemId}/AttributeOptions/{itemAttributeOptionId} | Relate attribute option to stock item |
 | [**relate_brand_to_stock_item**](ItemsApi.md#relate_brand_to_stock_item) | **POST** /api/v2/CatalogService/Items/{itemId}/Brands/{itemBrandId} | Relate brand to stock item |
@@ -80,6 +84,148 @@ All URIs are relative to *http://localhost*
 | [**remove_warranty_policy_from_stock_item**](ItemsApi.md#remove_warranty_policy_from_stock_item) | **DELETE** /api/v2/CatalogService/Items/{itemId}/WarrantyPolicies/{itemWarrantyPolicyId} | Remove warranty policy from stock item |
 | [**update_product_primary_image_async**](ItemsApi.md#update_product_primary_image_async) | **POST** /api/v2/CatalogService/Items/{itemId}/Images/Primary | Update item primary image |
 | [**update_stock_item**](ItemsApi.md#update_stock_item) | **PUT** /api/v2/CatalogService/Items/{itemId} | Update a stock item |
+
+
+## batch_update_stock_items
+
+> batch_update_stock_items(tenant_id, opts)
+
+Bulk-update stock items
+
+Applies a targeted bulk operation (set flags, add/remove tax policies) to many items atomically.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::ItemsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  batch_stock_item_update_request: OpenapiClient::BatchStockItemUpdateRequest.new # BatchStockItemUpdateRequest | 
+}
+
+begin
+  # Bulk-update stock items
+  api_instance.batch_update_stock_items(tenant_id, opts)
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ItemsApi->batch_update_stock_items: #{e}"
+end
+```
+
+#### Using the batch_update_stock_items_with_http_info variant
+
+This returns an Array which contains the response data (`nil` in this case), status code and headers.
+
+> <Array(nil, Integer, Hash)> batch_update_stock_items_with_http_info(tenant_id, opts)
+
+```ruby
+begin
+  # Bulk-update stock items
+  data, status_code, headers = api_instance.batch_update_stock_items_with_http_info(tenant_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => nil
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ItemsApi->batch_update_stock_items_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **batch_stock_item_update_request** | [**BatchStockItemUpdateRequest**](BatchStockItemUpdateRequest.md) |  | [optional] |
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
+- **Accept**: application/json, application/xml
+
+
+## bulk_upsert_stock_items
+
+> bulk_upsert_stock_items(tenant_id, opts)
+
+Bulk upsert stock items from rows
+
+Updates scalar fields of matching tenant-owned items or creates new ones, all in one transaction.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::ItemsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  bulk_product: [OpenapiClient::BulkProduct.new] # Array<BulkProduct> | 
+}
+
+begin
+  # Bulk upsert stock items from rows
+  api_instance.bulk_upsert_stock_items(tenant_id, opts)
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ItemsApi->bulk_upsert_stock_items: #{e}"
+end
+```
+
+#### Using the bulk_upsert_stock_items_with_http_info variant
+
+This returns an Array which contains the response data (`nil` in this case), status code and headers.
+
+> <Array(nil, Integer, Hash)> bulk_upsert_stock_items_with_http_info(tenant_id, opts)
+
+```ruby
+begin
+  # Bulk upsert stock items from rows
+  data, status_code, headers = api_instance.bulk_upsert_stock_items_with_http_info(tenant_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => nil
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ItemsApi->bulk_upsert_stock_items_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **bulk_product** | [**Array&lt;BulkProduct&gt;**](BulkProduct.md) |  | [optional] |
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
+- **Accept**: application/json, application/xml
 
 
 ## count_stock_item_tags_by_item_id
@@ -3063,6 +3209,150 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_stock_item
+
+> patch_stock_item(tenant_id, item_id, opts)
+
+Patch a stock item
+
+Partially updates an existing stock item for the specified tenant and item ID.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::ItemsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+item_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch a stock item
+  api_instance.patch_stock_item(tenant_id, item_id, opts)
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ItemsApi->patch_stock_item: #{e}"
+end
+```
+
+#### Using the patch_stock_item_with_http_info variant
+
+This returns an Array which contains the response data (`nil` in this case), status code and headers.
+
+> <Array(nil, Integer, Hash)> patch_stock_item_with_http_info(tenant_id, item_id, opts)
+
+```ruby
+begin
+  # Patch a stock item
+  data, status_code, headers = api_instance.patch_stock_item_with_http_info(tenant_id, item_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => nil
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ItemsApi->patch_stock_item_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **item_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
+- **Accept**: application/json, application/xml
+
+
+## recalculate_stock_item_prices
+
+> recalculate_stock_item_prices(tenant_id, opts)
+
+Recalculate stock item prices
+
+Recomputes derived prices for the given tenant-owned items via the pricing service, atomically.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::ItemsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  request_body: ['property_example'] # Array<String> | 
+}
+
+begin
+  # Recalculate stock item prices
+  api_instance.recalculate_stock_item_prices(tenant_id, opts)
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ItemsApi->recalculate_stock_item_prices: #{e}"
+end
+```
+
+#### Using the recalculate_stock_item_prices_with_http_info variant
+
+This returns an Array which contains the response data (`nil` in this case), status code and headers.
+
+> <Array(nil, Integer, Hash)> recalculate_stock_item_prices_with_http_info(tenant_id, opts)
+
+```ruby
+begin
+  # Recalculate stock item prices
+  data, status_code, headers = api_instance.recalculate_stock_item_prices_with_http_info(tenant_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => nil
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ItemsApi->recalculate_stock_item_prices_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **request_body** | [**Array&lt;String&gt;**](String.md) |  | [optional] |
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

@@ -9,6 +9,7 @@ All URIs are relative to *http://localhost*
 | [**get_fiscal_identification_type**](FiscalIdentificationTypesApi.md#get_fiscal_identification_type) | **GET** /api/v2/AccountingService/Fiscals/Authorities/{fiscalAuthorityId}/IdentificationTypes/{identificationTypeId} | Get fiscal identification type by ID |
 | [**get_fiscal_identification_types**](FiscalIdentificationTypesApi.md#get_fiscal_identification_types) | **GET** /api/v2/AccountingService/Fiscals/Authorities/{authorityId}/IdentificationTypes | Get fiscal identification types for an authority |
 | [**get_fiscal_identification_types_count**](FiscalIdentificationTypesApi.md#get_fiscal_identification_types_count) | **GET** /api/v2/AccountingService/Fiscals/Authorities/{authorityId}/IdentificationTypes/Count | Get fiscal identification types count |
+| [**patch_fiscal_identification_type_async**](FiscalIdentificationTypesApi.md#patch_fiscal_identification_type_async) | **PATCH** /api/v2/AccountingService/Fiscals/Authorities/IdentificationTypes/{identificationTypeId} | Patch a fiscal identification type |
 | [**update_fiscal_identification_type**](FiscalIdentificationTypesApi.md#update_fiscal_identification_type) | **PUT** /api/v2/AccountingService/Fiscals/Authorities/IdentificationTypes/{identificationTypeId} | Update a fiscal identification type |
 
 
@@ -371,6 +372,80 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_fiscal_identification_type_async
+
+> <EmptyEnvelope> patch_fiscal_identification_type_async(tenant_id, identification_type_id, opts)
+
+Patch a fiscal identification type
+
+Partially updates a fiscal identification type.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::FiscalIdentificationTypesApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+identification_type_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch a fiscal identification type
+  result = api_instance.patch_fiscal_identification_type_async(tenant_id, identification_type_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling FiscalIdentificationTypesApi->patch_fiscal_identification_type_async: #{e}"
+end
+```
+
+#### Using the patch_fiscal_identification_type_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_fiscal_identification_type_async_with_http_info(tenant_id, identification_type_id, opts)
+
+```ruby
+begin
+  # Patch a fiscal identification type
+  data, status_code, headers = api_instance.patch_fiscal_identification_type_async_with_http_info(tenant_id, identification_type_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling FiscalIdentificationTypesApi->patch_fiscal_identification_type_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **identification_type_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

@@ -9,7 +9,7 @@
 | **payment_id** | **String** |  | [optional] |
 | **tenant_id** | **String** |  | [optional] |
 | **closed** | **Boolean** |  | [optional] |
-| **account_holder_id** | **String** |  | [optional] |
+| **user_id** | **String** |  | [optional] |
 | **contact_id** | **String** |  | [optional] |
 | **enrollment_id** | **String** |  | [optional] |
 | **receipt_type** | **String** |  | [optional] |
@@ -27,7 +27,7 @@ instance = OpenapiClient::ReceiptDto.new(
   payment_id: null,
   tenant_id: null,
   closed: null,
-  account_holder_id: null,
+  user_id: null,
   contact_id: null,
   enrollment_id: null,
   receipt_type: null,

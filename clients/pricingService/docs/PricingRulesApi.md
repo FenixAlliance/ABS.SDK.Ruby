@@ -9,6 +9,7 @@ All URIs are relative to *http://localhost*
 | [**get_pricing_rule_by_id**](PricingRulesApi.md#get_pricing_rule_by_id) | **GET** /api/v2/PricingService/PricingRules/{pricingRuleId} | Get pricing rule by ID |
 | [**get_pricing_rules**](PricingRulesApi.md#get_pricing_rules) | **GET** /api/v2/PricingService/PricingRules | Get all pricing rules |
 | [**get_pricing_rules_count_async**](PricingRulesApi.md#get_pricing_rules_count_async) | **GET** /api/v2/PricingService/PricingRules/Count | Counts pricing rules |
+| [**patch_pricing_rule**](PricingRulesApi.md#patch_pricing_rule) | **PATCH** /api/v2/PricingService/PricingRules/{pricingRuleId} | Patch a pricing rule |
 | [**update_pricing_rule**](PricingRulesApi.md#update_pricing_rule) | **PUT** /api/v2/PricingService/PricingRules/Update | Update a pricing rule |
 
 
@@ -364,6 +365,79 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_pricing_rule
+
+> patch_pricing_rule(tenant_id, pricing_rule_id, opts)
+
+Patch a pricing rule
+
+Partially updates a pricing rule using a JSON Patch document.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::PricingRulesApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+pricing_rule_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch a pricing rule
+  api_instance.patch_pricing_rule(tenant_id, pricing_rule_id, opts)
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling PricingRulesApi->patch_pricing_rule: #{e}"
+end
+```
+
+#### Using the patch_pricing_rule_with_http_info variant
+
+This returns an Array which contains the response data (`nil` in this case), status code and headers.
+
+> <Array(nil, Integer, Hash)> patch_pricing_rule_with_http_info(tenant_id, pricing_rule_id, opts)
+
+```ruby
+begin
+  # Patch a pricing rule
+  data, status_code, headers = api_instance.patch_pricing_rule_with_http_info(tenant_id, pricing_rule_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => nil
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling PricingRulesApi->patch_pricing_rule_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **pricing_rule_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

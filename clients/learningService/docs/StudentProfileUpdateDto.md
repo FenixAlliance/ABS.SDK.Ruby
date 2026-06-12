@@ -28,7 +28,6 @@
 | **data8_label** | **String** |  | [optional] |
 | **data9** | **String** |  | [optional] |
 | **data9_label** | **String** |  | [optional] |
-| **contact_id** | **String** |  | [optional] |
 
 ## Example
 
@@ -59,8 +58,7 @@ instance = OpenapiClient::StudentProfileUpdateDto.new(
   data8: null,
   data8_label: null,
   data9: null,
-  data9_label: null,
-  contact_id: null
+  data9_label: null
 )
 ```
 

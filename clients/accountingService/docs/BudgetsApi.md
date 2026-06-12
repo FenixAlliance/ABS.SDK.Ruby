@@ -13,6 +13,8 @@ All URIs are relative to *http://localhost*
 | [**get_budget_details_async**](BudgetsApi.md#get_budget_details_async) | **GET** /api/v2/AccountingService/Budgets/{budgetId} | Gets a budget by id |
 | [**get_budgets_async**](BudgetsApi.md#get_budgets_async) | **GET** /api/v2/AccountingService/Budgets | Gets all budgets |
 | [**get_budgets_count_async**](BudgetsApi.md#get_budgets_count_async) | **GET** /api/v2/AccountingService/Budgets/Count | Get the count of budgets |
+| [**patch_budget_account_entry_async**](BudgetsApi.md#patch_budget_account_entry_async) | **PATCH** /api/v2/AccountingService/Budgets/{budgetId}/AccountEntries/{entryId} | Patches a budget account entry |
+| [**patch_budget_async**](BudgetsApi.md#patch_budget_async) | **PATCH** /api/v2/AccountingService/Budgets/{budgetId} | Patches a budget |
 | [**update_budget_account_entry_async**](BudgetsApi.md#update_budget_account_entry_async) | **PUT** /api/v2/AccountingService/Budgets/{budgetId}/AccountEntries/{entryId} | Updates a budget account entry |
 | [**update_budget_async**](BudgetsApi.md#update_budget_async) | **PUT** /api/v2/AccountingService/Budgets/{budgetId} | Updates a budget |
 
@@ -664,6 +666,156 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_budget_account_entry_async
+
+> <EmptyEnvelope> patch_budget_account_entry_async(tenant_id, budget_id, entry_id, opts)
+
+Patches a budget account entry
+
+Partially update a budget account entry using JSON Patch.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::BudgetsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+budget_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+entry_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patches a budget account entry
+  result = api_instance.patch_budget_account_entry_async(tenant_id, budget_id, entry_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling BudgetsApi->patch_budget_account_entry_async: #{e}"
+end
+```
+
+#### Using the patch_budget_account_entry_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_budget_account_entry_async_with_http_info(tenant_id, budget_id, entry_id, opts)
+
+```ruby
+begin
+  # Patches a budget account entry
+  data, status_code, headers = api_instance.patch_budget_account_entry_async_with_http_info(tenant_id, budget_id, entry_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling BudgetsApi->patch_budget_account_entry_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **budget_id** | **String** |  |  |
+| **entry_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
+- **Accept**: application/json, application/xml
+
+
+## patch_budget_async
+
+> <EmptyEnvelope> patch_budget_async(tenant_id, budget_id, opts)
+
+Patches a budget
+
+Partially update a budget using JSON Patch.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::BudgetsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+budget_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patches a budget
+  result = api_instance.patch_budget_async(tenant_id, budget_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling BudgetsApi->patch_budget_async: #{e}"
+end
+```
+
+#### Using the patch_budget_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_budget_async_with_http_info(tenant_id, budget_id, opts)
+
+```ruby
+begin
+  # Patches a budget
+  data, status_code, headers = api_instance.patch_budget_async_with_http_info(tenant_id, budget_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling BudgetsApi->patch_budget_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **budget_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

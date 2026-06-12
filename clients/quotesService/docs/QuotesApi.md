@@ -19,6 +19,8 @@ All URIs are relative to *http://localhost*
 | [**get_quote_lines_count**](QuotesApi.md#get_quote_lines_count) | **GET** /api/v2/QuotesService/Quotes/{quoteId}/Lines/Count | Get the count of quote lines. |
 | [**get_quotes**](QuotesApi.md#get_quotes) | **GET** /api/v2/QuotesService/Quotes | Get a list of quotes. |
 | [**get_quotes_count**](QuotesApi.md#get_quotes_count) | **GET** /api/v2/QuotesService/Quotes/Count | Get the count of quotes. |
+| [**patch_quote_async**](QuotesApi.md#patch_quote_async) | **PATCH** /api/v2/QuotesService/Quotes/{quoteId} | Patch an existing quote. |
+| [**patch_quote_line_async**](QuotesApi.md#patch_quote_line_async) | **PATCH** /api/v2/QuotesService/Quotes/{quoteId}/Lines/{quoteLineId} | Patch a quote line. |
 | [**preview_quote_email_template**](QuotesApi.md#preview_quote_email_template) | **POST** /api/v2/QuotesService/Quotes/{quoteId}/Emails/Preview | Preview the rendered email for an invoice. |
 | [**quote_line_exists**](QuotesApi.md#quote_line_exists) | **GET** /api/v2/QuotesService/Quotes/{quoteId}/Lines/Exists | Check if a quote line exists. |
 | [**reopen_quote**](QuotesApi.md#reopen_quote) | **PUT** /api/v2/QuotesService/Quotes/{quoteId}/Reopen | Reopen a closed quote. |
@@ -1025,6 +1027,148 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_quote_async
+
+> <EmptyEnvelope> patch_quote_async(tenant_id, quote_id, opts)
+
+Patch an existing quote.
+
+Partially updates an existing quote for the specified tenant and quote ID using a JSON Patch document.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::QuotesApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+quote_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch an existing quote.
+  result = api_instance.patch_quote_async(tenant_id, quote_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling QuotesApi->patch_quote_async: #{e}"
+end
+```
+
+#### Using the patch_quote_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_quote_async_with_http_info(tenant_id, quote_id, opts)
+
+```ruby
+begin
+  # Patch an existing quote.
+  data, status_code, headers = api_instance.patch_quote_async_with_http_info(tenant_id, quote_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling QuotesApi->patch_quote_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **quote_id** | **String** |  |  |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
+- **Accept**: application/json, application/xml
+
+
+## patch_quote_line_async
+
+> <EmptyEnvelope> patch_quote_line_async(tenant_id, quote_id, quote_line_id, opts)
+
+Patch a quote line.
+
+Partially updates an existing quote line for the specified quote and tenant using a JSON Patch document.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::QuotesApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+quote_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+quote_line_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch a quote line.
+  result = api_instance.patch_quote_line_async(tenant_id, quote_id, quote_line_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling QuotesApi->patch_quote_line_async: #{e}"
+end
+```
+
+#### Using the patch_quote_line_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_quote_line_async_with_http_info(tenant_id, quote_id, quote_line_id, opts)
+
+```ruby
+begin
+  # Patch a quote line.
+  data, status_code, headers = api_instance.patch_quote_line_async_with_http_info(tenant_id, quote_id, quote_line_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling QuotesApi->patch_quote_line_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **quote_id** | **String** |  |  |
+| **quote_line_id** | **String** |  |  |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

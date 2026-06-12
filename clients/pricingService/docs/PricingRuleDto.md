@@ -6,7 +6,8 @@
 | ---- | ---- | ----------- | ----- |
 | **id** | **String** |  | [optional] |
 | **timestamp** | **Time** |  | [optional] |
-| **business_id** | **String** |  | [optional] |
+| **tenant_id** | **String** |  | [optional] |
+| **enrollment_id** | **String** |  | [optional] |
 | **code** | **String** |  | [optional] |
 | **title** | **String** |  | [optional] |
 | **description** | **String** |  | [optional] |
@@ -37,7 +38,8 @@ require 'openapi_client'
 instance = OpenapiClient::PricingRuleDto.new(
   id: null,
   timestamp: null,
-  business_id: null,
+  tenant_id: null,
+  enrollment_id: null,
   code: null,
   title: null,
   description: null,

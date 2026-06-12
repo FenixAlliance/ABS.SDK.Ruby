@@ -9,6 +9,7 @@ All URIs are relative to *http://localhost*
 | [**get_schedule_by_id_async**](SchedulesApi.md#get_schedule_by_id_async) | **GET** /api/v2/HrmsService/Schedules/{scheduleId} | Get schedule by ID |
 | [**get_schedules_async**](SchedulesApi.md#get_schedules_async) | **GET** /api/v2/HrmsService/Schedules | Get schedules |
 | [**get_schedules_count_async**](SchedulesApi.md#get_schedules_count_async) | **GET** /api/v2/HrmsService/Schedules/Count | Count schedules |
+| [**patch_schedule_async**](SchedulesApi.md#patch_schedule_async) | **PATCH** /api/v2/HrmsService/Schedules/{scheduleId} | Patch a schedule |
 | [**update_schedule_async**](SchedulesApi.md#update_schedule_async) | **PUT** /api/v2/HrmsService/Schedules/{scheduleId} | Update a schedule |
 
 
@@ -365,6 +366,80 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_schedule_async
+
+> <EmptyEnvelope> patch_schedule_async(tenant_id, schedule_id, opts)
+
+Patch a schedule
+
+Partially updates an existing schedule for the specified tenant.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::SchedulesApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+schedule_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch a schedule
+  result = api_instance.patch_schedule_async(tenant_id, schedule_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling SchedulesApi->patch_schedule_async: #{e}"
+end
+```
+
+#### Using the patch_schedule_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_schedule_async_with_http_info(tenant_id, schedule_id, opts)
+
+```ruby
+begin
+  # Patch a schedule
+  data, status_code, headers = api_instance.patch_schedule_async_with_http_info(tenant_id, schedule_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling SchedulesApi->patch_schedule_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **schedule_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

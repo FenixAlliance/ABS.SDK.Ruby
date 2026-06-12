@@ -11,8 +11,7 @@
 | **new_value** | **Float** |  | [optional] |
 | **reason** | **String** |  | [optional] |
 | **amendment_date** | **Time** |  | [optional] |
-| **approved_by** | **String** |  | [optional] |
-| **approval_date** | **Time** |  | [optional] |
+| **currency_id** | **String** |  | [optional] |
 
 ## Example
 
@@ -27,8 +26,7 @@ instance = OpenapiClient::AssetValueAmendCreateDto.new(
   new_value: null,
   reason: null,
   amendment_date: null,
-  approved_by: null,
-  approval_date: null
+  currency_id: null
 )
 ```
 

@@ -17,6 +17,8 @@ All URIs are relative to *http://localhost*
 | [**get_proof_of_delivery_lines_count_async**](ProofsOfDeliveryApi.md#get_proof_of_delivery_lines_count_async) | **GET** /api/v2/LogisticsService/ProofsOfDelivery/{podId}/Lines/Count | Get proof of delivery lines count |
 | [**get_proofs_of_delivery_async**](ProofsOfDeliveryApi.md#get_proofs_of_delivery_async) | **GET** /api/v2/LogisticsService/ProofsOfDelivery | Get all proofs of delivery |
 | [**get_proofs_of_delivery_count_async**](ProofsOfDeliveryApi.md#get_proofs_of_delivery_count_async) | **GET** /api/v2/LogisticsService/ProofsOfDelivery/Count | Get proofs of delivery count |
+| [**patch_proof_of_delivery_async**](ProofsOfDeliveryApi.md#patch_proof_of_delivery_async) | **PATCH** /api/v2/LogisticsService/ProofsOfDelivery/{podId} | Patch a proof of delivery |
+| [**patch_proof_of_delivery_line_async**](ProofsOfDeliveryApi.md#patch_proof_of_delivery_line_async) | **PATCH** /api/v2/LogisticsService/ProofsOfDelivery/{podId}/Lines/{lineId} | Patch a proof of delivery line |
 | [**reject_proof_of_delivery_async**](ProofsOfDeliveryApi.md#reject_proof_of_delivery_async) | **POST** /api/v2/LogisticsService/ProofsOfDelivery/{podId}/Reject | Reject a proof of delivery |
 | [**remove_proof_of_delivery_line_async**](ProofsOfDeliveryApi.md#remove_proof_of_delivery_line_async) | **DELETE** /api/v2/LogisticsService/ProofsOfDelivery/{podId}/Lines/{lineId} | Remove a proof of delivery line |
 | [**sign_proof_of_delivery_async**](ProofsOfDeliveryApi.md#sign_proof_of_delivery_async) | **POST** /api/v2/LogisticsService/ProofsOfDelivery/{podId}/Sign | Sign a proof of delivery |
@@ -961,6 +963,156 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_proof_of_delivery_async
+
+> <EmptyEnvelope> patch_proof_of_delivery_async(tenant_id, pod_id, opts)
+
+Patch a proof of delivery
+
+Partially updates an existing proof of delivery using JSON Patch.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::ProofsOfDeliveryApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+pod_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch a proof of delivery
+  result = api_instance.patch_proof_of_delivery_async(tenant_id, pod_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ProofsOfDeliveryApi->patch_proof_of_delivery_async: #{e}"
+end
+```
+
+#### Using the patch_proof_of_delivery_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_proof_of_delivery_async_with_http_info(tenant_id, pod_id, opts)
+
+```ruby
+begin
+  # Patch a proof of delivery
+  data, status_code, headers = api_instance.patch_proof_of_delivery_async_with_http_info(tenant_id, pod_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ProofsOfDeliveryApi->patch_proof_of_delivery_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **pod_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
+- **Accept**: application/json, application/xml
+
+
+## patch_proof_of_delivery_line_async
+
+> <EmptyEnvelope> patch_proof_of_delivery_line_async(tenant_id, pod_id, line_id, opts)
+
+Patch a proof of delivery line
+
+Partially updates an existing proof of delivery line using JSON Patch.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::ProofsOfDeliveryApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+pod_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+line_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch a proof of delivery line
+  result = api_instance.patch_proof_of_delivery_line_async(tenant_id, pod_id, line_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ProofsOfDeliveryApi->patch_proof_of_delivery_line_async: #{e}"
+end
+```
+
+#### Using the patch_proof_of_delivery_line_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_proof_of_delivery_line_async_with_http_info(tenant_id, pod_id, line_id, opts)
+
+```ruby
+begin
+  # Patch a proof of delivery line
+  data, status_code, headers = api_instance.patch_proof_of_delivery_line_async_with_http_info(tenant_id, pod_id, line_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ProofsOfDeliveryApi->patch_proof_of_delivery_line_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **pod_id** | **String** |  |  |
+| **line_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

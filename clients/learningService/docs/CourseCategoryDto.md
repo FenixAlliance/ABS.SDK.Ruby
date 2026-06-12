@@ -11,6 +11,7 @@
 | **image_url** | **String** |  | [optional] |
 | **is_featured** | **Boolean** |  | [optional] |
 | **tenant_id** | **String** |  | [optional] |
+| **enrollment_id** | **String** |  | [optional] |
 
 ## Example
 
@@ -24,7 +25,8 @@ instance = OpenapiClient::CourseCategoryDto.new(
   description: null,
   image_url: null,
   is_featured: null,
-  tenant_id: null
+  tenant_id: null,
+  enrollment_id: null
 )
 ```
 

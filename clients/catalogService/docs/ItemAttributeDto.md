@@ -8,7 +8,7 @@
 | **timestamp** | **Time** |  | [optional] |
 | **name** | **String** |  | [optional] |
 | **description** | **String** |  | [optional] |
-| **business_id** | **String** |  | [optional] |
+| **tenant_id** | **String** |  | [optional] |
 
 ## Example
 
@@ -20,7 +20,7 @@ instance = OpenapiClient::ItemAttributeDto.new(
   timestamp: null,
   name: null,
   description: null,
-  business_id: null
+  tenant_id: null
 )
 ```
 

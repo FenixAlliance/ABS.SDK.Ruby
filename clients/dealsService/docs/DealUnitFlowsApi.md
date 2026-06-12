@@ -14,6 +14,8 @@ All URIs are relative to *http://localhost*
 | [**get_deal_unit_flow_stages_count_async**](DealUnitFlowsApi.md#get_deal_unit_flow_stages_count_async) | **GET** /api/v2/DealsService/DealUnitFlows/{dealUnitFlowId}/Stages/Count | Get stages count for a deal unit flow |
 | [**get_deal_unit_flows_async**](DealUnitFlowsApi.md#get_deal_unit_flows_async) | **GET** /api/v2/DealsService/DealUnitFlows | Get deal unit flows |
 | [**get_deal_unit_flows_count_async**](DealUnitFlowsApi.md#get_deal_unit_flows_count_async) | **GET** /api/v2/DealsService/DealUnitFlows/Count | Get deal unit flows count |
+| [**patch_deal_unit_flow_async**](DealUnitFlowsApi.md#patch_deal_unit_flow_async) | **PATCH** /api/v2/DealsService/DealUnitFlows/{dealUnitFlowId} | Patch a deal unit flow |
+| [**patch_deal_unit_flow_stage_async**](DealUnitFlowsApi.md#patch_deal_unit_flow_stage_async) | **PATCH** /api/v2/DealsService/DealUnitFlows/{dealUnitFlowId}/Stages/{dealUnitFlowStageId} | Patch a deal unit flow stage |
 | [**update_deal_unit_flow_async**](DealUnitFlowsApi.md#update_deal_unit_flow_async) | **PUT** /api/v2/DealsService/DealUnitFlows/{dealUnitFlowId} | Update a deal unit flow |
 | [**update_deal_unit_flow_stage_async**](DealUnitFlowsApi.md#update_deal_unit_flow_stage_async) | **PUT** /api/v2/DealsService/DealUnitFlows/{dealUnitFlowId}/Stages/{dealUnitFlowStageId} | Update a deal unit flow stage |
 
@@ -681,6 +683,148 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_deal_unit_flow_async
+
+> <EmptyEnvelope> patch_deal_unit_flow_async(tenant_id, deal_unit_flow_id, opts)
+
+Patch a deal unit flow
+
+Partially updates an existing deal unit flow by its unique identifier using a JSON Patch document.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::DealUnitFlowsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+deal_unit_flow_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch a deal unit flow
+  result = api_instance.patch_deal_unit_flow_async(tenant_id, deal_unit_flow_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling DealUnitFlowsApi->patch_deal_unit_flow_async: #{e}"
+end
+```
+
+#### Using the patch_deal_unit_flow_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_deal_unit_flow_async_with_http_info(tenant_id, deal_unit_flow_id, opts)
+
+```ruby
+begin
+  # Patch a deal unit flow
+  data, status_code, headers = api_instance.patch_deal_unit_flow_async_with_http_info(tenant_id, deal_unit_flow_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling DealUnitFlowsApi->patch_deal_unit_flow_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **deal_unit_flow_id** | **String** |  |  |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
+- **Accept**: application/json, application/xml
+
+
+## patch_deal_unit_flow_stage_async
+
+> <EmptyEnvelope> patch_deal_unit_flow_stage_async(tenant_id, deal_unit_flow_id, deal_unit_flow_stage_id, opts)
+
+Patch a deal unit flow stage
+
+Partially updates an existing stage within a specific deal unit flow using a JSON Patch document.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::DealUnitFlowsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+deal_unit_flow_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+deal_unit_flow_stage_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch a deal unit flow stage
+  result = api_instance.patch_deal_unit_flow_stage_async(tenant_id, deal_unit_flow_id, deal_unit_flow_stage_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling DealUnitFlowsApi->patch_deal_unit_flow_stage_async: #{e}"
+end
+```
+
+#### Using the patch_deal_unit_flow_stage_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_deal_unit_flow_stage_async_with_http_info(tenant_id, deal_unit_flow_id, deal_unit_flow_stage_id, opts)
+
+```ruby
+begin
+  # Patch a deal unit flow stage
+  data, status_code, headers = api_instance.patch_deal_unit_flow_stage_async_with_http_info(tenant_id, deal_unit_flow_id, deal_unit_flow_stage_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling DealUnitFlowsApi->patch_deal_unit_flow_stage_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **deal_unit_flow_id** | **String** |  |  |
+| **deal_unit_flow_stage_id** | **String** |  |  |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

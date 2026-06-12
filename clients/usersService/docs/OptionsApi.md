@@ -10,6 +10,7 @@ All URIs are relative to *http://localhost*
 | [**get_user_option_by_key**](OptionsApi.md#get_user_option_by_key) | **GET** /api/v2/Me/Options/Key/{key} | Retrieve a single user option by its key |
 | [**get_user_options**](OptionsApi.md#get_user_options) | **GET** /api/v2/Me/Options | Retrieve a list of user options |
 | [**get_user_options_count**](OptionsApi.md#get_user_options_count) | **GET** /api/v2/Me/Options/Count | Get the count of user options |
+| [**patch_user_option**](OptionsApi.md#patch_user_option) | **PATCH** /api/v2/Me/Options/{optionId} | Patch a user option |
 | [**update_user_option**](OptionsApi.md#update_user_option) | **PUT** /api/v2/Me/Options/{optionId} | Update a user option |
 | [**upsert_user_option**](OptionsApi.md#upsert_user_option) | **PUT** /api/v2/Me/Options/Upsert/{key} | Create or update a user option by key |
 
@@ -437,6 +438,78 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_user_option
+
+> <EmptyEnvelope> patch_user_option(option_id, opts)
+
+Patch a user option
+
+Partially updates a user option using a JSON Patch document
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::OptionsApi.new
+option_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch a user option
+  result = api_instance.patch_user_option(option_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling OptionsApi->patch_user_option: #{e}"
+end
+```
+
+#### Using the patch_user_option_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_user_option_with_http_info(option_id, opts)
+
+```ruby
+begin
+  # Patch a user option
+  data, status_code, headers = api_instance.patch_user_option_with_http_info(option_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling OptionsApi->patch_user_option_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **option_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

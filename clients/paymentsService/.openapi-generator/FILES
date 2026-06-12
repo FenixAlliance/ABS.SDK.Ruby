@@ -17,6 +17,7 @@ docs/InfoRequest.md
 docs/InfoResponse.md
 docs/Int32Envelope.md
 docs/LoginRequest.md
+docs/Operation.md
 docs/PaymentCreateDto.md
 docs/PaymentDto.md
 docs/PaymentDtoListEnvelope.md
@@ -66,6 +67,7 @@ lib/openapi_client/models/info_request.rb
 lib/openapi_client/models/info_response.rb
 lib/openapi_client/models/int32_envelope.rb
 lib/openapi_client/models/login_request.rb
+lib/openapi_client/models/operation.rb
 lib/openapi_client/models/payment_create_dto.rb
 lib/openapi_client/models/payment_dto.rb
 lib/openapi_client/models/payment_dto_list_envelope.rb
@@ -93,6 +95,5 @@ lib/openapi_client/models/two_factor_request.rb
 lib/openapi_client/models/two_factor_response.rb
 lib/openapi_client/version.rb
 openapi_client.gemspec
-spec/api/completions_api_spec.rb
-spec/api/fenix_alliance_portals_website_api_spec.rb
+spec/models/operation_spec.rb
 spec/spec_helper.rb

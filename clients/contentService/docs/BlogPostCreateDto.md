@@ -13,6 +13,7 @@
 | **markup** | **String** |  | [optional] |
 | **featured_image_url** | **String** |  | [optional] |
 | **code_type** | **String** |  | [optional] |
+| **slug** | **String** |  | [optional] |
 | **blog_post_category_id** | **String** |  | [optional] |
 | **web_template_id** | **String** |  | [optional] |
 
@@ -31,6 +32,7 @@ instance = OpenapiClient::BlogPostCreateDto.new(
   markup: null,
   featured_image_url: null,
   code_type: null,
+  slug: null,
   blog_post_category_id: null,
   web_template_id: null
 )

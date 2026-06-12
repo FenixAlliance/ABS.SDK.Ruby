@@ -23,6 +23,7 @@ docs/LocationDtoIReadOnlyListEnvelope.md
 docs/LocationUpdateDto.md
 docs/LocationsApi.md
 docs/LoginRequest.md
+docs/Operation.md
 docs/RefreshRequest.md
 docs/RegisterRequest.md
 docs/ResendConfirmationEmailRequest.md
@@ -51,6 +52,7 @@ lib/openapi_client/models/location_dto_envelope.rb
 lib/openapi_client/models/location_dto_i_read_only_list_envelope.rb
 lib/openapi_client/models/location_update_dto.rb
 lib/openapi_client/models/login_request.rb
+lib/openapi_client/models/operation.rb
 lib/openapi_client/models/refresh_request.rb
 lib/openapi_client/models/register_request.rb
 lib/openapi_client/models/resend_confirmation_email_request.rb
@@ -59,6 +61,5 @@ lib/openapi_client/models/two_factor_request.rb
 lib/openapi_client/models/two_factor_response.rb
 lib/openapi_client/version.rb
 openapi_client.gemspec
-spec/api/completions_api_spec.rb
-spec/api/fenix_alliance_portals_website_api_spec.rb
+spec/models/operation_spec.rb
 spec/spec_helper.rb

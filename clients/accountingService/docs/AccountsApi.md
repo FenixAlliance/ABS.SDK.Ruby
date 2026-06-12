@@ -38,6 +38,9 @@ All URIs are relative to *http://localhost*
 | [**get_debit_account_entries_async**](AccountsApi.md#get_debit_account_entries_async) | **GET** /api/v2/AccountingService/Accounts/{accountId}/Entries/Debit | Get debit account entries |
 | [**get_root_accounts_async**](AccountsApi.md#get_root_accounts_async) | **GET** /api/v2/AccountingService/Accounts/Root | Get root accounts |
 | [**patch_account_async**](AccountsApi.md#patch_account_async) | **PATCH** /api/v2/AccountingService/Accounts/{accountId} | Patch an account |
+| [**patch_account_entry_async**](AccountsApi.md#patch_account_entry_async) | **PATCH** /api/v2/AccountingService/Accounts/{accountId}/Entries/{entryId} | Patch account entry |
+| [**patch_account_relation_async**](AccountsApi.md#patch_account_relation_async) | **PATCH** /api/v2/AccountingService/Accounts/Relations/{accountRelationId} | Patch account relation |
+| [**patch_account_type_async**](AccountsApi.md#patch_account_type_async) | **PATCH** /api/v2/AccountingService/Accounts/Types/{accountTypeId} | Patch account type |
 | [**seed_chart_of_accounts_async**](AccountsApi.md#seed_chart_of_accounts_async) | **POST** /api/v2/AccountingService/Accounts/ChartsOfAccounts/Seed | Seed chart of accounts |
 | [**update_account_async**](AccountsApi.md#update_account_async) | **PUT** /api/v2/AccountingService/Accounts/{accountId} | Update an account |
 | [**update_account_entry_async**](AccountsApi.md#update_account_entry_async) | **PUT** /api/v2/AccountingService/Accounts/{accountId}/Entries/{entryId} | Update account entry |
@@ -2477,6 +2480,232 @@ end
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
 | **account_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
+- **Accept**: application/json, application/xml
+
+
+## patch_account_entry_async
+
+> <EmptyEnvelope> patch_account_entry_async(tenant_id, account_id, entry_id, opts)
+
+Patch account entry
+
+Patch account entry.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::AccountsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+account_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+entry_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch account entry
+  result = api_instance.patch_account_entry_async(tenant_id, account_id, entry_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling AccountsApi->patch_account_entry_async: #{e}"
+end
+```
+
+#### Using the patch_account_entry_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_account_entry_async_with_http_info(tenant_id, account_id, entry_id, opts)
+
+```ruby
+begin
+  # Patch account entry
+  data, status_code, headers = api_instance.patch_account_entry_async_with_http_info(tenant_id, account_id, entry_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling AccountsApi->patch_account_entry_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **account_id** | **String** |  |  |
+| **entry_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
+- **Accept**: application/json, application/xml
+
+
+## patch_account_relation_async
+
+> <EmptyEnvelope> patch_account_relation_async(tenant_id, account_relation_id, account_id, opts)
+
+Patch account relation
+
+Patch account relation.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::AccountsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+account_relation_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+account_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch account relation
+  result = api_instance.patch_account_relation_async(tenant_id, account_relation_id, account_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling AccountsApi->patch_account_relation_async: #{e}"
+end
+```
+
+#### Using the patch_account_relation_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_account_relation_async_with_http_info(tenant_id, account_relation_id, account_id, opts)
+
+```ruby
+begin
+  # Patch account relation
+  data, status_code, headers = api_instance.patch_account_relation_async_with_http_info(tenant_id, account_relation_id, account_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling AccountsApi->patch_account_relation_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **account_relation_id** | **String** |  |  |
+| **account_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
+- **Accept**: application/json, application/xml
+
+
+## patch_account_type_async
+
+> <EmptyEnvelope> patch_account_type_async(tenant_id, account_type_id, opts)
+
+Patch account type
+
+Patch account type.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::AccountsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+account_type_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch account type
+  result = api_instance.patch_account_type_async(tenant_id, account_type_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling AccountsApi->patch_account_type_async: #{e}"
+end
+```
+
+#### Using the patch_account_type_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_account_type_async_with_http_info(tenant_id, account_type_id, opts)
+
+```ruby
+begin
+  # Patch account type
+  data, status_code, headers = api_instance.patch_account_type_async_with_http_info(tenant_id, account_type_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling AccountsApi->patch_account_type_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **account_type_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
 | **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |

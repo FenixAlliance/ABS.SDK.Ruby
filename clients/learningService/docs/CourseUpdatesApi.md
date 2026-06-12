@@ -9,6 +9,7 @@ All URIs are relative to *http://localhost*
 | [**get_course_update_by_id_async**](CourseUpdatesApi.md#get_course_update_by_id_async) | **GET** /api/v2/LearningService/CourseUpdates/{updateId} | Get course update by ID |
 | [**get_course_updates_async**](CourseUpdatesApi.md#get_course_updates_async) | **GET** /api/v2/LearningService/CourseUpdates | Get all course updates |
 | [**get_course_updates_count_async**](CourseUpdatesApi.md#get_course_updates_count_async) | **GET** /api/v2/LearningService/CourseUpdates/Count | Get course updates count |
+| [**patch_course_update_async**](CourseUpdatesApi.md#patch_course_update_async) | **PATCH** /api/v2/LearningService/CourseUpdates/{updateId} | Patch a course update |
 | [**update_course_update_async**](CourseUpdatesApi.md#update_course_update_async) | **PUT** /api/v2/LearningService/CourseUpdates/{updateId} | Update a course update |
 
 
@@ -361,6 +362,80 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_course_update_async
+
+> <EmptyEnvelope> patch_course_update_async(tenant_id, update_id, opts)
+
+Patch a course update
+
+Partially updates a course update for the specified tenant.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::CourseUpdatesApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+update_id = 'update_id_example' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch a course update
+  result = api_instance.patch_course_update_async(tenant_id, update_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling CourseUpdatesApi->patch_course_update_async: #{e}"
+end
+```
+
+#### Using the patch_course_update_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_course_update_async_with_http_info(tenant_id, update_id, opts)
+
+```ruby
+begin
+  # Patch a course update
+  data, status_code, headers = api_instance.patch_course_update_async_with_http_info(tenant_id, update_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling CourseUpdatesApi->patch_course_update_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **update_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

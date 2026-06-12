@@ -9,6 +9,7 @@ All URIs are relative to *http://localhost*
 | [**get_course_grading_rubric_by_id_async**](CourseGradingRubricsApi.md#get_course_grading_rubric_by_id_async) | **GET** /api/v2/LearningService/CourseGradingRubrics/{rubricId} | Get course grading rubric by ID |
 | [**get_course_grading_rubrics_async**](CourseGradingRubricsApi.md#get_course_grading_rubrics_async) | **GET** /api/v2/LearningService/CourseGradingRubrics | Get all course grading rubrics |
 | [**get_course_grading_rubrics_count_async**](CourseGradingRubricsApi.md#get_course_grading_rubrics_count_async) | **GET** /api/v2/LearningService/CourseGradingRubrics/Count | Get course grading rubrics count |
+| [**patch_course_grading_rubric_async**](CourseGradingRubricsApi.md#patch_course_grading_rubric_async) | **PATCH** /api/v2/LearningService/CourseGradingRubrics/{rubricId} | Patch a course grading rubric |
 | [**update_course_grading_rubric_async**](CourseGradingRubricsApi.md#update_course_grading_rubric_async) | **PUT** /api/v2/LearningService/CourseGradingRubrics/{rubricId} | Update a course grading rubric |
 
 
@@ -361,6 +362,79 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_course_grading_rubric_async
+
+> patch_course_grading_rubric_async(tenant_id, rubric_id, opts)
+
+Patch a course grading rubric
+
+Partially updates an existing course grading rubric.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::CourseGradingRubricsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+rubric_id = 'rubric_id_example' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch a course grading rubric
+  api_instance.patch_course_grading_rubric_async(tenant_id, rubric_id, opts)
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling CourseGradingRubricsApi->patch_course_grading_rubric_async: #{e}"
+end
+```
+
+#### Using the patch_course_grading_rubric_async_with_http_info variant
+
+This returns an Array which contains the response data (`nil` in this case), status code and headers.
+
+> <Array(nil, Integer, Hash)> patch_course_grading_rubric_async_with_http_info(tenant_id, rubric_id, opts)
+
+```ruby
+begin
+  # Patch a course grading rubric
+  data, status_code, headers = api_instance.patch_course_grading_rubric_async_with_http_info(tenant_id, rubric_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => nil
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling CourseGradingRubricsApi->patch_course_grading_rubric_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **rubric_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

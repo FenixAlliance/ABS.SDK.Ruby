@@ -63,6 +63,8 @@
 | **enrollment_id** | **String** |  | [optional] |
 | **bank_id** | **String** |  | [optional] |
 | **payment_token_id** | **String** |  | [optional] |
+| **emisor_wallet_account_id** | **String** |  | [optional] |
+| **receiver_wallet_account_id** | **String** |  | [optional] |
 
 ## Example
 
@@ -128,7 +130,9 @@ instance = OpenapiClient::PaymentDto.new(
   bank_account_id: null,
   enrollment_id: null,
   bank_id: null,
-  payment_token_id: null
+  payment_token_id: null,
+  emisor_wallet_account_id: null,
+  receiver_wallet_account_id: null
 )
 ```
 

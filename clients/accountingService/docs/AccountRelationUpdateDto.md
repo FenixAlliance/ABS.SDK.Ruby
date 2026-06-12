@@ -5,6 +5,7 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **account_id** | **String** |  | [optional] |
+| **type** | **String** |  | [optional] |
 
 ## Example
 
@@ -12,7 +13,8 @@
 require 'openapi_client'
 
 instance = OpenapiClient::AccountRelationUpdateDto.new(
-  account_id: null
+  account_id: null,
+  type: null
 )
 ```
 

@@ -12,6 +12,7 @@
 | **course_unit_id** | **String** |  | [optional] |
 | **release_date_time** | **Time** |  | [optional] |
 | **tenant_id** | **String** |  | [optional] |
+| **enrollment_id** | **String** |  | [optional] |
 
 ## Example
 
@@ -26,7 +27,8 @@ instance = OpenapiClient::CourseLibraryDto.new(
   course_id: null,
   course_unit_id: null,
   release_date_time: null,
-  tenant_id: null
+  tenant_id: null,
+  enrollment_id: null
 )
 ```
 

@@ -9,6 +9,7 @@ All URIs are relative to *http://localhost*
 | [**get_vessel_by_id_async**](VesselsApi.md#get_vessel_by_id_async) | **GET** /api/v2/LogisticsService/Vessels/{vesselId} | Get vessel by ID |
 | [**get_vessels_async**](VesselsApi.md#get_vessels_async) | **GET** /api/v2/LogisticsService/Vessels | Get all vessels |
 | [**get_vessels_count_async**](VesselsApi.md#get_vessels_count_async) | **GET** /api/v2/LogisticsService/Vessels/Count | Get vessels count |
+| [**patch_vessel_async**](VesselsApi.md#patch_vessel_async) | **PATCH** /api/v2/LogisticsService/Vessels/{vesselId} | Patch a vessel |
 | [**update_vessel_async**](VesselsApi.md#update_vessel_async) | **PUT** /api/v2/LogisticsService/Vessels/{vesselId} | Update a vessel |
 
 
@@ -365,6 +366,80 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_vessel_async
+
+> <EmptyEnvelope> patch_vessel_async(tenant_id, vessel_id, opts)
+
+Patch a vessel
+
+Partially updates an existing vessel using JSON Patch.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::VesselsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+vessel_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch a vessel
+  result = api_instance.patch_vessel_async(tenant_id, vessel_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling VesselsApi->patch_vessel_async: #{e}"
+end
+```
+
+#### Using the patch_vessel_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_vessel_async_with_http_info(tenant_id, vessel_id, opts)
+
+```ruby
+begin
+  # Patch a vessel
+  data, status_code, headers = api_instance.patch_vessel_async_with_http_info(tenant_id, vessel_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling VesselsApi->patch_vessel_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **vessel_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

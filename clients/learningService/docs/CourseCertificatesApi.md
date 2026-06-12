@@ -14,6 +14,8 @@ All URIs are relative to *http://localhost*
 | [**get_course_certificate_templates_count_async**](CourseCertificatesApi.md#get_course_certificate_templates_count_async) | **GET** /api/v2/LearningService/CourseCertificates/Template/Count | Get certificate templates count |
 | [**get_course_certificates_async**](CourseCertificatesApi.md#get_course_certificates_async) | **GET** /api/v2/LearningService/CourseCertificates | Get all course certificates |
 | [**get_course_certificates_count_async**](CourseCertificatesApi.md#get_course_certificates_count_async) | **GET** /api/v2/LearningService/CourseCertificates/Count | Get course certificates count |
+| [**patch_course_certificate_async**](CourseCertificatesApi.md#patch_course_certificate_async) | **PATCH** /api/v2/LearningService/CourseCertificates/{courseCertificateId} | Patch a course certificate |
+| [**patch_course_certificate_template_async**](CourseCertificatesApi.md#patch_course_certificate_template_async) | **PATCH** /api/v2/LearningService/CourseCertificates/Template/{courseCertificateTemplateId} | Patch a certificate template |
 | [**update_course_certificate_async**](CourseCertificatesApi.md#update_course_certificate_async) | **PUT** /api/v2/LearningService/CourseCertificates/{courseCertificateId} | Update a course certificate |
 | [**update_course_certificate_template_async**](CourseCertificatesApi.md#update_course_certificate_template_async) | **PUT** /api/v2/LearningService/CourseCertificates/Template/{courseCertificateTemplateId} | Update a certificate template |
 
@@ -723,6 +725,154 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_course_certificate_async
+
+> <EmptyEnvelope> patch_course_certificate_async(tenant_id, course_certificate_id, opts)
+
+Patch a course certificate
+
+Partially updates a course certificate for the specified tenant.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::CourseCertificatesApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+course_certificate_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch a course certificate
+  result = api_instance.patch_course_certificate_async(tenant_id, course_certificate_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling CourseCertificatesApi->patch_course_certificate_async: #{e}"
+end
+```
+
+#### Using the patch_course_certificate_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_course_certificate_async_with_http_info(tenant_id, course_certificate_id, opts)
+
+```ruby
+begin
+  # Patch a course certificate
+  data, status_code, headers = api_instance.patch_course_certificate_async_with_http_info(tenant_id, course_certificate_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling CourseCertificatesApi->patch_course_certificate_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **course_certificate_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
+- **Accept**: application/json, application/xml
+
+
+## patch_course_certificate_template_async
+
+> <EmptyEnvelope> patch_course_certificate_template_async(tenant_id, course_certificate_template_id, opts)
+
+Patch a certificate template
+
+Partially updates a course certificate template for the specified tenant.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::CourseCertificatesApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+course_certificate_template_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch a certificate template
+  result = api_instance.patch_course_certificate_template_async(tenant_id, course_certificate_template_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling CourseCertificatesApi->patch_course_certificate_template_async: #{e}"
+end
+```
+
+#### Using the patch_course_certificate_template_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_course_certificate_template_async_with_http_info(tenant_id, course_certificate_template_id, opts)
+
+```ruby
+begin
+  # Patch a certificate template
+  data, status_code, headers = api_instance.patch_course_certificate_template_async_with_http_info(tenant_id, course_certificate_template_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling CourseCertificatesApi->patch_course_certificate_template_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **course_certificate_template_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

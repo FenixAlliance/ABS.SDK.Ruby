@@ -40,6 +40,11 @@ All URIs are relative to *http://localhost*
 | [**get_invoice_references_count**](InvoicesApi.md#get_invoice_references_count) | **GET** /api/v2/InvoicingService/Invoices/{invoiceId}/References/Count | Get the count of invoice references. |
 | [**get_invoices**](InvoicesApi.md#get_invoices) | **GET** /api/v2/InvoicingService/Invoices | Get a list of invoices. |
 | [**get_invoices_count**](InvoicesApi.md#get_invoices_count) | **GET** /api/v2/InvoicingService/Invoices/Count | Get the count of invoices. |
+| [**patch_invoice**](InvoicesApi.md#patch_invoice) | **PATCH** /api/v2/InvoicingService/Invoices/{invoiceId} | Patch an invoice. |
+| [**patch_invoice_adjustment**](InvoicesApi.md#patch_invoice_adjustment) | **PATCH** /api/v2/InvoicingService/Invoices/{invoiceId}/Adjustments/{invoiceAdjustmentId} | Patch an invoice adjustment. |
+| [**patch_invoice_line**](InvoicesApi.md#patch_invoice_line) | **PATCH** /api/v2/InvoicingService/Invoices/{invoiceId}/Lines/{invoiceLineId} | Patch an invoice line. |
+| [**patch_invoice_line_tax**](InvoicesApi.md#patch_invoice_line_tax) | **PATCH** /api/v2/InvoicingService/Invoices/{invoiceId}/Lines/{invoiceLineId}/Taxes/{invoiceLineTaxId} | Patch a tax for an invoice line. |
+| [**patch_invoice_reference**](InvoicesApi.md#patch_invoice_reference) | **PATCH** /api/v2/InvoicingService/Invoices/{invoiceId}/References/{invoiceReferenceId} | Patch an invoice reference. |
 | [**preview_invoice_email**](InvoicesApi.md#preview_invoice_email) | **POST** /api/v2/InvoicingService/Invoices/{invoiceId}/Emails/Preview | Preview the rendered email for an invoice. |
 | [**send_invoice_email**](InvoicesApi.md#send_invoice_email) | **POST** /api/v2/InvoicingService/Invoices/{invoiceId}/Emails/Send | Send an invoice transactional email to recipients. |
 | [**update_invoice**](InvoicesApi.md#update_invoice) | **PUT** /api/v2/InvoicingService/Invoices/{invoiceId} | Update an invoice. |
@@ -2480,6 +2485,366 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_invoice
+
+> <EmptyEnvelope> patch_invoice(tenant_id, invoice_id, opts)
+
+Patch an invoice.
+
+Partially updates the specified invoice for the tenant.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::InvoicesApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+invoice_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch an invoice.
+  result = api_instance.patch_invoice(tenant_id, invoice_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling InvoicesApi->patch_invoice: #{e}"
+end
+```
+
+#### Using the patch_invoice_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_invoice_with_http_info(tenant_id, invoice_id, opts)
+
+```ruby
+begin
+  # Patch an invoice.
+  data, status_code, headers = api_instance.patch_invoice_with_http_info(tenant_id, invoice_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling InvoicesApi->patch_invoice_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **invoice_id** | **String** |  |  |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
+- **Accept**: application/json, application/xml
+
+
+## patch_invoice_adjustment
+
+> <EmptyEnvelope> patch_invoice_adjustment(tenant_id, invoice_id, invoice_adjustment_id, opts)
+
+Patch an invoice adjustment.
+
+Partially updates the specified adjustment for the invoice.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::InvoicesApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+invoice_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+invoice_adjustment_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch an invoice adjustment.
+  result = api_instance.patch_invoice_adjustment(tenant_id, invoice_id, invoice_adjustment_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling InvoicesApi->patch_invoice_adjustment: #{e}"
+end
+```
+
+#### Using the patch_invoice_adjustment_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_invoice_adjustment_with_http_info(tenant_id, invoice_id, invoice_adjustment_id, opts)
+
+```ruby
+begin
+  # Patch an invoice adjustment.
+  data, status_code, headers = api_instance.patch_invoice_adjustment_with_http_info(tenant_id, invoice_id, invoice_adjustment_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling InvoicesApi->patch_invoice_adjustment_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **invoice_id** | **String** |  |  |
+| **invoice_adjustment_id** | **String** |  |  |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
+- **Accept**: application/json, application/xml
+
+
+## patch_invoice_line
+
+> <EmptyEnvelope> patch_invoice_line(tenant_id, invoice_id, invoice_line_id, opts)
+
+Patch an invoice line.
+
+Partially updates the specified invoice line.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::InvoicesApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+invoice_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+invoice_line_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch an invoice line.
+  result = api_instance.patch_invoice_line(tenant_id, invoice_id, invoice_line_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling InvoicesApi->patch_invoice_line: #{e}"
+end
+```
+
+#### Using the patch_invoice_line_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_invoice_line_with_http_info(tenant_id, invoice_id, invoice_line_id, opts)
+
+```ruby
+begin
+  # Patch an invoice line.
+  data, status_code, headers = api_instance.patch_invoice_line_with_http_info(tenant_id, invoice_id, invoice_line_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling InvoicesApi->patch_invoice_line_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **invoice_id** | **String** |  |  |
+| **invoice_line_id** | **String** |  |  |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
+- **Accept**: application/json, application/xml
+
+
+## patch_invoice_line_tax
+
+> <EmptyEnvelope> patch_invoice_line_tax(tenant_id, invoice_id, invoice_line_id, invoice_line_tax_id, opts)
+
+Patch a tax for an invoice line.
+
+Partially updates the specified tax entry for the invoice line.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::InvoicesApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+invoice_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+invoice_line_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+invoice_line_tax_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch a tax for an invoice line.
+  result = api_instance.patch_invoice_line_tax(tenant_id, invoice_id, invoice_line_id, invoice_line_tax_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling InvoicesApi->patch_invoice_line_tax: #{e}"
+end
+```
+
+#### Using the patch_invoice_line_tax_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_invoice_line_tax_with_http_info(tenant_id, invoice_id, invoice_line_id, invoice_line_tax_id, opts)
+
+```ruby
+begin
+  # Patch a tax for an invoice line.
+  data, status_code, headers = api_instance.patch_invoice_line_tax_with_http_info(tenant_id, invoice_id, invoice_line_id, invoice_line_tax_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling InvoicesApi->patch_invoice_line_tax_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **invoice_id** | **String** |  |  |
+| **invoice_line_id** | **String** |  |  |
+| **invoice_line_tax_id** | **String** |  |  |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
+- **Accept**: application/json, application/xml
+
+
+## patch_invoice_reference
+
+> <EmptyEnvelope> patch_invoice_reference(tenant_id, invoice_id, invoice_reference_id, opts)
+
+Patch an invoice reference.
+
+Partially updates the specified reference for the invoice.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::InvoicesApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+invoice_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+invoice_reference_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch an invoice reference.
+  result = api_instance.patch_invoice_reference(tenant_id, invoice_id, invoice_reference_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling InvoicesApi->patch_invoice_reference: #{e}"
+end
+```
+
+#### Using the patch_invoice_reference_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_invoice_reference_with_http_info(tenant_id, invoice_id, invoice_reference_id, opts)
+
+```ruby
+begin
+  # Patch an invoice reference.
+  data, status_code, headers = api_instance.patch_invoice_reference_with_http_info(tenant_id, invoice_id, invoice_reference_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling InvoicesApi->patch_invoice_reference_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **invoice_id** | **String** |  |  |
+| **invoice_reference_id** | **String** |  |  |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

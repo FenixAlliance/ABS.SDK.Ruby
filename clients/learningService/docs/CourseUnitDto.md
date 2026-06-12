@@ -12,7 +12,9 @@
 | **content** | **String** |  | [optional] |
 | **course_id** | **String** |  | [optional] |
 | **course_section_id** | **String** |  | [optional] |
+| **course_content_group_id** | **String** |  | [optional] |
 | **tenant_id** | **String** |  | [optional] |
+| **enrollment_id** | **String** |  | [optional] |
 | **course_handouts** | [**Array&lt;CourseHandoutDto&gt;**](CourseHandoutDto.md) |  | [optional] |
 | **course_assignments** | [**Array&lt;CourseAssignmentDto&gt;**](CourseAssignmentDto.md) |  | [optional] |
 | **course_components** | [**Array&lt;CourseUnitComponentDto&gt;**](CourseUnitComponentDto.md) |  | [optional] |
@@ -31,7 +33,9 @@ instance = OpenapiClient::CourseUnitDto.new(
   content: null,
   course_id: null,
   course_section_id: null,
+  course_content_group_id: null,
   tenant_id: null,
+  enrollment_id: null,
   course_handouts: null,
   course_assignments: null,
   course_components: null

@@ -8,7 +8,7 @@
 | **timestamp** | **Time** |  | [optional] |
 | **tenant_id** | **String** |  | [optional] |
 | **business_name** | **String** |  | [optional] |
-| **business_profile_record_id** | **String** |  | [optional] |
+| **enrollment_id** | **String** |  | [optional] |
 | **name** | **String** |  | [optional] |
 | **description** | **String** |  | [optional] |
 | **asset_class** | **String** |  | [optional] |
@@ -23,6 +23,8 @@
 | **currency_code** | **String** |  | [optional] |
 | **item_id** | **String** |  | [optional] |
 | **item_name** | **String** |  | [optional] |
+| **asset_type_id** | **String** |  | [optional] |
+| **asset_type_name** | **String** |  | [optional] |
 | **asset_category_id** | **String** |  | [optional] |
 | **asset_category_name** | **String** |  | [optional] |
 | **purchase_invoice_id** | **String** |  | [optional] |
@@ -45,7 +47,7 @@ instance = OpenapiClient::AssetDto.new(
   timestamp: null,
   tenant_id: null,
   business_name: null,
-  business_profile_record_id: null,
+  enrollment_id: null,
   name: null,
   description: null,
   asset_class: null,
@@ -60,6 +62,8 @@ instance = OpenapiClient::AssetDto.new(
   currency_code: null,
   item_id: null,
   item_name: null,
+  asset_type_id: null,
+  asset_type_name: null,
   asset_category_id: null,
   asset_category_name: null,
   purchase_invoice_id: null,

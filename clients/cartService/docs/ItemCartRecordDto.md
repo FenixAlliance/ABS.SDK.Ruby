@@ -117,8 +117,6 @@
 | **business_profile_record_id** | **String** |  | [optional] |
 | **parent_billing_item_record_id** | **String** |  | [optional] |
 | **cart_id** | **String** |  | [optional] |
-| **item_id** | **String** |  | [optional] |
-| **shipping_address_id** | **String** |  | [optional] |
 
 ## Example
 
@@ -238,9 +236,7 @@ instance = OpenapiClient::ItemCartRecordDto.new(
   quote_item_record_id: null,
   business_profile_record_id: null,
   parent_billing_item_record_id: null,
-  cart_id: null,
-  item_id: null,
-  shipping_address_id: null
+  cart_id: null
 )
 ```
 

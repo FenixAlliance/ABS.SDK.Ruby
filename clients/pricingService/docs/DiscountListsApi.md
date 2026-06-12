@@ -14,6 +14,8 @@ All URIs are relative to *http://localhost*
 | [**get_discount_list_entry**](DiscountListsApi.md#get_discount_list_entry) | **GET** /api/v2/PricingService/DiscountLists/{discountListId}/Discounts/{discountListEntryId} | Gets a discount list entry by ID |
 | [**get_discount_lists**](DiscountListsApi.md#get_discount_lists) | **GET** /api/v2/PricingService/DiscountLists | Retrieves all discount lists |
 | [**get_discount_lists_count**](DiscountListsApi.md#get_discount_lists_count) | **GET** /api/v2/PricingService/DiscountLists/Count | Counts discount lists |
+| [**patch_discount_list**](DiscountListsApi.md#patch_discount_list) | **PATCH** /api/v2/PricingService/DiscountLists/{discountListId} | Patches a discount list |
+| [**patch_discount_list_entry**](DiscountListsApi.md#patch_discount_list_entry) | **PATCH** /api/v2/PricingService/DiscountLists/{discountListId}/Discounts/{discountListEntryId} | Patches a discount list entry |
 | [**update_discount_list**](DiscountListsApi.md#update_discount_list) | **PUT** /api/v2/PricingService/DiscountLists/{discountListId} | Updates a discount list |
 | [**update_discount_list_entry**](DiscountListsApi.md#update_discount_list_entry) | **PUT** /api/v2/PricingService/DiscountLists/{discountListId}/Discounts/{discountListEntryId} | Updates a discount list entry |
 
@@ -681,6 +683,148 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_discount_list
+
+> <EmptyEnvelope> patch_discount_list(tenant_id, discount_list_id, opts)
+
+Patches a discount list
+
+Partially updates the specified discount list using a JSON Patch document.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::DiscountListsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+discount_list_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patches a discount list
+  result = api_instance.patch_discount_list(tenant_id, discount_list_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling DiscountListsApi->patch_discount_list: #{e}"
+end
+```
+
+#### Using the patch_discount_list_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_discount_list_with_http_info(tenant_id, discount_list_id, opts)
+
+```ruby
+begin
+  # Patches a discount list
+  data, status_code, headers = api_instance.patch_discount_list_with_http_info(tenant_id, discount_list_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling DiscountListsApi->patch_discount_list_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **discount_list_id** | **String** |  |  |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
+- **Accept**: application/json, application/xml
+
+
+## patch_discount_list_entry
+
+> <EmptyEnvelope> patch_discount_list_entry(tenant_id, discount_list_id, discount_list_entry_id, opts)
+
+Patches a discount list entry
+
+Partially updates the specified discount entry using a JSON Patch document.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::DiscountListsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+discount_list_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+discount_list_entry_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patches a discount list entry
+  result = api_instance.patch_discount_list_entry(tenant_id, discount_list_id, discount_list_entry_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling DiscountListsApi->patch_discount_list_entry: #{e}"
+end
+```
+
+#### Using the patch_discount_list_entry_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_discount_list_entry_with_http_info(tenant_id, discount_list_id, discount_list_entry_id, opts)
+
+```ruby
+begin
+  # Patches a discount list entry
+  data, status_code, headers = api_instance.patch_discount_list_entry_with_http_info(tenant_id, discount_list_id, discount_list_entry_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling DiscountListsApi->patch_discount_list_entry_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **discount_list_id** | **String** |  |  |
+| **discount_list_entry_id** | **String** |  |  |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

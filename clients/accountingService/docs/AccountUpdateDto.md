@@ -11,6 +11,7 @@
 | **path** | **String** |  | [optional] |
 | **prefix** | **String** |  | [optional] |
 | **currency_id** | **String** |  |  |
+| **contact_id** | **String** |  | [optional] |
 | **account_type_id** | **String** |  | [optional] |
 | **parent_account_id** | **String** |  | [optional] |
 | **account_category** | **String** |  | [optional] |
@@ -28,6 +29,7 @@ instance = OpenapiClient::AccountUpdateDto.new(
   path: null,
   prefix: null,
   currency_id: null,
+  contact_id: null,
   account_type_id: null,
   parent_account_id: null,
   account_category: null

@@ -12,6 +12,7 @@ All URIs are relative to *http://localhost*
 | [**get_cart_wish_list_items_async**](WishListsApi.md#get_cart_wish_list_items_async) | **GET** /api/v2/CartService/WishLists/{wishListId}/Records | Get wish list item records |
 | [**get_wish_list_async**](WishListsApi.md#get_wish_list_async) | **GET** /api/v2/CartService/WishLists/{cartId} | Get wish lists for a cart |
 | [**is_product_in_wish_lists**](WishListsApi.md#is_product_in_wish_lists) | **GET** /api/v2/CartService/WishLists/Contains | Check if a product is in any wish list |
+| [**patch_wish_list**](WishListsApi.md#patch_wish_list) | **PATCH** /api/v2/CartService/WishLists/{wishListId} | Patch a wish list |
 | [**update_product_to_wish_list**](WishListsApi.md#update_product_to_wish_list) | **PUT** /api/v2/CartService/WishLists/{wishListId} | Update a wish list |
 | [**wish_list_exists**](WishListsApi.md#wish_list_exists) | **GET** /api/v2/CartService/WishLists/Exists | Check if a wish list exists |
 | [**wish_list_exists_head_async**](WishListsApi.md#wish_list_exists_head_async) | **HEAD** /api/v2/CartService/WishLists/Exists | Check if a wish list exists (HEAD) |
@@ -575,6 +576,78 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_wish_list
+
+> <EmptyEnvelope> patch_wish_list(wish_list_id, opts)
+
+Patch a wish list
+
+Partially updates the specified wish list using a JSON Patch document.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::WishListsApi.new
+wish_list_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch a wish list
+  result = api_instance.patch_wish_list(wish_list_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling WishListsApi->patch_wish_list: #{e}"
+end
+```
+
+#### Using the patch_wish_list_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_wish_list_with_http_info(wish_list_id, opts)
+
+```ruby
+begin
+  # Patch a wish list
+  data, status_code, headers = api_instance.patch_wish_list_with_http_info(wish_list_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling WishListsApi->patch_wish_list_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **wish_list_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

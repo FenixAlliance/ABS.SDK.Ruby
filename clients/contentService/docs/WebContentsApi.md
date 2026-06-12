@@ -9,6 +9,7 @@ All URIs are relative to *http://localhost*
 | [**delete_web_content_async**](WebContentsApi.md#delete_web_content_async) | **DELETE** /api/v2/ContentService/WebContents/{webContentId} | Delete a web content |
 | [**get_web_content_by_id_async**](WebContentsApi.md#get_web_content_by_id_async) | **GET** /api/v2/ContentService/WebContents/{webContentId} | Get web content by ID |
 | [**get_web_contents_async**](WebContentsApi.md#get_web_contents_async) | **GET** /api/v2/ContentService/WebContents | Get web contents |
+| [**patch_web_content_async**](WebContentsApi.md#patch_web_content_async) | **PATCH** /api/v2/ContentService/WebContents/{webContentId} | Patch a web content |
 | [**update_web_content_async**](WebContentsApi.md#update_web_content_async) | **PUT** /api/v2/ContentService/WebContents/{webContentId} | Update a web content |
 
 
@@ -365,6 +366,80 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_web_content_async
+
+> <EmptyEnvelope> patch_web_content_async(tenant_id, web_content_id, opts)
+
+Patch a web content
+
+Partially updates an existing web content for the specified tenant.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::WebContentsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+web_content_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch a web content
+  result = api_instance.patch_web_content_async(tenant_id, web_content_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling WebContentsApi->patch_web_content_async: #{e}"
+end
+```
+
+#### Using the patch_web_content_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_web_content_async_with_http_info(tenant_id, web_content_id, opts)
+
+```ruby
+begin
+  # Patch a web content
+  data, status_code, headers = api_instance.patch_web_content_async_with_http_info(tenant_id, web_content_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling WebContentsApi->patch_web_content_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **web_content_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

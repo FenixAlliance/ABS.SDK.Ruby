@@ -9,6 +9,7 @@ All URIs are relative to *http://localhost*
 | [**get_asset_categories**](AssetCategoriesApi.md#get_asset_categories) | **GET** /api/v2/AssetsService/AssetCategories | Gets all asset categories for the current tenant |
 | [**get_asset_categories_count**](AssetCategoriesApi.md#get_asset_categories_count) | **GET** /api/v2/AssetsService/AssetCategories/count | Gets the count of asset categories |
 | [**get_asset_category**](AssetCategoriesApi.md#get_asset_category) | **GET** /api/v2/AssetsService/AssetCategories/{categoryId} | Gets a specific asset category |
+| [**patch_asset_category**](AssetCategoriesApi.md#patch_asset_category) | **PATCH** /api/v2/AssetsService/AssetCategories/{categoryId} | Partially updates an existing asset category |
 | [**update_asset_category**](AssetCategoriesApi.md#update_asset_category) | **PUT** /api/v2/AssetsService/AssetCategories/{categoryId} | Updates an existing asset category |
 
 
@@ -336,6 +337,76 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_asset_category
+
+> <EmptyEnvelope> patch_asset_category(tenant_id, category_id, opts)
+
+Partially updates an existing asset category
+
+Applies a JSON Patch document to an existing asset category for the authenticated tenant.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::AssetCategoriesApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+category_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Partially updates an existing asset category
+  result = api_instance.patch_asset_category(tenant_id, category_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling AssetCategoriesApi->patch_asset_category: #{e}"
+end
+```
+
+#### Using the patch_asset_category_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_asset_category_with_http_info(tenant_id, category_id, opts)
+
+```ruby
+begin
+  # Partially updates an existing asset category
+  data, status_code, headers = api_instance.patch_asset_category_with_http_info(tenant_id, category_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling AssetCategoriesApi->patch_asset_category_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **category_id** | **String** |  |  |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

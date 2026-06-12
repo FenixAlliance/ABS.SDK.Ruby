@@ -18,8 +18,8 @@
 | **image_url** | **String** |  | [optional] |
 | **image** | **String** |  | [optional] |
 | **web_portal_id** | **String** |  | [optional] |
-| **business_id** | **String** |  | [optional] |
-| **business_profile_record_id** | **String** |  | [optional] |
+| **tenant_id** | **String** |  | [optional] |
+| **enrollment_id** | **String** |  | [optional] |
 
 ## Example
 
@@ -41,8 +41,8 @@ instance = OpenapiClient::WebPageCategoryDto.new(
   image_url: null,
   image: null,
   web_portal_id: null,
-  business_id: null,
-  business_profile_record_id: null
+  tenant_id: null,
+  enrollment_id: null
 )
 ```
 

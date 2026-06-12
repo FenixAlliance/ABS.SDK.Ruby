@@ -18,6 +18,7 @@
 | **purchase_price** | **Float** |  | [optional] |
 | **currency_id** | **String** |  | [optional] |
 | **item_id** | **String** |  | [optional] |
+| **asset_type_id** | **String** |  | [optional] |
 | **asset_category_id** | **String** |  | [optional] |
 | **purchase_invoice_id** | **String** |  | [optional] |
 | **purchase_receipt_id** | **String** |  | [optional] |
@@ -45,6 +46,7 @@ instance = OpenapiClient::AssetCreateDto.new(
   purchase_price: null,
   currency_id: null,
   item_id: null,
+  asset_type_id: null,
   asset_category_id: null,
   purchase_invoice_id: null,
   purchase_receipt_id: null,

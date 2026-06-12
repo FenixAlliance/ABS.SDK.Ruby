@@ -9,6 +9,7 @@ All URIs are relative to *http://localhost*
 | [**get_fiscal_authorities**](FiscalAuthoritiesApi.md#get_fiscal_authorities) | **GET** /api/v2/AccountingService/Fiscals/Authorities | Get fiscal authorities |
 | [**get_fiscal_authorities_count**](FiscalAuthoritiesApi.md#get_fiscal_authorities_count) | **GET** /api/v2/AccountingService/Fiscals/Authorities/Count | Get fiscal authorities count |
 | [**get_fiscal_authority**](FiscalAuthoritiesApi.md#get_fiscal_authority) | **GET** /api/v2/AccountingService/Fiscals/Authorities/{authorityId} | Get fiscal authority by ID |
+| [**patch_fiscal_authority_async**](FiscalAuthoritiesApi.md#patch_fiscal_authority_async) | **PATCH** /api/v2/AccountingService/Fiscals/Authorities/{authorityId} | Patch a fiscal authority |
 | [**update_fiscal_authority**](FiscalAuthoritiesApi.md#update_fiscal_authority) | **PUT** /api/v2/AccountingService/Fiscals/Authorities/{authorityId} | Update a fiscal authority |
 
 
@@ -365,6 +366,80 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_fiscal_authority_async
+
+> <EmptyEnvelope> patch_fiscal_authority_async(tenant_id, authority_id, opts)
+
+Patch a fiscal authority
+
+Partially updates a fiscal authority.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::FiscalAuthoritiesApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+authority_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch a fiscal authority
+  result = api_instance.patch_fiscal_authority_async(tenant_id, authority_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling FiscalAuthoritiesApi->patch_fiscal_authority_async: #{e}"
+end
+```
+
+#### Using the patch_fiscal_authority_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_fiscal_authority_async_with_http_info(tenant_id, authority_id, opts)
+
+```ruby
+begin
+  # Patch a fiscal authority
+  data, status_code, headers = api_instance.patch_fiscal_authority_async_with_http_info(tenant_id, authority_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling FiscalAuthoritiesApi->patch_fiscal_authority_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **authority_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

@@ -9,6 +9,7 @@ All URIs are relative to *http://localhost*
 | [**get_payment_term_details_async**](PaymentTermsApi.md#get_payment_term_details_async) | **GET** /api/v2/PaymentsService/PaymentTerms/{paymentTermId} | Gets a payment term by ID |
 | [**get_payment_terms_async**](PaymentTermsApi.md#get_payment_terms_async) | **GET** /api/v2/PaymentsService/PaymentTerms | Retrieves all payment terms |
 | [**get_payment_terms_count_async**](PaymentTermsApi.md#get_payment_terms_count_async) | **GET** /api/v2/PaymentsService/PaymentTerms/Count | Counts payment terms |
+| [**patch_payment_term_async**](PaymentTermsApi.md#patch_payment_term_async) | **PATCH** /api/v2/PaymentsService/PaymentTerms/{paymentTermId} | Patch a payment term |
 | [**update_payment_term_async**](PaymentTermsApi.md#update_payment_term_async) | **PUT** /api/v2/PaymentsService/PaymentTerms/{paymentTermId} | Updates a payment term |
 
 
@@ -365,6 +366,80 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_payment_term_async
+
+> <EmptyEnvelope> patch_payment_term_async(tenant_id, payment_term_id, opts)
+
+Patch a payment term
+
+Patch a payment term
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::PaymentTermsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+payment_term_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch a payment term
+  result = api_instance.patch_payment_term_async(tenant_id, payment_term_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling PaymentTermsApi->patch_payment_term_async: #{e}"
+end
+```
+
+#### Using the patch_payment_term_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_payment_term_async_with_http_info(tenant_id, payment_term_id, opts)
+
+```ruby
+begin
+  # Patch a payment term
+  data, status_code, headers = api_instance.patch_payment_term_async_with_http_info(tenant_id, payment_term_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling PaymentTermsApi->patch_payment_term_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **payment_term_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

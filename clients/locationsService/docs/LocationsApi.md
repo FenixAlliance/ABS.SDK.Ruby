@@ -14,6 +14,8 @@ All URIs are relative to *http://localhost*
 | [**get_wallet_location_async**](LocationsApi.md#get_wallet_location_async) | **GET** /api/v2/LocationsService/Locations/wallet/{walletId}/{locationId} | Get Wallet Location |
 | [**get_wallet_locations_async**](LocationsApi.md#get_wallet_locations_async) | **GET** /api/v2/LocationsService/Locations/wallet/{walletId} | Get Wallet Locations |
 | [**get_wallet_locations_count_async**](LocationsApi.md#get_wallet_locations_count_async) | **GET** /api/v2/LocationsService/Locations/wallet/{walletId}/count | Get Wallet Locations Count |
+| [**patch_location_async**](LocationsApi.md#patch_location_async) | **PATCH** /api/v2/LocationsService/Locations/{locationId} | Patch a location |
+| [**patch_wallet_location_async**](LocationsApi.md#patch_wallet_location_async) | **PATCH** /api/v2/LocationsService/Locations/wallet/{walletId}/{locationId} | Patch a wallet location |
 | [**update_location_async**](LocationsApi.md#update_location_async) | **PUT** /api/v2/LocationsService/Locations/{locationId} | Update Location |
 | [**update_wallet_location_async**](LocationsApi.md#update_wallet_location_async) | **PUT** /api/v2/LocationsService/Locations/wallet/{walletId}/{locationId} | Update Wallet Location |
 
@@ -671,6 +673,146 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_location_async
+
+> <EmptyEnvelope> patch_location_async(tenant_id, location_id, opts)
+
+Patch a location
+
+Patch a location
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::LocationsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+location_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch a location
+  result = api_instance.patch_location_async(tenant_id, location_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling LocationsApi->patch_location_async: #{e}"
+end
+```
+
+#### Using the patch_location_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_location_async_with_http_info(tenant_id, location_id, opts)
+
+```ruby
+begin
+  # Patch a location
+  data, status_code, headers = api_instance.patch_location_async_with_http_info(tenant_id, location_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling LocationsApi->patch_location_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **location_id** | **String** |  |  |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
+- **Accept**: application/json, application/xml
+
+
+## patch_wallet_location_async
+
+> <EmptyEnvelope> patch_wallet_location_async(wallet_id, location_id, opts)
+
+Patch a wallet location
+
+Patch a wallet location
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::LocationsApi.new
+wallet_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+location_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch a wallet location
+  result = api_instance.patch_wallet_location_async(wallet_id, location_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling LocationsApi->patch_wallet_location_async: #{e}"
+end
+```
+
+#### Using the patch_wallet_location_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_wallet_location_async_with_http_info(wallet_id, location_id, opts)
+
+```ruby
+begin
+  # Patch a wallet location
+  data, status_code, headers = api_instance.patch_wallet_location_async_with_http_info(wallet_id, location_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling LocationsApi->patch_wallet_location_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **wallet_id** | **String** |  |  |
+| **location_id** | **String** |  |  |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

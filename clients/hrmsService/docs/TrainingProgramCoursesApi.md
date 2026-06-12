@@ -9,6 +9,7 @@ All URIs are relative to *http://localhost*
 | [**get_training_program_course_by_id_async**](TrainingProgramCoursesApi.md#get_training_program_course_by_id_async) | **GET** /api/v2/HrmsService/TrainingProgramCourses/{courseId} | Get training program course by ID |
 | [**get_training_program_courses_async**](TrainingProgramCoursesApi.md#get_training_program_courses_async) | **GET** /api/v2/HrmsService/TrainingProgramCourses | Get training program courses |
 | [**get_training_program_courses_count_async**](TrainingProgramCoursesApi.md#get_training_program_courses_count_async) | **GET** /api/v2/HrmsService/TrainingProgramCourses/Count | Count training program courses |
+| [**patch_training_program_course_async**](TrainingProgramCoursesApi.md#patch_training_program_course_async) | **PATCH** /api/v2/HrmsService/TrainingProgramCourses/{courseId} | Patch a training program course |
 | [**update_training_program_course_async**](TrainingProgramCoursesApi.md#update_training_program_course_async) | **PUT** /api/v2/HrmsService/TrainingProgramCourses/{courseId} | Update a training program course |
 
 
@@ -365,6 +366,80 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_training_program_course_async
+
+> <EmptyEnvelope> patch_training_program_course_async(tenant_id, course_id, opts)
+
+Patch a training program course
+
+Partially updates an existing training program course for the specified tenant.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::TrainingProgramCoursesApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+course_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch a training program course
+  result = api_instance.patch_training_program_course_async(tenant_id, course_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling TrainingProgramCoursesApi->patch_training_program_course_async: #{e}"
+end
+```
+
+#### Using the patch_training_program_course_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_training_program_course_async_with_http_info(tenant_id, course_id, opts)
+
+```ruby
+begin
+  # Patch a training program course
+  data, status_code, headers = api_instance.patch_training_program_course_async_with_http_info(tenant_id, course_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling TrainingProgramCoursesApi->patch_training_program_course_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **course_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

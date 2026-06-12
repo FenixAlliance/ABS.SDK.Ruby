@@ -9,6 +9,7 @@ All URIs are relative to *http://localhost*
 | [**get_email_template_details_async**](EmailTemplatesApi.md#get_email_template_details_async) | **GET** /api/v2/MarketingService/EmailTemplates/{emailTemplateId} | Get email template by ID |
 | [**get_email_templates_count_async**](EmailTemplatesApi.md#get_email_templates_count_async) | **GET** /api/v2/MarketingService/EmailTemplates/Count | Get email templates count |
 | [**get_email_templates_o_data_async**](EmailTemplatesApi.md#get_email_templates_o_data_async) | **GET** /api/v2/MarketingService/EmailTemplates | Get email templates |
+| [**patch_email_template_async**](EmailTemplatesApi.md#patch_email_template_async) | **PATCH** /api/v2/MarketingService/EmailTemplates/{emailTemplateId} | Patch an email template |
 | [**update_email_template_async**](EmailTemplatesApi.md#update_email_template_async) | **PUT** /api/v2/MarketingService/EmailTemplates/{emailTemplateId} | Update an email template |
 
 
@@ -365,6 +366,80 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_email_template_async
+
+> <EmptyEnvelope> patch_email_template_async(tenant_id, email_template_id, opts)
+
+Patch an email template
+
+Partially updates an email template by its ID using JSON Patch.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::EmailTemplatesApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+email_template_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch an email template
+  result = api_instance.patch_email_template_async(tenant_id, email_template_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling EmailTemplatesApi->patch_email_template_async: #{e}"
+end
+```
+
+#### Using the patch_email_template_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_email_template_async_with_http_info(tenant_id, email_template_id, opts)
+
+```ruby
+begin
+  # Patch an email template
+  data, status_code, headers = api_instance.patch_email_template_async_with_http_info(tenant_id, email_template_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling EmailTemplatesApi->patch_email_template_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **email_template_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

@@ -9,6 +9,7 @@ All URIs are relative to *http://localhost*
 | [**delete_store_async**](StoresApi.md#delete_store_async) | **DELETE** /api/v2/SalesService/Stores/{storeId} | Delete a store |
 | [**get_store_async**](StoresApi.md#get_store_async) | **GET** /api/v2/SalesService/Stores/{storeId} | Get store by ID |
 | [**get_stores_async**](StoresApi.md#get_stores_async) | **GET** /api/v2/SalesService/Stores | Get stores |
+| [**patch_store_async**](StoresApi.md#patch_store_async) | **PATCH** /api/v2/SalesService/Stores/{storeId} | Patch a store |
 | [**update_store_async**](StoresApi.md#update_store_async) | **PUT** /api/v2/SalesService/Stores/{storeId} | Update a store |
 
 
@@ -337,6 +338,76 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_store_async
+
+> <EmptyEnvelope> patch_store_async(tenant_id, store_id, opts)
+
+Patch a store
+
+Partially updates an existing store using a JSON Patch document.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::StoresApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+store_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch a store
+  result = api_instance.patch_store_async(tenant_id, store_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling StoresApi->patch_store_async: #{e}"
+end
+```
+
+#### Using the patch_store_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_store_async_with_http_info(tenant_id, store_id, opts)
+
+```ruby
+begin
+  # Patch a store
+  data, status_code, headers = api_instance.patch_store_async_with_http_info(tenant_id, store_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling StoresApi->patch_store_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **store_id** | **String** |  |  |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

@@ -4,11 +4,11 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **id** | **Object** |  | [optional] |
+| **id** | **String** |  | [optional] |
 | **timestamp** | **Time** |  | [optional] |
-| **business_id** | **Object** |  | [optional] |
-| **business_profile_record_id** | **Object** |  | [optional] |
-| **asset_id** | **Object** |  | [optional] |
+| **tenant_id** | **String** |  | [optional] |
+| **enrollment_id** | **String** |  | [optional] |
+| **asset_id** | **String** |  | [optional] |
 | **asset_name** | **String** |  | [optional] |
 | **repair_status** | **String** |  | [optional] |
 | **scheduled_date** | **Time** |  | [optional] |
@@ -30,8 +30,8 @@ require 'openapi_client'
 instance = OpenapiClient::AssetRepairDto.new(
   id: null,
   timestamp: null,
-  business_id: null,
-  business_profile_record_id: null,
+  tenant_id: null,
+  enrollment_id: null,
   asset_id: null,
   asset_name: null,
   repair_status: null,

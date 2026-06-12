@@ -9,6 +9,7 @@
 | **end_quantity** | **Float** |  | [optional] |
 | **percent** | **Float** |  | [optional] |
 | **value** | **Float** |  | [optional] |
+| **item_id** | **String** |  | [optional] |
 | **discount_list_id** | **String** |  | [optional] |
 
 ## Example
@@ -22,6 +23,7 @@ instance = OpenapiClient::DiscountUpdateDto.new(
   end_quantity: null,
   percent: null,
   value: null,
+  item_id: null,
   discount_list_id: null
 )
 ```

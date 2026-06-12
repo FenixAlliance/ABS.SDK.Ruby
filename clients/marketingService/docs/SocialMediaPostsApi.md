@@ -9,6 +9,7 @@ All URIs are relative to *http://localhost*
 | [**get_social_media_post_details_async**](SocialMediaPostsApi.md#get_social_media_post_details_async) | **GET** /api/v2/MarketingService/SocialMediaPosts/{socialmediapostId} | Get social media post by ID |
 | [**get_social_media_posts_count_async**](SocialMediaPostsApi.md#get_social_media_posts_count_async) | **GET** /api/v2/MarketingService/SocialMediaPosts/Count | Get social media posts count |
 | [**get_social_media_posts_o_data_async**](SocialMediaPostsApi.md#get_social_media_posts_o_data_async) | **GET** /api/v2/MarketingService/SocialMediaPosts | Get social media posts |
+| [**patch_social_media_post_async**](SocialMediaPostsApi.md#patch_social_media_post_async) | **PATCH** /api/v2/MarketingService/SocialMediaPosts/{socialmediapostId} | Patch a social media post |
 | [**update_social_media_post_async**](SocialMediaPostsApi.md#update_social_media_post_async) | **PUT** /api/v2/MarketingService/SocialMediaPosts/{socialmediapostId} | Update a social media post |
 
 
@@ -365,6 +366,80 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_social_media_post_async
+
+> <EmptyEnvelope> patch_social_media_post_async(tenant_id, socialmediapost_id, opts)
+
+Patch a social media post
+
+Partially updates a social media post by its ID using JSON Patch.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::SocialMediaPostsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+socialmediapost_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch a social media post
+  result = api_instance.patch_social_media_post_async(tenant_id, socialmediapost_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling SocialMediaPostsApi->patch_social_media_post_async: #{e}"
+end
+```
+
+#### Using the patch_social_media_post_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_social_media_post_async_with_http_info(tenant_id, socialmediapost_id, opts)
+
+```ruby
+begin
+  # Patch a social media post
+  data, status_code, headers = api_instance.patch_social_media_post_async_with_http_info(tenant_id, socialmediapost_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling SocialMediaPostsApi->patch_social_media_post_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **socialmediapost_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

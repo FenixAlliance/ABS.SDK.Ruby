@@ -5,6 +5,7 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **name** | **String** |  |  |
+| **code** | **String** |  | [optional] |
 | **description** | **String** |  | [optional] |
 
 ## Example
@@ -14,6 +15,7 @@ require 'openapi_client'
 
 instance = OpenapiClient::ItemFamilyUpdateDto.new(
   name: null,
+  code: null,
   description: null
 )
 ```

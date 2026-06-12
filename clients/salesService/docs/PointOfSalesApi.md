@@ -9,6 +9,7 @@ All URIs are relative to *http://localhost*
 | [**delete_point_of_sale_async**](PointOfSalesApi.md#delete_point_of_sale_async) | **DELETE** /api/v2/SalesService/PointOfSales/{pointOfSaleId} | Delete a point of sale |
 | [**get_point_of_sale_async**](PointOfSalesApi.md#get_point_of_sale_async) | **GET** /api/v2/SalesService/PointOfSales/{pointOfSaleId} | Get point of sale by ID |
 | [**get_point_of_sales_async**](PointOfSalesApi.md#get_point_of_sales_async) | **GET** /api/v2/SalesService/PointOfSales | Get point of sales |
+| [**patch_point_of_sale_async**](PointOfSalesApi.md#patch_point_of_sale_async) | **PATCH** /api/v2/SalesService/PointOfSales/{pointOfSaleId} | Patch a point of sale |
 | [**update_point_of_sale_async**](PointOfSalesApi.md#update_point_of_sale_async) | **PUT** /api/v2/SalesService/PointOfSales/{pointOfSaleId} | Update a point of sale |
 
 
@@ -337,6 +338,76 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_point_of_sale_async
+
+> <EmptyEnvelope> patch_point_of_sale_async(tenant_id, point_of_sale_id, opts)
+
+Patch a point of sale
+
+Partially updates an existing point of sale using a JSON Patch document.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::PointOfSalesApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+point_of_sale_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch a point of sale
+  result = api_instance.patch_point_of_sale_async(tenant_id, point_of_sale_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling PointOfSalesApi->patch_point_of_sale_async: #{e}"
+end
+```
+
+#### Using the patch_point_of_sale_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_point_of_sale_async_with_http_info(tenant_id, point_of_sale_id, opts)
+
+```ruby
+begin
+  # Patch a point of sale
+  data, status_code, headers = api_instance.patch_point_of_sale_async_with_http_info(tenant_id, point_of_sale_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling PointOfSalesApi->patch_point_of_sale_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **point_of_sale_id** | **String** |  |  |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

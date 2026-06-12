@@ -64,6 +64,8 @@
 | **parent_web_content_id** | **String** |  | [optional] |
 | **parent_web_content_version_id** | **String** |  | [optional] |
 | **web_template_id** | **String** |  | [optional] |
+| **author_name** | **String** |  | [optional] |
+| **author_id** | **String** |  | [optional] |
 | **is_home_page** | **Boolean** |  | [optional] |
 | **is_store_page** | **Boolean** |  | [optional] |
 | **is_cart_page** | **Boolean** |  | [optional] |
@@ -141,6 +143,8 @@ instance = OpenapiClient::WebPageDto.new(
   parent_web_content_id: null,
   parent_web_content_version_id: null,
   web_template_id: null,
+  author_name: null,
+  author_id: null,
   is_home_page: null,
   is_store_page: null,
   is_cart_page: null,

@@ -9,6 +9,7 @@ All URIs are relative to *http://localhost*
 | [**get_payment_async**](PaymentsApi.md#get_payment_async) | **GET** /api/v2/PaymentsService/Payments/{paymentId}/Details | Gets a payment by ID (deprecated) |
 | [**get_payment_async_v2**](PaymentsApi.md#get_payment_async_v2) | **GET** /api/v2/PaymentsService/Payments/{paymentId} | Gets a payment by ID |
 | [**get_payments_async**](PaymentsApi.md#get_payments_async) | **GET** /api/v2/PaymentsService/Payments | Retrieves all payments |
+| [**patch_payment_async**](PaymentsApi.md#patch_payment_async) | **PATCH** /api/v2/PaymentsService/Payments/{paymentId} | Patch a payment |
 | [**update_payment_async**](PaymentsApi.md#update_payment_async) | **PUT** /api/v2/PaymentsService/Payments/{paymentId} | Updates a payment |
 
 
@@ -339,6 +340,76 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_payment_async
+
+> <EmptyEnvelope> patch_payment_async(tenant_id, payment_id, opts)
+
+Patch a payment
+
+Patch a payment
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::PaymentsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+payment_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch a payment
+  result = api_instance.patch_payment_async(tenant_id, payment_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling PaymentsApi->patch_payment_async: #{e}"
+end
+```
+
+#### Using the patch_payment_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_payment_async_with_http_info(tenant_id, payment_id, opts)
+
+```ruby
+begin
+  # Patch a payment
+  data, status_code, headers = api_instance.patch_payment_async_with_http_info(tenant_id, payment_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling PaymentsApi->patch_payment_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **payment_id** | **String** |  |  |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

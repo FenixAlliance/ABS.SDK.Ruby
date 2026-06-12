@@ -18,6 +18,8 @@ All URIs are relative to *http://localhost*
 | [**get_deal_units_count_async**](DealUnitsApi.md#get_deal_units_count_async) | **GET** /api/v2/DealsService/DealUnits/Count | Get deal units count |
 | [**get_extended_deal_unit_async**](DealUnitsApi.md#get_extended_deal_unit_async) | **GET** /api/v2/DealsService/DealUnits/{dealUnitId}/Extended | Get extended deal unit by ID |
 | [**get_extended_deal_units_async**](DealUnitsApi.md#get_extended_deal_units_async) | **GET** /api/v2/DealsService/DealUnits/Extended | Get extended deal units |
+| [**patch_deal_unit_async**](DealUnitsApi.md#patch_deal_unit_async) | **PATCH** /api/v2/DealsService/DealUnits/{dealUnitId} | Patch a deal unit |
+| [**patch_deal_unit_line_async**](DealUnitsApi.md#patch_deal_unit_line_async) | **PATCH** /api/v2/DealsService/DealUnits/{dealUnitId}/Lines/{dealUnitLineId} | Patch a deal unit line |
 | [**update_deal_unit_async**](DealUnitsApi.md#update_deal_unit_async) | **PUT** /api/v2/DealsService/DealUnits/{dealUnitId} | Update a deal unit |
 | [**update_deal_unit_price_async**](DealUnitsApi.md#update_deal_unit_price_async) | **PUT** /api/v2/DealsService/DealUnits/{dealUnitId}/Lines/{dealUnitLineId} | Update a deal unit line |
 
@@ -953,6 +955,148 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_deal_unit_async
+
+> <EmptyEnvelope> patch_deal_unit_async(tenant_id, deal_unit_id, opts)
+
+Patch a deal unit
+
+Partially updates an existing deal unit by its unique identifier using a JSON Patch document.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::DealUnitsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+deal_unit_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch a deal unit
+  result = api_instance.patch_deal_unit_async(tenant_id, deal_unit_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling DealUnitsApi->patch_deal_unit_async: #{e}"
+end
+```
+
+#### Using the patch_deal_unit_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_deal_unit_async_with_http_info(tenant_id, deal_unit_id, opts)
+
+```ruby
+begin
+  # Patch a deal unit
+  data, status_code, headers = api_instance.patch_deal_unit_async_with_http_info(tenant_id, deal_unit_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling DealUnitsApi->patch_deal_unit_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **deal_unit_id** | **String** |  |  |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
+- **Accept**: application/json, application/xml
+
+
+## patch_deal_unit_line_async
+
+> <EmptyEnvelope> patch_deal_unit_line_async(tenant_id, deal_unit_id, deal_unit_line_id, opts)
+
+Patch a deal unit line
+
+Partially updates an existing line within a specific deal unit using a JSON Patch document.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::DealUnitsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+deal_unit_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+deal_unit_line_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch a deal unit line
+  result = api_instance.patch_deal_unit_line_async(tenant_id, deal_unit_id, deal_unit_line_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling DealUnitsApi->patch_deal_unit_line_async: #{e}"
+end
+```
+
+#### Using the patch_deal_unit_line_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_deal_unit_line_async_with_http_info(tenant_id, deal_unit_id, deal_unit_line_id, opts)
+
+```ruby
+begin
+  # Patch a deal unit line
+  data, status_code, headers = api_instance.patch_deal_unit_line_async_with_http_info(tenant_id, deal_unit_id, deal_unit_line_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling DealUnitsApi->patch_deal_unit_line_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **deal_unit_id** | **String** |  |  |
+| **deal_unit_line_id** | **String** |  |  |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

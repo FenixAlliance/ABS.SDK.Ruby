@@ -9,6 +9,7 @@ All URIs are relative to *http://localhost*
 | [**get_course_team_membership_by_id_async**](CourseTeamMembershipsApi.md#get_course_team_membership_by_id_async) | **GET** /api/v2/LearningService/CourseTeamMemberships/{membershipId} | Get course team membership by ID |
 | [**get_course_team_memberships_async**](CourseTeamMembershipsApi.md#get_course_team_memberships_async) | **GET** /api/v2/LearningService/CourseTeamMemberships | Get all course team memberships |
 | [**get_course_team_memberships_count_async**](CourseTeamMembershipsApi.md#get_course_team_memberships_count_async) | **GET** /api/v2/LearningService/CourseTeamMemberships/Count | Get course team memberships count |
+| [**patch_course_team_membership_async**](CourseTeamMembershipsApi.md#patch_course_team_membership_async) | **PATCH** /api/v2/LearningService/CourseTeamMemberships/{membershipId} | Patch a course team membership |
 | [**update_course_team_membership_async**](CourseTeamMembershipsApi.md#update_course_team_membership_async) | **PUT** /api/v2/LearningService/CourseTeamMemberships/{membershipId} | Update a course team membership |
 
 
@@ -361,6 +362,80 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_course_team_membership_async
+
+> <EmptyEnvelope> patch_course_team_membership_async(tenant_id, membership_id, opts)
+
+Patch a course team membership
+
+Partially updates a course team membership for the specified tenant.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::CourseTeamMembershipsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+membership_id = 'membership_id_example' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch a course team membership
+  result = api_instance.patch_course_team_membership_async(tenant_id, membership_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling CourseTeamMembershipsApi->patch_course_team_membership_async: #{e}"
+end
+```
+
+#### Using the patch_course_team_membership_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_course_team_membership_async_with_http_info(tenant_id, membership_id, opts)
+
+```ruby
+begin
+  # Patch a course team membership
+  data, status_code, headers = api_instance.patch_course_team_membership_async_with_http_info(tenant_id, membership_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling CourseTeamMembershipsApi->patch_course_team_membership_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **membership_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

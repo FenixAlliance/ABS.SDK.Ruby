@@ -9,6 +9,7 @@ All URIs are relative to *http://localhost*
 | [**get_asset_type**](AssetTypesApi.md#get_asset_type) | **GET** /api/v2/AssetsService/AssetTypes/{typeId} | Gets a specific asset type |
 | [**get_asset_types**](AssetTypesApi.md#get_asset_types) | **GET** /api/v2/AssetsService/AssetTypes | Gets all asset types for the current tenant |
 | [**get_asset_types_count**](AssetTypesApi.md#get_asset_types_count) | **GET** /api/v2/AssetsService/AssetTypes/count | Gets the count of asset types |
+| [**patch_asset_type**](AssetTypesApi.md#patch_asset_type) | **PATCH** /api/v2/AssetsService/AssetTypes/{typeId} | Partially updates an existing asset type |
 | [**update_asset_type**](AssetTypesApi.md#update_asset_type) | **PUT** /api/v2/AssetsService/AssetTypes/{typeId} | Updates an existing asset type |
 
 
@@ -336,6 +337,76 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_asset_type
+
+> <EmptyEnvelope> patch_asset_type(tenant_id, type_id, opts)
+
+Partially updates an existing asset type
+
+Applies a JSON Patch document to an existing asset type for the authenticated tenant.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::AssetTypesApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+type_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Partially updates an existing asset type
+  result = api_instance.patch_asset_type(tenant_id, type_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling AssetTypesApi->patch_asset_type: #{e}"
+end
+```
+
+#### Using the patch_asset_type_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_asset_type_with_http_info(tenant_id, type_id, opts)
+
+```ruby
+begin
+  # Partially updates an existing asset type
+  data, status_code, headers = api_instance.patch_asset_type_with_http_info(tenant_id, type_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling AssetTypesApi->patch_asset_type_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **type_id** | **String** |  |  |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
