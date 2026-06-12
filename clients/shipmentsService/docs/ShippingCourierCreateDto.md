@@ -9,7 +9,6 @@
 | **name** | **String** |  |  |
 | **logo_url** | **String** |  | [optional] |
 | **country_id** | **String** |  | [optional] |
-| **business_profile_record_id** | **String** |  | [optional] |
 
 ## Example
 
@@ -21,8 +20,7 @@ instance = OpenapiClient::ShippingCourierCreateDto.new(
   timestamp: null,
   name: null,
   logo_url: null,
-  country_id: null,
-  business_profile_record_id: null
+  country_id: null
 )
 ```
 

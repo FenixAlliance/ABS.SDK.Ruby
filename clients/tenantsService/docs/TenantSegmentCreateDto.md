@@ -6,7 +6,6 @@
 | ---- | ---- | ----------- | ----- |
 | **id** | **String** |  | [optional] |
 | **timestamp** | **Time** |  | [optional] |
-| **revenue** | **String** |  | [optional] |
 | **min_employees** | **Float** |  | [optional] |
 | **max_employees** | **Float** |  | [optional] |
 
@@ -18,7 +17,6 @@ require 'openapi_client'
 instance = OpenapiClient::TenantSegmentCreateDto.new(
   id: null,
   timestamp: null,
-  revenue: null,
   min_employees: null,
   max_employees: null
 )

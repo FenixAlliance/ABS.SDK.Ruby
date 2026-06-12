@@ -17,8 +17,8 @@
 | **phone** | **String** |  | [optional] |
 | **message** | **String** |  | [optional] |
 | **tenant_id** | **String** |  | [optional] |
-| **business_profile_record_id** | **String** |  | [optional] |
-| **account_holder_id** | **String** |  | [optional] |
+| **enrollment_id** | **String** |  | [optional] |
+| **user_id** | **String** |  | [optional] |
 | **social_profile_id** | **String** |  | [optional] |
 
 ## Example
@@ -40,8 +40,8 @@ instance = OpenapiClient::InquiryRequestDto.new(
   phone: null,
   message: null,
   tenant_id: null,
-  business_profile_record_id: null,
-  account_holder_id: null,
+  enrollment_id: null,
+  user_id: null,
   social_profile_id: null
 )
 ```

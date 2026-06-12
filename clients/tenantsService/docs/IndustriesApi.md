@@ -9,6 +9,7 @@ All URIs are relative to *http://localhost*
 | [**get_tenant_industries**](IndustriesApi.md#get_tenant_industries) | **GET** /api/v2/TenantsService/Industries | Retrieve a list of tenant industries |
 | [**get_tenant_industries_count**](IndustriesApi.md#get_tenant_industries_count) | **GET** /api/v2/TenantsService/Industries/Count | Get the count of tenant industries |
 | [**get_tenant_industry_by_id**](IndustriesApi.md#get_tenant_industry_by_id) | **GET** /api/v2/TenantsService/Industries/{tenantIndustryId} | Retrieve a single tenant industry by its ID |
+| [**patch_tenant_industry_async**](IndustriesApi.md#patch_tenant_industry_async) | **PATCH** /api/v2/TenantsService/Industries/{tenantIndustryId} | Patch a tenant industry |
 | [**update_tenant_industry**](IndustriesApi.md#update_tenant_industry) | **PUT** /api/v2/TenantsService/Industries/{tenantIndustryId} | Update a tenant industry |
 
 
@@ -365,6 +366,80 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_tenant_industry_async
+
+> <EmptyEnvelope> patch_tenant_industry_async(tenant_id, tenant_industry_id, opts)
+
+Patch a tenant industry
+
+Patch a tenant industry
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::IndustriesApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+tenant_industry_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch a tenant industry
+  result = api_instance.patch_tenant_industry_async(tenant_id, tenant_industry_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling IndustriesApi->patch_tenant_industry_async: #{e}"
+end
+```
+
+#### Using the patch_tenant_industry_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_tenant_industry_async_with_http_info(tenant_id, tenant_industry_id, opts)
+
+```ruby
+begin
+  # Patch a tenant industry
+  data, status_code, headers = api_instance.patch_tenant_industry_async_with_http_info(tenant_id, tenant_industry_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling IndustriesApi->patch_tenant_industry_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **tenant_industry_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

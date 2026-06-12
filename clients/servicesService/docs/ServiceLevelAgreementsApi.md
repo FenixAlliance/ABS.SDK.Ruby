@@ -9,6 +9,7 @@ All URIs are relative to *http://localhost*
 | [**get_service_level_agreement_by_id_async**](ServiceLevelAgreementsApi.md#get_service_level_agreement_by_id_async) | **GET** /api/v2/ServicesService/ServiceLevelAgreements/{serviceLevelAgreementId} | Get a service level agreement by ID |
 | [**get_service_level_agreements_async**](ServiceLevelAgreementsApi.md#get_service_level_agreements_async) | **GET** /api/v2/ServicesService/ServiceLevelAgreements | Get all service level agreements |
 | [**get_service_level_agreements_count_async**](ServiceLevelAgreementsApi.md#get_service_level_agreements_count_async) | **GET** /api/v2/ServicesService/ServiceLevelAgreements/Count | Get service level agreements count |
+| [**patch_service_level_agreement_async**](ServiceLevelAgreementsApi.md#patch_service_level_agreement_async) | **PATCH** /api/v2/ServicesService/ServiceLevelAgreements/{serviceLevelAgreementId} | Patch a service level agreement |
 | [**update_service_level_agreement_async**](ServiceLevelAgreementsApi.md#update_service_level_agreement_async) | **PUT** /api/v2/ServicesService/ServiceLevelAgreements/{serviceLevelAgreementId} | Update a service level agreement |
 
 
@@ -365,6 +366,80 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_service_level_agreement_async
+
+> <Envelope> patch_service_level_agreement_async(tenant_id, service_level_agreement_id, opts)
+
+Patch a service level agreement
+
+Partially updates an existing service level agreement using a JSON Patch document.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::ServiceLevelAgreementsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+service_level_agreement_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch a service level agreement
+  result = api_instance.patch_service_level_agreement_async(tenant_id, service_level_agreement_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ServiceLevelAgreementsApi->patch_service_level_agreement_async: #{e}"
+end
+```
+
+#### Using the patch_service_level_agreement_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<Envelope>, Integer, Hash)> patch_service_level_agreement_async_with_http_info(tenant_id, service_level_agreement_id, opts)
+
+```ruby
+begin
+  # Patch a service level agreement
+  data, status_code, headers = api_instance.patch_service_level_agreement_async_with_http_info(tenant_id, service_level_agreement_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <Envelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ServiceLevelAgreementsApi->patch_service_level_agreement_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **service_level_agreement_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**Envelope**](Envelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

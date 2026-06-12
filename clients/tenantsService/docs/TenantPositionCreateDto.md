@@ -8,6 +8,7 @@
 | **timestamp** | **Time** |  | [optional] |
 | **title** | **String** |  | [optional] |
 | **description** | **String** |  | [optional] |
+| **type** | **String** |  | [optional] |
 
 ## Example
 
@@ -18,7 +19,8 @@ instance = OpenapiClient::TenantPositionCreateDto.new(
   id: null,
   timestamp: null,
   title: null,
-  description: null
+  description: null,
+  type: null
 )
 ```
 

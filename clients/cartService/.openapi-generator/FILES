@@ -105,5 +105,4 @@ lib/openapi_client/models/wish_list_item_record_dto.rb
 lib/openapi_client/models/wish_list_update_dto.rb
 lib/openapi_client/version.rb
 openapi_client.gemspec
-spec/models/operation_spec.rb
 spec/spec_helper.rb

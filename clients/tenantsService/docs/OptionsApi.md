@@ -10,6 +10,7 @@ All URIs are relative to *http://localhost*
 | [**get_tenant_option_by_key**](OptionsApi.md#get_tenant_option_by_key) | **GET** /api/v2/TenantsService/Options/Key/{key} | Retrieve a single tenant option by its key |
 | [**get_tenant_options**](OptionsApi.md#get_tenant_options) | **GET** /api/v2/TenantsService/Options | Retrieve a list of tenant options |
 | [**get_tenant_options_count**](OptionsApi.md#get_tenant_options_count) | **GET** /api/v2/TenantsService/Options/Count | Get the count of tenant options |
+| [**patch_tenant_option**](OptionsApi.md#patch_tenant_option) | **PATCH** /api/v2/TenantsService/Options/{optionId} | Patch a tenant option |
 | [**update_tenant_option**](OptionsApi.md#update_tenant_option) | **PUT** /api/v2/TenantsService/Options/{optionId} | Update a tenant option |
 | [**upsert_tenant_option**](OptionsApi.md#upsert_tenant_option) | **PUT** /api/v2/TenantsService/Options/Upsert/{key} | Create or update a tenant option by key |
 
@@ -449,6 +450,80 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_tenant_option
+
+> <EmptyEnvelope> patch_tenant_option(tenant_id, option_id, opts)
+
+Patch a tenant option
+
+Patch a tenant option
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::OptionsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+option_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch a tenant option
+  result = api_instance.patch_tenant_option(tenant_id, option_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling OptionsApi->patch_tenant_option: #{e}"
+end
+```
+
+#### Using the patch_tenant_option_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_tenant_option_with_http_info(tenant_id, option_id, opts)
+
+```ruby
+begin
+  # Patch a tenant option
+  data, status_code, headers = api_instance.patch_tenant_option_with_http_info(tenant_id, option_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling OptionsApi->patch_tenant_option_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **option_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

@@ -9,6 +9,7 @@ All URIs are relative to *http://localhost*
 | [**get_tenant_position_by_id**](PositionsApi.md#get_tenant_position_by_id) | **GET** /api/v2/TenantsService/Positions/{tenantPositionId} | Retrieve a single tenant position by its ID |
 | [**get_tenant_positions**](PositionsApi.md#get_tenant_positions) | **GET** /api/v2/TenantsService/Positions | Retrieve a list of tenant positions |
 | [**get_tenant_positions_count**](PositionsApi.md#get_tenant_positions_count) | **GET** /api/v2/TenantsService/Positions/Count | Get the count of tenant positions |
+| [**patch_tenant_position**](PositionsApi.md#patch_tenant_position) | **PATCH** /api/v2/TenantsService/Positions/{tenantPositionId} | Patch a tenant position |
 | [**update_tenant_position**](PositionsApi.md#update_tenant_position) | **PUT** /api/v2/TenantsService/Positions/{tenantPositionId} | Update a tenant position |
 
 
@@ -365,6 +366,80 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_tenant_position
+
+> <EmptyEnvelope> patch_tenant_position(tenant_id, tenant_position_id, opts)
+
+Patch a tenant position
+
+Patch a tenant position
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::PositionsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+tenant_position_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch a tenant position
+  result = api_instance.patch_tenant_position(tenant_id, tenant_position_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling PositionsApi->patch_tenant_position: #{e}"
+end
+```
+
+#### Using the patch_tenant_position_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_tenant_position_with_http_info(tenant_id, tenant_position_id, opts)
+
+```ruby
+begin
+  # Patch a tenant position
+  data, status_code, headers = api_instance.patch_tenant_position_with_http_info(tenant_id, tenant_position_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling PositionsApi->patch_tenant_position_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **tenant_position_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

@@ -14,6 +14,7 @@ All URIs are relative to *http://localhost*
 | [**get_user_async**](UsersApi.md#get_user_async) | **GET** /api/v2/SystemService/Users/{userId} | Retrieve a user by ID |
 | [**get_users_async**](UsersApi.md#get_users_async) | **GET** /api/v2/SystemService/Users | Retrieve a list of users |
 | [**get_users_count_async**](UsersApi.md#get_users_count_async) | **GET** /api/v2/SystemService/Users/Count | Get the count of users |
+| [**patch_account_holder_async**](UsersApi.md#patch_account_holder_async) | **PATCH** /api/v2/SystemService/Users/{userId} | Partially update a user |
 | [**update_account_holder_async**](UsersApi.md#update_account_holder_async) | **PUT** /api/v2/SystemService/Users/{userId} | Update a user |
 
 
@@ -709,6 +710,78 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_account_holder_async
+
+> <EmptyEnvelope> patch_account_holder_async(user_id, opts)
+
+Partially update a user
+
+This action is only available for global administrators.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::UsersApi.new
+user_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Partially update a user
+  result = api_instance.patch_account_holder_async(user_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling UsersApi->patch_account_holder_async: #{e}"
+end
+```
+
+#### Using the patch_account_holder_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_account_holder_async_with_http_info(user_id, opts)
+
+```ruby
+begin
+  # Partially update a user
+  data, status_code, headers = api_instance.patch_account_holder_async_with_http_info(user_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling UsersApi->patch_account_holder_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **user_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

@@ -9,6 +9,7 @@ All URIs are relative to *http://localhost*
 | [**get_system_tenant_option_by_id**](TenantOptionsApi.md#get_system_tenant_option_by_id) | **GET** /api/v2/SystemService/Tenants/{tenantId}/Options/{optionId} | Retrieve a single tenant option by its ID (admin) |
 | [**get_system_tenant_options**](TenantOptionsApi.md#get_system_tenant_options) | **GET** /api/v2/SystemService/Tenants/{tenantId}/Options | Retrieve a list of tenant options (admin) |
 | [**get_system_tenant_options_count**](TenantOptionsApi.md#get_system_tenant_options_count) | **GET** /api/v2/SystemService/Tenants/{tenantId}/Options/Count | Get the count of tenant options (admin) |
+| [**patch_system_tenant_option**](TenantOptionsApi.md#patch_system_tenant_option) | **PATCH** /api/v2/SystemService/Tenants/{tenantId}/Options/{optionId} | Partially update a tenant option (admin) |
 | [**update_system_tenant_option**](TenantOptionsApi.md#update_system_tenant_option) | **PUT** /api/v2/SystemService/Tenants/{tenantId}/Options/{optionId} | Update a tenant option (admin) |
 
 
@@ -373,6 +374,80 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_system_tenant_option
+
+> <EmptyEnvelope> patch_system_tenant_option(tenant_id, option_id, opts)
+
+Partially update a tenant option (admin)
+
+Admin endpoint to partially update an option for any tenant using a JSON Patch document
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::TenantOptionsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+option_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Partially update a tenant option (admin)
+  result = api_instance.patch_system_tenant_option(tenant_id, option_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling TenantOptionsApi->patch_system_tenant_option: #{e}"
+end
+```
+
+#### Using the patch_system_tenant_option_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_system_tenant_option_with_http_info(tenant_id, option_id, opts)
+
+```ruby
+begin
+  # Partially update a tenant option (admin)
+  data, status_code, headers = api_instance.patch_system_tenant_option_with_http_info(tenant_id, option_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling TenantOptionsApi->patch_system_tenant_option_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **option_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

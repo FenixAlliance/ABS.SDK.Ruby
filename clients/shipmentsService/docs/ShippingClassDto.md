@@ -8,7 +8,7 @@
 | **timestamp** | **Time** |  | [optional] |
 | **name** | **String** |  | [optional] |
 | **slug** | **String** |  | [optional] |
-| **business_id** | **String** |  | [optional] |
+| **tenant_id** | **String** |  | [optional] |
 
 ## Example
 
@@ -20,7 +20,7 @@ instance = OpenapiClient::ShippingClassDto.new(
   timestamp: null,
   name: null,
   slug: null,
-  business_id: null
+  tenant_id: null
 )
 ```
 

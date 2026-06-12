@@ -12,7 +12,7 @@
 | **taxable** | **Boolean** |  | [optional] |
 | **tax_included** | **Boolean** |  | [optional] |
 | **currency_id** | **String** |  | [optional] |
-| **business_id** | **String** |  | [optional] |
+| **tenant_id** | **String** |  | [optional] |
 | **shipping_class_calculation_type** | **String** |  | [optional] |
 
 ## Example
@@ -29,7 +29,7 @@ instance = OpenapiClient::ShippingMethodDto.new(
   taxable: null,
   tax_included: null,
   currency_id: null,
-  business_id: null,
+  tenant_id: null,
   shipping_class_calculation_type: null
 )
 ```

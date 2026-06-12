@@ -8,6 +8,7 @@ README.md
 Rakefile
 docs/AccessTokenResponse.md
 docs/CompletionsApi.md
+docs/EmptyEnvelope.md
 docs/Envelope.md
 docs/ErrorEnvelope.md
 docs/FenixAlliancePortalsWebsiteApi.md
@@ -17,6 +18,7 @@ docs/InfoRequest.md
 docs/InfoResponse.md
 docs/Int32Envelope.md
 docs/LoginRequest.md
+docs/Operation.md
 docs/RefreshRequest.md
 docs/RegisterRequest.md
 docs/ResendConfirmationEmailRequest.md
@@ -45,6 +47,7 @@ lib/openapi_client/api_client.rb
 lib/openapi_client/api_error.rb
 lib/openapi_client/configuration.rb
 lib/openapi_client/models/access_token_response.rb
+lib/openapi_client/models/empty_envelope.rb
 lib/openapi_client/models/envelope.rb
 lib/openapi_client/models/error_envelope.rb
 lib/openapi_client/models/forgot_password_request.rb
@@ -53,6 +56,7 @@ lib/openapi_client/models/info_request.rb
 lib/openapi_client/models/info_response.rb
 lib/openapi_client/models/int32_envelope.rb
 lib/openapi_client/models/login_request.rb
+lib/openapi_client/models/operation.rb
 lib/openapi_client/models/refresh_request.rb
 lib/openapi_client/models/register_request.rb
 lib/openapi_client/models/resend_confirmation_email_request.rb
@@ -71,6 +75,6 @@ lib/openapi_client/models/two_factor_request.rb
 lib/openapi_client/models/two_factor_response.rb
 lib/openapi_client/version.rb
 openapi_client.gemspec
-spec/api/completions_api_spec.rb
-spec/api/fenix_alliance_portals_website_api_spec.rb
+spec/models/empty_envelope_spec.rb
+spec/models/operation_spec.rb
 spec/spec_helper.rb

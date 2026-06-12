@@ -283,7 +283,4 @@ lib/openapi_client/models/two_factor_response.rb
 lib/openapi_client/models/update_product_primary_image_async_request.rb
 lib/openapi_client/version.rb
 openapi_client.gemspec
-spec/models/batch_stock_item_update_request_spec.rb
-spec/models/bulk_product_spec.rb
-spec/models/operation_spec.rb
 spec/spec_helper.rb

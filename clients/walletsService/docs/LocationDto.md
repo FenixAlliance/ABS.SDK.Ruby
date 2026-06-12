@@ -28,6 +28,8 @@
 | **is_default_sender_address** | **Boolean** |  | [optional] |
 | **is_default_return_address** | **Boolean** |  | [optional] |
 | **is_default_supping_location** | **Boolean** |  | [optional] |
+| **tenant_id** | **String** |  | [optional] |
+| **enrollment_id** | **String** |  | [optional] |
 
 ## Example
 
@@ -58,7 +60,9 @@ instance = OpenapiClient::LocationDto.new(
   can_generate_labels: null,
   is_default_sender_address: null,
   is_default_return_address: null,
-  is_default_supping_location: null
+  is_default_supping_location: null,
+  tenant_id: null,
+  enrollment_id: null
 )
 ```
 

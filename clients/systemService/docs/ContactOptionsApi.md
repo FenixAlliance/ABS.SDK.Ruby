@@ -9,6 +9,7 @@ All URIs are relative to *http://localhost*
 | [**get_system_contact_option_by_id**](ContactOptionsApi.md#get_system_contact_option_by_id) | **GET** /api/v2/SystemService/Contacts/{contactId}/Options/{optionId} | Retrieve a single contact option by its ID (admin) |
 | [**get_system_contact_options**](ContactOptionsApi.md#get_system_contact_options) | **GET** /api/v2/SystemService/Contacts/{contactId}/Options | Retrieve a list of contact options (admin) |
 | [**get_system_contact_options_count**](ContactOptionsApi.md#get_system_contact_options_count) | **GET** /api/v2/SystemService/Contacts/{contactId}/Options/Count | Get the count of contact options (admin) |
+| [**patch_system_contact_option**](ContactOptionsApi.md#patch_system_contact_option) | **PATCH** /api/v2/SystemService/Contacts/{contactId}/Options/{optionId} | Partially update a contact option (admin) |
 | [**update_system_contact_option**](ContactOptionsApi.md#update_system_contact_option) | **PUT** /api/v2/SystemService/Contacts/{contactId}/Options/{optionId} | Update a contact option (admin) |
 
 
@@ -373,6 +374,80 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_system_contact_option
+
+> <EmptyEnvelope> patch_system_contact_option(contact_id, option_id, opts)
+
+Partially update a contact option (admin)
+
+Admin endpoint to partially update an option for any contact using a JSON Patch document
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::ContactOptionsApi.new
+contact_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+option_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Partially update a contact option (admin)
+  result = api_instance.patch_system_contact_option(contact_id, option_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ContactOptionsApi->patch_system_contact_option: #{e}"
+end
+```
+
+#### Using the patch_system_contact_option_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_system_contact_option_with_http_info(contact_id, option_id, opts)
+
+```ruby
+begin
+  # Partially update a contact option (admin)
+  data, status_code, headers = api_instance.patch_system_contact_option_with_http_info(contact_id, option_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ContactOptionsApi->patch_system_contact_option_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **contact_id** | **String** |  |  |
+| **option_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

@@ -32,6 +32,7 @@ docs/LocationDtoEnvelope.md
 docs/LocationDtoListEnvelope.md
 docs/LocationUpdateDto.md
 docs/LoginRequest.md
+docs/Operation.md
 docs/OrderDto.md
 docs/OrderDtoListEnvelope.md
 docs/PaymentChargebackDto.md
@@ -97,6 +98,7 @@ lib/openapi_client/models/location_dto_envelope.rb
 lib/openapi_client/models/location_dto_list_envelope.rb
 lib/openapi_client/models/location_update_dto.rb
 lib/openapi_client/models/login_request.rb
+lib/openapi_client/models/operation.rb
 lib/openapi_client/models/order_dto.rb
 lib/openapi_client/models/order_dto_list_envelope.rb
 lib/openapi_client/models/payment_chargeback_dto.rb
@@ -131,6 +133,5 @@ lib/openapi_client/models/wallet_withdraw_request_dto.rb
 lib/openapi_client/models/wallet_withdraw_request_dto_list_envelope.rb
 lib/openapi_client/version.rb
 openapi_client.gemspec
-spec/api/completions_api_spec.rb
-spec/api/fenix_alliance_portals_website_api_spec.rb
+spec/models/operation_spec.rb
 spec/spec_helper.rb

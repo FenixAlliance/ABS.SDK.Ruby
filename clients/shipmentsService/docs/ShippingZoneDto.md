@@ -11,7 +11,7 @@
 | **everywhere** | **Boolean** |  | [optional] |
 | **postal_codes** | **String** |  | [optional] |
 | **country_codes** | **String** |  | [optional] |
-| **business_id** | **String** |  | [optional] |
+| **tenant_id** | **String** |  | [optional] |
 
 ## Example
 
@@ -26,7 +26,7 @@ instance = OpenapiClient::ShippingZoneDto.new(
   everywhere: null,
   postal_codes: null,
   country_codes: null,
-  business_id: null
+  tenant_id: null
 )
 ```
 

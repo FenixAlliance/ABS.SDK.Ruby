@@ -9,6 +9,7 @@ All URIs are relative to *http://localhost*
 | [**get_support_ticket_priorities_async**](SupportTicketPrioritiesApi.md#get_support_ticket_priorities_async) | **GET** /api/v2/SupportService/SupportTicketPriorities | Retrieve a list of support ticket priorities |
 | [**get_support_ticket_priorities_count_async**](SupportTicketPrioritiesApi.md#get_support_ticket_priorities_count_async) | **GET** /api/v2/SupportService/SupportTicketPriorities/Count | Get the count of support ticket priorities |
 | [**get_support_ticket_priority_async**](SupportTicketPrioritiesApi.md#get_support_ticket_priority_async) | **GET** /api/v2/SupportService/SupportTicketPriorities/{supportTicketPriorityId} | Retrieve a support ticket priority by ID |
+| [**patch_support_ticket_priority_async**](SupportTicketPrioritiesApi.md#patch_support_ticket_priority_async) | **PATCH** /api/v2/SupportService/SupportTicketPriorities/{supportTicketPriorityId} | Patch a support ticket priority |
 | [**update_support_ticket_priority_async**](SupportTicketPrioritiesApi.md#update_support_ticket_priority_async) | **PUT** /api/v2/SupportService/SupportTicketPriorities/{supportTicketPriorityId} | Update a support ticket priority |
 
 
@@ -365,6 +366,80 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_support_ticket_priority_async
+
+> <EmptyEnvelope> patch_support_ticket_priority_async(tenant_id, support_ticket_priority_id, opts)
+
+Patch a support ticket priority
+
+Partially updates an existing support ticket priority by its unique identifier.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::SupportTicketPrioritiesApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+support_ticket_priority_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch a support ticket priority
+  result = api_instance.patch_support_ticket_priority_async(tenant_id, support_ticket_priority_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling SupportTicketPrioritiesApi->patch_support_ticket_priority_async: #{e}"
+end
+```
+
+#### Using the patch_support_ticket_priority_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_support_ticket_priority_async_with_http_info(tenant_id, support_ticket_priority_id, opts)
+
+```ruby
+begin
+  # Patch a support ticket priority
+  data, status_code, headers = api_instance.patch_support_ticket_priority_async_with_http_info(tenant_id, support_ticket_priority_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling SupportTicketPrioritiesApi->patch_support_ticket_priority_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **support_ticket_priority_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

@@ -6,11 +6,13 @@
 | ---- | ---- | ----------- | ----- |
 | **id** | **String** |  | [optional] |
 | **timestamp** | **Time** |  | [optional] |
+| **title** | **String** |  | [optional] |
 | **description** | **String** |  | [optional] |
-| **account_holder_id** | **String** |  | [optional] |
+| **support_ticket_status** | **String** |  | [optional] |
+| **user_id** | **String** |  | [optional] |
 | **contact_id** | **String** |  | [optional] |
-| **business_id** | **String** |  | [optional] |
-| **business_profile_record_id** | **String** |  | [optional] |
+| **tenant_id** | **String** |  | [optional] |
+| **enrollment_id** | **String** |  | [optional] |
 | **support_ticket_type_id** | **String** |  | [optional] |
 | **support_entitlement_id** | **String** |  | [optional] |
 | **support_priority_id** | **String** |  | [optional] |
@@ -23,11 +25,13 @@ require 'openapi_client'
 instance = OpenapiClient::SupportTicketDto.new(
   id: null,
   timestamp: null,
+  title: null,
   description: null,
-  account_holder_id: null,
+  support_ticket_status: null,
+  user_id: null,
   contact_id: null,
-  business_id: null,
-  business_profile_record_id: null,
+  tenant_id: null,
+  enrollment_id: null,
   support_ticket_type_id: null,
   support_entitlement_id: null,
   support_priority_id: null

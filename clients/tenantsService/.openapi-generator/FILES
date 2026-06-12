@@ -321,6 +321,4 @@ lib/openapi_client/models/web_portal_dto.rb
 lib/openapi_client/models/web_portal_dto_list_envelope.rb
 lib/openapi_client/version.rb
 openapi_client.gemspec
-spec/api/completions_api_spec.rb
-spec/api/fenix_alliance_portals_website_api_spec.rb
 spec/spec_helper.rb

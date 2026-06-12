@@ -44,7 +44,7 @@
 | **data9_label** | **String** |  | [optional] |
 | **individual_id** | **String** |  | [optional] |
 | **organization_id** | **String** |  | [optional] |
-| **receiver_business_id** | **String** |  | [optional] |
+| **receiver_tenant_id** | **String** |  | [optional] |
 | **payment_token_id** | **String** |  | [optional] |
 | **wallet_account_id** | **String** |  | [optional] |
 | **security_certificate_id** | **String** |  | [optional] |
@@ -95,7 +95,7 @@ instance = OpenapiClient::SupportEntitlementUpdateDto.new(
   data9_label: null,
   individual_id: null,
   organization_id: null,
-  receiver_business_id: null,
+  receiver_tenant_id: null,
   payment_token_id: null,
   wallet_account_id: null,
   security_certificate_id: null

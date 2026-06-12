@@ -11,6 +11,7 @@ All URIs are relative to *http://localhost*
 | [**get_service_level_by_id_async**](ServiceLevelsApi.md#get_service_level_by_id_async) | **GET** /api/v2/ServicesService/Services/{serviceId}/ServiceLevels/{serviceLevelId} | Get a service level by ID |
 | [**get_service_levels_async**](ServiceLevelsApi.md#get_service_levels_async) | **GET** /api/v2/ServicesService/Services/{serviceId}/ServiceLevels | Get all service levels |
 | [**get_service_levels_count_async**](ServiceLevelsApi.md#get_service_levels_count_async) | **GET** /api/v2/ServicesService/Services/{serviceId}/ServiceLevels/Count | Get service levels count |
+| [**patch_service_level_async**](ServiceLevelsApi.md#patch_service_level_async) | **PATCH** /api/v2/ServicesService/Services/{serviceId}/ServiceLevels/{serviceLevelId} | Patch a service level |
 | [**update_service_level_async**](ServiceLevelsApi.md#update_service_level_async) | **PUT** /api/v2/ServicesService/Services/{serviceId}/ServiceLevels/{serviceLevelId} | Update a service level |
 
 
@@ -517,6 +518,82 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_service_level_async
+
+> <Envelope> patch_service_level_async(tenant_id, service_id, service_level_id, opts)
+
+Patch a service level
+
+Partially updates an existing service level using a JSON Patch document.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::ServiceLevelsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+service_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+service_level_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch a service level
+  result = api_instance.patch_service_level_async(tenant_id, service_id, service_level_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ServiceLevelsApi->patch_service_level_async: #{e}"
+end
+```
+
+#### Using the patch_service_level_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<Envelope>, Integer, Hash)> patch_service_level_async_with_http_info(tenant_id, service_id, service_level_id, opts)
+
+```ruby
+begin
+  # Patch a service level
+  data, status_code, headers = api_instance.patch_service_level_async_with_http_info(tenant_id, service_id, service_level_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <Envelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ServiceLevelsApi->patch_service_level_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **service_id** | **String** |  |  |
+| **service_level_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**Envelope**](Envelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

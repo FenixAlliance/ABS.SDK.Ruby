@@ -9,6 +9,7 @@ All URIs are relative to *http://localhost*
 | [**get_tenant_team_record_by_id**](TeamRecordsApi.md#get_tenant_team_record_by_id) | **GET** /api/v2/TenantsService/TeamRecords/{tenantTeamRecordId} | Retrieve a single tenant team record by its ID |
 | [**get_tenant_team_records**](TeamRecordsApi.md#get_tenant_team_records) | **GET** /api/v2/TenantsService/TeamRecords | Retrieve a list of tenant team records |
 | [**get_tenant_team_records_count**](TeamRecordsApi.md#get_tenant_team_records_count) | **GET** /api/v2/TenantsService/TeamRecords/Count | Get the count of tenant team records |
+| [**patch_tenant_team_record**](TeamRecordsApi.md#patch_tenant_team_record) | **PATCH** /api/v2/TenantsService/TeamRecords/{tenantTeamRecordId} | Patch a tenant team record |
 | [**update_tenant_team_record**](TeamRecordsApi.md#update_tenant_team_record) | **PUT** /api/v2/TenantsService/TeamRecords/{tenantTeamRecordId} | Update a tenant team record |
 
 
@@ -365,6 +366,80 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_tenant_team_record
+
+> <EmptyEnvelope> patch_tenant_team_record(tenant_id, tenant_team_record_id, opts)
+
+Patch a tenant team record
+
+Patch a tenant team record
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::TeamRecordsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+tenant_team_record_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch a tenant team record
+  result = api_instance.patch_tenant_team_record(tenant_id, tenant_team_record_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling TeamRecordsApi->patch_tenant_team_record: #{e}"
+end
+```
+
+#### Using the patch_tenant_team_record_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_tenant_team_record_with_http_info(tenant_id, tenant_team_record_id, opts)
+
+```ruby
+begin
+  # Patch a tenant team record
+  data, status_code, headers = api_instance.patch_tenant_team_record_with_http_info(tenant_id, tenant_team_record_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling TeamRecordsApi->patch_tenant_team_record_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **tenant_team_record_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

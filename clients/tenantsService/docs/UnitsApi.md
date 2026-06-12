@@ -9,6 +9,7 @@ All URIs are relative to *http://localhost*
 | [**get_tenant_unit_by_id**](UnitsApi.md#get_tenant_unit_by_id) | **GET** /api/v2/TenantsService/Units/{tenantUnitId} | Retrieve a single tenant unit by its ID |
 | [**get_tenant_units**](UnitsApi.md#get_tenant_units) | **GET** /api/v2/TenantsService/Units | Retrieve a list of tenant units |
 | [**get_tenant_units_count**](UnitsApi.md#get_tenant_units_count) | **GET** /api/v2/TenantsService/Units/Count | Get the count of tenant units |
+| [**patch_tenant_unit**](UnitsApi.md#patch_tenant_unit) | **PATCH** /api/v2/TenantsService/Units/{tenantUnitId} | Patch a tenant unit |
 | [**update_tenant_unit**](UnitsApi.md#update_tenant_unit) | **PUT** /api/v2/TenantsService/Units/{tenantUnitId} | Update a tenant unit |
 
 
@@ -365,6 +366,80 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_tenant_unit
+
+> <EmptyEnvelope> patch_tenant_unit(tenant_id, tenant_unit_id, opts)
+
+Patch a tenant unit
+
+Patch a tenant unit
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::UnitsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+tenant_unit_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch a tenant unit
+  result = api_instance.patch_tenant_unit(tenant_id, tenant_unit_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling UnitsApi->patch_tenant_unit: #{e}"
+end
+```
+
+#### Using the patch_tenant_unit_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_tenant_unit_with_http_info(tenant_id, tenant_unit_id, opts)
+
+```ruby
+begin
+  # Patch a tenant unit
+  data, status_code, headers = api_instance.patch_tenant_unit_with_http_info(tenant_id, tenant_unit_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling UnitsApi->patch_tenant_unit_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **tenant_unit_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

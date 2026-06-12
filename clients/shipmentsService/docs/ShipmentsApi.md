@@ -9,6 +9,7 @@ All URIs are relative to *http://localhost*
 | [**get_shipment_by_id_async**](ShipmentsApi.md#get_shipment_by_id_async) | **GET** /api/v2/ShipmentsService/Shipments/{shipmentId} | Get shipment by ID |
 | [**get_shipments_async**](ShipmentsApi.md#get_shipments_async) | **GET** /api/v2/ShipmentsService/Shipments | Get all shipments |
 | [**get_shipments_count_async**](ShipmentsApi.md#get_shipments_count_async) | **GET** /api/v2/ShipmentsService/Shipments/Count | Get shipments count |
+| [**patch_shipment_async**](ShipmentsApi.md#patch_shipment_async) | **PATCH** /api/v2/ShipmentsService/Shipments/{shipmentId} | Patch a shipment |
 | [**update_shipment_async**](ShipmentsApi.md#update_shipment_async) | **PUT** /api/v2/ShipmentsService/Shipments/{shipmentId} | Update a shipment |
 
 
@@ -363,6 +364,80 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_shipment_async
+
+> <EmptyEnvelope> patch_shipment_async(tenant_id, shipment_id, opts)
+
+Patch a shipment
+
+Partially updates an existing shipment using JSON Patch.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::ShipmentsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+shipment_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch a shipment
+  result = api_instance.patch_shipment_async(tenant_id, shipment_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ShipmentsApi->patch_shipment_async: #{e}"
+end
+```
+
+#### Using the patch_shipment_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_shipment_async_with_http_info(tenant_id, shipment_id, opts)
+
+```ruby
+begin
+  # Patch a shipment
+  data, status_code, headers = api_instance.patch_shipment_async_with_http_info(tenant_id, shipment_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ShipmentsApi->patch_shipment_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **shipment_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

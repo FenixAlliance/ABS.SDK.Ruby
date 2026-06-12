@@ -49,6 +49,7 @@ docs/MaintenanceVisitDto.md
 docs/MaintenanceVisitDtoEnvelope.md
 docs/MaintenanceVisitDtoListEnvelope.md
 docs/MaintenanceVisitsApi.md
+docs/Operation.md
 docs/PrivateMessageDto.md
 docs/PrivateMessageDtoListEnvelope.md
 docs/RefreshRequest.md
@@ -178,6 +179,7 @@ lib/openapi_client/models/maintenance_visit_create_dto.rb
 lib/openapi_client/models/maintenance_visit_dto.rb
 lib/openapi_client/models/maintenance_visit_dto_envelope.rb
 lib/openapi_client/models/maintenance_visit_dto_list_envelope.rb
+lib/openapi_client/models/operation.rb
 lib/openapi_client/models/private_message_dto.rb
 lib/openapi_client/models/private_message_dto_list_envelope.rb
 lib/openapi_client/models/refresh_request.rb
@@ -237,15 +239,5 @@ lib/openapi_client/models/warranty_request_dto_list_envelope.rb
 lib/openapi_client/models/warranty_request_update_dto.rb
 lib/openapi_client/version.rb
 openapi_client.gemspec
-spec/api/completions_api_spec.rb
-spec/api/fenix_alliance_portals_website_api_spec.rb
-spec/api/inquiry_requests_api_spec.rb
-spec/api/knowledge_articles_api_spec.rb
-spec/api/maintenance_visits_api_spec.rb
-spec/api/refund_policies_api_spec.rb
-spec/api/refund_requests_api_spec.rb
-spec/api/return_policies_api_spec.rb
-spec/api/return_requests_api_spec.rb
-spec/api/warranty_policies_api_spec.rb
-spec/api/warranty_requests_api_spec.rb
+spec/models/operation_spec.rb
 spec/spec_helper.rb

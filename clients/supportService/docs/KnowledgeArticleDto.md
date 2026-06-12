@@ -20,7 +20,7 @@
 | **release_date_time** | **Time** |  | [optional] |
 | **last_modification** | **Time** |  | [optional] |
 | **tenant_id** | **String** |  | [optional] |
-| **business_profile_record_id** | **String** |  | [optional] |
+| **enrollment_id** | **String** |  | [optional] |
 
 ## Example
 
@@ -44,7 +44,7 @@ instance = OpenapiClient::KnowledgeArticleDto.new(
   release_date_time: null,
   last_modification: null,
   tenant_id: null,
-  business_profile_record_id: null
+  enrollment_id: null
 )
 ```
 

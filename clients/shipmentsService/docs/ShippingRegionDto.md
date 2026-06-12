@@ -8,7 +8,7 @@
 | **timestamp** | **Time** |  | [optional] |
 | **name** | **String** |  | [optional] |
 | **postal_codes** | **String** |  | [optional] |
-| **business_id** | **String** |  | [optional] |
+| **tenant_id** | **String** |  | [optional] |
 
 ## Example
 
@@ -20,7 +20,7 @@ instance = OpenapiClient::ShippingRegionDto.new(
   timestamp: null,
   name: null,
   postal_codes: null,
-  business_id: null
+  tenant_id: null
 )
 ```
 

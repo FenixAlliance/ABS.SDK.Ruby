@@ -9,6 +9,7 @@ All URIs are relative to *http://localhost*
 | [**get_return_request_async**](ReturnRequestsApi.md#get_return_request_async) | **GET** /api/v2/SupportService/ReturnRequests/{returnRequestId} | Retrieve a return request by ID |
 | [**get_return_requests_async**](ReturnRequestsApi.md#get_return_requests_async) | **GET** /api/v2/SupportService/ReturnRequests | Retrieve return requests |
 | [**get_return_requests_count_async**](ReturnRequestsApi.md#get_return_requests_count_async) | **GET** /api/v2/SupportService/ReturnRequests/Count | Get return requests count |
+| [**patch_return_request_async**](ReturnRequestsApi.md#patch_return_request_async) | **PATCH** /api/v2/SupportService/ReturnRequests/{returnRequestId} | Patch a return request |
 | [**update_return_request_async**](ReturnRequestsApi.md#update_return_request_async) | **PUT** /api/v2/SupportService/ReturnRequests/{returnRequestId} | Update a return request |
 
 
@@ -355,6 +356,80 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_return_request_async
+
+> <EmptyEnvelope> patch_return_request_async(tenant_id, return_request_id, opts)
+
+Patch a return request
+
+Partially updates an existing return request by its unique identifier.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::ReturnRequestsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+return_request_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch a return request
+  result = api_instance.patch_return_request_async(tenant_id, return_request_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ReturnRequestsApi->patch_return_request_async: #{e}"
+end
+```
+
+#### Using the patch_return_request_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_return_request_async_with_http_info(tenant_id, return_request_id, opts)
+
+```ruby
+begin
+  # Patch a return request
+  data, status_code, headers = api_instance.patch_return_request_async_with_http_info(tenant_id, return_request_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ReturnRequestsApi->patch_return_request_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **return_request_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

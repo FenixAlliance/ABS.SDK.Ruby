@@ -9,7 +9,7 @@
 | **tracking_code** | **String** |  | [optional] |
 | **expected_delivery** | **Time** |  | [optional] |
 | **location_id** | **String** |  | [optional] |
-| **business_id** | **String** |  | [optional] |
+| **tenant_id** | **String** |  | [optional] |
 | **shipment_id** | **String** |  | [optional] |
 | **shipping_courier_id** | **String** |  | [optional] |
 
@@ -24,7 +24,7 @@ instance = OpenapiClient::ShippingLabelDto.new(
   tracking_code: null,
   expected_delivery: null,
   location_id: null,
-  business_id: null,
+  tenant_id: null,
   shipment_id: null,
   shipping_courier_id: null
 )

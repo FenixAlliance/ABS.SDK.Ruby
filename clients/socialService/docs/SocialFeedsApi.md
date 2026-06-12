@@ -12,6 +12,7 @@ All URIs are relative to *http://localhost*
 | [**get_feed_posts_count_async**](SocialFeedsApi.md#get_feed_posts_count_async) | **GET** /api/v2/SocialService/SocialFeeds/{socialFeedId}/Posts/Count | Count social feed posts |
 | [**get_notification_async**](SocialFeedsApi.md#get_notification_async) | **GET** /api/v2/SocialService/SocialFeeds/{socialFeedId} | Get social feed by ID |
 | [**get_notifications_count_async**](SocialFeedsApi.md#get_notifications_count_async) | **GET** /api/v2/SocialService/SocialFeeds/Count | Count social feeds |
+| [**patch_feed_post_async**](SocialFeedsApi.md#patch_feed_post_async) | **PATCH** /api/v2/SocialService/SocialFeeds/{socialFeedId}/Posts/{feedPostId} | Patch a social feed post |
 | [**update_feed_post_async**](SocialFeedsApi.md#update_feed_post_async) | **PUT** /api/v2/SocialService/SocialFeeds/{socialFeedId}/Posts/{feedPostId} | Update a social feed post |
 
 
@@ -590,6 +591,82 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_feed_post_async
+
+> <EmptyEnvelope> patch_feed_post_async(social_profile_id, social_feed_id, feed_post_id, opts)
+
+Patch a social feed post
+
+Partially updates an existing post in a specific social feed using a JSON Patch document.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::SocialFeedsApi.new
+social_profile_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+social_feed_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+feed_post_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch a social feed post
+  result = api_instance.patch_feed_post_async(social_profile_id, social_feed_id, feed_post_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling SocialFeedsApi->patch_feed_post_async: #{e}"
+end
+```
+
+#### Using the patch_feed_post_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_feed_post_async_with_http_info(social_profile_id, social_feed_id, feed_post_id, opts)
+
+```ruby
+begin
+  # Patch a social feed post
+  data, status_code, headers = api_instance.patch_feed_post_async_with_http_info(social_profile_id, social_feed_id, feed_post_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling SocialFeedsApi->patch_feed_post_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **social_profile_id** | **String** |  |  |
+| **social_feed_id** | **String** |  |  |
+| **feed_post_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

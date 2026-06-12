@@ -9,6 +9,7 @@ All URIs are relative to *http://localhost*
 | [**get_service_case_by_id_async**](ServiceCasesApi.md#get_service_case_by_id_async) | **GET** /api/v2/ServicesService/ServiceCases/{serviceCaseId} | Get a service case by ID |
 | [**get_service_cases_async**](ServiceCasesApi.md#get_service_cases_async) | **GET** /api/v2/ServicesService/ServiceCases | Get all service cases |
 | [**get_service_cases_count_async**](ServiceCasesApi.md#get_service_cases_count_async) | **GET** /api/v2/ServicesService/ServiceCases/Count | Get service cases count |
+| [**patch_service_case_async**](ServiceCasesApi.md#patch_service_case_async) | **PATCH** /api/v2/ServicesService/ServiceCases/{serviceCaseId} | Patch a service case |
 | [**update_service_case_async**](ServiceCasesApi.md#update_service_case_async) | **PUT** /api/v2/ServicesService/ServiceCases/{serviceCaseId} | Update a service case |
 
 
@@ -365,6 +366,80 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_service_case_async
+
+> <Envelope> patch_service_case_async(tenant_id, service_case_id, opts)
+
+Patch a service case
+
+Partially updates an existing service case using a JSON Patch document.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::ServiceCasesApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+service_case_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch a service case
+  result = api_instance.patch_service_case_async(tenant_id, service_case_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ServiceCasesApi->patch_service_case_async: #{e}"
+end
+```
+
+#### Using the patch_service_case_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<Envelope>, Integer, Hash)> patch_service_case_async_with_http_info(tenant_id, service_case_id, opts)
+
+```ruby
+begin
+  # Patch a service case
+  data, status_code, headers = api_instance.patch_service_case_async_with_http_info(tenant_id, service_case_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <Envelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ServiceCasesApi->patch_service_case_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **service_case_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**Envelope**](Envelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

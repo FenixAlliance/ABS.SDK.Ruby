@@ -6,6 +6,7 @@
 | ---- | ---- | ----------- | ----- |
 | **title** | **String** |  | [optional] |
 | **description** | **String** |  | [optional] |
+| **support_entitlement_id** | **String** |  | [optional] |
 
 ## Example
 
@@ -14,7 +15,8 @@ require 'openapi_client'
 
 instance = OpenapiClient::SupportTicketPriorityUpdateDto.new(
   title: null,
-  description: null
+  description: null,
+  support_entitlement_id: null
 )
 ```
 

@@ -8,6 +8,7 @@
 | **timestamp** | **Time** |  | [optional] |
 | **title** | **String** |  | [optional] |
 | **description** | **String** |  | [optional] |
+| **status** | **String** |  | [optional] |
 | **start_date_time** | **Time** |  | [optional] |
 | **end_date_time** | **Time** |  | [optional] |
 | **next_invoice_date_time** | **Time** |  | [optional] |
@@ -45,12 +46,12 @@
 | **data8_label** | **String** |  | [optional] |
 | **data9** | **String** |  | [optional] |
 | **data9_label** | **String** |  | [optional] |
-| **account_holder_id** | **String** |  | [optional] |
+| **user_id** | **String** |  | [optional] |
 | **individual_id** | **String** |  | [optional] |
 | **organization_id** | **String** |  | [optional] |
-| **receiver_business_id** | **String** |  | [optional] |
-| **business_id** | **String** |  | [optional] |
-| **business_profile_record_id** | **String** |  | [optional] |
+| **receiver_tenant_id** | **String** |  | [optional] |
+| **tenant_id** | **String** |  | [optional] |
+| **enrollment_id** | **String** |  | [optional] |
 | **payment_token_id** | **String** |  | [optional] |
 | **wallet_account_id** | **String** |  | [optional] |
 | **security_certificate_id** | **String** |  | [optional] |
@@ -65,6 +66,7 @@ instance = OpenapiClient::SupportEntitlementDto.new(
   timestamp: null,
   title: null,
   description: null,
+  status: null,
   start_date_time: null,
   end_date_time: null,
   next_invoice_date_time: null,
@@ -102,12 +104,12 @@ instance = OpenapiClient::SupportEntitlementDto.new(
   data8_label: null,
   data9: null,
   data9_label: null,
-  account_holder_id: null,
+  user_id: null,
   individual_id: null,
   organization_id: null,
-  receiver_business_id: null,
-  business_id: null,
-  business_profile_record_id: null,
+  receiver_tenant_id: null,
+  tenant_id: null,
+  enrollment_id: null,
   payment_token_id: null,
   wallet_account_id: null,
   security_certificate_id: null

@@ -12,6 +12,7 @@ All URIs are relative to *http://localhost*
 | [**get_o_auth_authorization_by_id_async**](OAuthApplicationsApi.md#get_o_auth_authorization_by_id_async) | **GET** /api/v2/SecurityService/OAuthApplications/Authorizations/{authorizationId} | Get OAuth authorization by ID |
 | [**get_o_auth_authorizations_async**](OAuthApplicationsApi.md#get_o_auth_authorizations_async) | **GET** /api/v2/SecurityService/OAuthApplications/Authorizations | Get all OAuth authorizations |
 | [**get_o_auth_authorizations_count_async**](OAuthApplicationsApi.md#get_o_auth_authorizations_count_async) | **GET** /api/v2/SecurityService/OAuthApplications/Authorizations/Count | Get OAuth authorizations count |
+| [**patch_o_auth_application_async**](OAuthApplicationsApi.md#patch_o_auth_application_async) | **PATCH** /api/v2/SecurityService/OAuthApplications/{applicationId} | Patch an existing OAuth application |
 | [**update_o_auth_application_async**](OAuthApplicationsApi.md#update_o_auth_application_async) | **PUT** /api/v2/SecurityService/OAuthApplications/{applicationId} | Update an existing OAuth application |
 
 
@@ -584,6 +585,80 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_o_auth_application_async
+
+> <EmptyEnvelope> patch_o_auth_application_async(tenant_id, application_id, operation, opts)
+
+Patch an existing OAuth application
+
+Partially updates an existing OAuth application using a JSON Patch document.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::OAuthApplicationsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+application_id = 'application_id_example' # String | 
+operation = [OpenapiClient::Operation.new] # Array<Operation> | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example' # String | 
+}
+
+begin
+  # Patch an existing OAuth application
+  result = api_instance.patch_o_auth_application_async(tenant_id, application_id, operation, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling OAuthApplicationsApi->patch_o_auth_application_async: #{e}"
+end
+```
+
+#### Using the patch_o_auth_application_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_o_auth_application_async_with_http_info(tenant_id, application_id, operation, opts)
+
+```ruby
+begin
+  # Patch an existing OAuth application
+  data, status_code, headers = api_instance.patch_o_auth_application_async_with_http_info(tenant_id, application_id, operation, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling OAuthApplicationsApi->patch_o_auth_application_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **application_id** | **String** |  |  |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

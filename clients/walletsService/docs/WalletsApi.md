@@ -47,6 +47,8 @@ All URIs are relative to *http://localhost*
 | [**get_wallet_withdraw_requests_count_async**](WalletsApi.md#get_wallet_withdraw_requests_count_async) | **GET** /api/v2/WalletsService/Wallets/{walletId}/WithdrawRequests/Count | Get Wallet Withdraw Requests Count |
 | [**get_wallet_withdraws_async**](WalletsApi.md#get_wallet_withdraws_async) | **GET** /api/v2/WalletsService/Wallets/{walletId}/Withdraws | Get Wallet Withdraws |
 | [**get_wallet_withdraws_count_async**](WalletsApi.md#get_wallet_withdraws_count_async) | **GET** /api/v2/WalletsService/Wallets/{walletId}/Withdraws/Count | Get Wallet Withdraws Count |
+| [**patch_wallet_bank_account_async**](WalletsApi.md#patch_wallet_bank_account_async) | **PATCH** /api/v2/WalletsService/Wallets/{walletId}/BankAccounts/{bankAccountId} | Patch Wallet Bank Account |
+| [**patch_wallet_token_async**](WalletsApi.md#patch_wallet_token_async) | **PATCH** /api/v2/WalletsService/Wallets/{walletId}/Tokens/{tokenId} | Patch Wallet Token |
 | [**update_wallet_bank_account_async**](WalletsApi.md#update_wallet_bank_account_async) | **PUT** /api/v2/WalletsService/Wallets/{walletId}/BankAccounts/{bankAccountId} | Update Wallet Bank Account |
 | [**update_wallet_location_async**](WalletsApi.md#update_wallet_location_async) | **PUT** /api/v2/WalletsService/Wallets/{walletId}/Locations/{locationId} | Update Wallet Location |
 | [**update_wallet_token_async**](WalletsApi.md#update_wallet_token_async) | **PUT** /api/v2/WalletsService/Wallets/{walletId}/Tokens/{tokenId} | Update Wallet Token |
@@ -3081,6 +3083,154 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_wallet_bank_account_async
+
+> <EmptyEnvelope> patch_wallet_bank_account_async(wallet_id, bank_account_id, opts)
+
+Patch Wallet Bank Account
+
+Partially update a specific bank account of a specific wallet by ID.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::WalletsApi.new
+wallet_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+bank_account_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch Wallet Bank Account
+  result = api_instance.patch_wallet_bank_account_async(wallet_id, bank_account_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling WalletsApi->patch_wallet_bank_account_async: #{e}"
+end
+```
+
+#### Using the patch_wallet_bank_account_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_wallet_bank_account_async_with_http_info(wallet_id, bank_account_id, opts)
+
+```ruby
+begin
+  # Patch Wallet Bank Account
+  data, status_code, headers = api_instance.patch_wallet_bank_account_async_with_http_info(wallet_id, bank_account_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling WalletsApi->patch_wallet_bank_account_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **wallet_id** | **String** |  |  |
+| **bank_account_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
+- **Accept**: application/json, application/xml
+
+
+## patch_wallet_token_async
+
+> <EmptyEnvelope> patch_wallet_token_async(wallet_id, token_id, opts)
+
+Patch Wallet Token
+
+Partially update a specific payment token of a specific wallet by ID.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::WalletsApi.new
+wallet_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+token_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch Wallet Token
+  result = api_instance.patch_wallet_token_async(wallet_id, token_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling WalletsApi->patch_wallet_token_async: #{e}"
+end
+```
+
+#### Using the patch_wallet_token_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_wallet_token_async_with_http_info(wallet_id, token_id, opts)
+
+```ruby
+begin
+  # Patch Wallet Token
+  data, status_code, headers = api_instance.patch_wallet_token_async_with_http_info(wallet_id, token_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling WalletsApi->patch_wallet_token_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **wallet_id** | **String** |  |  |
+| **token_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

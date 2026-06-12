@@ -4,8 +4,6 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **id** | **String** |  | [optional] |
-| **timestamp** | **Time** |  | [optional] |
 | **name** | **String** |  | [optional] |
 | **description** | **String** |  | [optional] |
 | **avatar_url** | **String** |  | [optional] |
@@ -19,8 +17,6 @@
 require 'openapi_client'
 
 instance = OpenapiClient::TenantTeamUpdateDto.new(
-  id: null,
-  timestamp: null,
   name: null,
   description: null,
   avatar_url: null,

@@ -26,6 +26,7 @@ docs/LoginRequest.md
 docs/NotificationDto.md
 docs/NotificationDtoEnvelope.md
 docs/NotificationDtoListEnvelope.md
+docs/Operation.md
 docs/PrivateMessageCreateDto.md
 docs/PrivateMessageDto.md
 docs/PrivateMessageDtoListEnvelope.md
@@ -105,6 +106,7 @@ lib/openapi_client/models/login_request.rb
 lib/openapi_client/models/notification_dto.rb
 lib/openapi_client/models/notification_dto_envelope.rb
 lib/openapi_client/models/notification_dto_list_envelope.rb
+lib/openapi_client/models/operation.rb
 lib/openapi_client/models/private_message_create_dto.rb
 lib/openapi_client/models/private_message_dto.rb
 lib/openapi_client/models/private_message_dto_list_envelope.rb
@@ -153,7 +155,5 @@ lib/openapi_client/models/two_factor_request.rb
 lib/openapi_client/models/two_factor_response.rb
 lib/openapi_client/version.rb
 openapi_client.gemspec
-spec/api/completions_api_spec.rb
-spec/api/fenix_alliance_portals_website_api_spec.rb
-spec/models/notification_dto_envelope_spec.rb
+spec/models/operation_spec.rb
 spec/spec_helper.rb

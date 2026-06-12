@@ -6,9 +6,10 @@
 | ---- | ---- | ----------- | ----- |
 | **id** | **String** |  | [optional] |
 | **timestamp** | **Time** |  | [optional] |
+| **tenant_id** | **String** |  | [optional] |
+| **enrollment_id** | **String** |  | [optional] |
 | **name** | **String** |  | [optional] |
 | **parent_business_industry_id** | **String** |  | [optional] |
-| **business_profile_record_id** | **String** |  | [optional] |
 
 ## Example
 
@@ -18,9 +19,10 @@ require 'openapi_client'
 instance = OpenapiClient::TenantIndustryDto.new(
   id: null,
   timestamp: null,
+  tenant_id: null,
+  enrollment_id: null,
   name: null,
-  parent_business_industry_id: null,
-  business_profile_record_id: null
+  parent_business_industry_id: null
 )
 ```
 
