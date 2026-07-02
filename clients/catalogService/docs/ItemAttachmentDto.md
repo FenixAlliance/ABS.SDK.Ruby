@@ -13,6 +13,8 @@
 | **hash** | **String** |  | [optional] |
 | **file_url** | **String** |  | [optional] |
 | **file_path** | **String** |  | [optional] |
+| **storage_key** | **String** |  | [optional] |
+| **storage_provider_key** | **String** |  | [optional] |
 | **file_name** | **String** |  | [optional] |
 | **abstract** | **String** |  | [optional] |
 | **key_words** | **String** |  | [optional] |
@@ -26,6 +28,14 @@
 | **enrollment_id** | **String** |  | [optional] |
 | **social_profile_id** | **String** |  | [optional] |
 | **folder_path** | **String** |  | [optional] |
+| **scan_status** | **String** |  | [optional] |
+| **thumbnail_status** | **String** |  | [optional] |
+| **has_thumbnail** | **Boolean** |  | [optional][readonly] |
+| **thumbnail_storage_key** | **String** |  | [optional] |
+| **thumbnail_content_type** | **String** |  | [optional] |
+| **thumbnail_width** | **Integer** |  | [optional] |
+| **thumbnail_height** | **Integer** |  | [optional] |
+| **public_access_type** | **String** |  | [optional] |
 | **item_id** | **String** |  | [optional] |
 
 ## Example
@@ -43,6 +53,8 @@ instance = OpenapiClient::ItemAttachmentDto.new(
   hash: null,
   file_url: null,
   file_path: null,
+  storage_key: null,
+  storage_provider_key: null,
   file_name: null,
   abstract: null,
   key_words: null,
@@ -56,6 +68,14 @@ instance = OpenapiClient::ItemAttachmentDto.new(
   enrollment_id: null,
   social_profile_id: null,
   folder_path: null,
+  scan_status: null,
+  thumbnail_status: null,
+  has_thumbnail: null,
+  thumbnail_storage_key: null,
+  thumbnail_content_type: null,
+  thumbnail_width: null,
+  thumbnail_height: null,
+  public_access_type: null,
   item_id: null
 )
 ```

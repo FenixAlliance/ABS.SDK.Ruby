@@ -1,6 +1,6 @@
 # OpenapiClient::InvoicesApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://absuite.net*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
@@ -40,6 +40,8 @@ All URIs are relative to *http://localhost*
 | [**get_invoice_references_count**](InvoicesApi.md#get_invoice_references_count) | **GET** /api/v2/InvoicingService/Invoices/{invoiceId}/References/Count | Get the count of invoice references. |
 | [**get_invoices**](InvoicesApi.md#get_invoices) | **GET** /api/v2/InvoicingService/Invoices | Get a list of invoices. |
 | [**get_invoices_count**](InvoicesApi.md#get_invoices_count) | **GET** /api/v2/InvoicingService/Invoices/Count | Get the count of invoices. |
+| [**get_purchase_invoices_sum**](InvoicesApi.md#get_purchase_invoices_sum) | **GET** /api/v2/InvoicingService/Invoices/PurchaseInvoices/Sum | Sum tenant purchase-invoice totals. |
+| [**get_sales_invoices_sum**](InvoicesApi.md#get_sales_invoices_sum) | **GET** /api/v2/InvoicingService/Invoices/SalesInvoices/Sum | Sum tenant sales-invoice totals. |
 | [**patch_invoice**](InvoicesApi.md#patch_invoice) | **PATCH** /api/v2/InvoicingService/Invoices/{invoiceId} | Patch an invoice. |
 | [**patch_invoice_adjustment**](InvoicesApi.md#patch_invoice_adjustment) | **PATCH** /api/v2/InvoicingService/Invoices/{invoiceId}/Adjustments/{invoiceAdjustmentId} | Patch an invoice adjustment. |
 | [**patch_invoice_line**](InvoicesApi.md#patch_invoice_line) | **PATCH** /api/v2/InvoicingService/Invoices/{invoiceId}/Lines/{invoiceLineId} | Patch an invoice line. |
@@ -2477,6 +2479,134 @@ end
 ### Return type
 
 [**Int32Envelope**](Int32Envelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## get_purchase_invoices_sum
+
+> <DecimalEnvelope> get_purchase_invoices_sum(tenant_id)
+
+Sum tenant purchase-invoice totals.
+
+Returns SUM(Invoice.TotalAmountInUSD) for invoices with InvoiceType == PurchaseInvoice, filtered by the supplied OData date range.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::InvoicesApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+
+begin
+  # Sum tenant purchase-invoice totals.
+  result = api_instance.get_purchase_invoices_sum(tenant_id)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling InvoicesApi->get_purchase_invoices_sum: #{e}"
+end
+```
+
+#### Using the get_purchase_invoices_sum_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<DecimalEnvelope>, Integer, Hash)> get_purchase_invoices_sum_with_http_info(tenant_id)
+
+```ruby
+begin
+  # Sum tenant purchase-invoice totals.
+  data, status_code, headers = api_instance.get_purchase_invoices_sum_with_http_info(tenant_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <DecimalEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling InvoicesApi->get_purchase_invoices_sum_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+
+### Return type
+
+[**DecimalEnvelope**](DecimalEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## get_sales_invoices_sum
+
+> <DecimalEnvelope> get_sales_invoices_sum(tenant_id)
+
+Sum tenant sales-invoice totals.
+
+Returns SUM(Invoice.TotalAmountInUSD) for invoices with InvoiceType == SalesInvoice, filtered by the supplied OData date range.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::InvoicesApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+
+begin
+  # Sum tenant sales-invoice totals.
+  result = api_instance.get_sales_invoices_sum(tenant_id)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling InvoicesApi->get_sales_invoices_sum: #{e}"
+end
+```
+
+#### Using the get_sales_invoices_sum_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<DecimalEnvelope>, Integer, Hash)> get_sales_invoices_sum_with_http_info(tenant_id)
+
+```ruby
+begin
+  # Sum tenant sales-invoice totals.
+  data, status_code, headers = api_instance.get_sales_invoices_sum_with_http_info(tenant_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <DecimalEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling InvoicesApi->get_sales_invoices_sum_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+
+### Return type
+
+[**DecimalEnvelope**](DecimalEnvelope.md)
 
 ### Authorization
 

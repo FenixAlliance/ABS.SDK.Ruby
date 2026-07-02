@@ -7,9 +7,7 @@ Gemfile
 README.md
 Rakefile
 docs/AccessTokenResponse.md
-docs/CompletionsApi.md
-docs/ErrorEnvelope.md
-docs/FenixAlliancePortalsWebsiteApi.md
+docs/FenixAllianceABSWebApi.md
 docs/ForgotPasswordRequest.md
 docs/HttpValidationProblemDetails.md
 docs/InfoRequest.md
@@ -23,13 +21,11 @@ docs/TwoFactorRequest.md
 docs/TwoFactorResponse.md
 git_push.sh
 lib/openapi_client.rb
-lib/openapi_client/api/completions_api.rb
-lib/openapi_client/api/fenix_alliance_portals_website_api.rb
+lib/openapi_client/api/fenix_alliance_abs_web_api.rb
 lib/openapi_client/api_client.rb
 lib/openapi_client/api_error.rb
 lib/openapi_client/configuration.rb
 lib/openapi_client/models/access_token_response.rb
-lib/openapi_client/models/error_envelope.rb
 lib/openapi_client/models/forgot_password_request.rb
 lib/openapi_client/models/http_validation_problem_details.rb
 lib/openapi_client/models/info_request.rb

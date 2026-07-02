@@ -28,6 +28,8 @@
 | **zero** | **Boolean** |  | [optional] |
 | **reduced** | **Boolean** |  | [optional] |
 | **withholding** | **Boolean** |  | [optional] |
+| **tax_scheme_code** | **String** |  | [optional] |
+| **tax_category_code** | **String** |  | [optional] |
 | **fiscal_authority_id** | **String** |  | [optional] |
 
 ## Example
@@ -60,6 +62,8 @@ instance = OpenapiClient::TaxPolicyUpdateDto.new(
   zero: null,
   reduced: null,
   withholding: null,
+  tax_scheme_code: null,
+  tax_category_code: null,
   fiscal_authority_id: null
 )
 ```

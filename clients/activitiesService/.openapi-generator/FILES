@@ -16,16 +16,16 @@ docs/ActivityRecordDto.md
 docs/ActivityRecordDtoEnvelope.md
 docs/ActivityRecordDtoListEnvelope.md
 docs/ActivityRecordUpdateDto.md
+docs/ActivityRecordsApi.md
 docs/ActivityTypeCreateDto.md
 docs/ActivityTypeDto.md
 docs/ActivityTypeDtoEnvelope.md
 docs/ActivityTypeDtoListEnvelope.md
 docs/ActivityTypeUpdateDto.md
-docs/CompletionsApi.md
 docs/EmptyEnvelope.md
 docs/Envelope.md
 docs/ErrorEnvelope.md
-docs/FenixAlliancePortalsWebsiteApi.md
+docs/FenixAllianceABSWebApi.md
 docs/ForgotPasswordRequest.md
 docs/HttpValidationProblemDetails.md
 docs/InfoRequest.md
@@ -42,8 +42,8 @@ docs/TwoFactorResponse.md
 git_push.sh
 lib/openapi_client.rb
 lib/openapi_client/api/activity_feeds_api.rb
-lib/openapi_client/api/completions_api.rb
-lib/openapi_client/api/fenix_alliance_portals_website_api.rb
+lib/openapi_client/api/activity_records_api.rb
+lib/openapi_client/api/fenix_alliance_abs_web_api.rb
 lib/openapi_client/api_client.rb
 lib/openapi_client/api_error.rb
 lib/openapi_client/configuration.rb
@@ -79,4 +79,6 @@ lib/openapi_client/models/two_factor_request.rb
 lib/openapi_client/models/two_factor_response.rb
 lib/openapi_client/version.rb
 openapi_client.gemspec
+spec/api/activity_records_api_spec.rb
+spec/api/fenix_alliance_abs_web_api_spec.rb
 spec/spec_helper.rb

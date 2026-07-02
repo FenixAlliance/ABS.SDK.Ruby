@@ -18,10 +18,9 @@ docs/BillOfLadingLineDtoListEnvelope.md
 docs/BillOfLadingLineUpdateDto.md
 docs/BillOfLadingUpdateDto.md
 docs/BillsOfLadingApi.md
-docs/CompletionsApi.md
 docs/EmptyEnvelope.md
 docs/ErrorEnvelope.md
-docs/FenixAlliancePortalsWebsiteApi.md
+docs/FenixAllianceABSWebApi.md
 docs/ForgotPasswordRequest.md
 docs/HttpValidationProblemDetails.md
 docs/InfoRequest.md
@@ -86,8 +85,7 @@ docs/TwoFactorResponse.md
 git_push.sh
 lib/openapi_client.rb
 lib/openapi_client/api/bills_of_lading_api.rb
-lib/openapi_client/api/completions_api.rb
-lib/openapi_client/api/fenix_alliance_portals_website_api.rb
+lib/openapi_client/api/fenix_alliance_abs_web_api.rb
 lib/openapi_client/api/item_shipping_policies_api.rb
 lib/openapi_client/api/shipments_api.rb
 lib/openapi_client/api/shipping_classes_api.rb

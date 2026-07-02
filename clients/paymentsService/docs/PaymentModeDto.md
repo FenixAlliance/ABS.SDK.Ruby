@@ -8,6 +8,7 @@
 | **timestamp** | **Time** |  | [optional] |
 | **name** | **String** |  | [optional] |
 | **description** | **String** |  | [optional] |
+| **payment_means_code** | **String** |  | [optional] |
 | **tenant_id** | **String** |  | [optional] |
 | **enrollment_id** | **String** |  | [optional] |
 
@@ -21,6 +22,7 @@ instance = OpenapiClient::PaymentModeDto.new(
   timestamp: null,
   name: null,
   description: null,
+  payment_means_code: null,
   tenant_id: null,
   enrollment_id: null
 )

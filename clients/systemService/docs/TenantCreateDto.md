@@ -6,6 +6,7 @@
 | ---- | ---- | ----------- | ----- |
 | **id** | **String** |  | [optional] |
 | **timestamp** | **Time** |  | [optional] |
+| **kind** | **String** |  | [optional] |
 | **name** | **String** |  |  |
 | **legal_name** | **String** |  | [optional] |
 | **email** | **String** |  |  |
@@ -36,6 +37,7 @@ require 'openapi_client'
 instance = OpenapiClient::TenantCreateDto.new(
   id: null,
   timestamp: null,
+  kind: null,
   name: null,
   legal_name: null,
   email: null,

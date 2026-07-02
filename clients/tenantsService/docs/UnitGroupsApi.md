@@ -1,6 +1,6 @@
 # OpenapiClient::UnitGroupsApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://absuite.net*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
@@ -36,7 +36,7 @@ require 'openapi_client'
 
 api_instance = OpenapiClient::UnitGroupsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
-unit_group_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+unit_group_id = 'unit_group_id_example' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example', # String | 
@@ -182,8 +182,8 @@ require 'openapi_client'
 
 api_instance = OpenapiClient::UnitGroupsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
-unit_group_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
-unit_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+unit_group_id = 'unit_group_id_example' # String | 
+unit_id = 'unit_id_example' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example' # String | 
@@ -256,7 +256,7 @@ require 'openapi_client'
 
 api_instance = OpenapiClient::UnitGroupsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
-unit_group_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+unit_group_id = 'unit_group_id_example' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example' # String | 
@@ -328,8 +328,8 @@ require 'openapi_client'
 
 api_instance = OpenapiClient::UnitGroupsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
-unit_group_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
-unit_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+unit_group_id = 'unit_group_id_example' # String | 
+unit_id = 'unit_id_example' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example' # String | 
@@ -402,7 +402,7 @@ require 'openapi_client'
 
 api_instance = OpenapiClient::UnitGroupsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
-unit_group_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+unit_group_id = 'unit_group_id_example' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example' # String | 
@@ -614,7 +614,7 @@ require 'openapi_client'
 
 api_instance = OpenapiClient::UnitGroupsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
-unit_group_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+unit_group_id = 'unit_group_id_example' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example' # String | 
@@ -686,7 +686,7 @@ require 'openapi_client'
 
 api_instance = OpenapiClient::UnitGroupsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
-unit_group_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+unit_group_id = 'unit_group_id_example' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example' # String | 
@@ -758,8 +758,8 @@ require 'openapi_client'
 
 api_instance = OpenapiClient::UnitGroupsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
-unit_group_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
-unit_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+unit_group_id = 'unit_group_id_example' # String | 
+unit_id = 'unit_id_example' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example', # String | 
@@ -834,7 +834,7 @@ require 'openapi_client'
 
 api_instance = OpenapiClient::UnitGroupsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
-unit_group_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+unit_group_id = 'unit_group_id_example' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example', # String | 
@@ -908,8 +908,8 @@ require 'openapi_client'
 
 api_instance = OpenapiClient::UnitGroupsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
-unit_group_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
-unit_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+unit_group_id = 'unit_group_id_example' # String | 
+unit_id = 'unit_id_example' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example', # String | 
@@ -984,7 +984,7 @@ require 'openapi_client'
 
 api_instance = OpenapiClient::UnitGroupsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
-unit_group_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+unit_group_id = 'unit_group_id_example' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example', # String | 

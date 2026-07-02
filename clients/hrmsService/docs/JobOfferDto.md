@@ -6,6 +6,7 @@
 | ---- | ---- | ----------- | ----- |
 | **id** | **String** |  | [optional] |
 | **timestamp** | **Time** |  | [optional] |
+| **status** | **String** |  | [optional] |
 | **remote** | **Boolean** |  | [optional] |
 | **expected_hire_date** | **Time** |  | [optional] |
 | **title** | **String** |  | [optional] |
@@ -65,6 +66,7 @@ require 'openapi_client'
 instance = OpenapiClient::JobOfferDto.new(
   id: null,
   timestamp: null,
+  status: null,
   remote: null,
   expected_hire_date: null,
   title: null,

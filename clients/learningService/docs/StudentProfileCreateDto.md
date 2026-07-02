@@ -8,6 +8,7 @@
 | **timestamp** | **Time** |  | [optional] |
 | **type** | **String** |  | [optional] |
 | **contact_id** | **String** |  | [optional] |
+| **contact** | [**ContactCreateDto**](ContactCreateDto.md) |  | [optional] |
 | **about** | **String** |  | [optional] |
 | **avatar_url** | **String** |  | [optional] |
 | **data** | **String** |  | [optional] |
@@ -41,6 +42,7 @@ instance = OpenapiClient::StudentProfileCreateDto.new(
   timestamp: null,
   type: null,
   contact_id: null,
+  contact: null,
   about: null,
   avatar_url: null,
   data: null,

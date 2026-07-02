@@ -1,6 +1,6 @@
 # OpenapiClient::PriceListsApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://absuite.net*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
@@ -11,6 +11,7 @@ All URIs are relative to *http://localhost*
 | [**get_price_list_async**](PriceListsApi.md#get_price_list_async) | **GET** /api/v2/PricingService/PriceLists/{priceListId} | Gets a price list by ID |
 | [**get_price_list_price_async**](PriceListsApi.md#get_price_list_price_async) | **GET** /api/v2/PricingService/PriceLists/{priceListId}/Prices/{priceId} | Gets a price list entry by ID |
 | [**get_price_list_prices_async**](PriceListsApi.md#get_price_list_prices_async) | **GET** /api/v2/PricingService/PriceLists/{priceListId}/Prices | Retrieves prices in a price list |
+| [**get_price_list_prices_count_async**](PriceListsApi.md#get_price_list_prices_count_async) | **GET** /api/v2/PricingService/PriceLists/{priceListId}/Prices/Count | Counts prices in a price list |
 | [**get_price_lists_async**](PriceListsApi.md#get_price_lists_async) | **GET** /api/v2/PricingService/PriceLists | Retrieves all price lists |
 | [**get_price_lists_count_async**](PriceListsApi.md#get_price_lists_count_async) | **GET** /api/v2/PricingService/PriceLists/Count | Counts price lists |
 | [**patch_price_list_async**](PriceListsApi.md#patch_price_list_async) | **PATCH** /api/v2/PricingService/PriceLists/{priceListId} | Patches a price list |
@@ -484,6 +485,72 @@ end
 ### Return type
 
 [**ItemPriceDtoListEnvelope**](ItemPriceDtoListEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## get_price_list_prices_count_async
+
+> <Int32Envelope> get_price_list_prices_count_async(tenant_id, price_list_id)
+
+Counts prices in a price list
+
+Gets the count of price entries for a specific price list.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::PriceListsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+price_list_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+
+begin
+  # Counts prices in a price list
+  result = api_instance.get_price_list_prices_count_async(tenant_id, price_list_id)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling PriceListsApi->get_price_list_prices_count_async: #{e}"
+end
+```
+
+#### Using the get_price_list_prices_count_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<Int32Envelope>, Integer, Hash)> get_price_list_prices_count_async_with_http_info(tenant_id, price_list_id)
+
+```ruby
+begin
+  # Counts prices in a price list
+  data, status_code, headers = api_instance.get_price_list_prices_count_async_with_http_info(tenant_id, price_list_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <Int32Envelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling PriceListsApi->get_price_list_prices_count_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **price_list_id** | **String** |  |  |
+
+### Return type
+
+[**Int32Envelope**](Int32Envelope.md)
 
 ### Authorization
 

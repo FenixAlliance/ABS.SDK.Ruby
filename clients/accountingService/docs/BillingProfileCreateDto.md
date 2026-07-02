@@ -16,6 +16,11 @@
 | **postal_code** | **String** |  |  |
 | **business_name** | **String** |  |  |
 | **commercial_name** | **String** |  |  |
+| **verification_digit** | **String** |  | [optional] |
+| **economic_activity_code** | **String** |  | [optional] |
+| **economic_activity_scheme** | **String** |  | [optional] |
+| **is_primary** | **Boolean** |  | [optional] |
+| **establishment_code** | **String** |  | [optional] |
 | **ticker** | **String** |  | [optional] |
 | **duns** | **String** |  | [optional] |
 | **is_public_company** | **Boolean** |  | [optional] |
@@ -46,6 +51,11 @@ instance = OpenapiClient::BillingProfileCreateDto.new(
   postal_code: null,
   business_name: null,
   commercial_name: null,
+  verification_digit: null,
+  economic_activity_code: null,
+  economic_activity_scheme: null,
+  is_primary: null,
+  establishment_code: null,
   ticker: null,
   duns: null,
   is_public_company: null,

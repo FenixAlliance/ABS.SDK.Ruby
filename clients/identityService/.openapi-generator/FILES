@@ -11,9 +11,8 @@ docs/ApplicationsApi.md
 docs/AuthResult.md
 docs/AuthResultEnvelope.md
 docs/CheckerApi.md
-docs/CompletionsApi.md
 docs/ErrorEnvelope.md
-docs/FenixAlliancePortalsWebsiteApi.md
+docs/FenixAllianceABSWebApi.md
 docs/ForgotPasswordRequest.md
 docs/HttpValidationProblemDetails.md
 docs/InfoRequest.md
@@ -46,8 +45,7 @@ git_push.sh
 lib/openapi_client.rb
 lib/openapi_client/api/applications_api.rb
 lib/openapi_client/api/checker_api.rb
-lib/openapi_client/api/completions_api.rb
-lib/openapi_client/api/fenix_alliance_portals_website_api.rb
+lib/openapi_client/api/fenix_alliance_abs_web_api.rb
 lib/openapi_client/api/o_auth_api.rb
 lib/openapi_client/api/resource_api.rb
 lib/openapi_client/api/user_info_api.rb

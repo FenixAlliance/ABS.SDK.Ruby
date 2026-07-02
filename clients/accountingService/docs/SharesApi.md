@@ -1,6 +1,6 @@
 # OpenapiClient::SharesApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://absuite.net*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
@@ -18,6 +18,7 @@ All URIs are relative to *http://localhost*
 | [**get_share_issuance**](SharesApi.md#get_share_issuance) | **GET** /api/v2/AccountingService/Shares/Issuances/{issuanceId} | Gets a share issuance by id |
 | [**get_share_issuances**](SharesApi.md#get_share_issuances) | **GET** /api/v2/AccountingService/Shares/Issuances | Gets the current tenant share issuances |
 | [**get_share_issuances_count**](SharesApi.md#get_share_issuances_count) | **GET** /api/v2/AccountingService/Shares/Issuances/Count | Gets the current tenant share issuances count |
+| [**get_share_issuances_sum**](SharesApi.md#get_share_issuances_sum) | **GET** /api/v2/AccountingService/Shares/Issuances/Sum | Sum tenant share issuance quantities |
 | [**get_share_transfer**](SharesApi.md#get_share_transfer) | **GET** /api/v2/AccountingService/Shares/Transfers/{transferId} | Gets a share transfer by id |
 | [**get_share_transfer_reason**](SharesApi.md#get_share_transfer_reason) | **GET** /api/v2/AccountingService/Shares/TransferReasons/{reasonId} | Gets a share transfer reason by id |
 | [**get_share_transfer_reasons**](SharesApi.md#get_share_transfer_reasons) | **GET** /api/v2/AccountingService/Shares/TransferReasons | Gets the current tenant share transfer reasons |
@@ -1019,6 +1020,76 @@ end
 ### Return type
 
 [**Int32Envelope**](Int32Envelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## get_share_issuances_sum
+
+> <DecimalEnvelope> get_share_issuances_sum(tenant_id, opts)
+
+Sum tenant share issuance quantities
+
+Returns SUM(ShareIssuance.Quantity) for the tenant, filtered by the supplied OData date range.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::SharesApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example' # String | 
+}
+
+begin
+  # Sum tenant share issuance quantities
+  result = api_instance.get_share_issuances_sum(tenant_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling SharesApi->get_share_issuances_sum: #{e}"
+end
+```
+
+#### Using the get_share_issuances_sum_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<DecimalEnvelope>, Integer, Hash)> get_share_issuances_sum_with_http_info(tenant_id, opts)
+
+```ruby
+begin
+  # Sum tenant share issuance quantities
+  data, status_code, headers = api_instance.get_share_issuances_sum_with_http_info(tenant_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <DecimalEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling SharesApi->get_share_issuances_sum_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+
+### Return type
+
+[**DecimalEnvelope**](DecimalEnvelope.md)
 
 ### Authorization
 

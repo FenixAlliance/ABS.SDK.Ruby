@@ -7,6 +7,7 @@
 | **id** | **String** |  | [optional] |
 | **timestamp** | **Time** |  | [optional] |
 | **qualified_name** | **String** |  | [optional][readonly] |
+| **kind** | **String** |  | [optional] |
 | **tax_id** | **String** |  | [optional] |
 | **about** | **String** |  | [optional] |
 | **wallet_id** | **String** |  | [optional] |
@@ -55,6 +56,7 @@ instance = OpenapiClient::ExtendedTenantDto.new(
   id: null,
   timestamp: null,
   qualified_name: null,
+  kind: null,
   tax_id: null,
   about: null,
   wallet_id: null,

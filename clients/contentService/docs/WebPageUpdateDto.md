@@ -58,6 +58,7 @@
 | **cornerstone_content** | **Boolean** |  | [optional] |
 | **is_essential_content** | **Boolean** |  | [optional] |
 | **allow_search_engine_indexing** | **Boolean** |  | [optional] |
+| **web_portal_id** | **String** |  | [optional] |
 | **web_template_id** | **String** |  | [optional] |
 | **parent_web_content_id** | **String** |  | [optional] |
 | **is_home_page** | **Boolean** |  | [optional] |
@@ -131,6 +132,7 @@ instance = OpenapiClient::WebPageUpdateDto.new(
   cornerstone_content: null,
   is_essential_content: null,
   allow_search_engine_indexing: null,
+  web_portal_id: null,
   web_template_id: null,
   parent_web_content_id: null,
   is_home_page: null,

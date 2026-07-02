@@ -8,6 +8,7 @@
 | **timestamp** | **Time** |  | [optional] |
 | **name** | **String** |  |  |
 | **description** | **String** |  | [optional] |
+| **payment_means_code** | **String** |  | [optional] |
 
 ## Example
 
@@ -18,7 +19,8 @@ instance = OpenapiClient::PaymentModeCreateDto.new(
   id: null,
   timestamp: null,
   name: null,
-  description: null
+  description: null,
+  payment_means_code: null
 )
 ```
 

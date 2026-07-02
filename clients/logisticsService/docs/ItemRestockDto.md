@@ -10,6 +10,8 @@
 | **description** | **String** |  | [optional] |
 | **tenant_id** | **String** |  | [optional] |
 | **entry_count** | **Integer** |  | [optional] |
+| **seller_billing_profile_id** | **String** |  | [optional] |
+| **buyer_billing_profile_id** | **String** |  | [optional] |
 
 ## Example
 
@@ -22,7 +24,9 @@ instance = OpenapiClient::ItemRestockDto.new(
   name: null,
   description: null,
   tenant_id: null,
-  entry_count: null
+  entry_count: null,
+  seller_billing_profile_id: null,
+  buyer_billing_profile_id: null
 )
 ```
 

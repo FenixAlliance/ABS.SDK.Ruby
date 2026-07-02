@@ -4,6 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
+| **kind** | **String** |  | [optional] |
 | **name** | **String** |  |  |
 | **legal_name** | **String** |  | [optional] |
 | **email** | **String** |  |  |
@@ -37,6 +38,7 @@
 require 'openapi_client'
 
 instance = OpenapiClient::TenantUpdateDto.new(
+  kind: null,
   name: null,
   legal_name: null,
   email: null,

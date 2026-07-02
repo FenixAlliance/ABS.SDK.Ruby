@@ -12,6 +12,8 @@
 | **social_feed_post_id** | **String** |  | [optional] |
 | **social_profile_name** | **String** |  | [optional] |
 | **social_profile_avatar_url** | **String** |  | [optional] |
+| **body_html** | **String** |  | [optional] |
+| **body_format** | **String** |  | [optional] |
 | **social_post_id** | **String** |  | [optional] |
 
 ## Example
@@ -28,6 +30,8 @@ instance = OpenapiClient::SocialPostCommentDto.new(
   social_feed_post_id: null,
   social_profile_name: null,
   social_profile_avatar_url: null,
+  body_html: null,
+  body_format: null,
   social_post_id: null
 )
 ```

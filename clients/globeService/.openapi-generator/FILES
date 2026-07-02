@@ -9,7 +9,6 @@ Rakefile
 docs/AccessTokenResponse.md
 docs/CityDto.md
 docs/CityDtoListEnvelope.md
-docs/CompletionsApi.md
 docs/CountriesApi.md
 docs/CountryCallingCodeDto.md
 docs/CountryCallingCodeDtoListEnvelope.md
@@ -28,9 +27,8 @@ docs/CurrenciesApi.md
 docs/CurrencyDto.md
 docs/CurrencyDtoEnvelope.md
 docs/CurrencyDtoListEnvelope.md
-docs/Error.md
 docs/ErrorEnvelope.md
-docs/FenixAlliancePortalsWebsiteApi.md
+docs/FenixAllianceABSWebApi.md
 docs/ForgotPasswordRequest.md
 docs/HttpValidationProblemDetails.md
 docs/InfoRequest.md
@@ -38,13 +36,10 @@ docs/InfoResponse.md
 docs/Int32Envelope.md
 docs/LanguagesApi.md
 docs/LoginRequest.md
-docs/MigrationsApi.md
-docs/PaymentResponse.md
 docs/RefreshRequest.md
 docs/RegisterRequest.md
 docs/ResendConfirmationEmailRequest.md
 docs/ResetPasswordRequest.md
-docs/ResponseStatus.md
 docs/TimezoneDto.md
 docs/TimezoneDtoEnvelope.md
 docs/TimezoneDtoListEnvelope.md
@@ -53,12 +48,10 @@ docs/TwoFactorRequest.md
 docs/TwoFactorResponse.md
 git_push.sh
 lib/openapi_client.rb
-lib/openapi_client/api/completions_api.rb
 lib/openapi_client/api/countries_api.rb
 lib/openapi_client/api/currencies_api.rb
-lib/openapi_client/api/fenix_alliance_portals_website_api.rb
+lib/openapi_client/api/fenix_alliance_abs_web_api.rb
 lib/openapi_client/api/languages_api.rb
-lib/openapi_client/api/migrations_api.rb
 lib/openapi_client/api/timezones_api.rb
 lib/openapi_client/api_client.rb
 lib/openapi_client/api_error.rb
@@ -82,7 +75,6 @@ lib/openapi_client/models/country_top_level_domain_dto_list_envelope.rb
 lib/openapi_client/models/currency_dto.rb
 lib/openapi_client/models/currency_dto_envelope.rb
 lib/openapi_client/models/currency_dto_list_envelope.rb
-lib/openapi_client/models/error.rb
 lib/openapi_client/models/error_envelope.rb
 lib/openapi_client/models/forgot_password_request.rb
 lib/openapi_client/models/http_validation_problem_details.rb
@@ -90,12 +82,10 @@ lib/openapi_client/models/info_request.rb
 lib/openapi_client/models/info_response.rb
 lib/openapi_client/models/int32_envelope.rb
 lib/openapi_client/models/login_request.rb
-lib/openapi_client/models/payment_response.rb
 lib/openapi_client/models/refresh_request.rb
 lib/openapi_client/models/register_request.rb
 lib/openapi_client/models/resend_confirmation_email_request.rb
 lib/openapi_client/models/reset_password_request.rb
-lib/openapi_client/models/response_status.rb
 lib/openapi_client/models/timezone_dto.rb
 lib/openapi_client/models/timezone_dto_envelope.rb
 lib/openapi_client/models/timezone_dto_list_envelope.rb

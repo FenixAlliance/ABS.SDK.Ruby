@@ -7,7 +7,6 @@ Gemfile
 README.md
 Rakefile
 docs/AccessTokenResponse.md
-docs/CompletionsApi.md
 docs/EmailGroupCreateDto.md
 docs/EmailGroupDto.md
 docs/EmailGroupDtoEnvelope.md
@@ -28,7 +27,7 @@ docs/EmailTemplateUpdateDto.md
 docs/EmailTemplatesApi.md
 docs/EmptyEnvelope.md
 docs/ErrorEnvelope.md
-docs/FenixAlliancePortalsWebsiteApi.md
+docs/FenixAllianceABSWebApi.md
 docs/ForgotPasswordRequest.md
 docs/HttpValidationProblemDetails.md
 docs/InfoRequest.md
@@ -61,6 +60,7 @@ docs/MarketingListsApi.md
 docs/NewsletterCreateDto.md
 docs/NewsletterDto.md
 docs/NewsletterDtoEnvelope.md
+docs/NewsletterSubscriptionsApi.md
 docs/NewsletterUpdateDto.md
 docs/NewslettersApi.md
 docs/Operation.md
@@ -87,15 +87,15 @@ docs/TwoFactorRequest.md
 docs/TwoFactorResponse.md
 git_push.sh
 lib/openapi_client.rb
-lib/openapi_client/api/completions_api.rb
 lib/openapi_client/api/email_groups_api.rb
 lib/openapi_client/api/email_signatures_api.rb
 lib/openapi_client/api/email_templates_api.rb
-lib/openapi_client/api/fenix_alliance_portals_website_api.rb
+lib/openapi_client/api/fenix_alliance_abs_web_api.rb
 lib/openapi_client/api/marketing_areas_api.rb
 lib/openapi_client/api/marketing_campaigns_api.rb
 lib/openapi_client/api/marketing_leads_api.rb
 lib/openapi_client/api/marketing_lists_api.rb
+lib/openapi_client/api/newsletter_subscriptions_api.rb
 lib/openapi_client/api/newsletters_api.rb
 lib/openapi_client/api/social_media_posts_api.rb
 lib/openapi_client/api/social_post_buckets_api.rb
@@ -171,4 +171,5 @@ lib/openapi_client/models/two_factor_request.rb
 lib/openapi_client/models/two_factor_response.rb
 lib/openapi_client/version.rb
 openapi_client.gemspec
+spec/api/newsletter_subscriptions_api_spec.rb
 spec/spec_helper.rb

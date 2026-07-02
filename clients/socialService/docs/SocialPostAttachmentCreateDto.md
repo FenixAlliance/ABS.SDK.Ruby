@@ -16,6 +16,7 @@
 | **valid_response** | **Boolean** |  | [optional] |
 | **parent_file_upload_id** | **String** |  | [optional] |
 | **file_path** | **String** |  | [optional] |
+| **public_access_type** | **String** |  | [optional] |
 | **social_post_id** | **String** |  | [optional] |
 
 ## Example
@@ -36,6 +37,7 @@ instance = OpenapiClient::SocialPostAttachmentCreateDto.new(
   valid_response: null,
   parent_file_upload_id: null,
   file_path: null,
+  public_access_type: null,
   social_post_id: null
 )
 ```

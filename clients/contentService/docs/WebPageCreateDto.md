@@ -14,6 +14,7 @@
 | **featured_image_url** | **String** |  | [optional] |
 | **code_type** | **String** |  | [optional] |
 | **slug** | **String** |  | [optional] |
+| **web_portal_id** | **String** |  | [optional] |
 | **web_template_id** | **String** |  | [optional] |
 | **parent_web_content_id** | **String** |  | [optional] |
 
@@ -33,6 +34,7 @@ instance = OpenapiClient::WebPageCreateDto.new(
   featured_image_url: null,
   code_type: null,
   slug: null,
+  web_portal_id: null,
   web_template_id: null,
   parent_web_content_id: null
 )

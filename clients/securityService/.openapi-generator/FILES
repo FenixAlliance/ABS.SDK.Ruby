@@ -17,10 +17,9 @@ docs/BusinessApplicationSimpleDtoListEnvelope.md
 docs/BusinessApplicationUpdateDto.md
 docs/BusinessSecurityLogDto.md
 docs/BusinessSecurityLogDtoListEnvelope.md
-docs/CompletionsApi.md
 docs/EmptyEnvelope.md
 docs/ErrorEnvelope.md
-docs/FenixAlliancePortalsWebsiteApi.md
+docs/FenixAllianceABSWebApi.md
 docs/ForgotPasswordRequest.md
 docs/HttpValidationProblemDetails.md
 docs/InfoRequest.md
@@ -70,8 +69,7 @@ docs/WebhooksApi.md
 git_push.sh
 lib/openapi_client.rb
 lib/openapi_client/api/applications_api.rb
-lib/openapi_client/api/completions_api.rb
-lib/openapi_client/api/fenix_alliance_portals_website_api.rb
+lib/openapi_client/api/fenix_alliance_abs_web_api.rb
 lib/openapi_client/api/logs_api.rb
 lib/openapi_client/api/o_auth_applications_api.rb
 lib/openapi_client/api/permissions_api.rb

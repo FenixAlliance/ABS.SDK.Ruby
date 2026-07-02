@@ -17,6 +17,8 @@
 | **shipping_terms** | **String** |  | [optional] |
 | **order_id** | **String** |  | [optional] |
 | **tenant_id** | **String** |  | [optional] |
+| **seller_billing_profile_id** | **String** |  | [optional] |
+| **buyer_billing_profile_id** | **String** |  | [optional] |
 
 ## Example
 
@@ -36,7 +38,9 @@ instance = OpenapiClient::ShipmentDto.new(
   expected_delivery_date: null,
   shipping_terms: null,
   order_id: null,
-  tenant_id: null
+  tenant_id: null,
+  seller_billing_profile_id: null,
+  buyer_billing_profile_id: null
 )
 ```
 

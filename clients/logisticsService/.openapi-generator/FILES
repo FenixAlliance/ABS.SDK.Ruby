@@ -13,7 +13,7 @@ docs/AirwayBillDtoEnvelope.md
 docs/AirwayBillDtoListEnvelope.md
 docs/AirwayBillUpdateDto.md
 docs/AirwayBillsApi.md
-docs/CompletionsApi.md
+docs/ContactCreateDto.md
 docs/ContactDto.md
 docs/DeliveryNoteCreateDto.md
 docs/DeliveryNoteDto.md
@@ -24,7 +24,7 @@ docs/DeliveryNotesApi.md
 docs/DisputeProofOfDeliveryRequest.md
 docs/EmptyEnvelope.md
 docs/ErrorEnvelope.md
-docs/FenixAlliancePortalsWebsiteApi.md
+docs/FenixAllianceABSWebApi.md
 docs/ForgotPasswordRequest.md
 docs/HttpValidationProblemDetails.md
 docs/InfoRequest.md
@@ -164,9 +164,8 @@ docs/WaybillLineUpdateDto.md
 git_push.sh
 lib/openapi_client.rb
 lib/openapi_client/api/airway_bills_api.rb
-lib/openapi_client/api/completions_api.rb
 lib/openapi_client/api/delivery_notes_api.rb
-lib/openapi_client/api/fenix_alliance_portals_website_api.rb
+lib/openapi_client/api/fenix_alliance_abs_web_api.rb
 lib/openapi_client/api/item_packing_slips_api.rb
 lib/openapi_client/api/item_pick_lists_api.rb
 lib/openapi_client/api/item_restocks_api.rb
@@ -191,6 +190,7 @@ lib/openapi_client/models/airway_bill_dto.rb
 lib/openapi_client/models/airway_bill_dto_envelope.rb
 lib/openapi_client/models/airway_bill_dto_list_envelope.rb
 lib/openapi_client/models/airway_bill_update_dto.rb
+lib/openapi_client/models/contact_create_dto.rb
 lib/openapi_client/models/contact_dto.rb
 lib/openapi_client/models/delivery_note_create_dto.rb
 lib/openapi_client/models/delivery_note_dto.rb
@@ -323,4 +323,5 @@ lib/openapi_client/models/waybill_line_dto_list_envelope.rb
 lib/openapi_client/models/waybill_line_update_dto.rb
 lib/openapi_client/version.rb
 openapi_client.gemspec
+spec/models/contact_create_dto_spec.rb
 spec/spec_helper.rb

@@ -7,6 +7,7 @@
 | **id** | **String** |  | [optional] |
 | **timestamp** | **Time** |  | [optional] |
 | **name** | **String** |  | [optional] |
+| **un_ece_code** | **String** |  | [optional] |
 | **unit_group_id** | **String** |  | [optional] |
 | **base_unit_amount** | **Float** |  | [optional] |
 | **base_unit_id** | **String** |  | [optional] |
@@ -22,6 +23,7 @@ instance = OpenapiClient::UnitDto.new(
   id: null,
   timestamp: null,
   name: null,
+  un_ece_code: null,
   unit_group_id: null,
   base_unit_amount: null,
   base_unit_id: null,

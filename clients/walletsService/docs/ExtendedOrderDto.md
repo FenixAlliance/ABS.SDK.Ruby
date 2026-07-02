@@ -77,6 +77,8 @@
 | **billing_location_id** | **String** |  | [optional] |
 | **shipping_location_id** | **String** |  | [optional] |
 | **qualified_identifier** | **String** |  | [optional] |
+| **seller_billing_profile_id** | **String** |  | [optional] |
+| **buyer_billing_profile_id** | **String** |  | [optional] |
 | **cost_calculation_method** | **String** |  | [optional] |
 | **freight_terms** | **String** |  | [optional] |
 | **order_status** | **String** |  | [optional] |
@@ -176,6 +178,8 @@ instance = OpenapiClient::ExtendedOrderDto.new(
   billing_location_id: null,
   shipping_location_id: null,
   qualified_identifier: null,
+  seller_billing_profile_id: null,
+  buyer_billing_profile_id: null,
   cost_calculation_method: null,
   freight_terms: null,
   order_status: null,
