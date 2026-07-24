@@ -8,6 +8,11 @@ README.md
 Rakefile
 docs/AccessTokenResponse.md
 docs/BooleanEnvelope.md
+docs/BusinessRelationshipCreateDto.md
+docs/BusinessRelationshipDto.md
+docs/BusinessRelationshipDtoEnvelope.md
+docs/BusinessRelationshipDtoListEnvelope.md
+docs/BusinessRelationshipUpdateDto.md
 docs/BusinessRelationshipsApi.md
 docs/CartDto.md
 docs/CartDtoEnvelope.md
@@ -153,7 +158,7 @@ docs/UnitGroupUpdateDto.md
 docs/UnitGroupsApi.md
 docs/UnitUpdateDto.md
 docs/UnitsApi.md
-docs/UpdateAvatarAsyncRequest.md
+docs/UpdateTenantAvatarAsyncRequest.md
 docs/UserDto.md
 docs/UserDtoListEnvelope.md
 docs/WalletDto.md
@@ -187,6 +192,11 @@ lib/openapi_client/api_error.rb
 lib/openapi_client/configuration.rb
 lib/openapi_client/models/access_token_response.rb
 lib/openapi_client/models/boolean_envelope.rb
+lib/openapi_client/models/business_relationship_create_dto.rb
+lib/openapi_client/models/business_relationship_dto.rb
+lib/openapi_client/models/business_relationship_dto_envelope.rb
+lib/openapi_client/models/business_relationship_dto_list_envelope.rb
+lib/openapi_client/models/business_relationship_update_dto.rb
 lib/openapi_client/models/cart_dto.rb
 lib/openapi_client/models/cart_dto_envelope.rb
 lib/openapi_client/models/empty_envelope.rb
@@ -312,7 +322,7 @@ lib/openapi_client/models/unit_group_dto_envelope.rb
 lib/openapi_client/models/unit_group_dto_list_envelope.rb
 lib/openapi_client/models/unit_group_update_dto.rb
 lib/openapi_client/models/unit_update_dto.rb
-lib/openapi_client/models/update_avatar_async_request.rb
+lib/openapi_client/models/update_tenant_avatar_async_request.rb
 lib/openapi_client/models/user_dto.rb
 lib/openapi_client/models/user_dto_list_envelope.rb
 lib/openapi_client/models/wallet_dto.rb
@@ -321,5 +331,10 @@ lib/openapi_client/models/web_portal_dto.rb
 lib/openapi_client/models/web_portal_dto_list_envelope.rb
 lib/openapi_client/version.rb
 openapi_client.gemspec
-spec/api/business_relationships_api_spec.rb
+spec/models/business_relationship_create_dto_spec.rb
+spec/models/business_relationship_dto_envelope_spec.rb
+spec/models/business_relationship_dto_list_envelope_spec.rb
+spec/models/business_relationship_dto_spec.rb
+spec/models/business_relationship_update_dto_spec.rb
+spec/models/update_tenant_avatar_async_request_spec.rb
 spec/spec_helper.rb

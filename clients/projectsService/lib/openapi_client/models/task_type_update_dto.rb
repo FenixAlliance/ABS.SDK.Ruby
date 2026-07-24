@@ -17,6 +17,8 @@ module OpenapiClient
   class TaskTypeUpdateDto
     attr_accessor :title
 
+    attr_accessor :task_category_id
+
     attr_accessor :display_in_time_tracker
 
     attr_accessor :requires_description
@@ -25,6 +27,7 @@ module OpenapiClient
     def self.attribute_map
       {
         :'title' => :'title',
+        :'task_category_id' => :'taskCategoryId',
         :'display_in_time_tracker' => :'displayInTimeTracker',
         :'requires_description' => :'requiresDescription'
       }
@@ -39,6 +42,7 @@ module OpenapiClient
     def self.openapi_types
       {
         :'title' => :'String',
+        :'task_category_id' => :'String',
         :'display_in_time_tracker' => :'Boolean',
         :'requires_description' => :'Boolean'
       }
@@ -48,6 +52,7 @@ module OpenapiClient
     def self.openapi_nullable
       Set.new([
         :'title',
+        :'task_category_id',
       ])
     end
 
@@ -68,6 +73,10 @@ module OpenapiClient
 
       if attributes.key?(:'title')
         self.title = attributes[:'title']
+      end
+
+      if attributes.key?(:'task_category_id')
+        self.task_category_id = attributes[:'task_category_id']
       end
 
       if attributes.key?(:'display_in_time_tracker')
@@ -100,6 +109,7 @@ module OpenapiClient
       return true if self.equal?(o)
       self.class == o.class &&
           title == o.title &&
+          task_category_id == o.task_category_id &&
           display_in_time_tracker == o.display_in_time_tracker &&
           requires_description == o.requires_description
     end
@@ -113,7 +123,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [title, display_in_time_tracker, requires_description].hash
+      [title, task_category_id, display_in_time_tracker, requires_description].hash
     end
 
     # Builds the object from hash

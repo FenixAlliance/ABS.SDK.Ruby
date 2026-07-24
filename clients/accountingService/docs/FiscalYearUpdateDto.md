@@ -4,12 +4,12 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **name** | **String** |  | [optional] |
+| **name** | **String** |  |  |
 | **description** | **String** |  | [optional] |
 | **closed** | **Boolean** |  | [optional] |
 | **end_date** | **Time** |  | [optional] |
 | **start_date** | **Time** |  | [optional] |
-| **fiscal_authority_id** | **String** |  | [optional] |
+| **fiscal_authority_id** | **String** |  |  |
 
 ## Example
 

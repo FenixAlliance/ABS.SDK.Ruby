@@ -7,14 +7,11 @@
 | **id** | **String** |  | [optional] |
 | **timestamp** | **Time** |  | [optional] |
 | **description** | **String** |  |  |
-| **date** | **Time** |  | [optional] |
-| **amount** | **Float** |  | [optional] |
+| **planned_amount** | **Float** |  | [optional] |
 | **currency_id** | **String** |  |  |
-| **debit_account_id** | **String** |  | [optional] |
-| **credit_account_id** | **String** |  | [optional] |
-| **journal_entry_id** | **String** |  | [optional] |
-| **accounting_entry_type** | **String** |  | [optional] |
-| **budget_id** | **String** |  | [optional] |
+| **debit_account_id** | **String** |  |  |
+| **credit_account_id** | **String** |  |  |
+| **budget_id** | **String** |  |  |
 
 ## Example
 
@@ -25,13 +22,10 @@ instance = OpenapiClient::BudgetAccountEntryCreateDto.new(
   id: null,
   timestamp: null,
   description: null,
-  date: null,
-  amount: null,
+  planned_amount: null,
   currency_id: null,
   debit_account_id: null,
   credit_account_id: null,
-  journal_entry_id: null,
-  accounting_entry_type: null,
   budget_id: null
 )
 ```

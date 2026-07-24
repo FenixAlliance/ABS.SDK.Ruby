@@ -174,8 +174,8 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [ProjectTaskCreateDto] :project_task_create_dto 
     # @return [EmptyEnvelope]
-    def create_project_task_async(project_id, tenant_id, opts = {})
-      data, _status_code, _headers = create_project_task_async_with_http_info(project_id, tenant_id, opts)
+    def create_task_for_project_async(project_id, tenant_id, opts = {})
+      data, _status_code, _headers = create_task_for_project_async_with_http_info(project_id, tenant_id, opts)
       data
     end
 
@@ -186,17 +186,17 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [ProjectTaskCreateDto] :project_task_create_dto 
     # @return [Array<(EmptyEnvelope, Integer, Hash)>] EmptyEnvelope data, response status code and response headers
-    def create_project_task_async_with_http_info(project_id, tenant_id, opts = {})
+    def create_task_for_project_async_with_http_info(project_id, tenant_id, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: ProjectsApi.create_project_task_async ...'
+        @api_client.config.logger.debug 'Calling API: ProjectsApi.create_task_for_project_async ...'
       end
       # verify the required parameter 'project_id' is set
       if @api_client.config.client_side_validation && project_id.nil?
-        fail ArgumentError, "Missing the required parameter 'project_id' when calling ProjectsApi.create_project_task_async"
+        fail ArgumentError, "Missing the required parameter 'project_id' when calling ProjectsApi.create_task_for_project_async"
       end
       # verify the required parameter 'tenant_id' is set
       if @api_client.config.client_side_validation && tenant_id.nil?
-        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling ProjectsApi.create_project_task_async"
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling ProjectsApi.create_task_for_project_async"
       end
       # resource path
       local_var_path = '/api/v2/ProjectsService/Projects/{projectId}/Tasks'.sub('{' + 'projectId' + '}', CGI.escape(project_id.to_s))
@@ -228,7 +228,7 @@ module OpenapiClient
       auth_names = opts[:debug_auth_names] || []
 
       new_options = opts.merge(
-        :operation => :"ProjectsApi.create_project_task_async",
+        :operation => :"ProjectsApi.create_task_for_project_async",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -239,7 +239,7 @@ module OpenapiClient
 
       data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: ProjectsApi#create_project_task_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: ProjectsApi#create_task_for_project_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -397,8 +397,8 @@ module OpenapiClient
     # @param project_task_id [String] 
     # @param [Hash] opts the optional parameters
     # @return [EmptyEnvelope]
-    def delete_project_task_async(tenant_id, project_id, project_task_id, opts = {})
-      data, _status_code, _headers = delete_project_task_async_with_http_info(tenant_id, project_id, project_task_id, opts)
+    def delete_task_for_project_async(tenant_id, project_id, project_task_id, opts = {})
+      data, _status_code, _headers = delete_task_for_project_async_with_http_info(tenant_id, project_id, project_task_id, opts)
       data
     end
 
@@ -409,21 +409,21 @@ module OpenapiClient
     # @param project_task_id [String] 
     # @param [Hash] opts the optional parameters
     # @return [Array<(EmptyEnvelope, Integer, Hash)>] EmptyEnvelope data, response status code and response headers
-    def delete_project_task_async_with_http_info(tenant_id, project_id, project_task_id, opts = {})
+    def delete_task_for_project_async_with_http_info(tenant_id, project_id, project_task_id, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: ProjectsApi.delete_project_task_async ...'
+        @api_client.config.logger.debug 'Calling API: ProjectsApi.delete_task_for_project_async ...'
       end
       # verify the required parameter 'tenant_id' is set
       if @api_client.config.client_side_validation && tenant_id.nil?
-        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling ProjectsApi.delete_project_task_async"
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling ProjectsApi.delete_task_for_project_async"
       end
       # verify the required parameter 'project_id' is set
       if @api_client.config.client_side_validation && project_id.nil?
-        fail ArgumentError, "Missing the required parameter 'project_id' when calling ProjectsApi.delete_project_task_async"
+        fail ArgumentError, "Missing the required parameter 'project_id' when calling ProjectsApi.delete_task_for_project_async"
       end
       # verify the required parameter 'project_task_id' is set
       if @api_client.config.client_side_validation && project_task_id.nil?
-        fail ArgumentError, "Missing the required parameter 'project_task_id' when calling ProjectsApi.delete_project_task_async"
+        fail ArgumentError, "Missing the required parameter 'project_task_id' when calling ProjectsApi.delete_task_for_project_async"
       end
       # resource path
       local_var_path = '/api/v2/ProjectsService/Projects/{projectId}/Tasks/{projectTaskId}'.sub('{' + 'projectId' + '}', CGI.escape(project_id.to_s)).sub('{' + 'projectTaskId' + '}', CGI.escape(project_task_id.to_s))
@@ -450,7 +450,7 @@ module OpenapiClient
       auth_names = opts[:debug_auth_names] || []
 
       new_options = opts.merge(
-        :operation => :"ProjectsApi.delete_project_task_async",
+        :operation => :"ProjectsApi.delete_task_for_project_async",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -461,7 +461,7 @@ module OpenapiClient
 
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: ProjectsApi#delete_project_task_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: ProjectsApi#delete_task_for_project_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -746,216 +746,6 @@ module OpenapiClient
       return data, status_code, headers
     end
 
-    # Retrieves project tasks
-    # Gets all tasks for a specific project with OData support.
-    # @param project_id [String] 
-    # @param tenant_id [String] 
-    # @param [Hash] opts the optional parameters
-    # @return [ProjectTaskDtoListEnvelope]
-    def get_project_tasks_async(project_id, tenant_id, opts = {})
-      data, _status_code, _headers = get_project_tasks_async_with_http_info(project_id, tenant_id, opts)
-      data
-    end
-
-    # Retrieves project tasks
-    # Gets all tasks for a specific project with OData support.
-    # @param project_id [String] 
-    # @param tenant_id [String] 
-    # @param [Hash] opts the optional parameters
-    # @return [Array<(ProjectTaskDtoListEnvelope, Integer, Hash)>] ProjectTaskDtoListEnvelope data, response status code and response headers
-    def get_project_tasks_async_with_http_info(project_id, tenant_id, opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: ProjectsApi.get_project_tasks_async ...'
-      end
-      # verify the required parameter 'project_id' is set
-      if @api_client.config.client_side_validation && project_id.nil?
-        fail ArgumentError, "Missing the required parameter 'project_id' when calling ProjectsApi.get_project_tasks_async"
-      end
-      # verify the required parameter 'tenant_id' is set
-      if @api_client.config.client_side_validation && tenant_id.nil?
-        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling ProjectsApi.get_project_tasks_async"
-      end
-      # resource path
-      local_var_path = '/api/v2/ProjectsService/Projects/{projectId}/Tasks'.sub('{' + 'projectId' + '}', CGI.escape(project_id.to_s))
-
-      # query parameters
-      query_params = opts[:query_params] || {}
-      query_params[:'tenantId'] = tenant_id
-
-      # header parameters
-      header_params = opts[:header_params] || {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
-
-      # form parameters
-      form_params = opts[:form_params] || {}
-
-      # http body (model)
-      post_body = opts[:debug_body]
-
-      # return_type
-      return_type = opts[:debug_return_type] || 'ProjectTaskDtoListEnvelope'
-
-      # auth_names
-      auth_names = opts[:debug_auth_names] || []
-
-      new_options = opts.merge(
-        :operation => :"ProjectsApi.get_project_tasks_async",
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => return_type
-      )
-
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: ProjectsApi#get_project_tasks_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Counts project tasks
-    # Gets the count of tasks for a specific project.
-    # @param project_id [String] 
-    # @param tenant_id [String] 
-    # @param [Hash] opts the optional parameters
-    # @return [Int32Envelope]
-    def get_project_tasks_count_async(project_id, tenant_id, opts = {})
-      data, _status_code, _headers = get_project_tasks_count_async_with_http_info(project_id, tenant_id, opts)
-      data
-    end
-
-    # Counts project tasks
-    # Gets the count of tasks for a specific project.
-    # @param project_id [String] 
-    # @param tenant_id [String] 
-    # @param [Hash] opts the optional parameters
-    # @return [Array<(Int32Envelope, Integer, Hash)>] Int32Envelope data, response status code and response headers
-    def get_project_tasks_count_async_with_http_info(project_id, tenant_id, opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: ProjectsApi.get_project_tasks_count_async ...'
-      end
-      # verify the required parameter 'project_id' is set
-      if @api_client.config.client_side_validation && project_id.nil?
-        fail ArgumentError, "Missing the required parameter 'project_id' when calling ProjectsApi.get_project_tasks_count_async"
-      end
-      # verify the required parameter 'tenant_id' is set
-      if @api_client.config.client_side_validation && tenant_id.nil?
-        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling ProjectsApi.get_project_tasks_count_async"
-      end
-      # resource path
-      local_var_path = '/api/v2/ProjectsService/Projects/{projectId}/Tasks/Count'.sub('{' + 'projectId' + '}', CGI.escape(project_id.to_s))
-
-      # query parameters
-      query_params = opts[:query_params] || {}
-      query_params[:'tenantId'] = tenant_id
-
-      # header parameters
-      header_params = opts[:header_params] || {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
-
-      # form parameters
-      form_params = opts[:form_params] || {}
-
-      # http body (model)
-      post_body = opts[:debug_body]
-
-      # return_type
-      return_type = opts[:debug_return_type] || 'Int32Envelope'
-
-      # auth_names
-      auth_names = opts[:debug_auth_names] || []
-
-      new_options = opts.merge(
-        :operation => :"ProjectsApi.get_project_tasks_count_async",
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => return_type
-      )
-
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: ProjectsApi#get_project_tasks_count_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Retrieves project time logs
-    # Gets all time log entries for a specific project with OData support.
-    # @param project_id [String] 
-    # @param tenant_id [String] 
-    # @param [Hash] opts the optional parameters
-    # @return [ProjectTimeLogDtoListEnvelope]
-    def get_project_time_logs_async(project_id, tenant_id, opts = {})
-      data, _status_code, _headers = get_project_time_logs_async_with_http_info(project_id, tenant_id, opts)
-      data
-    end
-
-    # Retrieves project time logs
-    # Gets all time log entries for a specific project with OData support.
-    # @param project_id [String] 
-    # @param tenant_id [String] 
-    # @param [Hash] opts the optional parameters
-    # @return [Array<(ProjectTimeLogDtoListEnvelope, Integer, Hash)>] ProjectTimeLogDtoListEnvelope data, response status code and response headers
-    def get_project_time_logs_async_with_http_info(project_id, tenant_id, opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: ProjectsApi.get_project_time_logs_async ...'
-      end
-      # verify the required parameter 'project_id' is set
-      if @api_client.config.client_side_validation && project_id.nil?
-        fail ArgumentError, "Missing the required parameter 'project_id' when calling ProjectsApi.get_project_time_logs_async"
-      end
-      # verify the required parameter 'tenant_id' is set
-      if @api_client.config.client_side_validation && tenant_id.nil?
-        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling ProjectsApi.get_project_time_logs_async"
-      end
-      # resource path
-      local_var_path = '/api/v2/ProjectsService/Projects/{projectId}/TimeLogs'.sub('{' + 'projectId' + '}', CGI.escape(project_id.to_s))
-
-      # query parameters
-      query_params = opts[:query_params] || {}
-      query_params[:'tenantId'] = tenant_id
-
-      # header parameters
-      header_params = opts[:header_params] || {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
-
-      # form parameters
-      form_params = opts[:form_params] || {}
-
-      # http body (model)
-      post_body = opts[:debug_body]
-
-      # return_type
-      return_type = opts[:debug_return_type] || 'ProjectTimeLogDtoListEnvelope'
-
-      # auth_names
-      auth_names = opts[:debug_auth_names] || []
-
-      new_options = opts.merge(
-        :operation => :"ProjectsApi.get_project_time_logs_async",
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => return_type
-      )
-
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: ProjectsApi#get_project_time_logs_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
     # Counts project time logs
     # Gets the count of time log entries for a specific project.
     # @param project_id [String] 
@@ -1154,6 +944,459 @@ module OpenapiClient
       return data, status_code, headers
     end
 
+    # Retrieves project tasks
+    # Gets all tasks for a specific project with OData support.
+    # @param project_id [String] 
+    # @param tenant_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @return [ProjectTaskDtoListEnvelope]
+    def get_tasks_for_project_async(project_id, tenant_id, opts = {})
+      data, _status_code, _headers = get_tasks_for_project_async_with_http_info(project_id, tenant_id, opts)
+      data
+    end
+
+    # Retrieves project tasks
+    # Gets all tasks for a specific project with OData support.
+    # @param project_id [String] 
+    # @param tenant_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(ProjectTaskDtoListEnvelope, Integer, Hash)>] ProjectTaskDtoListEnvelope data, response status code and response headers
+    def get_tasks_for_project_async_with_http_info(project_id, tenant_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: ProjectsApi.get_tasks_for_project_async ...'
+      end
+      # verify the required parameter 'project_id' is set
+      if @api_client.config.client_side_validation && project_id.nil?
+        fail ArgumentError, "Missing the required parameter 'project_id' when calling ProjectsApi.get_tasks_for_project_async"
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling ProjectsApi.get_tasks_for_project_async"
+      end
+      # resource path
+      local_var_path = '/api/v2/ProjectsService/Projects/{projectId}/Tasks'.sub('{' + 'projectId' + '}', CGI.escape(project_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'ProjectTaskDtoListEnvelope'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"ProjectsApi.get_tasks_for_project_async",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ProjectsApi#get_tasks_for_project_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Counts project tasks
+    # Gets the count of tasks for a specific project.
+    # @param project_id [String] 
+    # @param tenant_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @return [Int32Envelope]
+    def get_tasks_for_project_count_async(project_id, tenant_id, opts = {})
+      data, _status_code, _headers = get_tasks_for_project_count_async_with_http_info(project_id, tenant_id, opts)
+      data
+    end
+
+    # Counts project tasks
+    # Gets the count of tasks for a specific project.
+    # @param project_id [String] 
+    # @param tenant_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(Int32Envelope, Integer, Hash)>] Int32Envelope data, response status code and response headers
+    def get_tasks_for_project_count_async_with_http_info(project_id, tenant_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: ProjectsApi.get_tasks_for_project_count_async ...'
+      end
+      # verify the required parameter 'project_id' is set
+      if @api_client.config.client_side_validation && project_id.nil?
+        fail ArgumentError, "Missing the required parameter 'project_id' when calling ProjectsApi.get_tasks_for_project_count_async"
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling ProjectsApi.get_tasks_for_project_count_async"
+      end
+      # resource path
+      local_var_path = '/api/v2/ProjectsService/Projects/{projectId}/Tasks/Count'.sub('{' + 'projectId' + '}', CGI.escape(project_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'Int32Envelope'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"ProjectsApi.get_tasks_for_project_count_async",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ProjectsApi#get_tasks_for_project_count_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Retrieves project time logs
+    # Gets all time log entries for a specific project with OData support.
+    # @param project_id [String] 
+    # @param tenant_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @return [ProjectTimeLogDtoListEnvelope]
+    def get_time_logs_for_project_async(project_id, tenant_id, opts = {})
+      data, _status_code, _headers = get_time_logs_for_project_async_with_http_info(project_id, tenant_id, opts)
+      data
+    end
+
+    # Retrieves project time logs
+    # Gets all time log entries for a specific project with OData support.
+    # @param project_id [String] 
+    # @param tenant_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(ProjectTimeLogDtoListEnvelope, Integer, Hash)>] ProjectTimeLogDtoListEnvelope data, response status code and response headers
+    def get_time_logs_for_project_async_with_http_info(project_id, tenant_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: ProjectsApi.get_time_logs_for_project_async ...'
+      end
+      # verify the required parameter 'project_id' is set
+      if @api_client.config.client_side_validation && project_id.nil?
+        fail ArgumentError, "Missing the required parameter 'project_id' when calling ProjectsApi.get_time_logs_for_project_async"
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling ProjectsApi.get_time_logs_for_project_async"
+      end
+      # resource path
+      local_var_path = '/api/v2/ProjectsService/Projects/{projectId}/TimeLogs'.sub('{' + 'projectId' + '}', CGI.escape(project_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'ProjectTimeLogDtoListEnvelope'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"ProjectsApi.get_time_logs_for_project_async",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ProjectsApi#get_time_logs_for_project_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Patches a project
+    # Partially updates the specified project.
+    # @param project_id [String] 
+    # @param tenant_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [Array<Operation>] :operation 
+    # @return [EmptyEnvelope]
+    def patch_project_async(project_id, tenant_id, opts = {})
+      data, _status_code, _headers = patch_project_async_with_http_info(project_id, tenant_id, opts)
+      data
+    end
+
+    # Patches a project
+    # Partially updates the specified project.
+    # @param project_id [String] 
+    # @param tenant_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [Array<Operation>] :operation 
+    # @return [Array<(EmptyEnvelope, Integer, Hash)>] EmptyEnvelope data, response status code and response headers
+    def patch_project_async_with_http_info(project_id, tenant_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: ProjectsApi.patch_project_async ...'
+      end
+      # verify the required parameter 'project_id' is set
+      if @api_client.config.client_side_validation && project_id.nil?
+        fail ArgumentError, "Missing the required parameter 'project_id' when calling ProjectsApi.patch_project_async"
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling ProjectsApi.patch_project_async"
+      end
+      # resource path
+      local_var_path = '/api/v2/ProjectsService/Projects/{projectId}'.sub('{' + 'projectId' + '}', CGI.escape(project_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'operation'])
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'EmptyEnvelope'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"ProjectsApi.patch_project_async",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:PATCH, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ProjectsApi#patch_project_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Patches a project period
+    # Partially updates the specified period for a project.
+    # @param project_id [String] 
+    # @param project_period_id [String] 
+    # @param tenant_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [Array<Operation>] :operation 
+    # @return [EmptyEnvelope]
+    def patch_project_period_async(project_id, project_period_id, tenant_id, opts = {})
+      data, _status_code, _headers = patch_project_period_async_with_http_info(project_id, project_period_id, tenant_id, opts)
+      data
+    end
+
+    # Patches a project period
+    # Partially updates the specified period for a project.
+    # @param project_id [String] 
+    # @param project_period_id [String] 
+    # @param tenant_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [Array<Operation>] :operation 
+    # @return [Array<(EmptyEnvelope, Integer, Hash)>] EmptyEnvelope data, response status code and response headers
+    def patch_project_period_async_with_http_info(project_id, project_period_id, tenant_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: ProjectsApi.patch_project_period_async ...'
+      end
+      # verify the required parameter 'project_id' is set
+      if @api_client.config.client_side_validation && project_id.nil?
+        fail ArgumentError, "Missing the required parameter 'project_id' when calling ProjectsApi.patch_project_period_async"
+      end
+      # verify the required parameter 'project_period_id' is set
+      if @api_client.config.client_side_validation && project_period_id.nil?
+        fail ArgumentError, "Missing the required parameter 'project_period_id' when calling ProjectsApi.patch_project_period_async"
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling ProjectsApi.patch_project_period_async"
+      end
+      # resource path
+      local_var_path = '/api/v2/ProjectsService/Projects/{projectId}/Periods/{projectPeriodId}'.sub('{' + 'projectId' + '}', CGI.escape(project_id.to_s)).sub('{' + 'projectPeriodId' + '}', CGI.escape(project_period_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'operation'])
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'EmptyEnvelope'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"ProjectsApi.patch_project_period_async",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:PATCH, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ProjectsApi#patch_project_period_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Patches a project task
+    # Partially updates the specified task in a project.
+    # @param project_id [String] 
+    # @param project_task_id [String] 
+    # @param tenant_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [Array<Operation>] :operation 
+    # @return [EmptyEnvelope]
+    def patch_task_for_project_async(project_id, project_task_id, tenant_id, opts = {})
+      data, _status_code, _headers = patch_task_for_project_async_with_http_info(project_id, project_task_id, tenant_id, opts)
+      data
+    end
+
+    # Patches a project task
+    # Partially updates the specified task in a project.
+    # @param project_id [String] 
+    # @param project_task_id [String] 
+    # @param tenant_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [Array<Operation>] :operation 
+    # @return [Array<(EmptyEnvelope, Integer, Hash)>] EmptyEnvelope data, response status code and response headers
+    def patch_task_for_project_async_with_http_info(project_id, project_task_id, tenant_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: ProjectsApi.patch_task_for_project_async ...'
+      end
+      # verify the required parameter 'project_id' is set
+      if @api_client.config.client_side_validation && project_id.nil?
+        fail ArgumentError, "Missing the required parameter 'project_id' when calling ProjectsApi.patch_task_for_project_async"
+      end
+      # verify the required parameter 'project_task_id' is set
+      if @api_client.config.client_side_validation && project_task_id.nil?
+        fail ArgumentError, "Missing the required parameter 'project_task_id' when calling ProjectsApi.patch_task_for_project_async"
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling ProjectsApi.patch_task_for_project_async"
+      end
+      # resource path
+      local_var_path = '/api/v2/ProjectsService/Projects/{projectId}/Tasks/{projectTaskId}'.sub('{' + 'projectId' + '}', CGI.escape(project_id.to_s)).sub('{' + 'projectTaskId' + '}', CGI.escape(project_task_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'operation'])
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'EmptyEnvelope'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"ProjectsApi.patch_task_for_project_async",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:PATCH, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ProjectsApi#patch_task_for_project_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Updates a project
     # Updates the specified project.
     # @param project_id [String] 
@@ -1322,8 +1565,8 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [ProjectTaskUpdateDto] :project_task_update_dto 
     # @return [EmptyEnvelope]
-    def update_project_task_async(project_id, project_task_id, tenant_id, opts = {})
-      data, _status_code, _headers = update_project_task_async_with_http_info(project_id, project_task_id, tenant_id, opts)
+    def update_task_for_project_async(project_id, project_task_id, tenant_id, opts = {})
+      data, _status_code, _headers = update_task_for_project_async_with_http_info(project_id, project_task_id, tenant_id, opts)
       data
     end
 
@@ -1335,21 +1578,21 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [ProjectTaskUpdateDto] :project_task_update_dto 
     # @return [Array<(EmptyEnvelope, Integer, Hash)>] EmptyEnvelope data, response status code and response headers
-    def update_project_task_async_with_http_info(project_id, project_task_id, tenant_id, opts = {})
+    def update_task_for_project_async_with_http_info(project_id, project_task_id, tenant_id, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: ProjectsApi.update_project_task_async ...'
+        @api_client.config.logger.debug 'Calling API: ProjectsApi.update_task_for_project_async ...'
       end
       # verify the required parameter 'project_id' is set
       if @api_client.config.client_side_validation && project_id.nil?
-        fail ArgumentError, "Missing the required parameter 'project_id' when calling ProjectsApi.update_project_task_async"
+        fail ArgumentError, "Missing the required parameter 'project_id' when calling ProjectsApi.update_task_for_project_async"
       end
       # verify the required parameter 'project_task_id' is set
       if @api_client.config.client_side_validation && project_task_id.nil?
-        fail ArgumentError, "Missing the required parameter 'project_task_id' when calling ProjectsApi.update_project_task_async"
+        fail ArgumentError, "Missing the required parameter 'project_task_id' when calling ProjectsApi.update_task_for_project_async"
       end
       # verify the required parameter 'tenant_id' is set
       if @api_client.config.client_side_validation && tenant_id.nil?
-        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling ProjectsApi.update_project_task_async"
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling ProjectsApi.update_task_for_project_async"
       end
       # resource path
       local_var_path = '/api/v2/ProjectsService/Projects/{projectId}/Tasks/{projectTaskId}'.sub('{' + 'projectId' + '}', CGI.escape(project_id.to_s)).sub('{' + 'projectTaskId' + '}', CGI.escape(project_task_id.to_s))
@@ -1381,7 +1624,7 @@ module OpenapiClient
       auth_names = opts[:debug_auth_names] || []
 
       new_options = opts.merge(
-        :operation => :"ProjectsApi.update_project_task_async",
+        :operation => :"ProjectsApi.update_task_for_project_async",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -1392,7 +1635,7 @@ module OpenapiClient
 
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: ProjectsApi#update_project_task_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: ProjectsApi#update_task_for_project_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

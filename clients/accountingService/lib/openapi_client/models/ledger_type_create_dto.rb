@@ -137,7 +137,7 @@ module OpenapiClient
       return false if @name.nil?
       return false if @name.to_s.length > 50
       return false if @name.to_s.length < 0
-      ledger_class_validator = EnumAttributeValidator.new('String', ["Assets", "Equity", "Gains", "Losses", "Revenue", "Expenses", "Liabilities"])
+      ledger_class_validator = EnumAttributeValidator.new('String', ["Assets", "Equity", "Revenue", "Expense", "Liabilities"])
       return false unless ledger_class_validator.valid?(@ledger_class)
       true
     end
@@ -163,7 +163,7 @@ module OpenapiClient
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] ledger_class Object to be assigned
     def ledger_class=(ledger_class)
-      validator = EnumAttributeValidator.new('String', ["Assets", "Equity", "Gains", "Losses", "Revenue", "Expenses", "Liabilities"])
+      validator = EnumAttributeValidator.new('String', ["Assets", "Equity", "Revenue", "Expense", "Liabilities"])
       unless validator.valid?(ledger_class)
         fail ArgumentError, "invalid value for \"ledger_class\", must be one of #{validator.allowable_values}."
       end

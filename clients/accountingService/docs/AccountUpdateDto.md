@@ -15,6 +15,9 @@
 | **account_type_id** | **String** |  | [optional] |
 | **parent_account_id** | **String** |  | [optional] |
 | **account_category** | **String** |  | [optional] |
+| **is_contra** | **Boolean** |  | [optional] |
+| **is_monetary** | **Boolean** |  | [optional] |
+| **income_statement_sub_type** | **String** |  | [optional] |
 
 ## Example
 
@@ -32,7 +35,10 @@ instance = OpenapiClient::AccountUpdateDto.new(
   contact_id: null,
   account_type_id: null,
   parent_account_id: null,
-  account_category: null
+  account_category: null,
+  is_contra: null,
+  is_monetary: null,
+  income_statement_sub_type: null
 )
 ```
 

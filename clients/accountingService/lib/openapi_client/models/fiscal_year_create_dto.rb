@@ -67,9 +67,7 @@ module OpenapiClient
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
-        :'name',
         :'description',
-        :'fiscal_authority_id'
       ])
     end
 
@@ -98,6 +96,8 @@ module OpenapiClient
 
       if attributes.key?(:'name')
         self.name = attributes[:'name']
+      else
+        self.name = nil
       end
 
       if attributes.key?(:'description')
@@ -118,6 +118,8 @@ module OpenapiClient
 
       if attributes.key?(:'fiscal_authority_id')
         self.fiscal_authority_id = attributes[:'fiscal_authority_id']
+      else
+        self.fiscal_authority_id = nil
       end
     end
 
@@ -126,6 +128,22 @@ module OpenapiClient
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
       invalid_properties = Array.new
+      if @name.nil?
+        invalid_properties.push('invalid value for "name", name cannot be nil.')
+      end
+
+      if @name.to_s.length < 1
+        invalid_properties.push('invalid value for "name", the character length must be great than or equal to 1.')
+      end
+
+      if @fiscal_authority_id.nil?
+        invalid_properties.push('invalid value for "fiscal_authority_id", fiscal_authority_id cannot be nil.')
+      end
+
+      if @fiscal_authority_id.to_s.length < 1
+        invalid_properties.push('invalid value for "fiscal_authority_id", the character length must be great than or equal to 1.')
+      end
+
       invalid_properties
     end
 
@@ -133,7 +151,39 @@ module OpenapiClient
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
+      return false if @name.nil?
+      return false if @name.to_s.length < 1
+      return false if @fiscal_authority_id.nil?
+      return false if @fiscal_authority_id.to_s.length < 1
       true
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] name Value to be assigned
+    def name=(name)
+      if name.nil?
+        fail ArgumentError, 'name cannot be nil'
+      end
+
+      if name.to_s.length < 1
+        fail ArgumentError, 'invalid value for "name", the character length must be great than or equal to 1.'
+      end
+
+      @name = name
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] fiscal_authority_id Value to be assigned
+    def fiscal_authority_id=(fiscal_authority_id)
+      if fiscal_authority_id.nil?
+        fail ArgumentError, 'fiscal_authority_id cannot be nil'
+      end
+
+      if fiscal_authority_id.to_s.length < 1
+        fail ArgumentError, 'invalid value for "fiscal_authority_id", the character length must be great than or equal to 1.'
+      end
+
+      @fiscal_authority_id = fiscal_authority_id
     end
 
     # Checks equality by comparing each attribute.

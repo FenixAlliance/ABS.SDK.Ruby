@@ -51,8 +51,6 @@ module OpenapiClient
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
-        :'name',
-        :'fiscal_year_id'
       ])
     end
 
@@ -73,6 +71,8 @@ module OpenapiClient
 
       if attributes.key?(:'name')
         self.name = attributes[:'name']
+      else
+        self.name = nil
       end
 
       if attributes.key?(:'from_date')
@@ -85,6 +85,8 @@ module OpenapiClient
 
       if attributes.key?(:'fiscal_year_id')
         self.fiscal_year_id = attributes[:'fiscal_year_id']
+      else
+        self.fiscal_year_id = nil
       end
     end
 
@@ -93,19 +95,27 @@ module OpenapiClient
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
       invalid_properties = Array.new
-      if !@name.nil? && @name.to_s.length > 50
+      if @name.nil?
+        invalid_properties.push('invalid value for "name", name cannot be nil.')
+      end
+
+      if @name.to_s.length > 50
         invalid_properties.push('invalid value for "name", the character length must be smaller than or equal to 50.')
       end
 
-      if !@name.nil? && @name.to_s.length < 0
+      if @name.to_s.length < 0
         invalid_properties.push('invalid value for "name", the character length must be great than or equal to 0.')
       end
 
-      if !@fiscal_year_id.nil? && @fiscal_year_id.to_s.length > 36
+      if @fiscal_year_id.nil?
+        invalid_properties.push('invalid value for "fiscal_year_id", fiscal_year_id cannot be nil.')
+      end
+
+      if @fiscal_year_id.to_s.length > 36
         invalid_properties.push('invalid value for "fiscal_year_id", the character length must be smaller than or equal to 36.')
       end
 
-      if !@fiscal_year_id.nil? && @fiscal_year_id.to_s.length < 0
+      if @fiscal_year_id.to_s.length < 0
         invalid_properties.push('invalid value for "fiscal_year_id", the character length must be great than or equal to 0.')
       end
 
@@ -116,21 +126,27 @@ module OpenapiClient
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      return false if !@name.nil? && @name.to_s.length > 50
-      return false if !@name.nil? && @name.to_s.length < 0
-      return false if !@fiscal_year_id.nil? && @fiscal_year_id.to_s.length > 36
-      return false if !@fiscal_year_id.nil? && @fiscal_year_id.to_s.length < 0
+      return false if @name.nil?
+      return false if @name.to_s.length > 50
+      return false if @name.to_s.length < 0
+      return false if @fiscal_year_id.nil?
+      return false if @fiscal_year_id.to_s.length > 36
+      return false if @fiscal_year_id.to_s.length < 0
       true
     end
 
     # Custom attribute writer method with validation
     # @param [Object] name Value to be assigned
     def name=(name)
-      if !name.nil? && name.to_s.length > 50
+      if name.nil?
+        fail ArgumentError, 'name cannot be nil'
+      end
+
+      if name.to_s.length > 50
         fail ArgumentError, 'invalid value for "name", the character length must be smaller than or equal to 50.'
       end
 
-      if !name.nil? && name.to_s.length < 0
+      if name.to_s.length < 0
         fail ArgumentError, 'invalid value for "name", the character length must be great than or equal to 0.'
       end
 
@@ -140,11 +156,15 @@ module OpenapiClient
     # Custom attribute writer method with validation
     # @param [Object] fiscal_year_id Value to be assigned
     def fiscal_year_id=(fiscal_year_id)
-      if !fiscal_year_id.nil? && fiscal_year_id.to_s.length > 36
+      if fiscal_year_id.nil?
+        fail ArgumentError, 'fiscal_year_id cannot be nil'
+      end
+
+      if fiscal_year_id.to_s.length > 36
         fail ArgumentError, 'invalid value for "fiscal_year_id", the character length must be smaller than or equal to 36.'
       end
 
-      if !fiscal_year_id.nil? && fiscal_year_id.to_s.length < 0
+      if fiscal_year_id.to_s.length < 0
         fail ArgumentError, 'invalid value for "fiscal_year_id", the character length must be great than or equal to 0.'
       end
 

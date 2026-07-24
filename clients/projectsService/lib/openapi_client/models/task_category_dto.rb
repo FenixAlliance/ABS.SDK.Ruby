@@ -21,12 +21,21 @@ module OpenapiClient
 
     attr_accessor :title
 
+    attr_accessor :project_id
+
+    attr_accessor :tenant_id
+
+    attr_accessor :enrollment_id
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'id' => :'id',
         :'timestamp' => :'timestamp',
-        :'title' => :'title'
+        :'title' => :'title',
+        :'project_id' => :'projectId',
+        :'tenant_id' => :'tenantId',
+        :'enrollment_id' => :'enrollmentId'
       }
     end
 
@@ -40,7 +49,10 @@ module OpenapiClient
       {
         :'id' => :'String',
         :'timestamp' => :'Time',
-        :'title' => :'String'
+        :'title' => :'String',
+        :'project_id' => :'String',
+        :'tenant_id' => :'String',
+        :'enrollment_id' => :'String'
       }
     end
 
@@ -49,7 +61,10 @@ module OpenapiClient
       Set.new([
         :'id',
         :'timestamp',
-        :'title'
+        :'title',
+        :'project_id',
+        :'tenant_id',
+        :'enrollment_id'
       ])
     end
 
@@ -79,6 +94,18 @@ module OpenapiClient
       if attributes.key?(:'title')
         self.title = attributes[:'title']
       end
+
+      if attributes.key?(:'project_id')
+        self.project_id = attributes[:'project_id']
+      end
+
+      if attributes.key?(:'tenant_id')
+        self.tenant_id = attributes[:'tenant_id']
+      end
+
+      if attributes.key?(:'enrollment_id')
+        self.enrollment_id = attributes[:'enrollment_id']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -103,7 +130,10 @@ module OpenapiClient
       self.class == o.class &&
           id == o.id &&
           timestamp == o.timestamp &&
-          title == o.title
+          title == o.title &&
+          project_id == o.project_id &&
+          tenant_id == o.tenant_id &&
+          enrollment_id == o.enrollment_id
     end
 
     # @see the `==` method
@@ -115,7 +145,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, timestamp, title].hash
+      [id, timestamp, title, project_id, tenant_id, enrollment_id].hash
     end
 
     # Builds the object from hash

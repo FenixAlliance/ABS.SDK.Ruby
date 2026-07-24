@@ -2492,7 +2492,7 @@ No authorization required
 
 ## get_purchase_invoices_sum
 
-> <DecimalEnvelope> get_purchase_invoices_sum(tenant_id)
+> <MoneyEnvelope> get_purchase_invoices_sum(tenant_id)
 
 Sum tenant purchase-invoice totals.
 
@@ -2520,7 +2520,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<DecimalEnvelope>, Integer, Hash)> get_purchase_invoices_sum_with_http_info(tenant_id)
+> <Array(<MoneyEnvelope>, Integer, Hash)> get_purchase_invoices_sum_with_http_info(tenant_id)
 
 ```ruby
 begin
@@ -2528,7 +2528,7 @@ begin
   data, status_code, headers = api_instance.get_purchase_invoices_sum_with_http_info(tenant_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <DecimalEnvelope>
+  p data # => <MoneyEnvelope>
 rescue OpenapiClient::ApiError => e
   puts "Error when calling InvoicesApi->get_purchase_invoices_sum_with_http_info: #{e}"
 end
@@ -2542,7 +2542,7 @@ end
 
 ### Return type
 
-[**DecimalEnvelope**](DecimalEnvelope.md)
+[**MoneyEnvelope**](MoneyEnvelope.md)
 
 ### Authorization
 
@@ -2556,7 +2556,7 @@ No authorization required
 
 ## get_sales_invoices_sum
 
-> <DecimalEnvelope> get_sales_invoices_sum(tenant_id)
+> <MoneyEnvelope> get_sales_invoices_sum(tenant_id)
 
 Sum tenant sales-invoice totals.
 
@@ -2584,7 +2584,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<DecimalEnvelope>, Integer, Hash)> get_sales_invoices_sum_with_http_info(tenant_id)
+> <Array(<MoneyEnvelope>, Integer, Hash)> get_sales_invoices_sum_with_http_info(tenant_id)
 
 ```ruby
 begin
@@ -2592,7 +2592,7 @@ begin
   data, status_code, headers = api_instance.get_sales_invoices_sum_with_http_info(tenant_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <DecimalEnvelope>
+  p data # => <MoneyEnvelope>
 rescue OpenapiClient::ApiError => e
   puts "Error when calling InvoicesApi->get_sales_invoices_sum_with_http_info: #{e}"
 end
@@ -2606,7 +2606,7 @@ end
 
 ### Return type
 
-[**DecimalEnvelope**](DecimalEnvelope.md)
+[**MoneyEnvelope**](MoneyEnvelope.md)
 
 ### Authorization
 

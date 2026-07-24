@@ -5,33 +5,34 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **id** | **String** |  | [optional] |
-| **timestamp** | **Time** |  | [optional] |
-| **group** | **Boolean** |  | [optional] |
-| **opening** | **Boolean** |  | [optional] |
-| **description** | **String** |  | [optional] |
-| **date** | **Time** |  | [optional] |
-| **forex_rates_snapshot** | **String** |  | [optional] |
-| **forex_rate** | **Float** |  | [optional] |
-| **credit** | **Float** |  | [optional] |
-| **debit** | **Float** |  | [optional] |
-| **credit_in_usd** | **Float** |  | [optional] |
-| **debit_in_usd** | **Float** |  | [optional] |
-| **currency_id** | **String** |  | [optional] |
 | **tenant_id** | **String** |  | [optional] |
 | **enrollment_id** | **String** |  | [optional] |
 | **journal_id** | **String** |  | [optional] |
 | **journal_name** | **String** |  | [optional] |
 | **journal_code** | **String** |  | [optional] |
-| **credit_account_id** | **String** |  | [optional] |
-| **credit_account_name** | **String** |  | [optional] |
-| **debit_account_id** | **String** |  | [optional] |
-| **debit_account_name** | **String** |  | [optional] |
-| **invoice_code** | **String** |  | [optional] |
-| **parent_journal_entry_id** | **String** |  | [optional] |
-| **credit_amount** | [**Money**](Money.md) |  | [optional] |
-| **debit_amount** | [**Money**](Money.md) |  | [optional] |
-| **credit_amount_in_usd** | [**Money**](Money.md) |  | [optional] |
-| **debit_amount_in_usd** | [**Money**](Money.md) |  | [optional] |
+| **fiscal_period_id** | **String** |  | [optional] |
+| **financial_book_id** | **String** |  | [optional] |
+| **description** | **String** |  | [optional] |
+| **entry_type** | **String** |  | [optional] |
+| **status** | **String** |  | [optional] |
+| **posting_date** | **Time** |  | [optional] |
+| **is_opening_balance** | **Boolean** |  | [optional] |
+| **transaction_currency_id** | **String** |  | [optional] |
+| **source_document_type** | **String** |  | [optional] |
+| **source_document_id** | **String** |  | [optional] |
+| **idempotency_key** | **String** |  | [optional] |
+| **reversal_of_journal_entry_id** | **String** |  | [optional] |
+| **posted_by** | **String** |  | [optional] |
+| **forex_rate** | **Float** |  | [optional] |
+| **forex_rates_snapshot** | **String** |  | [optional] |
+| **timestamp** | **Time** |  | [optional] |
+| **debit_in_usd** | **Float** |  | [optional] |
+| **credit_in_usd** | **Float** |  | [optional] |
+| **accounting_entries** | [**Array&lt;AccountingEntryDto&gt;**](AccountingEntryDto.md) |  | [optional] |
+| **total_debit** | **Float** |  | [optional][readonly] |
+| **total_credit** | **Float** |  | [optional][readonly] |
+| **total_debit_amount** | [**Money**](Money.md) |  | [optional] |
+| **total_credit_amount** | [**Money**](Money.md) |  | [optional] |
 
 ## Example
 
@@ -40,33 +41,34 @@ require 'openapi_client'
 
 instance = OpenapiClient::JournalEntryDto.new(
   id: null,
-  timestamp: null,
-  group: null,
-  opening: null,
-  description: null,
-  date: null,
-  forex_rates_snapshot: null,
-  forex_rate: null,
-  credit: null,
-  debit: null,
-  credit_in_usd: null,
-  debit_in_usd: null,
-  currency_id: null,
   tenant_id: null,
   enrollment_id: null,
   journal_id: null,
   journal_name: null,
   journal_code: null,
-  credit_account_id: null,
-  credit_account_name: null,
-  debit_account_id: null,
-  debit_account_name: null,
-  invoice_code: null,
-  parent_journal_entry_id: null,
-  credit_amount: null,
-  debit_amount: null,
-  credit_amount_in_usd: null,
-  debit_amount_in_usd: null
+  fiscal_period_id: null,
+  financial_book_id: null,
+  description: null,
+  entry_type: null,
+  status: null,
+  posting_date: null,
+  is_opening_balance: null,
+  transaction_currency_id: null,
+  source_document_type: null,
+  source_document_id: null,
+  idempotency_key: null,
+  reversal_of_journal_entry_id: null,
+  posted_by: null,
+  forex_rate: null,
+  forex_rates_snapshot: null,
+  timestamp: null,
+  debit_in_usd: null,
+  credit_in_usd: null,
+  accounting_entries: null,
+  total_debit: null,
+  total_credit: null,
+  total_debit_amount: null,
+  total_credit_amount: null
 )
 ```
 

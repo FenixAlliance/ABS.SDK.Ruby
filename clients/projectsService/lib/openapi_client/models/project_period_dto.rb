@@ -25,6 +25,10 @@ module OpenapiClient
 
     attr_accessor :project_id
 
+    attr_accessor :tenant_id
+
+    attr_accessor :enrollment_id
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -32,7 +36,9 @@ module OpenapiClient
         :'timestamp' => :'timestamp',
         :'period_start_date' => :'periodStartDate',
         :'period_end_date' => :'periodEndDate',
-        :'project_id' => :'projectID'
+        :'project_id' => :'projectId',
+        :'tenant_id' => :'tenantId',
+        :'enrollment_id' => :'enrollmentId'
       }
     end
 
@@ -48,7 +54,9 @@ module OpenapiClient
         :'timestamp' => :'Time',
         :'period_start_date' => :'Time',
         :'period_end_date' => :'Time',
-        :'project_id' => :'String'
+        :'project_id' => :'String',
+        :'tenant_id' => :'String',
+        :'enrollment_id' => :'String'
       }
     end
 
@@ -57,7 +65,9 @@ module OpenapiClient
       Set.new([
         :'id',
         :'timestamp',
-        :'project_id'
+        :'project_id',
+        :'tenant_id',
+        :'enrollment_id'
       ])
     end
 
@@ -95,6 +105,14 @@ module OpenapiClient
       if attributes.key?(:'project_id')
         self.project_id = attributes[:'project_id']
       end
+
+      if attributes.key?(:'tenant_id')
+        self.tenant_id = attributes[:'tenant_id']
+      end
+
+      if attributes.key?(:'enrollment_id')
+        self.enrollment_id = attributes[:'enrollment_id']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -121,7 +139,9 @@ module OpenapiClient
           timestamp == o.timestamp &&
           period_start_date == o.period_start_date &&
           period_end_date == o.period_end_date &&
-          project_id == o.project_id
+          project_id == o.project_id &&
+          tenant_id == o.tenant_id &&
+          enrollment_id == o.enrollment_id
     end
 
     # @see the `==` method
@@ -133,7 +153,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, timestamp, period_start_date, period_end_date, project_id].hash
+      [id, timestamp, period_start_date, period_end_date, project_id, tenant_id, enrollment_id].hash
     end
 
     # Builds the object from hash

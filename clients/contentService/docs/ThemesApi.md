@@ -4,12 +4,12 @@ All URIs are relative to *https://absuite.net*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
-| [**get_latest_currency_rates_model_async**](ThemesApi.md#get_latest_currency_rates_model_async) | **GET** /api/v2/ContentService/Themes/Update | Update base web content themes |
+| [**update_themes_async**](ThemesApi.md#update_themes_async) | **GET** /api/v2/ContentService/Themes/Update | Update base web content themes |
 
 
-## get_latest_currency_rates_model_async
+## update_themes_async
 
-> get_latest_currency_rates_model_async(opts)
+> update_themes_async(opts)
 
 Update base web content themes
 
@@ -29,27 +29,27 @@ opts = {
 
 begin
   # Update base web content themes
-  api_instance.get_latest_currency_rates_model_async(opts)
+  api_instance.update_themes_async(opts)
 rescue OpenapiClient::ApiError => e
-  puts "Error when calling ThemesApi->get_latest_currency_rates_model_async: #{e}"
+  puts "Error when calling ThemesApi->update_themes_async: #{e}"
 end
 ```
 
-#### Using the get_latest_currency_rates_model_async_with_http_info variant
+#### Using the update_themes_async_with_http_info variant
 
 This returns an Array which contains the response data (`nil` in this case), status code and headers.
 
-> <Array(nil, Integer, Hash)> get_latest_currency_rates_model_async_with_http_info(opts)
+> <Array(nil, Integer, Hash)> update_themes_async_with_http_info(opts)
 
 ```ruby
 begin
   # Update base web content themes
-  data, status_code, headers = api_instance.get_latest_currency_rates_model_async_with_http_info(opts)
+  data, status_code, headers = api_instance.update_themes_async_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => nil
 rescue OpenapiClient::ApiError => e
-  puts "Error when calling ThemesApi->get_latest_currency_rates_model_async_with_http_info: #{e}"
+  puts "Error when calling ThemesApi->update_themes_async_with_http_info: #{e}"
 end
 ```
 

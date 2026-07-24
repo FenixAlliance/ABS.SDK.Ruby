@@ -78,7 +78,7 @@ No authorization required
 
 ## get_available_modules
 
-> <ModuleListEnvelope> get_available_modules(opts)
+> <SuiteModuleListEnvelope> get_available_modules(opts)
 
 Get all modules available to a tenant user.
 
@@ -108,7 +108,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<ModuleListEnvelope>, Integer, Hash)> get_available_modules_with_http_info(opts)
+> <Array(<SuiteModuleListEnvelope>, Integer, Hash)> get_available_modules_with_http_info(opts)
 
 ```ruby
 begin
@@ -116,7 +116,7 @@ begin
   data, status_code, headers = api_instance.get_available_modules_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <ModuleListEnvelope>
+  p data # => <SuiteModuleListEnvelope>
 rescue OpenapiClient::ApiError => e
   puts "Error when calling ModulesApi->get_available_modules_with_http_info: #{e}"
 end
@@ -132,7 +132,7 @@ end
 
 ### Return type
 
-[**ModuleListEnvelope**](ModuleListEnvelope.md)
+[**SuiteModuleListEnvelope**](SuiteModuleListEnvelope.md)
 
 ### Authorization
 

@@ -103,6 +103,7 @@ Class | Method | HTTP request | Description
 *OpenapiClient::FenixAllianceABSWebApi* | [**account_manage_download_personal_data_post**](docs/FenixAllianceABSWebApi.md#account_manage_download_personal_data_post) | **POST** /Account/Manage/DownloadPersonalData | 
 *OpenapiClient::FenixAllianceABSWebApi* | [**account_manage_link_external_login_post**](docs/FenixAllianceABSWebApi.md#account_manage_link_external_login_post) | **POST** /Account/Manage/LinkExternalLogin | 
 *OpenapiClient::FenixAllianceABSWebApi* | [**account_perform_external_login_post**](docs/FenixAllianceABSWebApi.md#account_perform_external_login_post) | **POST** /Account/PerformExternalLogin | 
+*OpenapiClient::FenixAllianceABSWebApi* | [**api_v2_ai_service_agents_agent_id_agui_post**](docs/FenixAllianceABSWebApi.md#api_v2_ai_service_agents_agent_id_agui_post) | **POST** /api/v2/AIService/Agents/{agentId}/agui | 
 *OpenapiClient::FenixAllianceABSWebApi* | [**forgot_password_post**](docs/FenixAllianceABSWebApi.md#forgot_password_post) | **POST** /forgotPassword | 
 *OpenapiClient::FenixAllianceABSWebApi* | [**health_get**](docs/FenixAllianceABSWebApi.md#health_get) | **GET** /health | 
 *OpenapiClient::FenixAllianceABSWebApi* | [**hello_get**](docs/FenixAllianceABSWebApi.md#hello_get) | **GET** /hello | 
@@ -120,10 +121,10 @@ Class | Method | HTTP request | Description
 *OpenapiClient::IPLookupsApi* | [**get_system_ip_lookup_by_id**](docs/IPLookupsApi.md#get_system_ip_lookup_by_id) | **GET** /api/v2/SystemService/IPLookups/{ipLookupId} | Retrieve a single system IP lookup by its ID
 *OpenapiClient::IPLookupsApi* | [**get_system_ip_lookups**](docs/IPLookupsApi.md#get_system_ip_lookups) | **GET** /api/v2/SystemService/IPLookups | Retrieve a list of system IP lookups
 *OpenapiClient::IPLookupsApi* | [**get_system_ip_lookups_count**](docs/IPLookupsApi.md#get_system_ip_lookups_count) | **GET** /api/v2/SystemService/IPLookups/Count | Get the count of system IP lookups
+*OpenapiClient::LicensingApi* | [**get_attributes_for_license_async**](docs/LicensingApi.md#get_attributes_for_license_async) | **GET** /api/v2/SystemService/Licensing/Licenses/{licenseId}/Attributes | Retrieve license attributes
+*OpenapiClient::LicensingApi* | [**get_features_for_license_async**](docs/LicensingApi.md#get_features_for_license_async) | **GET** /api/v2/SystemService/Licensing/Licenses/{licenseId}/Features | Retrieve license features
 *OpenapiClient::LicensingApi* | [**get_license_assignments_async**](docs/LicensingApi.md#get_license_assignments_async) | **GET** /api/v2/SystemService/Licensing/Licenses/{licenseId}/Assignments | Retrieve license assignments
-*OpenapiClient::LicensingApi* | [**get_license_attributes_async**](docs/LicensingApi.md#get_license_attributes_async) | **GET** /api/v2/SystemService/Licensing/Licenses/{licenseId}/Attributes | Retrieve license attributes
 *OpenapiClient::LicensingApi* | [**get_license_by_id_async**](docs/LicensingApi.md#get_license_by_id_async) | **GET** /api/v2/SystemService/Licensing/Licenses/{licenseId} | Retrieve a license by ID
-*OpenapiClient::LicensingApi* | [**get_license_features_async**](docs/LicensingApi.md#get_license_features_async) | **GET** /api/v2/SystemService/Licensing/Licenses/{licenseId}/Features | Retrieve license features
 *OpenapiClient::LicensingApi* | [**get_license_records_quota_async**](docs/LicensingApi.md#get_license_records_quota_async) | **GET** /api/v2/SystemService/Licensing/Licenses/{licenseId}/Quota | Retrieve license record quota
 *OpenapiClient::LicensingApi* | [**get_licenses_async**](docs/LicensingApi.md#get_licenses_async) | **GET** /api/v2/SystemService/Licensing/Licenses | Retrieve a list of licenses
 *OpenapiClient::LicensingApi* | [**redeem_license_async**](docs/LicensingApi.md#redeem_license_async) | **POST** /api/v2/SystemService/Licensing/Licenses/Redeem | Redeem a license
@@ -209,13 +210,13 @@ Class | Method | HTTP request | Description
  - [OpenapiClient::ExtendedUserDtoListEnvelope](docs/ExtendedUserDtoListEnvelope.md)
  - [OpenapiClient::ForgotPasswordRequest](docs/ForgotPasswordRequest.md)
  - [OpenapiClient::HttpValidationProblemDetails](docs/HttpValidationProblemDetails.md)
+ - [OpenapiClient::IOpenApiContact](docs/IOpenApiContact.md)
+ - [OpenapiClient::IOpenApiDefinitionSpec](docs/IOpenApiDefinitionSpec.md)
+ - [OpenapiClient::IOpenApiEndpoint](docs/IOpenApiEndpoint.md)
+ - [OpenapiClient::IOpenApiLicense](docs/IOpenApiLicense.md)
  - [OpenapiClient::IPLookupDto](docs/IPLookupDto.md)
  - [OpenapiClient::IPLookupDtoEnvelope](docs/IPLookupDtoEnvelope.md)
  - [OpenapiClient::IPLookupDtoListEnvelope](docs/IPLookupDtoListEnvelope.md)
- - [OpenapiClient::ISwaggerContact](docs/ISwaggerContact.md)
- - [OpenapiClient::ISwaggerEndpoint](docs/ISwaggerEndpoint.md)
- - [OpenapiClient::ISwaggerLicense](docs/ISwaggerLicense.md)
- - [OpenapiClient::ISwaggerSpec](docs/ISwaggerSpec.md)
  - [OpenapiClient::IValidationFailure](docs/IValidationFailure.md)
  - [OpenapiClient::IValidationFailureListEnvelope](docs/IValidationFailureListEnvelope.md)
  - [OpenapiClient::InfoRequest](docs/InfoRequest.md)
@@ -223,8 +224,6 @@ Class | Method | HTTP request | Description
  - [OpenapiClient::Int32Envelope](docs/Int32Envelope.md)
  - [OpenapiClient::LicenseValidationRequest](docs/LicenseValidationRequest.md)
  - [OpenapiClient::LoginRequest](docs/LoginRequest.md)
- - [OpenapiClient::ModelModule](docs/ModelModule.md)
- - [OpenapiClient::ModuleListEnvelope](docs/ModuleListEnvelope.md)
  - [OpenapiClient::ObjectEmailDispatchRequest](docs/ObjectEmailDispatchRequest.md)
  - [OpenapiClient::Operation](docs/Operation.md)
  - [OpenapiClient::OptionCreateDto](docs/OptionCreateDto.md)
@@ -245,6 +244,8 @@ Class | Method | HTTP request | Description
  - [OpenapiClient::SuiteLicenseDto](docs/SuiteLicenseDto.md)
  - [OpenapiClient::SuiteLicenseDtoEnvelope](docs/SuiteLicenseDtoEnvelope.md)
  - [OpenapiClient::SuiteLicenseDtoListEnvelope](docs/SuiteLicenseDtoListEnvelope.md)
+ - [OpenapiClient::SuiteModule](docs/SuiteModule.md)
+ - [OpenapiClient::SuiteModuleListEnvelope](docs/SuiteModuleListEnvelope.md)
  - [OpenapiClient::SystemOverviewDto](docs/SystemOverviewDto.md)
  - [OpenapiClient::SystemOverviewDtoEnvelope](docs/SystemOverviewDtoEnvelope.md)
  - [OpenapiClient::TenantCreateDto](docs/TenantCreateDto.md)

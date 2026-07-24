@@ -392,7 +392,6 @@ api_instance = OpenapiClient::BlockchainsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 blockchain_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
-  o_data_query_options: OpenapiClient::BlockchainBlockDtoODataQueryOptions.new, # BlockchainBlockDtoODataQueryOptions | 
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example' # String | 
 }
@@ -430,7 +429,6 @@ end
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
 | **blockchain_id** | **String** |  |  |
-| **o_data_query_options** | [**BlockchainBlockDtoODataQueryOptions**](.md) |  | [optional] |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
 
@@ -464,7 +462,6 @@ api_instance = OpenapiClient::BlockchainsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 blockchain_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
-  o_data_query_options: OpenapiClient::BlockchainBlockDtoODataQueryOptions.new, # BlockchainBlockDtoODataQueryOptions | 
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example' # String | 
 }
@@ -502,7 +499,6 @@ end
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
 | **blockchain_id** | **String** |  |  |
-| **o_data_query_options** | [**BlockchainBlockDtoODataQueryOptions**](.md) |  | [optional] |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
 
@@ -609,7 +605,6 @@ require 'openapi_client'
 api_instance = OpenapiClient::BlockchainsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
-  o_data_query_options: OpenapiClient::BlockchainDtoODataQueryOptions.new, # BlockchainDtoODataQueryOptions | 
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example' # String | 
 }
@@ -646,7 +641,6 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
-| **o_data_query_options** | [**BlockchainDtoODataQueryOptions**](.md) |  | [optional] |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
 
@@ -681,7 +675,6 @@ require 'openapi_client'
 api_instance = OpenapiClient::BlockchainsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
-  o_data_query_options: OpenapiClient::BlockchainDtoODataQueryOptions.new, # BlockchainDtoODataQueryOptions | 
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example' # String | 
 }
@@ -718,7 +711,6 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
-| **o_data_query_options** | [**BlockchainDtoODataQueryOptions**](.md) |  | [optional] |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
 

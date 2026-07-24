@@ -17,10 +17,13 @@ module OpenapiClient
   class TaskCategoryUpdateDto
     attr_accessor :title
 
+    attr_accessor :project_id
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'title' => :'title'
+        :'title' => :'title',
+        :'project_id' => :'projectId'
       }
     end
 
@@ -32,14 +35,16 @@ module OpenapiClient
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'title' => :'String'
+        :'title' => :'String',
+        :'project_id' => :'String'
       }
     end
 
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
-        :'title'
+        :'title',
+        :'project_id'
       ])
     end
 
@@ -60,6 +65,10 @@ module OpenapiClient
 
       if attributes.key?(:'title')
         self.title = attributes[:'title']
+      end
+
+      if attributes.key?(:'project_id')
+        self.project_id = attributes[:'project_id']
       end
     end
 
@@ -83,7 +92,8 @@ module OpenapiClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          title == o.title
+          title == o.title &&
+          project_id == o.project_id
     end
 
     # @see the `==` method
@@ -95,7 +105,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [title].hash
+      [title, project_id].hash
     end
 
     # Builds the object from hash

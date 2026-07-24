@@ -15,21 +15,17 @@ require 'time'
 
 module OpenapiClient
   class AccountingEntryUpdateDto
-    attr_accessor :description
-
-    attr_accessor :amount
-
-    attr_accessor :date
-
-    attr_accessor :currency_id
-
-    attr_accessor :debit_account_id
-
-    attr_accessor :credit_account_id
-
     attr_accessor :journal_entry_id
 
-    attr_accessor :accounting_entry_type
+    attr_accessor :account_id
+
+    attr_accessor :direction
+
+    attr_accessor :transaction_amount
+
+    attr_accessor :transaction_currency_id
+
+    attr_accessor :description
 
     class EnumAttributeValidator
       attr_reader :datatype
@@ -56,14 +52,12 @@ module OpenapiClient
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'description' => :'description',
-        :'amount' => :'amount',
-        :'date' => :'date',
-        :'currency_id' => :'currencyId',
-        :'debit_account_id' => :'debitAccountId',
-        :'credit_account_id' => :'creditAccountId',
         :'journal_entry_id' => :'journalEntryId',
-        :'accounting_entry_type' => :'accountingEntryType'
+        :'account_id' => :'accountId',
+        :'direction' => :'direction',
+        :'transaction_amount' => :'transactionAmount',
+        :'transaction_currency_id' => :'transactionCurrencyId',
+        :'description' => :'description'
       }
     end
 
@@ -75,26 +69,22 @@ module OpenapiClient
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'description' => :'String',
-        :'amount' => :'Float',
-        :'date' => :'Time',
-        :'currency_id' => :'String',
-        :'debit_account_id' => :'String',
-        :'credit_account_id' => :'String',
         :'journal_entry_id' => :'String',
-        :'accounting_entry_type' => :'String'
+        :'account_id' => :'String',
+        :'direction' => :'String',
+        :'transaction_amount' => :'Float',
+        :'transaction_currency_id' => :'String',
+        :'description' => :'String'
       }
     end
 
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
-        :'description',
-        :'date',
-        :'currency_id',
-        :'debit_account_id',
-        :'credit_account_id',
         :'journal_entry_id',
+        :'account_id',
+        :'transaction_currency_id',
+        :'description'
       ])
     end
 
@@ -113,36 +103,28 @@ module OpenapiClient
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'description')
-        self.description = attributes[:'description']
-      end
-
-      if attributes.key?(:'amount')
-        self.amount = attributes[:'amount']
-      end
-
-      if attributes.key?(:'date')
-        self.date = attributes[:'date']
-      end
-
-      if attributes.key?(:'currency_id')
-        self.currency_id = attributes[:'currency_id']
-      end
-
-      if attributes.key?(:'debit_account_id')
-        self.debit_account_id = attributes[:'debit_account_id']
-      end
-
-      if attributes.key?(:'credit_account_id')
-        self.credit_account_id = attributes[:'credit_account_id']
-      end
-
       if attributes.key?(:'journal_entry_id')
         self.journal_entry_id = attributes[:'journal_entry_id']
       end
 
-      if attributes.key?(:'accounting_entry_type')
-        self.accounting_entry_type = attributes[:'accounting_entry_type']
+      if attributes.key?(:'account_id')
+        self.account_id = attributes[:'account_id']
+      end
+
+      if attributes.key?(:'direction')
+        self.direction = attributes[:'direction']
+      end
+
+      if attributes.key?(:'transaction_amount')
+        self.transaction_amount = attributes[:'transaction_amount']
+      end
+
+      if attributes.key?(:'transaction_currency_id')
+        self.transaction_currency_id = attributes[:'transaction_currency_id']
+      end
+
+      if attributes.key?(:'description')
+        self.description = attributes[:'description']
       end
     end
 
@@ -151,36 +133,20 @@ module OpenapiClient
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
       invalid_properties = Array.new
-      if !@description.nil? && @description.to_s.length > 1000
-        invalid_properties.push('invalid value for "description", the character length must be smaller than or equal to 1000.')
+      if !@transaction_amount.nil? && @transaction_amount > 9.999999999999999E+20
+        invalid_properties.push('invalid value for "transaction_amount", must be smaller than or equal to 9.999999999999999E+20.')
+      end
+
+      if !@transaction_amount.nil? && @transaction_amount < 1.0E-16
+        invalid_properties.push('invalid value for "transaction_amount", must be greater than or equal to 1.0E-16.')
+      end
+
+      if !@description.nil? && @description.to_s.length > 300
+        invalid_properties.push('invalid value for "description", the character length must be smaller than or equal to 300.')
       end
 
       if !@description.nil? && @description.to_s.length < 1
         invalid_properties.push('invalid value for "description", the character length must be great than or equal to 1.')
-      end
-
-      if !@amount.nil? && @amount > 999999999999999
-        invalid_properties.push('invalid value for "amount", must be smaller than or equal to 999999999999999.')
-      end
-
-      if !@amount.nil? && @amount < 0.01
-        invalid_properties.push('invalid value for "amount", must be greater than or equal to 0.01.')
-      end
-
-      if !@credit_account_id.nil? && @credit_account_id.to_s.length > 36
-        invalid_properties.push('invalid value for "credit_account_id", the character length must be smaller than or equal to 36.')
-      end
-
-      if !@credit_account_id.nil? && @credit_account_id.to_s.length < 36
-        invalid_properties.push('invalid value for "credit_account_id", the character length must be great than or equal to 36.')
-      end
-
-      if !@journal_entry_id.nil? && @journal_entry_id.to_s.length > 36
-        invalid_properties.push('invalid value for "journal_entry_id", the character length must be smaller than or equal to 36.')
-      end
-
-      if !@journal_entry_id.nil? && @journal_entry_id.to_s.length < 36
-        invalid_properties.push('invalid value for "journal_entry_id", the character length must be great than or equal to 36.')
       end
 
       invalid_properties
@@ -190,24 +156,48 @@ module OpenapiClient
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      return false if !@description.nil? && @description.to_s.length > 1000
+      direction_validator = EnumAttributeValidator.new('String', ["Debit", "Credit"])
+      return false unless direction_validator.valid?(@direction)
+      return false if !@transaction_amount.nil? && @transaction_amount > 9.999999999999999E+20
+      return false if !@transaction_amount.nil? && @transaction_amount < 1.0E-16
+      return false if !@description.nil? && @description.to_s.length > 300
       return false if !@description.nil? && @description.to_s.length < 1
-      return false if !@amount.nil? && @amount > 999999999999999
-      return false if !@amount.nil? && @amount < 0.01
-      return false if !@credit_account_id.nil? && @credit_account_id.to_s.length > 36
-      return false if !@credit_account_id.nil? && @credit_account_id.to_s.length < 36
-      return false if !@journal_entry_id.nil? && @journal_entry_id.to_s.length > 36
-      return false if !@journal_entry_id.nil? && @journal_entry_id.to_s.length < 36
-      accounting_entry_type_validator = EnumAttributeValidator.new('String', ["None", "Debit", "Credit"])
-      return false unless accounting_entry_type_validator.valid?(@accounting_entry_type)
       true
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] direction Object to be assigned
+    def direction=(direction)
+      validator = EnumAttributeValidator.new('String', ["Debit", "Credit"])
+      unless validator.valid?(direction)
+        fail ArgumentError, "invalid value for \"direction\", must be one of #{validator.allowable_values}."
+      end
+      @direction = direction
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] transaction_amount Value to be assigned
+    def transaction_amount=(transaction_amount)
+      if transaction_amount.nil?
+        fail ArgumentError, 'transaction_amount cannot be nil'
+      end
+
+      if transaction_amount > 9.999999999999999E+20
+        fail ArgumentError, 'invalid value for "transaction_amount", must be smaller than or equal to 9.999999999999999E+20.'
+      end
+
+      if transaction_amount < 1.0E-16
+        fail ArgumentError, 'invalid value for "transaction_amount", must be greater than or equal to 1.0E-16.'
+      end
+
+      @transaction_amount = transaction_amount
     end
 
     # Custom attribute writer method with validation
     # @param [Object] description Value to be assigned
     def description=(description)
-      if !description.nil? && description.to_s.length > 1000
-        fail ArgumentError, 'invalid value for "description", the character length must be smaller than or equal to 1000.'
+      if !description.nil? && description.to_s.length > 300
+        fail ArgumentError, 'invalid value for "description", the character length must be smaller than or equal to 300.'
       end
 
       if !description.nil? && description.to_s.length < 1
@@ -217,75 +207,17 @@ module OpenapiClient
       @description = description
     end
 
-    # Custom attribute writer method with validation
-    # @param [Object] amount Value to be assigned
-    def amount=(amount)
-      if amount.nil?
-        fail ArgumentError, 'amount cannot be nil'
-      end
-
-      if amount > 999999999999999
-        fail ArgumentError, 'invalid value for "amount", must be smaller than or equal to 999999999999999.'
-      end
-
-      if amount < 0.01
-        fail ArgumentError, 'invalid value for "amount", must be greater than or equal to 0.01.'
-      end
-
-      @amount = amount
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] credit_account_id Value to be assigned
-    def credit_account_id=(credit_account_id)
-      if !credit_account_id.nil? && credit_account_id.to_s.length > 36
-        fail ArgumentError, 'invalid value for "credit_account_id", the character length must be smaller than or equal to 36.'
-      end
-
-      if !credit_account_id.nil? && credit_account_id.to_s.length < 36
-        fail ArgumentError, 'invalid value for "credit_account_id", the character length must be great than or equal to 36.'
-      end
-
-      @credit_account_id = credit_account_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] journal_entry_id Value to be assigned
-    def journal_entry_id=(journal_entry_id)
-      if !journal_entry_id.nil? && journal_entry_id.to_s.length > 36
-        fail ArgumentError, 'invalid value for "journal_entry_id", the character length must be smaller than or equal to 36.'
-      end
-
-      if !journal_entry_id.nil? && journal_entry_id.to_s.length < 36
-        fail ArgumentError, 'invalid value for "journal_entry_id", the character length must be great than or equal to 36.'
-      end
-
-      @journal_entry_id = journal_entry_id
-    end
-
-    # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] accounting_entry_type Object to be assigned
-    def accounting_entry_type=(accounting_entry_type)
-      validator = EnumAttributeValidator.new('String', ["None", "Debit", "Credit"])
-      unless validator.valid?(accounting_entry_type)
-        fail ArgumentError, "invalid value for \"accounting_entry_type\", must be one of #{validator.allowable_values}."
-      end
-      @accounting_entry_type = accounting_entry_type
-    end
-
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          description == o.description &&
-          amount == o.amount &&
-          date == o.date &&
-          currency_id == o.currency_id &&
-          debit_account_id == o.debit_account_id &&
-          credit_account_id == o.credit_account_id &&
           journal_entry_id == o.journal_entry_id &&
-          accounting_entry_type == o.accounting_entry_type
+          account_id == o.account_id &&
+          direction == o.direction &&
+          transaction_amount == o.transaction_amount &&
+          transaction_currency_id == o.transaction_currency_id &&
+          description == o.description
     end
 
     # @see the `==` method
@@ -297,7 +229,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [description, amount, date, currency_id, debit_account_id, credit_account_id, journal_entry_id, accounting_entry_type].hash
+      [journal_entry_id, account_id, direction, transaction_amount, transaction_currency_id, description].hash
     end
 
     # Builds the object from hash

@@ -1,6 +1,6 @@
 # OpenapiClient::UploadsApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://absuite.net*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
@@ -13,7 +13,7 @@ All URIs are relative to *http://localhost*
 
 Upload a file
 
-Uploads a file to tenant or user storage.
+Uploads a file to tenant or user storage, scanned and catalogued through the storage spine.
 
 ### Examples
 
@@ -26,6 +26,7 @@ opts = {
   tenant_id: '38400000-8cf0-11bd-b23e-10b96e4ef00d', # String | 
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example', # String | 
+  file: File.new('/path/to/some/file'), # File | 
   notes: 'notes_example', # String | 
   title: 'title_example', # String | 
   author: 'author_example', # String | 
@@ -36,6 +37,9 @@ opts = {
   valid_response: true, # Boolean | 
   parent_file_upload_id: 'parent_file_upload_id_example', # String | 
   file_path: 'file_path_example', # String | 
+  public_access_type: 'false', # String | 
+  purpose: 'Unknown', # String | 
+  social_profile_id_value: '38400000-8cf0-11bd-b23e-10b96e4ef00d', # String | 
   app_file_content: 'BYTE_ARRAY_DATA_HERE', # String | 
   app_file_sha256: 'app_file_sha256_example', # String | 
   app_file_created_at_utc: Time.parse('2013-10-20T19:20:30+01:00'), # Time | 
@@ -89,6 +93,7 @@ end
 | **tenant_id** | **String** |  | [optional] |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **file** | **File** |  | [optional] |
 | **notes** | **String** |  | [optional] |
 | **title** | **String** |  | [optional] |
 | **author** | **String** |  | [optional] |
@@ -99,6 +104,9 @@ end
 | **valid_response** | **Boolean** |  | [optional] |
 | **parent_file_upload_id** | **String** |  | [optional] |
 | **file_path** | **String** |  | [optional] |
+| **public_access_type** | **String** |  | [optional] |
+| **purpose** | **String** |  | [optional] |
+| **social_profile_id_value** | **String** |  | [optional] |
 | **app_file_content** | **String** |  | [optional] |
 | **app_file_sha256** | **String** |  | [optional] |
 | **app_file_created_at_utc** | **Time** |  | [optional] |

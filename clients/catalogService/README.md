@@ -81,6 +81,7 @@ Class | Method | HTTP request | Description
 *OpenapiClient::FenixAllianceABSWebApi* | [**account_manage_download_personal_data_post**](docs/FenixAllianceABSWebApi.md#account_manage_download_personal_data_post) | **POST** /Account/Manage/DownloadPersonalData | 
 *OpenapiClient::FenixAllianceABSWebApi* | [**account_manage_link_external_login_post**](docs/FenixAllianceABSWebApi.md#account_manage_link_external_login_post) | **POST** /Account/Manage/LinkExternalLogin | 
 *OpenapiClient::FenixAllianceABSWebApi* | [**account_perform_external_login_post**](docs/FenixAllianceABSWebApi.md#account_perform_external_login_post) | **POST** /Account/PerformExternalLogin | 
+*OpenapiClient::FenixAllianceABSWebApi* | [**api_v2_ai_service_agents_agent_id_agui_post**](docs/FenixAllianceABSWebApi.md#api_v2_ai_service_agents_agent_id_agui_post) | **POST** /api/v2/AIService/Agents/{agentId}/agui | 
 *OpenapiClient::FenixAllianceABSWebApi* | [**forgot_password_post**](docs/FenixAllianceABSWebApi.md#forgot_password_post) | **POST** /forgotPassword | 
 *OpenapiClient::FenixAllianceABSWebApi* | [**health_get**](docs/FenixAllianceABSWebApi.md#health_get) | **GET** /health | 
 *OpenapiClient::FenixAllianceABSWebApi* | [**hello_get**](docs/FenixAllianceABSWebApi.md#hello_get) | **GET** /hello | 
@@ -178,8 +179,8 @@ Class | Method | HTTP request | Description
 *OpenapiClient::ItemReviewsApi* | [**patch_item_review_async**](docs/ItemReviewsApi.md#patch_item_review_async) | **PATCH** /api/v2/CatalogService/ItemReviews/{itemReviewId} | Patch an item review
 *OpenapiClient::ItemReviewsApi* | [**update_item_review_async**](docs/ItemReviewsApi.md#update_item_review_async) | **PUT** /api/v2/CatalogService/ItemReviews/{itemReviewId} | Update an item review
 *OpenapiClient::ItemShippingPoliciesApi* | [**count_item_shipping_policies_async**](docs/ItemShippingPoliciesApi.md#count_item_shipping_policies_async) | **GET** /api/v2/CatalogService/ItemShippingPolicies/Count | Count item shipping policies
-*OpenapiClient::ItemShippingPoliciesApi* | [**get_item_shipping_policies_async**](docs/ItemShippingPoliciesApi.md#get_item_shipping_policies_async) | **GET** /api/v2/CatalogService/ItemShippingPolicies | Get item shipping policies
-*OpenapiClient::ItemShippingPoliciesApi* | [**get_item_shipping_policy_by_id_async**](docs/ItemShippingPoliciesApi.md#get_item_shipping_policy_by_id_async) | **GET** /api/v2/CatalogService/ItemShippingPolicies/{itemShippingPolicyId} | Get item shipping policy by ID
+*OpenapiClient::ItemShippingPoliciesApi* | [**get_catalog_item_shipping_policies_async**](docs/ItemShippingPoliciesApi.md#get_catalog_item_shipping_policies_async) | **GET** /api/v2/CatalogService/ItemShippingPolicies | Get item shipping policies
+*OpenapiClient::ItemShippingPoliciesApi* | [**get_catalog_item_shipping_policy_by_id_async**](docs/ItemShippingPoliciesApi.md#get_catalog_item_shipping_policy_by_id_async) | **GET** /api/v2/CatalogService/ItemShippingPolicies/{itemShippingPolicyId} | Get item shipping policy by ID
 *OpenapiClient::ItemShippingPoliciesApi* | [**relate_item_to_shipping_policy_async**](docs/ItemShippingPoliciesApi.md#relate_item_to_shipping_policy_async) | **POST** /api/v2/CatalogService/ItemShippingPolicies | Relate item to shipping policy
 *OpenapiClient::ItemShippingPoliciesApi* | [**remove_shipping_policy_from_item_async**](docs/ItemShippingPoliciesApi.md#remove_shipping_policy_from_item_async) | **DELETE** /api/v2/CatalogService/ItemShippingPolicies/{itemShippingPolicyId} | Remove shipping policy from item
 *OpenapiClient::ItemTagsApi* | [**create_item_tag_async**](docs/ItemTagsApi.md#create_item_tag_async) | **POST** /api/v2/CatalogService/ItemTags | Create a new item tag

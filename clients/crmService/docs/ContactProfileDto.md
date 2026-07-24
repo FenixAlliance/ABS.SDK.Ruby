@@ -6,14 +6,16 @@
 | ---- | ---- | ----------- | ----- |
 | **id** | **String** |  | [optional] |
 | **timestamp** | **Time** |  | [optional] |
-| **tenant_id** | **String** |  | [optional] |
 | **contact_id** | **String** |  | [optional] |
+| **tenant_id** | **String** |  | [optional] |
+| **type** | **String** |  | [optional] |
 | **enrollment_id** | **String** |  | [optional] |
 | **about** | **String** |  | [optional] |
 | **verified** | **Boolean** |  | [optional] |
 | **submitted** | **Boolean** |  | [optional] |
 | **avatar_url** | **String** |  | [optional] |
-| **qualified_name** | **String** |  | [optional] |
+| **contact** | [**ContactDto**](ContactDto.md) |  | [optional] |
+| **qualified_name** | **String** |  | [optional][readonly] |
 | **verification_timestamp** | **Time** |  | [optional] |
 | **data** | **String** |  | [optional] |
 | **data_label** | **String** |  | [optional] |
@@ -44,13 +46,15 @@ require 'openapi_client'
 instance = OpenapiClient::ContactProfileDto.new(
   id: null,
   timestamp: null,
-  tenant_id: null,
   contact_id: null,
+  tenant_id: null,
+  type: null,
   enrollment_id: null,
   about: null,
   verified: null,
   submitted: null,
   avatar_url: null,
+  contact: null,
   qualified_name: null,
   verification_timestamp: null,
   data: null,

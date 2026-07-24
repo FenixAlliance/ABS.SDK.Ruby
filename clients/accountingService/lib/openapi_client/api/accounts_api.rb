@@ -23,7 +23,7 @@ module OpenapiClient
     # Returns the sum of all account balances matching OData filters, normalized to the target currency using stored USD values.
     # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :currency_id 
+    # @option opts [String] :currency_id  (default to 'USD.USA')
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
     # @return [MoneyEnvelope]
@@ -36,7 +36,7 @@ module OpenapiClient
     # Returns the sum of all account balances matching OData filters, normalized to the target currency using stored USD values.
     # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :currency_id 
+    # @option opts [String] :currency_id  (default to 'USD.USA')
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
     # @return [Array<(MoneyEnvelope, Integer, Hash)>] MoneyEnvelope data, response status code and response headers
@@ -1046,7 +1046,7 @@ module OpenapiClient
     # Get account aggregate.
     # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :currency_id 
+    # @option opts [String] :currency_id  (default to 'USD.USA')
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
     # @option opts [Array<AccountDto>] :account_dto 
@@ -1060,7 +1060,7 @@ module OpenapiClient
     # Get account aggregate.
     # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :currency_id 
+    # @option opts [String] :currency_id  (default to 'USD.USA')
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
     # @option opts [Array<AccountDto>] :account_dto 

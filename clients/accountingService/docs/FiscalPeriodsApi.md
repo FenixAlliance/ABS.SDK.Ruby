@@ -4,13 +4,87 @@ All URIs are relative to *https://absuite.net*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
+| [**close_fiscal_period**](FiscalPeriodsApi.md#close_fiscal_period) | **POST** /api/v2/AccountingService/Fiscals/Authorities/FiscalPeriods/{fiscalPeriodId}/Close | Close a fiscal period |
 | [**create_fiscal_period**](FiscalPeriodsApi.md#create_fiscal_period) | **POST** /api/v2/AccountingService/Fiscals/Authorities/FiscalPeriods | Create a fiscal period |
 | [**delete_fiscal_period**](FiscalPeriodsApi.md#delete_fiscal_period) | **DELETE** /api/v2/AccountingService/Fiscals/Authorities/FiscalPeriods/{fiscalPeriodId} | Delete a fiscal period |
 | [**get_fiscal_period**](FiscalPeriodsApi.md#get_fiscal_period) | **GET** /api/v2/AccountingService/Fiscals/Authorities/{fiscalAuthorityId}/FiscalYears/{fiscalYearId}/FiscalPeriods/{fiscalPeriodId} | Get fiscal period by ID |
 | [**get_fiscal_periods**](FiscalPeriodsApi.md#get_fiscal_periods) | **GET** /api/v2/AccountingService/Fiscals/Authorities/{authorityId}/FiscalYears/{fiscalYearId}/FiscalPeriods | Get fiscal periods for a fiscal year |
 | [**get_fiscal_periods_count**](FiscalPeriodsApi.md#get_fiscal_periods_count) | **GET** /api/v2/AccountingService/Fiscals/Authorities/{fiscalAuthorityId}/FiscalYears/{fiscalYearId}/FiscalPeriods/Count | Get fiscal periods count |
+| [**open_fiscal_period**](FiscalPeriodsApi.md#open_fiscal_period) | **POST** /api/v2/AccountingService/Fiscals/Authorities/FiscalPeriods/{fiscalPeriodId}/Open | Open a fiscal period |
 | [**patch_fiscal_period_async**](FiscalPeriodsApi.md#patch_fiscal_period_async) | **PATCH** /api/v2/AccountingService/Fiscals/Authorities/FiscalPeriods/{fiscalPeriodId} | Patch a fiscal period |
 | [**update_fiscal_period**](FiscalPeriodsApi.md#update_fiscal_period) | **PUT** /api/v2/AccountingService/Fiscals/Authorities/FiscalPeriods/{fiscalPeriodId} | Update a fiscal period |
+
+
+## close_fiscal_period
+
+> <EmptyEnvelope> close_fiscal_period(tenant_id, fiscal_period_id, opts)
+
+Close a fiscal period
+
+Closes a fiscal period so no further journal entries can post into it. Rejects closing a locked (hard-sealed) period.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::FiscalPeriodsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+fiscal_period_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example' # String | 
+}
+
+begin
+  # Close a fiscal period
+  result = api_instance.close_fiscal_period(tenant_id, fiscal_period_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling FiscalPeriodsApi->close_fiscal_period: #{e}"
+end
+```
+
+#### Using the close_fiscal_period_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> close_fiscal_period_with_http_info(tenant_id, fiscal_period_id, opts)
+
+```ruby
+begin
+  # Close a fiscal period
+  data, status_code, headers = api_instance.close_fiscal_period_with_http_info(tenant_id, fiscal_period_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling FiscalPeriodsApi->close_fiscal_period_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **fiscal_period_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
 
 
 ## create_fiscal_period
@@ -32,7 +106,7 @@ tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 opts = {
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example', # String | 
-  fiscal_period_create_dto: OpenapiClient::FiscalPeriodCreateDto.new # FiscalPeriodCreateDto | 
+  fiscal_period_create_dto: OpenapiClient::FiscalPeriodCreateDto.new({name: 'name_example', fiscal_year_id: 'fiscal_year_id_example'}) # FiscalPeriodCreateDto | 
 }
 
 begin
@@ -383,6 +457,78 @@ No authorization required
 - **Accept**: application/json, application/xml
 
 
+## open_fiscal_period
+
+> <EmptyEnvelope> open_fiscal_period(tenant_id, fiscal_period_id, opts)
+
+Open a fiscal period
+
+Opens a closed fiscal period so journal entries can post into it. Rejects reopening a locked or an already-open period.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::FiscalPeriodsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+fiscal_period_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example' # String | 
+}
+
+begin
+  # Open a fiscal period
+  result = api_instance.open_fiscal_period(tenant_id, fiscal_period_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling FiscalPeriodsApi->open_fiscal_period: #{e}"
+end
+```
+
+#### Using the open_fiscal_period_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> open_fiscal_period_with_http_info(tenant_id, fiscal_period_id, opts)
+
+```ruby
+begin
+  # Open a fiscal period
+  data, status_code, headers = api_instance.open_fiscal_period_with_http_info(tenant_id, fiscal_period_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling FiscalPeriodsApi->open_fiscal_period_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **fiscal_period_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
 ## patch_fiscal_period_async
 
 > <EmptyEnvelope> patch_fiscal_period_async(tenant_id, fiscal_period_id, opts)
@@ -477,7 +623,7 @@ fiscal_period_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 opts = {
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example', # String | 
-  fiscal_period_update_dto: OpenapiClient::FiscalPeriodUpdateDto.new # FiscalPeriodUpdateDto | 
+  fiscal_period_update_dto: OpenapiClient::FiscalPeriodUpdateDto.new({name: 'name_example', fiscal_year_id: 'fiscal_year_id_example'}) # FiscalPeriodUpdateDto | 
 }
 
 begin

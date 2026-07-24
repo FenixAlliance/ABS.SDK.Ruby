@@ -37,6 +37,12 @@ module OpenapiClient
 
     attr_accessor :account_category
 
+    attr_accessor :is_contra
+
+    attr_accessor :is_monetary
+
+    attr_accessor :income_statement_sub_type
+
     class EnumAttributeValidator
       attr_reader :datatype
       attr_reader :allowable_values
@@ -72,7 +78,10 @@ module OpenapiClient
         :'contact_id' => :'contactId',
         :'account_type_id' => :'accountTypeId',
         :'parent_account_id' => :'parentAccountId',
-        :'account_category' => :'accountCategory'
+        :'account_category' => :'accountCategory',
+        :'is_contra' => :'isContra',
+        :'is_monetary' => :'isMonetary',
+        :'income_statement_sub_type' => :'incomeStatementSubType'
       }
     end
 
@@ -94,7 +103,10 @@ module OpenapiClient
         :'contact_id' => :'String',
         :'account_type_id' => :'String',
         :'parent_account_id' => :'String',
-        :'account_category' => :'String'
+        :'account_category' => :'String',
+        :'is_contra' => :'Boolean',
+        :'is_monetary' => :'Boolean',
+        :'income_statement_sub_type' => :'String'
       }
     end
 
@@ -107,6 +119,7 @@ module OpenapiClient
         :'contact_id',
         :'account_type_id',
         :'parent_account_id',
+        :'income_statement_sub_type'
       ])
     end
 
@@ -172,6 +185,18 @@ module OpenapiClient
       if attributes.key?(:'account_category')
         self.account_category = attributes[:'account_category']
       end
+
+      if attributes.key?(:'is_contra')
+        self.is_contra = attributes[:'is_contra']
+      end
+
+      if attributes.key?(:'is_monetary')
+        self.is_monetary = attributes[:'is_monetary']
+      end
+
+      if attributes.key?(:'income_statement_sub_type')
+        self.income_statement_sub_type = attributes[:'income_statement_sub_type']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -208,6 +233,8 @@ module OpenapiClient
       return false if @currency_id.to_s.length < 1
       account_category_validator = EnumAttributeValidator.new('String', ["Assets", "Equity", "Revenue", "Expense", "Liabilities"])
       return false unless account_category_validator.valid?(@account_category)
+      income_statement_sub_type_validator = EnumAttributeValidator.new('String', ["OperatingRevenue", "Gain", "OperatingExpense", "Loss"])
+      return false unless income_statement_sub_type_validator.valid?(@income_statement_sub_type)
       true
     end
 
@@ -249,6 +276,16 @@ module OpenapiClient
       @account_category = account_category
     end
 
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] income_statement_sub_type Object to be assigned
+    def income_statement_sub_type=(income_statement_sub_type)
+      validator = EnumAttributeValidator.new('String', ["OperatingRevenue", "Gain", "OperatingExpense", "Loss"])
+      unless validator.valid?(income_statement_sub_type)
+        fail ArgumentError, "invalid value for \"income_statement_sub_type\", must be one of #{validator.allowable_values}."
+      end
+      @income_statement_sub_type = income_statement_sub_type
+    end
+
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(o)
@@ -264,7 +301,10 @@ module OpenapiClient
           contact_id == o.contact_id &&
           account_type_id == o.account_type_id &&
           parent_account_id == o.parent_account_id &&
-          account_category == o.account_category
+          account_category == o.account_category &&
+          is_contra == o.is_contra &&
+          is_monetary == o.is_monetary &&
+          income_statement_sub_type == o.income_statement_sub_type
     end
 
     # @see the `==` method
@@ -276,7 +316,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [group, frozen, name, code, path, prefix, currency_id, contact_id, account_type_id, parent_account_id, account_category].hash
+      [group, frozen, name, code, path, prefix, currency_id, contact_id, account_type_id, parent_account_id, account_category, is_contra, is_monetary, income_statement_sub_type].hash
     end
 
     # Builds the object from hash

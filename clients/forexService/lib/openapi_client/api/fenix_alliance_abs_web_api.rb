@@ -250,6 +250,63 @@ module OpenapiClient
       return data, status_code, headers
     end
 
+    # @param agent_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @return [nil]
+    def api_v2_ai_service_agents_agent_id_agui_post(agent_id, opts = {})
+      api_v2_ai_service_agents_agent_id_agui_post_with_http_info(agent_id, opts)
+      nil
+    end
+
+    # @param agent_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
+    def api_v2_ai_service_agents_agent_id_agui_post_with_http_info(agent_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: FenixAllianceABSWebApi.api_v2_ai_service_agents_agent_id_agui_post ...'
+      end
+      # verify the required parameter 'agent_id' is set
+      if @api_client.config.client_side_validation && agent_id.nil?
+        fail ArgumentError, "Missing the required parameter 'agent_id' when calling FenixAllianceABSWebApi.api_v2_ai_service_agents_agent_id_agui_post"
+      end
+      # resource path
+      local_var_path = '/api/v2/AIService/Agents/{agentId}/agui'.sub('{' + 'agentId' + '}', CGI.escape(agent_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type]
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"FenixAllianceABSWebApi.api_v2_ai_service_agents_agent_id_agui_post",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: FenixAllianceABSWebApi#api_v2_ai_service_agents_agent_id_agui_post\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # @param forgot_password_request [ForgotPasswordRequest] 
     # @param [Hash] opts the optional parameters
     # @return [nil]

@@ -21,9 +21,7 @@ module OpenapiClient
 
     attr_accessor :description
 
-    attr_accessor :date
-
-    attr_accessor :amount
+    attr_accessor :planned_amount
 
     attr_accessor :currency_id
 
@@ -31,33 +29,7 @@ module OpenapiClient
 
     attr_accessor :credit_account_id
 
-    attr_accessor :journal_entry_id
-
-    attr_accessor :accounting_entry_type
-
     attr_accessor :budget_id
-
-    class EnumAttributeValidator
-      attr_reader :datatype
-      attr_reader :allowable_values
-
-      def initialize(datatype, allowable_values)
-        @allowable_values = allowable_values.map do |value|
-          case datatype.to_s
-          when /Integer/i
-            value.to_i
-          when /Float/i
-            value.to_f
-          else
-            value
-          end
-        end
-      end
-
-      def valid?(value)
-        !value || allowable_values.include?(value)
-      end
-    end
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
@@ -65,13 +37,10 @@ module OpenapiClient
         :'id' => :'id',
         :'timestamp' => :'timestamp',
         :'description' => :'description',
-        :'date' => :'date',
-        :'amount' => :'amount',
+        :'planned_amount' => :'plannedAmount',
         :'currency_id' => :'currencyId',
         :'debit_account_id' => :'debitAccountId',
         :'credit_account_id' => :'creditAccountId',
-        :'journal_entry_id' => :'journalEntryId',
-        :'accounting_entry_type' => :'accountingEntryType',
         :'budget_id' => :'budgetId'
       }
     end
@@ -87,13 +56,10 @@ module OpenapiClient
         :'id' => :'String',
         :'timestamp' => :'Time',
         :'description' => :'String',
-        :'date' => :'Time',
-        :'amount' => :'Float',
+        :'planned_amount' => :'Float',
         :'currency_id' => :'String',
         :'debit_account_id' => :'String',
         :'credit_account_id' => :'String',
-        :'journal_entry_id' => :'String',
-        :'accounting_entry_type' => :'String',
         :'budget_id' => :'String'
       }
     end
@@ -101,11 +67,6 @@ module OpenapiClient
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
-        :'date',
-        :'debit_account_id',
-        :'credit_account_id',
-        :'journal_entry_id',
-        :'budget_id'
       ])
     end
 
@@ -138,12 +99,8 @@ module OpenapiClient
         self.description = nil
       end
 
-      if attributes.key?(:'date')
-        self.date = attributes[:'date']
-      end
-
-      if attributes.key?(:'amount')
-        self.amount = attributes[:'amount']
+      if attributes.key?(:'planned_amount')
+        self.planned_amount = attributes[:'planned_amount']
       end
 
       if attributes.key?(:'currency_id')
@@ -154,22 +111,20 @@ module OpenapiClient
 
       if attributes.key?(:'debit_account_id')
         self.debit_account_id = attributes[:'debit_account_id']
+      else
+        self.debit_account_id = nil
       end
 
       if attributes.key?(:'credit_account_id')
         self.credit_account_id = attributes[:'credit_account_id']
-      end
-
-      if attributes.key?(:'journal_entry_id')
-        self.journal_entry_id = attributes[:'journal_entry_id']
-      end
-
-      if attributes.key?(:'accounting_entry_type')
-        self.accounting_entry_type = attributes[:'accounting_entry_type']
+      else
+        self.credit_account_id = nil
       end
 
       if attributes.key?(:'budget_id')
         self.budget_id = attributes[:'budget_id']
+      else
+        self.budget_id = nil
       end
     end
 
@@ -198,12 +153,28 @@ module OpenapiClient
         invalid_properties.push('invalid value for "currency_id", the character length must be great than or equal to 1.')
       end
 
-      if !@budget_id.nil? && @budget_id.to_s.length > 36
-        invalid_properties.push('invalid value for "budget_id", the character length must be smaller than or equal to 36.')
+      if @debit_account_id.nil?
+        invalid_properties.push('invalid value for "debit_account_id", debit_account_id cannot be nil.')
       end
 
-      if !@budget_id.nil? && @budget_id.to_s.length < 0
-        invalid_properties.push('invalid value for "budget_id", the character length must be great than or equal to 0.')
+      if @debit_account_id.to_s.length < 1
+        invalid_properties.push('invalid value for "debit_account_id", the character length must be great than or equal to 1.')
+      end
+
+      if @credit_account_id.nil?
+        invalid_properties.push('invalid value for "credit_account_id", credit_account_id cannot be nil.')
+      end
+
+      if @credit_account_id.to_s.length < 1
+        invalid_properties.push('invalid value for "credit_account_id", the character length must be great than or equal to 1.')
+      end
+
+      if @budget_id.nil?
+        invalid_properties.push('invalid value for "budget_id", budget_id cannot be nil.')
+      end
+
+      if @budget_id.to_s.length < 1
+        invalid_properties.push('invalid value for "budget_id", the character length must be great than or equal to 1.')
       end
 
       invalid_properties
@@ -218,10 +189,12 @@ module OpenapiClient
       return false if @description.to_s.length < 1
       return false if @currency_id.nil?
       return false if @currency_id.to_s.length < 1
-      accounting_entry_type_validator = EnumAttributeValidator.new('String', ["None", "Debit", "Credit"])
-      return false unless accounting_entry_type_validator.valid?(@accounting_entry_type)
-      return false if !@budget_id.nil? && @budget_id.to_s.length > 36
-      return false if !@budget_id.nil? && @budget_id.to_s.length < 0
+      return false if @debit_account_id.nil?
+      return false if @debit_account_id.to_s.length < 1
+      return false if @credit_account_id.nil?
+      return false if @credit_account_id.to_s.length < 1
+      return false if @budget_id.nil?
+      return false if @budget_id.to_s.length < 1
       true
     end
 
@@ -257,25 +230,43 @@ module OpenapiClient
       @currency_id = currency_id
     end
 
-    # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] accounting_entry_type Object to be assigned
-    def accounting_entry_type=(accounting_entry_type)
-      validator = EnumAttributeValidator.new('String', ["None", "Debit", "Credit"])
-      unless validator.valid?(accounting_entry_type)
-        fail ArgumentError, "invalid value for \"accounting_entry_type\", must be one of #{validator.allowable_values}."
+    # Custom attribute writer method with validation
+    # @param [Object] debit_account_id Value to be assigned
+    def debit_account_id=(debit_account_id)
+      if debit_account_id.nil?
+        fail ArgumentError, 'debit_account_id cannot be nil'
       end
-      @accounting_entry_type = accounting_entry_type
+
+      if debit_account_id.to_s.length < 1
+        fail ArgumentError, 'invalid value for "debit_account_id", the character length must be great than or equal to 1.'
+      end
+
+      @debit_account_id = debit_account_id
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] credit_account_id Value to be assigned
+    def credit_account_id=(credit_account_id)
+      if credit_account_id.nil?
+        fail ArgumentError, 'credit_account_id cannot be nil'
+      end
+
+      if credit_account_id.to_s.length < 1
+        fail ArgumentError, 'invalid value for "credit_account_id", the character length must be great than or equal to 1.'
+      end
+
+      @credit_account_id = credit_account_id
     end
 
     # Custom attribute writer method with validation
     # @param [Object] budget_id Value to be assigned
     def budget_id=(budget_id)
-      if !budget_id.nil? && budget_id.to_s.length > 36
-        fail ArgumentError, 'invalid value for "budget_id", the character length must be smaller than or equal to 36.'
+      if budget_id.nil?
+        fail ArgumentError, 'budget_id cannot be nil'
       end
 
-      if !budget_id.nil? && budget_id.to_s.length < 0
-        fail ArgumentError, 'invalid value for "budget_id", the character length must be great than or equal to 0.'
+      if budget_id.to_s.length < 1
+        fail ArgumentError, 'invalid value for "budget_id", the character length must be great than or equal to 1.'
       end
 
       @budget_id = budget_id
@@ -289,13 +280,10 @@ module OpenapiClient
           id == o.id &&
           timestamp == o.timestamp &&
           description == o.description &&
-          date == o.date &&
-          amount == o.amount &&
+          planned_amount == o.planned_amount &&
           currency_id == o.currency_id &&
           debit_account_id == o.debit_account_id &&
           credit_account_id == o.credit_account_id &&
-          journal_entry_id == o.journal_entry_id &&
-          accounting_entry_type == o.accounting_entry_type &&
           budget_id == o.budget_id
     end
 
@@ -308,7 +296,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, timestamp, description, date, amount, currency_id, debit_account_id, credit_account_id, journal_entry_id, accounting_entry_type, budget_id].hash
+      [id, timestamp, description, planned_amount, currency_id, debit_account_id, credit_account_id, budget_id].hash
     end
 
     # Builds the object from hash

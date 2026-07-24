@@ -67,6 +67,14 @@ module OpenapiClient
 
     attr_accessor :account_category
 
+    attr_accessor :is_contra
+
+    attr_accessor :is_monetary
+
+    attr_accessor :income_statement_sub_type
+
+    attr_accessor :normal_balance
+
     attr_accessor :balance_amount
 
     attr_accessor :credits_balance_amount
@@ -130,6 +138,10 @@ module OpenapiClient
         :'enrollment_id' => :'enrollmentId',
         :'children_accounts_count' => :'childrenAccountsCount',
         :'account_category' => :'accountCategory',
+        :'is_contra' => :'isContra',
+        :'is_monetary' => :'isMonetary',
+        :'income_statement_sub_type' => :'incomeStatementSubType',
+        :'normal_balance' => :'normalBalance',
         :'balance_amount' => :'balanceAmount',
         :'credits_balance_amount' => :'creditsBalanceAmount',
         :'debits_balance_amount' => :'debitsBalanceAmount',
@@ -173,6 +185,10 @@ module OpenapiClient
         :'enrollment_id' => :'String',
         :'children_accounts_count' => :'Integer',
         :'account_category' => :'String',
+        :'is_contra' => :'Boolean',
+        :'is_monetary' => :'Boolean',
+        :'income_statement_sub_type' => :'String',
+        :'normal_balance' => :'String',
         :'balance_amount' => :'Money',
         :'credits_balance_amount' => :'Money',
         :'debits_balance_amount' => :'Money',
@@ -200,6 +216,7 @@ module OpenapiClient
         :'parent_account_id',
         :'tenant_id',
         :'enrollment_id',
+        :'income_statement_sub_type',
       ])
     end
 
@@ -322,6 +339,22 @@ module OpenapiClient
         self.account_category = attributes[:'account_category']
       end
 
+      if attributes.key?(:'is_contra')
+        self.is_contra = attributes[:'is_contra']
+      end
+
+      if attributes.key?(:'is_monetary')
+        self.is_monetary = attributes[:'is_monetary']
+      end
+
+      if attributes.key?(:'income_statement_sub_type')
+        self.income_statement_sub_type = attributes[:'income_statement_sub_type']
+      end
+
+      if attributes.key?(:'normal_balance')
+        self.normal_balance = attributes[:'normal_balance']
+      end
+
       if attributes.key?(:'balance_amount')
         self.balance_amount = attributes[:'balance_amount']
       end
@@ -361,6 +394,10 @@ module OpenapiClient
       warn '[DEPRECATED] the `valid?` method is obsolete'
       account_category_validator = EnumAttributeValidator.new('String', ["Assets", "Equity", "Revenue", "Expense", "Liabilities"])
       return false unless account_category_validator.valid?(@account_category)
+      income_statement_sub_type_validator = EnumAttributeValidator.new('String', ["OperatingRevenue", "Gain", "OperatingExpense", "Loss"])
+      return false unless income_statement_sub_type_validator.valid?(@income_statement_sub_type)
+      normal_balance_validator = EnumAttributeValidator.new('String', ["Debit", "Credit"])
+      return false unless normal_balance_validator.valid?(@normal_balance)
       true
     end
 
@@ -372,6 +409,26 @@ module OpenapiClient
         fail ArgumentError, "invalid value for \"account_category\", must be one of #{validator.allowable_values}."
       end
       @account_category = account_category
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] income_statement_sub_type Object to be assigned
+    def income_statement_sub_type=(income_statement_sub_type)
+      validator = EnumAttributeValidator.new('String', ["OperatingRevenue", "Gain", "OperatingExpense", "Loss"])
+      unless validator.valid?(income_statement_sub_type)
+        fail ArgumentError, "invalid value for \"income_statement_sub_type\", must be one of #{validator.allowable_values}."
+      end
+      @income_statement_sub_type = income_statement_sub_type
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] normal_balance Object to be assigned
+    def normal_balance=(normal_balance)
+      validator = EnumAttributeValidator.new('String', ["Debit", "Credit"])
+      unless validator.valid?(normal_balance)
+        fail ArgumentError, "invalid value for \"normal_balance\", must be one of #{validator.allowable_values}."
+      end
+      @normal_balance = normal_balance
     end
 
     # Checks equality by comparing each attribute.
@@ -405,6 +462,10 @@ module OpenapiClient
           enrollment_id == o.enrollment_id &&
           children_accounts_count == o.children_accounts_count &&
           account_category == o.account_category &&
+          is_contra == o.is_contra &&
+          is_monetary == o.is_monetary &&
+          income_statement_sub_type == o.income_statement_sub_type &&
+          normal_balance == o.normal_balance &&
           balance_amount == o.balance_amount &&
           credits_balance_amount == o.credits_balance_amount &&
           debits_balance_amount == o.debits_balance_amount &&
@@ -422,7 +483,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, timestamp, group, frozen, name, code, path, title, prefix, balance, currency_id, contact_id, account_type, qualified_name, account_type_id, debits_balance, credits_balance, balance_in_usd, debits_balance_in_usd, credits_balance_in_usd, forex_rate, parent_account_id, tenant_id, enrollment_id, children_accounts_count, account_category, balance_amount, credits_balance_amount, debits_balance_amount, balance_amount_in_usd, debits_balance_amount_in_usd, credits_balance_amount_in_usd].hash
+      [id, timestamp, group, frozen, name, code, path, title, prefix, balance, currency_id, contact_id, account_type, qualified_name, account_type_id, debits_balance, credits_balance, balance_in_usd, debits_balance_in_usd, credits_balance_in_usd, forex_rate, parent_account_id, tenant_id, enrollment_id, children_accounts_count, account_category, is_contra, is_monetary, income_statement_sub_type, normal_balance, balance_amount, credits_balance_amount, debits_balance_amount, balance_amount_in_usd, debits_balance_amount_in_usd, credits_balance_amount_in_usd].hash
     end
 
     # Builds the object from hash

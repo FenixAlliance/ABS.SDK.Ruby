@@ -19,7 +19,6 @@ require 'openapi_client/configuration'
 # Models
 require 'openapi_client/models/access_token_response'
 require 'openapi_client/models/currency_id'
-require 'openapi_client/models/decimal_envelope'
 require 'openapi_client/models/email_dispatch_request'
 require 'openapi_client/models/empty_envelope'
 require 'openapi_client/models/envelope'

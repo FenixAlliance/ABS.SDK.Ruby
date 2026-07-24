@@ -519,6 +519,184 @@ module OpenapiClient
       return data, status_code, headers
     end
 
+    # Patch a contact option
+    # Patch a contact option
+    # @param tenant_id [String] 
+    # @param contact_id [String] 
+    # @param option_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @option opts [Array<Operation>] :operation 
+    # @return [EmptyEnvelope]
+    def patch_contact_option_async(tenant_id, contact_id, option_id, opts = {})
+      data, _status_code, _headers = patch_contact_option_async_with_http_info(tenant_id, contact_id, option_id, opts)
+      data
+    end
+
+    # Patch a contact option
+    # Patch a contact option
+    # @param tenant_id [String] 
+    # @param contact_id [String] 
+    # @param option_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @option opts [Array<Operation>] :operation 
+    # @return [Array<(EmptyEnvelope, Integer, Hash)>] EmptyEnvelope data, response status code and response headers
+    def patch_contact_option_async_with_http_info(tenant_id, contact_id, option_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: OptionsApi.patch_contact_option_async ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling OptionsApi.patch_contact_option_async"
+      end
+      # verify the required parameter 'contact_id' is set
+      if @api_client.config.client_side_validation && contact_id.nil?
+        fail ArgumentError, "Missing the required parameter 'contact_id' when calling OptionsApi.patch_contact_option_async"
+      end
+      # verify the required parameter 'option_id' is set
+      if @api_client.config.client_side_validation && option_id.nil?
+        fail ArgumentError, "Missing the required parameter 'option_id' when calling OptionsApi.patch_contact_option_async"
+      end
+      # resource path
+      local_var_path = '/api/v2/CrmService/Contacts/{contactId}/Options/{optionId}'.sub('{' + 'contactId' + '}', CGI.escape(contact_id.to_s)).sub('{' + 'optionId' + '}', CGI.escape(option_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+      query_params[:'api-version'] = opts[:'api_version'] if !opts[:'api_version'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
+      header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'operation'])
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'EmptyEnvelope'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"OptionsApi.patch_contact_option_async",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:PATCH, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: OptionsApi#patch_contact_option_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Patch a contact option by key
+    # Patch a contact option by key
+    # @param tenant_id [String] 
+    # @param contact_id [String] 
+    # @param key [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @option opts [Array<Operation>] :operation 
+    # @return [EmptyEnvelope]
+    def patch_contact_option_by_key_async(tenant_id, contact_id, key, opts = {})
+      data, _status_code, _headers = patch_contact_option_by_key_async_with_http_info(tenant_id, contact_id, key, opts)
+      data
+    end
+
+    # Patch a contact option by key
+    # Patch a contact option by key
+    # @param tenant_id [String] 
+    # @param contact_id [String] 
+    # @param key [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @option opts [Array<Operation>] :operation 
+    # @return [Array<(EmptyEnvelope, Integer, Hash)>] EmptyEnvelope data, response status code and response headers
+    def patch_contact_option_by_key_async_with_http_info(tenant_id, contact_id, key, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: OptionsApi.patch_contact_option_by_key_async ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling OptionsApi.patch_contact_option_by_key_async"
+      end
+      # verify the required parameter 'contact_id' is set
+      if @api_client.config.client_side_validation && contact_id.nil?
+        fail ArgumentError, "Missing the required parameter 'contact_id' when calling OptionsApi.patch_contact_option_by_key_async"
+      end
+      # verify the required parameter 'key' is set
+      if @api_client.config.client_side_validation && key.nil?
+        fail ArgumentError, "Missing the required parameter 'key' when calling OptionsApi.patch_contact_option_by_key_async"
+      end
+      # resource path
+      local_var_path = '/api/v2/CrmService/Contacts/{contactId}/Options/Key/{key}'.sub('{' + 'contactId' + '}', CGI.escape(contact_id.to_s)).sub('{' + 'key' + '}', CGI.escape(key.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+      query_params[:'api-version'] = opts[:'api_version'] if !opts[:'api_version'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
+      header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'operation'])
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'EmptyEnvelope'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"OptionsApi.patch_contact_option_by_key_async",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:PATCH, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: OptionsApi#patch_contact_option_by_key_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Update a contact option
     # Update a contact option
     # @param tenant_id [String] 

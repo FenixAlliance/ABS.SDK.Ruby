@@ -60,6 +60,11 @@ docs/MarketingListsApi.md
 docs/NewsletterCreateDto.md
 docs/NewsletterDto.md
 docs/NewsletterDtoEnvelope.md
+docs/NewsletterSubscriptionCreateDto.md
+docs/NewsletterSubscriptionDto.md
+docs/NewsletterSubscriptionDtoEnvelope.md
+docs/NewsletterSubscriptionDtoListEnvelope.md
+docs/NewsletterSubscriptionUpdateDto.md
 docs/NewsletterSubscriptionsApi.md
 docs/NewsletterUpdateDto.md
 docs/NewslettersApi.md
@@ -149,6 +154,11 @@ lib/openapi_client/models/marketing_list_update_dto.rb
 lib/openapi_client/models/newsletter_create_dto.rb
 lib/openapi_client/models/newsletter_dto.rb
 lib/openapi_client/models/newsletter_dto_envelope.rb
+lib/openapi_client/models/newsletter_subscription_create_dto.rb
+lib/openapi_client/models/newsletter_subscription_dto.rb
+lib/openapi_client/models/newsletter_subscription_dto_envelope.rb
+lib/openapi_client/models/newsletter_subscription_dto_list_envelope.rb
+lib/openapi_client/models/newsletter_subscription_update_dto.rb
 lib/openapi_client/models/newsletter_update_dto.rb
 lib/openapi_client/models/operation.rb
 lib/openapi_client/models/order_dto.rb
@@ -171,5 +181,9 @@ lib/openapi_client/models/two_factor_request.rb
 lib/openapi_client/models/two_factor_response.rb
 lib/openapi_client/version.rb
 openapi_client.gemspec
-spec/api/newsletter_subscriptions_api_spec.rb
+spec/models/newsletter_subscription_create_dto_spec.rb
+spec/models/newsletter_subscription_dto_envelope_spec.rb
+spec/models/newsletter_subscription_dto_list_envelope_spec.rb
+spec/models/newsletter_subscription_dto_spec.rb
+spec/models/newsletter_subscription_update_dto_spec.rb
 spec/spec_helper.rb

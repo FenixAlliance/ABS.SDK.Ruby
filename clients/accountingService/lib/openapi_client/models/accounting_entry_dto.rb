@@ -17,41 +17,51 @@ module OpenapiClient
   class AccountingEntryDto
     attr_accessor :id
 
+    attr_accessor :tenant_id
+
+    attr_accessor :enrollment_id
+
+    attr_accessor :journal_entry_id
+
+    attr_accessor :account_id
+
+    attr_accessor :account_name
+
+    attr_accessor :direction
+
+    attr_accessor :description
+
+    attr_accessor :transaction_amount
+
+    attr_accessor :transaction_currency_id
+
+    attr_accessor :functional_amount
+
+    attr_accessor :functional_currency_id
+
+    attr_accessor :account_amount
+
+    attr_accessor :account_currency_id
+
+    attr_accessor :reporting_amount_in_usd
+
+    attr_accessor :forex_rate
+
+    attr_accessor :forex_rates_snapshot
+
+    attr_accessor :cost_centre_id
+
+    attr_accessor :project_id
+
     attr_accessor :timestamp
 
     attr_accessor :debit
 
     attr_accessor :credit
 
-    attr_accessor :description
+    attr_accessor :amount
 
-    attr_accessor :forex_rate
-
-    attr_accessor :account_id
-
-    attr_accessor :tenant_id
-
-    attr_accessor :date
-
-    attr_accessor :enrollment_id
-
-    attr_accessor :currency_id
-
-    attr_accessor :debit_account_id
-
-    attr_accessor :credit_account_id
-
-    attr_accessor :journal_entry_id
-
-    attr_accessor :debit_account_name
-
-    attr_accessor :credit_account_name
-
-    attr_accessor :accounting_entry_type
-
-    attr_accessor :debit_amount
-
-    attr_accessor :credit_amount
+    attr_accessor :amount_in_usd
 
     class EnumAttributeValidator
       attr_reader :datatype
@@ -79,24 +89,29 @@ module OpenapiClient
     def self.attribute_map
       {
         :'id' => :'id',
+        :'tenant_id' => :'tenantId',
+        :'enrollment_id' => :'enrollmentId',
+        :'journal_entry_id' => :'journalEntryId',
+        :'account_id' => :'accountId',
+        :'account_name' => :'accountName',
+        :'direction' => :'direction',
+        :'description' => :'description',
+        :'transaction_amount' => :'transactionAmount',
+        :'transaction_currency_id' => :'transactionCurrencyId',
+        :'functional_amount' => :'functionalAmount',
+        :'functional_currency_id' => :'functionalCurrencyId',
+        :'account_amount' => :'accountAmount',
+        :'account_currency_id' => :'accountCurrencyId',
+        :'reporting_amount_in_usd' => :'reportingAmountInUsd',
+        :'forex_rate' => :'forexRate',
+        :'forex_rates_snapshot' => :'forexRatesSnapshot',
+        :'cost_centre_id' => :'costCentreId',
+        :'project_id' => :'projectId',
         :'timestamp' => :'timestamp',
         :'debit' => :'debit',
         :'credit' => :'credit',
-        :'description' => :'description',
-        :'forex_rate' => :'forexRate',
-        :'account_id' => :'accountId',
-        :'tenant_id' => :'tenantId',
-        :'date' => :'date',
-        :'enrollment_id' => :'enrollmentId',
-        :'currency_id' => :'currencyId',
-        :'debit_account_id' => :'debitAccountId',
-        :'credit_account_id' => :'creditAccountId',
-        :'journal_entry_id' => :'journalEntryId',
-        :'debit_account_name' => :'debitAccountName',
-        :'credit_account_name' => :'creditAccountName',
-        :'accounting_entry_type' => :'accountingEntryType',
-        :'debit_amount' => :'debitAmount',
-        :'credit_amount' => :'creditAmount'
+        :'amount' => :'amount',
+        :'amount_in_usd' => :'amountInUsd'
       }
     end
 
@@ -109,24 +124,29 @@ module OpenapiClient
     def self.openapi_types
       {
         :'id' => :'String',
+        :'tenant_id' => :'String',
+        :'enrollment_id' => :'String',
+        :'journal_entry_id' => :'String',
+        :'account_id' => :'String',
+        :'account_name' => :'String',
+        :'direction' => :'String',
+        :'description' => :'String',
+        :'transaction_amount' => :'Float',
+        :'transaction_currency_id' => :'String',
+        :'functional_amount' => :'Float',
+        :'functional_currency_id' => :'String',
+        :'account_amount' => :'Float',
+        :'account_currency_id' => :'String',
+        :'reporting_amount_in_usd' => :'Float',
+        :'forex_rate' => :'Float',
+        :'forex_rates_snapshot' => :'String',
+        :'cost_centre_id' => :'String',
+        :'project_id' => :'String',
         :'timestamp' => :'Time',
         :'debit' => :'Float',
         :'credit' => :'Float',
-        :'description' => :'String',
-        :'forex_rate' => :'Float',
-        :'account_id' => :'String',
-        :'tenant_id' => :'String',
-        :'date' => :'Time',
-        :'enrollment_id' => :'String',
-        :'currency_id' => :'String',
-        :'debit_account_id' => :'String',
-        :'credit_account_id' => :'String',
-        :'journal_entry_id' => :'String',
-        :'debit_account_name' => :'String',
-        :'credit_account_name' => :'String',
-        :'accounting_entry_type' => :'String',
-        :'debit_amount' => :'Money',
-        :'credit_amount' => :'Money'
+        :'amount' => :'Money',
+        :'amount_in_usd' => :'Money'
       }
     end
 
@@ -134,18 +154,19 @@ module OpenapiClient
     def self.openapi_nullable
       Set.new([
         :'id',
-        :'timestamp',
-        :'description',
-        :'account_id',
         :'tenant_id',
-        :'date',
         :'enrollment_id',
-        :'currency_id',
-        :'debit_account_id',
-        :'credit_account_id',
         :'journal_entry_id',
-        :'debit_account_name',
-        :'credit_account_name',
+        :'account_id',
+        :'account_name',
+        :'description',
+        :'transaction_currency_id',
+        :'functional_currency_id',
+        :'account_currency_id',
+        :'forex_rates_snapshot',
+        :'cost_centre_id',
+        :'project_id',
+        :'timestamp',
       ])
     end
 
@@ -168,6 +189,78 @@ module OpenapiClient
         self.id = attributes[:'id']
       end
 
+      if attributes.key?(:'tenant_id')
+        self.tenant_id = attributes[:'tenant_id']
+      end
+
+      if attributes.key?(:'enrollment_id')
+        self.enrollment_id = attributes[:'enrollment_id']
+      end
+
+      if attributes.key?(:'journal_entry_id')
+        self.journal_entry_id = attributes[:'journal_entry_id']
+      end
+
+      if attributes.key?(:'account_id')
+        self.account_id = attributes[:'account_id']
+      end
+
+      if attributes.key?(:'account_name')
+        self.account_name = attributes[:'account_name']
+      end
+
+      if attributes.key?(:'direction')
+        self.direction = attributes[:'direction']
+      end
+
+      if attributes.key?(:'description')
+        self.description = attributes[:'description']
+      end
+
+      if attributes.key?(:'transaction_amount')
+        self.transaction_amount = attributes[:'transaction_amount']
+      end
+
+      if attributes.key?(:'transaction_currency_id')
+        self.transaction_currency_id = attributes[:'transaction_currency_id']
+      end
+
+      if attributes.key?(:'functional_amount')
+        self.functional_amount = attributes[:'functional_amount']
+      end
+
+      if attributes.key?(:'functional_currency_id')
+        self.functional_currency_id = attributes[:'functional_currency_id']
+      end
+
+      if attributes.key?(:'account_amount')
+        self.account_amount = attributes[:'account_amount']
+      end
+
+      if attributes.key?(:'account_currency_id')
+        self.account_currency_id = attributes[:'account_currency_id']
+      end
+
+      if attributes.key?(:'reporting_amount_in_usd')
+        self.reporting_amount_in_usd = attributes[:'reporting_amount_in_usd']
+      end
+
+      if attributes.key?(:'forex_rate')
+        self.forex_rate = attributes[:'forex_rate']
+      end
+
+      if attributes.key?(:'forex_rates_snapshot')
+        self.forex_rates_snapshot = attributes[:'forex_rates_snapshot']
+      end
+
+      if attributes.key?(:'cost_centre_id')
+        self.cost_centre_id = attributes[:'cost_centre_id']
+      end
+
+      if attributes.key?(:'project_id')
+        self.project_id = attributes[:'project_id']
+      end
+
       if attributes.key?(:'timestamp')
         self.timestamp = attributes[:'timestamp']
       end
@@ -180,64 +273,12 @@ module OpenapiClient
         self.credit = attributes[:'credit']
       end
 
-      if attributes.key?(:'description')
-        self.description = attributes[:'description']
+      if attributes.key?(:'amount')
+        self.amount = attributes[:'amount']
       end
 
-      if attributes.key?(:'forex_rate')
-        self.forex_rate = attributes[:'forex_rate']
-      end
-
-      if attributes.key?(:'account_id')
-        self.account_id = attributes[:'account_id']
-      end
-
-      if attributes.key?(:'tenant_id')
-        self.tenant_id = attributes[:'tenant_id']
-      end
-
-      if attributes.key?(:'date')
-        self.date = attributes[:'date']
-      end
-
-      if attributes.key?(:'enrollment_id')
-        self.enrollment_id = attributes[:'enrollment_id']
-      end
-
-      if attributes.key?(:'currency_id')
-        self.currency_id = attributes[:'currency_id']
-      end
-
-      if attributes.key?(:'debit_account_id')
-        self.debit_account_id = attributes[:'debit_account_id']
-      end
-
-      if attributes.key?(:'credit_account_id')
-        self.credit_account_id = attributes[:'credit_account_id']
-      end
-
-      if attributes.key?(:'journal_entry_id')
-        self.journal_entry_id = attributes[:'journal_entry_id']
-      end
-
-      if attributes.key?(:'debit_account_name')
-        self.debit_account_name = attributes[:'debit_account_name']
-      end
-
-      if attributes.key?(:'credit_account_name')
-        self.credit_account_name = attributes[:'credit_account_name']
-      end
-
-      if attributes.key?(:'accounting_entry_type')
-        self.accounting_entry_type = attributes[:'accounting_entry_type']
-      end
-
-      if attributes.key?(:'debit_amount')
-        self.debit_amount = attributes[:'debit_amount']
-      end
-
-      if attributes.key?(:'credit_amount')
-        self.credit_amount = attributes[:'credit_amount']
+      if attributes.key?(:'amount_in_usd')
+        self.amount_in_usd = attributes[:'amount_in_usd']
       end
     end
 
@@ -253,19 +294,19 @@ module OpenapiClient
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      accounting_entry_type_validator = EnumAttributeValidator.new('String', ["None", "Debit", "Credit"])
-      return false unless accounting_entry_type_validator.valid?(@accounting_entry_type)
+      direction_validator = EnumAttributeValidator.new('String', ["Debit", "Credit"])
+      return false unless direction_validator.valid?(@direction)
       true
     end
 
     # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] accounting_entry_type Object to be assigned
-    def accounting_entry_type=(accounting_entry_type)
-      validator = EnumAttributeValidator.new('String', ["None", "Debit", "Credit"])
-      unless validator.valid?(accounting_entry_type)
-        fail ArgumentError, "invalid value for \"accounting_entry_type\", must be one of #{validator.allowable_values}."
+    # @param [Object] direction Object to be assigned
+    def direction=(direction)
+      validator = EnumAttributeValidator.new('String', ["Debit", "Credit"])
+      unless validator.valid?(direction)
+        fail ArgumentError, "invalid value for \"direction\", must be one of #{validator.allowable_values}."
       end
-      @accounting_entry_type = accounting_entry_type
+      @direction = direction
     end
 
     # Checks equality by comparing each attribute.
@@ -274,24 +315,29 @@ module OpenapiClient
       return true if self.equal?(o)
       self.class == o.class &&
           id == o.id &&
+          tenant_id == o.tenant_id &&
+          enrollment_id == o.enrollment_id &&
+          journal_entry_id == o.journal_entry_id &&
+          account_id == o.account_id &&
+          account_name == o.account_name &&
+          direction == o.direction &&
+          description == o.description &&
+          transaction_amount == o.transaction_amount &&
+          transaction_currency_id == o.transaction_currency_id &&
+          functional_amount == o.functional_amount &&
+          functional_currency_id == o.functional_currency_id &&
+          account_amount == o.account_amount &&
+          account_currency_id == o.account_currency_id &&
+          reporting_amount_in_usd == o.reporting_amount_in_usd &&
+          forex_rate == o.forex_rate &&
+          forex_rates_snapshot == o.forex_rates_snapshot &&
+          cost_centre_id == o.cost_centre_id &&
+          project_id == o.project_id &&
           timestamp == o.timestamp &&
           debit == o.debit &&
           credit == o.credit &&
-          description == o.description &&
-          forex_rate == o.forex_rate &&
-          account_id == o.account_id &&
-          tenant_id == o.tenant_id &&
-          date == o.date &&
-          enrollment_id == o.enrollment_id &&
-          currency_id == o.currency_id &&
-          debit_account_id == o.debit_account_id &&
-          credit_account_id == o.credit_account_id &&
-          journal_entry_id == o.journal_entry_id &&
-          debit_account_name == o.debit_account_name &&
-          credit_account_name == o.credit_account_name &&
-          accounting_entry_type == o.accounting_entry_type &&
-          debit_amount == o.debit_amount &&
-          credit_amount == o.credit_amount
+          amount == o.amount &&
+          amount_in_usd == o.amount_in_usd
     end
 
     # @see the `==` method
@@ -303,7 +349,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, timestamp, debit, credit, description, forex_rate, account_id, tenant_id, date, enrollment_id, currency_id, debit_account_id, credit_account_id, journal_entry_id, debit_account_name, credit_account_name, accounting_entry_type, debit_amount, credit_amount].hash
+      [id, tenant_id, enrollment_id, journal_entry_id, account_id, account_name, direction, description, transaction_amount, transaction_currency_id, functional_amount, functional_currency_id, account_amount, account_currency_id, reporting_amount_in_usd, forex_rate, forex_rates_snapshot, cost_centre_id, project_id, timestamp, debit, credit, amount, amount_in_usd].hash
     end
 
     # Builds the object from hash

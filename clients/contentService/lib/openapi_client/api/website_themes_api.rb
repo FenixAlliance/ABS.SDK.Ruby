@@ -252,7 +252,6 @@ module OpenapiClient
     # Retrieves all website themes for the specified tenant.
     # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
-    # @option opts [WebsiteThemeDtoODataQueryOptions] :o_data_query_options 
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
     # @return [WebsiteThemeDtoListEnvelope]
@@ -265,7 +264,6 @@ module OpenapiClient
     # Retrieves all website themes for the specified tenant.
     # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
-    # @option opts [WebsiteThemeDtoODataQueryOptions] :o_data_query_options 
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
     # @return [Array<(WebsiteThemeDtoListEnvelope, Integer, Hash)>] WebsiteThemeDtoListEnvelope data, response status code and response headers
@@ -283,7 +281,6 @@ module OpenapiClient
       # query parameters
       query_params = opts[:query_params] || {}
       query_params[:'tenantId'] = tenant_id
-      query_params[:'oDataQueryOptions'] = opts[:'o_data_query_options'] if !opts[:'o_data_query_options'].nil?
       query_params[:'api-version'] = opts[:'api_version'] if !opts[:'api_version'].nil?
 
       # header parameters
@@ -325,7 +322,6 @@ module OpenapiClient
     # Returns the count of website themes for the specified tenant.
     # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
-    # @option opts [WebsiteThemeDtoODataQueryOptions] :o_data_query_options 
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
     # @return [Int32Envelope]
@@ -338,7 +334,6 @@ module OpenapiClient
     # Returns the count of website themes for the specified tenant.
     # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
-    # @option opts [WebsiteThemeDtoODataQueryOptions] :o_data_query_options 
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
     # @return [Array<(Int32Envelope, Integer, Hash)>] Int32Envelope data, response status code and response headers
@@ -356,7 +351,6 @@ module OpenapiClient
       # query parameters
       query_params = opts[:query_params] || {}
       query_params[:'tenantId'] = tenant_id
-      query_params[:'oDataQueryOptions'] = opts[:'o_data_query_options'] if !opts[:'o_data_query_options'].nil?
       query_params[:'api-version'] = opts[:'api_version'] if !opts[:'api_version'].nil?
 
       # header parameters

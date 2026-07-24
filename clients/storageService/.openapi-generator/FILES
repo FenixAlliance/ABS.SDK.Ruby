@@ -11,10 +11,10 @@ docs/AvatarsApi.md
 docs/Blob.md
 docs/BlobEnvelope.md
 docs/BlobsApi.md
-docs/CompletionsApi.md
+docs/EditorAssetsApi.md
 docs/EmptyEnvelope.md
 docs/ErrorEnvelope.md
-docs/FenixAlliancePortalsWebsiteApi.md
+docs/FenixAllianceABSWebApi.md
 docs/FileUploadDto.md
 docs/FileUploadDtoEnvelope.md
 docs/FilesApi.md
@@ -23,6 +23,7 @@ docs/HttpValidationProblemDetails.md
 docs/InfoRequest.md
 docs/InfoResponse.md
 docs/LoginRequest.md
+docs/ProblemDetails.md
 docs/RadzenEditorApi.md
 docs/RefreshRequest.md
 docs/RegisterRequest.md
@@ -35,8 +36,8 @@ git_push.sh
 lib/openapi_client.rb
 lib/openapi_client/api/avatars_api.rb
 lib/openapi_client/api/blobs_api.rb
-lib/openapi_client/api/completions_api.rb
-lib/openapi_client/api/fenix_alliance_portals_website_api.rb
+lib/openapi_client/api/editor_assets_api.rb
+lib/openapi_client/api/fenix_alliance_abs_web_api.rb
 lib/openapi_client/api/files_api.rb
 lib/openapi_client/api/radzen_editor_api.rb
 lib/openapi_client/api/uploads_api.rb
@@ -55,6 +56,7 @@ lib/openapi_client/models/http_validation_problem_details.rb
 lib/openapi_client/models/info_request.rb
 lib/openapi_client/models/info_response.rb
 lib/openapi_client/models/login_request.rb
+lib/openapi_client/models/problem_details.rb
 lib/openapi_client/models/refresh_request.rb
 lib/openapi_client/models/register_request.rb
 lib/openapi_client/models/resend_confirmation_email_request.rb
@@ -63,4 +65,6 @@ lib/openapi_client/models/two_factor_request.rb
 lib/openapi_client/models/two_factor_response.rb
 lib/openapi_client/version.rb
 openapi_client.gemspec
+spec/api/editor_assets_api_spec.rb
+spec/models/problem_details_spec.rb
 spec/spec_helper.rb

@@ -8,7 +8,6 @@ README.md
 Rakefile
 docs/AccessTokenResponse.md
 docs/CurrencyId.md
-docs/DecimalEnvelope.md
 docs/EmailDispatchRequest.md
 docs/EmptyEnvelope.md
 docs/Envelope.md
@@ -72,7 +71,6 @@ lib/openapi_client/api_error.rb
 lib/openapi_client/configuration.rb
 lib/openapi_client/models/access_token_response.rb
 lib/openapi_client/models/currency_id.rb
-lib/openapi_client/models/decimal_envelope.rb
 lib/openapi_client/models/email_dispatch_request.rb
 lib/openapi_client/models/empty_envelope.rb
 lib/openapi_client/models/envelope.rb
@@ -127,5 +125,4 @@ lib/openapi_client/models/two_factor_request.rb
 lib/openapi_client/models/two_factor_response.rb
 lib/openapi_client/version.rb
 openapi_client.gemspec
-spec/models/decimal_envelope_spec.rb
 spec/spec_helper.rb

@@ -15,6 +15,10 @@ require 'time'
 
 module OpenapiClient
   class ProjectTaskUpdateDto
+    attr_accessor :title
+
+    attr_accessor :description
+
     attr_accessor :start_date
 
     attr_accessor :due_line
@@ -22,6 +26,8 @@ module OpenapiClient
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'title' => :'title',
+        :'description' => :'description',
         :'start_date' => :'startDate',
         :'due_line' => :'dueLine'
       }
@@ -35,6 +41,8 @@ module OpenapiClient
     # Attribute type mapping.
     def self.openapi_types
       {
+        :'title' => :'String',
+        :'description' => :'String',
         :'start_date' => :'Time',
         :'due_line' => :'Time'
       }
@@ -43,6 +51,8 @@ module OpenapiClient
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
+        :'title',
+        :'description',
       ])
     end
 
@@ -60,6 +70,14 @@ module OpenapiClient
         end
         h[k.to_sym] = v
       }
+
+      if attributes.key?(:'title')
+        self.title = attributes[:'title']
+      end
+
+      if attributes.key?(:'description')
+        self.description = attributes[:'description']
+      end
 
       if attributes.key?(:'start_date')
         self.start_date = attributes[:'start_date']
@@ -90,6 +108,8 @@ module OpenapiClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          title == o.title &&
+          description == o.description &&
           start_date == o.start_date &&
           due_line == o.due_line
     end
@@ -103,7 +123,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [start_date, due_line].hash
+      [title, description, start_date, due_line].hash
     end
 
     # Builds the object from hash

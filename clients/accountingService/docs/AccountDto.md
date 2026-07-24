@@ -30,6 +30,10 @@
 | **enrollment_id** | **String** |  | [optional] |
 | **children_accounts_count** | **Integer** |  | [optional] |
 | **account_category** | **String** |  | [optional] |
+| **is_contra** | **Boolean** |  | [optional] |
+| **is_monetary** | **Boolean** |  | [optional] |
+| **income_statement_sub_type** | **String** |  | [optional] |
+| **normal_balance** | **String** |  | [optional] |
 | **balance_amount** | [**Money**](Money.md) |  | [optional] |
 | **credits_balance_amount** | [**Money**](Money.md) |  | [optional] |
 | **debits_balance_amount** | [**Money**](Money.md) |  | [optional] |
@@ -69,6 +73,10 @@ instance = OpenapiClient::AccountDto.new(
   enrollment_id: null,
   children_accounts_count: null,
   account_category: null,
+  is_contra: null,
+  is_monetary: null,
+  income_statement_sub_type: null,
+  normal_balance: null,
   balance_amount: null,
   credits_balance_amount: null,
   debits_balance_amount: null,

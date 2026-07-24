@@ -19,8 +19,6 @@
 | **job_title** | **String** |  | [optional] |
 | **country_id** | **String** |  | [optional] |
 | **parent_contact_id** | **String** |  | [optional] |
-| **address_line1** | **String** |  | [optional] |
-| **address_line2** | **String** |  | [optional] |
 | **postal_code** | **String** |  | [optional] |
 | **state_id** | **String** |  | [optional] |
 | **city_id** | **String** |  | [optional] |
@@ -68,8 +66,6 @@ instance = OpenapiClient::ContactUpdateDto.new(
   job_title: null,
   country_id: null,
   parent_contact_id: null,
-  address_line1: null,
-  address_line2: null,
   postal_code: null,
   state_id: null,
   city_id: null,

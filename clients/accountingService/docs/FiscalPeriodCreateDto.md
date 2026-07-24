@@ -6,10 +6,10 @@
 | ---- | ---- | ----------- | ----- |
 | **id** | **String** |  | [optional] |
 | **timestamp** | **Time** |  | [optional] |
-| **name** | **String** |  | [optional] |
+| **name** | **String** |  |  |
 | **from_date** | **Time** |  | [optional] |
 | **to_date** | **Time** |  | [optional] |
-| **fiscal_year_id** | **String** |  | [optional] |
+| **fiscal_year_id** | **String** |  |  |
 
 ## Example
 

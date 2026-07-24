@@ -7,6 +7,7 @@
 | **id** | **String** |  | [optional] |
 | **timestamp** | **Time** |  | [optional] |
 | **title** | **String** |  | [optional] |
+| **project_id** | **String** |  | [optional] |
 
 ## Example
 
@@ -16,7 +17,8 @@ require 'openapi_client'
 instance = OpenapiClient::TaskCategoryCreateDto.new(
   id: null,
   timestamp: null,
-  title: null
+  title: null,
+  project_id: null
 )
 ```
 

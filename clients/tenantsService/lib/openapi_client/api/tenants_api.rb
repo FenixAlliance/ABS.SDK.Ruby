@@ -378,6 +378,75 @@ module OpenapiClient
       return data, status_code, headers
     end
 
+    # Get a tenant's default cart
+    # Get a tenant's default cart
+    # @param tenant_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @return [CartDtoEnvelope]
+    def get_cart_for_tenant_async(tenant_id, opts = {})
+      data, _status_code, _headers = get_cart_for_tenant_async_with_http_info(tenant_id, opts)
+      data
+    end
+
+    # Get a tenant&#39;s default cart
+    # Get a tenant&#39;s default cart
+    # @param tenant_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @return [Array<(CartDtoEnvelope, Integer, Hash)>] CartDtoEnvelope data, response status code and response headers
+    def get_cart_for_tenant_async_with_http_info(tenant_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: TenantsApi.get_cart_for_tenant_async ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling TenantsApi.get_cart_for_tenant_async"
+      end
+      # resource path
+      local_var_path = '/api/v2/TenantsService/Tenants/{tenantId}/Cart'.sub('{' + 'tenantId' + '}', CGI.escape(tenant_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'api-version'] = opts[:'api_version'] if !opts[:'api_version'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'CartDtoEnvelope'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"TenantsApi.get_cart_for_tenant_async",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: TenantsApi#get_cart_for_tenant_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Get the user's current default tenant
     # Get the user's current default tenant
     # @param tenant_id [String] 
@@ -1020,75 +1089,6 @@ module OpenapiClient
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: TenantsApi#get_tenant_avatar_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Get a tenant's default cart
-    # Get a tenant's default cart
-    # @param tenant_id [String] 
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :api_version 
-    # @option opts [String] :x_api_version 
-    # @return [CartDtoEnvelope]
-    def get_tenant_cart_async(tenant_id, opts = {})
-      data, _status_code, _headers = get_tenant_cart_async_with_http_info(tenant_id, opts)
-      data
-    end
-
-    # Get a tenant&#39;s default cart
-    # Get a tenant&#39;s default cart
-    # @param tenant_id [String] 
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :api_version 
-    # @option opts [String] :x_api_version 
-    # @return [Array<(CartDtoEnvelope, Integer, Hash)>] CartDtoEnvelope data, response status code and response headers
-    def get_tenant_cart_async_with_http_info(tenant_id, opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: TenantsApi.get_tenant_cart_async ...'
-      end
-      # verify the required parameter 'tenant_id' is set
-      if @api_client.config.client_side_validation && tenant_id.nil?
-        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling TenantsApi.get_tenant_cart_async"
-      end
-      # resource path
-      local_var_path = '/api/v2/TenantsService/Tenants/{tenantId}/Cart'.sub('{' + 'tenantId' + '}', CGI.escape(tenant_id.to_s))
-
-      # query parameters
-      query_params = opts[:query_params] || {}
-      query_params[:'api-version'] = opts[:'api_version'] if !opts[:'api_version'].nil?
-
-      # header parameters
-      header_params = opts[:header_params] || {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
-      header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
-
-      # form parameters
-      form_params = opts[:form_params] || {}
-
-      # http body (model)
-      post_body = opts[:debug_body]
-
-      # return_type
-      return_type = opts[:debug_return_type] || 'CartDtoEnvelope'
-
-      # auth_names
-      auth_names = opts[:debug_auth_names] || []
-
-      new_options = opts.merge(
-        :operation => :"TenantsApi.get_tenant_cart_async",
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => return_type
-      )
-
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TenantsApi#get_tenant_cart_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -2222,83 +2222,6 @@ module OpenapiClient
       return data, status_code, headers
     end
 
-    # Update a tenant's avatar
-    # Update a tenant's avatar
-    # @param tenant_id [String] 
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :api_version 
-    # @option opts [String] :x_api_version 
-    # @option opts [File] :avatar 
-    # @return [EmptyEnvelope]
-    def update_avatar_async(tenant_id, opts = {})
-      data, _status_code, _headers = update_avatar_async_with_http_info(tenant_id, opts)
-      data
-    end
-
-    # Update a tenant&#39;s avatar
-    # Update a tenant&#39;s avatar
-    # @param tenant_id [String] 
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :api_version 
-    # @option opts [String] :x_api_version 
-    # @option opts [File] :avatar 
-    # @return [Array<(EmptyEnvelope, Integer, Hash)>] EmptyEnvelope data, response status code and response headers
-    def update_avatar_async_with_http_info(tenant_id, opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: TenantsApi.update_avatar_async ...'
-      end
-      # verify the required parameter 'tenant_id' is set
-      if @api_client.config.client_side_validation && tenant_id.nil?
-        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling TenantsApi.update_avatar_async"
-      end
-      # resource path
-      local_var_path = '/api/v2/TenantsService/Tenants/{tenantId}/Avatar'.sub('{' + 'tenantId' + '}', CGI.escape(tenant_id.to_s))
-
-      # query parameters
-      query_params = opts[:query_params] || {}
-      query_params[:'api-version'] = opts[:'api_version'] if !opts[:'api_version'].nil?
-
-      # header parameters
-      header_params = opts[:header_params] || {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['image/png', 'application/json', 'application/xml']) unless header_params['Accept']
-      # HTTP header 'Content-Type'
-      content_type = @api_client.select_header_content_type(['multipart/form-data', 'application/json', 'application/xml'])
-      if !content_type.nil?
-          header_params['Content-Type'] = content_type
-      end
-      header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
-
-      # form parameters
-      form_params = opts[:form_params] || {}
-      form_params['avatar'] = opts[:'avatar'] if !opts[:'avatar'].nil?
-
-      # http body (model)
-      post_body = opts[:debug_body]
-
-      # return_type
-      return_type = opts[:debug_return_type] || 'EmptyEnvelope'
-
-      # auth_names
-      auth_names = opts[:debug_auth_names] || []
-
-      new_options = opts.merge(
-        :operation => :"TenantsApi.update_avatar_async",
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => return_type
-      )
-
-      data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TenantsApi#update_avatar_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
     # Update a tenant's profile
     # Update a tenant's profile
     # @param tenant_id [String] 
@@ -2371,6 +2294,83 @@ module OpenapiClient
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path, new_options)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: TenantsApi#update_tenant_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Update a tenant's avatar
+    # Update a tenant's avatar
+    # @param tenant_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @option opts [File] :avatar 
+    # @return [EmptyEnvelope]
+    def update_tenant_avatar_async(tenant_id, opts = {})
+      data, _status_code, _headers = update_tenant_avatar_async_with_http_info(tenant_id, opts)
+      data
+    end
+
+    # Update a tenant&#39;s avatar
+    # Update a tenant&#39;s avatar
+    # @param tenant_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @option opts [File] :avatar 
+    # @return [Array<(EmptyEnvelope, Integer, Hash)>] EmptyEnvelope data, response status code and response headers
+    def update_tenant_avatar_async_with_http_info(tenant_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: TenantsApi.update_tenant_avatar_async ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling TenantsApi.update_tenant_avatar_async"
+      end
+      # resource path
+      local_var_path = '/api/v2/TenantsService/Tenants/{tenantId}/Avatar'.sub('{' + 'tenantId' + '}', CGI.escape(tenant_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'api-version'] = opts[:'api_version'] if !opts[:'api_version'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['image/png', 'application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['multipart/form-data', 'application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
+      header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+      form_params['avatar'] = opts[:'avatar'] if !opts[:'avatar'].nil?
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'EmptyEnvelope'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"TenantsApi.update_tenant_avatar_async",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: TenantsApi#update_tenant_avatar_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

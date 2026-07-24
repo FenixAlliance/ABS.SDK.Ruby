@@ -14,9 +14,12 @@ All URIs are relative to *https://absuite.net*
 | [**get_journal_details_async**](JournalsApi.md#get_journal_details_async) | **GET** /api/v2/AccountingService/Journals/{journalId} | Get journal by ID |
 | [**get_journal_entries_async**](JournalsApi.md#get_journal_entries_async) | **GET** /api/v2/AccountingService/Journals/{journalId}/Entries | Get journal entries |
 | [**get_journal_entries_count_async**](JournalsApi.md#get_journal_entries_count_async) | **GET** /api/v2/AccountingService/Journals/{journalId}/Entries/Count | Count journal entries |
+| [**get_journal_entry_details_async**](JournalsApi.md#get_journal_entry_details_async) | **GET** /api/v2/AccountingService/Journals/{journalId}/Entries/{entryId} | Get journal entry by ID |
 | [**get_journals_async**](JournalsApi.md#get_journals_async) | **GET** /api/v2/AccountingService/Journals | Get all journals |
 | [**patch_journal_async**](JournalsApi.md#patch_journal_async) | **PATCH** /api/v2/AccountingService/Journals/{journalId} | Patch a journal |
 | [**patch_journal_entry_async**](JournalsApi.md#patch_journal_entry_async) | **PATCH** /api/v2/AccountingService/Journals/{journalId}/Entries/{entryId} | Patch a journal entry |
+| [**post_journal_entry_async**](JournalsApi.md#post_journal_entry_async) | **POST** /api/v2/AccountingService/Journals/{journalId}/Entries/{entryId}/Post | Post a draft journal entry |
+| [**reverse_journal_entry_async**](JournalsApi.md#reverse_journal_entry_async) | **POST** /api/v2/AccountingService/Journals/{journalId}/Entries/{entryId}/Reverse | Reverse a posted journal entry |
 | [**update_journal_async**](JournalsApi.md#update_journal_async) | **PUT** /api/v2/AccountingService/Journals/{journalId} | Update journal |
 | [**update_journal_entry_async**](JournalsApi.md#update_journal_entry_async) | **PUT** /api/v2/AccountingService/Journals/{journalId}/Entries/{entryId} | Update journal entry |
 
@@ -77,7 +80,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
 | **journal_id** | **String** |  |  |
-| **currency_id** | **String** |  | [optional] |
+| **currency_id** | **String** |  | [optional][default to &#39;USD.USA&#39;] |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
 
@@ -151,7 +154,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
 | **journal_id** | **String** |  |  |
-| **currency_id** | **String** |  | [optional] |
+| **currency_id** | **String** |  | [optional][default to &#39;USD.USA&#39;] |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
 
@@ -331,7 +334,7 @@ journal_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 opts = {
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example', # String | 
-  journal_entry_create_dto: OpenapiClient::JournalEntryCreateDto.new({description: 'description_example', date: Time.now, journal_id: 'journal_id_example', currency_id: 'currency_id_example', debit_account_id: 'debit_account_id_example', credit_account_id: 'credit_account_id_example'}) # JournalEntryCreateDto | 
+  journal_entry_create_dto: OpenapiClient::JournalEntryCreateDto.new({journal_id: 'journal_id_example', fiscal_period_id: 'fiscal_period_id_example', transaction_currency_id: 'transaction_currency_id_example', description: 'description_example'}) # JournalEntryCreateDto | 
 }
 
 begin
@@ -747,6 +750,80 @@ No authorization required
 - **Accept**: application/json, application/xml
 
 
+## get_journal_entry_details_async
+
+> <JournalEntryDtoEnvelope> get_journal_entry_details_async(tenant_id, journal_id, entry_id, opts)
+
+Get journal entry by ID
+
+Retrieves a single journal entry WITH its hydrated posting lines — each line's account, direction, description and currency facets (transaction / functional / account / USD).
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::JournalsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+journal_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+entry_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example' # String | 
+}
+
+begin
+  # Get journal entry by ID
+  result = api_instance.get_journal_entry_details_async(tenant_id, journal_id, entry_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling JournalsApi->get_journal_entry_details_async: #{e}"
+end
+```
+
+#### Using the get_journal_entry_details_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<JournalEntryDtoEnvelope>, Integer, Hash)> get_journal_entry_details_async_with_http_info(tenant_id, journal_id, entry_id, opts)
+
+```ruby
+begin
+  # Get journal entry by ID
+  data, status_code, headers = api_instance.get_journal_entry_details_async_with_http_info(tenant_id, journal_id, entry_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <JournalEntryDtoEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling JournalsApi->get_journal_entry_details_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **journal_id** | **String** |  |  |
+| **entry_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+
+### Return type
+
+[**JournalEntryDtoEnvelope**](JournalEntryDtoEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
 ## get_journals_async
 
 > <JournalDtoIReadOnlyListEnvelope> get_journals_async(tenant_id, opts)
@@ -967,6 +1044,156 @@ No authorization required
 - **Accept**: application/json, application/xml
 
 
+## post_journal_entry_async
+
+> <EmptyEnvelope> post_journal_entry_async(tenant_id, journal_id, entry_id, opts)
+
+Post a draft journal entry
+
+Posts a DRAFT journal entry into its own open fiscal period. Enforces the balanced-entry invariant and the open-period gate, then seals the entry (immutable — correct via reversal, never edit/delete). An unbalanced draft or a closed period is rejected. Requires the journals_post permission.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::JournalsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+journal_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+entry_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example' # String | 
+}
+
+begin
+  # Post a draft journal entry
+  result = api_instance.post_journal_entry_async(tenant_id, journal_id, entry_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling JournalsApi->post_journal_entry_async: #{e}"
+end
+```
+
+#### Using the post_journal_entry_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> post_journal_entry_async_with_http_info(tenant_id, journal_id, entry_id, opts)
+
+```ruby
+begin
+  # Post a draft journal entry
+  data, status_code, headers = api_instance.post_journal_entry_async_with_http_info(tenant_id, journal_id, entry_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling JournalsApi->post_journal_entry_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **journal_id** | **String** |  |  |
+| **entry_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## reverse_journal_entry_async
+
+> <EmptyEnvelope> reverse_journal_entry_async(tenant_id, journal_id, entry_id, opts)
+
+Reverse a posted journal entry
+
+Reverses a POSTED journal entry by writing a balanced compensating counter-entry into the supplied open fiscal period and marking the original Reversed — one atomic operation (append-only audit trail). Requires the journals_reverse permission.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::JournalsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+journal_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+entry_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  reverse_journal_entry_request: OpenapiClient::ReverseJournalEntryRequest.new({reversal_period_id: 'reversal_period_id_example'}) # ReverseJournalEntryRequest | 
+}
+
+begin
+  # Reverse a posted journal entry
+  result = api_instance.reverse_journal_entry_async(tenant_id, journal_id, entry_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling JournalsApi->reverse_journal_entry_async: #{e}"
+end
+```
+
+#### Using the reverse_journal_entry_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> reverse_journal_entry_async_with_http_info(tenant_id, journal_id, entry_id, opts)
+
+```ruby
+begin
+  # Reverse a posted journal entry
+  data, status_code, headers = api_instance.reverse_journal_entry_async_with_http_info(tenant_id, journal_id, entry_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling JournalsApi->reverse_journal_entry_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **journal_id** | **String** |  |  |
+| **entry_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **reverse_journal_entry_request** | [**ReverseJournalEntryRequest**](ReverseJournalEntryRequest.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
+- **Accept**: application/json, application/xml
+
+
 ## update_journal_async
 
 > <EmptyEnvelope> update_journal_async(tenant_id, journal_id, opts)
@@ -1062,7 +1289,7 @@ entry_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 opts = {
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example', # String | 
-  journal_entry_update_dto: OpenapiClient::JournalEntryUpdateDto.new({description: 'description_example', date: Time.now, journal_id: 'journal_id_example', currency_id: 'currency_id_example', debit_account_id: 'debit_account_id_example', credit_account_id: 'credit_account_id_example'}) # JournalEntryUpdateDto | 
+  journal_entry_update_dto: OpenapiClient::JournalEntryUpdateDto.new({fiscal_period_id: 'fiscal_period_id_example', transaction_currency_id: 'transaction_currency_id_example', description: 'description_example'}) # JournalEntryUpdateDto | 
 }
 
 begin

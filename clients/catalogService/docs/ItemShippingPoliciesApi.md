@@ -5,8 +5,8 @@ All URIs are relative to *https://absuite.net*
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
 | [**count_item_shipping_policies_async**](ItemShippingPoliciesApi.md#count_item_shipping_policies_async) | **GET** /api/v2/CatalogService/ItemShippingPolicies/Count | Count item shipping policies |
-| [**get_item_shipping_policies_async**](ItemShippingPoliciesApi.md#get_item_shipping_policies_async) | **GET** /api/v2/CatalogService/ItemShippingPolicies | Get item shipping policies |
-| [**get_item_shipping_policy_by_id_async**](ItemShippingPoliciesApi.md#get_item_shipping_policy_by_id_async) | **GET** /api/v2/CatalogService/ItemShippingPolicies/{itemShippingPolicyId} | Get item shipping policy by ID |
+| [**get_catalog_item_shipping_policies_async**](ItemShippingPoliciesApi.md#get_catalog_item_shipping_policies_async) | **GET** /api/v2/CatalogService/ItemShippingPolicies | Get item shipping policies |
+| [**get_catalog_item_shipping_policy_by_id_async**](ItemShippingPoliciesApi.md#get_catalog_item_shipping_policy_by_id_async) | **GET** /api/v2/CatalogService/ItemShippingPolicies/{itemShippingPolicyId} | Get item shipping policy by ID |
 | [**relate_item_to_shipping_policy_async**](ItemShippingPoliciesApi.md#relate_item_to_shipping_policy_async) | **POST** /api/v2/CatalogService/ItemShippingPolicies | Relate item to shipping policy |
 | [**remove_shipping_policy_from_item_async**](ItemShippingPoliciesApi.md#remove_shipping_policy_from_item_async) | **DELETE** /api/v2/CatalogService/ItemShippingPolicies/{itemShippingPolicyId} | Remove shipping policy from item |
 
@@ -83,9 +83,9 @@ No authorization required
 - **Accept**: application/json, application/xml
 
 
-## get_item_shipping_policies_async
+## get_catalog_item_shipping_policies_async
 
-> <ItemShippingPolicyDtoListEnvelope> get_item_shipping_policies_async(opts)
+> <ItemShippingPolicyDtoListEnvelope> get_catalog_item_shipping_policies_async(opts)
 
 Get item shipping policies
 
@@ -107,28 +107,28 @@ opts = {
 
 begin
   # Get item shipping policies
-  result = api_instance.get_item_shipping_policies_async(opts)
+  result = api_instance.get_catalog_item_shipping_policies_async(opts)
   p result
 rescue OpenapiClient::ApiError => e
-  puts "Error when calling ItemShippingPoliciesApi->get_item_shipping_policies_async: #{e}"
+  puts "Error when calling ItemShippingPoliciesApi->get_catalog_item_shipping_policies_async: #{e}"
 end
 ```
 
-#### Using the get_item_shipping_policies_async_with_http_info variant
+#### Using the get_catalog_item_shipping_policies_async_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<ItemShippingPolicyDtoListEnvelope>, Integer, Hash)> get_item_shipping_policies_async_with_http_info(opts)
+> <Array(<ItemShippingPolicyDtoListEnvelope>, Integer, Hash)> get_catalog_item_shipping_policies_async_with_http_info(opts)
 
 ```ruby
 begin
   # Get item shipping policies
-  data, status_code, headers = api_instance.get_item_shipping_policies_async_with_http_info(opts)
+  data, status_code, headers = api_instance.get_catalog_item_shipping_policies_async_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ItemShippingPolicyDtoListEnvelope>
 rescue OpenapiClient::ApiError => e
-  puts "Error when calling ItemShippingPoliciesApi->get_item_shipping_policies_async_with_http_info: #{e}"
+  puts "Error when calling ItemShippingPoliciesApi->get_catalog_item_shipping_policies_async_with_http_info: #{e}"
 end
 ```
 
@@ -155,9 +155,9 @@ No authorization required
 - **Accept**: application/json, application/xml
 
 
-## get_item_shipping_policy_by_id_async
+## get_catalog_item_shipping_policy_by_id_async
 
-> <ItemShippingPolicyDtoEnvelope> get_item_shipping_policy_by_id_async(item_shipping_policy_id, opts)
+> <ItemShippingPolicyDtoEnvelope> get_catalog_item_shipping_policy_by_id_async(item_shipping_policy_id, opts)
 
 Get item shipping policy by ID
 
@@ -180,28 +180,28 @@ opts = {
 
 begin
   # Get item shipping policy by ID
-  result = api_instance.get_item_shipping_policy_by_id_async(item_shipping_policy_id, opts)
+  result = api_instance.get_catalog_item_shipping_policy_by_id_async(item_shipping_policy_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
-  puts "Error when calling ItemShippingPoliciesApi->get_item_shipping_policy_by_id_async: #{e}"
+  puts "Error when calling ItemShippingPoliciesApi->get_catalog_item_shipping_policy_by_id_async: #{e}"
 end
 ```
 
-#### Using the get_item_shipping_policy_by_id_async_with_http_info variant
+#### Using the get_catalog_item_shipping_policy_by_id_async_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<ItemShippingPolicyDtoEnvelope>, Integer, Hash)> get_item_shipping_policy_by_id_async_with_http_info(item_shipping_policy_id, opts)
+> <Array(<ItemShippingPolicyDtoEnvelope>, Integer, Hash)> get_catalog_item_shipping_policy_by_id_async_with_http_info(item_shipping_policy_id, opts)
 
 ```ruby
 begin
   # Get item shipping policy by ID
-  data, status_code, headers = api_instance.get_item_shipping_policy_by_id_async_with_http_info(item_shipping_policy_id, opts)
+  data, status_code, headers = api_instance.get_catalog_item_shipping_policy_by_id_async_with_http_info(item_shipping_policy_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ItemShippingPolicyDtoEnvelope>
 rescue OpenapiClient::ApiError => e
-  puts "Error when calling ItemShippingPoliciesApi->get_item_shipping_policy_by_id_async_with_http_info: #{e}"
+  puts "Error when calling ItemShippingPoliciesApi->get_catalog_item_shipping_policy_by_id_async_with_http_info: #{e}"
 end
 ```
 

@@ -19,6 +19,309 @@ module OpenapiClient
     def initialize(api_client = ApiClient.default)
       @api_client = api_client
     end
+    # Create a business relationship
+    # Creates a new business relationship owned by the specified parent tenant.
+    # @param tenant_id [String] 
+    # @param business_relationship_create_dto [BusinessRelationshipCreateDto] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @return [EmptyEnvelope]
+    def create_business_relationship_async(tenant_id, business_relationship_create_dto, opts = {})
+      data, _status_code, _headers = create_business_relationship_async_with_http_info(tenant_id, business_relationship_create_dto, opts)
+      data
+    end
+
+    # Create a business relationship
+    # Creates a new business relationship owned by the specified parent tenant.
+    # @param tenant_id [String] 
+    # @param business_relationship_create_dto [BusinessRelationshipCreateDto] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @return [Array<(EmptyEnvelope, Integer, Hash)>] EmptyEnvelope data, response status code and response headers
+    def create_business_relationship_async_with_http_info(tenant_id, business_relationship_create_dto, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: BusinessRelationshipsApi.create_business_relationship_async ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling BusinessRelationshipsApi.create_business_relationship_async"
+      end
+      # verify the required parameter 'business_relationship_create_dto' is set
+      if @api_client.config.client_side_validation && business_relationship_create_dto.nil?
+        fail ArgumentError, "Missing the required parameter 'business_relationship_create_dto' when calling BusinessRelationshipsApi.create_business_relationship_async"
+      end
+      # resource path
+      local_var_path = '/api/v2/TenantsService/BusinessRelationships'
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+      query_params[:'api-version'] = opts[:'api_version'] if !opts[:'api_version'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
+      header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(business_relationship_create_dto)
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'EmptyEnvelope'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"BusinessRelationshipsApi.create_business_relationship_async",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: BusinessRelationshipsApi#create_business_relationship_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Delete a business relationship
+    # Deletes a business relationship by its ID.
+    # @param tenant_id [String] 
+    # @param business_relationship_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @return [EmptyEnvelope]
+    def delete_business_relationship_async(tenant_id, business_relationship_id, opts = {})
+      data, _status_code, _headers = delete_business_relationship_async_with_http_info(tenant_id, business_relationship_id, opts)
+      data
+    end
+
+    # Delete a business relationship
+    # Deletes a business relationship by its ID.
+    # @param tenant_id [String] 
+    # @param business_relationship_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @return [Array<(EmptyEnvelope, Integer, Hash)>] EmptyEnvelope data, response status code and response headers
+    def delete_business_relationship_async_with_http_info(tenant_id, business_relationship_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: BusinessRelationshipsApi.delete_business_relationship_async ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling BusinessRelationshipsApi.delete_business_relationship_async"
+      end
+      # verify the required parameter 'business_relationship_id' is set
+      if @api_client.config.client_side_validation && business_relationship_id.nil?
+        fail ArgumentError, "Missing the required parameter 'business_relationship_id' when calling BusinessRelationshipsApi.delete_business_relationship_async"
+      end
+      # resource path
+      local_var_path = '/api/v2/TenantsService/BusinessRelationships/{businessRelationshipId}'.sub('{' + 'businessRelationshipId' + '}', CGI.escape(business_relationship_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+      query_params[:'api-version'] = opts[:'api_version'] if !opts[:'api_version'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'EmptyEnvelope'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"BusinessRelationshipsApi.delete_business_relationship_async",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: BusinessRelationshipsApi#delete_business_relationship_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Get business relationship by ID
+    # Retrieves the details of a specific business relationship by its ID.
+    # @param tenant_id [String] 
+    # @param business_relationship_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @return [BusinessRelationshipDtoEnvelope]
+    def get_business_relationship_by_id_async(tenant_id, business_relationship_id, opts = {})
+      data, _status_code, _headers = get_business_relationship_by_id_async_with_http_info(tenant_id, business_relationship_id, opts)
+      data
+    end
+
+    # Get business relationship by ID
+    # Retrieves the details of a specific business relationship by its ID.
+    # @param tenant_id [String] 
+    # @param business_relationship_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @return [Array<(BusinessRelationshipDtoEnvelope, Integer, Hash)>] BusinessRelationshipDtoEnvelope data, response status code and response headers
+    def get_business_relationship_by_id_async_with_http_info(tenant_id, business_relationship_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: BusinessRelationshipsApi.get_business_relationship_by_id_async ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling BusinessRelationshipsApi.get_business_relationship_by_id_async"
+      end
+      # verify the required parameter 'business_relationship_id' is set
+      if @api_client.config.client_side_validation && business_relationship_id.nil?
+        fail ArgumentError, "Missing the required parameter 'business_relationship_id' when calling BusinessRelationshipsApi.get_business_relationship_by_id_async"
+      end
+      # resource path
+      local_var_path = '/api/v2/TenantsService/BusinessRelationships/{businessRelationshipId}'.sub('{' + 'businessRelationshipId' + '}', CGI.escape(business_relationship_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+      query_params[:'api-version'] = opts[:'api_version'] if !opts[:'api_version'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'BusinessRelationshipDtoEnvelope'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"BusinessRelationshipsApi.get_business_relationship_by_id_async",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: BusinessRelationshipsApi#get_business_relationship_by_id_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Get business relationships
+    # Retrieves the child business relationships owned by the specified parent tenant using OData query options.
+    # @param tenant_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @return [BusinessRelationshipDtoListEnvelope]
+    def get_business_relationships_async(tenant_id, opts = {})
+      data, _status_code, _headers = get_business_relationships_async_with_http_info(tenant_id, opts)
+      data
+    end
+
+    # Get business relationships
+    # Retrieves the child business relationships owned by the specified parent tenant using OData query options.
+    # @param tenant_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @return [Array<(BusinessRelationshipDtoListEnvelope, Integer, Hash)>] BusinessRelationshipDtoListEnvelope data, response status code and response headers
+    def get_business_relationships_async_with_http_info(tenant_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: BusinessRelationshipsApi.get_business_relationships_async ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling BusinessRelationshipsApi.get_business_relationships_async"
+      end
+      # resource path
+      local_var_path = '/api/v2/TenantsService/BusinessRelationships'
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+      query_params[:'api-version'] = opts[:'api_version'] if !opts[:'api_version'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'BusinessRelationshipDtoListEnvelope'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"BusinessRelationshipsApi.get_business_relationships_async",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: BusinessRelationshipsApi#get_business_relationships_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Get business relationships count
     # Returns the count of child business relationships owned by the specified parent tenant.
     # @param tenant_id [String] 
@@ -85,6 +388,93 @@ module OpenapiClient
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: BusinessRelationshipsApi#get_business_relationships_count_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Update a business relationship
+    # Updates an existing business relationship by its ID.
+    # @param tenant_id [String] 
+    # @param business_relationship_id [String] 
+    # @param business_relationship_update_dto [BusinessRelationshipUpdateDto] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @return [EmptyEnvelope]
+    def update_business_relationship_async(tenant_id, business_relationship_id, business_relationship_update_dto, opts = {})
+      data, _status_code, _headers = update_business_relationship_async_with_http_info(tenant_id, business_relationship_id, business_relationship_update_dto, opts)
+      data
+    end
+
+    # Update a business relationship
+    # Updates an existing business relationship by its ID.
+    # @param tenant_id [String] 
+    # @param business_relationship_id [String] 
+    # @param business_relationship_update_dto [BusinessRelationshipUpdateDto] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @return [Array<(EmptyEnvelope, Integer, Hash)>] EmptyEnvelope data, response status code and response headers
+    def update_business_relationship_async_with_http_info(tenant_id, business_relationship_id, business_relationship_update_dto, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: BusinessRelationshipsApi.update_business_relationship_async ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling BusinessRelationshipsApi.update_business_relationship_async"
+      end
+      # verify the required parameter 'business_relationship_id' is set
+      if @api_client.config.client_side_validation && business_relationship_id.nil?
+        fail ArgumentError, "Missing the required parameter 'business_relationship_id' when calling BusinessRelationshipsApi.update_business_relationship_async"
+      end
+      # verify the required parameter 'business_relationship_update_dto' is set
+      if @api_client.config.client_side_validation && business_relationship_update_dto.nil?
+        fail ArgumentError, "Missing the required parameter 'business_relationship_update_dto' when calling BusinessRelationshipsApi.update_business_relationship_async"
+      end
+      # resource path
+      local_var_path = '/api/v2/TenantsService/BusinessRelationships/{businessRelationshipId}'.sub('{' + 'businessRelationshipId' + '}', CGI.escape(business_relationship_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+      query_params[:'api-version'] = opts[:'api_version'] if !opts[:'api_version'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
+      header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(business_relationship_update_dto)
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'EmptyEnvelope'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"BusinessRelationshipsApi.update_business_relationship_async",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: BusinessRelationshipsApi#update_business_relationship_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

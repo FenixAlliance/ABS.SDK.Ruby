@@ -19,6 +19,82 @@ module OpenapiClient
     def initialize(api_client = ApiClient.default)
       @api_client = api_client
     end
+    # Close a fiscal period
+    # Closes a fiscal period so no further journal entries can post into it. Rejects closing a locked (hard-sealed) period.
+    # @param tenant_id [String] 
+    # @param fiscal_period_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @return [EmptyEnvelope]
+    def close_fiscal_period(tenant_id, fiscal_period_id, opts = {})
+      data, _status_code, _headers = close_fiscal_period_with_http_info(tenant_id, fiscal_period_id, opts)
+      data
+    end
+
+    # Close a fiscal period
+    # Closes a fiscal period so no further journal entries can post into it. Rejects closing a locked (hard-sealed) period.
+    # @param tenant_id [String] 
+    # @param fiscal_period_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @return [Array<(EmptyEnvelope, Integer, Hash)>] EmptyEnvelope data, response status code and response headers
+    def close_fiscal_period_with_http_info(tenant_id, fiscal_period_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: FiscalPeriodsApi.close_fiscal_period ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling FiscalPeriodsApi.close_fiscal_period"
+      end
+      # verify the required parameter 'fiscal_period_id' is set
+      if @api_client.config.client_side_validation && fiscal_period_id.nil?
+        fail ArgumentError, "Missing the required parameter 'fiscal_period_id' when calling FiscalPeriodsApi.close_fiscal_period"
+      end
+      # resource path
+      local_var_path = '/api/v2/AccountingService/Fiscals/Authorities/FiscalPeriods/{fiscalPeriodId}/Close'.sub('{' + 'fiscalPeriodId' + '}', CGI.escape(fiscal_period_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+      query_params[:'api-version'] = opts[:'api_version'] if !opts[:'api_version'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'EmptyEnvelope'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"FiscalPeriodsApi.close_fiscal_period",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: FiscalPeriodsApi#close_fiscal_period\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Create a fiscal period
     # Creates a new fiscal period associated with a fiscal year.
     # @param tenant_id [String] 
@@ -427,6 +503,82 @@ module OpenapiClient
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: FiscalPeriodsApi#get_fiscal_periods_count\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Open a fiscal period
+    # Opens a closed fiscal period so journal entries can post into it. Rejects reopening a locked or an already-open period.
+    # @param tenant_id [String] 
+    # @param fiscal_period_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @return [EmptyEnvelope]
+    def open_fiscal_period(tenant_id, fiscal_period_id, opts = {})
+      data, _status_code, _headers = open_fiscal_period_with_http_info(tenant_id, fiscal_period_id, opts)
+      data
+    end
+
+    # Open a fiscal period
+    # Opens a closed fiscal period so journal entries can post into it. Rejects reopening a locked or an already-open period.
+    # @param tenant_id [String] 
+    # @param fiscal_period_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @return [Array<(EmptyEnvelope, Integer, Hash)>] EmptyEnvelope data, response status code and response headers
+    def open_fiscal_period_with_http_info(tenant_id, fiscal_period_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: FiscalPeriodsApi.open_fiscal_period ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling FiscalPeriodsApi.open_fiscal_period"
+      end
+      # verify the required parameter 'fiscal_period_id' is set
+      if @api_client.config.client_side_validation && fiscal_period_id.nil?
+        fail ArgumentError, "Missing the required parameter 'fiscal_period_id' when calling FiscalPeriodsApi.open_fiscal_period"
+      end
+      # resource path
+      local_var_path = '/api/v2/AccountingService/Fiscals/Authorities/FiscalPeriods/{fiscalPeriodId}/Open'.sub('{' + 'fiscalPeriodId' + '}', CGI.escape(fiscal_period_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+      query_params[:'api-version'] = opts[:'api_version'] if !opts[:'api_version'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'EmptyEnvelope'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"FiscalPeriodsApi.open_fiscal_period",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: FiscalPeriodsApi#open_fiscal_period\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

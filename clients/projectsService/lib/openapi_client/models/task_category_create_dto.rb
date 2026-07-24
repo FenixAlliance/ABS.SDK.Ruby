@@ -21,12 +21,15 @@ module OpenapiClient
 
     attr_accessor :title
 
+    attr_accessor :project_id
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'id' => :'id',
         :'timestamp' => :'timestamp',
-        :'title' => :'title'
+        :'title' => :'title',
+        :'project_id' => :'projectId'
       }
     end
 
@@ -40,14 +43,16 @@ module OpenapiClient
       {
         :'id' => :'String',
         :'timestamp' => :'Time',
-        :'title' => :'String'
+        :'title' => :'String',
+        :'project_id' => :'String'
       }
     end
 
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
-        :'title'
+        :'title',
+        :'project_id'
       ])
     end
 
@@ -77,6 +82,10 @@ module OpenapiClient
       if attributes.key?(:'title')
         self.title = attributes[:'title']
       end
+
+      if attributes.key?(:'project_id')
+        self.project_id = attributes[:'project_id']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -101,7 +110,8 @@ module OpenapiClient
       self.class == o.class &&
           id == o.id &&
           timestamp == o.timestamp &&
-          title == o.title
+          title == o.title &&
+          project_id == o.project_id
     end
 
     # @see the `==` method
@@ -113,7 +123,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, timestamp, title].hash
+      [id, timestamp, title, project_id].hash
     end
 
     # Builds the object from hash

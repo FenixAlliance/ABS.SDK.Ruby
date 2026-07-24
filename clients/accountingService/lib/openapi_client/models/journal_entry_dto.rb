@@ -17,30 +17,6 @@ module OpenapiClient
   class JournalEntryDto
     attr_accessor :id
 
-    attr_accessor :timestamp
-
-    attr_accessor :group
-
-    attr_accessor :opening
-
-    attr_accessor :description
-
-    attr_accessor :date
-
-    attr_accessor :forex_rates_snapshot
-
-    attr_accessor :forex_rate
-
-    attr_accessor :credit
-
-    attr_accessor :debit
-
-    attr_accessor :credit_in_usd
-
-    attr_accessor :debit_in_usd
-
-    attr_accessor :currency_id
-
     attr_accessor :tenant_id
 
     attr_accessor :enrollment_id
@@ -51,57 +27,106 @@ module OpenapiClient
 
     attr_accessor :journal_code
 
-    attr_accessor :credit_account_id
+    attr_accessor :fiscal_period_id
 
-    attr_accessor :credit_account_name
+    attr_accessor :financial_book_id
 
-    attr_accessor :debit_account_id
+    attr_accessor :description
 
-    attr_accessor :debit_account_name
+    attr_accessor :entry_type
 
-    attr_accessor :invoice_code
+    attr_accessor :status
 
-    attr_accessor :parent_journal_entry_id
+    attr_accessor :posting_date
 
-    attr_accessor :credit_amount
+    attr_accessor :is_opening_balance
 
-    attr_accessor :debit_amount
+    attr_accessor :transaction_currency_id
 
-    attr_accessor :credit_amount_in_usd
+    attr_accessor :source_document_type
 
-    attr_accessor :debit_amount_in_usd
+    attr_accessor :source_document_id
+
+    attr_accessor :idempotency_key
+
+    attr_accessor :reversal_of_journal_entry_id
+
+    attr_accessor :posted_by
+
+    attr_accessor :forex_rate
+
+    attr_accessor :forex_rates_snapshot
+
+    attr_accessor :timestamp
+
+    attr_accessor :debit_in_usd
+
+    attr_accessor :credit_in_usd
+
+    attr_accessor :accounting_entries
+
+    attr_accessor :total_debit
+
+    attr_accessor :total_credit
+
+    attr_accessor :total_debit_amount
+
+    attr_accessor :total_credit_amount
+
+    class EnumAttributeValidator
+      attr_reader :datatype
+      attr_reader :allowable_values
+
+      def initialize(datatype, allowable_values)
+        @allowable_values = allowable_values.map do |value|
+          case datatype.to_s
+          when /Integer/i
+            value.to_i
+          when /Float/i
+            value.to_f
+          else
+            value
+          end
+        end
+      end
+
+      def valid?(value)
+        !value || allowable_values.include?(value)
+      end
+    end
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'id' => :'id',
-        :'timestamp' => :'timestamp',
-        :'group' => :'group',
-        :'opening' => :'opening',
-        :'description' => :'description',
-        :'date' => :'date',
-        :'forex_rates_snapshot' => :'forexRatesSnapshot',
-        :'forex_rate' => :'forexRate',
-        :'credit' => :'credit',
-        :'debit' => :'debit',
-        :'credit_in_usd' => :'creditInUsd',
-        :'debit_in_usd' => :'debitInUsd',
-        :'currency_id' => :'currencyId',
         :'tenant_id' => :'tenantId',
         :'enrollment_id' => :'enrollmentId',
         :'journal_id' => :'journalId',
         :'journal_name' => :'journalName',
         :'journal_code' => :'journalCode',
-        :'credit_account_id' => :'creditAccountId',
-        :'credit_account_name' => :'creditAccountName',
-        :'debit_account_id' => :'debitAccountId',
-        :'debit_account_name' => :'debitAccountName',
-        :'invoice_code' => :'invoiceCode',
-        :'parent_journal_entry_id' => :'parentJournalEntryId',
-        :'credit_amount' => :'creditAmount',
-        :'debit_amount' => :'debitAmount',
-        :'credit_amount_in_usd' => :'creditAmountInUsd',
-        :'debit_amount_in_usd' => :'debitAmountInUsd'
+        :'fiscal_period_id' => :'fiscalPeriodId',
+        :'financial_book_id' => :'financialBookId',
+        :'description' => :'description',
+        :'entry_type' => :'entryType',
+        :'status' => :'status',
+        :'posting_date' => :'postingDate',
+        :'is_opening_balance' => :'isOpeningBalance',
+        :'transaction_currency_id' => :'transactionCurrencyId',
+        :'source_document_type' => :'sourceDocumentType',
+        :'source_document_id' => :'sourceDocumentId',
+        :'idempotency_key' => :'idempotencyKey',
+        :'reversal_of_journal_entry_id' => :'reversalOfJournalEntryId',
+        :'posted_by' => :'postedBy',
+        :'forex_rate' => :'forexRate',
+        :'forex_rates_snapshot' => :'forexRatesSnapshot',
+        :'timestamp' => :'timestamp',
+        :'debit_in_usd' => :'debitInUsd',
+        :'credit_in_usd' => :'creditInUsd',
+        :'accounting_entries' => :'accountingEntries',
+        :'total_debit' => :'totalDebit',
+        :'total_credit' => :'totalCredit',
+        :'total_debit_amount' => :'totalDebitAmount',
+        :'total_credit_amount' => :'totalCreditAmount'
       }
     end
 
@@ -114,33 +139,34 @@ module OpenapiClient
     def self.openapi_types
       {
         :'id' => :'String',
-        :'timestamp' => :'Time',
-        :'group' => :'Boolean',
-        :'opening' => :'Boolean',
-        :'description' => :'String',
-        :'date' => :'Time',
-        :'forex_rates_snapshot' => :'String',
-        :'forex_rate' => :'Float',
-        :'credit' => :'Float',
-        :'debit' => :'Float',
-        :'credit_in_usd' => :'Float',
-        :'debit_in_usd' => :'Float',
-        :'currency_id' => :'String',
         :'tenant_id' => :'String',
         :'enrollment_id' => :'String',
         :'journal_id' => :'String',
         :'journal_name' => :'String',
         :'journal_code' => :'String',
-        :'credit_account_id' => :'String',
-        :'credit_account_name' => :'String',
-        :'debit_account_id' => :'String',
-        :'debit_account_name' => :'String',
-        :'invoice_code' => :'String',
-        :'parent_journal_entry_id' => :'String',
-        :'credit_amount' => :'Money',
-        :'debit_amount' => :'Money',
-        :'credit_amount_in_usd' => :'Money',
-        :'debit_amount_in_usd' => :'Money'
+        :'fiscal_period_id' => :'String',
+        :'financial_book_id' => :'String',
+        :'description' => :'String',
+        :'entry_type' => :'String',
+        :'status' => :'String',
+        :'posting_date' => :'Time',
+        :'is_opening_balance' => :'Boolean',
+        :'transaction_currency_id' => :'String',
+        :'source_document_type' => :'String',
+        :'source_document_id' => :'String',
+        :'idempotency_key' => :'String',
+        :'reversal_of_journal_entry_id' => :'String',
+        :'posted_by' => :'String',
+        :'forex_rate' => :'Float',
+        :'forex_rates_snapshot' => :'String',
+        :'timestamp' => :'Time',
+        :'debit_in_usd' => :'Float',
+        :'credit_in_usd' => :'Float',
+        :'accounting_entries' => :'Array<AccountingEntryDto>',
+        :'total_debit' => :'Float',
+        :'total_credit' => :'Float',
+        :'total_debit_amount' => :'Money',
+        :'total_credit_amount' => :'Money'
       }
     end
 
@@ -148,22 +174,24 @@ module OpenapiClient
     def self.openapi_nullable
       Set.new([
         :'id',
-        :'timestamp',
-        :'description',
-        :'date',
-        :'forex_rates_snapshot',
-        :'currency_id',
         :'tenant_id',
         :'enrollment_id',
         :'journal_id',
         :'journal_name',
         :'journal_code',
-        :'credit_account_id',
-        :'credit_account_name',
-        :'debit_account_id',
-        :'debit_account_name',
-        :'invoice_code',
-        :'parent_journal_entry_id',
+        :'fiscal_period_id',
+        :'financial_book_id',
+        :'description',
+        :'posting_date',
+        :'transaction_currency_id',
+        :'source_document_type',
+        :'source_document_id',
+        :'idempotency_key',
+        :'reversal_of_journal_entry_id',
+        :'posted_by',
+        :'forex_rates_snapshot',
+        :'timestamp',
+        :'accounting_entries',
       ])
     end
 
@@ -186,54 +214,6 @@ module OpenapiClient
         self.id = attributes[:'id']
       end
 
-      if attributes.key?(:'timestamp')
-        self.timestamp = attributes[:'timestamp']
-      end
-
-      if attributes.key?(:'group')
-        self.group = attributes[:'group']
-      end
-
-      if attributes.key?(:'opening')
-        self.opening = attributes[:'opening']
-      end
-
-      if attributes.key?(:'description')
-        self.description = attributes[:'description']
-      end
-
-      if attributes.key?(:'date')
-        self.date = attributes[:'date']
-      end
-
-      if attributes.key?(:'forex_rates_snapshot')
-        self.forex_rates_snapshot = attributes[:'forex_rates_snapshot']
-      end
-
-      if attributes.key?(:'forex_rate')
-        self.forex_rate = attributes[:'forex_rate']
-      end
-
-      if attributes.key?(:'credit')
-        self.credit = attributes[:'credit']
-      end
-
-      if attributes.key?(:'debit')
-        self.debit = attributes[:'debit']
-      end
-
-      if attributes.key?(:'credit_in_usd')
-        self.credit_in_usd = attributes[:'credit_in_usd']
-      end
-
-      if attributes.key?(:'debit_in_usd')
-        self.debit_in_usd = attributes[:'debit_in_usd']
-      end
-
-      if attributes.key?(:'currency_id')
-        self.currency_id = attributes[:'currency_id']
-      end
-
       if attributes.key?(:'tenant_id')
         self.tenant_id = attributes[:'tenant_id']
       end
@@ -254,44 +234,98 @@ module OpenapiClient
         self.journal_code = attributes[:'journal_code']
       end
 
-      if attributes.key?(:'credit_account_id')
-        self.credit_account_id = attributes[:'credit_account_id']
+      if attributes.key?(:'fiscal_period_id')
+        self.fiscal_period_id = attributes[:'fiscal_period_id']
       end
 
-      if attributes.key?(:'credit_account_name')
-        self.credit_account_name = attributes[:'credit_account_name']
+      if attributes.key?(:'financial_book_id')
+        self.financial_book_id = attributes[:'financial_book_id']
       end
 
-      if attributes.key?(:'debit_account_id')
-        self.debit_account_id = attributes[:'debit_account_id']
+      if attributes.key?(:'description')
+        self.description = attributes[:'description']
       end
 
-      if attributes.key?(:'debit_account_name')
-        self.debit_account_name = attributes[:'debit_account_name']
+      if attributes.key?(:'entry_type')
+        self.entry_type = attributes[:'entry_type']
       end
 
-      if attributes.key?(:'invoice_code')
-        self.invoice_code = attributes[:'invoice_code']
+      if attributes.key?(:'status')
+        self.status = attributes[:'status']
       end
 
-      if attributes.key?(:'parent_journal_entry_id')
-        self.parent_journal_entry_id = attributes[:'parent_journal_entry_id']
+      if attributes.key?(:'posting_date')
+        self.posting_date = attributes[:'posting_date']
       end
 
-      if attributes.key?(:'credit_amount')
-        self.credit_amount = attributes[:'credit_amount']
+      if attributes.key?(:'is_opening_balance')
+        self.is_opening_balance = attributes[:'is_opening_balance']
       end
 
-      if attributes.key?(:'debit_amount')
-        self.debit_amount = attributes[:'debit_amount']
+      if attributes.key?(:'transaction_currency_id')
+        self.transaction_currency_id = attributes[:'transaction_currency_id']
       end
 
-      if attributes.key?(:'credit_amount_in_usd')
-        self.credit_amount_in_usd = attributes[:'credit_amount_in_usd']
+      if attributes.key?(:'source_document_type')
+        self.source_document_type = attributes[:'source_document_type']
       end
 
-      if attributes.key?(:'debit_amount_in_usd')
-        self.debit_amount_in_usd = attributes[:'debit_amount_in_usd']
+      if attributes.key?(:'source_document_id')
+        self.source_document_id = attributes[:'source_document_id']
+      end
+
+      if attributes.key?(:'idempotency_key')
+        self.idempotency_key = attributes[:'idempotency_key']
+      end
+
+      if attributes.key?(:'reversal_of_journal_entry_id')
+        self.reversal_of_journal_entry_id = attributes[:'reversal_of_journal_entry_id']
+      end
+
+      if attributes.key?(:'posted_by')
+        self.posted_by = attributes[:'posted_by']
+      end
+
+      if attributes.key?(:'forex_rate')
+        self.forex_rate = attributes[:'forex_rate']
+      end
+
+      if attributes.key?(:'forex_rates_snapshot')
+        self.forex_rates_snapshot = attributes[:'forex_rates_snapshot']
+      end
+
+      if attributes.key?(:'timestamp')
+        self.timestamp = attributes[:'timestamp']
+      end
+
+      if attributes.key?(:'debit_in_usd')
+        self.debit_in_usd = attributes[:'debit_in_usd']
+      end
+
+      if attributes.key?(:'credit_in_usd')
+        self.credit_in_usd = attributes[:'credit_in_usd']
+      end
+
+      if attributes.key?(:'accounting_entries')
+        if (value = attributes[:'accounting_entries']).is_a?(Array)
+          self.accounting_entries = value
+        end
+      end
+
+      if attributes.key?(:'total_debit')
+        self.total_debit = attributes[:'total_debit']
+      end
+
+      if attributes.key?(:'total_credit')
+        self.total_credit = attributes[:'total_credit']
+      end
+
+      if attributes.key?(:'total_debit_amount')
+        self.total_debit_amount = attributes[:'total_debit_amount']
+      end
+
+      if attributes.key?(:'total_credit_amount')
+        self.total_credit_amount = attributes[:'total_credit_amount']
       end
     end
 
@@ -307,7 +341,31 @@ module OpenapiClient
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
+      entry_type_validator = EnumAttributeValidator.new('String', ["Simple", "Compound", "Adjusting", "Reversing"])
+      return false unless entry_type_validator.valid?(@entry_type)
+      status_validator = EnumAttributeValidator.new('String', ["Draft", "Posted", "Reversed", "Voided"])
+      return false unless status_validator.valid?(@status)
       true
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] entry_type Object to be assigned
+    def entry_type=(entry_type)
+      validator = EnumAttributeValidator.new('String', ["Simple", "Compound", "Adjusting", "Reversing"])
+      unless validator.valid?(entry_type)
+        fail ArgumentError, "invalid value for \"entry_type\", must be one of #{validator.allowable_values}."
+      end
+      @entry_type = entry_type
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] status Object to be assigned
+    def status=(status)
+      validator = EnumAttributeValidator.new('String', ["Draft", "Posted", "Reversed", "Voided"])
+      unless validator.valid?(status)
+        fail ArgumentError, "invalid value for \"status\", must be one of #{validator.allowable_values}."
+      end
+      @status = status
     end
 
     # Checks equality by comparing each attribute.
@@ -316,33 +374,34 @@ module OpenapiClient
       return true if self.equal?(o)
       self.class == o.class &&
           id == o.id &&
-          timestamp == o.timestamp &&
-          group == o.group &&
-          opening == o.opening &&
-          description == o.description &&
-          date == o.date &&
-          forex_rates_snapshot == o.forex_rates_snapshot &&
-          forex_rate == o.forex_rate &&
-          credit == o.credit &&
-          debit == o.debit &&
-          credit_in_usd == o.credit_in_usd &&
-          debit_in_usd == o.debit_in_usd &&
-          currency_id == o.currency_id &&
           tenant_id == o.tenant_id &&
           enrollment_id == o.enrollment_id &&
           journal_id == o.journal_id &&
           journal_name == o.journal_name &&
           journal_code == o.journal_code &&
-          credit_account_id == o.credit_account_id &&
-          credit_account_name == o.credit_account_name &&
-          debit_account_id == o.debit_account_id &&
-          debit_account_name == o.debit_account_name &&
-          invoice_code == o.invoice_code &&
-          parent_journal_entry_id == o.parent_journal_entry_id &&
-          credit_amount == o.credit_amount &&
-          debit_amount == o.debit_amount &&
-          credit_amount_in_usd == o.credit_amount_in_usd &&
-          debit_amount_in_usd == o.debit_amount_in_usd
+          fiscal_period_id == o.fiscal_period_id &&
+          financial_book_id == o.financial_book_id &&
+          description == o.description &&
+          entry_type == o.entry_type &&
+          status == o.status &&
+          posting_date == o.posting_date &&
+          is_opening_balance == o.is_opening_balance &&
+          transaction_currency_id == o.transaction_currency_id &&
+          source_document_type == o.source_document_type &&
+          source_document_id == o.source_document_id &&
+          idempotency_key == o.idempotency_key &&
+          reversal_of_journal_entry_id == o.reversal_of_journal_entry_id &&
+          posted_by == o.posted_by &&
+          forex_rate == o.forex_rate &&
+          forex_rates_snapshot == o.forex_rates_snapshot &&
+          timestamp == o.timestamp &&
+          debit_in_usd == o.debit_in_usd &&
+          credit_in_usd == o.credit_in_usd &&
+          accounting_entries == o.accounting_entries &&
+          total_debit == o.total_debit &&
+          total_credit == o.total_credit &&
+          total_debit_amount == o.total_debit_amount &&
+          total_credit_amount == o.total_credit_amount
     end
 
     # @see the `==` method
@@ -354,7 +413,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, timestamp, group, opening, description, date, forex_rates_snapshot, forex_rate, credit, debit, credit_in_usd, debit_in_usd, currency_id, tenant_id, enrollment_id, journal_id, journal_name, journal_code, credit_account_id, credit_account_name, debit_account_id, debit_account_name, invoice_code, parent_journal_entry_id, credit_amount, debit_amount, credit_amount_in_usd, debit_amount_in_usd].hash
+      [id, tenant_id, enrollment_id, journal_id, journal_name, journal_code, fiscal_period_id, financial_book_id, description, entry_type, status, posting_date, is_opening_balance, transaction_currency_id, source_document_type, source_document_id, idempotency_key, reversal_of_journal_entry_id, posted_by, forex_rate, forex_rates_snapshot, timestamp, debit_in_usd, credit_in_usd, accounting_entries, total_debit, total_credit, total_debit_amount, total_credit_amount].hash
     end
 
     # Builds the object from hash

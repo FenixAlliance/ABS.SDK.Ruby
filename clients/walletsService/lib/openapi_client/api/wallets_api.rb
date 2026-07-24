@@ -19,6 +19,82 @@ module OpenapiClient
     def initialize(api_client = ApiClient.default)
       @api_client = api_client
     end
+    # Create Wallet Location
+    # Create a new location for a specific wallet by ID.
+    # @param wallet_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @option opts [LocationCreateDto] :location_create_dto 
+    # @return [EmptyEnvelope]
+    def create_location_for_wallet_async(wallet_id, opts = {})
+      data, _status_code, _headers = create_location_for_wallet_async_with_http_info(wallet_id, opts)
+      data
+    end
+
+    # Create Wallet Location
+    # Create a new location for a specific wallet by ID.
+    # @param wallet_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @option opts [LocationCreateDto] :location_create_dto 
+    # @return [Array<(EmptyEnvelope, Integer, Hash)>] EmptyEnvelope data, response status code and response headers
+    def create_location_for_wallet_async_with_http_info(wallet_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: WalletsApi.create_location_for_wallet_async ...'
+      end
+      # verify the required parameter 'wallet_id' is set
+      if @api_client.config.client_side_validation && wallet_id.nil?
+        fail ArgumentError, "Missing the required parameter 'wallet_id' when calling WalletsApi.create_location_for_wallet_async"
+      end
+      # resource path
+      local_var_path = '/api/v2/WalletsService/Wallets/{walletId}/Locations'.sub('{' + 'walletId' + '}', CGI.escape(wallet_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'api-version'] = opts[:'api_version'] if !opts[:'api_version'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
+      header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'location_create_dto'])
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'EmptyEnvelope'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"WalletsApi.create_location_for_wallet_async",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: WalletsApi#create_location_for_wallet_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Create Wallet Bank Account
     # Create a new bank account for a specific wallet by ID.
     # @param wallet_id [String] 
@@ -91,82 +167,6 @@ module OpenapiClient
       data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: WalletsApi#create_wallet_bank_account_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Create Wallet Location
-    # Create a new location for a specific wallet by ID.
-    # @param wallet_id [String] 
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :api_version 
-    # @option opts [String] :x_api_version 
-    # @option opts [LocationCreateDto] :location_create_dto 
-    # @return [EmptyEnvelope]
-    def create_wallet_location_async(wallet_id, opts = {})
-      data, _status_code, _headers = create_wallet_location_async_with_http_info(wallet_id, opts)
-      data
-    end
-
-    # Create Wallet Location
-    # Create a new location for a specific wallet by ID.
-    # @param wallet_id [String] 
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :api_version 
-    # @option opts [String] :x_api_version 
-    # @option opts [LocationCreateDto] :location_create_dto 
-    # @return [Array<(EmptyEnvelope, Integer, Hash)>] EmptyEnvelope data, response status code and response headers
-    def create_wallet_location_async_with_http_info(wallet_id, opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WalletsApi.create_wallet_location_async ...'
-      end
-      # verify the required parameter 'wallet_id' is set
-      if @api_client.config.client_side_validation && wallet_id.nil?
-        fail ArgumentError, "Missing the required parameter 'wallet_id' when calling WalletsApi.create_wallet_location_async"
-      end
-      # resource path
-      local_var_path = '/api/v2/WalletsService/Wallets/{walletId}/Locations'.sub('{' + 'walletId' + '}', CGI.escape(wallet_id.to_s))
-
-      # query parameters
-      query_params = opts[:query_params] || {}
-      query_params[:'api-version'] = opts[:'api_version'] if !opts[:'api_version'].nil?
-
-      # header parameters
-      header_params = opts[:header_params] || {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
-      # HTTP header 'Content-Type'
-      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
-      if !content_type.nil?
-          header_params['Content-Type'] = content_type
-      end
-      header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
-
-      # form parameters
-      form_params = opts[:form_params] || {}
-
-      # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'location_create_dto'])
-
-      # return_type
-      return_type = opts[:debug_return_type] || 'EmptyEnvelope'
-
-      # auth_names
-      auth_names = opts[:debug_auth_names] || []
-
-      new_options = opts.merge(
-        :operation => :"WalletsApi.create_wallet_location_async",
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => return_type
-      )
-
-      data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: WalletsApi#create_wallet_location_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -399,6 +399,81 @@ module OpenapiClient
       return data, status_code, headers
     end
 
+    # Delete Wallet Location
+    # Delete a specific location of a specific wallet by ID.
+    # @param wallet_id [String] 
+    # @param location_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @return [EmptyEnvelope]
+    def delete_location_for_wallet_async(wallet_id, location_id, opts = {})
+      data, _status_code, _headers = delete_location_for_wallet_async_with_http_info(wallet_id, location_id, opts)
+      data
+    end
+
+    # Delete Wallet Location
+    # Delete a specific location of a specific wallet by ID.
+    # @param wallet_id [String] 
+    # @param location_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @return [Array<(EmptyEnvelope, Integer, Hash)>] EmptyEnvelope data, response status code and response headers
+    def delete_location_for_wallet_async_with_http_info(wallet_id, location_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: WalletsApi.delete_location_for_wallet_async ...'
+      end
+      # verify the required parameter 'wallet_id' is set
+      if @api_client.config.client_side_validation && wallet_id.nil?
+        fail ArgumentError, "Missing the required parameter 'wallet_id' when calling WalletsApi.delete_location_for_wallet_async"
+      end
+      # verify the required parameter 'location_id' is set
+      if @api_client.config.client_side_validation && location_id.nil?
+        fail ArgumentError, "Missing the required parameter 'location_id' when calling WalletsApi.delete_location_for_wallet_async"
+      end
+      # resource path
+      local_var_path = '/api/v2/WalletsService/Wallets/{walletId}/Locations/{locationId}'.sub('{' + 'walletId' + '}', CGI.escape(wallet_id.to_s)).sub('{' + 'locationId' + '}', CGI.escape(location_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'api-version'] = opts[:'api_version'] if !opts[:'api_version'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'EmptyEnvelope'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"WalletsApi.delete_location_for_wallet_async",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: WalletsApi#delete_location_for_wallet_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Delete Wallet Bank Account
     # Delete a specific bank account of a specific wallet by ID.
     # @param wallet_id [String] 
@@ -470,81 +545,6 @@ module OpenapiClient
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: WalletsApi#delete_wallet_bank_account_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Delete Wallet Location
-    # Delete a specific location of a specific wallet by ID.
-    # @param wallet_id [String] 
-    # @param location_id [String] 
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :api_version 
-    # @option opts [String] :x_api_version 
-    # @return [EmptyEnvelope]
-    def delete_wallet_location_async(wallet_id, location_id, opts = {})
-      data, _status_code, _headers = delete_wallet_location_async_with_http_info(wallet_id, location_id, opts)
-      data
-    end
-
-    # Delete Wallet Location
-    # Delete a specific location of a specific wallet by ID.
-    # @param wallet_id [String] 
-    # @param location_id [String] 
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :api_version 
-    # @option opts [String] :x_api_version 
-    # @return [Array<(EmptyEnvelope, Integer, Hash)>] EmptyEnvelope data, response status code and response headers
-    def delete_wallet_location_async_with_http_info(wallet_id, location_id, opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WalletsApi.delete_wallet_location_async ...'
-      end
-      # verify the required parameter 'wallet_id' is set
-      if @api_client.config.client_side_validation && wallet_id.nil?
-        fail ArgumentError, "Missing the required parameter 'wallet_id' when calling WalletsApi.delete_wallet_location_async"
-      end
-      # verify the required parameter 'location_id' is set
-      if @api_client.config.client_side_validation && location_id.nil?
-        fail ArgumentError, "Missing the required parameter 'location_id' when calling WalletsApi.delete_wallet_location_async"
-      end
-      # resource path
-      local_var_path = '/api/v2/WalletsService/Wallets/{walletId}/Locations/{locationId}'.sub('{' + 'walletId' + '}', CGI.escape(wallet_id.to_s)).sub('{' + 'locationId' + '}', CGI.escape(location_id.to_s))
-
-      # query parameters
-      query_params = opts[:query_params] || {}
-      query_params[:'api-version'] = opts[:'api_version'] if !opts[:'api_version'].nil?
-
-      # header parameters
-      header_params = opts[:header_params] || {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
-      header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
-
-      # form parameters
-      form_params = opts[:form_params] || {}
-
-      # http body (model)
-      post_body = opts[:debug_body]
-
-      # return_type
-      return_type = opts[:debug_return_type] || 'EmptyEnvelope'
-
-      # auth_names
-      auth_names = opts[:debug_auth_names] || []
-
-      new_options = opts.merge(
-        :operation => :"WalletsApi.delete_wallet_location_async",
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => return_type
-      )
-
-      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: WalletsApi#delete_wallet_location_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -896,6 +896,219 @@ module OpenapiClient
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: WalletsApi#get_incoming_wallet_invoices_count_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Get Wallet Location
+    # Get a specific location of a specific wallet by ID.
+    # @param wallet_id [String] 
+    # @param location_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @return [LocationDtoEnvelope]
+    def get_location_for_wallet_async(wallet_id, location_id, opts = {})
+      data, _status_code, _headers = get_location_for_wallet_async_with_http_info(wallet_id, location_id, opts)
+      data
+    end
+
+    # Get Wallet Location
+    # Get a specific location of a specific wallet by ID.
+    # @param wallet_id [String] 
+    # @param location_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @return [Array<(LocationDtoEnvelope, Integer, Hash)>] LocationDtoEnvelope data, response status code and response headers
+    def get_location_for_wallet_async_with_http_info(wallet_id, location_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: WalletsApi.get_location_for_wallet_async ...'
+      end
+      # verify the required parameter 'wallet_id' is set
+      if @api_client.config.client_side_validation && wallet_id.nil?
+        fail ArgumentError, "Missing the required parameter 'wallet_id' when calling WalletsApi.get_location_for_wallet_async"
+      end
+      # verify the required parameter 'location_id' is set
+      if @api_client.config.client_side_validation && location_id.nil?
+        fail ArgumentError, "Missing the required parameter 'location_id' when calling WalletsApi.get_location_for_wallet_async"
+      end
+      # resource path
+      local_var_path = '/api/v2/WalletsService/Wallets/{walletId}/Locations/{locationId}'.sub('{' + 'walletId' + '}', CGI.escape(wallet_id.to_s)).sub('{' + 'locationId' + '}', CGI.escape(location_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'api-version'] = opts[:'api_version'] if !opts[:'api_version'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'LocationDtoEnvelope'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"WalletsApi.get_location_for_wallet_async",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: WalletsApi#get_location_for_wallet_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Get Wallet Locations
+    # Get locations of a specific wallet by ID.
+    # @param wallet_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @return [LocationDtoListEnvelope]
+    def get_locations_for_wallet_async(wallet_id, opts = {})
+      data, _status_code, _headers = get_locations_for_wallet_async_with_http_info(wallet_id, opts)
+      data
+    end
+
+    # Get Wallet Locations
+    # Get locations of a specific wallet by ID.
+    # @param wallet_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @return [Array<(LocationDtoListEnvelope, Integer, Hash)>] LocationDtoListEnvelope data, response status code and response headers
+    def get_locations_for_wallet_async_with_http_info(wallet_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: WalletsApi.get_locations_for_wallet_async ...'
+      end
+      # verify the required parameter 'wallet_id' is set
+      if @api_client.config.client_side_validation && wallet_id.nil?
+        fail ArgumentError, "Missing the required parameter 'wallet_id' when calling WalletsApi.get_locations_for_wallet_async"
+      end
+      # resource path
+      local_var_path = '/api/v2/WalletsService/Wallets/{walletId}/Locations'.sub('{' + 'walletId' + '}', CGI.escape(wallet_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'api-version'] = opts[:'api_version'] if !opts[:'api_version'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'LocationDtoListEnvelope'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"WalletsApi.get_locations_for_wallet_async",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: WalletsApi#get_locations_for_wallet_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Get Wallet Locations Count
+    # Get locations count of a specific wallet by ID.
+    # @param wallet_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @return [Int32Envelope]
+    def get_locations_for_wallet_count_async(wallet_id, opts = {})
+      data, _status_code, _headers = get_locations_for_wallet_count_async_with_http_info(wallet_id, opts)
+      data
+    end
+
+    # Get Wallet Locations Count
+    # Get locations count of a specific wallet by ID.
+    # @param wallet_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @return [Array<(Int32Envelope, Integer, Hash)>] Int32Envelope data, response status code and response headers
+    def get_locations_for_wallet_count_async_with_http_info(wallet_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: WalletsApi.get_locations_for_wallet_count_async ...'
+      end
+      # verify the required parameter 'wallet_id' is set
+      if @api_client.config.client_side_validation && wallet_id.nil?
+        fail ArgumentError, "Missing the required parameter 'wallet_id' when calling WalletsApi.get_locations_for_wallet_count_async"
+      end
+      # resource path
+      local_var_path = '/api/v2/WalletsService/Wallets/{walletId}/Locations/Count'.sub('{' + 'walletId' + '}', CGI.escape(wallet_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'api-version'] = opts[:'api_version'] if !opts[:'api_version'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'Int32Envelope'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"WalletsApi.get_locations_for_wallet_count_async",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: WalletsApi#get_locations_for_wallet_count_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -1799,219 +2012,6 @@ module OpenapiClient
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: WalletsApi#get_wallet_invoices_count_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Get Wallet Location
-    # Get a specific location of a specific wallet by ID.
-    # @param wallet_id [String] 
-    # @param location_id [String] 
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :api_version 
-    # @option opts [String] :x_api_version 
-    # @return [LocationDtoEnvelope]
-    def get_wallet_location_async(wallet_id, location_id, opts = {})
-      data, _status_code, _headers = get_wallet_location_async_with_http_info(wallet_id, location_id, opts)
-      data
-    end
-
-    # Get Wallet Location
-    # Get a specific location of a specific wallet by ID.
-    # @param wallet_id [String] 
-    # @param location_id [String] 
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :api_version 
-    # @option opts [String] :x_api_version 
-    # @return [Array<(LocationDtoEnvelope, Integer, Hash)>] LocationDtoEnvelope data, response status code and response headers
-    def get_wallet_location_async_with_http_info(wallet_id, location_id, opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WalletsApi.get_wallet_location_async ...'
-      end
-      # verify the required parameter 'wallet_id' is set
-      if @api_client.config.client_side_validation && wallet_id.nil?
-        fail ArgumentError, "Missing the required parameter 'wallet_id' when calling WalletsApi.get_wallet_location_async"
-      end
-      # verify the required parameter 'location_id' is set
-      if @api_client.config.client_side_validation && location_id.nil?
-        fail ArgumentError, "Missing the required parameter 'location_id' when calling WalletsApi.get_wallet_location_async"
-      end
-      # resource path
-      local_var_path = '/api/v2/WalletsService/Wallets/{walletId}/Locations/{locationId}'.sub('{' + 'walletId' + '}', CGI.escape(wallet_id.to_s)).sub('{' + 'locationId' + '}', CGI.escape(location_id.to_s))
-
-      # query parameters
-      query_params = opts[:query_params] || {}
-      query_params[:'api-version'] = opts[:'api_version'] if !opts[:'api_version'].nil?
-
-      # header parameters
-      header_params = opts[:header_params] || {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
-      header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
-
-      # form parameters
-      form_params = opts[:form_params] || {}
-
-      # http body (model)
-      post_body = opts[:debug_body]
-
-      # return_type
-      return_type = opts[:debug_return_type] || 'LocationDtoEnvelope'
-
-      # auth_names
-      auth_names = opts[:debug_auth_names] || []
-
-      new_options = opts.merge(
-        :operation => :"WalletsApi.get_wallet_location_async",
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => return_type
-      )
-
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: WalletsApi#get_wallet_location_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Get Wallet Locations
-    # Get locations of a specific wallet by ID.
-    # @param wallet_id [String] 
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :api_version 
-    # @option opts [String] :x_api_version 
-    # @return [LocationDtoListEnvelope]
-    def get_wallet_locations_async(wallet_id, opts = {})
-      data, _status_code, _headers = get_wallet_locations_async_with_http_info(wallet_id, opts)
-      data
-    end
-
-    # Get Wallet Locations
-    # Get locations of a specific wallet by ID.
-    # @param wallet_id [String] 
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :api_version 
-    # @option opts [String] :x_api_version 
-    # @return [Array<(LocationDtoListEnvelope, Integer, Hash)>] LocationDtoListEnvelope data, response status code and response headers
-    def get_wallet_locations_async_with_http_info(wallet_id, opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WalletsApi.get_wallet_locations_async ...'
-      end
-      # verify the required parameter 'wallet_id' is set
-      if @api_client.config.client_side_validation && wallet_id.nil?
-        fail ArgumentError, "Missing the required parameter 'wallet_id' when calling WalletsApi.get_wallet_locations_async"
-      end
-      # resource path
-      local_var_path = '/api/v2/WalletsService/Wallets/{walletId}/Locations'.sub('{' + 'walletId' + '}', CGI.escape(wallet_id.to_s))
-
-      # query parameters
-      query_params = opts[:query_params] || {}
-      query_params[:'api-version'] = opts[:'api_version'] if !opts[:'api_version'].nil?
-
-      # header parameters
-      header_params = opts[:header_params] || {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
-      header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
-
-      # form parameters
-      form_params = opts[:form_params] || {}
-
-      # http body (model)
-      post_body = opts[:debug_body]
-
-      # return_type
-      return_type = opts[:debug_return_type] || 'LocationDtoListEnvelope'
-
-      # auth_names
-      auth_names = opts[:debug_auth_names] || []
-
-      new_options = opts.merge(
-        :operation => :"WalletsApi.get_wallet_locations_async",
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => return_type
-      )
-
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: WalletsApi#get_wallet_locations_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Get Wallet Locations Count
-    # Get locations count of a specific wallet by ID.
-    # @param wallet_id [String] 
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :api_version 
-    # @option opts [String] :x_api_version 
-    # @return [Int32Envelope]
-    def get_wallet_locations_count_async(wallet_id, opts = {})
-      data, _status_code, _headers = get_wallet_locations_count_async_with_http_info(wallet_id, opts)
-      data
-    end
-
-    # Get Wallet Locations Count
-    # Get locations count of a specific wallet by ID.
-    # @param wallet_id [String] 
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :api_version 
-    # @option opts [String] :x_api_version 
-    # @return [Array<(Int32Envelope, Integer, Hash)>] Int32Envelope data, response status code and response headers
-    def get_wallet_locations_count_async_with_http_info(wallet_id, opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WalletsApi.get_wallet_locations_count_async ...'
-      end
-      # verify the required parameter 'wallet_id' is set
-      if @api_client.config.client_side_validation && wallet_id.nil?
-        fail ArgumentError, "Missing the required parameter 'wallet_id' when calling WalletsApi.get_wallet_locations_count_async"
-      end
-      # resource path
-      local_var_path = '/api/v2/WalletsService/Wallets/{walletId}/Locations/Count'.sub('{' + 'walletId' + '}', CGI.escape(wallet_id.to_s))
-
-      # query parameters
-      query_params = opts[:query_params] || {}
-      query_params[:'api-version'] = opts[:'api_version'] if !opts[:'api_version'].nil?
-
-      # header parameters
-      header_params = opts[:header_params] || {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
-      header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
-
-      # form parameters
-      form_params = opts[:form_params] || {}
-
-      # http body (model)
-      post_body = opts[:debug_body]
-
-      # return_type
-      return_type = opts[:debug_return_type] || 'Int32Envelope'
-
-      # auth_names
-      auth_names = opts[:debug_auth_names] || []
-
-      new_options = opts.merge(
-        :operation => :"WalletsApi.get_wallet_locations_count_async",
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => return_type
-      )
-
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: WalletsApi#get_wallet_locations_count_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -3221,6 +3221,88 @@ module OpenapiClient
       return data, status_code, headers
     end
 
+    # Update Wallet Location
+    # Update a specific location of a specific wallet by ID.
+    # @param wallet_id [String] 
+    # @param location_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @option opts [LocationUpdateDto] :location_update_dto 
+    # @return [EmptyEnvelope]
+    def update_location_for_wallet_async(wallet_id, location_id, opts = {})
+      data, _status_code, _headers = update_location_for_wallet_async_with_http_info(wallet_id, location_id, opts)
+      data
+    end
+
+    # Update Wallet Location
+    # Update a specific location of a specific wallet by ID.
+    # @param wallet_id [String] 
+    # @param location_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @option opts [LocationUpdateDto] :location_update_dto 
+    # @return [Array<(EmptyEnvelope, Integer, Hash)>] EmptyEnvelope data, response status code and response headers
+    def update_location_for_wallet_async_with_http_info(wallet_id, location_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: WalletsApi.update_location_for_wallet_async ...'
+      end
+      # verify the required parameter 'wallet_id' is set
+      if @api_client.config.client_side_validation && wallet_id.nil?
+        fail ArgumentError, "Missing the required parameter 'wallet_id' when calling WalletsApi.update_location_for_wallet_async"
+      end
+      # verify the required parameter 'location_id' is set
+      if @api_client.config.client_side_validation && location_id.nil?
+        fail ArgumentError, "Missing the required parameter 'location_id' when calling WalletsApi.update_location_for_wallet_async"
+      end
+      # resource path
+      local_var_path = '/api/v2/WalletsService/Wallets/{walletId}/Locations/{locationId}'.sub('{' + 'walletId' + '}', CGI.escape(wallet_id.to_s)).sub('{' + 'locationId' + '}', CGI.escape(location_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'api-version'] = opts[:'api_version'] if !opts[:'api_version'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
+      header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'location_update_dto'])
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'EmptyEnvelope'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"WalletsApi.update_location_for_wallet_async",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: WalletsApi#update_location_for_wallet_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Update Wallet Bank Account
     # Update a specific bank account of a specific wallet by ID.
     # @param wallet_id [String] 
@@ -3299,88 +3381,6 @@ module OpenapiClient
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path, new_options)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: WalletsApi#update_wallet_bank_account_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Update Wallet Location
-    # Update a specific location of a specific wallet by ID.
-    # @param wallet_id [String] 
-    # @param location_id [String] 
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :api_version 
-    # @option opts [String] :x_api_version 
-    # @option opts [LocationUpdateDto] :location_update_dto 
-    # @return [EmptyEnvelope]
-    def update_wallet_location_async(wallet_id, location_id, opts = {})
-      data, _status_code, _headers = update_wallet_location_async_with_http_info(wallet_id, location_id, opts)
-      data
-    end
-
-    # Update Wallet Location
-    # Update a specific location of a specific wallet by ID.
-    # @param wallet_id [String] 
-    # @param location_id [String] 
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :api_version 
-    # @option opts [String] :x_api_version 
-    # @option opts [LocationUpdateDto] :location_update_dto 
-    # @return [Array<(EmptyEnvelope, Integer, Hash)>] EmptyEnvelope data, response status code and response headers
-    def update_wallet_location_async_with_http_info(wallet_id, location_id, opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: WalletsApi.update_wallet_location_async ...'
-      end
-      # verify the required parameter 'wallet_id' is set
-      if @api_client.config.client_side_validation && wallet_id.nil?
-        fail ArgumentError, "Missing the required parameter 'wallet_id' when calling WalletsApi.update_wallet_location_async"
-      end
-      # verify the required parameter 'location_id' is set
-      if @api_client.config.client_side_validation && location_id.nil?
-        fail ArgumentError, "Missing the required parameter 'location_id' when calling WalletsApi.update_wallet_location_async"
-      end
-      # resource path
-      local_var_path = '/api/v2/WalletsService/Wallets/{walletId}/Locations/{locationId}'.sub('{' + 'walletId' + '}', CGI.escape(wallet_id.to_s)).sub('{' + 'locationId' + '}', CGI.escape(location_id.to_s))
-
-      # query parameters
-      query_params = opts[:query_params] || {}
-      query_params[:'api-version'] = opts[:'api_version'] if !opts[:'api_version'].nil?
-
-      # header parameters
-      header_params = opts[:header_params] || {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
-      # HTTP header 'Content-Type'
-      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
-      if !content_type.nil?
-          header_params['Content-Type'] = content_type
-      end
-      header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
-
-      # form parameters
-      form_params = opts[:form_params] || {}
-
-      # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'location_update_dto'])
-
-      # return_type
-      return_type = opts[:debug_return_type] || 'EmptyEnvelope'
-
-      # auth_names
-      auth_names = opts[:debug_auth_names] || []
-
-      new_options = opts.merge(
-        :operation => :"WalletsApi.update_wallet_location_async",
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => return_type
-      )
-
-      data, status_code, headers = @api_client.call_api(:PUT, local_var_path, new_options)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: WalletsApi#update_wallet_location_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

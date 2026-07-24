@@ -19,6 +19,10 @@ module OpenapiClient
 
     attr_accessor :description
 
+    attr_accessor :individual_id
+
+    attr_accessor :organization_id
+
     attr_accessor :project_start_date
 
     attr_accessor :project_end_date
@@ -28,6 +32,8 @@ module OpenapiClient
       {
         :'title' => :'title',
         :'description' => :'description',
+        :'individual_id' => :'individualId',
+        :'organization_id' => :'organizationId',
         :'project_start_date' => :'projectStartDate',
         :'project_end_date' => :'projectEndDate'
       }
@@ -43,6 +49,8 @@ module OpenapiClient
       {
         :'title' => :'String',
         :'description' => :'String',
+        :'individual_id' => :'String',
+        :'organization_id' => :'String',
         :'project_start_date' => :'Time',
         :'project_end_date' => :'Time'
       }
@@ -53,6 +61,8 @@ module OpenapiClient
       Set.new([
         :'title',
         :'description',
+        :'individual_id',
+        :'organization_id',
       ])
     end
 
@@ -77,6 +87,14 @@ module OpenapiClient
 
       if attributes.key?(:'description')
         self.description = attributes[:'description']
+      end
+
+      if attributes.key?(:'individual_id')
+        self.individual_id = attributes[:'individual_id']
+      end
+
+      if attributes.key?(:'organization_id')
+        self.organization_id = attributes[:'organization_id']
       end
 
       if attributes.key?(:'project_start_date')
@@ -110,6 +128,8 @@ module OpenapiClient
       self.class == o.class &&
           title == o.title &&
           description == o.description &&
+          individual_id == o.individual_id &&
+          organization_id == o.organization_id &&
           project_start_date == o.project_start_date &&
           project_end_date == o.project_end_date
     end
@@ -123,7 +143,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [title, description, project_start_date, project_end_date].hash
+      [title, description, individual_id, organization_id, project_start_date, project_end_date].hash
     end
 
     # Builds the object from hash

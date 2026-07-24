@@ -19,6 +19,10 @@ module OpenapiClient
 
     attr_accessor :timestamp
 
+    attr_accessor :title
+
+    attr_accessor :description
+
     attr_accessor :start_date
 
     attr_accessor :due_line
@@ -27,15 +31,23 @@ module OpenapiClient
 
     attr_accessor :project_task_bucket_id
 
+    attr_accessor :tenant_id
+
+    attr_accessor :enrollment_id
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'id' => :'id',
         :'timestamp' => :'timestamp',
+        :'title' => :'title',
+        :'description' => :'description',
         :'start_date' => :'startDate',
         :'due_line' => :'dueLine',
-        :'project_id' => :'projectID',
-        :'project_task_bucket_id' => :'projectTaskBucketID'
+        :'project_id' => :'projectId',
+        :'project_task_bucket_id' => :'projectTaskBucketId',
+        :'tenant_id' => :'tenantId',
+        :'enrollment_id' => :'enrollmentId'
       }
     end
 
@@ -49,10 +61,14 @@ module OpenapiClient
       {
         :'id' => :'String',
         :'timestamp' => :'Time',
+        :'title' => :'String',
+        :'description' => :'String',
         :'start_date' => :'Time',
         :'due_line' => :'Time',
         :'project_id' => :'String',
-        :'project_task_bucket_id' => :'String'
+        :'project_task_bucket_id' => :'String',
+        :'tenant_id' => :'String',
+        :'enrollment_id' => :'String'
       }
     end
 
@@ -61,8 +77,12 @@ module OpenapiClient
       Set.new([
         :'id',
         :'timestamp',
+        :'title',
+        :'description',
         :'project_id',
-        :'project_task_bucket_id'
+        :'project_task_bucket_id',
+        :'tenant_id',
+        :'enrollment_id'
       ])
     end
 
@@ -89,6 +109,14 @@ module OpenapiClient
         self.timestamp = attributes[:'timestamp']
       end
 
+      if attributes.key?(:'title')
+        self.title = attributes[:'title']
+      end
+
+      if attributes.key?(:'description')
+        self.description = attributes[:'description']
+      end
+
       if attributes.key?(:'start_date')
         self.start_date = attributes[:'start_date']
       end
@@ -103,6 +131,14 @@ module OpenapiClient
 
       if attributes.key?(:'project_task_bucket_id')
         self.project_task_bucket_id = attributes[:'project_task_bucket_id']
+      end
+
+      if attributes.key?(:'tenant_id')
+        self.tenant_id = attributes[:'tenant_id']
+      end
+
+      if attributes.key?(:'enrollment_id')
+        self.enrollment_id = attributes[:'enrollment_id']
       end
     end
 
@@ -128,10 +164,14 @@ module OpenapiClient
       self.class == o.class &&
           id == o.id &&
           timestamp == o.timestamp &&
+          title == o.title &&
+          description == o.description &&
           start_date == o.start_date &&
           due_line == o.due_line &&
           project_id == o.project_id &&
-          project_task_bucket_id == o.project_task_bucket_id
+          project_task_bucket_id == o.project_task_bucket_id &&
+          tenant_id == o.tenant_id &&
+          enrollment_id == o.enrollment_id
     end
 
     # @see the `==` method
@@ -143,7 +183,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, timestamp, start_date, due_line, project_id, project_task_bucket_id].hash
+      [id, timestamp, title, description, start_date, due_line, project_id, project_task_bucket_id, tenant_id, enrollment_id].hash
     end
 
     # Builds the object from hash

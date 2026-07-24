@@ -96,6 +96,7 @@ module OpenapiClient
     def self.openapi_nullable
       Set.new([
         :'id',
+        :'timestamp',
         :'type',
         :'currency_id',
         :'ethereum_address',

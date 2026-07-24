@@ -19,6 +19,158 @@ module OpenapiClient
     def initialize(api_client = ApiClient.default)
       @api_client = api_client
     end
+    # Retrieve license attributes
+    # Retrieves all additional attributes for a given license.
+    # @param tenant_id [String] 
+    # @param license_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @return [SuiteLicenseAssignmentDtoListEnvelope]
+    def get_attributes_for_license_async(tenant_id, license_id, opts = {})
+      data, _status_code, _headers = get_attributes_for_license_async_with_http_info(tenant_id, license_id, opts)
+      data
+    end
+
+    # Retrieve license attributes
+    # Retrieves all additional attributes for a given license.
+    # @param tenant_id [String] 
+    # @param license_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @return [Array<(SuiteLicenseAssignmentDtoListEnvelope, Integer, Hash)>] SuiteLicenseAssignmentDtoListEnvelope data, response status code and response headers
+    def get_attributes_for_license_async_with_http_info(tenant_id, license_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: LicensingApi.get_attributes_for_license_async ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling LicensingApi.get_attributes_for_license_async"
+      end
+      # verify the required parameter 'license_id' is set
+      if @api_client.config.client_side_validation && license_id.nil?
+        fail ArgumentError, "Missing the required parameter 'license_id' when calling LicensingApi.get_attributes_for_license_async"
+      end
+      # resource path
+      local_var_path = '/api/v2/SystemService/Licensing/Licenses/{licenseId}/Attributes'.sub('{' + 'licenseId' + '}', CGI.escape(license_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+      query_params[:'api-version'] = opts[:'api_version'] if !opts[:'api_version'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json;odata.metadata=minimal;odata.streaming=true', 'application/json;odata.metadata=minimal;odata.streaming=false', 'application/json;odata.metadata=minimal', 'application/json;odata.metadata=full;odata.streaming=true', 'application/json;odata.metadata=full;odata.streaming=false', 'application/json;odata.metadata=full', 'application/json;odata.metadata=none;odata.streaming=true', 'application/json;odata.metadata=none;odata.streaming=false', 'application/json;odata.metadata=none', 'application/json;odata.streaming=true', 'application/json;odata.streaming=false', 'application/json', 'application/json;odata.metadata=minimal;odata.streaming=true;IEEE754Compatible=false', 'application/json;odata.metadata=minimal;odata.streaming=true;IEEE754Compatible=true', 'application/json;odata.metadata=minimal;odata.streaming=false;IEEE754Compatible=false', 'application/json;odata.metadata=minimal;odata.streaming=false;IEEE754Compatible=true', 'application/json;odata.metadata=minimal;IEEE754Compatible=false', 'application/json;odata.metadata=minimal;IEEE754Compatible=true', 'application/json;odata.metadata=full;odata.streaming=true;IEEE754Compatible=false', 'application/json;odata.metadata=full;odata.streaming=true;IEEE754Compatible=true', 'application/json;odata.metadata=full;odata.streaming=false;IEEE754Compatible=false', 'application/json;odata.metadata=full;odata.streaming=false;IEEE754Compatible=true', 'application/json;odata.metadata=full;IEEE754Compatible=false', 'application/json;odata.metadata=full;IEEE754Compatible=true', 'application/json;odata.metadata=none;odata.streaming=true;IEEE754Compatible=false', 'application/json;odata.metadata=none;odata.streaming=true;IEEE754Compatible=true', 'application/json;odata.metadata=none;odata.streaming=false;IEEE754Compatible=true', 'application/json;odata.metadata=none;odata.streaming=false;IEEE754Compatible=false', 'application/json;odata.metadata=none;IEEE754Compatible=false', 'application/json;odata.metadata=none;IEEE754Compatible=true', 'application/json;odata.streaming=true;IEEE754Compatible=false', 'application/json;odata.streaming=true;IEEE754Compatible=true', 'application/json;odata.streaming=false;IEEE754Compatible=false', 'application/json;odata.streaming=false;IEEE754Compatible=true', 'application/json;IEEE754Compatible=false', 'application/json;IEEE754Compatible=true', 'application/xml', 'text/plain', 'application/octet-stream', 'text/json', 'text/xml']) unless header_params['Accept']
+      header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'SuiteLicenseAssignmentDtoListEnvelope'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"LicensingApi.get_attributes_for_license_async",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: LicensingApi#get_attributes_for_license_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Retrieve license features
+    # Retrieves all features for a given license.
+    # @param tenant_id [String] 
+    # @param license_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @return [SuiteLicenseAssignmentDtoListEnvelope]
+    def get_features_for_license_async(tenant_id, license_id, opts = {})
+      data, _status_code, _headers = get_features_for_license_async_with_http_info(tenant_id, license_id, opts)
+      data
+    end
+
+    # Retrieve license features
+    # Retrieves all features for a given license.
+    # @param tenant_id [String] 
+    # @param license_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @return [Array<(SuiteLicenseAssignmentDtoListEnvelope, Integer, Hash)>] SuiteLicenseAssignmentDtoListEnvelope data, response status code and response headers
+    def get_features_for_license_async_with_http_info(tenant_id, license_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: LicensingApi.get_features_for_license_async ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling LicensingApi.get_features_for_license_async"
+      end
+      # verify the required parameter 'license_id' is set
+      if @api_client.config.client_side_validation && license_id.nil?
+        fail ArgumentError, "Missing the required parameter 'license_id' when calling LicensingApi.get_features_for_license_async"
+      end
+      # resource path
+      local_var_path = '/api/v2/SystemService/Licensing/Licenses/{licenseId}/Features'.sub('{' + 'licenseId' + '}', CGI.escape(license_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+      query_params[:'api-version'] = opts[:'api_version'] if !opts[:'api_version'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json;odata.metadata=minimal;odata.streaming=true', 'application/json;odata.metadata=minimal;odata.streaming=false', 'application/json;odata.metadata=minimal', 'application/json;odata.metadata=full;odata.streaming=true', 'application/json;odata.metadata=full;odata.streaming=false', 'application/json;odata.metadata=full', 'application/json;odata.metadata=none;odata.streaming=true', 'application/json;odata.metadata=none;odata.streaming=false', 'application/json;odata.metadata=none', 'application/json;odata.streaming=true', 'application/json;odata.streaming=false', 'application/json', 'application/json;odata.metadata=minimal;odata.streaming=true;IEEE754Compatible=false', 'application/json;odata.metadata=minimal;odata.streaming=true;IEEE754Compatible=true', 'application/json;odata.metadata=minimal;odata.streaming=false;IEEE754Compatible=false', 'application/json;odata.metadata=minimal;odata.streaming=false;IEEE754Compatible=true', 'application/json;odata.metadata=minimal;IEEE754Compatible=false', 'application/json;odata.metadata=minimal;IEEE754Compatible=true', 'application/json;odata.metadata=full;odata.streaming=true;IEEE754Compatible=false', 'application/json;odata.metadata=full;odata.streaming=true;IEEE754Compatible=true', 'application/json;odata.metadata=full;odata.streaming=false;IEEE754Compatible=false', 'application/json;odata.metadata=full;odata.streaming=false;IEEE754Compatible=true', 'application/json;odata.metadata=full;IEEE754Compatible=false', 'application/json;odata.metadata=full;IEEE754Compatible=true', 'application/json;odata.metadata=none;odata.streaming=true;IEEE754Compatible=false', 'application/json;odata.metadata=none;odata.streaming=true;IEEE754Compatible=true', 'application/json;odata.metadata=none;odata.streaming=false;IEEE754Compatible=true', 'application/json;odata.metadata=none;odata.streaming=false;IEEE754Compatible=false', 'application/json;odata.metadata=none;IEEE754Compatible=false', 'application/json;odata.metadata=none;IEEE754Compatible=true', 'application/json;odata.streaming=true;IEEE754Compatible=false', 'application/json;odata.streaming=true;IEEE754Compatible=true', 'application/json;odata.streaming=false;IEEE754Compatible=false', 'application/json;odata.streaming=false;IEEE754Compatible=true', 'application/json;IEEE754Compatible=false', 'application/json;IEEE754Compatible=true', 'application/xml', 'text/plain', 'application/octet-stream', 'text/json', 'text/xml']) unless header_params['Accept']
+      header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'SuiteLicenseAssignmentDtoListEnvelope'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"LicensingApi.get_features_for_license_async",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: LicensingApi#get_features_for_license_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Retrieve license assignments
     # Retrieves all license assignments for a given license.
     # @param tenant_id [String] 
@@ -95,82 +247,6 @@ module OpenapiClient
       return data, status_code, headers
     end
 
-    # Retrieve license attributes
-    # Retrieves all additional attributes for a given license.
-    # @param tenant_id [String] 
-    # @param license_id [String] 
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :api_version 
-    # @option opts [String] :x_api_version 
-    # @return [SuiteLicenseAssignmentDtoListEnvelope]
-    def get_license_attributes_async(tenant_id, license_id, opts = {})
-      data, _status_code, _headers = get_license_attributes_async_with_http_info(tenant_id, license_id, opts)
-      data
-    end
-
-    # Retrieve license attributes
-    # Retrieves all additional attributes for a given license.
-    # @param tenant_id [String] 
-    # @param license_id [String] 
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :api_version 
-    # @option opts [String] :x_api_version 
-    # @return [Array<(SuiteLicenseAssignmentDtoListEnvelope, Integer, Hash)>] SuiteLicenseAssignmentDtoListEnvelope data, response status code and response headers
-    def get_license_attributes_async_with_http_info(tenant_id, license_id, opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: LicensingApi.get_license_attributes_async ...'
-      end
-      # verify the required parameter 'tenant_id' is set
-      if @api_client.config.client_side_validation && tenant_id.nil?
-        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling LicensingApi.get_license_attributes_async"
-      end
-      # verify the required parameter 'license_id' is set
-      if @api_client.config.client_side_validation && license_id.nil?
-        fail ArgumentError, "Missing the required parameter 'license_id' when calling LicensingApi.get_license_attributes_async"
-      end
-      # resource path
-      local_var_path = '/api/v2/SystemService/Licensing/Licenses/{licenseId}/Attributes'.sub('{' + 'licenseId' + '}', CGI.escape(license_id.to_s))
-
-      # query parameters
-      query_params = opts[:query_params] || {}
-      query_params[:'tenantId'] = tenant_id
-      query_params[:'api-version'] = opts[:'api_version'] if !opts[:'api_version'].nil?
-
-      # header parameters
-      header_params = opts[:header_params] || {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json;odata.metadata=minimal;odata.streaming=true', 'application/json;odata.metadata=minimal;odata.streaming=false', 'application/json;odata.metadata=minimal', 'application/json;odata.metadata=full;odata.streaming=true', 'application/json;odata.metadata=full;odata.streaming=false', 'application/json;odata.metadata=full', 'application/json;odata.metadata=none;odata.streaming=true', 'application/json;odata.metadata=none;odata.streaming=false', 'application/json;odata.metadata=none', 'application/json;odata.streaming=true', 'application/json;odata.streaming=false', 'application/json', 'application/json;odata.metadata=minimal;odata.streaming=true;IEEE754Compatible=false', 'application/json;odata.metadata=minimal;odata.streaming=true;IEEE754Compatible=true', 'application/json;odata.metadata=minimal;odata.streaming=false;IEEE754Compatible=false', 'application/json;odata.metadata=minimal;odata.streaming=false;IEEE754Compatible=true', 'application/json;odata.metadata=minimal;IEEE754Compatible=false', 'application/json;odata.metadata=minimal;IEEE754Compatible=true', 'application/json;odata.metadata=full;odata.streaming=true;IEEE754Compatible=false', 'application/json;odata.metadata=full;odata.streaming=true;IEEE754Compatible=true', 'application/json;odata.metadata=full;odata.streaming=false;IEEE754Compatible=false', 'application/json;odata.metadata=full;odata.streaming=false;IEEE754Compatible=true', 'application/json;odata.metadata=full;IEEE754Compatible=false', 'application/json;odata.metadata=full;IEEE754Compatible=true', 'application/json;odata.metadata=none;odata.streaming=true;IEEE754Compatible=false', 'application/json;odata.metadata=none;odata.streaming=true;IEEE754Compatible=true', 'application/json;odata.metadata=none;odata.streaming=false;IEEE754Compatible=true', 'application/json;odata.metadata=none;odata.streaming=false;IEEE754Compatible=false', 'application/json;odata.metadata=none;IEEE754Compatible=false', 'application/json;odata.metadata=none;IEEE754Compatible=true', 'application/json;odata.streaming=true;IEEE754Compatible=false', 'application/json;odata.streaming=true;IEEE754Compatible=true', 'application/json;odata.streaming=false;IEEE754Compatible=false', 'application/json;odata.streaming=false;IEEE754Compatible=true', 'application/json;IEEE754Compatible=false', 'application/json;IEEE754Compatible=true', 'application/xml', 'text/plain', 'application/octet-stream', 'text/json', 'text/xml']) unless header_params['Accept']
-      header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
-
-      # form parameters
-      form_params = opts[:form_params] || {}
-
-      # http body (model)
-      post_body = opts[:debug_body]
-
-      # return_type
-      return_type = opts[:debug_return_type] || 'SuiteLicenseAssignmentDtoListEnvelope'
-
-      # auth_names
-      auth_names = opts[:debug_auth_names] || []
-
-      new_options = opts.merge(
-        :operation => :"LicensingApi.get_license_attributes_async",
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => return_type
-      )
-
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: LicensingApi#get_license_attributes_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
     # Retrieve a license by ID
     # Retrieves a single suite license by its unique identifier.
     # @param tenant_id [String] 
@@ -243,82 +319,6 @@ module OpenapiClient
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: LicensingApi#get_license_by_id_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Retrieve license features
-    # Retrieves all features for a given license.
-    # @param tenant_id [String] 
-    # @param license_id [String] 
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :api_version 
-    # @option opts [String] :x_api_version 
-    # @return [SuiteLicenseAssignmentDtoListEnvelope]
-    def get_license_features_async(tenant_id, license_id, opts = {})
-      data, _status_code, _headers = get_license_features_async_with_http_info(tenant_id, license_id, opts)
-      data
-    end
-
-    # Retrieve license features
-    # Retrieves all features for a given license.
-    # @param tenant_id [String] 
-    # @param license_id [String] 
-    # @param [Hash] opts the optional parameters
-    # @option opts [String] :api_version 
-    # @option opts [String] :x_api_version 
-    # @return [Array<(SuiteLicenseAssignmentDtoListEnvelope, Integer, Hash)>] SuiteLicenseAssignmentDtoListEnvelope data, response status code and response headers
-    def get_license_features_async_with_http_info(tenant_id, license_id, opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: LicensingApi.get_license_features_async ...'
-      end
-      # verify the required parameter 'tenant_id' is set
-      if @api_client.config.client_side_validation && tenant_id.nil?
-        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling LicensingApi.get_license_features_async"
-      end
-      # verify the required parameter 'license_id' is set
-      if @api_client.config.client_side_validation && license_id.nil?
-        fail ArgumentError, "Missing the required parameter 'license_id' when calling LicensingApi.get_license_features_async"
-      end
-      # resource path
-      local_var_path = '/api/v2/SystemService/Licensing/Licenses/{licenseId}/Features'.sub('{' + 'licenseId' + '}', CGI.escape(license_id.to_s))
-
-      # query parameters
-      query_params = opts[:query_params] || {}
-      query_params[:'tenantId'] = tenant_id
-      query_params[:'api-version'] = opts[:'api_version'] if !opts[:'api_version'].nil?
-
-      # header parameters
-      header_params = opts[:header_params] || {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json;odata.metadata=minimal;odata.streaming=true', 'application/json;odata.metadata=minimal;odata.streaming=false', 'application/json;odata.metadata=minimal', 'application/json;odata.metadata=full;odata.streaming=true', 'application/json;odata.metadata=full;odata.streaming=false', 'application/json;odata.metadata=full', 'application/json;odata.metadata=none;odata.streaming=true', 'application/json;odata.metadata=none;odata.streaming=false', 'application/json;odata.metadata=none', 'application/json;odata.streaming=true', 'application/json;odata.streaming=false', 'application/json', 'application/json;odata.metadata=minimal;odata.streaming=true;IEEE754Compatible=false', 'application/json;odata.metadata=minimal;odata.streaming=true;IEEE754Compatible=true', 'application/json;odata.metadata=minimal;odata.streaming=false;IEEE754Compatible=false', 'application/json;odata.metadata=minimal;odata.streaming=false;IEEE754Compatible=true', 'application/json;odata.metadata=minimal;IEEE754Compatible=false', 'application/json;odata.metadata=minimal;IEEE754Compatible=true', 'application/json;odata.metadata=full;odata.streaming=true;IEEE754Compatible=false', 'application/json;odata.metadata=full;odata.streaming=true;IEEE754Compatible=true', 'application/json;odata.metadata=full;odata.streaming=false;IEEE754Compatible=false', 'application/json;odata.metadata=full;odata.streaming=false;IEEE754Compatible=true', 'application/json;odata.metadata=full;IEEE754Compatible=false', 'application/json;odata.metadata=full;IEEE754Compatible=true', 'application/json;odata.metadata=none;odata.streaming=true;IEEE754Compatible=false', 'application/json;odata.metadata=none;odata.streaming=true;IEEE754Compatible=true', 'application/json;odata.metadata=none;odata.streaming=false;IEEE754Compatible=true', 'application/json;odata.metadata=none;odata.streaming=false;IEEE754Compatible=false', 'application/json;odata.metadata=none;IEEE754Compatible=false', 'application/json;odata.metadata=none;IEEE754Compatible=true', 'application/json;odata.streaming=true;IEEE754Compatible=false', 'application/json;odata.streaming=true;IEEE754Compatible=true', 'application/json;odata.streaming=false;IEEE754Compatible=false', 'application/json;odata.streaming=false;IEEE754Compatible=true', 'application/json;IEEE754Compatible=false', 'application/json;IEEE754Compatible=true', 'application/xml', 'text/plain', 'application/octet-stream', 'text/json', 'text/xml']) unless header_params['Accept']
-      header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
-
-      # form parameters
-      form_params = opts[:form_params] || {}
-
-      # http body (model)
-      post_body = opts[:debug_body]
-
-      # return_type
-      return_type = opts[:debug_return_type] || 'SuiteLicenseAssignmentDtoListEnvelope'
-
-      # auth_names
-      auth_names = opts[:debug_auth_names] || []
-
-      new_options = opts.merge(
-        :operation => :"LicensingApi.get_license_features_async",
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => return_type
-      )
-
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: LicensingApi#get_license_features_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

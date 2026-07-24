@@ -15,45 +15,27 @@ require 'time'
 
 module OpenapiClient
   class JournalEntryUpdateDto
-    attr_accessor :group
+    attr_accessor :fiscal_period_id
 
-    attr_accessor :opening
+    attr_accessor :transaction_currency_id
 
     attr_accessor :description
 
-    attr_accessor :date
+    attr_accessor :source_document_type
 
-    attr_accessor :debit
+    attr_accessor :source_document_id
 
-    attr_accessor :credit
-
-    attr_accessor :journal_id
-
-    attr_accessor :currency_id
-
-    attr_accessor :invoice_code
-
-    attr_accessor :debit_account_id
-
-    attr_accessor :credit_account_id
-
-    attr_accessor :parent_journal_entry_id
+    attr_accessor :is_opening_balance
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'group' => :'group',
-        :'opening' => :'opening',
+        :'fiscal_period_id' => :'fiscalPeriodId',
+        :'transaction_currency_id' => :'transactionCurrencyId',
         :'description' => :'description',
-        :'date' => :'date',
-        :'debit' => :'debit',
-        :'credit' => :'credit',
-        :'journal_id' => :'journalId',
-        :'currency_id' => :'currencyId',
-        :'invoice_code' => :'invoiceCode',
-        :'debit_account_id' => :'debitAccountId',
-        :'credit_account_id' => :'creditAccountId',
-        :'parent_journal_entry_id' => :'parentJournalEntryId'
+        :'source_document_type' => :'sourceDocumentType',
+        :'source_document_id' => :'sourceDocumentId',
+        :'is_opening_balance' => :'isOpeningBalance'
       }
     end
 
@@ -65,26 +47,20 @@ module OpenapiClient
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'group' => :'Boolean',
-        :'opening' => :'Boolean',
+        :'fiscal_period_id' => :'String',
+        :'transaction_currency_id' => :'String',
         :'description' => :'String',
-        :'date' => :'Time',
-        :'debit' => :'Float',
-        :'credit' => :'Float',
-        :'journal_id' => :'String',
-        :'currency_id' => :'String',
-        :'invoice_code' => :'String',
-        :'debit_account_id' => :'String',
-        :'credit_account_id' => :'String',
-        :'parent_journal_entry_id' => :'String'
+        :'source_document_type' => :'String',
+        :'source_document_id' => :'String',
+        :'is_opening_balance' => :'Boolean'
       }
     end
 
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
-        :'invoice_code',
-        :'parent_journal_entry_id'
+        :'source_document_type',
+        :'source_document_id',
       ])
     end
 
@@ -103,12 +79,16 @@ module OpenapiClient
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'group')
-        self.group = attributes[:'group']
+      if attributes.key?(:'fiscal_period_id')
+        self.fiscal_period_id = attributes[:'fiscal_period_id']
+      else
+        self.fiscal_period_id = nil
       end
 
-      if attributes.key?(:'opening')
-        self.opening = attributes[:'opening']
+      if attributes.key?(:'transaction_currency_id')
+        self.transaction_currency_id = attributes[:'transaction_currency_id']
+      else
+        self.transaction_currency_id = nil
       end
 
       if attributes.key?(:'description')
@@ -117,50 +97,16 @@ module OpenapiClient
         self.description = nil
       end
 
-      if attributes.key?(:'date')
-        self.date = attributes[:'date']
-      else
-        self.date = nil
+      if attributes.key?(:'source_document_type')
+        self.source_document_type = attributes[:'source_document_type']
       end
 
-      if attributes.key?(:'debit')
-        self.debit = attributes[:'debit']
+      if attributes.key?(:'source_document_id')
+        self.source_document_id = attributes[:'source_document_id']
       end
 
-      if attributes.key?(:'credit')
-        self.credit = attributes[:'credit']
-      end
-
-      if attributes.key?(:'journal_id')
-        self.journal_id = attributes[:'journal_id']
-      else
-        self.journal_id = nil
-      end
-
-      if attributes.key?(:'currency_id')
-        self.currency_id = attributes[:'currency_id']
-      else
-        self.currency_id = nil
-      end
-
-      if attributes.key?(:'invoice_code')
-        self.invoice_code = attributes[:'invoice_code']
-      end
-
-      if attributes.key?(:'debit_account_id')
-        self.debit_account_id = attributes[:'debit_account_id']
-      else
-        self.debit_account_id = nil
-      end
-
-      if attributes.key?(:'credit_account_id')
-        self.credit_account_id = attributes[:'credit_account_id']
-      else
-        self.credit_account_id = nil
-      end
-
-      if attributes.key?(:'parent_journal_entry_id')
-        self.parent_journal_entry_id = attributes[:'parent_journal_entry_id']
+      if attributes.key?(:'is_opening_balance')
+        self.is_opening_balance = attributes[:'is_opening_balance']
       end
     end
 
@@ -169,48 +115,32 @@ module OpenapiClient
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
       invalid_properties = Array.new
+      if @fiscal_period_id.nil?
+        invalid_properties.push('invalid value for "fiscal_period_id", fiscal_period_id cannot be nil.')
+      end
+
+      if @fiscal_period_id.to_s.length < 1
+        invalid_properties.push('invalid value for "fiscal_period_id", the character length must be great than or equal to 1.')
+      end
+
+      if @transaction_currency_id.nil?
+        invalid_properties.push('invalid value for "transaction_currency_id", transaction_currency_id cannot be nil.')
+      end
+
+      if @transaction_currency_id.to_s.length < 1
+        invalid_properties.push('invalid value for "transaction_currency_id", the character length must be great than or equal to 1.')
+      end
+
       if @description.nil?
         invalid_properties.push('invalid value for "description", description cannot be nil.')
       end
 
+      if @description.to_s.length > 300
+        invalid_properties.push('invalid value for "description", the character length must be smaller than or equal to 300.')
+      end
+
       if @description.to_s.length < 1
         invalid_properties.push('invalid value for "description", the character length must be great than or equal to 1.')
-      end
-
-      if @date.nil?
-        invalid_properties.push('invalid value for "date", date cannot be nil.')
-      end
-
-      if @journal_id.nil?
-        invalid_properties.push('invalid value for "journal_id", journal_id cannot be nil.')
-      end
-
-      if @journal_id.to_s.length < 1
-        invalid_properties.push('invalid value for "journal_id", the character length must be great than or equal to 1.')
-      end
-
-      if @currency_id.nil?
-        invalid_properties.push('invalid value for "currency_id", currency_id cannot be nil.')
-      end
-
-      if @currency_id.to_s.length < 1
-        invalid_properties.push('invalid value for "currency_id", the character length must be great than or equal to 1.')
-      end
-
-      if @debit_account_id.nil?
-        invalid_properties.push('invalid value for "debit_account_id", debit_account_id cannot be nil.')
-      end
-
-      if @debit_account_id.to_s.length < 1
-        invalid_properties.push('invalid value for "debit_account_id", the character length must be great than or equal to 1.')
-      end
-
-      if @credit_account_id.nil?
-        invalid_properties.push('invalid value for "credit_account_id", credit_account_id cannot be nil.')
-      end
-
-      if @credit_account_id.to_s.length < 1
-        invalid_properties.push('invalid value for "credit_account_id", the character length must be great than or equal to 1.')
       end
 
       invalid_properties
@@ -220,18 +150,42 @@ module OpenapiClient
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
+      return false if @fiscal_period_id.nil?
+      return false if @fiscal_period_id.to_s.length < 1
+      return false if @transaction_currency_id.nil?
+      return false if @transaction_currency_id.to_s.length < 1
       return false if @description.nil?
+      return false if @description.to_s.length > 300
       return false if @description.to_s.length < 1
-      return false if @date.nil?
-      return false if @journal_id.nil?
-      return false if @journal_id.to_s.length < 1
-      return false if @currency_id.nil?
-      return false if @currency_id.to_s.length < 1
-      return false if @debit_account_id.nil?
-      return false if @debit_account_id.to_s.length < 1
-      return false if @credit_account_id.nil?
-      return false if @credit_account_id.to_s.length < 1
       true
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] fiscal_period_id Value to be assigned
+    def fiscal_period_id=(fiscal_period_id)
+      if fiscal_period_id.nil?
+        fail ArgumentError, 'fiscal_period_id cannot be nil'
+      end
+
+      if fiscal_period_id.to_s.length < 1
+        fail ArgumentError, 'invalid value for "fiscal_period_id", the character length must be great than or equal to 1.'
+      end
+
+      @fiscal_period_id = fiscal_period_id
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] transaction_currency_id Value to be assigned
+    def transaction_currency_id=(transaction_currency_id)
+      if transaction_currency_id.nil?
+        fail ArgumentError, 'transaction_currency_id cannot be nil'
+      end
+
+      if transaction_currency_id.to_s.length < 1
+        fail ArgumentError, 'invalid value for "transaction_currency_id", the character length must be great than or equal to 1.'
+      end
+
+      @transaction_currency_id = transaction_currency_id
     end
 
     # Custom attribute writer method with validation
@@ -241,6 +195,10 @@ module OpenapiClient
         fail ArgumentError, 'description cannot be nil'
       end
 
+      if description.to_s.length > 300
+        fail ArgumentError, 'invalid value for "description", the character length must be smaller than or equal to 300.'
+      end
+
       if description.to_s.length < 1
         fail ArgumentError, 'invalid value for "description", the character length must be great than or equal to 1.'
       end
@@ -248,79 +206,17 @@ module OpenapiClient
       @description = description
     end
 
-    # Custom attribute writer method with validation
-    # @param [Object] journal_id Value to be assigned
-    def journal_id=(journal_id)
-      if journal_id.nil?
-        fail ArgumentError, 'journal_id cannot be nil'
-      end
-
-      if journal_id.to_s.length < 1
-        fail ArgumentError, 'invalid value for "journal_id", the character length must be great than or equal to 1.'
-      end
-
-      @journal_id = journal_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] currency_id Value to be assigned
-    def currency_id=(currency_id)
-      if currency_id.nil?
-        fail ArgumentError, 'currency_id cannot be nil'
-      end
-
-      if currency_id.to_s.length < 1
-        fail ArgumentError, 'invalid value for "currency_id", the character length must be great than or equal to 1.'
-      end
-
-      @currency_id = currency_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] debit_account_id Value to be assigned
-    def debit_account_id=(debit_account_id)
-      if debit_account_id.nil?
-        fail ArgumentError, 'debit_account_id cannot be nil'
-      end
-
-      if debit_account_id.to_s.length < 1
-        fail ArgumentError, 'invalid value for "debit_account_id", the character length must be great than or equal to 1.'
-      end
-
-      @debit_account_id = debit_account_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] credit_account_id Value to be assigned
-    def credit_account_id=(credit_account_id)
-      if credit_account_id.nil?
-        fail ArgumentError, 'credit_account_id cannot be nil'
-      end
-
-      if credit_account_id.to_s.length < 1
-        fail ArgumentError, 'invalid value for "credit_account_id", the character length must be great than or equal to 1.'
-      end
-
-      @credit_account_id = credit_account_id
-    end
-
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          group == o.group &&
-          opening == o.opening &&
+          fiscal_period_id == o.fiscal_period_id &&
+          transaction_currency_id == o.transaction_currency_id &&
           description == o.description &&
-          date == o.date &&
-          debit == o.debit &&
-          credit == o.credit &&
-          journal_id == o.journal_id &&
-          currency_id == o.currency_id &&
-          invoice_code == o.invoice_code &&
-          debit_account_id == o.debit_account_id &&
-          credit_account_id == o.credit_account_id &&
-          parent_journal_entry_id == o.parent_journal_entry_id
+          source_document_type == o.source_document_type &&
+          source_document_id == o.source_document_id &&
+          is_opening_balance == o.is_opening_balance
     end
 
     # @see the `==` method
@@ -332,7 +228,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [group, opening, description, date, debit, credit, journal_id, currency_id, invoice_code, debit_account_id, credit_account_id, parent_journal_entry_id].hash
+      [fiscal_period_id, transaction_currency_id, description, source_document_type, source_document_id, is_opening_balance].hash
     end
 
     # Builds the object from hash

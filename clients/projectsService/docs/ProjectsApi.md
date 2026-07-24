@@ -6,23 +6,26 @@ All URIs are relative to *https://absuite.net*
 | ------ | ------------ | ----------- |
 | [**create_project_async**](ProjectsApi.md#create_project_async) | **POST** /api/v2/ProjectsService/Projects | Creates a new project |
 | [**create_project_period_async**](ProjectsApi.md#create_project_period_async) | **POST** /api/v2/ProjectsService/Projects/{projectId}/Periods | Creates a project period |
-| [**create_project_task_async**](ProjectsApi.md#create_project_task_async) | **POST** /api/v2/ProjectsService/Projects/{projectId}/Tasks | Creates a project task |
+| [**create_task_for_project_async**](ProjectsApi.md#create_task_for_project_async) | **POST** /api/v2/ProjectsService/Projects/{projectId}/Tasks | Creates a project task |
 | [**delete_project_async**](ProjectsApi.md#delete_project_async) | **DELETE** /api/v2/ProjectsService/Projects/{projectId} | Deletes a project |
 | [**delete_project_period_async**](ProjectsApi.md#delete_project_period_async) | **DELETE** /api/v2/ProjectsService/Projects/{projectId}/Periods/{projectPeriodId} | Deletes a project period |
-| [**delete_project_task_async**](ProjectsApi.md#delete_project_task_async) | **DELETE** /api/v2/ProjectsService/Projects/{projectId}/Tasks/{projectTaskId} | Deletes a project task |
+| [**delete_task_for_project_async**](ProjectsApi.md#delete_task_for_project_async) | **DELETE** /api/v2/ProjectsService/Projects/{projectId}/Tasks/{projectTaskId} | Deletes a project task |
 | [**get_project_by_id_async**](ProjectsApi.md#get_project_by_id_async) | **GET** /api/v2/ProjectsService/Projects/{projectId} | Gets a project by ID |
 | [**get_project_periods_async**](ProjectsApi.md#get_project_periods_async) | **GET** /api/v2/ProjectsService/Projects/{projectId}/Periods | Retrieves project periods |
 | [**get_project_task_categories_async**](ProjectsApi.md#get_project_task_categories_async) | **GET** /api/v2/ProjectsService/Projects/{projectId}/TaskCategories | Retrieves project task categories |
 | [**get_project_task_categories_count_async**](ProjectsApi.md#get_project_task_categories_count_async) | **GET** /api/v2/ProjectsService/Projects/{projectId}/TaskCategories/Count | Counts project task categories |
-| [**get_project_tasks_async**](ProjectsApi.md#get_project_tasks_async) | **GET** /api/v2/ProjectsService/Projects/{projectId}/Tasks | Retrieves project tasks |
-| [**get_project_tasks_count_async**](ProjectsApi.md#get_project_tasks_count_async) | **GET** /api/v2/ProjectsService/Projects/{projectId}/Tasks/Count | Counts project tasks |
-| [**get_project_time_logs_async**](ProjectsApi.md#get_project_time_logs_async) | **GET** /api/v2/ProjectsService/Projects/{projectId}/TimeLogs | Retrieves project time logs |
 | [**get_project_time_logs_count_async**](ProjectsApi.md#get_project_time_logs_count_async) | **GET** /api/v2/ProjectsService/Projects/{projectId}/TimeLogs/Count | Counts project time logs |
 | [**get_projects_by_tenant_id_async**](ProjectsApi.md#get_projects_by_tenant_id_async) | **GET** /api/v2/ProjectsService/Projects | Retrieves all projects |
 | [**get_projects_count_by_tenant_id_async**](ProjectsApi.md#get_projects_count_by_tenant_id_async) | **GET** /api/v2/ProjectsService/Projects/Count | Counts projects |
+| [**get_tasks_for_project_async**](ProjectsApi.md#get_tasks_for_project_async) | **GET** /api/v2/ProjectsService/Projects/{projectId}/Tasks | Retrieves project tasks |
+| [**get_tasks_for_project_count_async**](ProjectsApi.md#get_tasks_for_project_count_async) | **GET** /api/v2/ProjectsService/Projects/{projectId}/Tasks/Count | Counts project tasks |
+| [**get_time_logs_for_project_async**](ProjectsApi.md#get_time_logs_for_project_async) | **GET** /api/v2/ProjectsService/Projects/{projectId}/TimeLogs | Retrieves project time logs |
+| [**patch_project_async**](ProjectsApi.md#patch_project_async) | **PATCH** /api/v2/ProjectsService/Projects/{projectId} | Patches a project |
+| [**patch_project_period_async**](ProjectsApi.md#patch_project_period_async) | **PATCH** /api/v2/ProjectsService/Projects/{projectId}/Periods/{projectPeriodId} | Patches a project period |
+| [**patch_task_for_project_async**](ProjectsApi.md#patch_task_for_project_async) | **PATCH** /api/v2/ProjectsService/Projects/{projectId}/Tasks/{projectTaskId} | Patches a project task |
 | [**update_project_async**](ProjectsApi.md#update_project_async) | **PUT** /api/v2/ProjectsService/Projects/{projectId} | Updates a project |
 | [**update_project_period_async**](ProjectsApi.md#update_project_period_async) | **PUT** /api/v2/ProjectsService/Projects/{projectId}/Periods/{projectPeriodId} | Updates a project period |
-| [**update_project_task_async**](ProjectsApi.md#update_project_task_async) | **PUT** /api/v2/ProjectsService/Projects/{projectId}/Tasks/{projectTaskId} | Updates a project task |
+| [**update_task_for_project_async**](ProjectsApi.md#update_task_for_project_async) | **PUT** /api/v2/ProjectsService/Projects/{projectId}/Tasks/{projectTaskId} | Updates a project task |
 
 
 ## create_project_async
@@ -163,9 +166,9 @@ No authorization required
 - **Accept**: application/json, application/xml
 
 
-## create_project_task_async
+## create_task_for_project_async
 
-> <EmptyEnvelope> create_project_task_async(project_id, tenant_id, opts)
+> <EmptyEnvelope> create_task_for_project_async(project_id, tenant_id, opts)
 
 Creates a project task
 
@@ -186,28 +189,28 @@ opts = {
 
 begin
   # Creates a project task
-  result = api_instance.create_project_task_async(project_id, tenant_id, opts)
+  result = api_instance.create_task_for_project_async(project_id, tenant_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
-  puts "Error when calling ProjectsApi->create_project_task_async: #{e}"
+  puts "Error when calling ProjectsApi->create_task_for_project_async: #{e}"
 end
 ```
 
-#### Using the create_project_task_async_with_http_info variant
+#### Using the create_task_for_project_async_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<EmptyEnvelope>, Integer, Hash)> create_project_task_async_with_http_info(project_id, tenant_id, opts)
+> <Array(<EmptyEnvelope>, Integer, Hash)> create_task_for_project_async_with_http_info(project_id, tenant_id, opts)
 
 ```ruby
 begin
   # Creates a project task
-  data, status_code, headers = api_instance.create_project_task_async_with_http_info(project_id, tenant_id, opts)
+  data, status_code, headers = api_instance.create_task_for_project_async_with_http_info(project_id, tenant_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <EmptyEnvelope>
 rescue OpenapiClient::ApiError => e
-  puts "Error when calling ProjectsApi->create_project_task_async_with_http_info: #{e}"
+  puts "Error when calling ProjectsApi->create_task_for_project_async_with_http_info: #{e}"
 end
 ```
 
@@ -367,9 +370,9 @@ No authorization required
 - **Accept**: application/json, application/xml
 
 
-## delete_project_task_async
+## delete_task_for_project_async
 
-> <EmptyEnvelope> delete_project_task_async(tenant_id, project_id, project_task_id)
+> <EmptyEnvelope> delete_task_for_project_async(tenant_id, project_id, project_task_id)
 
 Deletes a project task
 
@@ -388,28 +391,28 @@ project_task_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 
 begin
   # Deletes a project task
-  result = api_instance.delete_project_task_async(tenant_id, project_id, project_task_id)
+  result = api_instance.delete_task_for_project_async(tenant_id, project_id, project_task_id)
   p result
 rescue OpenapiClient::ApiError => e
-  puts "Error when calling ProjectsApi->delete_project_task_async: #{e}"
+  puts "Error when calling ProjectsApi->delete_task_for_project_async: #{e}"
 end
 ```
 
-#### Using the delete_project_task_async_with_http_info variant
+#### Using the delete_task_for_project_async_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<EmptyEnvelope>, Integer, Hash)> delete_project_task_async_with_http_info(tenant_id, project_id, project_task_id)
+> <Array(<EmptyEnvelope>, Integer, Hash)> delete_task_for_project_async_with_http_info(tenant_id, project_id, project_task_id)
 
 ```ruby
 begin
   # Deletes a project task
-  data, status_code, headers = api_instance.delete_project_task_async_with_http_info(tenant_id, project_id, project_task_id)
+  data, status_code, headers = api_instance.delete_task_for_project_async_with_http_info(tenant_id, project_id, project_task_id)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <EmptyEnvelope>
 rescue OpenapiClient::ApiError => e
-  puts "Error when calling ProjectsApi->delete_project_task_async_with_http_info: #{e}"
+  puts "Error when calling ProjectsApi->delete_task_for_project_async_with_http_info: #{e}"
 end
 ```
 
@@ -699,204 +702,6 @@ No authorization required
 - **Accept**: application/json, application/xml
 
 
-## get_project_tasks_async
-
-> <ProjectTaskDtoListEnvelope> get_project_tasks_async(project_id, tenant_id)
-
-Retrieves project tasks
-
-Gets all tasks for a specific project with OData support.
-
-### Examples
-
-```ruby
-require 'time'
-require 'openapi_client'
-
-api_instance = OpenapiClient::ProjectsApi.new
-project_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
-tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
-
-begin
-  # Retrieves project tasks
-  result = api_instance.get_project_tasks_async(project_id, tenant_id)
-  p result
-rescue OpenapiClient::ApiError => e
-  puts "Error when calling ProjectsApi->get_project_tasks_async: #{e}"
-end
-```
-
-#### Using the get_project_tasks_async_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<ProjectTaskDtoListEnvelope>, Integer, Hash)> get_project_tasks_async_with_http_info(project_id, tenant_id)
-
-```ruby
-begin
-  # Retrieves project tasks
-  data, status_code, headers = api_instance.get_project_tasks_async_with_http_info(project_id, tenant_id)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <ProjectTaskDtoListEnvelope>
-rescue OpenapiClient::ApiError => e
-  puts "Error when calling ProjectsApi->get_project_tasks_async_with_http_info: #{e}"
-end
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **project_id** | **String** |  |  |
-| **tenant_id** | **String** |  |  |
-
-### Return type
-
-[**ProjectTaskDtoListEnvelope**](ProjectTaskDtoListEnvelope.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json, application/xml
-
-
-## get_project_tasks_count_async
-
-> <Int32Envelope> get_project_tasks_count_async(project_id, tenant_id)
-
-Counts project tasks
-
-Gets the count of tasks for a specific project.
-
-### Examples
-
-```ruby
-require 'time'
-require 'openapi_client'
-
-api_instance = OpenapiClient::ProjectsApi.new
-project_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
-tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
-
-begin
-  # Counts project tasks
-  result = api_instance.get_project_tasks_count_async(project_id, tenant_id)
-  p result
-rescue OpenapiClient::ApiError => e
-  puts "Error when calling ProjectsApi->get_project_tasks_count_async: #{e}"
-end
-```
-
-#### Using the get_project_tasks_count_async_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<Int32Envelope>, Integer, Hash)> get_project_tasks_count_async_with_http_info(project_id, tenant_id)
-
-```ruby
-begin
-  # Counts project tasks
-  data, status_code, headers = api_instance.get_project_tasks_count_async_with_http_info(project_id, tenant_id)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <Int32Envelope>
-rescue OpenapiClient::ApiError => e
-  puts "Error when calling ProjectsApi->get_project_tasks_count_async_with_http_info: #{e}"
-end
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **project_id** | **String** |  |  |
-| **tenant_id** | **String** |  |  |
-
-### Return type
-
-[**Int32Envelope**](Int32Envelope.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json, application/xml
-
-
-## get_project_time_logs_async
-
-> <ProjectTimeLogDtoListEnvelope> get_project_time_logs_async(project_id, tenant_id)
-
-Retrieves project time logs
-
-Gets all time log entries for a specific project with OData support.
-
-### Examples
-
-```ruby
-require 'time'
-require 'openapi_client'
-
-api_instance = OpenapiClient::ProjectsApi.new
-project_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
-tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
-
-begin
-  # Retrieves project time logs
-  result = api_instance.get_project_time_logs_async(project_id, tenant_id)
-  p result
-rescue OpenapiClient::ApiError => e
-  puts "Error when calling ProjectsApi->get_project_time_logs_async: #{e}"
-end
-```
-
-#### Using the get_project_time_logs_async_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<ProjectTimeLogDtoListEnvelope>, Integer, Hash)> get_project_time_logs_async_with_http_info(project_id, tenant_id)
-
-```ruby
-begin
-  # Retrieves project time logs
-  data, status_code, headers = api_instance.get_project_time_logs_async_with_http_info(project_id, tenant_id)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <ProjectTimeLogDtoListEnvelope>
-rescue OpenapiClient::ApiError => e
-  puts "Error when calling ProjectsApi->get_project_time_logs_async_with_http_info: #{e}"
-end
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **project_id** | **String** |  |  |
-| **tenant_id** | **String** |  |  |
-
-### Return type
-
-[**ProjectTimeLogDtoListEnvelope**](ProjectTimeLogDtoListEnvelope.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json, application/xml
-
-
 ## get_project_time_logs_count_async
 
 > <Int32Envelope> get_project_time_logs_count_async(project_id, tenant_id)
@@ -1091,6 +896,418 @@ No authorization required
 - **Accept**: application/json, application/xml
 
 
+## get_tasks_for_project_async
+
+> <ProjectTaskDtoListEnvelope> get_tasks_for_project_async(project_id, tenant_id)
+
+Retrieves project tasks
+
+Gets all tasks for a specific project with OData support.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::ProjectsApi.new
+project_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+
+begin
+  # Retrieves project tasks
+  result = api_instance.get_tasks_for_project_async(project_id, tenant_id)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ProjectsApi->get_tasks_for_project_async: #{e}"
+end
+```
+
+#### Using the get_tasks_for_project_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<ProjectTaskDtoListEnvelope>, Integer, Hash)> get_tasks_for_project_async_with_http_info(project_id, tenant_id)
+
+```ruby
+begin
+  # Retrieves project tasks
+  data, status_code, headers = api_instance.get_tasks_for_project_async_with_http_info(project_id, tenant_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <ProjectTaskDtoListEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ProjectsApi->get_tasks_for_project_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **project_id** | **String** |  |  |
+| **tenant_id** | **String** |  |  |
+
+### Return type
+
+[**ProjectTaskDtoListEnvelope**](ProjectTaskDtoListEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## get_tasks_for_project_count_async
+
+> <Int32Envelope> get_tasks_for_project_count_async(project_id, tenant_id)
+
+Counts project tasks
+
+Gets the count of tasks for a specific project.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::ProjectsApi.new
+project_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+
+begin
+  # Counts project tasks
+  result = api_instance.get_tasks_for_project_count_async(project_id, tenant_id)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ProjectsApi->get_tasks_for_project_count_async: #{e}"
+end
+```
+
+#### Using the get_tasks_for_project_count_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<Int32Envelope>, Integer, Hash)> get_tasks_for_project_count_async_with_http_info(project_id, tenant_id)
+
+```ruby
+begin
+  # Counts project tasks
+  data, status_code, headers = api_instance.get_tasks_for_project_count_async_with_http_info(project_id, tenant_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <Int32Envelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ProjectsApi->get_tasks_for_project_count_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **project_id** | **String** |  |  |
+| **tenant_id** | **String** |  |  |
+
+### Return type
+
+[**Int32Envelope**](Int32Envelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## get_time_logs_for_project_async
+
+> <ProjectTimeLogDtoListEnvelope> get_time_logs_for_project_async(project_id, tenant_id)
+
+Retrieves project time logs
+
+Gets all time log entries for a specific project with OData support.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::ProjectsApi.new
+project_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+
+begin
+  # Retrieves project time logs
+  result = api_instance.get_time_logs_for_project_async(project_id, tenant_id)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ProjectsApi->get_time_logs_for_project_async: #{e}"
+end
+```
+
+#### Using the get_time_logs_for_project_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<ProjectTimeLogDtoListEnvelope>, Integer, Hash)> get_time_logs_for_project_async_with_http_info(project_id, tenant_id)
+
+```ruby
+begin
+  # Retrieves project time logs
+  data, status_code, headers = api_instance.get_time_logs_for_project_async_with_http_info(project_id, tenant_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <ProjectTimeLogDtoListEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ProjectsApi->get_time_logs_for_project_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **project_id** | **String** |  |  |
+| **tenant_id** | **String** |  |  |
+
+### Return type
+
+[**ProjectTimeLogDtoListEnvelope**](ProjectTimeLogDtoListEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_project_async
+
+> <EmptyEnvelope> patch_project_async(project_id, tenant_id, opts)
+
+Patches a project
+
+Partially updates the specified project.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::ProjectsApi.new
+project_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patches a project
+  result = api_instance.patch_project_async(project_id, tenant_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ProjectsApi->patch_project_async: #{e}"
+end
+```
+
+#### Using the patch_project_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_project_async_with_http_info(project_id, tenant_id, opts)
+
+```ruby
+begin
+  # Patches a project
+  data, status_code, headers = api_instance.patch_project_async_with_http_info(project_id, tenant_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ProjectsApi->patch_project_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **project_id** | **String** |  |  |
+| **tenant_id** | **String** |  |  |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
+- **Accept**: application/json, application/xml
+
+
+## patch_project_period_async
+
+> <EmptyEnvelope> patch_project_period_async(project_id, project_period_id, tenant_id, opts)
+
+Patches a project period
+
+Partially updates the specified period for a project.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::ProjectsApi.new
+project_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+project_period_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patches a project period
+  result = api_instance.patch_project_period_async(project_id, project_period_id, tenant_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ProjectsApi->patch_project_period_async: #{e}"
+end
+```
+
+#### Using the patch_project_period_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_project_period_async_with_http_info(project_id, project_period_id, tenant_id, opts)
+
+```ruby
+begin
+  # Patches a project period
+  data, status_code, headers = api_instance.patch_project_period_async_with_http_info(project_id, project_period_id, tenant_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ProjectsApi->patch_project_period_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **project_id** | **String** |  |  |
+| **project_period_id** | **String** |  |  |
+| **tenant_id** | **String** |  |  |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
+- **Accept**: application/json, application/xml
+
+
+## patch_task_for_project_async
+
+> <EmptyEnvelope> patch_task_for_project_async(project_id, project_task_id, tenant_id, opts)
+
+Patches a project task
+
+Partially updates the specified task in a project.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::ProjectsApi.new
+project_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+project_task_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patches a project task
+  result = api_instance.patch_task_for_project_async(project_id, project_task_id, tenant_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ProjectsApi->patch_task_for_project_async: #{e}"
+end
+```
+
+#### Using the patch_task_for_project_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_task_for_project_async_with_http_info(project_id, project_task_id, tenant_id, opts)
+
+```ruby
+begin
+  # Patches a project task
+  data, status_code, headers = api_instance.patch_task_for_project_async_with_http_info(project_id, project_task_id, tenant_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ProjectsApi->patch_task_for_project_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **project_id** | **String** |  |  |
+| **project_task_id** | **String** |  |  |
+| **tenant_id** | **String** |  |  |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
+- **Accept**: application/json, application/xml
+
+
 ## update_project_async
 
 > <EmptyEnvelope> update_project_async(project_id, tenant_id, opts)
@@ -1233,9 +1450,9 @@ No authorization required
 - **Accept**: application/json, application/xml
 
 
-## update_project_task_async
+## update_task_for_project_async
 
-> <EmptyEnvelope> update_project_task_async(project_id, project_task_id, tenant_id, opts)
+> <EmptyEnvelope> update_task_for_project_async(project_id, project_task_id, tenant_id, opts)
 
 Updates a project task
 
@@ -1257,28 +1474,28 @@ opts = {
 
 begin
   # Updates a project task
-  result = api_instance.update_project_task_async(project_id, project_task_id, tenant_id, opts)
+  result = api_instance.update_task_for_project_async(project_id, project_task_id, tenant_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
-  puts "Error when calling ProjectsApi->update_project_task_async: #{e}"
+  puts "Error when calling ProjectsApi->update_task_for_project_async: #{e}"
 end
 ```
 
-#### Using the update_project_task_async_with_http_info variant
+#### Using the update_task_for_project_async_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<EmptyEnvelope>, Integer, Hash)> update_project_task_async_with_http_info(project_id, project_task_id, tenant_id, opts)
+> <Array(<EmptyEnvelope>, Integer, Hash)> update_task_for_project_async_with_http_info(project_id, project_task_id, tenant_id, opts)
 
 ```ruby
 begin
   # Updates a project task
-  data, status_code, headers = api_instance.update_project_task_async_with_http_info(project_id, project_task_id, tenant_id, opts)
+  data, status_code, headers = api_instance.update_task_for_project_async_with_http_info(project_id, project_task_id, tenant_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <EmptyEnvelope>
 rescue OpenapiClient::ApiError => e
-  puts "Error when calling ProjectsApi->update_project_task_async_with_http_info: #{e}"
+  puts "Error when calling ProjectsApi->update_task_for_project_async_with_http_info: #{e}"
 end
 ```
 

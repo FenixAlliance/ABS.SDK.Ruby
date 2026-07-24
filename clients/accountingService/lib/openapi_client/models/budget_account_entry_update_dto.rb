@@ -17,9 +17,7 @@ module OpenapiClient
   class BudgetAccountEntryUpdateDto
     attr_accessor :description
 
-    attr_accessor :amount
-
-    attr_accessor :date
+    attr_accessor :planned_amount
 
     attr_accessor :currency_id
 
@@ -27,45 +25,16 @@ module OpenapiClient
 
     attr_accessor :credit_account_id
 
-    attr_accessor :journal_entry_id
-
-    attr_accessor :accounting_entry_type
-
     attr_accessor :budget_id
-
-    class EnumAttributeValidator
-      attr_reader :datatype
-      attr_reader :allowable_values
-
-      def initialize(datatype, allowable_values)
-        @allowable_values = allowable_values.map do |value|
-          case datatype.to_s
-          when /Integer/i
-            value.to_i
-          when /Float/i
-            value.to_f
-          else
-            value
-          end
-        end
-      end
-
-      def valid?(value)
-        !value || allowable_values.include?(value)
-      end
-    end
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'description' => :'description',
-        :'amount' => :'amount',
-        :'date' => :'date',
+        :'planned_amount' => :'plannedAmount',
         :'currency_id' => :'currencyId',
         :'debit_account_id' => :'debitAccountId',
         :'credit_account_id' => :'creditAccountId',
-        :'journal_entry_id' => :'journalEntryId',
-        :'accounting_entry_type' => :'accountingEntryType',
         :'budget_id' => :'budgetId'
       }
     end
@@ -79,13 +48,10 @@ module OpenapiClient
     def self.openapi_types
       {
         :'description' => :'String',
-        :'amount' => :'Float',
-        :'date' => :'Time',
+        :'planned_amount' => :'Float',
         :'currency_id' => :'String',
         :'debit_account_id' => :'String',
         :'credit_account_id' => :'String',
-        :'journal_entry_id' => :'String',
-        :'accounting_entry_type' => :'String',
         :'budget_id' => :'String'
       }
     end
@@ -94,11 +60,9 @@ module OpenapiClient
     def self.openapi_nullable
       Set.new([
         :'description',
-        :'date',
         :'currency_id',
         :'debit_account_id',
         :'credit_account_id',
-        :'journal_entry_id',
         :'budget_id'
       ])
     end
@@ -122,12 +86,8 @@ module OpenapiClient
         self.description = attributes[:'description']
       end
 
-      if attributes.key?(:'amount')
-        self.amount = attributes[:'amount']
-      end
-
-      if attributes.key?(:'date')
-        self.date = attributes[:'date']
+      if attributes.key?(:'planned_amount')
+        self.planned_amount = attributes[:'planned_amount']
       end
 
       if attributes.key?(:'currency_id')
@@ -142,14 +102,6 @@ module OpenapiClient
         self.credit_account_id = attributes[:'credit_account_id']
       end
 
-      if attributes.key?(:'journal_entry_id')
-        self.journal_entry_id = attributes[:'journal_entry_id']
-      end
-
-      if attributes.key?(:'accounting_entry_type')
-        self.accounting_entry_type = attributes[:'accounting_entry_type']
-      end
-
       if attributes.key?(:'budget_id')
         self.budget_id = attributes[:'budget_id']
       end
@@ -160,44 +112,12 @@ module OpenapiClient
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
       invalid_properties = Array.new
-      if !@description.nil? && @description.to_s.length > 1000
-        invalid_properties.push('invalid value for "description", the character length must be smaller than or equal to 1000.')
+      if !@description.nil? && @description.to_s.length > 300
+        invalid_properties.push('invalid value for "description", the character length must be smaller than or equal to 300.')
       end
 
       if !@description.nil? && @description.to_s.length < 1
         invalid_properties.push('invalid value for "description", the character length must be great than or equal to 1.')
-      end
-
-      if !@amount.nil? && @amount > 999999999999999
-        invalid_properties.push('invalid value for "amount", must be smaller than or equal to 999999999999999.')
-      end
-
-      if !@amount.nil? && @amount < 0.01
-        invalid_properties.push('invalid value for "amount", must be greater than or equal to 0.01.')
-      end
-
-      if !@credit_account_id.nil? && @credit_account_id.to_s.length > 36
-        invalid_properties.push('invalid value for "credit_account_id", the character length must be smaller than or equal to 36.')
-      end
-
-      if !@credit_account_id.nil? && @credit_account_id.to_s.length < 36
-        invalid_properties.push('invalid value for "credit_account_id", the character length must be great than or equal to 36.')
-      end
-
-      if !@journal_entry_id.nil? && @journal_entry_id.to_s.length > 36
-        invalid_properties.push('invalid value for "journal_entry_id", the character length must be smaller than or equal to 36.')
-      end
-
-      if !@journal_entry_id.nil? && @journal_entry_id.to_s.length < 36
-        invalid_properties.push('invalid value for "journal_entry_id", the character length must be great than or equal to 36.')
-      end
-
-      if !@budget_id.nil? && @budget_id.to_s.length > 36
-        invalid_properties.push('invalid value for "budget_id", the character length must be smaller than or equal to 36.')
-      end
-
-      if !@budget_id.nil? && @budget_id.to_s.length < 0
-        invalid_properties.push('invalid value for "budget_id", the character length must be great than or equal to 0.')
       end
 
       invalid_properties
@@ -207,26 +127,16 @@ module OpenapiClient
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      return false if !@description.nil? && @description.to_s.length > 1000
+      return false if !@description.nil? && @description.to_s.length > 300
       return false if !@description.nil? && @description.to_s.length < 1
-      return false if !@amount.nil? && @amount > 999999999999999
-      return false if !@amount.nil? && @amount < 0.01
-      return false if !@credit_account_id.nil? && @credit_account_id.to_s.length > 36
-      return false if !@credit_account_id.nil? && @credit_account_id.to_s.length < 36
-      return false if !@journal_entry_id.nil? && @journal_entry_id.to_s.length > 36
-      return false if !@journal_entry_id.nil? && @journal_entry_id.to_s.length < 36
-      accounting_entry_type_validator = EnumAttributeValidator.new('String', ["None", "Debit", "Credit"])
-      return false unless accounting_entry_type_validator.valid?(@accounting_entry_type)
-      return false if !@budget_id.nil? && @budget_id.to_s.length > 36
-      return false if !@budget_id.nil? && @budget_id.to_s.length < 0
       true
     end
 
     # Custom attribute writer method with validation
     # @param [Object] description Value to be assigned
     def description=(description)
-      if !description.nil? && description.to_s.length > 1000
-        fail ArgumentError, 'invalid value for "description", the character length must be smaller than or equal to 1000.'
+      if !description.nil? && description.to_s.length > 300
+        fail ArgumentError, 'invalid value for "description", the character length must be smaller than or equal to 300.'
       end
 
       if !description.nil? && description.to_s.length < 1
@@ -236,89 +146,16 @@ module OpenapiClient
       @description = description
     end
 
-    # Custom attribute writer method with validation
-    # @param [Object] amount Value to be assigned
-    def amount=(amount)
-      if amount.nil?
-        fail ArgumentError, 'amount cannot be nil'
-      end
-
-      if amount > 999999999999999
-        fail ArgumentError, 'invalid value for "amount", must be smaller than or equal to 999999999999999.'
-      end
-
-      if amount < 0.01
-        fail ArgumentError, 'invalid value for "amount", must be greater than or equal to 0.01.'
-      end
-
-      @amount = amount
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] credit_account_id Value to be assigned
-    def credit_account_id=(credit_account_id)
-      if !credit_account_id.nil? && credit_account_id.to_s.length > 36
-        fail ArgumentError, 'invalid value for "credit_account_id", the character length must be smaller than or equal to 36.'
-      end
-
-      if !credit_account_id.nil? && credit_account_id.to_s.length < 36
-        fail ArgumentError, 'invalid value for "credit_account_id", the character length must be great than or equal to 36.'
-      end
-
-      @credit_account_id = credit_account_id
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] journal_entry_id Value to be assigned
-    def journal_entry_id=(journal_entry_id)
-      if !journal_entry_id.nil? && journal_entry_id.to_s.length > 36
-        fail ArgumentError, 'invalid value for "journal_entry_id", the character length must be smaller than or equal to 36.'
-      end
-
-      if !journal_entry_id.nil? && journal_entry_id.to_s.length < 36
-        fail ArgumentError, 'invalid value for "journal_entry_id", the character length must be great than or equal to 36.'
-      end
-
-      @journal_entry_id = journal_entry_id
-    end
-
-    # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] accounting_entry_type Object to be assigned
-    def accounting_entry_type=(accounting_entry_type)
-      validator = EnumAttributeValidator.new('String', ["None", "Debit", "Credit"])
-      unless validator.valid?(accounting_entry_type)
-        fail ArgumentError, "invalid value for \"accounting_entry_type\", must be one of #{validator.allowable_values}."
-      end
-      @accounting_entry_type = accounting_entry_type
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] budget_id Value to be assigned
-    def budget_id=(budget_id)
-      if !budget_id.nil? && budget_id.to_s.length > 36
-        fail ArgumentError, 'invalid value for "budget_id", the character length must be smaller than or equal to 36.'
-      end
-
-      if !budget_id.nil? && budget_id.to_s.length < 0
-        fail ArgumentError, 'invalid value for "budget_id", the character length must be great than or equal to 0.'
-      end
-
-      @budget_id = budget_id
-    end
-
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
           description == o.description &&
-          amount == o.amount &&
-          date == o.date &&
+          planned_amount == o.planned_amount &&
           currency_id == o.currency_id &&
           debit_account_id == o.debit_account_id &&
           credit_account_id == o.credit_account_id &&
-          journal_entry_id == o.journal_entry_id &&
-          accounting_entry_type == o.accounting_entry_type &&
           budget_id == o.budget_id
     end
 
@@ -331,7 +168,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [description, amount, date, currency_id, debit_account_id, credit_account_id, journal_entry_id, accounting_entry_type, budget_id].hash
+      [description, planned_amount, currency_id, debit_account_id, credit_account_id, budget_id].hash
     end
 
     # Builds the object from hash

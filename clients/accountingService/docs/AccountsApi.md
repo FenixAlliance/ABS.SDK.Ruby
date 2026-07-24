@@ -102,7 +102,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
-| **currency_id** | **String** |  | [optional] |
+| **currency_id** | **String** |  | [optional][default to &#39;USD.USA&#39;] |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
 
@@ -354,7 +354,7 @@ account_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 opts = {
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example', # String | 
-  accounting_entry_create_dto: OpenapiClient::AccountingEntryCreateDto.new({description: 'description_example', currency_id: 'currency_id_example'}) # AccountingEntryCreateDto | 
+  accounting_entry_create_dto: OpenapiClient::AccountingEntryCreateDto.new({journal_entry_id: 'journal_entry_id_example', account_id: 'account_id_example', direction: 'Debit', transaction_currency_id: 'transaction_currency_id_example', description: 'description_example'}) # AccountingEntryCreateDto | 
 }
 
 begin
@@ -428,7 +428,7 @@ account_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 opts = {
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example', # String | 
-  accounting_entry_create_dto: OpenapiClient::AccountingEntryCreateDto.new({description: 'description_example', currency_id: 'currency_id_example'}) # AccountingEntryCreateDto | 
+  accounting_entry_create_dto: OpenapiClient::AccountingEntryCreateDto.new({journal_entry_id: 'journal_entry_id_example', account_id: 'account_id_example', direction: 'Debit', transaction_currency_id: 'transaction_currency_id_example', description: 'description_example'}) # AccountingEntryCreateDto | 
 }
 
 begin
@@ -502,7 +502,7 @@ account_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 opts = {
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example', # String | 
-  accounting_entry_create_dto: OpenapiClient::AccountingEntryCreateDto.new({description: 'description_example', currency_id: 'currency_id_example'}) # AccountingEntryCreateDto | 
+  accounting_entry_create_dto: OpenapiClient::AccountingEntryCreateDto.new({journal_entry_id: 'journal_entry_id_example', account_id: 'account_id_example', direction: 'Debit', transaction_currency_id: 'transaction_currency_id_example', description: 'description_example'}) # AccountingEntryCreateDto | 
 }
 
 begin
@@ -1049,7 +1049,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
-| **currency_id** | **String** |  | [optional] |
+| **currency_id** | **String** |  | [optional][default to &#39;USD.USA&#39;] |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
 | **account_dto** | [**Array&lt;AccountDto&gt;**](AccountDto.md) |  | [optional] |

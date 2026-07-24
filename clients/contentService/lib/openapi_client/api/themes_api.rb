@@ -25,8 +25,8 @@ module OpenapiClient
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
     # @return [nil]
-    def get_latest_currency_rates_model_async(opts = {})
-      get_latest_currency_rates_model_async_with_http_info(opts)
+    def update_themes_async(opts = {})
+      update_themes_async_with_http_info(opts)
       nil
     end
 
@@ -36,9 +36,9 @@ module OpenapiClient
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
-    def get_latest_currency_rates_model_async_with_http_info(opts = {})
+    def update_themes_async_with_http_info(opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: ThemesApi.get_latest_currency_rates_model_async ...'
+        @api_client.config.logger.debug 'Calling API: ThemesApi.update_themes_async ...'
       end
       # resource path
       local_var_path = '/api/v2/ContentService/Themes/Update'
@@ -66,7 +66,7 @@ module OpenapiClient
       auth_names = opts[:debug_auth_names] || []
 
       new_options = opts.merge(
-        :operation => :"ThemesApi.get_latest_currency_rates_model_async",
+        :operation => :"ThemesApi.update_themes_async",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -77,7 +77,7 @@ module OpenapiClient
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: ThemesApi#get_latest_currency_rates_model_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: ThemesApi#update_themes_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

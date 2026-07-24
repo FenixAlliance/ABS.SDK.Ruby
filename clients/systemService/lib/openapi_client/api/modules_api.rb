@@ -92,7 +92,7 @@ module OpenapiClient
     # @option opts [String] :tenant_id 
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
-    # @return [ModuleListEnvelope]
+    # @return [SuiteModuleListEnvelope]
     def get_available_modules(opts = {})
       data, _status_code, _headers = get_available_modules_with_http_info(opts)
       data
@@ -103,7 +103,7 @@ module OpenapiClient
     # @option opts [String] :tenant_id 
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
-    # @return [Array<(ModuleListEnvelope, Integer, Hash)>] ModuleListEnvelope data, response status code and response headers
+    # @return [Array<(SuiteModuleListEnvelope, Integer, Hash)>] SuiteModuleListEnvelope data, response status code and response headers
     def get_available_modules_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModulesApi.get_available_modules ...'
@@ -129,7 +129,7 @@ module OpenapiClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'ModuleListEnvelope'
+      return_type = opts[:debug_return_type] || 'SuiteModuleListEnvelope'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []

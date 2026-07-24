@@ -36,7 +36,7 @@ require 'openapi_client'
 api_instance = OpenapiClient::BudgetsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 budget_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
-budget_account_entry_create_dto = OpenapiClient::BudgetAccountEntryCreateDto.new({description: 'description_example', currency_id: 'currency_id_example'}) # BudgetAccountEntryCreateDto | 
+budget_account_entry_create_dto = OpenapiClient::BudgetAccountEntryCreateDto.new({description: 'description_example', currency_id: 'currency_id_example', debit_account_id: 'debit_account_id_example', credit_account_id: 'credit_account_id_example', budget_id: 'budget_id_example'}) # BudgetAccountEntryCreateDto | 
 opts = {
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example' # String | 

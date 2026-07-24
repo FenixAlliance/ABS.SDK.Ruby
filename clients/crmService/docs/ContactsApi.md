@@ -5,7 +5,11 @@ All URIs are relative to *https://absuite.net*
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
 | [**create_contact_async**](ContactsApi.md#create_contact_async) | **POST** /api/v2/CrmService/Contacts | Create a new contact |
+| [**create_contact_email_async**](ContactsApi.md#create_contact_email_async) | **POST** /api/v2/CrmService/Contacts/{contactId}/Emails/Addresses | Add an email address to a contact |
+| [**create_profile_for_contact_async**](ContactsApi.md#create_profile_for_contact_async) | **POST** /api/v2/CrmService/Contacts/{contactId}/Profiles | Create a contact profile |
 | [**delete_contact_async**](ContactsApi.md#delete_contact_async) | **DELETE** /api/v2/CrmService/Contacts/{contactId} | Delete a contact |
+| [**delete_contact_email_async**](ContactsApi.md#delete_contact_email_async) | **DELETE** /api/v2/CrmService/Contacts/{contactId}/Emails/{emailId} | Delete a contact email address |
+| [**delete_profile_for_contact_async**](ContactsApi.md#delete_profile_for_contact_async) | **DELETE** /api/v2/CrmService/Contacts/{contactId}/Profiles/{profileId} | Delete a contact profile |
 | [**get_business_owned_individual_async**](ContactsApi.md#get_business_owned_individual_async) | **GET** /api/v2/CrmService/Contacts/Individuals/{contactId} | Get a Contact of type Individual by ID |
 | [**get_business_owned_individuals_async**](ContactsApi.md#get_business_owned_individuals_async) | **GET** /api/v2/CrmService/Contacts/Individuals | Get all contacts of type individual |
 | [**get_business_owned_individuals_count_async**](ContactsApi.md#get_business_owned_individuals_count_async) | **GET** /api/v2/CrmService/Contacts/Individuals/Count | Get all contacts of type individual count |
@@ -15,7 +19,8 @@ All URIs are relative to *https://absuite.net*
 | [**get_contact_async**](ContactsApi.md#get_contact_async) | **GET** /api/v2/CrmService/Contacts/{contactId} | Get a contact by ID |
 | [**get_contact_avatar_async**](ContactsApi.md#get_contact_avatar_async) | **GET** /api/v2/CrmService/Contacts/{contactId}/Avatar | Get a contact&#39;s avatar |
 | [**get_contact_cart_async**](ContactsApi.md#get_contact_cart_async) | **GET** /api/v2/CrmService/Contacts/{contactId}/Cart | Get a contact&#39;s cart |
-| [**get_contact_profiles_async**](ContactsApi.md#get_contact_profiles_async) | **GET** /api/v2/CrmService/Contacts/{contactId}/Profiles | Get a contact&#39;s social profiles |
+| [**get_contact_emails_async**](ContactsApi.md#get_contact_emails_async) | **GET** /api/v2/CrmService/Contacts/{contactId}/Emails | Get a contact&#39;s email addresses |
+| [**get_contact_emails_count_async**](ContactsApi.md#get_contact_emails_count_async) | **GET** /api/v2/CrmService/Contacts/{contactId}/Emails/Count | Get contact email addresses count |
 | [**get_contact_social_profile_async**](ContactsApi.md#get_contact_social_profile_async) | **GET** /api/v2/CrmService/Contacts/{contactId}/SocialProfile | Get a contact&#39;s social profile |
 | [**get_contact_wallet_async**](ContactsApi.md#get_contact_wallet_async) | **GET** /api/v2/CrmService/Contacts/{contactId}/Wallet | Get a contact&#39;s wallet |
 | [**get_contacts_async**](ContactsApi.md#get_contacts_async) | **GET** /api/v2/CrmService/Contacts | Get all business owned contacts |
@@ -28,13 +33,19 @@ All URIs are relative to *https://absuite.net*
 | [**get_individual_related_organizations_async**](ContactsApi.md#get_individual_related_organizations_async) | **GET** /api/v2/CrmService/Contacts/Individuals/{contactId}/Organizations | Get individual related organizations |
 | [**get_organization_related_individuals_async**](ContactsApi.md#get_organization_related_individuals_async) | **GET** /api/v2/CrmService/Contacts/Organizations/{contactId}/Individuals | Get organization related individuals |
 | [**get_organization_related_organizations_async**](ContactsApi.md#get_organization_related_organizations_async) | **GET** /api/v2/CrmService/Contacts/Organizations/{contactId}/Organizations | Get organization related organizations |
+| [**get_profiles_for_contact_async**](ContactsApi.md#get_profiles_for_contact_async) | **GET** /api/v2/CrmService/Contacts/{contactId}/Profiles | Get a contact&#39;s social profiles |
+| [**get_profiles_for_contact_count_async**](ContactsApi.md#get_profiles_for_contact_count_async) | **GET** /api/v2/CrmService/Contacts/{contactId}/Profiles/Count | Get contact profiles count |
 | [**patch_contact_async**](ContactsApi.md#patch_contact_async) | **PATCH** /api/v2/CrmService/Contacts/{contactId} | Patch a contact |
+| [**patch_contact_email_async**](ContactsApi.md#patch_contact_email_async) | **PATCH** /api/v2/CrmService/Contacts/{contactId}/Emails/{emailId} | Patch a contact email address |
 | [**preview_contact_email_template**](ContactsApi.md#preview_contact_email_template) | **POST** /api/v2/CrmService/Contacts/{contactId}/Emails/Preview | Preview the rendered email for a contact. |
 | [**send_contact_email**](ContactsApi.md#send_contact_email) | **POST** /api/v2/CrmService/Contacts/{contactId}/Emails/Send | Send an email to a contact. |
 | [**update_contact_async**](ContactsApi.md#update_contact_async) | **PUT** /api/v2/CrmService/Contacts/{contactId} | Update a contact |
 | [**update_contact_avatar_async**](ContactsApi.md#update_contact_avatar_async) | **POST** /api/v2/CrmService/Contacts/{contactId}/Avatar | Update a contact&#39;s avatar |
+| [**update_contact_email_async**](ContactsApi.md#update_contact_email_async) | **PUT** /api/v2/CrmService/Contacts/{contactId}/Emails/{emailId} | Update a contact email address |
+| [**update_profile_for_contact_async**](ContactsApi.md#update_profile_for_contact_async) | **PUT** /api/v2/CrmService/Contacts/{contactId}/Profiles/{profileId} | Update a contact profile |
 | [**upsert_tenant_onto_another_tenant_contact_list_async**](ContactsApi.md#upsert_tenant_onto_another_tenant_contact_list_async) | **POST** /api/v2/CrmService/Contacts/Organizations/Upsert | Upsert a tenant onto another tenant&#39;s contact list |
 | [**upsert_user_onto_another_tenant_contact_list_async**](ContactsApi.md#upsert_user_onto_another_tenant_contact_list_async) | **POST** /api/v2/CrmService/Contacts/Individuals/Upsert | Upsert a user onto a tenant&#39;s contact list |
+| [**verify_contact_email_async**](ContactsApi.md#verify_contact_email_async) | **POST** /api/v2/CrmService/Contacts/{contactId}/Emails/{emailId}/Verify | Verify a contact email address |
 
 
 ## create_contact_async
@@ -109,6 +120,152 @@ No authorization required
 - **Accept**: application/json, application/xml
 
 
+## create_contact_email_async
+
+> create_contact_email_async(tenant_id, contact_id, opts)
+
+Add an email address to a contact
+
+Creates a new email address for the specified contact.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::ContactsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+contact_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  contact_email_create_dto: OpenapiClient::ContactEmailCreateDto.new # ContactEmailCreateDto | 
+}
+
+begin
+  # Add an email address to a contact
+  api_instance.create_contact_email_async(tenant_id, contact_id, opts)
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ContactsApi->create_contact_email_async: #{e}"
+end
+```
+
+#### Using the create_contact_email_async_with_http_info variant
+
+This returns an Array which contains the response data (`nil` in this case), status code and headers.
+
+> <Array(nil, Integer, Hash)> create_contact_email_async_with_http_info(tenant_id, contact_id, opts)
+
+```ruby
+begin
+  # Add an email address to a contact
+  data, status_code, headers = api_instance.create_contact_email_async_with_http_info(tenant_id, contact_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => nil
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ContactsApi->create_contact_email_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **contact_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **contact_email_create_dto** | [**ContactEmailCreateDto**](ContactEmailCreateDto.md) |  | [optional] |
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
+- **Accept**: application/json, application/xml
+
+
+## create_profile_for_contact_async
+
+> create_profile_for_contact_async(tenant_id, contact_id, opts)
+
+Create a contact profile
+
+Creates a new profile for the specified contact.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::ContactsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+contact_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  contact_profile_create_dto: OpenapiClient::ContactProfileCreateDto.new # ContactProfileCreateDto | 
+}
+
+begin
+  # Create a contact profile
+  api_instance.create_profile_for_contact_async(tenant_id, contact_id, opts)
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ContactsApi->create_profile_for_contact_async: #{e}"
+end
+```
+
+#### Using the create_profile_for_contact_async_with_http_info variant
+
+This returns an Array which contains the response data (`nil` in this case), status code and headers.
+
+> <Array(nil, Integer, Hash)> create_profile_for_contact_async_with_http_info(tenant_id, contact_id, opts)
+
+```ruby
+begin
+  # Create a contact profile
+  data, status_code, headers = api_instance.create_profile_for_contact_async_with_http_info(tenant_id, contact_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => nil
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ContactsApi->create_profile_for_contact_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **contact_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **contact_profile_create_dto** | [**ContactProfileCreateDto**](ContactProfileCreateDto.md) |  | [optional] |
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
+- **Accept**: application/json, application/xml
+
+
 ## delete_contact_async
 
 > <EmptyEnvelope> delete_contact_async(tenant_id, contact_id, opts)
@@ -170,6 +327,152 @@ end
 ### Return type
 
 [**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## delete_contact_email_async
+
+> delete_contact_email_async(tenant_id, contact_id, email_id, opts)
+
+Delete a contact email address
+
+Deletes an email address from the specified contact.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::ContactsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+contact_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+email_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example' # String | 
+}
+
+begin
+  # Delete a contact email address
+  api_instance.delete_contact_email_async(tenant_id, contact_id, email_id, opts)
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ContactsApi->delete_contact_email_async: #{e}"
+end
+```
+
+#### Using the delete_contact_email_async_with_http_info variant
+
+This returns an Array which contains the response data (`nil` in this case), status code and headers.
+
+> <Array(nil, Integer, Hash)> delete_contact_email_async_with_http_info(tenant_id, contact_id, email_id, opts)
+
+```ruby
+begin
+  # Delete a contact email address
+  data, status_code, headers = api_instance.delete_contact_email_async_with_http_info(tenant_id, contact_id, email_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => nil
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ContactsApi->delete_contact_email_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **contact_id** | **String** |  |  |
+| **email_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## delete_profile_for_contact_async
+
+> delete_profile_for_contact_async(tenant_id, contact_id, profile_id, opts)
+
+Delete a contact profile
+
+Deletes a profile for the specified contact.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::ContactsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+contact_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+profile_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example' # String | 
+}
+
+begin
+  # Delete a contact profile
+  api_instance.delete_profile_for_contact_async(tenant_id, contact_id, profile_id, opts)
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ContactsApi->delete_profile_for_contact_async: #{e}"
+end
+```
+
+#### Using the delete_profile_for_contact_async_with_http_info variant
+
+This returns an Array which contains the response data (`nil` in this case), status code and headers.
+
+> <Array(nil, Integer, Hash)> delete_profile_for_contact_async_with_http_info(tenant_id, contact_id, profile_id, opts)
+
+```ruby
+begin
+  # Delete a contact profile
+  data, status_code, headers = api_instance.delete_profile_for_contact_async_with_http_info(tenant_id, contact_id, profile_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => nil
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ContactsApi->delete_profile_for_contact_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **contact_id** | **String** |  |  |
+| **profile_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+
+### Return type
+
+nil (empty response body)
 
 ### Authorization
 
@@ -821,13 +1124,13 @@ No authorization required
 - **Accept**: application/json, application/xml
 
 
-## get_contact_profiles_async
+## get_contact_emails_async
 
-> <ContactProfileDtoListEnvelope> get_contact_profiles_async(tenant_id, contact_id, opts)
+> <ContactEmailDtoListEnvelope> get_contact_emails_async(tenant_id, contact_id, opts)
 
-Get a contact's social profiles
+Get a contact's email addresses
 
-Get a contact's social profiles
+Get all email addresses for the specified contact.
 
 ### Examples
 
@@ -844,29 +1147,29 @@ opts = {
 }
 
 begin
-  # Get a contact's social profiles
-  result = api_instance.get_contact_profiles_async(tenant_id, contact_id, opts)
+  # Get a contact's email addresses
+  result = api_instance.get_contact_emails_async(tenant_id, contact_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
-  puts "Error when calling ContactsApi->get_contact_profiles_async: #{e}"
+  puts "Error when calling ContactsApi->get_contact_emails_async: #{e}"
 end
 ```
 
-#### Using the get_contact_profiles_async_with_http_info variant
+#### Using the get_contact_emails_async_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<ContactProfileDtoListEnvelope>, Integer, Hash)> get_contact_profiles_async_with_http_info(tenant_id, contact_id, opts)
+> <Array(<ContactEmailDtoListEnvelope>, Integer, Hash)> get_contact_emails_async_with_http_info(tenant_id, contact_id, opts)
 
 ```ruby
 begin
-  # Get a contact's social profiles
-  data, status_code, headers = api_instance.get_contact_profiles_async_with_http_info(tenant_id, contact_id, opts)
+  # Get a contact's email addresses
+  data, status_code, headers = api_instance.get_contact_emails_async_with_http_info(tenant_id, contact_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <ContactProfileDtoListEnvelope>
+  p data # => <ContactEmailDtoListEnvelope>
 rescue OpenapiClient::ApiError => e
-  puts "Error when calling ContactsApi->get_contact_profiles_async_with_http_info: #{e}"
+  puts "Error when calling ContactsApi->get_contact_emails_async_with_http_info: #{e}"
 end
 ```
 
@@ -881,7 +1184,79 @@ end
 
 ### Return type
 
-[**ContactProfileDtoListEnvelope**](ContactProfileDtoListEnvelope.md)
+[**ContactEmailDtoListEnvelope**](ContactEmailDtoListEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## get_contact_emails_count_async
+
+> <Int32Envelope> get_contact_emails_count_async(tenant_id, contact_id, opts)
+
+Get contact email addresses count
+
+Returns the count of email addresses for the specified contact.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::ContactsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+contact_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example' # String | 
+}
+
+begin
+  # Get contact email addresses count
+  result = api_instance.get_contact_emails_count_async(tenant_id, contact_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ContactsApi->get_contact_emails_count_async: #{e}"
+end
+```
+
+#### Using the get_contact_emails_count_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<Int32Envelope>, Integer, Hash)> get_contact_emails_count_async_with_http_info(tenant_id, contact_id, opts)
+
+```ruby
+begin
+  # Get contact email addresses count
+  data, status_code, headers = api_instance.get_contact_emails_count_async_with_http_info(tenant_id, contact_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <Int32Envelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ContactsApi->get_contact_emails_count_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **contact_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+
+### Return type
+
+[**Int32Envelope**](Int32Envelope.md)
 
 ### Authorization
 
@@ -1747,6 +2122,150 @@ No authorization required
 - **Accept**: application/json, application/xml
 
 
+## get_profiles_for_contact_async
+
+> <ContactProfileDtoListEnvelope> get_profiles_for_contact_async(tenant_id, contact_id, opts)
+
+Get a contact's social profiles
+
+Get a contact's social profiles
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::ContactsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+contact_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example' # String | 
+}
+
+begin
+  # Get a contact's social profiles
+  result = api_instance.get_profiles_for_contact_async(tenant_id, contact_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ContactsApi->get_profiles_for_contact_async: #{e}"
+end
+```
+
+#### Using the get_profiles_for_contact_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<ContactProfileDtoListEnvelope>, Integer, Hash)> get_profiles_for_contact_async_with_http_info(tenant_id, contact_id, opts)
+
+```ruby
+begin
+  # Get a contact's social profiles
+  data, status_code, headers = api_instance.get_profiles_for_contact_async_with_http_info(tenant_id, contact_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <ContactProfileDtoListEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ContactsApi->get_profiles_for_contact_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **contact_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+
+### Return type
+
+[**ContactProfileDtoListEnvelope**](ContactProfileDtoListEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## get_profiles_for_contact_count_async
+
+> <Int32Envelope> get_profiles_for_contact_count_async(tenant_id, contact_id, opts)
+
+Get contact profiles count
+
+Returns the count of profiles for the specified contact.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::ContactsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+contact_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example' # String | 
+}
+
+begin
+  # Get contact profiles count
+  result = api_instance.get_profiles_for_contact_count_async(tenant_id, contact_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ContactsApi->get_profiles_for_contact_count_async: #{e}"
+end
+```
+
+#### Using the get_profiles_for_contact_count_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<Int32Envelope>, Integer, Hash)> get_profiles_for_contact_count_async_with_http_info(tenant_id, contact_id, opts)
+
+```ruby
+begin
+  # Get contact profiles count
+  data, status_code, headers = api_instance.get_profiles_for_contact_count_async_with_http_info(tenant_id, contact_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <Int32Envelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ContactsApi->get_profiles_for_contact_count_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **contact_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+
+### Return type
+
+[**Int32Envelope**](Int32Envelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
 ## patch_contact_async
 
 > <EmptyEnvelope> patch_contact_async(tenant_id, contact_id, opts)
@@ -1810,6 +2329,81 @@ end
 ### Return type
 
 [**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
+- **Accept**: application/json, application/xml
+
+
+## patch_contact_email_async
+
+> patch_contact_email_async(tenant_id, contact_id, email_id, opts)
+
+Patch a contact email address
+
+Partially updates an existing email address for the specified contact.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::ContactsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+contact_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+email_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch a contact email address
+  api_instance.patch_contact_email_async(tenant_id, contact_id, email_id, opts)
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ContactsApi->patch_contact_email_async: #{e}"
+end
+```
+
+#### Using the patch_contact_email_async_with_http_info variant
+
+This returns an Array which contains the response data (`nil` in this case), status code and headers.
+
+> <Array(nil, Integer, Hash)> patch_contact_email_async_with_http_info(tenant_id, contact_id, email_id, opts)
+
+```ruby
+begin
+  # Patch a contact email address
+  data, status_code, headers = api_instance.patch_contact_email_async_with_http_info(tenant_id, contact_id, email_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => nil
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ContactsApi->patch_contact_email_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **contact_id** | **String** |  |  |
+| **email_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+nil (empty response body)
 
 ### Authorization
 
@@ -2111,6 +2705,156 @@ No authorization required
 - **Accept**: application/json, application/xml
 
 
+## update_contact_email_async
+
+> update_contact_email_async(tenant_id, contact_id, email_id, opts)
+
+Update a contact email address
+
+Updates an existing email address for the specified contact.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::ContactsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+contact_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+email_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  contact_email_update_dto: OpenapiClient::ContactEmailUpdateDto.new # ContactEmailUpdateDto | 
+}
+
+begin
+  # Update a contact email address
+  api_instance.update_contact_email_async(tenant_id, contact_id, email_id, opts)
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ContactsApi->update_contact_email_async: #{e}"
+end
+```
+
+#### Using the update_contact_email_async_with_http_info variant
+
+This returns an Array which contains the response data (`nil` in this case), status code and headers.
+
+> <Array(nil, Integer, Hash)> update_contact_email_async_with_http_info(tenant_id, contact_id, email_id, opts)
+
+```ruby
+begin
+  # Update a contact email address
+  data, status_code, headers = api_instance.update_contact_email_async_with_http_info(tenant_id, contact_id, email_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => nil
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ContactsApi->update_contact_email_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **contact_id** | **String** |  |  |
+| **email_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **contact_email_update_dto** | [**ContactEmailUpdateDto**](ContactEmailUpdateDto.md) |  | [optional] |
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
+- **Accept**: application/json, application/xml
+
+
+## update_profile_for_contact_async
+
+> update_profile_for_contact_async(tenant_id, contact_id, profile_id, opts)
+
+Update a contact profile
+
+Updates an existing profile for the specified contact.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::ContactsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+contact_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+profile_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  contact_profile_update_dto: OpenapiClient::ContactProfileUpdateDto.new # ContactProfileUpdateDto | 
+}
+
+begin
+  # Update a contact profile
+  api_instance.update_profile_for_contact_async(tenant_id, contact_id, profile_id, opts)
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ContactsApi->update_profile_for_contact_async: #{e}"
+end
+```
+
+#### Using the update_profile_for_contact_async_with_http_info variant
+
+This returns an Array which contains the response data (`nil` in this case), status code and headers.
+
+> <Array(nil, Integer, Hash)> update_profile_for_contact_async_with_http_info(tenant_id, contact_id, profile_id, opts)
+
+```ruby
+begin
+  # Update a contact profile
+  data, status_code, headers = api_instance.update_profile_for_contact_async_with_http_info(tenant_id, contact_id, profile_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => nil
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ContactsApi->update_profile_for_contact_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **contact_id** | **String** |  |  |
+| **profile_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **contact_profile_update_dto** | [**ContactProfileUpdateDto**](ContactProfileUpdateDto.md) |  | [optional] |
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
+- **Accept**: application/json, application/xml
+
+
 ## upsert_tenant_onto_another_tenant_contact_list_async
 
 > <ContactDtoEnvelope> upsert_tenant_onto_another_tenant_contact_list_async(tenant_id, related_tenant_id, opts)
@@ -2244,6 +2988,79 @@ end
 ### Return type
 
 [**ContactDtoEnvelope**](ContactDtoEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## verify_contact_email_async
+
+> verify_contact_email_async(tenant_id, contact_id, email_id, opts)
+
+Verify a contact email address
+
+Marks an email address as verified on the specified contact.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::ContactsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+contact_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+email_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example' # String | 
+}
+
+begin
+  # Verify a contact email address
+  api_instance.verify_contact_email_async(tenant_id, contact_id, email_id, opts)
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ContactsApi->verify_contact_email_async: #{e}"
+end
+```
+
+#### Using the verify_contact_email_async_with_http_info variant
+
+This returns an Array which contains the response data (`nil` in this case), status code and headers.
+
+> <Array(nil, Integer, Hash)> verify_contact_email_async_with_http_info(tenant_id, contact_id, email_id, opts)
+
+```ruby
+begin
+  # Verify a contact email address
+  data, status_code, headers = api_instance.verify_contact_email_async_with_http_info(tenant_id, contact_id, email_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => nil
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ContactsApi->verify_contact_email_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **contact_id** | **String** |  |  |
+| **email_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+
+### Return type
+
+nil (empty response body)
 
 ### Authorization
 

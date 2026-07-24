@@ -19,21 +19,13 @@ module OpenapiClient
 
     attr_accessor :timestamp
 
-    attr_accessor :debit
+    attr_accessor :tenant_id
 
-    attr_accessor :credit
+    attr_accessor :enrollment_id
 
     attr_accessor :description
 
-    attr_accessor :forex_rate
-
-    attr_accessor :account_id
-
-    attr_accessor :tenant_id
-
-    attr_accessor :date
-
-    attr_accessor :enrollment_id
+    attr_accessor :planned_amount
 
     attr_accessor :currency_id
 
@@ -41,65 +33,27 @@ module OpenapiClient
 
     attr_accessor :credit_account_id
 
-    attr_accessor :journal_entry_id
-
-    attr_accessor :debit_account_name
-
-    attr_accessor :credit_account_name
-
-    attr_accessor :accounting_entry_type
-
-    attr_accessor :debit_amount
-
-    attr_accessor :credit_amount
-
     attr_accessor :budget_id
 
-    class EnumAttributeValidator
-      attr_reader :datatype
-      attr_reader :allowable_values
+    attr_accessor :date
 
-      def initialize(datatype, allowable_values)
-        @allowable_values = allowable_values.map do |value|
-          case datatype.to_s
-          when /Integer/i
-            value.to_i
-          when /Float/i
-            value.to_f
-          else
-            value
-          end
-        end
-      end
-
-      def valid?(value)
-        !value || allowable_values.include?(value)
-      end
-    end
+    attr_accessor :planned_amount_money
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'id' => :'id',
         :'timestamp' => :'timestamp',
-        :'debit' => :'debit',
-        :'credit' => :'credit',
-        :'description' => :'description',
-        :'forex_rate' => :'forexRate',
-        :'account_id' => :'accountId',
         :'tenant_id' => :'tenantId',
-        :'date' => :'date',
         :'enrollment_id' => :'enrollmentId',
+        :'description' => :'description',
+        :'planned_amount' => :'plannedAmount',
         :'currency_id' => :'currencyId',
         :'debit_account_id' => :'debitAccountId',
         :'credit_account_id' => :'creditAccountId',
-        :'journal_entry_id' => :'journalEntryId',
-        :'debit_account_name' => :'debitAccountName',
-        :'credit_account_name' => :'creditAccountName',
-        :'accounting_entry_type' => :'accountingEntryType',
-        :'debit_amount' => :'debitAmount',
-        :'credit_amount' => :'creditAmount',
-        :'budget_id' => :'budgetId'
+        :'budget_id' => :'budgetId',
+        :'date' => :'date',
+        :'planned_amount_money' => :'plannedAmountMoney'
       }
     end
 
@@ -113,24 +67,16 @@ module OpenapiClient
       {
         :'id' => :'String',
         :'timestamp' => :'Time',
-        :'debit' => :'Float',
-        :'credit' => :'Float',
-        :'description' => :'String',
-        :'forex_rate' => :'Float',
-        :'account_id' => :'String',
         :'tenant_id' => :'String',
-        :'date' => :'Time',
         :'enrollment_id' => :'String',
+        :'description' => :'String',
+        :'planned_amount' => :'Float',
         :'currency_id' => :'String',
         :'debit_account_id' => :'String',
         :'credit_account_id' => :'String',
-        :'journal_entry_id' => :'String',
-        :'debit_account_name' => :'String',
-        :'credit_account_name' => :'String',
-        :'accounting_entry_type' => :'String',
-        :'debit_amount' => :'Money',
-        :'credit_amount' => :'Money',
-        :'budget_id' => :'String'
+        :'budget_id' => :'String',
+        :'date' => :'Time',
+        :'planned_amount_money' => :'Money'
       }
     end
 
@@ -139,18 +85,14 @@ module OpenapiClient
       Set.new([
         :'id',
         :'timestamp',
-        :'description',
-        :'account_id',
         :'tenant_id',
-        :'date',
         :'enrollment_id',
+        :'description',
         :'currency_id',
         :'debit_account_id',
         :'credit_account_id',
-        :'journal_entry_id',
-        :'debit_account_name',
-        :'credit_account_name',
-        :'budget_id'
+        :'budget_id',
+        :'date',
       ])
     end
 
@@ -177,36 +119,20 @@ module OpenapiClient
         self.timestamp = attributes[:'timestamp']
       end
 
-      if attributes.key?(:'debit')
-        self.debit = attributes[:'debit']
+      if attributes.key?(:'tenant_id')
+        self.tenant_id = attributes[:'tenant_id']
       end
 
-      if attributes.key?(:'credit')
-        self.credit = attributes[:'credit']
+      if attributes.key?(:'enrollment_id')
+        self.enrollment_id = attributes[:'enrollment_id']
       end
 
       if attributes.key?(:'description')
         self.description = attributes[:'description']
       end
 
-      if attributes.key?(:'forex_rate')
-        self.forex_rate = attributes[:'forex_rate']
-      end
-
-      if attributes.key?(:'account_id')
-        self.account_id = attributes[:'account_id']
-      end
-
-      if attributes.key?(:'tenant_id')
-        self.tenant_id = attributes[:'tenant_id']
-      end
-
-      if attributes.key?(:'date')
-        self.date = attributes[:'date']
-      end
-
-      if attributes.key?(:'enrollment_id')
-        self.enrollment_id = attributes[:'enrollment_id']
+      if attributes.key?(:'planned_amount')
+        self.planned_amount = attributes[:'planned_amount']
       end
 
       if attributes.key?(:'currency_id')
@@ -221,32 +147,16 @@ module OpenapiClient
         self.credit_account_id = attributes[:'credit_account_id']
       end
 
-      if attributes.key?(:'journal_entry_id')
-        self.journal_entry_id = attributes[:'journal_entry_id']
-      end
-
-      if attributes.key?(:'debit_account_name')
-        self.debit_account_name = attributes[:'debit_account_name']
-      end
-
-      if attributes.key?(:'credit_account_name')
-        self.credit_account_name = attributes[:'credit_account_name']
-      end
-
-      if attributes.key?(:'accounting_entry_type')
-        self.accounting_entry_type = attributes[:'accounting_entry_type']
-      end
-
-      if attributes.key?(:'debit_amount')
-        self.debit_amount = attributes[:'debit_amount']
-      end
-
-      if attributes.key?(:'credit_amount')
-        self.credit_amount = attributes[:'credit_amount']
-      end
-
       if attributes.key?(:'budget_id')
         self.budget_id = attributes[:'budget_id']
+      end
+
+      if attributes.key?(:'date')
+        self.date = attributes[:'date']
+      end
+
+      if attributes.key?(:'planned_amount_money')
+        self.planned_amount_money = attributes[:'planned_amount_money']
       end
     end
 
@@ -262,19 +172,7 @@ module OpenapiClient
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      accounting_entry_type_validator = EnumAttributeValidator.new('String', ["None", "Debit", "Credit"])
-      return false unless accounting_entry_type_validator.valid?(@accounting_entry_type)
       true
-    end
-
-    # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] accounting_entry_type Object to be assigned
-    def accounting_entry_type=(accounting_entry_type)
-      validator = EnumAttributeValidator.new('String', ["None", "Debit", "Credit"])
-      unless validator.valid?(accounting_entry_type)
-        fail ArgumentError, "invalid value for \"accounting_entry_type\", must be one of #{validator.allowable_values}."
-      end
-      @accounting_entry_type = accounting_entry_type
     end
 
     # Checks equality by comparing each attribute.
@@ -284,24 +182,16 @@ module OpenapiClient
       self.class == o.class &&
           id == o.id &&
           timestamp == o.timestamp &&
-          debit == o.debit &&
-          credit == o.credit &&
-          description == o.description &&
-          forex_rate == o.forex_rate &&
-          account_id == o.account_id &&
           tenant_id == o.tenant_id &&
-          date == o.date &&
           enrollment_id == o.enrollment_id &&
+          description == o.description &&
+          planned_amount == o.planned_amount &&
           currency_id == o.currency_id &&
           debit_account_id == o.debit_account_id &&
           credit_account_id == o.credit_account_id &&
-          journal_entry_id == o.journal_entry_id &&
-          debit_account_name == o.debit_account_name &&
-          credit_account_name == o.credit_account_name &&
-          accounting_entry_type == o.accounting_entry_type &&
-          debit_amount == o.debit_amount &&
-          credit_amount == o.credit_amount &&
-          budget_id == o.budget_id
+          budget_id == o.budget_id &&
+          date == o.date &&
+          planned_amount_money == o.planned_amount_money
     end
 
     # @see the `==` method
@@ -313,7 +203,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, timestamp, debit, credit, description, forex_rate, account_id, tenant_id, date, enrollment_id, currency_id, debit_account_id, credit_account_id, journal_entry_id, debit_account_name, credit_account_name, accounting_entry_type, debit_amount, credit_amount, budget_id].hash
+      [id, timestamp, tenant_id, enrollment_id, description, planned_amount, currency_id, debit_account_id, credit_account_id, budget_id, date, planned_amount_money].hash
     end
 
     # Builds the object from hash

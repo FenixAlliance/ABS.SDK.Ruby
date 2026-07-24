@@ -27,15 +27,21 @@ module OpenapiClient
 
     attr_accessor :requires_description
 
+    attr_accessor :tenant_id
+
+    attr_accessor :enrollment_id
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'id' => :'id',
         :'timestamp' => :'timestamp',
         :'title' => :'title',
-        :'task_category_id' => :'taskCategoryID',
+        :'task_category_id' => :'taskCategoryId',
         :'display_in_time_tracker' => :'displayInTimeTracker',
-        :'requires_description' => :'requiresDescription'
+        :'requires_description' => :'requiresDescription',
+        :'tenant_id' => :'tenantId',
+        :'enrollment_id' => :'enrollmentId'
       }
     end
 
@@ -52,7 +58,9 @@ module OpenapiClient
         :'title' => :'String',
         :'task_category_id' => :'String',
         :'display_in_time_tracker' => :'Boolean',
-        :'requires_description' => :'Boolean'
+        :'requires_description' => :'Boolean',
+        :'tenant_id' => :'String',
+        :'enrollment_id' => :'String'
       }
     end
 
@@ -63,6 +71,8 @@ module OpenapiClient
         :'timestamp',
         :'title',
         :'task_category_id',
+        :'tenant_id',
+        :'enrollment_id'
       ])
     end
 
@@ -104,6 +114,14 @@ module OpenapiClient
       if attributes.key?(:'requires_description')
         self.requires_description = attributes[:'requires_description']
       end
+
+      if attributes.key?(:'tenant_id')
+        self.tenant_id = attributes[:'tenant_id']
+      end
+
+      if attributes.key?(:'enrollment_id')
+        self.enrollment_id = attributes[:'enrollment_id']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -131,7 +149,9 @@ module OpenapiClient
           title == o.title &&
           task_category_id == o.task_category_id &&
           display_in_time_tracker == o.display_in_time_tracker &&
-          requires_description == o.requires_description
+          requires_description == o.requires_description &&
+          tenant_id == o.tenant_id &&
+          enrollment_id == o.enrollment_id
     end
 
     # @see the `==` method
@@ -143,7 +163,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, timestamp, title, task_category_id, display_in_time_tracker, requires_description].hash
+      [id, timestamp, title, task_category_id, display_in_time_tracker, requires_description, tenant_id, enrollment_id].hash
     end
 
     # Builds the object from hash

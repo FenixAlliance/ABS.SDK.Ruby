@@ -60,17 +60,18 @@ require 'openapi_client'
 
 api_instance = OpenapiClient::BusinessRelationshipsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+business_relationship_create_dto = OpenapiClient::BusinessRelationshipCreateDto.new # BusinessRelationshipCreateDto | 
 opts = {
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example' # String | 
 }
 
 begin
-  #Get business relationships count
-  result = api_instance.get_business_relationships_count_async(tenant_id, opts)
+  #Create a business relationship
+  result = api_instance.create_business_relationship_async(tenant_id, business_relationship_create_dto, opts)
   p result
 rescue OpenapiClient::ApiError => e
-  puts "Exception when calling BusinessRelationshipsApi->get_business_relationships_count_async: #{e}"
+  puts "Exception when calling BusinessRelationshipsApi->create_business_relationship_async: #{e}"
 end
 
 ```
@@ -81,7 +82,12 @@ All URIs are relative to *https://absuite.net*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*OpenapiClient::BusinessRelationshipsApi* | [**create_business_relationship_async**](docs/BusinessRelationshipsApi.md#create_business_relationship_async) | **POST** /api/v2/TenantsService/BusinessRelationships | Create a business relationship
+*OpenapiClient::BusinessRelationshipsApi* | [**delete_business_relationship_async**](docs/BusinessRelationshipsApi.md#delete_business_relationship_async) | **DELETE** /api/v2/TenantsService/BusinessRelationships/{businessRelationshipId} | Delete a business relationship
+*OpenapiClient::BusinessRelationshipsApi* | [**get_business_relationship_by_id_async**](docs/BusinessRelationshipsApi.md#get_business_relationship_by_id_async) | **GET** /api/v2/TenantsService/BusinessRelationships/{businessRelationshipId} | Get business relationship by ID
+*OpenapiClient::BusinessRelationshipsApi* | [**get_business_relationships_async**](docs/BusinessRelationshipsApi.md#get_business_relationships_async) | **GET** /api/v2/TenantsService/BusinessRelationships | Get business relationships
 *OpenapiClient::BusinessRelationshipsApi* | [**get_business_relationships_count_async**](docs/BusinessRelationshipsApi.md#get_business_relationships_count_async) | **GET** /api/v2/TenantsService/BusinessRelationships/Count | Get business relationships count
+*OpenapiClient::BusinessRelationshipsApi* | [**update_business_relationship_async**](docs/BusinessRelationshipsApi.md#update_business_relationship_async) | **PUT** /api/v2/TenantsService/BusinessRelationships/{businessRelationshipId} | Update a business relationship
 *OpenapiClient::DepartmentsApi* | [**create_tenant_department**](docs/DepartmentsApi.md#create_tenant_department) | **POST** /api/v2/TenantsService/Departments | Create a new tenant department
 *OpenapiClient::DepartmentsApi* | [**delete_tenant_department**](docs/DepartmentsApi.md#delete_tenant_department) | **DELETE** /api/v2/TenantsService/Departments/{tenantDepartmentId} | Delete a tenant department
 *OpenapiClient::DepartmentsApi* | [**get_tenant_department_by_id**](docs/DepartmentsApi.md#get_tenant_department_by_id) | **GET** /api/v2/TenantsService/Departments/{tenantDepartmentId} | Retrieve a single tenant department by its ID
@@ -109,6 +115,7 @@ Class | Method | HTTP request | Description
 *OpenapiClient::FenixAllianceABSWebApi* | [**account_manage_download_personal_data_post**](docs/FenixAllianceABSWebApi.md#account_manage_download_personal_data_post) | **POST** /Account/Manage/DownloadPersonalData | 
 *OpenapiClient::FenixAllianceABSWebApi* | [**account_manage_link_external_login_post**](docs/FenixAllianceABSWebApi.md#account_manage_link_external_login_post) | **POST** /Account/Manage/LinkExternalLogin | 
 *OpenapiClient::FenixAllianceABSWebApi* | [**account_perform_external_login_post**](docs/FenixAllianceABSWebApi.md#account_perform_external_login_post) | **POST** /Account/PerformExternalLogin | 
+*OpenapiClient::FenixAllianceABSWebApi* | [**api_v2_ai_service_agents_agent_id_agui_post**](docs/FenixAllianceABSWebApi.md#api_v2_ai_service_agents_agent_id_agui_post) | **POST** /api/v2/AIService/Agents/{agentId}/agui | 
 *OpenapiClient::FenixAllianceABSWebApi* | [**forgot_password_post**](docs/FenixAllianceABSWebApi.md#forgot_password_post) | **POST** /forgotPassword | 
 *OpenapiClient::FenixAllianceABSWebApi* | [**health_get**](docs/FenixAllianceABSWebApi.md#health_get) | **GET** /health | 
 *OpenapiClient::FenixAllianceABSWebApi* | [**hello_get**](docs/FenixAllianceABSWebApi.md#hello_get) | **GET** /hello | 
@@ -199,6 +206,7 @@ Class | Method | HTTP request | Description
 *OpenapiClient::TenantsApi* | [**de_select_tenant_async**](docs/TenantsApi.md#de_select_tenant_async) | **POST** /api/v2/TenantsService/Tenants/Deselect | Deselect the user's default tenant
 *OpenapiClient::TenantsApi* | [**delete_tenant_async**](docs/TenantsApi.md#delete_tenant_async) | **DELETE** /api/v2/TenantsService/Tenants | Delete a tenant
 *OpenapiClient::TenantsApi* | [**get_accessible_features_async**](docs/TenantsApi.md#get_accessible_features_async) | **GET** /api/v2/TenantsService/Tenants/{tenantId}/Enrollments/{enrollmentId}/Features | Get the list of features accessible to a specific enrollment
+*OpenapiClient::TenantsApi* | [**get_cart_for_tenant_async**](docs/TenantsApi.md#get_cart_for_tenant_async) | **GET** /api/v2/TenantsService/Tenants/{tenantId}/Cart | Get a tenant's default cart
 *OpenapiClient::TenantsApi* | [**get_current_tenant_async**](docs/TenantsApi.md#get_current_tenant_async) | **GET** /api/v2/TenantsService/Tenants/Current | Get the user's current default tenant
 *OpenapiClient::TenantsApi* | [**get_enrollment_license_by_id_async**](docs/TenantsApi.md#get_enrollment_license_by_id_async) | **GET** /api/v2/TenantsService/Tenants/{tenantId}/Enrollments/{enrollmentId}/Licenses/{licenseId} | Get a specific license for an enrollment
 *OpenapiClient::TenantsApi* | [**get_enrollment_licenses_async**](docs/TenantsApi.md#get_enrollment_licenses_async) | **GET** /api/v2/TenantsService/Tenants/{tenantId}/Enrollments/{enrollmentId}/Licenses | Get the list of licenses available to a specific enrollment
@@ -208,7 +216,6 @@ Class | Method | HTTP request | Description
 *OpenapiClient::TenantsApi* | [**get_root_tenant_async**](docs/TenantsApi.md#get_root_tenant_async) | **GET** /api/v2/TenantsService/Tenants/Root | Get the root tenant of the platform
 *OpenapiClient::TenantsApi* | [**get_tenant_async**](docs/TenantsApi.md#get_tenant_async) | **GET** /api/v2/TenantsService/Tenants/{tenantId} | Get a specific tenant by ID
 *OpenapiClient::TenantsApi* | [**get_tenant_avatar_async**](docs/TenantsApi.md#get_tenant_avatar_async) | **GET** /api/v2/TenantsService/Tenants/{tenantId}/Avatar | Get a tenant's avatar
-*OpenapiClient::TenantsApi* | [**get_tenant_cart_async**](docs/TenantsApi.md#get_tenant_cart_async) | **GET** /api/v2/TenantsService/Tenants/{tenantId}/Cart | Get a tenant's default cart
 *OpenapiClient::TenantsApi* | [**get_tenant_enrollment_async**](docs/TenantsApi.md#get_tenant_enrollment_async) | **GET** /api/v2/TenantsService/Tenants/{tenantId}/Enrollments/{enrollmentId} | Get a specific tenant enrollment
 *OpenapiClient::TenantsApi* | [**get_tenant_enrollments_async**](docs/TenantsApi.md#get_tenant_enrollments_async) | **GET** /api/v2/TenantsService/Tenants/{tenantId}/Enrollments | Get the list of user enrollments for a tenant
 *OpenapiClient::TenantsApi* | [**get_tenant_invitations_async**](docs/TenantsApi.md#get_tenant_invitations_async) | **GET** /api/v2/TenantsService/Tenants/{tenantId}/Invitations | Get the list of invitations issued by a tenant
@@ -225,8 +232,8 @@ Class | Method | HTTP request | Description
 *OpenapiClient::TenantsApi* | [**patch_tenant_async**](docs/TenantsApi.md#patch_tenant_async) | **PATCH** /api/v2/TenantsService/Tenants/{tenantId} | Patch a tenant's profile
 *OpenapiClient::TenantsApi* | [**revoke_license_async**](docs/TenantsApi.md#revoke_license_async) | **DELETE** /api/v2/TenantsService/Tenants/{tenantId}/Enrollments/{enrollmentId}/Licenses/{licenseId} | Revoke a license from a specific enrollment
 *OpenapiClient::TenantsApi* | [**select_tenant_async**](docs/TenantsApi.md#select_tenant_async) | **POST** /api/v2/TenantsService/Tenants/{tenantId}/Select | Select a business tenant as the user's default tenant
-*OpenapiClient::TenantsApi* | [**update_avatar_async**](docs/TenantsApi.md#update_avatar_async) | **POST** /api/v2/TenantsService/Tenants/{tenantId}/Avatar | Update a tenant's avatar
 *OpenapiClient::TenantsApi* | [**update_tenant_async**](docs/TenantsApi.md#update_tenant_async) | **PUT** /api/v2/TenantsService/Tenants/{tenantId} | Update a tenant's profile
+*OpenapiClient::TenantsApi* | [**update_tenant_avatar_async**](docs/TenantsApi.md#update_tenant_avatar_async) | **POST** /api/v2/TenantsService/Tenants/{tenantId}/Avatar | Update a tenant's avatar
 *OpenapiClient::TenantsApi* | [**validate_enrollment_feature_access**](docs/TenantsApi.md#validate_enrollment_feature_access) | **GET** /api/v2/TenantsService/Tenants/{tenantId}/Enrollments/{enrollmentId}/HasAccess | Validate the access to a specific feature for a specific enrollment
 *OpenapiClient::TenantsApi* | [**validate_enrollment_permissions_async**](docs/TenantsApi.md#validate_enrollment_permissions_async) | **GET** /api/v2/TenantsService/Tenants/{tenantId}/Enrollments/{enrollmentId}/Permissions/Validate | Validate the existence of a list of roles and permissions for a specific enrollment
 *OpenapiClient::TerritoriesApi* | [**create_tenant_territory**](docs/TerritoriesApi.md#create_tenant_territory) | **POST** /api/v2/TenantsService/Territories | Create a new tenant territory
@@ -270,6 +277,11 @@ Class | Method | HTTP request | Description
 
  - [OpenapiClient::AccessTokenResponse](docs/AccessTokenResponse.md)
  - [OpenapiClient::BooleanEnvelope](docs/BooleanEnvelope.md)
+ - [OpenapiClient::BusinessRelationshipCreateDto](docs/BusinessRelationshipCreateDto.md)
+ - [OpenapiClient::BusinessRelationshipDto](docs/BusinessRelationshipDto.md)
+ - [OpenapiClient::BusinessRelationshipDtoEnvelope](docs/BusinessRelationshipDtoEnvelope.md)
+ - [OpenapiClient::BusinessRelationshipDtoListEnvelope](docs/BusinessRelationshipDtoListEnvelope.md)
+ - [OpenapiClient::BusinessRelationshipUpdateDto](docs/BusinessRelationshipUpdateDto.md)
  - [OpenapiClient::CartDto](docs/CartDto.md)
  - [OpenapiClient::CartDtoEnvelope](docs/CartDtoEnvelope.md)
  - [OpenapiClient::EmptyEnvelope](docs/EmptyEnvelope.md)
@@ -395,7 +407,7 @@ Class | Method | HTTP request | Description
  - [OpenapiClient::UnitGroupDtoListEnvelope](docs/UnitGroupDtoListEnvelope.md)
  - [OpenapiClient::UnitGroupUpdateDto](docs/UnitGroupUpdateDto.md)
  - [OpenapiClient::UnitUpdateDto](docs/UnitUpdateDto.md)
- - [OpenapiClient::UpdateAvatarAsyncRequest](docs/UpdateAvatarAsyncRequest.md)
+ - [OpenapiClient::UpdateTenantAvatarAsyncRequest](docs/UpdateTenantAvatarAsyncRequest.md)
  - [OpenapiClient::UserDto](docs/UserDto.md)
  - [OpenapiClient::UserDtoListEnvelope](docs/UserDtoListEnvelope.md)
  - [OpenapiClient::WalletDto](docs/WalletDto.md)

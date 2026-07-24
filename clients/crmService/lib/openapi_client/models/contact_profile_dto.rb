@@ -19,9 +19,11 @@ module OpenapiClient
 
     attr_accessor :timestamp
 
+    attr_accessor :contact_id
+
     attr_accessor :tenant_id
 
-    attr_accessor :contact_id
+    attr_accessor :type
 
     attr_accessor :enrollment_id
 
@@ -32,6 +34,8 @@ module OpenapiClient
     attr_accessor :submitted
 
     attr_accessor :avatar_url
+
+    attr_accessor :contact
 
     attr_accessor :qualified_name
 
@@ -82,13 +86,15 @@ module OpenapiClient
       {
         :'id' => :'id',
         :'timestamp' => :'timestamp',
-        :'tenant_id' => :'tenantId',
         :'contact_id' => :'contactId',
+        :'tenant_id' => :'tenantId',
+        :'type' => :'type',
         :'enrollment_id' => :'enrollmentId',
         :'about' => :'about',
         :'verified' => :'verified',
         :'submitted' => :'submitted',
         :'avatar_url' => :'avatarUrl',
+        :'contact' => :'contact',
         :'qualified_name' => :'qualifiedName',
         :'verification_timestamp' => :'verificationTimestamp',
         :'data' => :'data',
@@ -124,13 +130,15 @@ module OpenapiClient
       {
         :'id' => :'String',
         :'timestamp' => :'Time',
-        :'tenant_id' => :'String',
         :'contact_id' => :'String',
+        :'tenant_id' => :'String',
+        :'type' => :'String',
         :'enrollment_id' => :'String',
         :'about' => :'String',
         :'verified' => :'Boolean',
         :'submitted' => :'Boolean',
         :'avatar_url' => :'String',
+        :'contact' => :'ContactDto',
         :'qualified_name' => :'String',
         :'verification_timestamp' => :'Time',
         :'data' => :'String',
@@ -160,8 +168,10 @@ module OpenapiClient
     def self.openapi_nullable
       Set.new([
         :'id',
-        :'tenant_id',
+        :'timestamp',
         :'contact_id',
+        :'tenant_id',
+        :'type',
         :'enrollment_id',
         :'about',
         :'avatar_url',
@@ -213,12 +223,16 @@ module OpenapiClient
         self.timestamp = attributes[:'timestamp']
       end
 
+      if attributes.key?(:'contact_id')
+        self.contact_id = attributes[:'contact_id']
+      end
+
       if attributes.key?(:'tenant_id')
         self.tenant_id = attributes[:'tenant_id']
       end
 
-      if attributes.key?(:'contact_id')
-        self.contact_id = attributes[:'contact_id']
+      if attributes.key?(:'type')
+        self.type = attributes[:'type']
       end
 
       if attributes.key?(:'enrollment_id')
@@ -239,6 +253,10 @@ module OpenapiClient
 
       if attributes.key?(:'avatar_url')
         self.avatar_url = attributes[:'avatar_url']
+      end
+
+      if attributes.key?(:'contact')
+        self.contact = attributes[:'contact']
       end
 
       if attributes.key?(:'qualified_name')
@@ -352,13 +370,15 @@ module OpenapiClient
       self.class == o.class &&
           id == o.id &&
           timestamp == o.timestamp &&
-          tenant_id == o.tenant_id &&
           contact_id == o.contact_id &&
+          tenant_id == o.tenant_id &&
+          type == o.type &&
           enrollment_id == o.enrollment_id &&
           about == o.about &&
           verified == o.verified &&
           submitted == o.submitted &&
           avatar_url == o.avatar_url &&
+          contact == o.contact &&
           qualified_name == o.qualified_name &&
           verification_timestamp == o.verification_timestamp &&
           data == o.data &&
@@ -392,7 +412,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, timestamp, tenant_id, contact_id, enrollment_id, about, verified, submitted, avatar_url, qualified_name, verification_timestamp, data, data_label, data1, data1_label, data2, data2_label, data3, data3_label, data4, data4_label, data5, data5_label, data6, data6_label, data7, data7_label, data8, data8_label, data9, data9_label].hash
+      [id, timestamp, contact_id, tenant_id, type, enrollment_id, about, verified, submitted, avatar_url, contact, qualified_name, verification_timestamp, data, data_label, data1, data1_label, data2, data2_label, data3, data3_label, data4, data4_label, data5, data5_label, data6, data6_label, data7, data7_label, data8, data8_label, data9, data9_label].hash
     end
 
     # Builds the object from hash

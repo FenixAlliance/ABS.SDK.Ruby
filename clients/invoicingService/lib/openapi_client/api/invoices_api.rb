@@ -2663,7 +2663,7 @@ module OpenapiClient
     # Returns SUM(Invoice.TotalAmountInUSD) for invoices with InvoiceType == PurchaseInvoice, filtered by the supplied OData date range.
     # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
-    # @return [DecimalEnvelope]
+    # @return [MoneyEnvelope]
     def get_purchase_invoices_sum(tenant_id, opts = {})
       data, _status_code, _headers = get_purchase_invoices_sum_with_http_info(tenant_id, opts)
       data
@@ -2673,7 +2673,7 @@ module OpenapiClient
     # Returns SUM(Invoice.TotalAmountInUSD) for invoices with InvoiceType &#x3D;&#x3D; PurchaseInvoice, filtered by the supplied OData date range.
     # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(DecimalEnvelope, Integer, Hash)>] DecimalEnvelope data, response status code and response headers
+    # @return [Array<(MoneyEnvelope, Integer, Hash)>] MoneyEnvelope data, response status code and response headers
     def get_purchase_invoices_sum_with_http_info(tenant_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: InvoicesApi.get_purchase_invoices_sum ...'
@@ -2701,7 +2701,7 @@ module OpenapiClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'DecimalEnvelope'
+      return_type = opts[:debug_return_type] || 'MoneyEnvelope'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -2727,7 +2727,7 @@ module OpenapiClient
     # Returns SUM(Invoice.TotalAmountInUSD) for invoices with InvoiceType == SalesInvoice, filtered by the supplied OData date range.
     # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
-    # @return [DecimalEnvelope]
+    # @return [MoneyEnvelope]
     def get_sales_invoices_sum(tenant_id, opts = {})
       data, _status_code, _headers = get_sales_invoices_sum_with_http_info(tenant_id, opts)
       data
@@ -2737,7 +2737,7 @@ module OpenapiClient
     # Returns SUM(Invoice.TotalAmountInUSD) for invoices with InvoiceType &#x3D;&#x3D; SalesInvoice, filtered by the supplied OData date range.
     # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(DecimalEnvelope, Integer, Hash)>] DecimalEnvelope data, response status code and response headers
+    # @return [Array<(MoneyEnvelope, Integer, Hash)>] MoneyEnvelope data, response status code and response headers
     def get_sales_invoices_sum_with_http_info(tenant_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: InvoicesApi.get_sales_invoices_sum ...'
@@ -2765,7 +2765,7 @@ module OpenapiClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'DecimalEnvelope'
+      return_type = opts[:debug_return_type] || 'MoneyEnvelope'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []

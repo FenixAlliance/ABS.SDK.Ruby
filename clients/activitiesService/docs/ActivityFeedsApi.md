@@ -15,6 +15,7 @@ All URIs are relative to *https://absuite.net*
 | [**get_activity_feed_async**](ActivityFeedsApi.md#get_activity_feed_async) | **GET** /api/v2/ActivitiesService/ActivityFeeds/{activityFeedId} | Get activity feed by ID |
 | [**get_activity_feeds_async**](ActivityFeedsApi.md#get_activity_feeds_async) | **GET** /api/v2/ActivitiesService/ActivityFeeds | Get activity feeds |
 | [**get_activity_feeds_count_async**](ActivityFeedsApi.md#get_activity_feeds_count_async) | **GET** /api/v2/ActivitiesService/ActivityFeeds/Count | Count activity feeds |
+| [**get_activity_records_count_async**](ActivityFeedsApi.md#get_activity_records_count_async) | **GET** /api/v2/ActivitiesService/Activities/Count | Count activity records |
 | [**get_activity_type_by_id_async**](ActivityFeedsApi.md#get_activity_type_by_id_async) | **GET** /api/v2/ActivitiesService/ActivityTypes/{activityTypeId} | Get Activity Type |
 | [**get_activity_types_async**](ActivityFeedsApi.md#get_activity_types_async) | **GET** /api/v2/ActivitiesService/ActivityTypes | Get Activity Types |
 | [**patch_activity_async**](ActivityFeedsApi.md#patch_activity_async) | **PATCH** /api/v2/ActivitiesService/ActivityFeeds/{activityFeedId}/Activities/{activityId} | Patch an activity |
@@ -790,6 +791,76 @@ begin
   p data # => <Int32Envelope>
 rescue OpenapiClient::ApiError => e
   puts "Error when calling ActivityFeedsApi->get_activity_feeds_count_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+
+### Return type
+
+[**Int32Envelope**](Int32Envelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## get_activity_records_count_async
+
+> <Int32Envelope> get_activity_records_count_async(tenant_id, opts)
+
+Count activity records
+
+Returns the tenant-wide count of activity records across all feeds owned by the tenant.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::ActivityFeedsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example' # String | 
+}
+
+begin
+  # Count activity records
+  result = api_instance.get_activity_records_count_async(tenant_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ActivityFeedsApi->get_activity_records_count_async: #{e}"
+end
+```
+
+#### Using the get_activity_records_count_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<Int32Envelope>, Integer, Hash)> get_activity_records_count_async_with_http_info(tenant_id, opts)
+
+```ruby
+begin
+  # Count activity records
+  data, status_code, headers = api_instance.get_activity_records_count_async_with_http_info(tenant_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <Int32Envelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ActivityFeedsApi->get_activity_records_count_async_with_http_info: #{e}"
 end
 ```
 

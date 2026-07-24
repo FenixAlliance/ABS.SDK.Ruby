@@ -107,6 +107,7 @@ Class | Method | HTTP request | Description
 *OpenapiClient::FenixAllianceABSWebApi* | [**account_manage_download_personal_data_post**](docs/FenixAllianceABSWebApi.md#account_manage_download_personal_data_post) | **POST** /Account/Manage/DownloadPersonalData | 
 *OpenapiClient::FenixAllianceABSWebApi* | [**account_manage_link_external_login_post**](docs/FenixAllianceABSWebApi.md#account_manage_link_external_login_post) | **POST** /Account/Manage/LinkExternalLogin | 
 *OpenapiClient::FenixAllianceABSWebApi* | [**account_perform_external_login_post**](docs/FenixAllianceABSWebApi.md#account_perform_external_login_post) | **POST** /Account/PerformExternalLogin | 
+*OpenapiClient::FenixAllianceABSWebApi* | [**api_v2_ai_service_agents_agent_id_agui_post**](docs/FenixAllianceABSWebApi.md#api_v2_ai_service_agents_agent_id_agui_post) | **POST** /api/v2/AIService/Agents/{agentId}/agui | 
 *OpenapiClient::FenixAllianceABSWebApi* | [**forgot_password_post**](docs/FenixAllianceABSWebApi.md#forgot_password_post) | **POST** /forgotPassword | 
 *OpenapiClient::FenixAllianceABSWebApi* | [**health_get**](docs/FenixAllianceABSWebApi.md#health_get) | **GET** /health | 
 *OpenapiClient::FenixAllianceABSWebApi* | [**hello_get**](docs/FenixAllianceABSWebApi.md#hello_get) | **GET** /hello | 
@@ -148,7 +149,12 @@ Class | Method | HTTP request | Description
 *OpenapiClient::MarketingListsApi* | [**get_marketing_lists_count_async**](docs/MarketingListsApi.md#get_marketing_lists_count_async) | **GET** /api/v2/MarketingService/MarketingLists/Count | Get marketing lists count
 *OpenapiClient::MarketingListsApi* | [**patch_marketing_list_async**](docs/MarketingListsApi.md#patch_marketing_list_async) | **PATCH** /api/v2/MarketingService/MarketingLists/{marketinglistId} | Patch a marketing list
 *OpenapiClient::MarketingListsApi* | [**update_marketing_list_async**](docs/MarketingListsApi.md#update_marketing_list_async) | **PUT** /api/v2/MarketingService/MarketingLists/{marketinglistId} | Update a marketing list
+*OpenapiClient::NewsletterSubscriptionsApi* | [**create_newsletter_subscription_async**](docs/NewsletterSubscriptionsApi.md#create_newsletter_subscription_async) | **POST** /api/v2/MarketingService/NewsletterSubscriptions | Create a newsletter subscription
+*OpenapiClient::NewsletterSubscriptionsApi* | [**delete_newsletter_subscription_async**](docs/NewsletterSubscriptionsApi.md#delete_newsletter_subscription_async) | **DELETE** /api/v2/MarketingService/NewsletterSubscriptions/{newsletterSubscriptionId} | Delete a newsletter subscription
+*OpenapiClient::NewsletterSubscriptionsApi* | [**get_newsletter_subscription_by_id_async**](docs/NewsletterSubscriptionsApi.md#get_newsletter_subscription_by_id_async) | **GET** /api/v2/MarketingService/NewsletterSubscriptions/{newsletterSubscriptionId} | Get newsletter subscription by ID
+*OpenapiClient::NewsletterSubscriptionsApi* | [**get_newsletter_subscriptions_async**](docs/NewsletterSubscriptionsApi.md#get_newsletter_subscriptions_async) | **GET** /api/v2/MarketingService/NewsletterSubscriptions | Get newsletter subscriptions
 *OpenapiClient::NewsletterSubscriptionsApi* | [**get_newsletter_subscriptions_count_async**](docs/NewsletterSubscriptionsApi.md#get_newsletter_subscriptions_count_async) | **GET** /api/v2/MarketingService/NewsletterSubscriptions/Count | Get newsletter subscriptions count
+*OpenapiClient::NewsletterSubscriptionsApi* | [**update_newsletter_subscription_async**](docs/NewsletterSubscriptionsApi.md#update_newsletter_subscription_async) | **PUT** /api/v2/MarketingService/NewsletterSubscriptions/{newsletterSubscriptionId} | Update a newsletter subscription
 *OpenapiClient::NewslettersApi* | [**create_newsletter_async**](docs/NewslettersApi.md#create_newsletter_async) | **POST** /api/v2/MarketingService/Newsletters | Create a newsletter
 *OpenapiClient::NewslettersApi* | [**delete_newsletter_async**](docs/NewslettersApi.md#delete_newsletter_async) | **DELETE** /api/v2/MarketingService/Newsletters/{newsletterId} | Delete a newsletter
 *OpenapiClient::NewslettersApi* | [**get_newsletter_details_async**](docs/NewslettersApi.md#get_newsletter_details_async) | **GET** /api/v2/MarketingService/Newsletters/{newsletterId} | Get newsletter by ID
@@ -221,6 +227,11 @@ Class | Method | HTTP request | Description
  - [OpenapiClient::NewsletterCreateDto](docs/NewsletterCreateDto.md)
  - [OpenapiClient::NewsletterDto](docs/NewsletterDto.md)
  - [OpenapiClient::NewsletterDtoEnvelope](docs/NewsletterDtoEnvelope.md)
+ - [OpenapiClient::NewsletterSubscriptionCreateDto](docs/NewsletterSubscriptionCreateDto.md)
+ - [OpenapiClient::NewsletterSubscriptionDto](docs/NewsletterSubscriptionDto.md)
+ - [OpenapiClient::NewsletterSubscriptionDtoEnvelope](docs/NewsletterSubscriptionDtoEnvelope.md)
+ - [OpenapiClient::NewsletterSubscriptionDtoListEnvelope](docs/NewsletterSubscriptionDtoListEnvelope.md)
+ - [OpenapiClient::NewsletterSubscriptionUpdateDto](docs/NewsletterSubscriptionUpdateDto.md)
  - [OpenapiClient::NewsletterUpdateDto](docs/NewsletterUpdateDto.md)
  - [OpenapiClient::Operation](docs/Operation.md)
  - [OpenapiClient::OrderDto](docs/OrderDto.md)

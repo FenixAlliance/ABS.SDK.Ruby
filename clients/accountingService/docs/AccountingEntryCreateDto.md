@@ -6,14 +6,12 @@
 | ---- | ---- | ----------- | ----- |
 | **id** | **String** |  | [optional] |
 | **timestamp** | **Time** |  | [optional] |
+| **journal_entry_id** | **String** |  |  |
+| **account_id** | **String** |  |  |
+| **direction** | **String** |  |  |
+| **transaction_amount** | **Float** |  | [optional] |
+| **transaction_currency_id** | **String** |  |  |
 | **description** | **String** |  |  |
-| **date** | **Time** |  | [optional] |
-| **amount** | **Float** |  | [optional] |
-| **currency_id** | **String** |  |  |
-| **debit_account_id** | **String** |  | [optional] |
-| **credit_account_id** | **String** |  | [optional] |
-| **journal_entry_id** | **String** |  | [optional] |
-| **accounting_entry_type** | **String** |  | [optional] |
 
 ## Example
 
@@ -23,14 +21,12 @@ require 'openapi_client'
 instance = OpenapiClient::AccountingEntryCreateDto.new(
   id: null,
   timestamp: null,
-  description: null,
-  date: null,
-  amount: null,
-  currency_id: null,
-  debit_account_id: null,
-  credit_account_id: null,
   journal_entry_id: null,
-  accounting_entry_type: null
+  account_id: null,
+  direction: null,
+  transaction_amount: null,
+  transaction_currency_id: null,
+  description: null
 )
 ```
 

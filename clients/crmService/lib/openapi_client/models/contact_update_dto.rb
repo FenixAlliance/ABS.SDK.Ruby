@@ -45,10 +45,6 @@ module OpenapiClient
 
     attr_accessor :parent_contact_id
 
-    attr_accessor :address_line1
-
-    attr_accessor :address_line2
-
     attr_accessor :postal_code
 
     attr_accessor :state_id
@@ -139,8 +135,6 @@ module OpenapiClient
         :'job_title' => :'jobTitle',
         :'country_id' => :'countryId',
         :'parent_contact_id' => :'parentContactId',
-        :'address_line1' => :'addressLine1',
-        :'address_line2' => :'addressLine2',
         :'postal_code' => :'postalCode',
         :'state_id' => :'stateId',
         :'city_id' => :'cityId',
@@ -192,8 +186,6 @@ module OpenapiClient
         :'job_title' => :'String',
         :'country_id' => :'String',
         :'parent_contact_id' => :'String',
-        :'address_line1' => :'String',
-        :'address_line2' => :'String',
         :'postal_code' => :'String',
         :'state_id' => :'String',
         :'city_id' => :'String',
@@ -237,8 +229,6 @@ module OpenapiClient
         :'job_title',
         :'country_id',
         :'parent_contact_id',
-        :'address_line1',
-        :'address_line2',
         :'postal_code',
         :'state_id',
         :'city_id',
@@ -346,14 +336,6 @@ module OpenapiClient
 
       if attributes.key?(:'parent_contact_id')
         self.parent_contact_id = attributes[:'parent_contact_id']
-      end
-
-      if attributes.key?(:'address_line1')
-        self.address_line1 = attributes[:'address_line1']
-      end
-
-      if attributes.key?(:'address_line2')
-        self.address_line2 = attributes[:'address_line2']
       end
 
       if attributes.key?(:'postal_code')
@@ -707,8 +689,6 @@ module OpenapiClient
           job_title == o.job_title &&
           country_id == o.country_id &&
           parent_contact_id == o.parent_contact_id &&
-          address_line1 == o.address_line1 &&
-          address_line2 == o.address_line2 &&
           postal_code == o.postal_code &&
           state_id == o.state_id &&
           city_id == o.city_id &&
@@ -745,7 +725,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [type, birthday, duns, tax_id, email, first_name, last_name, primary_contact_id, qualified_name, about, mobile_phone, business_phone, job_title, country_id, parent_contact_id, address_line1, address_line2, postal_code, state_id, city_id, street_line1, street_line2, currency_id, language_id, timezone_id, cover_url, github_username, instagram_username, web_url, twitch_url, reddit_url, git_hub_url, tik_tok_url, twitter_url, you_tube_url, facebook_url, linked_in_url, instagram_url, tik_tok_username, stack_exchange_url, stack_overflow_url, fax_number].hash
+      [type, birthday, duns, tax_id, email, first_name, last_name, primary_contact_id, qualified_name, about, mobile_phone, business_phone, job_title, country_id, parent_contact_id, postal_code, state_id, city_id, street_line1, street_line2, currency_id, language_id, timezone_id, cover_url, github_username, instagram_username, web_url, twitch_url, reddit_url, git_hub_url, tik_tok_url, twitter_url, you_tube_url, facebook_url, linked_in_url, instagram_url, tik_tok_username, stack_exchange_url, stack_overflow_url, fax_number].hash
     end
 
     # Builds the object from hash

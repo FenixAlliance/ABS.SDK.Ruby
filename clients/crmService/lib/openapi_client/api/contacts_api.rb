@@ -92,6 +92,172 @@ module OpenapiClient
       return data, status_code, headers
     end
 
+    # Add an email address to a contact
+    # Creates a new email address for the specified contact.
+    # @param tenant_id [String] 
+    # @param contact_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @option opts [ContactEmailCreateDto] :contact_email_create_dto 
+    # @return [nil]
+    def create_contact_email_async(tenant_id, contact_id, opts = {})
+      create_contact_email_async_with_http_info(tenant_id, contact_id, opts)
+      nil
+    end
+
+    # Add an email address to a contact
+    # Creates a new email address for the specified contact.
+    # @param tenant_id [String] 
+    # @param contact_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @option opts [ContactEmailCreateDto] :contact_email_create_dto 
+    # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
+    def create_contact_email_async_with_http_info(tenant_id, contact_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: ContactsApi.create_contact_email_async ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling ContactsApi.create_contact_email_async"
+      end
+      # verify the required parameter 'contact_id' is set
+      if @api_client.config.client_side_validation && contact_id.nil?
+        fail ArgumentError, "Missing the required parameter 'contact_id' when calling ContactsApi.create_contact_email_async"
+      end
+      # resource path
+      local_var_path = '/api/v2/CrmService/Contacts/{contactId}/Emails/Addresses'.sub('{' + 'contactId' + '}', CGI.escape(contact_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+      query_params[:'api-version'] = opts[:'api_version'] if !opts[:'api_version'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
+      header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'contact_email_create_dto'])
+
+      # return_type
+      return_type = opts[:debug_return_type]
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"ContactsApi.create_contact_email_async",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ContactsApi#create_contact_email_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Create a contact profile
+    # Creates a new profile for the specified contact.
+    # @param tenant_id [String] 
+    # @param contact_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @option opts [ContactProfileCreateDto] :contact_profile_create_dto 
+    # @return [nil]
+    def create_profile_for_contact_async(tenant_id, contact_id, opts = {})
+      create_profile_for_contact_async_with_http_info(tenant_id, contact_id, opts)
+      nil
+    end
+
+    # Create a contact profile
+    # Creates a new profile for the specified contact.
+    # @param tenant_id [String] 
+    # @param contact_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @option opts [ContactProfileCreateDto] :contact_profile_create_dto 
+    # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
+    def create_profile_for_contact_async_with_http_info(tenant_id, contact_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: ContactsApi.create_profile_for_contact_async ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling ContactsApi.create_profile_for_contact_async"
+      end
+      # verify the required parameter 'contact_id' is set
+      if @api_client.config.client_side_validation && contact_id.nil?
+        fail ArgumentError, "Missing the required parameter 'contact_id' when calling ContactsApi.create_profile_for_contact_async"
+      end
+      # resource path
+      local_var_path = '/api/v2/CrmService/Contacts/{contactId}/Profiles'.sub('{' + 'contactId' + '}', CGI.escape(contact_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+      query_params[:'api-version'] = opts[:'api_version'] if !opts[:'api_version'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
+      header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'contact_profile_create_dto'])
+
+      # return_type
+      return_type = opts[:debug_return_type]
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"ContactsApi.create_profile_for_contact_async",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ContactsApi#create_profile_for_contact_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Delete a contact
     # Delete a contact
     # @param tenant_id [String] 
@@ -164,6 +330,170 @@ module OpenapiClient
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: ContactsApi#delete_contact_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Delete a contact email address
+    # Deletes an email address from the specified contact.
+    # @param tenant_id [String] 
+    # @param contact_id [String] 
+    # @param email_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @return [nil]
+    def delete_contact_email_async(tenant_id, contact_id, email_id, opts = {})
+      delete_contact_email_async_with_http_info(tenant_id, contact_id, email_id, opts)
+      nil
+    end
+
+    # Delete a contact email address
+    # Deletes an email address from the specified contact.
+    # @param tenant_id [String] 
+    # @param contact_id [String] 
+    # @param email_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
+    def delete_contact_email_async_with_http_info(tenant_id, contact_id, email_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: ContactsApi.delete_contact_email_async ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling ContactsApi.delete_contact_email_async"
+      end
+      # verify the required parameter 'contact_id' is set
+      if @api_client.config.client_side_validation && contact_id.nil?
+        fail ArgumentError, "Missing the required parameter 'contact_id' when calling ContactsApi.delete_contact_email_async"
+      end
+      # verify the required parameter 'email_id' is set
+      if @api_client.config.client_side_validation && email_id.nil?
+        fail ArgumentError, "Missing the required parameter 'email_id' when calling ContactsApi.delete_contact_email_async"
+      end
+      # resource path
+      local_var_path = '/api/v2/CrmService/Contacts/{contactId}/Emails/{emailId}'.sub('{' + 'contactId' + '}', CGI.escape(contact_id.to_s)).sub('{' + 'emailId' + '}', CGI.escape(email_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+      query_params[:'api-version'] = opts[:'api_version'] if !opts[:'api_version'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type]
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"ContactsApi.delete_contact_email_async",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ContactsApi#delete_contact_email_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Delete a contact profile
+    # Deletes a profile for the specified contact.
+    # @param tenant_id [String] 
+    # @param contact_id [String] 
+    # @param profile_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @return [nil]
+    def delete_profile_for_contact_async(tenant_id, contact_id, profile_id, opts = {})
+      delete_profile_for_contact_async_with_http_info(tenant_id, contact_id, profile_id, opts)
+      nil
+    end
+
+    # Delete a contact profile
+    # Deletes a profile for the specified contact.
+    # @param tenant_id [String] 
+    # @param contact_id [String] 
+    # @param profile_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
+    def delete_profile_for_contact_async_with_http_info(tenant_id, contact_id, profile_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: ContactsApi.delete_profile_for_contact_async ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling ContactsApi.delete_profile_for_contact_async"
+      end
+      # verify the required parameter 'contact_id' is set
+      if @api_client.config.client_side_validation && contact_id.nil?
+        fail ArgumentError, "Missing the required parameter 'contact_id' when calling ContactsApi.delete_profile_for_contact_async"
+      end
+      # verify the required parameter 'profile_id' is set
+      if @api_client.config.client_side_validation && profile_id.nil?
+        fail ArgumentError, "Missing the required parameter 'profile_id' when calling ContactsApi.delete_profile_for_contact_async"
+      end
+      # resource path
+      local_var_path = '/api/v2/CrmService/Contacts/{contactId}/Profiles/{profileId}'.sub('{' + 'contactId' + '}', CGI.escape(contact_id.to_s)).sub('{' + 'profileId' + '}', CGI.escape(profile_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+      query_params[:'api-version'] = opts[:'api_version'] if !opts[:'api_version'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type]
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"ContactsApi.delete_profile_for_contact_async",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ContactsApi#delete_profile_for_contact_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -828,41 +1158,41 @@ module OpenapiClient
       return data, status_code, headers
     end
 
-    # Get a contact's social profiles
-    # Get a contact's social profiles
+    # Get a contact's email addresses
+    # Get all email addresses for the specified contact.
     # @param tenant_id [String] 
     # @param contact_id [String] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
-    # @return [ContactProfileDtoListEnvelope]
-    def get_contact_profiles_async(tenant_id, contact_id, opts = {})
-      data, _status_code, _headers = get_contact_profiles_async_with_http_info(tenant_id, contact_id, opts)
+    # @return [ContactEmailDtoListEnvelope]
+    def get_contact_emails_async(tenant_id, contact_id, opts = {})
+      data, _status_code, _headers = get_contact_emails_async_with_http_info(tenant_id, contact_id, opts)
       data
     end
 
-    # Get a contact&#39;s social profiles
-    # Get a contact&#39;s social profiles
+    # Get a contact&#39;s email addresses
+    # Get all email addresses for the specified contact.
     # @param tenant_id [String] 
     # @param contact_id [String] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
-    # @return [Array<(ContactProfileDtoListEnvelope, Integer, Hash)>] ContactProfileDtoListEnvelope data, response status code and response headers
-    def get_contact_profiles_async_with_http_info(tenant_id, contact_id, opts = {})
+    # @return [Array<(ContactEmailDtoListEnvelope, Integer, Hash)>] ContactEmailDtoListEnvelope data, response status code and response headers
+    def get_contact_emails_async_with_http_info(tenant_id, contact_id, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: ContactsApi.get_contact_profiles_async ...'
+        @api_client.config.logger.debug 'Calling API: ContactsApi.get_contact_emails_async ...'
       end
       # verify the required parameter 'tenant_id' is set
       if @api_client.config.client_side_validation && tenant_id.nil?
-        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling ContactsApi.get_contact_profiles_async"
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling ContactsApi.get_contact_emails_async"
       end
       # verify the required parameter 'contact_id' is set
       if @api_client.config.client_side_validation && contact_id.nil?
-        fail ArgumentError, "Missing the required parameter 'contact_id' when calling ContactsApi.get_contact_profiles_async"
+        fail ArgumentError, "Missing the required parameter 'contact_id' when calling ContactsApi.get_contact_emails_async"
       end
       # resource path
-      local_var_path = '/api/v2/CrmService/Contacts/{contactId}/Profiles'.sub('{' + 'contactId' + '}', CGI.escape(contact_id.to_s))
+      local_var_path = '/api/v2/CrmService/Contacts/{contactId}/Emails'.sub('{' + 'contactId' + '}', CGI.escape(contact_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -882,13 +1212,13 @@ module OpenapiClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'ContactProfileDtoListEnvelope'
+      return_type = opts[:debug_return_type] || 'ContactEmailDtoListEnvelope'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
 
       new_options = opts.merge(
-        :operation => :"ContactsApi.get_contact_profiles_async",
+        :operation => :"ContactsApi.get_contact_emails_async",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -899,7 +1229,83 @@ module OpenapiClient
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: ContactsApi#get_contact_profiles_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: ContactsApi#get_contact_emails_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Get contact email addresses count
+    # Returns the count of email addresses for the specified contact.
+    # @param tenant_id [String] 
+    # @param contact_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @return [Int32Envelope]
+    def get_contact_emails_count_async(tenant_id, contact_id, opts = {})
+      data, _status_code, _headers = get_contact_emails_count_async_with_http_info(tenant_id, contact_id, opts)
+      data
+    end
+
+    # Get contact email addresses count
+    # Returns the count of email addresses for the specified contact.
+    # @param tenant_id [String] 
+    # @param contact_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @return [Array<(Int32Envelope, Integer, Hash)>] Int32Envelope data, response status code and response headers
+    def get_contact_emails_count_async_with_http_info(tenant_id, contact_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: ContactsApi.get_contact_emails_count_async ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling ContactsApi.get_contact_emails_count_async"
+      end
+      # verify the required parameter 'contact_id' is set
+      if @api_client.config.client_side_validation && contact_id.nil?
+        fail ArgumentError, "Missing the required parameter 'contact_id' when calling ContactsApi.get_contact_emails_count_async"
+      end
+      # resource path
+      local_var_path = '/api/v2/CrmService/Contacts/{contactId}/Emails/Count'.sub('{' + 'contactId' + '}', CGI.escape(contact_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+      query_params[:'api-version'] = opts[:'api_version'] if !opts[:'api_version'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'Int32Envelope'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"ContactsApi.get_contact_emails_count_async",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ContactsApi#get_contact_emails_count_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -1786,6 +2192,158 @@ module OpenapiClient
       return data, status_code, headers
     end
 
+    # Get a contact's social profiles
+    # Get a contact's social profiles
+    # @param tenant_id [String] 
+    # @param contact_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @return [ContactProfileDtoListEnvelope]
+    def get_profiles_for_contact_async(tenant_id, contact_id, opts = {})
+      data, _status_code, _headers = get_profiles_for_contact_async_with_http_info(tenant_id, contact_id, opts)
+      data
+    end
+
+    # Get a contact&#39;s social profiles
+    # Get a contact&#39;s social profiles
+    # @param tenant_id [String] 
+    # @param contact_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @return [Array<(ContactProfileDtoListEnvelope, Integer, Hash)>] ContactProfileDtoListEnvelope data, response status code and response headers
+    def get_profiles_for_contact_async_with_http_info(tenant_id, contact_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: ContactsApi.get_profiles_for_contact_async ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling ContactsApi.get_profiles_for_contact_async"
+      end
+      # verify the required parameter 'contact_id' is set
+      if @api_client.config.client_side_validation && contact_id.nil?
+        fail ArgumentError, "Missing the required parameter 'contact_id' when calling ContactsApi.get_profiles_for_contact_async"
+      end
+      # resource path
+      local_var_path = '/api/v2/CrmService/Contacts/{contactId}/Profiles'.sub('{' + 'contactId' + '}', CGI.escape(contact_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+      query_params[:'api-version'] = opts[:'api_version'] if !opts[:'api_version'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'ContactProfileDtoListEnvelope'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"ContactsApi.get_profiles_for_contact_async",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ContactsApi#get_profiles_for_contact_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Get contact profiles count
+    # Returns the count of profiles for the specified contact.
+    # @param tenant_id [String] 
+    # @param contact_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @return [Int32Envelope]
+    def get_profiles_for_contact_count_async(tenant_id, contact_id, opts = {})
+      data, _status_code, _headers = get_profiles_for_contact_count_async_with_http_info(tenant_id, contact_id, opts)
+      data
+    end
+
+    # Get contact profiles count
+    # Returns the count of profiles for the specified contact.
+    # @param tenant_id [String] 
+    # @param contact_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @return [Array<(Int32Envelope, Integer, Hash)>] Int32Envelope data, response status code and response headers
+    def get_profiles_for_contact_count_async_with_http_info(tenant_id, contact_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: ContactsApi.get_profiles_for_contact_count_async ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling ContactsApi.get_profiles_for_contact_count_async"
+      end
+      # verify the required parameter 'contact_id' is set
+      if @api_client.config.client_side_validation && contact_id.nil?
+        fail ArgumentError, "Missing the required parameter 'contact_id' when calling ContactsApi.get_profiles_for_contact_count_async"
+      end
+      # resource path
+      local_var_path = '/api/v2/CrmService/Contacts/{contactId}/Profiles/Count'.sub('{' + 'contactId' + '}', CGI.escape(contact_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+      query_params[:'api-version'] = opts[:'api_version'] if !opts[:'api_version'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'Int32Envelope'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"ContactsApi.get_profiles_for_contact_count_async",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ContactsApi#get_profiles_for_contact_count_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Patch a contact
     # Patch a contact
     # @param tenant_id [String] 
@@ -1865,6 +2423,95 @@ module OpenapiClient
       data, status_code, headers = @api_client.call_api(:PATCH, local_var_path, new_options)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: ContactsApi#patch_contact_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Patch a contact email address
+    # Partially updates an existing email address for the specified contact.
+    # @param tenant_id [String] 
+    # @param contact_id [String] 
+    # @param email_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @option opts [Array<Operation>] :operation 
+    # @return [nil]
+    def patch_contact_email_async(tenant_id, contact_id, email_id, opts = {})
+      patch_contact_email_async_with_http_info(tenant_id, contact_id, email_id, opts)
+      nil
+    end
+
+    # Patch a contact email address
+    # Partially updates an existing email address for the specified contact.
+    # @param tenant_id [String] 
+    # @param contact_id [String] 
+    # @param email_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @option opts [Array<Operation>] :operation 
+    # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
+    def patch_contact_email_async_with_http_info(tenant_id, contact_id, email_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: ContactsApi.patch_contact_email_async ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling ContactsApi.patch_contact_email_async"
+      end
+      # verify the required parameter 'contact_id' is set
+      if @api_client.config.client_side_validation && contact_id.nil?
+        fail ArgumentError, "Missing the required parameter 'contact_id' when calling ContactsApi.patch_contact_email_async"
+      end
+      # verify the required parameter 'email_id' is set
+      if @api_client.config.client_side_validation && email_id.nil?
+        fail ArgumentError, "Missing the required parameter 'email_id' when calling ContactsApi.patch_contact_email_async"
+      end
+      # resource path
+      local_var_path = '/api/v2/CrmService/Contacts/{contactId}/Emails/{emailId}'.sub('{' + 'contactId' + '}', CGI.escape(contact_id.to_s)).sub('{' + 'emailId' + '}', CGI.escape(email_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+      query_params[:'api-version'] = opts[:'api_version'] if !opts[:'api_version'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
+      header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'operation'])
+
+      # return_type
+      return_type = opts[:debug_return_type]
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"ContactsApi.patch_contact_email_async",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:PATCH, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ContactsApi#patch_contact_email_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -2180,6 +2827,184 @@ module OpenapiClient
       return data, status_code, headers
     end
 
+    # Update a contact email address
+    # Updates an existing email address for the specified contact.
+    # @param tenant_id [String] 
+    # @param contact_id [String] 
+    # @param email_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @option opts [ContactEmailUpdateDto] :contact_email_update_dto 
+    # @return [nil]
+    def update_contact_email_async(tenant_id, contact_id, email_id, opts = {})
+      update_contact_email_async_with_http_info(tenant_id, contact_id, email_id, opts)
+      nil
+    end
+
+    # Update a contact email address
+    # Updates an existing email address for the specified contact.
+    # @param tenant_id [String] 
+    # @param contact_id [String] 
+    # @param email_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @option opts [ContactEmailUpdateDto] :contact_email_update_dto 
+    # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
+    def update_contact_email_async_with_http_info(tenant_id, contact_id, email_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: ContactsApi.update_contact_email_async ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling ContactsApi.update_contact_email_async"
+      end
+      # verify the required parameter 'contact_id' is set
+      if @api_client.config.client_side_validation && contact_id.nil?
+        fail ArgumentError, "Missing the required parameter 'contact_id' when calling ContactsApi.update_contact_email_async"
+      end
+      # verify the required parameter 'email_id' is set
+      if @api_client.config.client_side_validation && email_id.nil?
+        fail ArgumentError, "Missing the required parameter 'email_id' when calling ContactsApi.update_contact_email_async"
+      end
+      # resource path
+      local_var_path = '/api/v2/CrmService/Contacts/{contactId}/Emails/{emailId}'.sub('{' + 'contactId' + '}', CGI.escape(contact_id.to_s)).sub('{' + 'emailId' + '}', CGI.escape(email_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+      query_params[:'api-version'] = opts[:'api_version'] if !opts[:'api_version'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
+      header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'contact_email_update_dto'])
+
+      # return_type
+      return_type = opts[:debug_return_type]
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"ContactsApi.update_contact_email_async",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ContactsApi#update_contact_email_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Update a contact profile
+    # Updates an existing profile for the specified contact.
+    # @param tenant_id [String] 
+    # @param contact_id [String] 
+    # @param profile_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @option opts [ContactProfileUpdateDto] :contact_profile_update_dto 
+    # @return [nil]
+    def update_profile_for_contact_async(tenant_id, contact_id, profile_id, opts = {})
+      update_profile_for_contact_async_with_http_info(tenant_id, contact_id, profile_id, opts)
+      nil
+    end
+
+    # Update a contact profile
+    # Updates an existing profile for the specified contact.
+    # @param tenant_id [String] 
+    # @param contact_id [String] 
+    # @param profile_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @option opts [ContactProfileUpdateDto] :contact_profile_update_dto 
+    # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
+    def update_profile_for_contact_async_with_http_info(tenant_id, contact_id, profile_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: ContactsApi.update_profile_for_contact_async ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling ContactsApi.update_profile_for_contact_async"
+      end
+      # verify the required parameter 'contact_id' is set
+      if @api_client.config.client_side_validation && contact_id.nil?
+        fail ArgumentError, "Missing the required parameter 'contact_id' when calling ContactsApi.update_profile_for_contact_async"
+      end
+      # verify the required parameter 'profile_id' is set
+      if @api_client.config.client_side_validation && profile_id.nil?
+        fail ArgumentError, "Missing the required parameter 'profile_id' when calling ContactsApi.update_profile_for_contact_async"
+      end
+      # resource path
+      local_var_path = '/api/v2/CrmService/Contacts/{contactId}/Profiles/{profileId}'.sub('{' + 'contactId' + '}', CGI.escape(contact_id.to_s)).sub('{' + 'profileId' + '}', CGI.escape(profile_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+      query_params[:'api-version'] = opts[:'api_version'] if !opts[:'api_version'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
+      header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'contact_profile_update_dto'])
+
+      # return_type
+      return_type = opts[:debug_return_type]
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"ContactsApi.update_profile_for_contact_async",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ContactsApi#update_profile_for_contact_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Upsert a tenant onto another tenant's contact list
     # Upsert a tenant onto another tenant's contact list
     # @param tenant_id [String] 
@@ -2330,6 +3155,88 @@ module OpenapiClient
       data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: ContactsApi#upsert_user_onto_another_tenant_contact_list_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Verify a contact email address
+    # Marks an email address as verified on the specified contact.
+    # @param tenant_id [String] 
+    # @param contact_id [String] 
+    # @param email_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @return [nil]
+    def verify_contact_email_async(tenant_id, contact_id, email_id, opts = {})
+      verify_contact_email_async_with_http_info(tenant_id, contact_id, email_id, opts)
+      nil
+    end
+
+    # Verify a contact email address
+    # Marks an email address as verified on the specified contact.
+    # @param tenant_id [String] 
+    # @param contact_id [String] 
+    # @param email_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
+    def verify_contact_email_async_with_http_info(tenant_id, contact_id, email_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: ContactsApi.verify_contact_email_async ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling ContactsApi.verify_contact_email_async"
+      end
+      # verify the required parameter 'contact_id' is set
+      if @api_client.config.client_side_validation && contact_id.nil?
+        fail ArgumentError, "Missing the required parameter 'contact_id' when calling ContactsApi.verify_contact_email_async"
+      end
+      # verify the required parameter 'email_id' is set
+      if @api_client.config.client_side_validation && email_id.nil?
+        fail ArgumentError, "Missing the required parameter 'email_id' when calling ContactsApi.verify_contact_email_async"
+      end
+      # resource path
+      local_var_path = '/api/v2/CrmService/Contacts/{contactId}/Emails/{emailId}/Verify'.sub('{' + 'contactId' + '}', CGI.escape(contact_id.to_s)).sub('{' + 'emailId' + '}', CGI.escape(email_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+      query_params[:'api-version'] = opts[:'api_version'] if !opts[:'api_version'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type]
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"ContactsApi.verify_contact_email_async",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ContactsApi#verify_contact_email_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

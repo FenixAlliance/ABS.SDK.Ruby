@@ -5,6 +5,7 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **id** | **String** |  | [optional] |
+| **timestamp** | **Time** |  | [optional] |
 | **ip** | **String** |  | [optional] |
 | **type** | **String** |  | [optional] |
 | **total** | **Float** |  | [optional] |
@@ -23,6 +24,7 @@ require 'openapi_client'
 
 instance = OpenapiClient::CartDto.new(
   id: null,
+  timestamp: null,
   ip: null,
   type: null,
   total: null,

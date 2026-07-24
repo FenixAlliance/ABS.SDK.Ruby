@@ -19,6 +19,309 @@ module OpenapiClient
     def initialize(api_client = ApiClient.default)
       @api_client = api_client
     end
+    # Create a newsletter subscription
+    # Creates a new newsletter subscription for the specified tenant.
+    # @param tenant_id [String] 
+    # @param newsletter_subscription_create_dto [NewsletterSubscriptionCreateDto] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @return [EmptyEnvelope]
+    def create_newsletter_subscription_async(tenant_id, newsletter_subscription_create_dto, opts = {})
+      data, _status_code, _headers = create_newsletter_subscription_async_with_http_info(tenant_id, newsletter_subscription_create_dto, opts)
+      data
+    end
+
+    # Create a newsletter subscription
+    # Creates a new newsletter subscription for the specified tenant.
+    # @param tenant_id [String] 
+    # @param newsletter_subscription_create_dto [NewsletterSubscriptionCreateDto] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @return [Array<(EmptyEnvelope, Integer, Hash)>] EmptyEnvelope data, response status code and response headers
+    def create_newsletter_subscription_async_with_http_info(tenant_id, newsletter_subscription_create_dto, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: NewsletterSubscriptionsApi.create_newsletter_subscription_async ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling NewsletterSubscriptionsApi.create_newsletter_subscription_async"
+      end
+      # verify the required parameter 'newsletter_subscription_create_dto' is set
+      if @api_client.config.client_side_validation && newsletter_subscription_create_dto.nil?
+        fail ArgumentError, "Missing the required parameter 'newsletter_subscription_create_dto' when calling NewsletterSubscriptionsApi.create_newsletter_subscription_async"
+      end
+      # resource path
+      local_var_path = '/api/v2/MarketingService/NewsletterSubscriptions'
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+      query_params[:'api-version'] = opts[:'api_version'] if !opts[:'api_version'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
+      header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(newsletter_subscription_create_dto)
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'EmptyEnvelope'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"NewsletterSubscriptionsApi.create_newsletter_subscription_async",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: NewsletterSubscriptionsApi#create_newsletter_subscription_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Delete a newsletter subscription
+    # Deletes a newsletter subscription by its ID.
+    # @param tenant_id [String] 
+    # @param newsletter_subscription_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @return [EmptyEnvelope]
+    def delete_newsletter_subscription_async(tenant_id, newsletter_subscription_id, opts = {})
+      data, _status_code, _headers = delete_newsletter_subscription_async_with_http_info(tenant_id, newsletter_subscription_id, opts)
+      data
+    end
+
+    # Delete a newsletter subscription
+    # Deletes a newsletter subscription by its ID.
+    # @param tenant_id [String] 
+    # @param newsletter_subscription_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @return [Array<(EmptyEnvelope, Integer, Hash)>] EmptyEnvelope data, response status code and response headers
+    def delete_newsletter_subscription_async_with_http_info(tenant_id, newsletter_subscription_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: NewsletterSubscriptionsApi.delete_newsletter_subscription_async ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling NewsletterSubscriptionsApi.delete_newsletter_subscription_async"
+      end
+      # verify the required parameter 'newsletter_subscription_id' is set
+      if @api_client.config.client_side_validation && newsletter_subscription_id.nil?
+        fail ArgumentError, "Missing the required parameter 'newsletter_subscription_id' when calling NewsletterSubscriptionsApi.delete_newsletter_subscription_async"
+      end
+      # resource path
+      local_var_path = '/api/v2/MarketingService/NewsletterSubscriptions/{newsletterSubscriptionId}'.sub('{' + 'newsletterSubscriptionId' + '}', CGI.escape(newsletter_subscription_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+      query_params[:'api-version'] = opts[:'api_version'] if !opts[:'api_version'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'EmptyEnvelope'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"NewsletterSubscriptionsApi.delete_newsletter_subscription_async",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: NewsletterSubscriptionsApi#delete_newsletter_subscription_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Get newsletter subscription by ID
+    # Retrieves the details of a specific newsletter subscription by its ID.
+    # @param tenant_id [String] 
+    # @param newsletter_subscription_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @return [NewsletterSubscriptionDtoEnvelope]
+    def get_newsletter_subscription_by_id_async(tenant_id, newsletter_subscription_id, opts = {})
+      data, _status_code, _headers = get_newsletter_subscription_by_id_async_with_http_info(tenant_id, newsletter_subscription_id, opts)
+      data
+    end
+
+    # Get newsletter subscription by ID
+    # Retrieves the details of a specific newsletter subscription by its ID.
+    # @param tenant_id [String] 
+    # @param newsletter_subscription_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @return [Array<(NewsletterSubscriptionDtoEnvelope, Integer, Hash)>] NewsletterSubscriptionDtoEnvelope data, response status code and response headers
+    def get_newsletter_subscription_by_id_async_with_http_info(tenant_id, newsletter_subscription_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: NewsletterSubscriptionsApi.get_newsletter_subscription_by_id_async ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling NewsletterSubscriptionsApi.get_newsletter_subscription_by_id_async"
+      end
+      # verify the required parameter 'newsletter_subscription_id' is set
+      if @api_client.config.client_side_validation && newsletter_subscription_id.nil?
+        fail ArgumentError, "Missing the required parameter 'newsletter_subscription_id' when calling NewsletterSubscriptionsApi.get_newsletter_subscription_by_id_async"
+      end
+      # resource path
+      local_var_path = '/api/v2/MarketingService/NewsletterSubscriptions/{newsletterSubscriptionId}'.sub('{' + 'newsletterSubscriptionId' + '}', CGI.escape(newsletter_subscription_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+      query_params[:'api-version'] = opts[:'api_version'] if !opts[:'api_version'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'NewsletterSubscriptionDtoEnvelope'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"NewsletterSubscriptionsApi.get_newsletter_subscription_by_id_async",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: NewsletterSubscriptionsApi#get_newsletter_subscription_by_id_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Get newsletter subscriptions
+    # Retrieves a collection of newsletter subscriptions for the specified tenant using OData query options.
+    # @param tenant_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @return [NewsletterSubscriptionDtoListEnvelope]
+    def get_newsletter_subscriptions_async(tenant_id, opts = {})
+      data, _status_code, _headers = get_newsletter_subscriptions_async_with_http_info(tenant_id, opts)
+      data
+    end
+
+    # Get newsletter subscriptions
+    # Retrieves a collection of newsletter subscriptions for the specified tenant using OData query options.
+    # @param tenant_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @return [Array<(NewsletterSubscriptionDtoListEnvelope, Integer, Hash)>] NewsletterSubscriptionDtoListEnvelope data, response status code and response headers
+    def get_newsletter_subscriptions_async_with_http_info(tenant_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: NewsletterSubscriptionsApi.get_newsletter_subscriptions_async ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling NewsletterSubscriptionsApi.get_newsletter_subscriptions_async"
+      end
+      # resource path
+      local_var_path = '/api/v2/MarketingService/NewsletterSubscriptions'
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+      query_params[:'api-version'] = opts[:'api_version'] if !opts[:'api_version'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'NewsletterSubscriptionDtoListEnvelope'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"NewsletterSubscriptionsApi.get_newsletter_subscriptions_async",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: NewsletterSubscriptionsApi#get_newsletter_subscriptions_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Get newsletter subscriptions count
     # Returns the count of newsletter subscriptions for the specified tenant using OData query options.
     # @param tenant_id [String] 
@@ -85,6 +388,93 @@ module OpenapiClient
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: NewsletterSubscriptionsApi#get_newsletter_subscriptions_count_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Update a newsletter subscription
+    # Updates an existing newsletter subscription by its ID.
+    # @param tenant_id [String] 
+    # @param newsletter_subscription_id [String] 
+    # @param newsletter_subscription_update_dto [NewsletterSubscriptionUpdateDto] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @return [EmptyEnvelope]
+    def update_newsletter_subscription_async(tenant_id, newsletter_subscription_id, newsletter_subscription_update_dto, opts = {})
+      data, _status_code, _headers = update_newsletter_subscription_async_with_http_info(tenant_id, newsletter_subscription_id, newsletter_subscription_update_dto, opts)
+      data
+    end
+
+    # Update a newsletter subscription
+    # Updates an existing newsletter subscription by its ID.
+    # @param tenant_id [String] 
+    # @param newsletter_subscription_id [String] 
+    # @param newsletter_subscription_update_dto [NewsletterSubscriptionUpdateDto] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @return [Array<(EmptyEnvelope, Integer, Hash)>] EmptyEnvelope data, response status code and response headers
+    def update_newsletter_subscription_async_with_http_info(tenant_id, newsletter_subscription_id, newsletter_subscription_update_dto, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: NewsletterSubscriptionsApi.update_newsletter_subscription_async ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling NewsletterSubscriptionsApi.update_newsletter_subscription_async"
+      end
+      # verify the required parameter 'newsletter_subscription_id' is set
+      if @api_client.config.client_side_validation && newsletter_subscription_id.nil?
+        fail ArgumentError, "Missing the required parameter 'newsletter_subscription_id' when calling NewsletterSubscriptionsApi.update_newsletter_subscription_async"
+      end
+      # verify the required parameter 'newsletter_subscription_update_dto' is set
+      if @api_client.config.client_side_validation && newsletter_subscription_update_dto.nil?
+        fail ArgumentError, "Missing the required parameter 'newsletter_subscription_update_dto' when calling NewsletterSubscriptionsApi.update_newsletter_subscription_async"
+      end
+      # resource path
+      local_var_path = '/api/v2/MarketingService/NewsletterSubscriptions/{newsletterSubscriptionId}'.sub('{' + 'newsletterSubscriptionId' + '}', CGI.escape(newsletter_subscription_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+      query_params[:'api-version'] = opts[:'api_version'] if !opts[:'api_version'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
+      header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(newsletter_subscription_update_dto)
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'EmptyEnvelope'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"NewsletterSubscriptionsApi.update_newsletter_subscription_async",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: NewsletterSubscriptionsApi#update_newsletter_subscription_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

@@ -96,8 +96,8 @@ module OpenapiClient
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
     # @return [ItemShippingPolicyDtoListEnvelope]
-    def get_item_shipping_policies_async(opts = {})
-      data, _status_code, _headers = get_item_shipping_policies_async_with_http_info(opts)
+    def get_catalog_item_shipping_policies_async(opts = {})
+      data, _status_code, _headers = get_catalog_item_shipping_policies_async_with_http_info(opts)
       data
     end
 
@@ -109,9 +109,9 @@ module OpenapiClient
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
     # @return [Array<(ItemShippingPolicyDtoListEnvelope, Integer, Hash)>] ItemShippingPolicyDtoListEnvelope data, response status code and response headers
-    def get_item_shipping_policies_async_with_http_info(opts = {})
+    def get_catalog_item_shipping_policies_async_with_http_info(opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: ItemShippingPoliciesApi.get_item_shipping_policies_async ...'
+        @api_client.config.logger.debug 'Calling API: ItemShippingPoliciesApi.get_catalog_item_shipping_policies_async ...'
       end
       # resource path
       local_var_path = '/api/v2/CatalogService/ItemShippingPolicies'
@@ -141,7 +141,7 @@ module OpenapiClient
       auth_names = opts[:debug_auth_names] || []
 
       new_options = opts.merge(
-        :operation => :"ItemShippingPoliciesApi.get_item_shipping_policies_async",
+        :operation => :"ItemShippingPoliciesApi.get_catalog_item_shipping_policies_async",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -152,7 +152,7 @@ module OpenapiClient
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: ItemShippingPoliciesApi#get_item_shipping_policies_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: ItemShippingPoliciesApi#get_catalog_item_shipping_policies_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -166,8 +166,8 @@ module OpenapiClient
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
     # @return [ItemShippingPolicyDtoEnvelope]
-    def get_item_shipping_policy_by_id_async(item_shipping_policy_id, opts = {})
-      data, _status_code, _headers = get_item_shipping_policy_by_id_async_with_http_info(item_shipping_policy_id, opts)
+    def get_catalog_item_shipping_policy_by_id_async(item_shipping_policy_id, opts = {})
+      data, _status_code, _headers = get_catalog_item_shipping_policy_by_id_async_with_http_info(item_shipping_policy_id, opts)
       data
     end
 
@@ -180,13 +180,13 @@ module OpenapiClient
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
     # @return [Array<(ItemShippingPolicyDtoEnvelope, Integer, Hash)>] ItemShippingPolicyDtoEnvelope data, response status code and response headers
-    def get_item_shipping_policy_by_id_async_with_http_info(item_shipping_policy_id, opts = {})
+    def get_catalog_item_shipping_policy_by_id_async_with_http_info(item_shipping_policy_id, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: ItemShippingPoliciesApi.get_item_shipping_policy_by_id_async ...'
+        @api_client.config.logger.debug 'Calling API: ItemShippingPoliciesApi.get_catalog_item_shipping_policy_by_id_async ...'
       end
       # verify the required parameter 'item_shipping_policy_id' is set
       if @api_client.config.client_side_validation && item_shipping_policy_id.nil?
-        fail ArgumentError, "Missing the required parameter 'item_shipping_policy_id' when calling ItemShippingPoliciesApi.get_item_shipping_policy_by_id_async"
+        fail ArgumentError, "Missing the required parameter 'item_shipping_policy_id' when calling ItemShippingPoliciesApi.get_catalog_item_shipping_policy_by_id_async"
       end
       # resource path
       local_var_path = '/api/v2/CatalogService/ItemShippingPolicies/{itemShippingPolicyId}'.sub('{' + 'itemShippingPolicyId' + '}', CGI.escape(item_shipping_policy_id.to_s))
@@ -216,7 +216,7 @@ module OpenapiClient
       auth_names = opts[:debug_auth_names] || []
 
       new_options = opts.merge(
-        :operation => :"ItemShippingPoliciesApi.get_item_shipping_policy_by_id_async",
+        :operation => :"ItemShippingPoliciesApi.get_catalog_item_shipping_policy_by_id_async",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -227,7 +227,7 @@ module OpenapiClient
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: ItemShippingPoliciesApi#get_item_shipping_policy_by_id_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: ItemShippingPoliciesApi#get_catalog_item_shipping_policy_by_id_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

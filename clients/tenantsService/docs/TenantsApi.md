@@ -9,6 +9,7 @@ All URIs are relative to *https://absuite.net*
 | [**de_select_tenant_async**](TenantsApi.md#de_select_tenant_async) | **POST** /api/v2/TenantsService/Tenants/Deselect | Deselect the user&#39;s default tenant |
 | [**delete_tenant_async**](TenantsApi.md#delete_tenant_async) | **DELETE** /api/v2/TenantsService/Tenants | Delete a tenant |
 | [**get_accessible_features_async**](TenantsApi.md#get_accessible_features_async) | **GET** /api/v2/TenantsService/Tenants/{tenantId}/Enrollments/{enrollmentId}/Features | Get the list of features accessible to a specific enrollment |
+| [**get_cart_for_tenant_async**](TenantsApi.md#get_cart_for_tenant_async) | **GET** /api/v2/TenantsService/Tenants/{tenantId}/Cart | Get a tenant&#39;s default cart |
 | [**get_current_tenant_async**](TenantsApi.md#get_current_tenant_async) | **GET** /api/v2/TenantsService/Tenants/Current | Get the user&#39;s current default tenant |
 | [**get_enrollment_license_by_id_async**](TenantsApi.md#get_enrollment_license_by_id_async) | **GET** /api/v2/TenantsService/Tenants/{tenantId}/Enrollments/{enrollmentId}/Licenses/{licenseId} | Get a specific license for an enrollment |
 | [**get_enrollment_licenses_async**](TenantsApi.md#get_enrollment_licenses_async) | **GET** /api/v2/TenantsService/Tenants/{tenantId}/Enrollments/{enrollmentId}/Licenses | Get the list of licenses available to a specific enrollment |
@@ -18,7 +19,6 @@ All URIs are relative to *https://absuite.net*
 | [**get_root_tenant_async**](TenantsApi.md#get_root_tenant_async) | **GET** /api/v2/TenantsService/Tenants/Root | Get the root tenant of the platform |
 | [**get_tenant_async**](TenantsApi.md#get_tenant_async) | **GET** /api/v2/TenantsService/Tenants/{tenantId} | Get a specific tenant by ID |
 | [**get_tenant_avatar_async**](TenantsApi.md#get_tenant_avatar_async) | **GET** /api/v2/TenantsService/Tenants/{tenantId}/Avatar | Get a tenant&#39;s avatar |
-| [**get_tenant_cart_async**](TenantsApi.md#get_tenant_cart_async) | **GET** /api/v2/TenantsService/Tenants/{tenantId}/Cart | Get a tenant&#39;s default cart |
 | [**get_tenant_enrollment_async**](TenantsApi.md#get_tenant_enrollment_async) | **GET** /api/v2/TenantsService/Tenants/{tenantId}/Enrollments/{enrollmentId} | Get a specific tenant enrollment |
 | [**get_tenant_enrollments_async**](TenantsApi.md#get_tenant_enrollments_async) | **GET** /api/v2/TenantsService/Tenants/{tenantId}/Enrollments | Get the list of user enrollments for a tenant |
 | [**get_tenant_invitations_async**](TenantsApi.md#get_tenant_invitations_async) | **GET** /api/v2/TenantsService/Tenants/{tenantId}/Invitations | Get the list of invitations issued by a tenant |
@@ -35,8 +35,8 @@ All URIs are relative to *https://absuite.net*
 | [**patch_tenant_async**](TenantsApi.md#patch_tenant_async) | **PATCH** /api/v2/TenantsService/Tenants/{tenantId} | Patch a tenant&#39;s profile |
 | [**revoke_license_async**](TenantsApi.md#revoke_license_async) | **DELETE** /api/v2/TenantsService/Tenants/{tenantId}/Enrollments/{enrollmentId}/Licenses/{licenseId} | Revoke a license from a specific enrollment |
 | [**select_tenant_async**](TenantsApi.md#select_tenant_async) | **POST** /api/v2/TenantsService/Tenants/{tenantId}/Select | Select a business tenant as the user&#39;s default tenant |
-| [**update_avatar_async**](TenantsApi.md#update_avatar_async) | **POST** /api/v2/TenantsService/Tenants/{tenantId}/Avatar | Update a tenant&#39;s avatar |
 | [**update_tenant_async**](TenantsApi.md#update_tenant_async) | **PUT** /api/v2/TenantsService/Tenants/{tenantId} | Update a tenant&#39;s profile |
+| [**update_tenant_avatar_async**](TenantsApi.md#update_tenant_avatar_async) | **POST** /api/v2/TenantsService/Tenants/{tenantId}/Avatar | Update a tenant&#39;s avatar |
 | [**validate_enrollment_feature_access**](TenantsApi.md#validate_enrollment_feature_access) | **GET** /api/v2/TenantsService/Tenants/{tenantId}/Enrollments/{enrollmentId}/HasAccess | Validate the access to a specific feature for a specific enrollment |
 | [**validate_enrollment_permissions_async**](TenantsApi.md#validate_enrollment_permissions_async) | **GET** /api/v2/TenantsService/Tenants/{tenantId}/Enrollments/{enrollmentId}/Permissions/Validate | Validate the existence of a list of roles and permissions for a specific enrollment |
 
@@ -384,6 +384,76 @@ end
 ### Return type
 
 [**SuiteLicenseFeatureDtoListEnvelope**](SuiteLicenseFeatureDtoListEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## get_cart_for_tenant_async
+
+> <CartDtoEnvelope> get_cart_for_tenant_async(tenant_id, opts)
+
+Get a tenant's default cart
+
+Get a tenant's default cart
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::TenantsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example' # String | 
+}
+
+begin
+  # Get a tenant's default cart
+  result = api_instance.get_cart_for_tenant_async(tenant_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling TenantsApi->get_cart_for_tenant_async: #{e}"
+end
+```
+
+#### Using the get_cart_for_tenant_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<CartDtoEnvelope>, Integer, Hash)> get_cart_for_tenant_async_with_http_info(tenant_id, opts)
+
+```ruby
+begin
+  # Get a tenant's default cart
+  data, status_code, headers = api_instance.get_cart_for_tenant_async_with_http_info(tenant_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <CartDtoEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling TenantsApi->get_cart_for_tenant_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+
+### Return type
+
+[**CartDtoEnvelope**](CartDtoEnvelope.md)
 
 ### Authorization
 
@@ -1022,76 +1092,6 @@ end
 ### Return type
 
 [**EmptyEnvelope**](EmptyEnvelope.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json, application/xml
-
-
-## get_tenant_cart_async
-
-> <CartDtoEnvelope> get_tenant_cart_async(tenant_id, opts)
-
-Get a tenant's default cart
-
-Get a tenant's default cart
-
-### Examples
-
-```ruby
-require 'time'
-require 'openapi_client'
-
-api_instance = OpenapiClient::TenantsApi.new
-tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
-opts = {
-  api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
-}
-
-begin
-  # Get a tenant's default cart
-  result = api_instance.get_tenant_cart_async(tenant_id, opts)
-  p result
-rescue OpenapiClient::ApiError => e
-  puts "Error when calling TenantsApi->get_tenant_cart_async: #{e}"
-end
-```
-
-#### Using the get_tenant_cart_async_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<CartDtoEnvelope>, Integer, Hash)> get_tenant_cart_async_with_http_info(tenant_id, opts)
-
-```ruby
-begin
-  # Get a tenant's default cart
-  data, status_code, headers = api_instance.get_tenant_cart_async_with_http_info(tenant_id, opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <CartDtoEnvelope>
-rescue OpenapiClient::ApiError => e
-  puts "Error when calling TenantsApi->get_tenant_cart_async_with_http_info: #{e}"
-end
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **tenant_id** | **String** |  |  |
-| **api_version** | **String** |  | [optional] |
-| **x_api_version** | **String** |  | [optional] |
-
-### Return type
-
-[**CartDtoEnvelope**](CartDtoEnvelope.md)
 
 ### Authorization
 
@@ -2231,78 +2231,6 @@ No authorization required
 - **Accept**: application/json, application/xml
 
 
-## update_avatar_async
-
-> <EmptyEnvelope> update_avatar_async(tenant_id, opts)
-
-Update a tenant's avatar
-
-Update a tenant's avatar
-
-### Examples
-
-```ruby
-require 'time'
-require 'openapi_client'
-
-api_instance = OpenapiClient::TenantsApi.new
-tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
-opts = {
-  api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example', # String | 
-  avatar: File.new('/path/to/some/file') # File | 
-}
-
-begin
-  # Update a tenant's avatar
-  result = api_instance.update_avatar_async(tenant_id, opts)
-  p result
-rescue OpenapiClient::ApiError => e
-  puts "Error when calling TenantsApi->update_avatar_async: #{e}"
-end
-```
-
-#### Using the update_avatar_async_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<EmptyEnvelope>, Integer, Hash)> update_avatar_async_with_http_info(tenant_id, opts)
-
-```ruby
-begin
-  # Update a tenant's avatar
-  data, status_code, headers = api_instance.update_avatar_async_with_http_info(tenant_id, opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <EmptyEnvelope>
-rescue OpenapiClient::ApiError => e
-  puts "Error when calling TenantsApi->update_avatar_async_with_http_info: #{e}"
-end
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **tenant_id** | **String** |  |  |
-| **api_version** | **String** |  | [optional] |
-| **x_api_version** | **String** |  | [optional] |
-| **avatar** | **File** |  | [optional] |
-
-### Return type
-
-[**EmptyEnvelope**](EmptyEnvelope.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: multipart/form-data, application/json, application/xml
-- **Accept**: image/png, application/json, application/xml
-
-
 ## update_tenant_async
 
 > <EmptyEnvelope> update_tenant_async(tenant_id, opts)
@@ -2373,6 +2301,78 @@ No authorization required
 
 - **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
+
+
+## update_tenant_avatar_async
+
+> <EmptyEnvelope> update_tenant_avatar_async(tenant_id, opts)
+
+Update a tenant's avatar
+
+Update a tenant's avatar
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::TenantsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  avatar: File.new('/path/to/some/file') # File | 
+}
+
+begin
+  # Update a tenant's avatar
+  result = api_instance.update_tenant_avatar_async(tenant_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling TenantsApi->update_tenant_avatar_async: #{e}"
+end
+```
+
+#### Using the update_tenant_avatar_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> update_tenant_avatar_async_with_http_info(tenant_id, opts)
+
+```ruby
+begin
+  # Update a tenant's avatar
+  data, status_code, headers = api_instance.update_tenant_avatar_async_with_http_info(tenant_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling TenantsApi->update_tenant_avatar_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **avatar** | **File** |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: multipart/form-data, application/json, application/xml
+- **Accept**: image/png, application/json, application/xml
 
 
 ## validate_enrollment_feature_access

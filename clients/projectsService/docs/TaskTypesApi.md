@@ -7,6 +7,7 @@ All URIs are relative to *https://absuite.net*
 | [**create_task_type_async**](TaskTypesApi.md#create_task_type_async) | **POST** /api/v2/ProjectsService/TaskTypes | Creates a new task type |
 | [**delete_task_type_async**](TaskTypesApi.md#delete_task_type_async) | **DELETE** /api/v2/ProjectsService/TaskTypes/{taskTypeId} | Deletes a task type |
 | [**get_task_type_by_id_async**](TaskTypesApi.md#get_task_type_by_id_async) | **GET** /api/v2/ProjectsService/TaskTypes/{taskTypeId} | Gets a task type by ID |
+| [**patch_task_type_async**](TaskTypesApi.md#patch_task_type_async) | **PATCH** /api/v2/ProjectsService/TaskTypes/{taskTypeId} | Patches a task type |
 | [**update_task_type_async**](TaskTypesApi.md#update_task_type_async) | **PUT** /api/v2/ProjectsService/TaskTypes/{taskTypeId} | Updates a task type |
 
 
@@ -207,6 +208,76 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_task_type_async
+
+> <EmptyEnvelope> patch_task_type_async(task_type_id, tenant_id, opts)
+
+Patches a task type
+
+Partially updates the specified task type.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::TaskTypesApi.new
+task_type_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patches a task type
+  result = api_instance.patch_task_type_async(task_type_id, tenant_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling TaskTypesApi->patch_task_type_async: #{e}"
+end
+```
+
+#### Using the patch_task_type_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_task_type_async_with_http_info(task_type_id, tenant_id, opts)
+
+```ruby
+begin
+  # Patches a task type
+  data, status_code, headers = api_instance.patch_task_type_async_with_http_info(task_type_id, tenant_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling TaskTypesApi->patch_task_type_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **task_type_id** | **String** |  |  |
+| **tenant_id** | **String** |  |  |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

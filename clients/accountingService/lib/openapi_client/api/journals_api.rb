@@ -24,7 +24,7 @@ module OpenapiClient
     # @param tenant_id [String] 
     # @param journal_id [String] 
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :currency_id 
+    # @option opts [String] :currency_id  (default to 'USD.USA')
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
     # @return [MoneyEnvelope]
@@ -38,7 +38,7 @@ module OpenapiClient
     # @param tenant_id [String] 
     # @param journal_id [String] 
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :currency_id 
+    # @option opts [String] :currency_id  (default to 'USD.USA')
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
     # @return [Array<(MoneyEnvelope, Integer, Hash)>] MoneyEnvelope data, response status code and response headers
@@ -103,7 +103,7 @@ module OpenapiClient
     # @param tenant_id [String] 
     # @param journal_id [String] 
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :currency_id 
+    # @option opts [String] :currency_id  (default to 'USD.USA')
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
     # @return [MoneyEnvelope]
@@ -117,7 +117,7 @@ module OpenapiClient
     # @param tenant_id [String] 
     # @param journal_id [String] 
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :currency_id 
+    # @option opts [String] :currency_id  (default to 'USD.USA')
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
     # @return [Array<(MoneyEnvelope, Integer, Hash)>] MoneyEnvelope data, response status code and response headers
@@ -793,6 +793,88 @@ module OpenapiClient
       return data, status_code, headers
     end
 
+    # Get journal entry by ID
+    # Retrieves a single journal entry WITH its hydrated posting lines — each line's account, direction, description and currency facets (transaction / functional / account / USD).
+    # @param tenant_id [String] 
+    # @param journal_id [String] 
+    # @param entry_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @return [JournalEntryDtoEnvelope]
+    def get_journal_entry_details_async(tenant_id, journal_id, entry_id, opts = {})
+      data, _status_code, _headers = get_journal_entry_details_async_with_http_info(tenant_id, journal_id, entry_id, opts)
+      data
+    end
+
+    # Get journal entry by ID
+    # Retrieves a single journal entry WITH its hydrated posting lines — each line&#39;s account, direction, description and currency facets (transaction / functional / account / USD).
+    # @param tenant_id [String] 
+    # @param journal_id [String] 
+    # @param entry_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @return [Array<(JournalEntryDtoEnvelope, Integer, Hash)>] JournalEntryDtoEnvelope data, response status code and response headers
+    def get_journal_entry_details_async_with_http_info(tenant_id, journal_id, entry_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: JournalsApi.get_journal_entry_details_async ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling JournalsApi.get_journal_entry_details_async"
+      end
+      # verify the required parameter 'journal_id' is set
+      if @api_client.config.client_side_validation && journal_id.nil?
+        fail ArgumentError, "Missing the required parameter 'journal_id' when calling JournalsApi.get_journal_entry_details_async"
+      end
+      # verify the required parameter 'entry_id' is set
+      if @api_client.config.client_side_validation && entry_id.nil?
+        fail ArgumentError, "Missing the required parameter 'entry_id' when calling JournalsApi.get_journal_entry_details_async"
+      end
+      # resource path
+      local_var_path = '/api/v2/AccountingService/Journals/{journalId}/Entries/{entryId}'.sub('{' + 'journalId' + '}', CGI.escape(journal_id.to_s)).sub('{' + 'entryId' + '}', CGI.escape(entry_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+      query_params[:'api-version'] = opts[:'api_version'] if !opts[:'api_version'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'JournalEntryDtoEnvelope'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"JournalsApi.get_journal_entry_details_async",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: JournalsApi#get_journal_entry_details_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Get all journals
     # Retrieves all journals for the specified tenant.
     # @param tenant_id [String] 
@@ -1031,6 +1113,177 @@ module OpenapiClient
       data, status_code, headers = @api_client.call_api(:PATCH, local_var_path, new_options)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: JournalsApi#patch_journal_entry_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Post a draft journal entry
+    # Posts a DRAFT journal entry into its own open fiscal period. Enforces the balanced-entry invariant and the open-period gate, then seals the entry (immutable — correct via reversal, never edit/delete). An unbalanced draft or a closed period is rejected. Requires the journals_post permission.
+    # @param tenant_id [String] 
+    # @param journal_id [String] 
+    # @param entry_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @return [EmptyEnvelope]
+    def post_journal_entry_async(tenant_id, journal_id, entry_id, opts = {})
+      data, _status_code, _headers = post_journal_entry_async_with_http_info(tenant_id, journal_id, entry_id, opts)
+      data
+    end
+
+    # Post a draft journal entry
+    # Posts a DRAFT journal entry into its own open fiscal period. Enforces the balanced-entry invariant and the open-period gate, then seals the entry (immutable — correct via reversal, never edit/delete). An unbalanced draft or a closed period is rejected. Requires the journals_post permission.
+    # @param tenant_id [String] 
+    # @param journal_id [String] 
+    # @param entry_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @return [Array<(EmptyEnvelope, Integer, Hash)>] EmptyEnvelope data, response status code and response headers
+    def post_journal_entry_async_with_http_info(tenant_id, journal_id, entry_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: JournalsApi.post_journal_entry_async ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling JournalsApi.post_journal_entry_async"
+      end
+      # verify the required parameter 'journal_id' is set
+      if @api_client.config.client_side_validation && journal_id.nil?
+        fail ArgumentError, "Missing the required parameter 'journal_id' when calling JournalsApi.post_journal_entry_async"
+      end
+      # verify the required parameter 'entry_id' is set
+      if @api_client.config.client_side_validation && entry_id.nil?
+        fail ArgumentError, "Missing the required parameter 'entry_id' when calling JournalsApi.post_journal_entry_async"
+      end
+      # resource path
+      local_var_path = '/api/v2/AccountingService/Journals/{journalId}/Entries/{entryId}/Post'.sub('{' + 'journalId' + '}', CGI.escape(journal_id.to_s)).sub('{' + 'entryId' + '}', CGI.escape(entry_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+      query_params[:'api-version'] = opts[:'api_version'] if !opts[:'api_version'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'EmptyEnvelope'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"JournalsApi.post_journal_entry_async",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: JournalsApi#post_journal_entry_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Reverse a posted journal entry
+    # Reverses a POSTED journal entry by writing a balanced compensating counter-entry into the supplied open fiscal period and marking the original Reversed — one atomic operation (append-only audit trail). Requires the journals_reverse permission.
+    # @param tenant_id [String] 
+    # @param journal_id [String] 
+    # @param entry_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @option opts [ReverseJournalEntryRequest] :reverse_journal_entry_request 
+    # @return [EmptyEnvelope]
+    def reverse_journal_entry_async(tenant_id, journal_id, entry_id, opts = {})
+      data, _status_code, _headers = reverse_journal_entry_async_with_http_info(tenant_id, journal_id, entry_id, opts)
+      data
+    end
+
+    # Reverse a posted journal entry
+    # Reverses a POSTED journal entry by writing a balanced compensating counter-entry into the supplied open fiscal period and marking the original Reversed — one atomic operation (append-only audit trail). Requires the journals_reverse permission.
+    # @param tenant_id [String] 
+    # @param journal_id [String] 
+    # @param entry_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @option opts [ReverseJournalEntryRequest] :reverse_journal_entry_request 
+    # @return [Array<(EmptyEnvelope, Integer, Hash)>] EmptyEnvelope data, response status code and response headers
+    def reverse_journal_entry_async_with_http_info(tenant_id, journal_id, entry_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: JournalsApi.reverse_journal_entry_async ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling JournalsApi.reverse_journal_entry_async"
+      end
+      # verify the required parameter 'journal_id' is set
+      if @api_client.config.client_side_validation && journal_id.nil?
+        fail ArgumentError, "Missing the required parameter 'journal_id' when calling JournalsApi.reverse_journal_entry_async"
+      end
+      # verify the required parameter 'entry_id' is set
+      if @api_client.config.client_side_validation && entry_id.nil?
+        fail ArgumentError, "Missing the required parameter 'entry_id' when calling JournalsApi.reverse_journal_entry_async"
+      end
+      # resource path
+      local_var_path = '/api/v2/AccountingService/Journals/{journalId}/Entries/{entryId}/Reverse'.sub('{' + 'journalId' + '}', CGI.escape(journal_id.to_s)).sub('{' + 'entryId' + '}', CGI.escape(entry_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+      query_params[:'api-version'] = opts[:'api_version'] if !opts[:'api_version'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
+      header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'reverse_journal_entry_request'])
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'EmptyEnvelope'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"JournalsApi.reverse_journal_entry_async",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: JournalsApi#reverse_journal_entry_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

@@ -9,6 +9,8 @@
 | **period_start_date** | **Time** |  | [optional] |
 | **period_end_date** | **Time** |  | [optional] |
 | **project_id** | **String** |  | [optional] |
+| **tenant_id** | **String** |  | [optional] |
+| **enrollment_id** | **String** |  | [optional] |
 
 ## Example
 
@@ -20,7 +22,9 @@ instance = OpenapiClient::ProjectPeriodDto.new(
   timestamp: null,
   period_start_date: null,
   period_end_date: null,
-  project_id: null
+  project_id: null,
+  tenant_id: null,
+  enrollment_id: null
 )
 ```
 

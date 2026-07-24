@@ -10,6 +10,7 @@ All URIs are relative to *https://absuite.net*
 | [**get_task_category_by_id_async**](TaskCategoriesApi.md#get_task_category_by_id_async) | **GET** /api/v2/ProjectsService/TaskCategories/{taskCategoryId} | Gets a task category by ID |
 | [**get_task_category_task_types_async**](TaskCategoriesApi.md#get_task_category_task_types_async) | **GET** /api/v2/ProjectsService/TaskCategories/{taskCategoryId}/Types | Retrieves task types for a category |
 | [**get_tenant_task_categories_async**](TaskCategoriesApi.md#get_tenant_task_categories_async) | **GET** /api/v2/ProjectsService/TaskCategories | Retrieves all task categories |
+| [**patch_task_category_async**](TaskCategoriesApi.md#patch_task_category_async) | **PATCH** /api/v2/ProjectsService/TaskCategories/{taskCategoryId} | Patches a task category |
 | [**update_task_category_async**](TaskCategoriesApi.md#update_task_category_async) | **PUT** /api/v2/ProjectsService/TaskCategories/{taskCategoryId} | Updates a task category |
 
 
@@ -404,6 +405,76 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_task_category_async
+
+> <EmptyEnvelope> patch_task_category_async(task_category_id, tenant_id, opts)
+
+Patches a task category
+
+Partially updates the specified task category.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::TaskCategoriesApi.new
+task_category_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patches a task category
+  result = api_instance.patch_task_category_async(task_category_id, tenant_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling TaskCategoriesApi->patch_task_category_async: #{e}"
+end
+```
+
+#### Using the patch_task_category_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_task_category_async_with_http_info(task_category_id, tenant_id, opts)
+
+```ruby
+begin
+  # Patches a task category
+  data, status_code, headers = api_instance.patch_task_category_async_with_http_info(task_category_id, tenant_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling TaskCategoriesApi->patch_task_category_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **task_category_id** | **String** |  |  |
+| **tenant_id** | **String** |  |  |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

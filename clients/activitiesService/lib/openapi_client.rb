@@ -50,7 +50,6 @@ require 'openapi_client/models/two_factor_response'
 
 # APIs
 require 'openapi_client/api/activity_feeds_api'
-require 'openapi_client/api/activity_records_api'
 require 'openapi_client/api/fenix_alliance_abs_web_api'
 
 module OpenapiClient

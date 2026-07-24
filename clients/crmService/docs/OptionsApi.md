@@ -10,6 +10,8 @@ All URIs are relative to *https://absuite.net*
 | [**get_contact_option_by_key**](OptionsApi.md#get_contact_option_by_key) | **GET** /api/v2/CrmService/Contacts/{contactId}/Options/Key/{key} | Retrieve a single contact option by its key |
 | [**get_contact_options**](OptionsApi.md#get_contact_options) | **GET** /api/v2/CrmService/Contacts/{contactId}/Options | Retrieve a list of contact options |
 | [**get_contact_options_count**](OptionsApi.md#get_contact_options_count) | **GET** /api/v2/CrmService/Contacts/{contactId}/Options/Count | Get the count of contact options |
+| [**patch_contact_option_async**](OptionsApi.md#patch_contact_option_async) | **PATCH** /api/v2/CrmService/Contacts/{contactId}/Options/{optionId} | Patch a contact option |
+| [**patch_contact_option_by_key_async**](OptionsApi.md#patch_contact_option_by_key_async) | **PATCH** /api/v2/CrmService/Contacts/{contactId}/Options/Key/{key} | Patch a contact option by key |
 | [**update_contact_option**](OptionsApi.md#update_contact_option) | **PUT** /api/v2/CrmService/Contacts/{contactId}/Options/{optionId} | Update a contact option |
 | [**upsert_contact_option**](OptionsApi.md#upsert_contact_option) | **PUT** /api/v2/CrmService/Contacts/{contactId}/Options/Upsert/{key} | Create or update a contact option by key |
 
@@ -461,6 +463,158 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
+## patch_contact_option_async
+
+> <EmptyEnvelope> patch_contact_option_async(tenant_id, contact_id, option_id, opts)
+
+Patch a contact option
+
+Patch a contact option
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::OptionsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+contact_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+option_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch a contact option
+  result = api_instance.patch_contact_option_async(tenant_id, contact_id, option_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling OptionsApi->patch_contact_option_async: #{e}"
+end
+```
+
+#### Using the patch_contact_option_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_contact_option_async_with_http_info(tenant_id, contact_id, option_id, opts)
+
+```ruby
+begin
+  # Patch a contact option
+  data, status_code, headers = api_instance.patch_contact_option_async_with_http_info(tenant_id, contact_id, option_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling OptionsApi->patch_contact_option_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **contact_id** | **String** |  |  |
+| **option_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
+- **Accept**: application/json, application/xml
+
+
+## patch_contact_option_by_key_async
+
+> <EmptyEnvelope> patch_contact_option_by_key_async(tenant_id, contact_id, key, opts)
+
+Patch a contact option by key
+
+Patch a contact option by key
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::OptionsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+contact_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+key = 'key_example' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+}
+
+begin
+  # Patch a contact option by key
+  result = api_instance.patch_contact_option_by_key_async(tenant_id, contact_id, key, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling OptionsApi->patch_contact_option_by_key_async: #{e}"
+end
+```
+
+#### Using the patch_contact_option_by_key_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_contact_option_by_key_async_with_http_info(tenant_id, contact_id, key, opts)
+
+```ruby
+begin
+  # Patch a contact option by key
+  data, status_code, headers = api_instance.patch_contact_option_by_key_async_with_http_info(tenant_id, contact_id, key, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling OptionsApi->patch_contact_option_by_key_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **contact_id** | **String** |  |  |
+| **key** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
