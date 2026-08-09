@@ -229,7 +229,7 @@ api_instance = OpenapiClient::TaskTypesApi.new
 task_type_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
-  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+  patch_operation: [OpenapiClient::PatchOperation.new] # Array<PatchOperation> | 
 }
 
 begin
@@ -265,7 +265,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **task_type_id** | **String** |  |  |
 | **tenant_id** | **String** |  |  |
-| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+| **patch_operation** | [**Array&lt;PatchOperation&gt;**](PatchOperation.md) |  | [optional] |
 
 ### Return type
 

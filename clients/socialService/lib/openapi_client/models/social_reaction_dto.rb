@@ -29,6 +29,8 @@ module OpenapiClient
 
     attr_accessor :social_profile_avatar_url
 
+    attr_accessor :social_profile_type
+
     class EnumAttributeValidator
       attr_reader :datatype
       attr_reader :allowable_values
@@ -60,7 +62,8 @@ module OpenapiClient
         :'reaction_value' => :'reactionValue',
         :'social_profile_id' => :'socialProfileId',
         :'social_profile_name' => :'socialProfileName',
-        :'social_profile_avatar_url' => :'socialProfileAvatarUrl'
+        :'social_profile_avatar_url' => :'socialProfileAvatarUrl',
+        :'social_profile_type' => :'socialProfileType'
       }
     end
 
@@ -78,7 +81,8 @@ module OpenapiClient
         :'reaction_value' => :'String',
         :'social_profile_id' => :'String',
         :'social_profile_name' => :'String',
-        :'social_profile_avatar_url' => :'String'
+        :'social_profile_avatar_url' => :'String',
+        :'social_profile_type' => :'String'
       }
     end
 
@@ -90,7 +94,8 @@ module OpenapiClient
         :'reaction_value',
         :'social_profile_id',
         :'social_profile_name',
-        :'social_profile_avatar_url'
+        :'social_profile_avatar_url',
+        :'social_profile_type'
       ])
     end
 
@@ -136,6 +141,10 @@ module OpenapiClient
       if attributes.key?(:'social_profile_avatar_url')
         self.social_profile_avatar_url = attributes[:'social_profile_avatar_url']
       end
+
+      if attributes.key?(:'social_profile_type')
+        self.social_profile_type = attributes[:'social_profile_type']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -152,6 +161,8 @@ module OpenapiClient
       warn '[DEPRECATED] the `valid?` method is obsolete'
       reaction_validator = EnumAttributeValidator.new('String', ["Like", "Happy", "HaHa", "Love", "Sad", "Angry", "Wow", "Afraid"])
       return false unless reaction_validator.valid?(@reaction)
+      social_profile_type_validator = EnumAttributeValidator.new('String', ["User", "Tenant", "Contact"])
+      return false unless social_profile_type_validator.valid?(@social_profile_type)
       true
     end
 
@@ -165,6 +176,16 @@ module OpenapiClient
       @reaction = reaction
     end
 
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] social_profile_type Object to be assigned
+    def social_profile_type=(social_profile_type)
+      validator = EnumAttributeValidator.new('String', ["User", "Tenant", "Contact"])
+      unless validator.valid?(social_profile_type)
+        fail ArgumentError, "invalid value for \"social_profile_type\", must be one of #{validator.allowable_values}."
+      end
+      @social_profile_type = social_profile_type
+    end
+
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(o)
@@ -176,7 +197,8 @@ module OpenapiClient
           reaction_value == o.reaction_value &&
           social_profile_id == o.social_profile_id &&
           social_profile_name == o.social_profile_name &&
-          social_profile_avatar_url == o.social_profile_avatar_url
+          social_profile_avatar_url == o.social_profile_avatar_url &&
+          social_profile_type == o.social_profile_type
     end
 
     # @see the `==` method
@@ -188,7 +210,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, timestamp, reaction, reaction_value, social_profile_id, social_profile_name, social_profile_avatar_url].hash
+      [id, timestamp, reaction, reaction_value, social_profile_id, social_profile_name, social_profile_avatar_url, social_profile_type].hash
     end
 
     # Builds the object from hash

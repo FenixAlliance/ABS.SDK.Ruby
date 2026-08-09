@@ -245,7 +245,8 @@ api_instance = OpenapiClient::ShippingCouriersApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  shipping_courier_dto_collection_query_parameters: OpenapiClient::ShippingCourierDtoCollectionQueryParameters.new # ShippingCourierDtoCollectionQueryParameters | 
 }
 
 begin
@@ -282,6 +283,7 @@ end
 | **tenant_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **shipping_courier_dto_collection_query_parameters** | [**ShippingCourierDtoCollectionQueryParameters**](ShippingCourierDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -293,7 +295,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -315,7 +317,8 @@ api_instance = OpenapiClient::ShippingCouriersApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  shipping_courier_dto_collection_query_parameters: OpenapiClient::ShippingCourierDtoCollectionQueryParameters.new # ShippingCourierDtoCollectionQueryParameters | 
 }
 
 begin
@@ -352,6 +355,7 @@ end
 | **tenant_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **shipping_courier_dto_collection_query_parameters** | [**ShippingCourierDtoCollectionQueryParameters**](ShippingCourierDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -363,7 +367,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -387,7 +391,7 @@ courier_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 opts = {
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example', # String | 
-  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+  patch_operation: [OpenapiClient::PatchOperation.new] # Array<PatchOperation> | 
 }
 
 begin
@@ -425,7 +429,7 @@ end
 | **courier_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
-| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+| **patch_operation** | [**Array&lt;PatchOperation&gt;**](PatchOperation.md) |  | [optional] |
 
 ### Return type
 

@@ -29,6 +29,7 @@
 | **city_id** | **String** |  | [optional] |
 | **customer_notes** | **String** |  | [optional] |
 | **tax_calculation_method** | **String** |  | [optional] |
+| **cost_calculation_method** | **String** |  | [optional] |
 | **forex_rate** | **Float** |  | [optional] |
 | **forex_rates_snapshot** | **String** |  | [optional] |
 | **currency_id** | **String** |  | [optional] |
@@ -79,7 +80,6 @@
 | **qualified_identifier** | **String** |  | [optional] |
 | **seller_billing_profile_id** | **String** |  | [optional] |
 | **buyer_billing_profile_id** | **String** |  | [optional] |
-| **cost_calculation_method** | **String** |  | [optional] |
 | **freight_terms** | **String** |  | [optional] |
 | **order_status** | **String** |  | [optional] |
 | **requested_delivery_date** | **Time** |  | [optional] |
@@ -130,6 +130,7 @@ instance = OpenapiClient::ExtendedOrderDto.new(
   city_id: null,
   customer_notes: null,
   tax_calculation_method: null,
+  cost_calculation_method: null,
   forex_rate: null,
   forex_rates_snapshot: null,
   currency_id: null,
@@ -180,7 +181,6 @@ instance = OpenapiClient::ExtendedOrderDto.new(
   qualified_identifier: null,
   seller_billing_profile_id: null,
   buyer_billing_profile_id: null,
-  cost_calculation_method: null,
   freight_terms: null,
   order_status: null,
   requested_delivery_date: null,

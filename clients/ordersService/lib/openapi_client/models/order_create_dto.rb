@@ -33,6 +33,8 @@ module OpenapiClient
 
     attr_accessor :organization_id
 
+    attr_accessor :receiver_tenant_id
+
     attr_accessor :first_name
 
     attr_accessor :last_name
@@ -129,8 +131,6 @@ module OpenapiClient
 
     attr_accessor :freight_terms
 
-    attr_accessor :receiver_tenant_id
-
     attr_accessor :shipping_location_id
 
     attr_accessor :qualified_identifier
@@ -187,6 +187,7 @@ module OpenapiClient
         :'individual_id' => :'individualId',
         :'payment_term_id' => :'paymentTermId',
         :'organization_id' => :'organizationId',
+        :'receiver_tenant_id' => :'receiverTenantId',
         :'first_name' => :'firstName',
         :'last_name' => :'lastName',
         :'company_name' => :'companyName',
@@ -235,7 +236,6 @@ module OpenapiClient
         :'order_status' => :'orderStatus',
         :'quote_status' => :'quoteStatus',
         :'freight_terms' => :'freightTerms',
-        :'receiver_tenant_id' => :'receiverTenantId',
         :'shipping_location_id' => :'shippingLocationId',
         :'qualified_identifier' => :'qualifiedIdentifier',
         :'total_taxes_in_usd' => :'totalTaxesInUsd',
@@ -267,6 +267,7 @@ module OpenapiClient
         :'individual_id' => :'String',
         :'payment_term_id' => :'String',
         :'organization_id' => :'String',
+        :'receiver_tenant_id' => :'String',
         :'first_name' => :'String',
         :'last_name' => :'String',
         :'company_name' => :'String',
@@ -315,7 +316,6 @@ module OpenapiClient
         :'order_status' => :'String',
         :'quote_status' => :'String',
         :'freight_terms' => :'String',
-        :'receiver_tenant_id' => :'String',
         :'shipping_location_id' => :'String',
         :'qualified_identifier' => :'String',
         :'total_taxes_in_usd' => :'Float',
@@ -339,6 +339,7 @@ module OpenapiClient
         :'individual_id',
         :'payment_term_id',
         :'organization_id',
+        :'receiver_tenant_id',
         :'first_name',
         :'last_name',
         :'company_name',
@@ -369,7 +370,6 @@ module OpenapiClient
         :'shipping_method_id',
         :'billing_location_id',
         :'customer_notes',
-        :'receiver_tenant_id',
         :'shipping_location_id',
         :'qualified_identifier',
         :'effective_to',
@@ -427,6 +427,10 @@ module OpenapiClient
 
       if attributes.key?(:'organization_id')
         self.organization_id = attributes[:'organization_id']
+      end
+
+      if attributes.key?(:'receiver_tenant_id')
+        self.receiver_tenant_id = attributes[:'receiver_tenant_id']
       end
 
       if attributes.key?(:'first_name')
@@ -621,10 +625,6 @@ module OpenapiClient
         self.freight_terms = attributes[:'freight_terms']
       end
 
-      if attributes.key?(:'receiver_tenant_id')
-        self.receiver_tenant_id = attributes[:'receiver_tenant_id']
-      end
-
       if attributes.key?(:'shipping_location_id')
         self.shipping_location_id = attributes[:'shipping_location_id']
       end
@@ -761,6 +761,7 @@ module OpenapiClient
           individual_id == o.individual_id &&
           payment_term_id == o.payment_term_id &&
           organization_id == o.organization_id &&
+          receiver_tenant_id == o.receiver_tenant_id &&
           first_name == o.first_name &&
           last_name == o.last_name &&
           company_name == o.company_name &&
@@ -809,7 +810,6 @@ module OpenapiClient
           order_status == o.order_status &&
           quote_status == o.quote_status &&
           freight_terms == o.freight_terms &&
-          receiver_tenant_id == o.receiver_tenant_id &&
           shipping_location_id == o.shipping_location_id &&
           qualified_identifier == o.qualified_identifier &&
           total_taxes_in_usd == o.total_taxes_in_usd &&
@@ -832,7 +832,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, timestamp, closed, title, price_list_id, description, individual_id, payment_term_id, organization_id, first_name, last_name, company_name, billing_email, address_line1, address_line2, postal_code, country_id, state_id, city_id, forex_rate, currency_id, total_detail, total_detail_currency_id, total_profit, total_profit_currency_id, total_discounts, total_discounts_currency_id, total_surcharges, total_surcharges_currency_id, total_shipping_cost, total_shipping_cost_currency_id, total_shipping_tax, total_shipping_tax_currency_id, total_withheld_tax, total_withheld_tax_currency_id, total_tax_base, total_tax_base_currency_id, total_taxes, total_taxes_currency_id, total_global_surcharges, total_global_surcharges_currency_id, total_global_discounts, total_global_discounts_currency_id, total, total_currency_id, cost_calculation_method, tax_calculation_method, cart_id, quote_id, wallet_id, parent_order_id, shipping_method_id, billing_location_id, customer_notes, order_status, quote_status, freight_terms, receiver_tenant_id, shipping_location_id, qualified_identifier, total_taxes_in_usd, total_discounts_in_usd, total_surcharges_in_usd, total_shipping_cost_in_usd, total_shipping_tax_in_usd, total_amount_in_usd, effective_to, effective_from, order_lines].hash
+      [id, timestamp, closed, title, price_list_id, description, individual_id, payment_term_id, organization_id, receiver_tenant_id, first_name, last_name, company_name, billing_email, address_line1, address_line2, postal_code, country_id, state_id, city_id, forex_rate, currency_id, total_detail, total_detail_currency_id, total_profit, total_profit_currency_id, total_discounts, total_discounts_currency_id, total_surcharges, total_surcharges_currency_id, total_shipping_cost, total_shipping_cost_currency_id, total_shipping_tax, total_shipping_tax_currency_id, total_withheld_tax, total_withheld_tax_currency_id, total_tax_base, total_tax_base_currency_id, total_taxes, total_taxes_currency_id, total_global_surcharges, total_global_surcharges_currency_id, total_global_discounts, total_global_discounts_currency_id, total, total_currency_id, cost_calculation_method, tax_calculation_method, cart_id, quote_id, wallet_id, parent_order_id, shipping_method_id, billing_location_id, customer_notes, order_status, quote_status, freight_terms, shipping_location_id, qualified_identifier, total_taxes_in_usd, total_discounts_in_usd, total_surcharges_in_usd, total_shipping_cost_in_usd, total_shipping_tax_in_usd, total_amount_in_usd, effective_to, effective_from, order_lines].hash
     end
 
     # Builds the object from hash

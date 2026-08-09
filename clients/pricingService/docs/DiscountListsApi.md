@@ -360,7 +360,7 @@ No authorization required
 
 ## get_discount_list_entries
 
-> <DiscountDtoListEnvelope> get_discount_list_entries(tenant_id, discount_list_id)
+> <DiscountDtoListEnvelope> get_discount_list_entries(tenant_id, discount_list_id, opts)
 
 Retrieves discounts in a discount list
 
@@ -375,10 +375,13 @@ require 'openapi_client'
 api_instance = OpenapiClient::DiscountListsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 discount_list_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  discount_dto_collection_query_parameters: OpenapiClient::DiscountDtoCollectionQueryParameters.new # DiscountDtoCollectionQueryParameters | 
+}
 
 begin
   # Retrieves discounts in a discount list
-  result = api_instance.get_discount_list_entries(tenant_id, discount_list_id)
+  result = api_instance.get_discount_list_entries(tenant_id, discount_list_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling DiscountListsApi->get_discount_list_entries: #{e}"
@@ -389,12 +392,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<DiscountDtoListEnvelope>, Integer, Hash)> get_discount_list_entries_with_http_info(tenant_id, discount_list_id)
+> <Array(<DiscountDtoListEnvelope>, Integer, Hash)> get_discount_list_entries_with_http_info(tenant_id, discount_list_id, opts)
 
 ```ruby
 begin
   # Retrieves discounts in a discount list
-  data, status_code, headers = api_instance.get_discount_list_entries_with_http_info(tenant_id, discount_list_id)
+  data, status_code, headers = api_instance.get_discount_list_entries_with_http_info(tenant_id, discount_list_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <DiscountDtoListEnvelope>
@@ -409,6 +412,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
 | **discount_list_id** | **String** |  |  |
+| **discount_dto_collection_query_parameters** | [**DiscountDtoCollectionQueryParameters**](DiscountDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -420,13 +424,13 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
 ## get_discount_list_entries_count
 
-> <Int32Envelope> get_discount_list_entries_count(tenant_id, discount_list_id)
+> <Int32Envelope> get_discount_list_entries_count(tenant_id, discount_list_id, opts)
 
 Counts discounts in a discount list
 
@@ -441,10 +445,13 @@ require 'openapi_client'
 api_instance = OpenapiClient::DiscountListsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 discount_list_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  discount_dto_collection_query_parameters: OpenapiClient::DiscountDtoCollectionQueryParameters.new # DiscountDtoCollectionQueryParameters | 
+}
 
 begin
   # Counts discounts in a discount list
-  result = api_instance.get_discount_list_entries_count(tenant_id, discount_list_id)
+  result = api_instance.get_discount_list_entries_count(tenant_id, discount_list_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling DiscountListsApi->get_discount_list_entries_count: #{e}"
@@ -455,12 +462,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Int32Envelope>, Integer, Hash)> get_discount_list_entries_count_with_http_info(tenant_id, discount_list_id)
+> <Array(<Int32Envelope>, Integer, Hash)> get_discount_list_entries_count_with_http_info(tenant_id, discount_list_id, opts)
 
 ```ruby
 begin
   # Counts discounts in a discount list
-  data, status_code, headers = api_instance.get_discount_list_entries_count_with_http_info(tenant_id, discount_list_id)
+  data, status_code, headers = api_instance.get_discount_list_entries_count_with_http_info(tenant_id, discount_list_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Int32Envelope>
@@ -475,6 +482,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
 | **discount_list_id** | **String** |  |  |
+| **discount_dto_collection_query_parameters** | [**DiscountDtoCollectionQueryParameters**](DiscountDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -486,7 +494,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -560,7 +568,7 @@ No authorization required
 
 ## get_discount_lists
 
-> <DiscountListDtoListEnvelope> get_discount_lists(tenant_id)
+> <DiscountListDtoListEnvelope> get_discount_lists(tenant_id, opts)
 
 Retrieves all discount lists
 
@@ -574,10 +582,13 @@ require 'openapi_client'
 
 api_instance = OpenapiClient::DiscountListsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  discount_list_dto_collection_query_parameters: OpenapiClient::DiscountListDtoCollectionQueryParameters.new # DiscountListDtoCollectionQueryParameters | 
+}
 
 begin
   # Retrieves all discount lists
-  result = api_instance.get_discount_lists(tenant_id)
+  result = api_instance.get_discount_lists(tenant_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling DiscountListsApi->get_discount_lists: #{e}"
@@ -588,12 +599,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<DiscountListDtoListEnvelope>, Integer, Hash)> get_discount_lists_with_http_info(tenant_id)
+> <Array(<DiscountListDtoListEnvelope>, Integer, Hash)> get_discount_lists_with_http_info(tenant_id, opts)
 
 ```ruby
 begin
   # Retrieves all discount lists
-  data, status_code, headers = api_instance.get_discount_lists_with_http_info(tenant_id)
+  data, status_code, headers = api_instance.get_discount_lists_with_http_info(tenant_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <DiscountListDtoListEnvelope>
@@ -607,6 +618,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
+| **discount_list_dto_collection_query_parameters** | [**DiscountListDtoCollectionQueryParameters**](DiscountListDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -618,13 +630,13 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
 ## get_discount_lists_count
 
-> <Int32Envelope> get_discount_lists_count(tenant_id)
+> <Int32Envelope> get_discount_lists_count(tenant_id, opts)
 
 Counts discount lists
 
@@ -638,10 +650,13 @@ require 'openapi_client'
 
 api_instance = OpenapiClient::DiscountListsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  discount_list_dto_collection_query_parameters: OpenapiClient::DiscountListDtoCollectionQueryParameters.new # DiscountListDtoCollectionQueryParameters | 
+}
 
 begin
   # Counts discount lists
-  result = api_instance.get_discount_lists_count(tenant_id)
+  result = api_instance.get_discount_lists_count(tenant_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling DiscountListsApi->get_discount_lists_count: #{e}"
@@ -652,12 +667,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Int32Envelope>, Integer, Hash)> get_discount_lists_count_with_http_info(tenant_id)
+> <Array(<Int32Envelope>, Integer, Hash)> get_discount_lists_count_with_http_info(tenant_id, opts)
 
 ```ruby
 begin
   # Counts discount lists
-  data, status_code, headers = api_instance.get_discount_lists_count_with_http_info(tenant_id)
+  data, status_code, headers = api_instance.get_discount_lists_count_with_http_info(tenant_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Int32Envelope>
@@ -671,6 +686,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
+| **discount_list_dto_collection_query_parameters** | [**DiscountListDtoCollectionQueryParameters**](DiscountListDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -682,7 +698,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -704,7 +720,7 @@ api_instance = OpenapiClient::DiscountListsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 discount_list_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
-  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+  patch_operation: [OpenapiClient::PatchOperation.new] # Array<PatchOperation> | 
 }
 
 begin
@@ -740,7 +756,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
 | **discount_list_id** | **String** |  |  |
-| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+| **patch_operation** | [**Array&lt;PatchOperation&gt;**](PatchOperation.md) |  | [optional] |
 
 ### Return type
 
@@ -775,7 +791,7 @@ tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 discount_list_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 discount_list_entry_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
-  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+  patch_operation: [OpenapiClient::PatchOperation.new] # Array<PatchOperation> | 
 }
 
 begin
@@ -812,7 +828,7 @@ end
 | **tenant_id** | **String** |  |  |
 | **discount_list_id** | **String** |  |  |
 | **discount_list_entry_id** | **String** |  |  |
-| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+| **patch_operation** | [**Array&lt;PatchOperation&gt;**](PatchOperation.md) |  | [optional] |
 
 ### Return type
 

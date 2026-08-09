@@ -440,7 +440,16 @@ api_instance = OpenapiClient::FilesApi.new
 opts = {
   tenant_id: '38400000-8cf0-11bd-b23e-10b96e4ef00d', # String | 
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  top: 56, # Integer | 
+  skip: 56, # Integer | 
+  count: true, # Boolean | 
+  filter: 'filter_example', # String | 
+  order_by: 'order_by_example', # String | 
+  search: 'search_example', # String | 
+  select: 'select_example', # String | 
+  expand: 'expand_example', # String | 
+  is_empty: true # Boolean | 
 }
 
 begin
@@ -477,6 +486,15 @@ end
 | **tenant_id** | **String** |  | [optional] |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **top** | **Integer** |  | [optional] |
+| **skip** | **Integer** |  | [optional] |
+| **count** | **Boolean** |  | [optional] |
+| **filter** | **String** |  | [optional] |
+| **order_by** | **String** |  | [optional] |
+| **search** | **String** |  | [optional] |
+| **select** | **String** |  | [optional] |
+| **expand** | **String** |  | [optional] |
+| **is_empty** | **Boolean** |  | [optional] |
 
 ### Return type
 
@@ -488,7 +506,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: multipart/form-data
 - **Accept**: application/json, image/png
 
 
@@ -508,7 +526,16 @@ api_instance = OpenapiClient::FilesApi.new
 opts = {
   tenant_id: '38400000-8cf0-11bd-b23e-10b96e4ef00d', # String | 
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  top: 56, # Integer | 
+  skip: 56, # Integer | 
+  count: true, # Boolean | 
+  filter: 'filter_example', # String | 
+  order_by: 'order_by_example', # String | 
+  search: 'search_example', # String | 
+  select: 'select_example', # String | 
+  expand: 'expand_example', # String | 
+  is_empty: true # Boolean | 
 }
 
 begin
@@ -545,6 +572,15 @@ end
 | **tenant_id** | **String** |  | [optional] |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **top** | **Integer** |  | [optional] |
+| **skip** | **Integer** |  | [optional] |
+| **count** | **Boolean** |  | [optional] |
+| **filter** | **String** |  | [optional] |
+| **order_by** | **String** |  | [optional] |
+| **search** | **String** |  | [optional] |
+| **select** | **String** |  | [optional] |
+| **expand** | **String** |  | [optional] |
+| **is_empty** | **Boolean** |  | [optional] |
 
 ### Return type
 
@@ -556,7 +592,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: multipart/form-data
 - **Accept**: application/json, image/png
 
 

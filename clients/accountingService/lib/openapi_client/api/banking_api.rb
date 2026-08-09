@@ -832,6 +832,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [BankAccountDtoCollectionQueryParameters] :bank_account_dto_collection_query_parameters 
     # @return [BankAccountDtoListEnvelope]
     def get_bank_accounts(tenant_id, bank_id, opts = {})
       data, _status_code, _headers = get_bank_accounts_with_http_info(tenant_id, bank_id, opts)
@@ -845,6 +846,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [BankAccountDtoCollectionQueryParameters] :bank_account_dto_collection_query_parameters 
     # @return [Array<(BankAccountDtoListEnvelope, Integer, Hash)>] BankAccountDtoListEnvelope data, response status code and response headers
     def get_bank_accounts_with_http_info(tenant_id, bank_id, opts = {})
       if @api_client.config.debugging
@@ -870,13 +872,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'bank_account_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'BankAccountDtoListEnvelope'
@@ -908,6 +915,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [BankAccountDtoCollectionQueryParameters] :bank_account_dto_collection_query_parameters 
     # @return [Int32Envelope]
     def get_bank_accounts_count(tenant_id, bank_id, opts = {})
       data, _status_code, _headers = get_bank_accounts_count_with_http_info(tenant_id, bank_id, opts)
@@ -921,6 +929,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [BankAccountDtoCollectionQueryParameters] :bank_account_dto_collection_query_parameters 
     # @return [Array<(Int32Envelope, Integer, Hash)>] Int32Envelope data, response status code and response headers
     def get_bank_accounts_count_with_http_info(tenant_id, bank_id, opts = {})
       if @api_client.config.debugging
@@ -946,13 +955,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'bank_account_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'Int32Envelope'
@@ -1066,6 +1080,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [BankGuaranteeDtoCollectionQueryParameters] :bank_guarantee_dto_collection_query_parameters 
     # @return [BankGuaranteeDtoListEnvelope]
     def get_bank_guarantees(tenant_id, bank_id, opts = {})
       data, _status_code, _headers = get_bank_guarantees_with_http_info(tenant_id, bank_id, opts)
@@ -1079,6 +1094,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [BankGuaranteeDtoCollectionQueryParameters] :bank_guarantee_dto_collection_query_parameters 
     # @return [Array<(BankGuaranteeDtoListEnvelope, Integer, Hash)>] BankGuaranteeDtoListEnvelope data, response status code and response headers
     def get_bank_guarantees_with_http_info(tenant_id, bank_id, opts = {})
       if @api_client.config.debugging
@@ -1104,13 +1120,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'bank_guarantee_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'BankGuaranteeDtoListEnvelope'
@@ -1142,6 +1163,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [BankGuaranteeDtoCollectionQueryParameters] :bank_guarantee_dto_collection_query_parameters 
     # @return [Int32Envelope]
     def get_bank_guarantees_count(tenant_id, bank_id, opts = {})
       data, _status_code, _headers = get_bank_guarantees_count_with_http_info(tenant_id, bank_id, opts)
@@ -1155,6 +1177,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [BankGuaranteeDtoCollectionQueryParameters] :bank_guarantee_dto_collection_query_parameters 
     # @return [Array<(Int32Envelope, Integer, Hash)>] Int32Envelope data, response status code and response headers
     def get_bank_guarantees_count_with_http_info(tenant_id, bank_id, opts = {})
       if @api_client.config.debugging
@@ -1180,13 +1203,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'bank_guarantee_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'Int32Envelope'
@@ -1300,6 +1328,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [BankTransactionDtoCollectionQueryParameters] :bank_transaction_dto_collection_query_parameters 
     # @return [BankTransactionDtoListEnvelope]
     def get_bank_transactions(tenant_id, bank_id, opts = {})
       data, _status_code, _headers = get_bank_transactions_with_http_info(tenant_id, bank_id, opts)
@@ -1313,6 +1342,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [BankTransactionDtoCollectionQueryParameters] :bank_transaction_dto_collection_query_parameters 
     # @return [Array<(BankTransactionDtoListEnvelope, Integer, Hash)>] BankTransactionDtoListEnvelope data, response status code and response headers
     def get_bank_transactions_with_http_info(tenant_id, bank_id, opts = {})
       if @api_client.config.debugging
@@ -1338,13 +1368,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'bank_transaction_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'BankTransactionDtoListEnvelope'
@@ -1376,6 +1411,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [BankTransactionDtoCollectionQueryParameters] :bank_transaction_dto_collection_query_parameters 
     # @return [Int32Envelope]
     def get_bank_transactions_count(tenant_id, bank_id, opts = {})
       data, _status_code, _headers = get_bank_transactions_count_with_http_info(tenant_id, bank_id, opts)
@@ -1389,6 +1425,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [BankTransactionDtoCollectionQueryParameters] :bank_transaction_dto_collection_query_parameters 
     # @return [Array<(Int32Envelope, Integer, Hash)>] Int32Envelope data, response status code and response headers
     def get_bank_transactions_count_with_http_info(tenant_id, bank_id, opts = {})
       if @api_client.config.debugging
@@ -1414,13 +1451,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'bank_transaction_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'Int32Envelope'
@@ -1451,6 +1493,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [BankDtoCollectionQueryParameters] :bank_dto_collection_query_parameters 
     # @return [BankDtoListEnvelope]
     def get_banks(tenant_id, opts = {})
       data, _status_code, _headers = get_banks_with_http_info(tenant_id, opts)
@@ -1463,6 +1506,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [BankDtoCollectionQueryParameters] :bank_dto_collection_query_parameters 
     # @return [Array<(BankDtoListEnvelope, Integer, Hash)>] BankDtoListEnvelope data, response status code and response headers
     def get_banks_with_http_info(tenant_id, opts = {})
       if @api_client.config.debugging
@@ -1484,13 +1528,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'bank_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'BankDtoListEnvelope'
@@ -1521,6 +1570,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [BankDtoCollectionQueryParameters] :bank_dto_collection_query_parameters 
     # @return [Int32Envelope]
     def get_banks_count(tenant_id, opts = {})
       data, _status_code, _headers = get_banks_count_with_http_info(tenant_id, opts)
@@ -1533,6 +1583,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [BankDtoCollectionQueryParameters] :bank_dto_collection_query_parameters 
     # @return [Array<(Int32Envelope, Integer, Hash)>] Int32Envelope data, response status code and response headers
     def get_banks_count_with_http_info(tenant_id, opts = {})
       if @api_client.config.debugging
@@ -1554,13 +1605,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'bank_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'Int32Envelope'
@@ -1592,7 +1648,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
-    # @option opts [Array<Operation>] :operation 
+    # @option opts [Array<PatchOperation>] :patch_operation 
     # @return [EmptyEnvelope]
     def patch_bank(tenant_id, bank_id, opts = {})
       data, _status_code, _headers = patch_bank_with_http_info(tenant_id, bank_id, opts)
@@ -1606,7 +1662,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
-    # @option opts [Array<Operation>] :operation 
+    # @option opts [Array<PatchOperation>] :patch_operation 
     # @return [Array<(EmptyEnvelope, Integer, Hash)>] EmptyEnvelope data, response status code and response headers
     def patch_bank_with_http_info(tenant_id, bank_id, opts = {})
       if @api_client.config.debugging
@@ -1643,7 +1699,7 @@ module OpenapiClient
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'operation'])
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'patch_operation'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'EmptyEnvelope'
@@ -1676,7 +1732,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
-    # @option opts [Array<Operation>] :operation 
+    # @option opts [Array<PatchOperation>] :patch_operation 
     # @return [EmptyEnvelope]
     def patch_bank_account(tenant_id, bank_id, account_id, opts = {})
       data, _status_code, _headers = patch_bank_account_with_http_info(tenant_id, bank_id, account_id, opts)
@@ -1691,7 +1747,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
-    # @option opts [Array<Operation>] :operation 
+    # @option opts [Array<PatchOperation>] :patch_operation 
     # @return [Array<(EmptyEnvelope, Integer, Hash)>] EmptyEnvelope data, response status code and response headers
     def patch_bank_account_with_http_info(tenant_id, bank_id, account_id, opts = {})
       if @api_client.config.debugging
@@ -1732,7 +1788,7 @@ module OpenapiClient
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'operation'])
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'patch_operation'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'EmptyEnvelope'
@@ -1765,7 +1821,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
-    # @option opts [Array<Operation>] :operation 
+    # @option opts [Array<PatchOperation>] :patch_operation 
     # @return [EmptyEnvelope]
     def patch_bank_guarantee(tenant_id, bank_id, guarantee_id, opts = {})
       data, _status_code, _headers = patch_bank_guarantee_with_http_info(tenant_id, bank_id, guarantee_id, opts)
@@ -1780,7 +1836,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
-    # @option opts [Array<Operation>] :operation 
+    # @option opts [Array<PatchOperation>] :patch_operation 
     # @return [Array<(EmptyEnvelope, Integer, Hash)>] EmptyEnvelope data, response status code and response headers
     def patch_bank_guarantee_with_http_info(tenant_id, bank_id, guarantee_id, opts = {})
       if @api_client.config.debugging
@@ -1821,7 +1877,7 @@ module OpenapiClient
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'operation'])
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'patch_operation'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'EmptyEnvelope'
@@ -1854,7 +1910,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
-    # @option opts [Array<Operation>] :operation 
+    # @option opts [Array<PatchOperation>] :patch_operation 
     # @return [EmptyEnvelope]
     def patch_bank_transaction(tenant_id, bank_id, transaction_id, opts = {})
       data, _status_code, _headers = patch_bank_transaction_with_http_info(tenant_id, bank_id, transaction_id, opts)
@@ -1869,7 +1925,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
-    # @option opts [Array<Operation>] :operation 
+    # @option opts [Array<PatchOperation>] :patch_operation 
     # @return [Array<(EmptyEnvelope, Integer, Hash)>] EmptyEnvelope data, response status code and response headers
     def patch_bank_transaction_with_http_info(tenant_id, bank_id, transaction_id, opts = {})
       if @api_client.config.debugging
@@ -1910,7 +1966,7 @@ module OpenapiClient
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'operation'])
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'patch_operation'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'EmptyEnvelope'

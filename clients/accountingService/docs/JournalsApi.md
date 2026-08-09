@@ -6,6 +6,7 @@ All URIs are relative to *https://absuite.net*
 | ------ | ------------ | ----------- |
 | [**aggregate_journal_entry_credits_async**](JournalsApi.md#aggregate_journal_entry_credits_async) | **GET** /api/v2/AccountingService/Journals/{journalId}/Entries/Aggregate/Credits | Aggregate journal entry credits |
 | [**aggregate_journal_entry_debits_async**](JournalsApi.md#aggregate_journal_entry_debits_async) | **GET** /api/v2/AccountingService/Journals/{journalId}/Entries/Aggregate/Debits | Aggregate journal entry debits |
+| [**assign_journal_to_book_async**](JournalsApi.md#assign_journal_to_book_async) | **POST** /api/v2/AccountingService/Journals/{journalId}/AssignToBook | Bind a journal to a financial book |
 | [**count_journals_async**](JournalsApi.md#count_journals_async) | **GET** /api/v2/AccountingService/Journals/Count | Count journals |
 | [**create_journal_async**](JournalsApi.md#create_journal_async) | **POST** /api/v2/AccountingService/Journals | Create journal |
 | [**create_journal_entry_async**](JournalsApi.md#create_journal_entry_async) | **POST** /api/v2/AccountingService/Journals/{journalId}/Entries | Create journal entry |
@@ -44,7 +45,8 @@ journal_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 opts = {
   currency_id: 'currency_id_example', # String | 
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  journal_entry_dto_collection_query_parameters: OpenapiClient::JournalEntryDtoCollectionQueryParameters.new # JournalEntryDtoCollectionQueryParameters | 
 }
 
 begin
@@ -83,6 +85,7 @@ end
 | **currency_id** | **String** |  | [optional][default to &#39;USD.USA&#39;] |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **journal_entry_dto_collection_query_parameters** | [**JournalEntryDtoCollectionQueryParameters**](JournalEntryDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -94,7 +97,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -118,7 +121,8 @@ journal_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 opts = {
   currency_id: 'currency_id_example', # String | 
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  journal_entry_dto_collection_query_parameters: OpenapiClient::JournalEntryDtoCollectionQueryParameters.new # JournalEntryDtoCollectionQueryParameters | 
 }
 
 begin
@@ -157,6 +161,7 @@ end
 | **currency_id** | **String** |  | [optional][default to &#39;USD.USA&#39;] |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **journal_entry_dto_collection_query_parameters** | [**JournalEntryDtoCollectionQueryParameters**](JournalEntryDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -168,7 +173,81 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
+- **Accept**: application/json, application/xml
+
+
+## assign_journal_to_book_async
+
+> <EmptyEnvelope> assign_journal_to_book_async(tenant_id, journal_id, opts)
+
+Bind a journal to a financial book
+
+Establishes the one-way Journal↔FinancialBook binding (finish-line #5): binds an unbound journal to the supplied book and sets its book-scoped code, enforcing (Tenant, Book, Code) uniqueness. Binding an unbound journal or re-affirming the same book succeeds; a duplicate code in the book is rejected (400), and re-homing an already-bound journal to a DIFFERENT book is rejected by the aggregate. Requires the journals_update permission.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::JournalsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+journal_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  assign_journal_to_book_request: OpenapiClient::AssignJournalToBookRequest.new({financial_book_id: 'financial_book_id_example', code: 'code_example'}) # AssignJournalToBookRequest | 
+}
+
+begin
+  # Bind a journal to a financial book
+  result = api_instance.assign_journal_to_book_async(tenant_id, journal_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling JournalsApi->assign_journal_to_book_async: #{e}"
+end
+```
+
+#### Using the assign_journal_to_book_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> assign_journal_to_book_async_with_http_info(tenant_id, journal_id, opts)
+
+```ruby
+begin
+  # Bind a journal to a financial book
+  data, status_code, headers = api_instance.assign_journal_to_book_async_with_http_info(tenant_id, journal_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling JournalsApi->assign_journal_to_book_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **journal_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **assign_journal_to_book_request** | [**AssignJournalToBookRequest**](AssignJournalToBookRequest.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -190,7 +269,8 @@ api_instance = OpenapiClient::JournalsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  journal_dto_collection_query_parameters: OpenapiClient::JournalDtoCollectionQueryParameters.new # JournalDtoCollectionQueryParameters | 
 }
 
 begin
@@ -227,6 +307,7 @@ end
 | **tenant_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **journal_dto_collection_query_parameters** | [**JournalDtoCollectionQueryParameters**](JournalDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -238,7 +319,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -625,7 +706,8 @@ tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 journal_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  journal_entry_dto_collection_query_parameters: OpenapiClient::JournalEntryDtoCollectionQueryParameters.new # JournalEntryDtoCollectionQueryParameters | 
 }
 
 begin
@@ -663,6 +745,7 @@ end
 | **journal_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **journal_entry_dto_collection_query_parameters** | [**JournalEntryDtoCollectionQueryParameters**](JournalEntryDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -674,7 +757,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -697,7 +780,8 @@ tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 journal_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  journal_entry_dto_collection_query_parameters: OpenapiClient::JournalEntryDtoCollectionQueryParameters.new # JournalEntryDtoCollectionQueryParameters | 
 }
 
 begin
@@ -735,6 +819,7 @@ end
 | **journal_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **journal_entry_dto_collection_query_parameters** | [**JournalEntryDtoCollectionQueryParameters**](JournalEntryDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -746,7 +831,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -842,7 +927,8 @@ api_instance = OpenapiClient::JournalsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  journal_dto_collection_query_parameters: OpenapiClient::JournalDtoCollectionQueryParameters.new # JournalDtoCollectionQueryParameters | 
 }
 
 begin
@@ -879,6 +965,7 @@ end
 | **tenant_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **journal_dto_collection_query_parameters** | [**JournalDtoCollectionQueryParameters**](JournalDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -890,7 +977,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -914,7 +1001,7 @@ journal_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 opts = {
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example', # String | 
-  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+  patch_operation: [OpenapiClient::PatchOperation.new] # Array<PatchOperation> | 
 }
 
 begin
@@ -952,7 +1039,7 @@ end
 | **journal_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
-| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+| **patch_operation** | [**Array&lt;PatchOperation&gt;**](PatchOperation.md) |  | [optional] |
 
 ### Return type
 
@@ -989,7 +1076,7 @@ entry_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 opts = {
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example', # String | 
-  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+  patch_operation: [OpenapiClient::PatchOperation.new] # Array<PatchOperation> | 
 }
 
 begin
@@ -1028,7 +1115,7 @@ end
 | **entry_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
-| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+| **patch_operation** | [**Array&lt;PatchOperation&gt;**](PatchOperation.md) |  | [optional] |
 
 ### Return type
 

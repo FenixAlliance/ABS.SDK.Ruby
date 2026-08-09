@@ -35,6 +35,10 @@ module OpenapiClient
 
     attr_accessor :parent_journal_id
 
+    attr_accessor :financial_book_id
+
+    attr_accessor :code
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -47,7 +51,9 @@ module OpenapiClient
         :'enrollment_id' => :'enrollmentId',
         :'fiscal_year_id' => :'fiscalYearId',
         :'journal_type_id' => :'journalTypeId',
-        :'parent_journal_id' => :'parentJournalId'
+        :'parent_journal_id' => :'parentJournalId',
+        :'financial_book_id' => :'financialBookId',
+        :'code' => :'code'
       }
     end
 
@@ -68,7 +74,9 @@ module OpenapiClient
         :'enrollment_id' => :'String',
         :'fiscal_year_id' => :'String',
         :'journal_type_id' => :'String',
-        :'parent_journal_id' => :'String'
+        :'parent_journal_id' => :'String',
+        :'financial_book_id' => :'String',
+        :'code' => :'String'
       }
     end
 
@@ -84,7 +92,9 @@ module OpenapiClient
         :'enrollment_id',
         :'fiscal_year_id',
         :'journal_type_id',
-        :'parent_journal_id'
+        :'parent_journal_id',
+        :'financial_book_id',
+        :'code'
       ])
     end
 
@@ -142,6 +152,14 @@ module OpenapiClient
       if attributes.key?(:'parent_journal_id')
         self.parent_journal_id = attributes[:'parent_journal_id']
       end
+
+      if attributes.key?(:'financial_book_id')
+        self.financial_book_id = attributes[:'financial_book_id']
+      end
+
+      if attributes.key?(:'code')
+        self.code = attributes[:'code']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -173,7 +191,9 @@ module OpenapiClient
           enrollment_id == o.enrollment_id &&
           fiscal_year_id == o.fiscal_year_id &&
           journal_type_id == o.journal_type_id &&
-          parent_journal_id == o.parent_journal_id
+          parent_journal_id == o.parent_journal_id &&
+          financial_book_id == o.financial_book_id &&
+          code == o.code
     end
 
     # @see the `==` method
@@ -185,7 +205,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, timestamp, name, description, tenant_id, ledger_id, enrollment_id, fiscal_year_id, journal_type_id, parent_journal_id].hash
+      [id, timestamp, name, description, tenant_id, ledger_id, enrollment_id, fiscal_year_id, journal_type_id, parent_journal_id, financial_book_id, code].hash
     end
 
     # Builds the object from hash

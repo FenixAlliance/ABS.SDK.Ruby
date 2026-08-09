@@ -630,6 +630,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [PaymentDtoCollectionQueryParameters] :payment_dto_collection_query_parameters 
     # @return [PaymentDtoListEnvelope]
     def get_incoming_payments_async(wallet_id, opts = {})
       data, _status_code, _headers = get_incoming_payments_async_with_http_info(wallet_id, opts)
@@ -642,6 +643,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [PaymentDtoCollectionQueryParameters] :payment_dto_collection_query_parameters 
     # @return [Array<(PaymentDtoListEnvelope, Integer, Hash)>] PaymentDtoListEnvelope data, response status code and response headers
     def get_incoming_payments_async_with_http_info(wallet_id, opts = {})
       if @api_client.config.debugging
@@ -662,13 +664,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'payment_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'PaymentDtoListEnvelope'
@@ -699,6 +706,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [PaymentDtoCollectionQueryParameters] :payment_dto_collection_query_parameters 
     # @return [Int32Envelope]
     def get_incoming_payments_count_async(wallet_id, opts = {})
       data, _status_code, _headers = get_incoming_payments_count_async_with_http_info(wallet_id, opts)
@@ -711,6 +719,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [PaymentDtoCollectionQueryParameters] :payment_dto_collection_query_parameters 
     # @return [Array<(Int32Envelope, Integer, Hash)>] Int32Envelope data, response status code and response headers
     def get_incoming_payments_count_async_with_http_info(wallet_id, opts = {})
       if @api_client.config.debugging
@@ -731,13 +740,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'payment_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'Int32Envelope'
@@ -768,6 +782,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [InvoiceDtoCollectionQueryParameters] :invoice_dto_collection_query_parameters 
     # @return [InvoiceDtoListEnvelope]
     def get_incoming_wallet_invoices_async(wallet_id, opts = {})
       data, _status_code, _headers = get_incoming_wallet_invoices_async_with_http_info(wallet_id, opts)
@@ -780,6 +795,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [InvoiceDtoCollectionQueryParameters] :invoice_dto_collection_query_parameters 
     # @return [Array<(InvoiceDtoListEnvelope, Integer, Hash)>] InvoiceDtoListEnvelope data, response status code and response headers
     def get_incoming_wallet_invoices_async_with_http_info(wallet_id, opts = {})
       if @api_client.config.debugging
@@ -800,13 +816,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'invoice_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'InvoiceDtoListEnvelope'
@@ -837,6 +858,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [InvoiceDtoCollectionQueryParameters] :invoice_dto_collection_query_parameters 
     # @return [Int32Envelope]
     def get_incoming_wallet_invoices_count_async(wallet_id, opts = {})
       data, _status_code, _headers = get_incoming_wallet_invoices_count_async_with_http_info(wallet_id, opts)
@@ -849,6 +871,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [InvoiceDtoCollectionQueryParameters] :invoice_dto_collection_query_parameters 
     # @return [Array<(Int32Envelope, Integer, Hash)>] Int32Envelope data, response status code and response headers
     def get_incoming_wallet_invoices_count_async_with_http_info(wallet_id, opts = {})
       if @api_client.config.debugging
@@ -869,13 +892,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'invoice_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'Int32Envelope'
@@ -981,6 +1009,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [LocationDtoCollectionQueryParameters] :location_dto_collection_query_parameters 
     # @return [LocationDtoListEnvelope]
     def get_locations_for_wallet_async(wallet_id, opts = {})
       data, _status_code, _headers = get_locations_for_wallet_async_with_http_info(wallet_id, opts)
@@ -993,6 +1022,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [LocationDtoCollectionQueryParameters] :location_dto_collection_query_parameters 
     # @return [Array<(LocationDtoListEnvelope, Integer, Hash)>] LocationDtoListEnvelope data, response status code and response headers
     def get_locations_for_wallet_async_with_http_info(wallet_id, opts = {})
       if @api_client.config.debugging
@@ -1013,13 +1043,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'location_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'LocationDtoListEnvelope'
@@ -1050,6 +1085,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [LocationDtoCollectionQueryParameters] :location_dto_collection_query_parameters 
     # @return [Int32Envelope]
     def get_locations_for_wallet_count_async(wallet_id, opts = {})
       data, _status_code, _headers = get_locations_for_wallet_count_async_with_http_info(wallet_id, opts)
@@ -1062,6 +1098,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [LocationDtoCollectionQueryParameters] :location_dto_collection_query_parameters 
     # @return [Array<(Int32Envelope, Integer, Hash)>] Int32Envelope data, response status code and response headers
     def get_locations_for_wallet_count_async_with_http_info(wallet_id, opts = {})
       if @api_client.config.debugging
@@ -1082,13 +1119,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'location_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'Int32Envelope'
@@ -1119,6 +1161,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [PaymentDtoCollectionQueryParameters] :payment_dto_collection_query_parameters 
     # @return [PaymentDtoListEnvelope]
     def get_outgoing_payments_async(wallet_id, opts = {})
       data, _status_code, _headers = get_outgoing_payments_async_with_http_info(wallet_id, opts)
@@ -1131,6 +1174,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [PaymentDtoCollectionQueryParameters] :payment_dto_collection_query_parameters 
     # @return [Array<(PaymentDtoListEnvelope, Integer, Hash)>] PaymentDtoListEnvelope data, response status code and response headers
     def get_outgoing_payments_async_with_http_info(wallet_id, opts = {})
       if @api_client.config.debugging
@@ -1151,13 +1195,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'payment_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'PaymentDtoListEnvelope'
@@ -1188,6 +1237,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [PaymentDtoCollectionQueryParameters] :payment_dto_collection_query_parameters 
     # @return [Int32Envelope]
     def get_outgoing_payments_count_async(wallet_id, opts = {})
       data, _status_code, _headers = get_outgoing_payments_count_async_with_http_info(wallet_id, opts)
@@ -1200,6 +1250,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [PaymentDtoCollectionQueryParameters] :payment_dto_collection_query_parameters 
     # @return [Array<(Int32Envelope, Integer, Hash)>] Int32Envelope data, response status code and response headers
     def get_outgoing_payments_count_async_with_http_info(wallet_id, opts = {})
       if @api_client.config.debugging
@@ -1220,13 +1271,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'payment_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'Int32Envelope'
@@ -1257,6 +1313,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [InvoiceDtoCollectionQueryParameters] :invoice_dto_collection_query_parameters 
     # @return [InvoiceDtoListEnvelope]
     def get_outgoing_wallet_invoices_async(wallet_id, opts = {})
       data, _status_code, _headers = get_outgoing_wallet_invoices_async_with_http_info(wallet_id, opts)
@@ -1269,6 +1326,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [InvoiceDtoCollectionQueryParameters] :invoice_dto_collection_query_parameters 
     # @return [Array<(InvoiceDtoListEnvelope, Integer, Hash)>] InvoiceDtoListEnvelope data, response status code and response headers
     def get_outgoing_wallet_invoices_async_with_http_info(wallet_id, opts = {})
       if @api_client.config.debugging
@@ -1289,13 +1347,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'invoice_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'InvoiceDtoListEnvelope'
@@ -1326,6 +1389,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [InvoiceDtoCollectionQueryParameters] :invoice_dto_collection_query_parameters 
     # @return [Int32Envelope]
     def get_outgoing_wallet_invoices_count_async(wallet_id, opts = {})
       data, _status_code, _headers = get_outgoing_wallet_invoices_count_async_with_http_info(wallet_id, opts)
@@ -1338,6 +1402,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [InvoiceDtoCollectionQueryParameters] :invoice_dto_collection_query_parameters 
     # @return [Array<(Int32Envelope, Integer, Hash)>] Int32Envelope data, response status code and response headers
     def get_outgoing_wallet_invoices_count_async_with_http_info(wallet_id, opts = {})
       if @api_client.config.debugging
@@ -1358,13 +1423,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'invoice_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'Int32Envelope'
@@ -1470,6 +1540,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [BankAccountDtoCollectionQueryParameters] :bank_account_dto_collection_query_parameters 
     # @return [BankAccountDtoListEnvelope]
     def get_wallet_bank_accounts_async(wallet_id, opts = {})
       data, _status_code, _headers = get_wallet_bank_accounts_async_with_http_info(wallet_id, opts)
@@ -1482,6 +1553,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [BankAccountDtoCollectionQueryParameters] :bank_account_dto_collection_query_parameters 
     # @return [Array<(BankAccountDtoListEnvelope, Integer, Hash)>] BankAccountDtoListEnvelope data, response status code and response headers
     def get_wallet_bank_accounts_async_with_http_info(wallet_id, opts = {})
       if @api_client.config.debugging
@@ -1502,13 +1574,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'bank_account_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'BankAccountDtoListEnvelope'
@@ -1539,6 +1616,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [BankAccountDtoCollectionQueryParameters] :bank_account_dto_collection_query_parameters 
     # @return [Int32Envelope]
     def get_wallet_bank_accounts_count_async(wallet_id, opts = {})
       data, _status_code, _headers = get_wallet_bank_accounts_count_async_with_http_info(wallet_id, opts)
@@ -1551,6 +1629,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [BankAccountDtoCollectionQueryParameters] :bank_account_dto_collection_query_parameters 
     # @return [Array<(Int32Envelope, Integer, Hash)>] Int32Envelope data, response status code and response headers
     def get_wallet_bank_accounts_count_async_with_http_info(wallet_id, opts = {})
       if @api_client.config.debugging
@@ -1571,13 +1650,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'bank_account_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'Int32Envelope'
@@ -1608,6 +1692,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [PaymentChargebackDtoCollectionQueryParameters] :payment_chargeback_dto_collection_query_parameters 
     # @return [PaymentChargebackDtoListEnvelope]
     def get_wallet_chargebacks_async(wallet_id, opts = {})
       data, _status_code, _headers = get_wallet_chargebacks_async_with_http_info(wallet_id, opts)
@@ -1620,6 +1705,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [PaymentChargebackDtoCollectionQueryParameters] :payment_chargeback_dto_collection_query_parameters 
     # @return [Array<(PaymentChargebackDtoListEnvelope, Integer, Hash)>] PaymentChargebackDtoListEnvelope data, response status code and response headers
     def get_wallet_chargebacks_async_with_http_info(wallet_id, opts = {})
       if @api_client.config.debugging
@@ -1640,13 +1726,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'payment_chargeback_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'PaymentChargebackDtoListEnvelope'
@@ -1677,6 +1768,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [PaymentChargebackDtoCollectionQueryParameters] :payment_chargeback_dto_collection_query_parameters 
     # @return [Int32Envelope]
     def get_wallet_chargebacks_count_async(wallet_id, opts = {})
       data, _status_code, _headers = get_wallet_chargebacks_count_async_with_http_info(wallet_id, opts)
@@ -1689,6 +1781,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [PaymentChargebackDtoCollectionQueryParameters] :payment_chargeback_dto_collection_query_parameters 
     # @return [Array<(Int32Envelope, Integer, Hash)>] Int32Envelope data, response status code and response headers
     def get_wallet_chargebacks_count_async_with_http_info(wallet_id, opts = {})
       if @api_client.config.debugging
@@ -1709,13 +1802,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'payment_chargeback_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'Int32Envelope'
@@ -1815,6 +1913,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [ExtendedOrderDtoCollectionQueryParameters] :extended_order_dto_collection_query_parameters 
     # @return [ExtendedOrderDtoListEnvelope]
     def get_wallet_extended_orders_async(wallet_id, opts = {})
       data, _status_code, _headers = get_wallet_extended_orders_async_with_http_info(wallet_id, opts)
@@ -1827,6 +1926,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [ExtendedOrderDtoCollectionQueryParameters] :extended_order_dto_collection_query_parameters 
     # @return [Array<(ExtendedOrderDtoListEnvelope, Integer, Hash)>] ExtendedOrderDtoListEnvelope data, response status code and response headers
     def get_wallet_extended_orders_async_with_http_info(wallet_id, opts = {})
       if @api_client.config.debugging
@@ -1847,13 +1947,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'extended_order_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'ExtendedOrderDtoListEnvelope'
@@ -1884,6 +1989,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [InvoiceDtoCollectionQueryParameters] :invoice_dto_collection_query_parameters 
     # @return [InvoiceDtoListEnvelope]
     def get_wallet_invoices_async(wallet_id, opts = {})
       data, _status_code, _headers = get_wallet_invoices_async_with_http_info(wallet_id, opts)
@@ -1896,6 +2002,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [InvoiceDtoCollectionQueryParameters] :invoice_dto_collection_query_parameters 
     # @return [Array<(InvoiceDtoListEnvelope, Integer, Hash)>] InvoiceDtoListEnvelope data, response status code and response headers
     def get_wallet_invoices_async_with_http_info(wallet_id, opts = {})
       if @api_client.config.debugging
@@ -1916,13 +2023,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'invoice_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'InvoiceDtoListEnvelope'
@@ -1953,6 +2065,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [InvoiceDtoCollectionQueryParameters] :invoice_dto_collection_query_parameters 
     # @return [Int32Envelope]
     def get_wallet_invoices_count_async(wallet_id, opts = {})
       data, _status_code, _headers = get_wallet_invoices_count_async_with_http_info(wallet_id, opts)
@@ -1965,6 +2078,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [InvoiceDtoCollectionQueryParameters] :invoice_dto_collection_query_parameters 
     # @return [Array<(Int32Envelope, Integer, Hash)>] Int32Envelope data, response status code and response headers
     def get_wallet_invoices_count_async_with_http_info(wallet_id, opts = {})
       if @api_client.config.debugging
@@ -1985,13 +2099,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'invoice_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'Int32Envelope'
@@ -2022,6 +2141,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [OrderDtoCollectionQueryParameters] :order_dto_collection_query_parameters 
     # @return [OrderDtoListEnvelope]
     def get_wallet_orders_async(wallet_id, opts = {})
       data, _status_code, _headers = get_wallet_orders_async_with_http_info(wallet_id, opts)
@@ -2034,6 +2154,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [OrderDtoCollectionQueryParameters] :order_dto_collection_query_parameters 
     # @return [Array<(OrderDtoListEnvelope, Integer, Hash)>] OrderDtoListEnvelope data, response status code and response headers
     def get_wallet_orders_async_with_http_info(wallet_id, opts = {})
       if @api_client.config.debugging
@@ -2054,13 +2175,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'order_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'OrderDtoListEnvelope'
@@ -2091,6 +2217,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [OrderDtoCollectionQueryParameters] :order_dto_collection_query_parameters 
     # @return [Int32Envelope]
     def get_wallet_orders_count_async(wallet_id, opts = {})
       data, _status_code, _headers = get_wallet_orders_count_async_with_http_info(wallet_id, opts)
@@ -2103,6 +2230,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [OrderDtoCollectionQueryParameters] :order_dto_collection_query_parameters 
     # @return [Array<(Int32Envelope, Integer, Hash)>] Int32Envelope data, response status code and response headers
     def get_wallet_orders_count_async_with_http_info(wallet_id, opts = {})
       if @api_client.config.debugging
@@ -2123,13 +2251,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'order_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'Int32Envelope'
@@ -2160,6 +2293,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [PaymentDtoCollectionQueryParameters] :payment_dto_collection_query_parameters 
     # @return [PaymentDtoListEnvelope]
     def get_wallet_payments_async(wallet_id, opts = {})
       data, _status_code, _headers = get_wallet_payments_async_with_http_info(wallet_id, opts)
@@ -2172,6 +2306,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [PaymentDtoCollectionQueryParameters] :payment_dto_collection_query_parameters 
     # @return [Array<(PaymentDtoListEnvelope, Integer, Hash)>] PaymentDtoListEnvelope data, response status code and response headers
     def get_wallet_payments_async_with_http_info(wallet_id, opts = {})
       if @api_client.config.debugging
@@ -2192,13 +2327,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'payment_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'PaymentDtoListEnvelope'
@@ -2229,6 +2369,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [PaymentDtoCollectionQueryParameters] :payment_dto_collection_query_parameters 
     # @return [Int32Envelope]
     def get_wallet_payments_count_async(wallet_id, opts = {})
       data, _status_code, _headers = get_wallet_payments_count_async_with_http_info(wallet_id, opts)
@@ -2241,6 +2382,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [PaymentDtoCollectionQueryParameters] :payment_dto_collection_query_parameters 
     # @return [Array<(Int32Envelope, Integer, Hash)>] Int32Envelope data, response status code and response headers
     def get_wallet_payments_count_async_with_http_info(wallet_id, opts = {})
       if @api_client.config.debugging
@@ -2261,13 +2403,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'payment_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'Int32Envelope'
@@ -2298,6 +2445,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [QuoteDtoCollectionQueryParameters] :quote_dto_collection_query_parameters 
     # @return [QuoteDtoListEnvelope]
     def get_wallet_quotes_async(wallet_id, opts = {})
       data, _status_code, _headers = get_wallet_quotes_async_with_http_info(wallet_id, opts)
@@ -2310,6 +2458,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [QuoteDtoCollectionQueryParameters] :quote_dto_collection_query_parameters 
     # @return [Array<(QuoteDtoListEnvelope, Integer, Hash)>] QuoteDtoListEnvelope data, response status code and response headers
     def get_wallet_quotes_async_with_http_info(wallet_id, opts = {})
       if @api_client.config.debugging
@@ -2330,13 +2479,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'quote_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'QuoteDtoListEnvelope'
@@ -2367,6 +2521,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [QuoteDtoCollectionQueryParameters] :quote_dto_collection_query_parameters 
     # @return [Int32Envelope]
     def get_wallet_quotes_count_async(wallet_id, opts = {})
       data, _status_code, _headers = get_wallet_quotes_count_async_with_http_info(wallet_id, opts)
@@ -2379,6 +2534,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [QuoteDtoCollectionQueryParameters] :quote_dto_collection_query_parameters 
     # @return [Array<(Int32Envelope, Integer, Hash)>] Int32Envelope data, response status code and response headers
     def get_wallet_quotes_count_async_with_http_info(wallet_id, opts = {})
       if @api_client.config.debugging
@@ -2399,13 +2555,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'quote_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'Int32Envelope'
@@ -2436,6 +2597,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [PaymentRefundDtoCollectionQueryParameters] :payment_refund_dto_collection_query_parameters 
     # @return [PaymentRefundDtoListEnvelope]
     def get_wallet_refunds_async(wallet_id, opts = {})
       data, _status_code, _headers = get_wallet_refunds_async_with_http_info(wallet_id, opts)
@@ -2448,6 +2610,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [PaymentRefundDtoCollectionQueryParameters] :payment_refund_dto_collection_query_parameters 
     # @return [Array<(PaymentRefundDtoListEnvelope, Integer, Hash)>] PaymentRefundDtoListEnvelope data, response status code and response headers
     def get_wallet_refunds_async_with_http_info(wallet_id, opts = {})
       if @api_client.config.debugging
@@ -2468,13 +2631,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'payment_refund_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'PaymentRefundDtoListEnvelope'
@@ -2505,6 +2673,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [PaymentRefundDtoCollectionQueryParameters] :payment_refund_dto_collection_query_parameters 
     # @return [Int32Envelope]
     def get_wallet_refunds_count_async(wallet_id, opts = {})
       data, _status_code, _headers = get_wallet_refunds_count_async_with_http_info(wallet_id, opts)
@@ -2517,6 +2686,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [PaymentRefundDtoCollectionQueryParameters] :payment_refund_dto_collection_query_parameters 
     # @return [Array<(Int32Envelope, Integer, Hash)>] Int32Envelope data, response status code and response headers
     def get_wallet_refunds_count_async_with_http_info(wallet_id, opts = {})
       if @api_client.config.debugging
@@ -2537,13 +2707,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'payment_refund_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'Int32Envelope'
@@ -2649,6 +2824,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [PaymentTokenDtoCollectionQueryParameters] :payment_token_dto_collection_query_parameters 
     # @return [PaymentTokenDtoListEnvelope]
     def get_wallet_tokens_async(wallet_id, opts = {})
       data, _status_code, _headers = get_wallet_tokens_async_with_http_info(wallet_id, opts)
@@ -2661,6 +2837,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [PaymentTokenDtoCollectionQueryParameters] :payment_token_dto_collection_query_parameters 
     # @return [Array<(PaymentTokenDtoListEnvelope, Integer, Hash)>] PaymentTokenDtoListEnvelope data, response status code and response headers
     def get_wallet_tokens_async_with_http_info(wallet_id, opts = {})
       if @api_client.config.debugging
@@ -2681,13 +2858,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'payment_token_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'PaymentTokenDtoListEnvelope'
@@ -2718,6 +2900,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [PaymentTokenDtoCollectionQueryParameters] :payment_token_dto_collection_query_parameters 
     # @return [Int32Envelope]
     def get_wallet_tokens_count_async(wallet_id, opts = {})
       data, _status_code, _headers = get_wallet_tokens_count_async_with_http_info(wallet_id, opts)
@@ -2730,6 +2913,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [PaymentTokenDtoCollectionQueryParameters] :payment_token_dto_collection_query_parameters 
     # @return [Array<(Int32Envelope, Integer, Hash)>] Int32Envelope data, response status code and response headers
     def get_wallet_tokens_count_async_with_http_info(wallet_id, opts = {})
       if @api_client.config.debugging
@@ -2750,13 +2934,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'payment_token_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'Int32Envelope'
@@ -2787,6 +2976,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [WalletWithdrawRequestDtoCollectionQueryParameters] :wallet_withdraw_request_dto_collection_query_parameters 
     # @return [WalletWithdrawRequestDtoListEnvelope]
     def get_wallet_withdraw_requests_async(wallet_id, opts = {})
       data, _status_code, _headers = get_wallet_withdraw_requests_async_with_http_info(wallet_id, opts)
@@ -2799,6 +2989,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [WalletWithdrawRequestDtoCollectionQueryParameters] :wallet_withdraw_request_dto_collection_query_parameters 
     # @return [Array<(WalletWithdrawRequestDtoListEnvelope, Integer, Hash)>] WalletWithdrawRequestDtoListEnvelope data, response status code and response headers
     def get_wallet_withdraw_requests_async_with_http_info(wallet_id, opts = {})
       if @api_client.config.debugging
@@ -2819,13 +3010,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'wallet_withdraw_request_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'WalletWithdrawRequestDtoListEnvelope'
@@ -2856,6 +3052,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [WalletWithdrawRequestDtoCollectionQueryParameters] :wallet_withdraw_request_dto_collection_query_parameters 
     # @return [Int32Envelope]
     def get_wallet_withdraw_requests_count_async(wallet_id, opts = {})
       data, _status_code, _headers = get_wallet_withdraw_requests_count_async_with_http_info(wallet_id, opts)
@@ -2868,6 +3065,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [WalletWithdrawRequestDtoCollectionQueryParameters] :wallet_withdraw_request_dto_collection_query_parameters 
     # @return [Array<(Int32Envelope, Integer, Hash)>] Int32Envelope data, response status code and response headers
     def get_wallet_withdraw_requests_count_async_with_http_info(wallet_id, opts = {})
       if @api_client.config.debugging
@@ -2888,13 +3086,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'wallet_withdraw_request_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'Int32Envelope'
@@ -2925,6 +3128,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [WalletWithdrawDtoCollectionQueryParameters] :wallet_withdraw_dto_collection_query_parameters 
     # @return [WalletWithdrawDtoListEnvelope]
     def get_wallet_withdraws_async(wallet_id, opts = {})
       data, _status_code, _headers = get_wallet_withdraws_async_with_http_info(wallet_id, opts)
@@ -2937,6 +3141,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [WalletWithdrawDtoCollectionQueryParameters] :wallet_withdraw_dto_collection_query_parameters 
     # @return [Array<(WalletWithdrawDtoListEnvelope, Integer, Hash)>] WalletWithdrawDtoListEnvelope data, response status code and response headers
     def get_wallet_withdraws_async_with_http_info(wallet_id, opts = {})
       if @api_client.config.debugging
@@ -2957,13 +3162,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'wallet_withdraw_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'WalletWithdrawDtoListEnvelope'
@@ -2994,6 +3204,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [WalletWithdrawDtoCollectionQueryParameters] :wallet_withdraw_dto_collection_query_parameters 
     # @return [Int32Envelope]
     def get_wallet_withdraws_count_async(wallet_id, opts = {})
       data, _status_code, _headers = get_wallet_withdraws_count_async_with_http_info(wallet_id, opts)
@@ -3006,6 +3217,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [WalletWithdrawDtoCollectionQueryParameters] :wallet_withdraw_dto_collection_query_parameters 
     # @return [Array<(Int32Envelope, Integer, Hash)>] Int32Envelope data, response status code and response headers
     def get_wallet_withdraws_count_async_with_http_info(wallet_id, opts = {})
       if @api_client.config.debugging
@@ -3026,13 +3238,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'wallet_withdraw_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'Int32Envelope'
@@ -3064,7 +3281,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
-    # @option opts [Array<Operation>] :operation 
+    # @option opts [Array<PatchOperation>] :patch_operation 
     # @return [EmptyEnvelope]
     def patch_wallet_bank_account_async(wallet_id, bank_account_id, opts = {})
       data, _status_code, _headers = patch_wallet_bank_account_async_with_http_info(wallet_id, bank_account_id, opts)
@@ -3078,7 +3295,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
-    # @option opts [Array<Operation>] :operation 
+    # @option opts [Array<PatchOperation>] :patch_operation 
     # @return [Array<(EmptyEnvelope, Integer, Hash)>] EmptyEnvelope data, response status code and response headers
     def patch_wallet_bank_account_async_with_http_info(wallet_id, bank_account_id, opts = {})
       if @api_client.config.debugging
@@ -3114,7 +3331,7 @@ module OpenapiClient
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'operation'])
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'patch_operation'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'EmptyEnvelope'
@@ -3146,7 +3363,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
-    # @option opts [Array<Operation>] :operation 
+    # @option opts [Array<PatchOperation>] :patch_operation 
     # @return [EmptyEnvelope]
     def patch_wallet_token_async(wallet_id, token_id, opts = {})
       data, _status_code, _headers = patch_wallet_token_async_with_http_info(wallet_id, token_id, opts)
@@ -3160,7 +3377,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
-    # @option opts [Array<Operation>] :operation 
+    # @option opts [Array<PatchOperation>] :patch_operation 
     # @return [Array<(EmptyEnvelope, Integer, Hash)>] EmptyEnvelope data, response status code and response headers
     def patch_wallet_token_async_with_http_info(wallet_id, token_id, opts = {})
       if @api_client.config.debugging
@@ -3196,7 +3413,7 @@ module OpenapiClient
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'operation'])
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'patch_operation'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'EmptyEnvelope'

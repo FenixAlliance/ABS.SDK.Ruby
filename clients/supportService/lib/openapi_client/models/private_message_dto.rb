@@ -37,6 +37,34 @@ module OpenapiClient
 
     attr_accessor :received_timestamp
 
+    attr_accessor :social_profile_name
+
+    attr_accessor :social_profile_avatar_url
+
+    attr_accessor :social_profile_type
+
+    class EnumAttributeValidator
+      attr_reader :datatype
+      attr_reader :allowable_values
+
+      def initialize(datatype, allowable_values)
+        @allowable_values = allowable_values.map do |value|
+          case datatype.to_s
+          when /Integer/i
+            value.to_i
+          when /Float/i
+            value.to_f
+          else
+            value
+          end
+        end
+      end
+
+      def valid?(value)
+        !value || allowable_values.include?(value)
+      end
+    end
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -50,7 +78,10 @@ module OpenapiClient
         :'receiver_social_profile_id' => :'receiverSocialProfileId',
         :'sent_timestamp' => :'sentTimestamp',
         :'read_timestamp' => :'readTimestamp',
-        :'received_timestamp' => :'receivedTimestamp'
+        :'received_timestamp' => :'receivedTimestamp',
+        :'social_profile_name' => :'socialProfileName',
+        :'social_profile_avatar_url' => :'socialProfileAvatarUrl',
+        :'social_profile_type' => :'socialProfileType'
       }
     end
 
@@ -72,7 +103,10 @@ module OpenapiClient
         :'receiver_social_profile_id' => :'String',
         :'sent_timestamp' => :'Time',
         :'read_timestamp' => :'Time',
-        :'received_timestamp' => :'Time'
+        :'received_timestamp' => :'Time',
+        :'social_profile_name' => :'String',
+        :'social_profile_avatar_url' => :'String',
+        :'social_profile_type' => :'String'
       }
     end
 
@@ -86,6 +120,9 @@ module OpenapiClient
         :'conversation_id',
         :'sender_social_profile_id',
         :'receiver_social_profile_id',
+        :'social_profile_name',
+        :'social_profile_avatar_url',
+        :'social_profile_type'
       ])
     end
 
@@ -147,6 +184,18 @@ module OpenapiClient
       if attributes.key?(:'received_timestamp')
         self.received_timestamp = attributes[:'received_timestamp']
       end
+
+      if attributes.key?(:'social_profile_name')
+        self.social_profile_name = attributes[:'social_profile_name']
+      end
+
+      if attributes.key?(:'social_profile_avatar_url')
+        self.social_profile_avatar_url = attributes[:'social_profile_avatar_url']
+      end
+
+      if attributes.key?(:'social_profile_type')
+        self.social_profile_type = attributes[:'social_profile_type']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -161,7 +210,19 @@ module OpenapiClient
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
+      social_profile_type_validator = EnumAttributeValidator.new('String', ["User", "Tenant", "Contact"])
+      return false unless social_profile_type_validator.valid?(@social_profile_type)
       true
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] social_profile_type Object to be assigned
+    def social_profile_type=(social_profile_type)
+      validator = EnumAttributeValidator.new('String', ["User", "Tenant", "Contact"])
+      unless validator.valid?(social_profile_type)
+        fail ArgumentError, "invalid value for \"social_profile_type\", must be one of #{validator.allowable_values}."
+      end
+      @social_profile_type = social_profile_type
     end
 
     # Checks equality by comparing each attribute.
@@ -179,7 +240,10 @@ module OpenapiClient
           receiver_social_profile_id == o.receiver_social_profile_id &&
           sent_timestamp == o.sent_timestamp &&
           read_timestamp == o.read_timestamp &&
-          received_timestamp == o.received_timestamp
+          received_timestamp == o.received_timestamp &&
+          social_profile_name == o.social_profile_name &&
+          social_profile_avatar_url == o.social_profile_avatar_url &&
+          social_profile_type == o.social_profile_type
     end
 
     # @see the `==` method
@@ -191,7 +255,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, timestamp, read, title, message, conversation_id, sender_social_profile_id, receiver_social_profile_id, sent_timestamp, read_timestamp, received_timestamp].hash
+      [id, timestamp, read, title, message, conversation_id, sender_social_profile_id, receiver_social_profile_id, sent_timestamp, read_timestamp, received_timestamp, social_profile_name, social_profile_avatar_url, social_profile_type].hash
     end
 
     # Builds the object from hash

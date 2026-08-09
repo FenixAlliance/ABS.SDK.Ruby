@@ -656,6 +656,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [SecurityPermissionDtoCollectionQueryParameters] :security_permission_dto_collection_query_parameters 
     # @return [SecurityPermissionDtoListEnvelope]
     def get_permissions_async(tenant_id, opts = {})
       data, _status_code, _headers = get_permissions_async_with_http_info(tenant_id, opts)
@@ -668,6 +669,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [SecurityPermissionDtoCollectionQueryParameters] :security_permission_dto_collection_query_parameters 
     # @return [Array<(SecurityPermissionDtoListEnvelope, Integer, Hash)>] SecurityPermissionDtoListEnvelope data, response status code and response headers
     def get_permissions_async_with_http_info(tenant_id, opts = {})
       if @api_client.config.debugging
@@ -689,13 +691,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'security_permission_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'SecurityPermissionDtoListEnvelope'
@@ -802,6 +809,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [SecurityPermissionDtoCollectionQueryParameters] :security_permission_dto_collection_query_parameters 
     # @return [Int32Envelope]
     def get_permissions_count_async(tenant_id, opts = {})
       data, _status_code, _headers = get_permissions_count_async_with_http_info(tenant_id, opts)
@@ -814,6 +822,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [SecurityPermissionDtoCollectionQueryParameters] :security_permission_dto_collection_query_parameters 
     # @return [Array<(Int32Envelope, Integer, Hash)>] Int32Envelope data, response status code and response headers
     def get_permissions_count_async_with_http_info(tenant_id, opts = {})
       if @api_client.config.debugging
@@ -835,13 +844,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'security_permission_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'Int32Envelope'
@@ -946,13 +960,13 @@ module OpenapiClient
     # Partially updates an existing security permission using a JSON Patch document.
     # @param tenant_id [String] 
     # @param security_permission_id [String] 
-    # @param operation [Array<Operation>] 
+    # @param patch_operation [Array<PatchOperation>] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
     # @return [EmptyEnvelope]
-    def patch_permission_async(tenant_id, security_permission_id, operation, opts = {})
-      data, _status_code, _headers = patch_permission_async_with_http_info(tenant_id, security_permission_id, operation, opts)
+    def patch_permission_async(tenant_id, security_permission_id, patch_operation, opts = {})
+      data, _status_code, _headers = patch_permission_async_with_http_info(tenant_id, security_permission_id, patch_operation, opts)
       data
     end
 
@@ -960,12 +974,12 @@ module OpenapiClient
     # Partially updates an existing security permission using a JSON Patch document.
     # @param tenant_id [String] 
     # @param security_permission_id [String] 
-    # @param operation [Array<Operation>] 
+    # @param patch_operation [Array<PatchOperation>] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
     # @return [Array<(EmptyEnvelope, Integer, Hash)>] EmptyEnvelope data, response status code and response headers
-    def patch_permission_async_with_http_info(tenant_id, security_permission_id, operation, opts = {})
+    def patch_permission_async_with_http_info(tenant_id, security_permission_id, patch_operation, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PermissionsApi.patch_permission_async ...'
       end
@@ -977,9 +991,9 @@ module OpenapiClient
       if @api_client.config.client_side_validation && security_permission_id.nil?
         fail ArgumentError, "Missing the required parameter 'security_permission_id' when calling PermissionsApi.patch_permission_async"
       end
-      # verify the required parameter 'operation' is set
-      if @api_client.config.client_side_validation && operation.nil?
-        fail ArgumentError, "Missing the required parameter 'operation' when calling PermissionsApi.patch_permission_async"
+      # verify the required parameter 'patch_operation' is set
+      if @api_client.config.client_side_validation && patch_operation.nil?
+        fail ArgumentError, "Missing the required parameter 'patch_operation' when calling PermissionsApi.patch_permission_async"
       end
       # resource path
       local_var_path = '/api/v2/SecurityService/Permissions/{securityPermissionId}'.sub('{' + 'securityPermissionId' + '}', CGI.escape(security_permission_id.to_s))
@@ -1004,7 +1018,7 @@ module OpenapiClient
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(operation)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(patch_operation)
 
       # return_type
       return_type = opts[:debug_return_type] || 'EmptyEnvelope'

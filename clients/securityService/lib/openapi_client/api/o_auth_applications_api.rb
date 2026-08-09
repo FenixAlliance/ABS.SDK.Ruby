@@ -618,13 +618,13 @@ module OpenapiClient
     # Partially updates an existing OAuth application using a JSON Patch document.
     # @param tenant_id [String] 
     # @param application_id [String] 
-    # @param operation [Array<Operation>] 
+    # @param patch_operation [Array<PatchOperation>] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
     # @return [EmptyEnvelope]
-    def patch_o_auth_application_async(tenant_id, application_id, operation, opts = {})
-      data, _status_code, _headers = patch_o_auth_application_async_with_http_info(tenant_id, application_id, operation, opts)
+    def patch_o_auth_application_async(tenant_id, application_id, patch_operation, opts = {})
+      data, _status_code, _headers = patch_o_auth_application_async_with_http_info(tenant_id, application_id, patch_operation, opts)
       data
     end
 
@@ -632,12 +632,12 @@ module OpenapiClient
     # Partially updates an existing OAuth application using a JSON Patch document.
     # @param tenant_id [String] 
     # @param application_id [String] 
-    # @param operation [Array<Operation>] 
+    # @param patch_operation [Array<PatchOperation>] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
     # @return [Array<(EmptyEnvelope, Integer, Hash)>] EmptyEnvelope data, response status code and response headers
-    def patch_o_auth_application_async_with_http_info(tenant_id, application_id, operation, opts = {})
+    def patch_o_auth_application_async_with_http_info(tenant_id, application_id, patch_operation, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: OAuthApplicationsApi.patch_o_auth_application_async ...'
       end
@@ -649,9 +649,9 @@ module OpenapiClient
       if @api_client.config.client_side_validation && application_id.nil?
         fail ArgumentError, "Missing the required parameter 'application_id' when calling OAuthApplicationsApi.patch_o_auth_application_async"
       end
-      # verify the required parameter 'operation' is set
-      if @api_client.config.client_side_validation && operation.nil?
-        fail ArgumentError, "Missing the required parameter 'operation' when calling OAuthApplicationsApi.patch_o_auth_application_async"
+      # verify the required parameter 'patch_operation' is set
+      if @api_client.config.client_side_validation && patch_operation.nil?
+        fail ArgumentError, "Missing the required parameter 'patch_operation' when calling OAuthApplicationsApi.patch_o_auth_application_async"
       end
       # resource path
       local_var_path = '/api/v2/SecurityService/OAuthApplications/{applicationId}'.sub('{' + 'applicationId' + '}', CGI.escape(application_id.to_s))
@@ -676,7 +676,7 @@ module OpenapiClient
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(operation)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(patch_operation)
 
       # return_type
       return_type = opts[:debug_return_type] || 'EmptyEnvelope'

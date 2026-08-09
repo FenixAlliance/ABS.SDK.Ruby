@@ -64,6 +64,7 @@ module OpenapiClient
     def self.openapi_nullable
       Set.new([
         :'id',
+        :'timestamp',
         :'type',
         :'message',
         :'security_event',

@@ -26,7 +26,8 @@ api_instance = OpenapiClient::SecurityLogsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  business_security_log_dto_collection_query_parameters: OpenapiClient::BusinessSecurityLogDtoCollectionQueryParameters.new # BusinessSecurityLogDtoCollectionQueryParameters | 
 }
 
 begin
@@ -63,6 +64,7 @@ end
 | **tenant_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **business_security_log_dto_collection_query_parameters** | [**BusinessSecurityLogDtoCollectionQueryParameters**](BusinessSecurityLogDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -74,7 +76,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -96,7 +98,8 @@ api_instance = OpenapiClient::SecurityLogsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  business_security_log_dto_collection_query_parameters: OpenapiClient::BusinessSecurityLogDtoCollectionQueryParameters.new # BusinessSecurityLogDtoCollectionQueryParameters | 
 }
 
 begin
@@ -133,6 +136,7 @@ end
 | **tenant_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **business_security_log_dto_collection_query_parameters** | [**BusinessSecurityLogDtoCollectionQueryParameters**](BusinessSecurityLogDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -144,6 +148,6 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 

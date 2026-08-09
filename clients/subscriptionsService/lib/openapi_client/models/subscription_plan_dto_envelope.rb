@@ -23,6 +23,12 @@ module OpenapiClient
 
     attr_accessor :timestamp
 
+    attr_accessor :http_status
+
+    attr_accessor :error_code
+
+    attr_accessor :validation_details
+
     attr_accessor :activity_id
 
     attr_accessor :result
@@ -34,6 +40,9 @@ module OpenapiClient
         :'error_message' => :'errorMessage',
         :'correlation_id' => :'correlationId',
         :'timestamp' => :'timestamp',
+        :'http_status' => :'httpStatus',
+        :'error_code' => :'errorCode',
+        :'validation_details' => :'validationDetails',
         :'activity_id' => :'activityId',
         :'result' => :'result'
       }
@@ -51,6 +60,9 @@ module OpenapiClient
         :'error_message' => :'String',
         :'correlation_id' => :'String',
         :'timestamp' => :'Time',
+        :'http_status' => :'Integer',
+        :'error_code' => :'String',
+        :'validation_details' => :'Hash<String, Array<String>>',
         :'activity_id' => :'String',
         :'result' => :'SubscriptionPlanDto'
       }
@@ -61,6 +73,9 @@ module OpenapiClient
       Set.new([
         :'error_message',
         :'correlation_id',
+        :'http_status',
+        :'error_code',
+        :'validation_details',
         :'activity_id',
       ])
     end
@@ -96,6 +111,20 @@ module OpenapiClient
         self.timestamp = attributes[:'timestamp']
       end
 
+      if attributes.key?(:'http_status')
+        self.http_status = attributes[:'http_status']
+      end
+
+      if attributes.key?(:'error_code')
+        self.error_code = attributes[:'error_code']
+      end
+
+      if attributes.key?(:'validation_details')
+        if (value = attributes[:'validation_details']).is_a?(Hash)
+          self.validation_details = value
+        end
+      end
+
       if attributes.key?(:'activity_id')
         self.activity_id = attributes[:'activity_id']
       end
@@ -129,6 +158,9 @@ module OpenapiClient
           error_message == o.error_message &&
           correlation_id == o.correlation_id &&
           timestamp == o.timestamp &&
+          http_status == o.http_status &&
+          error_code == o.error_code &&
+          validation_details == o.validation_details &&
           activity_id == o.activity_id &&
           result == o.result
     end
@@ -142,7 +174,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [is_success, error_message, correlation_id, timestamp, activity_id, result].hash
+      [is_success, error_message, correlation_id, timestamp, http_status, error_code, validation_details, activity_id, result].hash
     end
 
     # Builds the object from hash

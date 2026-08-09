@@ -48,7 +48,8 @@ require 'openapi_client'
 api_instance = OpenapiClient::UsersApi.new
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  follow_record_dto_collection_query_parameters: OpenapiClient::FollowRecordDtoCollectionQueryParameters.new # FollowRecordDtoCollectionQueryParameters | 
 }
 
 begin
@@ -84,6 +85,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **follow_record_dto_collection_query_parameters** | [**FollowRecordDtoCollectionQueryParameters**](FollowRecordDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -95,7 +97,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml, multipart/form-data
 - **Accept**: application/json, application/xml, multipart/form-data
 
 
@@ -116,7 +118,8 @@ require 'openapi_client'
 api_instance = OpenapiClient::UsersApi.new
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  follow_record_dto_collection_query_parameters: OpenapiClient::FollowRecordDtoCollectionQueryParameters.new # FollowRecordDtoCollectionQueryParameters | 
 }
 
 begin
@@ -152,6 +155,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **follow_record_dto_collection_query_parameters** | [**FollowRecordDtoCollectionQueryParameters**](FollowRecordDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -163,7 +167,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml, multipart/form-data
 - **Accept**: application/json, application/xml, multipart/form-data
 
 
@@ -184,7 +188,8 @@ require 'openapi_client'
 api_instance = OpenapiClient::UsersApi.new
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  notification_dto_collection_query_parameters: OpenapiClient::NotificationDtoCollectionQueryParameters.new # NotificationDtoCollectionQueryParameters | 
 }
 
 begin
@@ -220,6 +225,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **notification_dto_collection_query_parameters** | [**NotificationDtoCollectionQueryParameters**](NotificationDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -231,7 +237,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml, multipart/form-data
 - **Accept**: application/json, application/xml, multipart/form-data
 
 
@@ -252,7 +258,8 @@ require 'openapi_client'
 api_instance = OpenapiClient::UsersApi.new
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  tenant_dto_collection_query_parameters: OpenapiClient::TenantDtoCollectionQueryParameters.new # TenantDtoCollectionQueryParameters | 
 }
 
 begin
@@ -288,6 +295,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **tenant_dto_collection_query_parameters** | [**TenantDtoCollectionQueryParameters**](TenantDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -299,7 +307,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml, multipart/form-data
 - **Accept**: application/json, application/xml, multipart/form-data
 
 
@@ -320,7 +328,8 @@ require 'openapi_client'
 api_instance = OpenapiClient::UsersApi.new
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  address_dto_collection_query_parameters: OpenapiClient::AddressDtoCollectionQueryParameters.new # AddressDtoCollectionQueryParameters | 
 }
 
 begin
@@ -356,6 +365,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **address_dto_collection_query_parameters** | [**AddressDtoCollectionQueryParameters**](AddressDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -367,7 +377,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml, multipart/form-data
 - **Accept**: application/json, application/xml, multipart/form-data
 
 
@@ -728,7 +738,8 @@ require 'openapi_client'
 api_instance = OpenapiClient::UsersApi.new
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  follow_record_dto_collection_query_parameters: OpenapiClient::FollowRecordDtoCollectionQueryParameters.new # FollowRecordDtoCollectionQueryParameters | 
 }
 
 begin
@@ -764,6 +775,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **follow_record_dto_collection_query_parameters** | [**FollowRecordDtoCollectionQueryParameters**](FollowRecordDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -775,7 +787,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml, multipart/form-data
 - **Accept**: application/json, application/xml, multipart/form-data
 
 
@@ -796,7 +808,8 @@ require 'openapi_client'
 api_instance = OpenapiClient::UsersApi.new
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  follow_record_dto_collection_query_parameters: OpenapiClient::FollowRecordDtoCollectionQueryParameters.new # FollowRecordDtoCollectionQueryParameters | 
 }
 
 begin
@@ -832,6 +845,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **follow_record_dto_collection_query_parameters** | [**FollowRecordDtoCollectionQueryParameters**](FollowRecordDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -843,7 +857,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml, multipart/form-data
 - **Accept**: application/json, application/xml, multipart/form-data
 
 
@@ -932,7 +946,8 @@ require 'openapi_client'
 api_instance = OpenapiClient::UsersApi.new
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  notification_dto_collection_query_parameters: OpenapiClient::NotificationDtoCollectionQueryParameters.new # NotificationDtoCollectionQueryParameters | 
 }
 
 begin
@@ -968,6 +983,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **notification_dto_collection_query_parameters** | [**NotificationDtoCollectionQueryParameters**](NotificationDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -979,7 +995,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml, multipart/form-data
 - **Accept**: application/json, application/xml, multipart/form-data
 
 
@@ -1136,7 +1152,8 @@ require 'openapi_client'
 api_instance = OpenapiClient::UsersApi.new
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  tenant_dto_collection_query_parameters: OpenapiClient::TenantDtoCollectionQueryParameters.new # TenantDtoCollectionQueryParameters | 
 }
 
 begin
@@ -1172,6 +1189,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **tenant_dto_collection_query_parameters** | [**TenantDtoCollectionQueryParameters**](TenantDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1183,7 +1201,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml, multipart/form-data
 - **Accept**: application/json, application/xml, multipart/form-data
 
 
@@ -1479,7 +1497,7 @@ api_instance = OpenapiClient::UsersApi.new
 opts = {
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example', # String | 
-  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+  patch_operation: [OpenapiClient::PatchOperation.new] # Array<PatchOperation> | 
 }
 
 begin
@@ -1515,7 +1533,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
-| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+| **patch_operation** | [**Array&lt;PatchOperation&gt;**](PatchOperation.md) |  | [optional] |
 
 ### Return type
 

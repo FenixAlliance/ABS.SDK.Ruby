@@ -12,8 +12,10 @@ All URIs are relative to *https://absuite.net*
 | [**get_all_tenants**](TenantsApi.md#get_all_tenants) | **GET** /api/v2/SystemService/Tenants | Get all tenants available on this suite server instance. |
 | [**get_extended_tenants_count**](TenantsApi.md#get_extended_tenants_count) | **GET** /api/v2/SystemService/Tenants/Extended/Count | Get the total count of extended tenants available on this suite server instance. |
 | [**get_tenant**](TenantsApi.md#get_tenant) | **GET** /api/v2/SystemService/Tenants/{tenantId} | Get a specific tenant by ID. |
+| [**get_tenant_module_grants**](TenantsApi.md#get_tenant_module_grants) | **GET** /api/v2/SystemService/Tenants/{tenantId}/ModuleGrants | Get the per-tenant admin module grants for a specific tenant. |
 | [**get_tenants_count**](TenantsApi.md#get_tenants_count) | **GET** /api/v2/SystemService/Tenants/Count | Get the total count of tenants available on this suite server instance. |
 | [**patch_tenant**](TenantsApi.md#patch_tenant) | **PATCH** /api/v2/SystemService/Tenants/{tenantId} | Partially update a specific tenant by ID. |
+| [**set_tenant_module_grants**](TenantsApi.md#set_tenant_module_grants) | **PUT** /api/v2/SystemService/Tenants/{tenantId}/ModuleGrants | Replace the per-tenant admin module grants for a specific tenant. |
 | [**update_tenant**](TenantsApi.md#update_tenant) | **PUT** /api/v2/SystemService/Tenants/{tenantId} | Update a specific tenant by ID. |
 
 
@@ -316,7 +318,8 @@ require 'openapi_client'
 api_instance = OpenapiClient::TenantsApi.new
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  extended_tenant_dto_collection_query_parameters: OpenapiClient::ExtendedTenantDtoCollectionQueryParameters.new # ExtendedTenantDtoCollectionQueryParameters | 
 }
 
 begin
@@ -352,6 +355,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **extended_tenant_dto_collection_query_parameters** | [**ExtendedTenantDtoCollectionQueryParameters**](ExtendedTenantDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -363,7 +367,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -384,7 +388,8 @@ require 'openapi_client'
 api_instance = OpenapiClient::TenantsApi.new
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  tenant_dto_collection_query_parameters: OpenapiClient::TenantDtoCollectionQueryParameters.new # TenantDtoCollectionQueryParameters | 
 }
 
 begin
@@ -420,6 +425,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **tenant_dto_collection_query_parameters** | [**TenantDtoCollectionQueryParameters**](TenantDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -431,7 +437,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -452,7 +458,8 @@ require 'openapi_client'
 api_instance = OpenapiClient::TenantsApi.new
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  extended_tenant_dto_collection_query_parameters: OpenapiClient::ExtendedTenantDtoCollectionQueryParameters.new # ExtendedTenantDtoCollectionQueryParameters | 
 }
 
 begin
@@ -488,6 +495,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **extended_tenant_dto_collection_query_parameters** | [**ExtendedTenantDtoCollectionQueryParameters**](ExtendedTenantDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -499,7 +507,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -573,6 +581,76 @@ No authorization required
 - **Accept**: application/json, application/xml
 
 
+## get_tenant_module_grants
+
+> <ModuleGrantDtoListEnvelope> get_tenant_module_grants(tenant_id, opts)
+
+Get the per-tenant admin module grants for a specific tenant.
+
+This action is only available for global administrators.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::TenantsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example' # String | 
+}
+
+begin
+  # Get the per-tenant admin module grants for a specific tenant.
+  result = api_instance.get_tenant_module_grants(tenant_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling TenantsApi->get_tenant_module_grants: #{e}"
+end
+```
+
+#### Using the get_tenant_module_grants_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<ModuleGrantDtoListEnvelope>, Integer, Hash)> get_tenant_module_grants_with_http_info(tenant_id, opts)
+
+```ruby
+begin
+  # Get the per-tenant admin module grants for a specific tenant.
+  data, status_code, headers = api_instance.get_tenant_module_grants_with_http_info(tenant_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <ModuleGrantDtoListEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling TenantsApi->get_tenant_module_grants_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+
+### Return type
+
+[**ModuleGrantDtoListEnvelope**](ModuleGrantDtoListEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, application/xml
+
+
 ## get_tenants_count
 
 > <Int32Envelope> get_tenants_count(opts)
@@ -590,7 +668,8 @@ require 'openapi_client'
 api_instance = OpenapiClient::TenantsApi.new
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  tenant_dto_collection_query_parameters: OpenapiClient::TenantDtoCollectionQueryParameters.new # TenantDtoCollectionQueryParameters | 
 }
 
 begin
@@ -626,6 +705,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **tenant_dto_collection_query_parameters** | [**TenantDtoCollectionQueryParameters**](TenantDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -637,7 +717,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -660,7 +740,7 @@ tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 opts = {
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example', # String | 
-  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+  patch_operation: [OpenapiClient::PatchOperation.new] # Array<PatchOperation> | 
 }
 
 begin
@@ -697,7 +777,79 @@ end
 | **tenant_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
-| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+| **patch_operation** | [**Array&lt;PatchOperation&gt;**](PatchOperation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
+- **Accept**: application/json, application/xml
+
+
+## set_tenant_module_grants
+
+> <EmptyEnvelope> set_tenant_module_grants(tenant_id, opts)
+
+Replace the per-tenant admin module grants for a specific tenant.
+
+This action is only available for global administrators. Grants supplement licensing.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::TenantsApi.new
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  module_grant_dto: [OpenapiClient::ModuleGrantDto.new] # Array<ModuleGrantDto> | 
+}
+
+begin
+  # Replace the per-tenant admin module grants for a specific tenant.
+  result = api_instance.set_tenant_module_grants(tenant_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling TenantsApi->set_tenant_module_grants: #{e}"
+end
+```
+
+#### Using the set_tenant_module_grants_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> set_tenant_module_grants_with_http_info(tenant_id, opts)
+
+```ruby
+begin
+  # Replace the per-tenant admin module grants for a specific tenant.
+  data, status_code, headers = api_instance.set_tenant_module_grants_with_http_info(tenant_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling TenantsApi->set_tenant_module_grants_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **tenant_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **module_grant_dto** | [**Array&lt;ModuleGrantDto&gt;**](ModuleGrantDto.md) |  | [optional] |
 
 ### Return type
 

@@ -12,6 +12,8 @@
 | **parent_journal_id** | **String** |  | [optional] |
 | **journal_type_id** | **String** |  | [optional] |
 | **ledger_id** | **String** |  | [optional] |
+| **financial_book_id** | **String** |  | [optional] |
+| **code** | **String** |  | [optional] |
 
 ## Example
 
@@ -26,7 +28,9 @@ instance = OpenapiClient::JournalCreateDto.new(
   date_time: null,
   parent_journal_id: null,
   journal_type_id: null,
-  ledger_id: null
+  ledger_id: null,
+  financial_book_id: null,
+  code: null
 )
 ```
 

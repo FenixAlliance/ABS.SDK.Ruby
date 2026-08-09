@@ -10,6 +10,9 @@
 | **message** | **String** |  | [optional] |
 | **social_feed_id** | **String** |  | [optional] |
 | **social_profile_id** | **String** |  | [optional] |
+| **body_html** | **String** |  | [optional] |
+| **body_format** | **String** |  | [optional] |
+| **background_style** | **String** |  | [optional] |
 
 ## Example
 
@@ -22,7 +25,10 @@ instance = OpenapiClient::SocialFeedPostCreateDto.new(
   title: null,
   message: null,
   social_feed_id: null,
-  social_profile_id: null
+  social_profile_id: null,
+  body_html: null,
+  body_format: null,
+  background_style: null
 )
 ```
 

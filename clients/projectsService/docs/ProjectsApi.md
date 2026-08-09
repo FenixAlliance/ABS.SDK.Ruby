@@ -572,7 +572,7 @@ No authorization required
 
 ## get_project_task_categories_async
 
-> <TaskCategoryDtoListEnvelope> get_project_task_categories_async(project_id, tenant_id)
+> <TaskCategoryDtoListEnvelope> get_project_task_categories_async(project_id, tenant_id, opts)
 
 Retrieves project task categories
 
@@ -587,10 +587,13 @@ require 'openapi_client'
 api_instance = OpenapiClient::ProjectsApi.new
 project_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  task_category_dto_collection_query_parameters: OpenapiClient::TaskCategoryDtoCollectionQueryParameters.new # TaskCategoryDtoCollectionQueryParameters | 
+}
 
 begin
   # Retrieves project task categories
-  result = api_instance.get_project_task_categories_async(project_id, tenant_id)
+  result = api_instance.get_project_task_categories_async(project_id, tenant_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling ProjectsApi->get_project_task_categories_async: #{e}"
@@ -601,12 +604,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<TaskCategoryDtoListEnvelope>, Integer, Hash)> get_project_task_categories_async_with_http_info(project_id, tenant_id)
+> <Array(<TaskCategoryDtoListEnvelope>, Integer, Hash)> get_project_task_categories_async_with_http_info(project_id, tenant_id, opts)
 
 ```ruby
 begin
   # Retrieves project task categories
-  data, status_code, headers = api_instance.get_project_task_categories_async_with_http_info(project_id, tenant_id)
+  data, status_code, headers = api_instance.get_project_task_categories_async_with_http_info(project_id, tenant_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <TaskCategoryDtoListEnvelope>
@@ -621,6 +624,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **project_id** | **String** |  |  |
 | **tenant_id** | **String** |  |  |
+| **task_category_dto_collection_query_parameters** | [**TaskCategoryDtoCollectionQueryParameters**](TaskCategoryDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -632,13 +636,13 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
 ## get_project_task_categories_count_async
 
-> <Int32Envelope> get_project_task_categories_count_async(project_id, tenant_id)
+> <Int32Envelope> get_project_task_categories_count_async(project_id, tenant_id, opts)
 
 Counts project task categories
 
@@ -653,10 +657,13 @@ require 'openapi_client'
 api_instance = OpenapiClient::ProjectsApi.new
 project_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  task_category_dto_collection_query_parameters: OpenapiClient::TaskCategoryDtoCollectionQueryParameters.new # TaskCategoryDtoCollectionQueryParameters | 
+}
 
 begin
   # Counts project task categories
-  result = api_instance.get_project_task_categories_count_async(project_id, tenant_id)
+  result = api_instance.get_project_task_categories_count_async(project_id, tenant_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling ProjectsApi->get_project_task_categories_count_async: #{e}"
@@ -667,12 +674,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Int32Envelope>, Integer, Hash)> get_project_task_categories_count_async_with_http_info(project_id, tenant_id)
+> <Array(<Int32Envelope>, Integer, Hash)> get_project_task_categories_count_async_with_http_info(project_id, tenant_id, opts)
 
 ```ruby
 begin
   # Counts project task categories
-  data, status_code, headers = api_instance.get_project_task_categories_count_async_with_http_info(project_id, tenant_id)
+  data, status_code, headers = api_instance.get_project_task_categories_count_async_with_http_info(project_id, tenant_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Int32Envelope>
@@ -687,6 +694,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **project_id** | **String** |  |  |
 | **tenant_id** | **String** |  |  |
+| **task_category_dto_collection_query_parameters** | [**TaskCategoryDtoCollectionQueryParameters**](TaskCategoryDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -698,13 +706,13 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
 ## get_project_time_logs_count_async
 
-> <Int32Envelope> get_project_time_logs_count_async(project_id, tenant_id)
+> <Int32Envelope> get_project_time_logs_count_async(project_id, tenant_id, opts)
 
 Counts project time logs
 
@@ -719,10 +727,13 @@ require 'openapi_client'
 api_instance = OpenapiClient::ProjectsApi.new
 project_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  project_time_log_dto_collection_query_parameters: OpenapiClient::ProjectTimeLogDtoCollectionQueryParameters.new # ProjectTimeLogDtoCollectionQueryParameters | 
+}
 
 begin
   # Counts project time logs
-  result = api_instance.get_project_time_logs_count_async(project_id, tenant_id)
+  result = api_instance.get_project_time_logs_count_async(project_id, tenant_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling ProjectsApi->get_project_time_logs_count_async: #{e}"
@@ -733,12 +744,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Int32Envelope>, Integer, Hash)> get_project_time_logs_count_async_with_http_info(project_id, tenant_id)
+> <Array(<Int32Envelope>, Integer, Hash)> get_project_time_logs_count_async_with_http_info(project_id, tenant_id, opts)
 
 ```ruby
 begin
   # Counts project time logs
-  data, status_code, headers = api_instance.get_project_time_logs_count_async_with_http_info(project_id, tenant_id)
+  data, status_code, headers = api_instance.get_project_time_logs_count_async_with_http_info(project_id, tenant_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Int32Envelope>
@@ -753,6 +764,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **project_id** | **String** |  |  |
 | **tenant_id** | **String** |  |  |
+| **project_time_log_dto_collection_query_parameters** | [**ProjectTimeLogDtoCollectionQueryParameters**](ProjectTimeLogDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -764,13 +776,13 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
 ## get_projects_by_tenant_id_async
 
-> <ProjectDtoListEnvelope> get_projects_by_tenant_id_async(tenant_id)
+> <ProjectDtoListEnvelope> get_projects_by_tenant_id_async(tenant_id, opts)
 
 Retrieves all projects
 
@@ -784,10 +796,13 @@ require 'openapi_client'
 
 api_instance = OpenapiClient::ProjectsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  project_dto_collection_query_parameters: OpenapiClient::ProjectDtoCollectionQueryParameters.new # ProjectDtoCollectionQueryParameters | 
+}
 
 begin
   # Retrieves all projects
-  result = api_instance.get_projects_by_tenant_id_async(tenant_id)
+  result = api_instance.get_projects_by_tenant_id_async(tenant_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling ProjectsApi->get_projects_by_tenant_id_async: #{e}"
@@ -798,12 +813,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<ProjectDtoListEnvelope>, Integer, Hash)> get_projects_by_tenant_id_async_with_http_info(tenant_id)
+> <Array(<ProjectDtoListEnvelope>, Integer, Hash)> get_projects_by_tenant_id_async_with_http_info(tenant_id, opts)
 
 ```ruby
 begin
   # Retrieves all projects
-  data, status_code, headers = api_instance.get_projects_by_tenant_id_async_with_http_info(tenant_id)
+  data, status_code, headers = api_instance.get_projects_by_tenant_id_async_with_http_info(tenant_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ProjectDtoListEnvelope>
@@ -817,6 +832,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
+| **project_dto_collection_query_parameters** | [**ProjectDtoCollectionQueryParameters**](ProjectDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -828,13 +844,13 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
 ## get_projects_count_by_tenant_id_async
 
-> <Int32Envelope> get_projects_count_by_tenant_id_async(tenant_id)
+> <Int32Envelope> get_projects_count_by_tenant_id_async(tenant_id, opts)
 
 Counts projects
 
@@ -848,10 +864,13 @@ require 'openapi_client'
 
 api_instance = OpenapiClient::ProjectsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  project_dto_collection_query_parameters: OpenapiClient::ProjectDtoCollectionQueryParameters.new # ProjectDtoCollectionQueryParameters | 
+}
 
 begin
   # Counts projects
-  result = api_instance.get_projects_count_by_tenant_id_async(tenant_id)
+  result = api_instance.get_projects_count_by_tenant_id_async(tenant_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling ProjectsApi->get_projects_count_by_tenant_id_async: #{e}"
@@ -862,12 +881,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Int32Envelope>, Integer, Hash)> get_projects_count_by_tenant_id_async_with_http_info(tenant_id)
+> <Array(<Int32Envelope>, Integer, Hash)> get_projects_count_by_tenant_id_async_with_http_info(tenant_id, opts)
 
 ```ruby
 begin
   # Counts projects
-  data, status_code, headers = api_instance.get_projects_count_by_tenant_id_async_with_http_info(tenant_id)
+  data, status_code, headers = api_instance.get_projects_count_by_tenant_id_async_with_http_info(tenant_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Int32Envelope>
@@ -881,6 +900,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
+| **project_dto_collection_query_parameters** | [**ProjectDtoCollectionQueryParameters**](ProjectDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -892,13 +912,13 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
 ## get_tasks_for_project_async
 
-> <ProjectTaskDtoListEnvelope> get_tasks_for_project_async(project_id, tenant_id)
+> <ProjectTaskDtoListEnvelope> get_tasks_for_project_async(project_id, tenant_id, opts)
 
 Retrieves project tasks
 
@@ -913,10 +933,13 @@ require 'openapi_client'
 api_instance = OpenapiClient::ProjectsApi.new
 project_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  project_task_dto_collection_query_parameters: OpenapiClient::ProjectTaskDtoCollectionQueryParameters.new # ProjectTaskDtoCollectionQueryParameters | 
+}
 
 begin
   # Retrieves project tasks
-  result = api_instance.get_tasks_for_project_async(project_id, tenant_id)
+  result = api_instance.get_tasks_for_project_async(project_id, tenant_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling ProjectsApi->get_tasks_for_project_async: #{e}"
@@ -927,12 +950,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<ProjectTaskDtoListEnvelope>, Integer, Hash)> get_tasks_for_project_async_with_http_info(project_id, tenant_id)
+> <Array(<ProjectTaskDtoListEnvelope>, Integer, Hash)> get_tasks_for_project_async_with_http_info(project_id, tenant_id, opts)
 
 ```ruby
 begin
   # Retrieves project tasks
-  data, status_code, headers = api_instance.get_tasks_for_project_async_with_http_info(project_id, tenant_id)
+  data, status_code, headers = api_instance.get_tasks_for_project_async_with_http_info(project_id, tenant_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ProjectTaskDtoListEnvelope>
@@ -947,6 +970,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **project_id** | **String** |  |  |
 | **tenant_id** | **String** |  |  |
+| **project_task_dto_collection_query_parameters** | [**ProjectTaskDtoCollectionQueryParameters**](ProjectTaskDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -958,13 +982,13 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
 ## get_tasks_for_project_count_async
 
-> <Int32Envelope> get_tasks_for_project_count_async(project_id, tenant_id)
+> <Int32Envelope> get_tasks_for_project_count_async(project_id, tenant_id, opts)
 
 Counts project tasks
 
@@ -979,10 +1003,13 @@ require 'openapi_client'
 api_instance = OpenapiClient::ProjectsApi.new
 project_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  project_task_dto_collection_query_parameters: OpenapiClient::ProjectTaskDtoCollectionQueryParameters.new # ProjectTaskDtoCollectionQueryParameters | 
+}
 
 begin
   # Counts project tasks
-  result = api_instance.get_tasks_for_project_count_async(project_id, tenant_id)
+  result = api_instance.get_tasks_for_project_count_async(project_id, tenant_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling ProjectsApi->get_tasks_for_project_count_async: #{e}"
@@ -993,12 +1020,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Int32Envelope>, Integer, Hash)> get_tasks_for_project_count_async_with_http_info(project_id, tenant_id)
+> <Array(<Int32Envelope>, Integer, Hash)> get_tasks_for_project_count_async_with_http_info(project_id, tenant_id, opts)
 
 ```ruby
 begin
   # Counts project tasks
-  data, status_code, headers = api_instance.get_tasks_for_project_count_async_with_http_info(project_id, tenant_id)
+  data, status_code, headers = api_instance.get_tasks_for_project_count_async_with_http_info(project_id, tenant_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Int32Envelope>
@@ -1013,6 +1040,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **project_id** | **String** |  |  |
 | **tenant_id** | **String** |  |  |
+| **project_task_dto_collection_query_parameters** | [**ProjectTaskDtoCollectionQueryParameters**](ProjectTaskDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1024,13 +1052,13 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
 ## get_time_logs_for_project_async
 
-> <ProjectTimeLogDtoListEnvelope> get_time_logs_for_project_async(project_id, tenant_id)
+> <ProjectTimeLogDtoListEnvelope> get_time_logs_for_project_async(project_id, tenant_id, opts)
 
 Retrieves project time logs
 
@@ -1045,10 +1073,13 @@ require 'openapi_client'
 api_instance = OpenapiClient::ProjectsApi.new
 project_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  project_time_log_dto_collection_query_parameters: OpenapiClient::ProjectTimeLogDtoCollectionQueryParameters.new # ProjectTimeLogDtoCollectionQueryParameters | 
+}
 
 begin
   # Retrieves project time logs
-  result = api_instance.get_time_logs_for_project_async(project_id, tenant_id)
+  result = api_instance.get_time_logs_for_project_async(project_id, tenant_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling ProjectsApi->get_time_logs_for_project_async: #{e}"
@@ -1059,12 +1090,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<ProjectTimeLogDtoListEnvelope>, Integer, Hash)> get_time_logs_for_project_async_with_http_info(project_id, tenant_id)
+> <Array(<ProjectTimeLogDtoListEnvelope>, Integer, Hash)> get_time_logs_for_project_async_with_http_info(project_id, tenant_id, opts)
 
 ```ruby
 begin
   # Retrieves project time logs
-  data, status_code, headers = api_instance.get_time_logs_for_project_async_with_http_info(project_id, tenant_id)
+  data, status_code, headers = api_instance.get_time_logs_for_project_async_with_http_info(project_id, tenant_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ProjectTimeLogDtoListEnvelope>
@@ -1079,6 +1110,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **project_id** | **String** |  |  |
 | **tenant_id** | **String** |  |  |
+| **project_time_log_dto_collection_query_parameters** | [**ProjectTimeLogDtoCollectionQueryParameters**](ProjectTimeLogDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1090,7 +1122,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -1112,7 +1144,7 @@ api_instance = OpenapiClient::ProjectsApi.new
 project_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
-  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+  patch_operation: [OpenapiClient::PatchOperation.new] # Array<PatchOperation> | 
 }
 
 begin
@@ -1148,7 +1180,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **project_id** | **String** |  |  |
 | **tenant_id** | **String** |  |  |
-| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+| **patch_operation** | [**Array&lt;PatchOperation&gt;**](PatchOperation.md) |  | [optional] |
 
 ### Return type
 
@@ -1183,7 +1215,7 @@ project_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 project_period_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
-  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+  patch_operation: [OpenapiClient::PatchOperation.new] # Array<PatchOperation> | 
 }
 
 begin
@@ -1220,7 +1252,7 @@ end
 | **project_id** | **String** |  |  |
 | **project_period_id** | **String** |  |  |
 | **tenant_id** | **String** |  |  |
-| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+| **patch_operation** | [**Array&lt;PatchOperation&gt;**](PatchOperation.md) |  | [optional] |
 
 ### Return type
 
@@ -1255,7 +1287,7 @@ project_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 project_task_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
-  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+  patch_operation: [OpenapiClient::PatchOperation.new] # Array<PatchOperation> | 
 }
 
 begin
@@ -1292,7 +1324,7 @@ end
 | **project_id** | **String** |  |  |
 | **project_task_id** | **String** |  |  |
 | **tenant_id** | **String** |  |  |
-| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+| **patch_operation** | [**Array&lt;PatchOperation&gt;**](PatchOperation.md) |  | [optional] |
 
 ### Return type
 

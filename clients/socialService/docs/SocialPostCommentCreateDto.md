@@ -6,7 +6,7 @@
 | ---- | ---- | ----------- | ----- |
 | **id** | **String** |  | [optional] |
 | **timestamp** | **Time** |  | [optional] |
-| **message** | **String** |  |  |
+| **message** | **String** |  | [optional] |
 | **body_html** | **String** |  | [optional] |
 | **body_format** | **String** |  | [optional] |
 | **parent_comment_id** | **String** |  | [optional] |

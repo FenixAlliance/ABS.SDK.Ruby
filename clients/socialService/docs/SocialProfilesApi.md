@@ -25,6 +25,7 @@ All URIs are relative to *https://absuite.net*
 | [**get_messages_async**](SocialProfilesApi.md#get_messages_async) | **GET** /api/v2/SocialService/SocialProfiles/{conversationId}/Messages | Get Messages |
 | [**get_notification_by_id_async**](SocialProfilesApi.md#get_notification_by_id_async) | **GET** /api/v2/SocialService/SocialProfiles/{socialProfileId}/Notifications/{notificationId} | Get Notification |
 | [**get_notifications_async**](SocialProfilesApi.md#get_notifications_async) | **GET** /api/v2/SocialService/SocialProfiles/{socialProfileId}/Notifications | Get Notifications |
+| [**get_or_create_direct_conversation_async**](SocialProfilesApi.md#get_or_create_direct_conversation_async) | **POST** /api/v2/SocialService/SocialProfiles/{socialProfileId}/Conversations/Direct | Get or Create Direct Conversation |
 | [**get_social_profile_async**](SocialProfilesApi.md#get_social_profile_async) | **GET** /api/v2/SocialService/SocialProfiles/{socialProfileId} | Get Social Profile |
 | [**get_social_profiles_async**](SocialProfilesApi.md#get_social_profiles_async) | **GET** /api/v2/SocialService/SocialProfiles | Get Social Profiles |
 | [**unfollow_async**](SocialProfilesApi.md#unfollow_async) | **DELETE** /api/v2/SocialService/SocialProfiles/{socialProfileId}/Follows/{followedSocialProfileId} | Unfollow |
@@ -49,7 +50,8 @@ api_instance = OpenapiClient::SocialProfilesApi.new
 social_profile_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  conversation_dto_collection_query_parameters: OpenapiClient::ConversationDtoCollectionQueryParameters.new # ConversationDtoCollectionQueryParameters | 
 }
 
 begin
@@ -86,6 +88,7 @@ end
 | **social_profile_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **conversation_dto_collection_query_parameters** | [**ConversationDtoCollectionQueryParameters**](ConversationDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -97,7 +100,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -119,7 +122,8 @@ api_instance = OpenapiClient::SocialProfilesApi.new
 social_profile_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  social_profile_dto_collection_query_parameters: OpenapiClient::SocialProfileDtoCollectionQueryParameters.new # SocialProfileDtoCollectionQueryParameters | 
 }
 
 begin
@@ -156,6 +160,7 @@ end
 | **social_profile_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **social_profile_dto_collection_query_parameters** | [**SocialProfileDtoCollectionQueryParameters**](SocialProfileDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -167,7 +172,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -189,7 +194,8 @@ api_instance = OpenapiClient::SocialProfilesApi.new
 social_profile_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  social_profile_dto_collection_query_parameters: OpenapiClient::SocialProfileDtoCollectionQueryParameters.new # SocialProfileDtoCollectionQueryParameters | 
 }
 
 begin
@@ -226,6 +232,7 @@ end
 | **social_profile_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **social_profile_dto_collection_query_parameters** | [**SocialProfileDtoCollectionQueryParameters**](SocialProfileDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -237,7 +244,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -259,7 +266,8 @@ api_instance = OpenapiClient::SocialProfilesApi.new
 social_profile_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  follow_record_dto_collection_query_parameters: OpenapiClient::FollowRecordDtoCollectionQueryParameters.new # FollowRecordDtoCollectionQueryParameters | 
 }
 
 begin
@@ -296,6 +304,7 @@ end
 | **social_profile_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **follow_record_dto_collection_query_parameters** | [**FollowRecordDtoCollectionQueryParameters**](FollowRecordDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -307,7 +316,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -329,7 +338,8 @@ api_instance = OpenapiClient::SocialProfilesApi.new
 social_profile_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  follow_record_dto_collection_query_parameters: OpenapiClient::FollowRecordDtoCollectionQueryParameters.new # FollowRecordDtoCollectionQueryParameters | 
 }
 
 begin
@@ -366,6 +376,7 @@ end
 | **social_profile_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **follow_record_dto_collection_query_parameters** | [**FollowRecordDtoCollectionQueryParameters**](FollowRecordDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -377,7 +388,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -400,7 +411,8 @@ social_profile_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 conversation_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  private_message_dto_collection_query_parameters: OpenapiClient::PrivateMessageDtoCollectionQueryParameters.new # PrivateMessageDtoCollectionQueryParameters | 
 }
 
 begin
@@ -438,6 +450,7 @@ end
 | **conversation_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **private_message_dto_collection_query_parameters** | [**PrivateMessageDtoCollectionQueryParameters**](PrivateMessageDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -449,7 +462,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -471,7 +484,8 @@ api_instance = OpenapiClient::SocialProfilesApi.new
 social_profile_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  notification_dto_collection_query_parameters: OpenapiClient::NotificationDtoCollectionQueryParameters.new # NotificationDtoCollectionQueryParameters | 
 }
 
 begin
@@ -508,6 +522,7 @@ end
 | **social_profile_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **notification_dto_collection_query_parameters** | [**NotificationDtoCollectionQueryParameters**](NotificationDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -519,7 +534,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -540,7 +555,8 @@ require 'openapi_client'
 api_instance = OpenapiClient::SocialProfilesApi.new
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  social_profile_dto_collection_query_parameters: OpenapiClient::SocialProfileDtoCollectionQueryParameters.new # SocialProfileDtoCollectionQueryParameters | 
 }
 
 begin
@@ -576,6 +592,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **social_profile_dto_collection_query_parameters** | [**SocialProfileDtoCollectionQueryParameters**](SocialProfileDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -587,7 +604,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -973,7 +990,8 @@ api_instance = OpenapiClient::SocialProfilesApi.new
 social_profile_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  conversation_dto_collection_query_parameters: OpenapiClient::ConversationDtoCollectionQueryParameters.new # ConversationDtoCollectionQueryParameters | 
 }
 
 begin
@@ -1010,6 +1028,7 @@ end
 | **social_profile_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **conversation_dto_collection_query_parameters** | [**ConversationDtoCollectionQueryParameters**](ConversationDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1021,7 +1040,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -1043,7 +1062,8 @@ api_instance = OpenapiClient::SocialProfilesApi.new
 social_profile_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  social_profile_dto_collection_query_parameters: OpenapiClient::SocialProfileDtoCollectionQueryParameters.new # SocialProfileDtoCollectionQueryParameters | 
 }
 
 begin
@@ -1080,6 +1100,7 @@ end
 | **social_profile_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **social_profile_dto_collection_query_parameters** | [**SocialProfileDtoCollectionQueryParameters**](SocialProfileDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1091,7 +1112,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -1113,7 +1134,8 @@ api_instance = OpenapiClient::SocialProfilesApi.new
 social_profile_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  social_profile_dto_collection_query_parameters: OpenapiClient::SocialProfileDtoCollectionQueryParameters.new # SocialProfileDtoCollectionQueryParameters | 
 }
 
 begin
@@ -1150,6 +1172,7 @@ end
 | **social_profile_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **social_profile_dto_collection_query_parameters** | [**SocialProfileDtoCollectionQueryParameters**](SocialProfileDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1161,7 +1184,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -1183,7 +1206,8 @@ api_instance = OpenapiClient::SocialProfilesApi.new
 social_profile_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  follow_record_dto_collection_query_parameters: OpenapiClient::FollowRecordDtoCollectionQueryParameters.new # FollowRecordDtoCollectionQueryParameters | 
 }
 
 begin
@@ -1220,6 +1244,7 @@ end
 | **social_profile_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **follow_record_dto_collection_query_parameters** | [**FollowRecordDtoCollectionQueryParameters**](FollowRecordDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1231,7 +1256,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -1253,7 +1278,8 @@ api_instance = OpenapiClient::SocialProfilesApi.new
 social_profile_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  follow_record_dto_collection_query_parameters: OpenapiClient::FollowRecordDtoCollectionQueryParameters.new # FollowRecordDtoCollectionQueryParameters | 
 }
 
 begin
@@ -1290,6 +1316,7 @@ end
 | **social_profile_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **follow_record_dto_collection_query_parameters** | [**FollowRecordDtoCollectionQueryParameters**](FollowRecordDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1301,7 +1328,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -1324,7 +1351,8 @@ social_profile_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 conversation_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  private_message_dto_collection_query_parameters: OpenapiClient::PrivateMessageDtoCollectionQueryParameters.new # PrivateMessageDtoCollectionQueryParameters | 
 }
 
 begin
@@ -1362,6 +1390,7 @@ end
 | **conversation_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **private_message_dto_collection_query_parameters** | [**PrivateMessageDtoCollectionQueryParameters**](PrivateMessageDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1373,7 +1402,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -1467,7 +1496,8 @@ api_instance = OpenapiClient::SocialProfilesApi.new
 social_profile_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  notification_dto_collection_query_parameters: OpenapiClient::NotificationDtoCollectionQueryParameters.new # NotificationDtoCollectionQueryParameters | 
 }
 
 begin
@@ -1504,6 +1534,7 @@ end
 | **social_profile_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **notification_dto_collection_query_parameters** | [**NotificationDtoCollectionQueryParameters**](NotificationDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1515,7 +1546,79 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
+- **Accept**: application/json, application/xml
+
+
+## get_or_create_direct_conversation_async
+
+> <ConversationDtoEnvelope> get_or_create_direct_conversation_async(social_profile_id, opts)
+
+Get or Create Direct Conversation
+
+Get or create the direct two-party conversation between the acting profile and a counterparty.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::SocialProfilesApi.new
+social_profile_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  body: '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+}
+
+begin
+  # Get or Create Direct Conversation
+  result = api_instance.get_or_create_direct_conversation_async(social_profile_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling SocialProfilesApi->get_or_create_direct_conversation_async: #{e}"
+end
+```
+
+#### Using the get_or_create_direct_conversation_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<ConversationDtoEnvelope>, Integer, Hash)> get_or_create_direct_conversation_async_with_http_info(social_profile_id, opts)
+
+```ruby
+begin
+  # Get or Create Direct Conversation
+  data, status_code, headers = api_instance.get_or_create_direct_conversation_async_with_http_info(social_profile_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <ConversationDtoEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling SocialProfilesApi->get_or_create_direct_conversation_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **social_profile_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **body** | **String** |  | [optional] |
+
+### Return type
+
+[**ConversationDtoEnvelope**](ConversationDtoEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -1606,7 +1709,8 @@ require 'openapi_client'
 api_instance = OpenapiClient::SocialProfilesApi.new
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  social_profile_dto_collection_query_parameters: OpenapiClient::SocialProfileDtoCollectionQueryParameters.new # SocialProfileDtoCollectionQueryParameters | 
 }
 
 begin
@@ -1642,6 +1746,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **social_profile_dto_collection_query_parameters** | [**SocialProfileDtoCollectionQueryParameters**](SocialProfileDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1653,7 +1758,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

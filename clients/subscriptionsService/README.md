@@ -81,7 +81,6 @@ Class | Method | HTTP request | Description
 *OpenapiClient::FenixAllianceABSWebApi* | [**account_manage_download_personal_data_post**](docs/FenixAllianceABSWebApi.md#account_manage_download_personal_data_post) | **POST** /Account/Manage/DownloadPersonalData | 
 *OpenapiClient::FenixAllianceABSWebApi* | [**account_manage_link_external_login_post**](docs/FenixAllianceABSWebApi.md#account_manage_link_external_login_post) | **POST** /Account/Manage/LinkExternalLogin | 
 *OpenapiClient::FenixAllianceABSWebApi* | [**account_perform_external_login_post**](docs/FenixAllianceABSWebApi.md#account_perform_external_login_post) | **POST** /Account/PerformExternalLogin | 
-*OpenapiClient::FenixAllianceABSWebApi* | [**api_v2_ai_service_agents_agent_id_agui_post**](docs/FenixAllianceABSWebApi.md#api_v2_ai_service_agents_agent_id_agui_post) | **POST** /api/v2/AIService/Agents/{agentId}/agui | 
 *OpenapiClient::FenixAllianceABSWebApi* | [**forgot_password_post**](docs/FenixAllianceABSWebApi.md#forgot_password_post) | **POST** /forgotPassword | 
 *OpenapiClient::FenixAllianceABSWebApi* | [**health_get**](docs/FenixAllianceABSWebApi.md#health_get) | **GET** /health | 
 *OpenapiClient::FenixAllianceABSWebApi* | [**hello_get**](docs/FenixAllianceABSWebApi.md#hello_get) | **GET** /hello | 
@@ -123,13 +122,14 @@ Class | Method | HTTP request | Description
  - [OpenapiClient::InfoResponse](docs/InfoResponse.md)
  - [OpenapiClient::Int32Envelope](docs/Int32Envelope.md)
  - [OpenapiClient::LoginRequest](docs/LoginRequest.md)
- - [OpenapiClient::Operation](docs/Operation.md)
+ - [OpenapiClient::PatchOperation](docs/PatchOperation.md)
  - [OpenapiClient::RefreshRequest](docs/RefreshRequest.md)
  - [OpenapiClient::RegisterRequest](docs/RegisterRequest.md)
  - [OpenapiClient::ResendConfirmationEmailRequest](docs/ResendConfirmationEmailRequest.md)
  - [OpenapiClient::ResetPasswordRequest](docs/ResetPasswordRequest.md)
  - [OpenapiClient::SubscriptionCreateDto](docs/SubscriptionCreateDto.md)
  - [OpenapiClient::SubscriptionDto](docs/SubscriptionDto.md)
+ - [OpenapiClient::SubscriptionDtoCollectionQueryParameters](docs/SubscriptionDtoCollectionQueryParameters.md)
  - [OpenapiClient::SubscriptionDtoEnvelope](docs/SubscriptionDtoEnvelope.md)
  - [OpenapiClient::SubscriptionDtoIReadOnlyListEnvelope](docs/SubscriptionDtoIReadOnlyListEnvelope.md)
  - [OpenapiClient::SubscriptionPlanCreateDto](docs/SubscriptionPlanCreateDto.md)

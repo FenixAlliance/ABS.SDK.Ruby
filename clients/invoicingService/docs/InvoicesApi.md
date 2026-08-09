@@ -1298,7 +1298,7 @@ No authorization required
 
 ## get_extended_invoices
 
-> <ExtendedInvoiceDtoListEnvelope> get_extended_invoices(tenant_id)
+> <ExtendedInvoiceDtoListEnvelope> get_extended_invoices(tenant_id, opts)
 
 Get a list of extended invoices.
 
@@ -1312,10 +1312,13 @@ require 'openapi_client'
 
 api_instance = OpenapiClient::InvoicesApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  extended_invoice_dto_collection_query_parameters: OpenapiClient::ExtendedInvoiceDtoCollectionQueryParameters.new # ExtendedInvoiceDtoCollectionQueryParameters | 
+}
 
 begin
   # Get a list of extended invoices.
-  result = api_instance.get_extended_invoices(tenant_id)
+  result = api_instance.get_extended_invoices(tenant_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling InvoicesApi->get_extended_invoices: #{e}"
@@ -1326,12 +1329,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<ExtendedInvoiceDtoListEnvelope>, Integer, Hash)> get_extended_invoices_with_http_info(tenant_id)
+> <Array(<ExtendedInvoiceDtoListEnvelope>, Integer, Hash)> get_extended_invoices_with_http_info(tenant_id, opts)
 
 ```ruby
 begin
   # Get a list of extended invoices.
-  data, status_code, headers = api_instance.get_extended_invoices_with_http_info(tenant_id)
+  data, status_code, headers = api_instance.get_extended_invoices_with_http_info(tenant_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ExtendedInvoiceDtoListEnvelope>
@@ -1345,6 +1348,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
+| **extended_invoice_dto_collection_query_parameters** | [**ExtendedInvoiceDtoCollectionQueryParameters**](ExtendedInvoiceDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1356,13 +1360,13 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
 ## get_extended_invoices_count
 
-> <Int32Envelope> get_extended_invoices_count(tenant_id)
+> <Int32Envelope> get_extended_invoices_count(tenant_id, opts)
 
 Get the count of extended invoices.
 
@@ -1376,10 +1380,13 @@ require 'openapi_client'
 
 api_instance = OpenapiClient::InvoicesApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  extended_invoice_dto_collection_query_parameters: OpenapiClient::ExtendedInvoiceDtoCollectionQueryParameters.new # ExtendedInvoiceDtoCollectionQueryParameters | 
+}
 
 begin
   # Get the count of extended invoices.
-  result = api_instance.get_extended_invoices_count(tenant_id)
+  result = api_instance.get_extended_invoices_count(tenant_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling InvoicesApi->get_extended_invoices_count: #{e}"
@@ -1390,12 +1397,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Int32Envelope>, Integer, Hash)> get_extended_invoices_count_with_http_info(tenant_id)
+> <Array(<Int32Envelope>, Integer, Hash)> get_extended_invoices_count_with_http_info(tenant_id, opts)
 
 ```ruby
 begin
   # Get the count of extended invoices.
-  data, status_code, headers = api_instance.get_extended_invoices_count_with_http_info(tenant_id)
+  data, status_code, headers = api_instance.get_extended_invoices_count_with_http_info(tenant_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Int32Envelope>
@@ -1409,6 +1416,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
+| **extended_invoice_dto_collection_query_parameters** | [**ExtendedInvoiceDtoCollectionQueryParameters**](ExtendedInvoiceDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1420,7 +1428,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -1560,7 +1568,7 @@ No authorization required
 
 ## get_invoice_adjustments
 
-> <InvoiceAdjustmentDtoIReadOnlyListEnvelope> get_invoice_adjustments(tenant_id, invoice_id)
+> <InvoiceAdjustmentDtoIReadOnlyListEnvelope> get_invoice_adjustments(tenant_id, invoice_id, opts)
 
 Get invoice adjustments.
 
@@ -1575,10 +1583,13 @@ require 'openapi_client'
 api_instance = OpenapiClient::InvoicesApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 invoice_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  invoice_adjustment_dto_collection_query_parameters: OpenapiClient::InvoiceAdjustmentDtoCollectionQueryParameters.new # InvoiceAdjustmentDtoCollectionQueryParameters | 
+}
 
 begin
   # Get invoice adjustments.
-  result = api_instance.get_invoice_adjustments(tenant_id, invoice_id)
+  result = api_instance.get_invoice_adjustments(tenant_id, invoice_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling InvoicesApi->get_invoice_adjustments: #{e}"
@@ -1589,12 +1600,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<InvoiceAdjustmentDtoIReadOnlyListEnvelope>, Integer, Hash)> get_invoice_adjustments_with_http_info(tenant_id, invoice_id)
+> <Array(<InvoiceAdjustmentDtoIReadOnlyListEnvelope>, Integer, Hash)> get_invoice_adjustments_with_http_info(tenant_id, invoice_id, opts)
 
 ```ruby
 begin
   # Get invoice adjustments.
-  data, status_code, headers = api_instance.get_invoice_adjustments_with_http_info(tenant_id, invoice_id)
+  data, status_code, headers = api_instance.get_invoice_adjustments_with_http_info(tenant_id, invoice_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <InvoiceAdjustmentDtoIReadOnlyListEnvelope>
@@ -1609,6 +1620,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
 | **invoice_id** | **String** |  |  |
+| **invoice_adjustment_dto_collection_query_parameters** | [**InvoiceAdjustmentDtoCollectionQueryParameters**](InvoiceAdjustmentDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1620,13 +1632,13 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
 ## get_invoice_adjustments_count
 
-> <Int32Envelope> get_invoice_adjustments_count(tenant_id, invoice_id)
+> <Int32Envelope> get_invoice_adjustments_count(tenant_id, invoice_id, opts)
 
 Get the count of invoice adjustments.
 
@@ -1641,10 +1653,13 @@ require 'openapi_client'
 api_instance = OpenapiClient::InvoicesApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 invoice_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  invoice_adjustment_dto_collection_query_parameters: OpenapiClient::InvoiceAdjustmentDtoCollectionQueryParameters.new # InvoiceAdjustmentDtoCollectionQueryParameters | 
+}
 
 begin
   # Get the count of invoice adjustments.
-  result = api_instance.get_invoice_adjustments_count(tenant_id, invoice_id)
+  result = api_instance.get_invoice_adjustments_count(tenant_id, invoice_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling InvoicesApi->get_invoice_adjustments_count: #{e}"
@@ -1655,12 +1670,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Int32Envelope>, Integer, Hash)> get_invoice_adjustments_count_with_http_info(tenant_id, invoice_id)
+> <Array(<Int32Envelope>, Integer, Hash)> get_invoice_adjustments_count_with_http_info(tenant_id, invoice_id, opts)
 
 ```ruby
 begin
   # Get the count of invoice adjustments.
-  data, status_code, headers = api_instance.get_invoice_adjustments_count_with_http_info(tenant_id, invoice_id)
+  data, status_code, headers = api_instance.get_invoice_adjustments_count_with_http_info(tenant_id, invoice_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Int32Envelope>
@@ -1675,6 +1690,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
 | **invoice_id** | **String** |  |  |
+| **invoice_adjustment_dto_collection_query_parameters** | [**InvoiceAdjustmentDtoCollectionQueryParameters**](InvoiceAdjustmentDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1686,7 +1702,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -1760,7 +1776,7 @@ No authorization required
 
 ## get_invoice_line_taxes
 
-> <InvoiceLineAppliedTaxDtoIReadOnlyListEnvelope> get_invoice_line_taxes(tenant_id, invoice_id, invoice_line_id)
+> <InvoiceLineAppliedTaxDtoIReadOnlyListEnvelope> get_invoice_line_taxes(tenant_id, invoice_id, invoice_line_id, opts)
 
 Get taxes for an invoice line.
 
@@ -1776,10 +1792,13 @@ api_instance = OpenapiClient::InvoicesApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 invoice_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 invoice_line_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  invoice_line_applied_tax_dto_collection_query_parameters: OpenapiClient::InvoiceLineAppliedTaxDtoCollectionQueryParameters.new # InvoiceLineAppliedTaxDtoCollectionQueryParameters | 
+}
 
 begin
   # Get taxes for an invoice line.
-  result = api_instance.get_invoice_line_taxes(tenant_id, invoice_id, invoice_line_id)
+  result = api_instance.get_invoice_line_taxes(tenant_id, invoice_id, invoice_line_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling InvoicesApi->get_invoice_line_taxes: #{e}"
@@ -1790,12 +1809,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<InvoiceLineAppliedTaxDtoIReadOnlyListEnvelope>, Integer, Hash)> get_invoice_line_taxes_with_http_info(tenant_id, invoice_id, invoice_line_id)
+> <Array(<InvoiceLineAppliedTaxDtoIReadOnlyListEnvelope>, Integer, Hash)> get_invoice_line_taxes_with_http_info(tenant_id, invoice_id, invoice_line_id, opts)
 
 ```ruby
 begin
   # Get taxes for an invoice line.
-  data, status_code, headers = api_instance.get_invoice_line_taxes_with_http_info(tenant_id, invoice_id, invoice_line_id)
+  data, status_code, headers = api_instance.get_invoice_line_taxes_with_http_info(tenant_id, invoice_id, invoice_line_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <InvoiceLineAppliedTaxDtoIReadOnlyListEnvelope>
@@ -1811,6 +1830,7 @@ end
 | **tenant_id** | **String** |  |  |
 | **invoice_id** | **String** |  |  |
 | **invoice_line_id** | **String** |  |  |
+| **invoice_line_applied_tax_dto_collection_query_parameters** | [**InvoiceLineAppliedTaxDtoCollectionQueryParameters**](InvoiceLineAppliedTaxDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1822,13 +1842,13 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
 ## get_invoice_line_taxes_count
 
-> <Int32Envelope> get_invoice_line_taxes_count(tenant_id, invoice_id, invoice_line_id)
+> <Int32Envelope> get_invoice_line_taxes_count(tenant_id, invoice_id, invoice_line_id, opts)
 
 Get the count of taxes for an invoice line.
 
@@ -1844,10 +1864,13 @@ api_instance = OpenapiClient::InvoicesApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 invoice_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 invoice_line_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  invoice_line_applied_tax_dto_collection_query_parameters: OpenapiClient::InvoiceLineAppliedTaxDtoCollectionQueryParameters.new # InvoiceLineAppliedTaxDtoCollectionQueryParameters | 
+}
 
 begin
   # Get the count of taxes for an invoice line.
-  result = api_instance.get_invoice_line_taxes_count(tenant_id, invoice_id, invoice_line_id)
+  result = api_instance.get_invoice_line_taxes_count(tenant_id, invoice_id, invoice_line_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling InvoicesApi->get_invoice_line_taxes_count: #{e}"
@@ -1858,12 +1881,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Int32Envelope>, Integer, Hash)> get_invoice_line_taxes_count_with_http_info(tenant_id, invoice_id, invoice_line_id)
+> <Array(<Int32Envelope>, Integer, Hash)> get_invoice_line_taxes_count_with_http_info(tenant_id, invoice_id, invoice_line_id, opts)
 
 ```ruby
 begin
   # Get the count of taxes for an invoice line.
-  data, status_code, headers = api_instance.get_invoice_line_taxes_count_with_http_info(tenant_id, invoice_id, invoice_line_id)
+  data, status_code, headers = api_instance.get_invoice_line_taxes_count_with_http_info(tenant_id, invoice_id, invoice_line_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Int32Envelope>
@@ -1879,6 +1902,7 @@ end
 | **tenant_id** | **String** |  |  |
 | **invoice_id** | **String** |  |  |
 | **invoice_line_id** | **String** |  |  |
+| **invoice_line_applied_tax_dto_collection_query_parameters** | [**InvoiceLineAppliedTaxDtoCollectionQueryParameters**](InvoiceLineAppliedTaxDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1890,7 +1914,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -1912,7 +1936,8 @@ api_instance = OpenapiClient::InvoicesApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 invoice_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
-  item_id: '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+  item_id: '38400000-8cf0-11bd-b23e-10b96e4ef00d', # String | 
+  invoice_line_dto_collection_query_parameters: OpenapiClient::InvoiceLineDtoCollectionQueryParameters.new # InvoiceLineDtoCollectionQueryParameters | 
 }
 
 begin
@@ -1949,6 +1974,7 @@ end
 | **tenant_id** | **String** |  |  |
 | **invoice_id** | **String** |  |  |
 | **item_id** | **String** |  | [optional] |
+| **invoice_line_dto_collection_query_parameters** | [**InvoiceLineDtoCollectionQueryParameters**](InvoiceLineDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1960,13 +1986,13 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
 ## get_invoice_lines_count
 
-> <Int32Envelope> get_invoice_lines_count(tenant_id, invoice_id)
+> <Int32Envelope> get_invoice_lines_count(tenant_id, invoice_id, opts)
 
 Get the count of invoice lines.
 
@@ -1981,10 +2007,13 @@ require 'openapi_client'
 api_instance = OpenapiClient::InvoicesApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 invoice_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  invoice_line_dto_collection_query_parameters: OpenapiClient::InvoiceLineDtoCollectionQueryParameters.new # InvoiceLineDtoCollectionQueryParameters | 
+}
 
 begin
   # Get the count of invoice lines.
-  result = api_instance.get_invoice_lines_count(tenant_id, invoice_id)
+  result = api_instance.get_invoice_lines_count(tenant_id, invoice_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling InvoicesApi->get_invoice_lines_count: #{e}"
@@ -1995,12 +2024,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Int32Envelope>, Integer, Hash)> get_invoice_lines_count_with_http_info(tenant_id, invoice_id)
+> <Array(<Int32Envelope>, Integer, Hash)> get_invoice_lines_count_with_http_info(tenant_id, invoice_id, opts)
 
 ```ruby
 begin
   # Get the count of invoice lines.
-  data, status_code, headers = api_instance.get_invoice_lines_count_with_http_info(tenant_id, invoice_id)
+  data, status_code, headers = api_instance.get_invoice_lines_count_with_http_info(tenant_id, invoice_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Int32Envelope>
@@ -2015,6 +2044,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
 | **invoice_id** | **String** |  |  |
+| **invoice_line_dto_collection_query_parameters** | [**InvoiceLineDtoCollectionQueryParameters**](InvoiceLineDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -2026,13 +2056,13 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
 ## get_invoice_payments
 
-> <PaymentDtoIReadOnlyListEnvelope> get_invoice_payments(tenant_id, invoice_id)
+> <PaymentDtoIReadOnlyListEnvelope> get_invoice_payments(tenant_id, invoice_id, opts)
 
 Get payments for an invoice.
 
@@ -2047,10 +2077,13 @@ require 'openapi_client'
 api_instance = OpenapiClient::InvoicesApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 invoice_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  payment_dto_collection_query_parameters: OpenapiClient::PaymentDtoCollectionQueryParameters.new # PaymentDtoCollectionQueryParameters | 
+}
 
 begin
   # Get payments for an invoice.
-  result = api_instance.get_invoice_payments(tenant_id, invoice_id)
+  result = api_instance.get_invoice_payments(tenant_id, invoice_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling InvoicesApi->get_invoice_payments: #{e}"
@@ -2061,12 +2094,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<PaymentDtoIReadOnlyListEnvelope>, Integer, Hash)> get_invoice_payments_with_http_info(tenant_id, invoice_id)
+> <Array(<PaymentDtoIReadOnlyListEnvelope>, Integer, Hash)> get_invoice_payments_with_http_info(tenant_id, invoice_id, opts)
 
 ```ruby
 begin
   # Get payments for an invoice.
-  data, status_code, headers = api_instance.get_invoice_payments_with_http_info(tenant_id, invoice_id)
+  data, status_code, headers = api_instance.get_invoice_payments_with_http_info(tenant_id, invoice_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <PaymentDtoIReadOnlyListEnvelope>
@@ -2081,6 +2114,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
 | **invoice_id** | **String** |  |  |
+| **payment_dto_collection_query_parameters** | [**PaymentDtoCollectionQueryParameters**](PaymentDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -2092,13 +2126,13 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
 ## get_invoice_payments_count
 
-> <Int32Envelope> get_invoice_payments_count(tenant_id, invoice_id)
+> <Int32Envelope> get_invoice_payments_count(tenant_id, invoice_id, opts)
 
 Get the count of payments for an invoice.
 
@@ -2113,10 +2147,13 @@ require 'openapi_client'
 api_instance = OpenapiClient::InvoicesApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 invoice_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  payment_dto_collection_query_parameters: OpenapiClient::PaymentDtoCollectionQueryParameters.new # PaymentDtoCollectionQueryParameters | 
+}
 
 begin
   # Get the count of payments for an invoice.
-  result = api_instance.get_invoice_payments_count(tenant_id, invoice_id)
+  result = api_instance.get_invoice_payments_count(tenant_id, invoice_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling InvoicesApi->get_invoice_payments_count: #{e}"
@@ -2127,12 +2164,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Int32Envelope>, Integer, Hash)> get_invoice_payments_count_with_http_info(tenant_id, invoice_id)
+> <Array(<Int32Envelope>, Integer, Hash)> get_invoice_payments_count_with_http_info(tenant_id, invoice_id, opts)
 
 ```ruby
 begin
   # Get the count of payments for an invoice.
-  data, status_code, headers = api_instance.get_invoice_payments_count_with_http_info(tenant_id, invoice_id)
+  data, status_code, headers = api_instance.get_invoice_payments_count_with_http_info(tenant_id, invoice_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Int32Envelope>
@@ -2147,6 +2184,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
 | **invoice_id** | **String** |  |  |
+| **payment_dto_collection_query_parameters** | [**PaymentDtoCollectionQueryParameters**](PaymentDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -2158,7 +2196,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -2232,7 +2270,7 @@ No authorization required
 
 ## get_invoice_references
 
-> <InvoiceReferenceDtoIReadOnlyListEnvelope> get_invoice_references(tenant_id, invoice_id)
+> <InvoiceReferenceDtoIReadOnlyListEnvelope> get_invoice_references(tenant_id, invoice_id, opts)
 
 Get invoice references.
 
@@ -2247,10 +2285,13 @@ require 'openapi_client'
 api_instance = OpenapiClient::InvoicesApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 invoice_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  invoice_reference_dto_collection_query_parameters: OpenapiClient::InvoiceReferenceDtoCollectionQueryParameters.new # InvoiceReferenceDtoCollectionQueryParameters | 
+}
 
 begin
   # Get invoice references.
-  result = api_instance.get_invoice_references(tenant_id, invoice_id)
+  result = api_instance.get_invoice_references(tenant_id, invoice_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling InvoicesApi->get_invoice_references: #{e}"
@@ -2261,12 +2302,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<InvoiceReferenceDtoIReadOnlyListEnvelope>, Integer, Hash)> get_invoice_references_with_http_info(tenant_id, invoice_id)
+> <Array(<InvoiceReferenceDtoIReadOnlyListEnvelope>, Integer, Hash)> get_invoice_references_with_http_info(tenant_id, invoice_id, opts)
 
 ```ruby
 begin
   # Get invoice references.
-  data, status_code, headers = api_instance.get_invoice_references_with_http_info(tenant_id, invoice_id)
+  data, status_code, headers = api_instance.get_invoice_references_with_http_info(tenant_id, invoice_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <InvoiceReferenceDtoIReadOnlyListEnvelope>
@@ -2281,6 +2322,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
 | **invoice_id** | **String** |  |  |
+| **invoice_reference_dto_collection_query_parameters** | [**InvoiceReferenceDtoCollectionQueryParameters**](InvoiceReferenceDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -2292,13 +2334,13 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
 ## get_invoice_references_count
 
-> <Int32Envelope> get_invoice_references_count(tenant_id, invoice_id)
+> <Int32Envelope> get_invoice_references_count(tenant_id, invoice_id, opts)
 
 Get the count of invoice references.
 
@@ -2313,10 +2355,13 @@ require 'openapi_client'
 api_instance = OpenapiClient::InvoicesApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 invoice_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  invoice_reference_dto_collection_query_parameters: OpenapiClient::InvoiceReferenceDtoCollectionQueryParameters.new # InvoiceReferenceDtoCollectionQueryParameters | 
+}
 
 begin
   # Get the count of invoice references.
-  result = api_instance.get_invoice_references_count(tenant_id, invoice_id)
+  result = api_instance.get_invoice_references_count(tenant_id, invoice_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling InvoicesApi->get_invoice_references_count: #{e}"
@@ -2327,12 +2372,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Int32Envelope>, Integer, Hash)> get_invoice_references_count_with_http_info(tenant_id, invoice_id)
+> <Array(<Int32Envelope>, Integer, Hash)> get_invoice_references_count_with_http_info(tenant_id, invoice_id, opts)
 
 ```ruby
 begin
   # Get the count of invoice references.
-  data, status_code, headers = api_instance.get_invoice_references_count_with_http_info(tenant_id, invoice_id)
+  data, status_code, headers = api_instance.get_invoice_references_count_with_http_info(tenant_id, invoice_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Int32Envelope>
@@ -2347,6 +2392,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
 | **invoice_id** | **String** |  |  |
+| **invoice_reference_dto_collection_query_parameters** | [**InvoiceReferenceDtoCollectionQueryParameters**](InvoiceReferenceDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -2358,13 +2404,13 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
 ## get_invoices
 
-> <InvoiceDtoListEnvelope> get_invoices(tenant_id)
+> <InvoiceDtoListEnvelope> get_invoices(tenant_id, opts)
 
 Get a list of invoices.
 
@@ -2378,10 +2424,13 @@ require 'openapi_client'
 
 api_instance = OpenapiClient::InvoicesApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  invoice_dto_collection_query_parameters: OpenapiClient::InvoiceDtoCollectionQueryParameters.new # InvoiceDtoCollectionQueryParameters | 
+}
 
 begin
   # Get a list of invoices.
-  result = api_instance.get_invoices(tenant_id)
+  result = api_instance.get_invoices(tenant_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling InvoicesApi->get_invoices: #{e}"
@@ -2392,12 +2441,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<InvoiceDtoListEnvelope>, Integer, Hash)> get_invoices_with_http_info(tenant_id)
+> <Array(<InvoiceDtoListEnvelope>, Integer, Hash)> get_invoices_with_http_info(tenant_id, opts)
 
 ```ruby
 begin
   # Get a list of invoices.
-  data, status_code, headers = api_instance.get_invoices_with_http_info(tenant_id)
+  data, status_code, headers = api_instance.get_invoices_with_http_info(tenant_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <InvoiceDtoListEnvelope>
@@ -2411,6 +2460,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
+| **invoice_dto_collection_query_parameters** | [**InvoiceDtoCollectionQueryParameters**](InvoiceDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -2422,13 +2472,13 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
 ## get_invoices_count
 
-> <Int32Envelope> get_invoices_count(tenant_id)
+> <Int32Envelope> get_invoices_count(tenant_id, opts)
 
 Get the count of invoices.
 
@@ -2442,10 +2492,13 @@ require 'openapi_client'
 
 api_instance = OpenapiClient::InvoicesApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  invoice_dto_collection_query_parameters: OpenapiClient::InvoiceDtoCollectionQueryParameters.new # InvoiceDtoCollectionQueryParameters | 
+}
 
 begin
   # Get the count of invoices.
-  result = api_instance.get_invoices_count(tenant_id)
+  result = api_instance.get_invoices_count(tenant_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling InvoicesApi->get_invoices_count: #{e}"
@@ -2456,12 +2509,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Int32Envelope>, Integer, Hash)> get_invoices_count_with_http_info(tenant_id)
+> <Array(<Int32Envelope>, Integer, Hash)> get_invoices_count_with_http_info(tenant_id, opts)
 
 ```ruby
 begin
   # Get the count of invoices.
-  data, status_code, headers = api_instance.get_invoices_count_with_http_info(tenant_id)
+  data, status_code, headers = api_instance.get_invoices_count_with_http_info(tenant_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Int32Envelope>
@@ -2475,6 +2528,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
+| **invoice_dto_collection_query_parameters** | [**InvoiceDtoCollectionQueryParameters**](InvoiceDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -2486,13 +2540,13 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
 ## get_purchase_invoices_sum
 
-> <MoneyEnvelope> get_purchase_invoices_sum(tenant_id)
+> <MoneyEnvelope> get_purchase_invoices_sum(tenant_id, opts)
 
 Sum tenant purchase-invoice totals.
 
@@ -2506,10 +2560,13 @@ require 'openapi_client'
 
 api_instance = OpenapiClient::InvoicesApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  invoice_dto_collection_query_parameters: OpenapiClient::InvoiceDtoCollectionQueryParameters.new # InvoiceDtoCollectionQueryParameters | 
+}
 
 begin
   # Sum tenant purchase-invoice totals.
-  result = api_instance.get_purchase_invoices_sum(tenant_id)
+  result = api_instance.get_purchase_invoices_sum(tenant_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling InvoicesApi->get_purchase_invoices_sum: #{e}"
@@ -2520,12 +2577,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<MoneyEnvelope>, Integer, Hash)> get_purchase_invoices_sum_with_http_info(tenant_id)
+> <Array(<MoneyEnvelope>, Integer, Hash)> get_purchase_invoices_sum_with_http_info(tenant_id, opts)
 
 ```ruby
 begin
   # Sum tenant purchase-invoice totals.
-  data, status_code, headers = api_instance.get_purchase_invoices_sum_with_http_info(tenant_id)
+  data, status_code, headers = api_instance.get_purchase_invoices_sum_with_http_info(tenant_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <MoneyEnvelope>
@@ -2539,6 +2596,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
+| **invoice_dto_collection_query_parameters** | [**InvoiceDtoCollectionQueryParameters**](InvoiceDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -2550,13 +2608,13 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
 ## get_sales_invoices_sum
 
-> <MoneyEnvelope> get_sales_invoices_sum(tenant_id)
+> <MoneyEnvelope> get_sales_invoices_sum(tenant_id, opts)
 
 Sum tenant sales-invoice totals.
 
@@ -2570,10 +2628,13 @@ require 'openapi_client'
 
 api_instance = OpenapiClient::InvoicesApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  invoice_dto_collection_query_parameters: OpenapiClient::InvoiceDtoCollectionQueryParameters.new # InvoiceDtoCollectionQueryParameters | 
+}
 
 begin
   # Sum tenant sales-invoice totals.
-  result = api_instance.get_sales_invoices_sum(tenant_id)
+  result = api_instance.get_sales_invoices_sum(tenant_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling InvoicesApi->get_sales_invoices_sum: #{e}"
@@ -2584,12 +2645,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<MoneyEnvelope>, Integer, Hash)> get_sales_invoices_sum_with_http_info(tenant_id)
+> <Array(<MoneyEnvelope>, Integer, Hash)> get_sales_invoices_sum_with_http_info(tenant_id, opts)
 
 ```ruby
 begin
   # Sum tenant sales-invoice totals.
-  data, status_code, headers = api_instance.get_sales_invoices_sum_with_http_info(tenant_id)
+  data, status_code, headers = api_instance.get_sales_invoices_sum_with_http_info(tenant_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <MoneyEnvelope>
@@ -2603,6 +2664,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
+| **invoice_dto_collection_query_parameters** | [**InvoiceDtoCollectionQueryParameters**](InvoiceDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -2614,7 +2676,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -2636,7 +2698,7 @@ api_instance = OpenapiClient::InvoicesApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 invoice_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
-  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+  patch_operation: [OpenapiClient::PatchOperation.new] # Array<PatchOperation> | 
 }
 
 begin
@@ -2672,7 +2734,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
 | **invoice_id** | **String** |  |  |
-| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+| **patch_operation** | [**Array&lt;PatchOperation&gt;**](PatchOperation.md) |  | [optional] |
 
 ### Return type
 
@@ -2707,7 +2769,7 @@ tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 invoice_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 invoice_adjustment_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
-  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+  patch_operation: [OpenapiClient::PatchOperation.new] # Array<PatchOperation> | 
 }
 
 begin
@@ -2744,7 +2806,7 @@ end
 | **tenant_id** | **String** |  |  |
 | **invoice_id** | **String** |  |  |
 | **invoice_adjustment_id** | **String** |  |  |
-| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+| **patch_operation** | [**Array&lt;PatchOperation&gt;**](PatchOperation.md) |  | [optional] |
 
 ### Return type
 
@@ -2779,7 +2841,7 @@ tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 invoice_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 invoice_line_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
-  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+  patch_operation: [OpenapiClient::PatchOperation.new] # Array<PatchOperation> | 
 }
 
 begin
@@ -2816,7 +2878,7 @@ end
 | **tenant_id** | **String** |  |  |
 | **invoice_id** | **String** |  |  |
 | **invoice_line_id** | **String** |  |  |
-| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+| **patch_operation** | [**Array&lt;PatchOperation&gt;**](PatchOperation.md) |  | [optional] |
 
 ### Return type
 
@@ -2852,7 +2914,7 @@ invoice_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 invoice_line_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 invoice_line_tax_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
-  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+  patch_operation: [OpenapiClient::PatchOperation.new] # Array<PatchOperation> | 
 }
 
 begin
@@ -2890,7 +2952,7 @@ end
 | **invoice_id** | **String** |  |  |
 | **invoice_line_id** | **String** |  |  |
 | **invoice_line_tax_id** | **String** |  |  |
-| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+| **patch_operation** | [**Array&lt;PatchOperation&gt;**](PatchOperation.md) |  | [optional] |
 
 ### Return type
 
@@ -2925,7 +2987,7 @@ tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 invoice_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 invoice_reference_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
-  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+  patch_operation: [OpenapiClient::PatchOperation.new] # Array<PatchOperation> | 
 }
 
 begin
@@ -2962,7 +3024,7 @@ end
 | **tenant_id** | **String** |  |  |
 | **invoice_id** | **String** |  |  |
 | **invoice_reference_id** | **String** |  |  |
-| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+| **patch_operation** | [**Array&lt;PatchOperation&gt;**](PatchOperation.md) |  | [optional] |
 
 ### Return type
 

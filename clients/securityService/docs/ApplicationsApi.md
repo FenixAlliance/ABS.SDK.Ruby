@@ -249,7 +249,8 @@ api_instance = OpenapiClient::ApplicationsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  business_application_dto_collection_query_parameters: OpenapiClient::BusinessApplicationDtoCollectionQueryParameters.new # BusinessApplicationDtoCollectionQueryParameters | 
 }
 
 begin
@@ -286,6 +287,7 @@ end
 | **tenant_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **business_application_dto_collection_query_parameters** | [**BusinessApplicationDtoCollectionQueryParameters**](BusinessApplicationDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -297,7 +299,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -319,7 +321,8 @@ api_instance = OpenapiClient::ApplicationsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  business_application_dto_collection_query_parameters: OpenapiClient::BusinessApplicationDtoCollectionQueryParameters.new # BusinessApplicationDtoCollectionQueryParameters | 
 }
 
 begin
@@ -356,6 +359,7 @@ end
 | **tenant_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **business_application_dto_collection_query_parameters** | [**BusinessApplicationDtoCollectionQueryParameters**](BusinessApplicationDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -367,7 +371,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -517,7 +521,7 @@ No authorization required
 
 ## patch_business_application_async
 
-> <EmptyEnvelope> patch_business_application_async(tenant_id, application_id, operation, opts)
+> <EmptyEnvelope> patch_business_application_async(tenant_id, application_id, patch_operation, opts)
 
 Patch an existing business application
 
@@ -532,7 +536,7 @@ require 'openapi_client'
 api_instance = OpenapiClient::ApplicationsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 application_id = 'application_id_example' # String | 
-operation = [OpenapiClient::Operation.new] # Array<Operation> | 
+patch_operation = [OpenapiClient::PatchOperation.new] # Array<PatchOperation> | 
 opts = {
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example' # String | 
@@ -540,7 +544,7 @@ opts = {
 
 begin
   # Patch an existing business application
-  result = api_instance.patch_business_application_async(tenant_id, application_id, operation, opts)
+  result = api_instance.patch_business_application_async(tenant_id, application_id, patch_operation, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling ApplicationsApi->patch_business_application_async: #{e}"
@@ -551,12 +555,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<EmptyEnvelope>, Integer, Hash)> patch_business_application_async_with_http_info(tenant_id, application_id, operation, opts)
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_business_application_async_with_http_info(tenant_id, application_id, patch_operation, opts)
 
 ```ruby
 begin
   # Patch an existing business application
-  data, status_code, headers = api_instance.patch_business_application_async_with_http_info(tenant_id, application_id, operation, opts)
+  data, status_code, headers = api_instance.patch_business_application_async_with_http_info(tenant_id, application_id, patch_operation, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <EmptyEnvelope>
@@ -571,7 +575,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
 | **application_id** | **String** |  |  |
-| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  |  |
+| **patch_operation** | [**Array&lt;PatchOperation&gt;**](PatchOperation.md) |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
 

@@ -162,6 +162,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [CartDtoCollectionQueryParameters] :cart_dto_collection_query_parameters 
     # @return [CartDtoListEnvelope]
     def get_system_carts(opts = {})
       data, _status_code, _headers = get_system_carts_with_http_info(opts)
@@ -173,6 +174,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [CartDtoCollectionQueryParameters] :cart_dto_collection_query_parameters 
     # @return [Array<(CartDtoListEnvelope, Integer, Hash)>] CartDtoListEnvelope data, response status code and response headers
     def get_system_carts_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -189,13 +191,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'cart_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'CartDtoListEnvelope'
@@ -225,6 +232,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [CartDtoCollectionQueryParameters] :cart_dto_collection_query_parameters 
     # @return [Int32Envelope]
     def get_system_carts_count(opts = {})
       data, _status_code, _headers = get_system_carts_count_with_http_info(opts)
@@ -236,6 +244,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [CartDtoCollectionQueryParameters] :cart_dto_collection_query_parameters 
     # @return [Array<(Int32Envelope, Integer, Hash)>] Int32Envelope data, response status code and response headers
     def get_system_carts_count_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -252,13 +261,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'cart_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'Int32Envelope'
@@ -279,6 +293,69 @@ module OpenapiClient
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: CartsApi#get_system_carts_count\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Purge all guest carts
+    # Deletes every guest cart, cascading its item cart records, compare records and wish lists, and returns the removed-row counts. Idempotent.
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @return [GuestCartPurgeResultDtoEnvelope]
+    def purge_system_guest_carts(opts = {})
+      data, _status_code, _headers = purge_system_guest_carts_with_http_info(opts)
+      data
+    end
+
+    # Purge all guest carts
+    # Deletes every guest cart, cascading its item cart records, compare records and wish lists, and returns the removed-row counts. Idempotent.
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @return [Array<(GuestCartPurgeResultDtoEnvelope, Integer, Hash)>] GuestCartPurgeResultDtoEnvelope data, response status code and response headers
+    def purge_system_guest_carts_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: CartsApi.purge_system_guest_carts ...'
+      end
+      # resource path
+      local_var_path = '/api/v2/SystemService/Carts/Guests'
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'api-version'] = opts[:'api_version'] if !opts[:'api_version'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'GuestCartPurgeResultDtoEnvelope'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"CartsApi.purge_system_guest_carts",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: CartsApi#purge_system_guest_carts\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

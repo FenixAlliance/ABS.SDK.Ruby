@@ -88,6 +88,7 @@ module OpenapiClient
     def self.openapi_nullable
       Set.new([
         :'id',
+        :'timestamp',
         :'title',
         :'description',
         :'tenant_id',

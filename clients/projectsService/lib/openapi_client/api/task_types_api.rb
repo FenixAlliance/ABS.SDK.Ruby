@@ -235,7 +235,7 @@ module OpenapiClient
     # @param task_type_id [String] 
     # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
-    # @option opts [Array<Operation>] :operation 
+    # @option opts [Array<PatchOperation>] :patch_operation 
     # @return [EmptyEnvelope]
     def patch_task_type_async(task_type_id, tenant_id, opts = {})
       data, _status_code, _headers = patch_task_type_async_with_http_info(task_type_id, tenant_id, opts)
@@ -247,7 +247,7 @@ module OpenapiClient
     # @param task_type_id [String] 
     # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
-    # @option opts [Array<Operation>] :operation 
+    # @option opts [Array<PatchOperation>] :patch_operation 
     # @return [Array<(EmptyEnvelope, Integer, Hash)>] EmptyEnvelope data, response status code and response headers
     def patch_task_type_async_with_http_info(task_type_id, tenant_id, opts = {})
       if @api_client.config.debugging
@@ -282,7 +282,7 @@ module OpenapiClient
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'operation'])
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'patch_operation'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'EmptyEnvelope'

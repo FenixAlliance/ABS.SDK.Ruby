@@ -31,6 +31,34 @@ module OpenapiClient
 
     attr_accessor :error
 
+    attr_accessor :run_as
+
+    attr_accessor :principal_kind
+
+    attr_accessor :provenance
+
+    class EnumAttributeValidator
+      attr_reader :datatype
+      attr_reader :allowable_values
+
+      def initialize(datatype, allowable_values)
+        @allowable_values = allowable_values.map do |value|
+          case datatype.to_s
+          when /Integer/i
+            value.to_i
+          when /Float/i
+            value.to_f
+          else
+            value
+          end
+        end
+      end
+
+      def valid?(value)
+        !value || allowable_values.include?(value)
+      end
+    end
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -41,7 +69,10 @@ module OpenapiClient
         :'enrollment_id' => :'enrollmentId',
         :'correlation_id' => :'correlationId',
         :'scopes' => :'scopes',
-        :'error' => :'error'
+        :'error' => :'error',
+        :'run_as' => :'runAs',
+        :'principal_kind' => :'principalKind',
+        :'provenance' => :'provenance'
       }
     end
 
@@ -60,7 +91,10 @@ module OpenapiClient
         :'enrollment_id' => :'Object',
         :'correlation_id' => :'String',
         :'scopes' => :'Array<String>',
-        :'error' => :'String'
+        :'error' => :'String',
+        :'run_as' => :'String',
+        :'principal_kind' => :'String',
+        :'provenance' => :'ExecutionProvenance'
       }
     end
 
@@ -69,7 +103,7 @@ module OpenapiClient
       Set.new([
         :'correlation_id',
         :'scopes',
-        :'error'
+        :'error',
       ])
     end
 
@@ -121,6 +155,18 @@ module OpenapiClient
       if attributes.key?(:'error')
         self.error = attributes[:'error']
       end
+
+      if attributes.key?(:'run_as')
+        self.run_as = attributes[:'run_as']
+      end
+
+      if attributes.key?(:'principal_kind')
+        self.principal_kind = attributes[:'principal_kind']
+      end
+
+      if attributes.key?(:'provenance')
+        self.provenance = attributes[:'provenance']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -135,7 +181,31 @@ module OpenapiClient
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
+      run_as_validator = EnumAttributeValidator.new('String', ["Invoker", "Application", "System", "Service"])
+      return false unless run_as_validator.valid?(@run_as)
+      principal_kind_validator = EnumAttributeValidator.new('String', ["Human", "Agent", "Application", "Service", "System"])
+      return false unless principal_kind_validator.valid?(@principal_kind)
       true
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] run_as Object to be assigned
+    def run_as=(run_as)
+      validator = EnumAttributeValidator.new('String', ["Invoker", "Application", "System", "Service"])
+      unless validator.valid?(run_as)
+        fail ArgumentError, "invalid value for \"run_as\", must be one of #{validator.allowable_values}."
+      end
+      @run_as = run_as
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] principal_kind Object to be assigned
+    def principal_kind=(principal_kind)
+      validator = EnumAttributeValidator.new('String', ["Human", "Agent", "Application", "Service", "System"])
+      unless validator.valid?(principal_kind)
+        fail ArgumentError, "invalid value for \"principal_kind\", must be one of #{validator.allowable_values}."
+      end
+      @principal_kind = principal_kind
     end
 
     # Checks equality by comparing each attribute.
@@ -150,7 +220,10 @@ module OpenapiClient
           enrollment_id == o.enrollment_id &&
           correlation_id == o.correlation_id &&
           scopes == o.scopes &&
-          error == o.error
+          error == o.error &&
+          run_as == o.run_as &&
+          principal_kind == o.principal_kind &&
+          provenance == o.provenance
     end
 
     # @see the `==` method
@@ -162,7 +235,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [user_id, tenant_id, portal_id, application_id, enrollment_id, correlation_id, scopes, error].hash
+      [user_id, tenant_id, portal_id, application_id, enrollment_id, correlation_id, scopes, error, run_as, principal_kind, provenance].hash
     end
 
     # Builds the object from hash

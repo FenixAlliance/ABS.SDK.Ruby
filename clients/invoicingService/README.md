@@ -81,7 +81,6 @@ Class | Method | HTTP request | Description
 *OpenapiClient::FenixAllianceABSWebApi* | [**account_manage_download_personal_data_post**](docs/FenixAllianceABSWebApi.md#account_manage_download_personal_data_post) | **POST** /Account/Manage/DownloadPersonalData | 
 *OpenapiClient::FenixAllianceABSWebApi* | [**account_manage_link_external_login_post**](docs/FenixAllianceABSWebApi.md#account_manage_link_external_login_post) | **POST** /Account/Manage/LinkExternalLogin | 
 *OpenapiClient::FenixAllianceABSWebApi* | [**account_perform_external_login_post**](docs/FenixAllianceABSWebApi.md#account_perform_external_login_post) | **POST** /Account/PerformExternalLogin | 
-*OpenapiClient::FenixAllianceABSWebApi* | [**api_v2_ai_service_agents_agent_id_agui_post**](docs/FenixAllianceABSWebApi.md#api_v2_ai_service_agents_agent_id_agui_post) | **POST** /api/v2/AIService/Agents/{agentId}/agui | 
 *OpenapiClient::FenixAllianceABSWebApi* | [**forgot_password_post**](docs/FenixAllianceABSWebApi.md#forgot_password_post) | **POST** /forgotPassword | 
 *OpenapiClient::FenixAllianceABSWebApi* | [**health_get**](docs/FenixAllianceABSWebApi.md#health_get) | **GET** /health | 
 *OpenapiClient::FenixAllianceABSWebApi* | [**hello_get**](docs/FenixAllianceABSWebApi.md#hello_get) | **GET** /hello | 
@@ -156,6 +155,7 @@ Class | Method | HTTP request | Description
  - [OpenapiClient::Envelope](docs/Envelope.md)
  - [OpenapiClient::ErrorEnvelope](docs/ErrorEnvelope.md)
  - [OpenapiClient::ExtendedInvoiceDto](docs/ExtendedInvoiceDto.md)
+ - [OpenapiClient::ExtendedInvoiceDtoCollectionQueryParameters](docs/ExtendedInvoiceDtoCollectionQueryParameters.md)
  - [OpenapiClient::ExtendedInvoiceDtoListEnvelope](docs/ExtendedInvoiceDtoListEnvelope.md)
  - [OpenapiClient::ForgotPasswordRequest](docs/ForgotPasswordRequest.md)
  - [OpenapiClient::HttpValidationProblemDetails](docs/HttpValidationProblemDetails.md)
@@ -164,25 +164,30 @@ Class | Method | HTTP request | Description
  - [OpenapiClient::Int32Envelope](docs/Int32Envelope.md)
  - [OpenapiClient::InvoiceAdjustmentCreateDto](docs/InvoiceAdjustmentCreateDto.md)
  - [OpenapiClient::InvoiceAdjustmentDto](docs/InvoiceAdjustmentDto.md)
+ - [OpenapiClient::InvoiceAdjustmentDtoCollectionQueryParameters](docs/InvoiceAdjustmentDtoCollectionQueryParameters.md)
  - [OpenapiClient::InvoiceAdjustmentDtoEnvelope](docs/InvoiceAdjustmentDtoEnvelope.md)
  - [OpenapiClient::InvoiceAdjustmentDtoIReadOnlyListEnvelope](docs/InvoiceAdjustmentDtoIReadOnlyListEnvelope.md)
  - [OpenapiClient::InvoiceAdjustmentUpdateDto](docs/InvoiceAdjustmentUpdateDto.md)
  - [OpenapiClient::InvoiceCreateDto](docs/InvoiceCreateDto.md)
  - [OpenapiClient::InvoiceDto](docs/InvoiceDto.md)
+ - [OpenapiClient::InvoiceDtoCollectionQueryParameters](docs/InvoiceDtoCollectionQueryParameters.md)
  - [OpenapiClient::InvoiceDtoEnvelope](docs/InvoiceDtoEnvelope.md)
  - [OpenapiClient::InvoiceDtoListEnvelope](docs/InvoiceDtoListEnvelope.md)
  - [OpenapiClient::InvoiceLineAppliedTaxCreateDto](docs/InvoiceLineAppliedTaxCreateDto.md)
  - [OpenapiClient::InvoiceLineAppliedTaxDto](docs/InvoiceLineAppliedTaxDto.md)
+ - [OpenapiClient::InvoiceLineAppliedTaxDtoCollectionQueryParameters](docs/InvoiceLineAppliedTaxDtoCollectionQueryParameters.md)
  - [OpenapiClient::InvoiceLineAppliedTaxDtoIReadOnlyListEnvelope](docs/InvoiceLineAppliedTaxDtoIReadOnlyListEnvelope.md)
  - [OpenapiClient::InvoiceLineAppliedTaxUpdateDto](docs/InvoiceLineAppliedTaxUpdateDto.md)
  - [OpenapiClient::InvoiceLineCreateDto](docs/InvoiceLineCreateDto.md)
  - [OpenapiClient::InvoiceLineDto](docs/InvoiceLineDto.md)
+ - [OpenapiClient::InvoiceLineDtoCollectionQueryParameters](docs/InvoiceLineDtoCollectionQueryParameters.md)
  - [OpenapiClient::InvoiceLineDtoEnvelope](docs/InvoiceLineDtoEnvelope.md)
  - [OpenapiClient::InvoiceLineDtoIReadOnlyListEnvelope](docs/InvoiceLineDtoIReadOnlyListEnvelope.md)
  - [OpenapiClient::InvoiceLineDtoListEnvelope](docs/InvoiceLineDtoListEnvelope.md)
  - [OpenapiClient::InvoiceLineUpdateDto](docs/InvoiceLineUpdateDto.md)
  - [OpenapiClient::InvoiceReferenceCreateDto](docs/InvoiceReferenceCreateDto.md)
  - [OpenapiClient::InvoiceReferenceDto](docs/InvoiceReferenceDto.md)
+ - [OpenapiClient::InvoiceReferenceDtoCollectionQueryParameters](docs/InvoiceReferenceDtoCollectionQueryParameters.md)
  - [OpenapiClient::InvoiceReferenceDtoEnvelope](docs/InvoiceReferenceDtoEnvelope.md)
  - [OpenapiClient::InvoiceReferenceDtoIReadOnlyListEnvelope](docs/InvoiceReferenceDtoIReadOnlyListEnvelope.md)
  - [OpenapiClient::InvoiceReferenceUpdateDto](docs/InvoiceReferenceUpdateDto.md)
@@ -190,8 +195,9 @@ Class | Method | HTTP request | Description
  - [OpenapiClient::LoginRequest](docs/LoginRequest.md)
  - [OpenapiClient::Money](docs/Money.md)
  - [OpenapiClient::MoneyEnvelope](docs/MoneyEnvelope.md)
- - [OpenapiClient::Operation](docs/Operation.md)
+ - [OpenapiClient::PatchOperation](docs/PatchOperation.md)
  - [OpenapiClient::PaymentDto](docs/PaymentDto.md)
+ - [OpenapiClient::PaymentDtoCollectionQueryParameters](docs/PaymentDtoCollectionQueryParameters.md)
  - [OpenapiClient::PaymentDtoIReadOnlyListEnvelope](docs/PaymentDtoIReadOnlyListEnvelope.md)
  - [OpenapiClient::RefreshRequest](docs/RefreshRequest.md)
  - [OpenapiClient::RegisterRequest](docs/RegisterRequest.md)

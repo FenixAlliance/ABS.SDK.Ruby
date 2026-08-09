@@ -281,7 +281,7 @@ No authorization required
 
 ## get_payments_async
 
-> <PaymentDtoListEnvelope> get_payments_async(tenant_id)
+> <PaymentDtoListEnvelope> get_payments_async(tenant_id, opts)
 
 Retrieves all payments
 
@@ -295,10 +295,13 @@ require 'openapi_client'
 
 api_instance = OpenapiClient::PaymentsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  payment_dto_collection_query_parameters: OpenapiClient::PaymentDtoCollectionQueryParameters.new # PaymentDtoCollectionQueryParameters | 
+}
 
 begin
   # Retrieves all payments
-  result = api_instance.get_payments_async(tenant_id)
+  result = api_instance.get_payments_async(tenant_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling PaymentsApi->get_payments_async: #{e}"
@@ -309,12 +312,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<PaymentDtoListEnvelope>, Integer, Hash)> get_payments_async_with_http_info(tenant_id)
+> <Array(<PaymentDtoListEnvelope>, Integer, Hash)> get_payments_async_with_http_info(tenant_id, opts)
 
 ```ruby
 begin
   # Retrieves all payments
-  data, status_code, headers = api_instance.get_payments_async_with_http_info(tenant_id)
+  data, status_code, headers = api_instance.get_payments_async_with_http_info(tenant_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <PaymentDtoListEnvelope>
@@ -328,6 +331,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
+| **payment_dto_collection_query_parameters** | [**PaymentDtoCollectionQueryParameters**](PaymentDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -339,7 +343,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -361,7 +365,7 @@ api_instance = OpenapiClient::PaymentsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 payment_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
-  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+  patch_operation: [OpenapiClient::PatchOperation.new] # Array<PatchOperation> | 
 }
 
 begin
@@ -397,7 +401,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
 | **payment_id** | **String** |  |  |
-| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+| **patch_operation** | [**Array&lt;PatchOperation&gt;**](PatchOperation.md) |  | [optional] |
 
 ### Return type
 

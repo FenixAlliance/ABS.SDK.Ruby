@@ -26,7 +26,8 @@ require 'openapi_client'
 api_instance = OpenapiClient::TimezonesApi.new
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  timezone_dto_collection_query_parameters: OpenapiClient::TimezoneDtoCollectionQueryParameters.new # TimezoneDtoCollectionQueryParameters | 
 }
 
 begin
@@ -62,6 +63,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **timezone_dto_collection_query_parameters** | [**TimezoneDtoCollectionQueryParameters**](TimezoneDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -73,7 +75,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -164,7 +166,8 @@ require 'openapi_client'
 api_instance = OpenapiClient::TimezonesApi.new
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  timezone_dto_collection_query_parameters: OpenapiClient::TimezoneDtoCollectionQueryParameters.new # TimezoneDtoCollectionQueryParameters | 
 }
 
 begin
@@ -200,6 +203,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **timezone_dto_collection_query_parameters** | [**TimezoneDtoCollectionQueryParameters**](TimezoneDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -211,6 +215,6 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 

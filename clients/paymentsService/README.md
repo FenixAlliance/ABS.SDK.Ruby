@@ -81,7 +81,6 @@ Class | Method | HTTP request | Description
 *OpenapiClient::FenixAllianceABSWebApi* | [**account_manage_download_personal_data_post**](docs/FenixAllianceABSWebApi.md#account_manage_download_personal_data_post) | **POST** /Account/Manage/DownloadPersonalData | 
 *OpenapiClient::FenixAllianceABSWebApi* | [**account_manage_link_external_login_post**](docs/FenixAllianceABSWebApi.md#account_manage_link_external_login_post) | **POST** /Account/Manage/LinkExternalLogin | 
 *OpenapiClient::FenixAllianceABSWebApi* | [**account_perform_external_login_post**](docs/FenixAllianceABSWebApi.md#account_perform_external_login_post) | **POST** /Account/PerformExternalLogin | 
-*OpenapiClient::FenixAllianceABSWebApi* | [**api_v2_ai_service_agents_agent_id_agui_post**](docs/FenixAllianceABSWebApi.md#api_v2_ai_service_agents_agent_id_agui_post) | **POST** /api/v2/AIService/Agents/{agentId}/agui | 
 *OpenapiClient::FenixAllianceABSWebApi* | [**forgot_password_post**](docs/FenixAllianceABSWebApi.md#forgot_password_post) | **POST** /forgotPassword | 
 *OpenapiClient::FenixAllianceABSWebApi* | [**health_get**](docs/FenixAllianceABSWebApi.md#health_get) | **GET** /health | 
 *OpenapiClient::FenixAllianceABSWebApi* | [**hello_get**](docs/FenixAllianceABSWebApi.md#hello_get) | **GET** /hello | 
@@ -109,6 +108,10 @@ Class | Method | HTTP request | Description
 *OpenapiClient::PaymentModesApi* | [**get_payment_modes_count_async**](docs/PaymentModesApi.md#get_payment_modes_count_async) | **GET** /api/v2/PaymentsService/PaymentModes/Count | Counts payment modes
 *OpenapiClient::PaymentModesApi* | [**patch_payment_mode_async**](docs/PaymentModesApi.md#patch_payment_mode_async) | **PATCH** /api/v2/PaymentsService/PaymentModes/{paymentModeId} | Patch a payment mode
 *OpenapiClient::PaymentModesApi* | [**update_payment_mode_async**](docs/PaymentModesApi.md#update_payment_mode_async) | **PUT** /api/v2/PaymentsService/PaymentModes/{paymentModeId} | Updates a payment mode
+*OpenapiClient::PaymentProviderRegistrationsApi* | [**create_async**](docs/PaymentProviderRegistrationsApi.md#create_async) | **POST** /api/v2/PaymentsService/PaymentProviderRegistrations | Provisions a provider webhook registration
+*OpenapiClient::PaymentProviderRegistrationsApi* | [**get_async**](docs/PaymentProviderRegistrationsApi.md#get_async) | **GET** /api/v2/PaymentsService/PaymentProviderRegistrations | Lists the tenant's provider registrations
+*OpenapiClient::PaymentProviderRegistrationsApi* | [**get_count_async**](docs/PaymentProviderRegistrationsApi.md#get_count_async) | **GET** /api/v2/PaymentsService/PaymentProviderRegistrations/Count | Counts the tenant's provider registrations
+*OpenapiClient::PaymentProviderRegistrationsApi* | [**rotate_key_async**](docs/PaymentProviderRegistrationsApi.md#rotate_key_async) | **POST** /api/v2/PaymentsService/PaymentProviderRegistrations/{registrationId}/RotateKey | Rotates a registration's webhook key
 *OpenapiClient::PaymentTermsApi* | [**create_payment_term_async**](docs/PaymentTermsApi.md#create_payment_term_async) | **POST** /api/v2/PaymentsService/PaymentTerms | Creates a new payment term
 *OpenapiClient::PaymentTermsApi* | [**delete_payment_term_async**](docs/PaymentTermsApi.md#delete_payment_term_async) | **DELETE** /api/v2/PaymentsService/PaymentTerms/{paymentTermId} | Deletes a payment term
 *OpenapiClient::PaymentTermsApi* | [**get_payment_term_details_async**](docs/PaymentTermsApi.md#get_payment_term_details_async) | **GET** /api/v2/PaymentsService/PaymentTerms/{paymentTermId} | Gets a payment term by ID
@@ -128,6 +131,7 @@ Class | Method | HTTP request | Description
 ## Documentation for Models
 
  - [OpenapiClient::AccessTokenResponse](docs/AccessTokenResponse.md)
+ - [OpenapiClient::CreateProviderWebhookRegistrationRequest](docs/CreateProviderWebhookRegistrationRequest.md)
  - [OpenapiClient::EmptyEnvelope](docs/EmptyEnvelope.md)
  - [OpenapiClient::ErrorEnvelope](docs/ErrorEnvelope.md)
  - [OpenapiClient::ForgotPasswordRequest](docs/ForgotPasswordRequest.md)
@@ -136,26 +140,35 @@ Class | Method | HTTP request | Description
  - [OpenapiClient::InfoResponse](docs/InfoResponse.md)
  - [OpenapiClient::Int32Envelope](docs/Int32Envelope.md)
  - [OpenapiClient::LoginRequest](docs/LoginRequest.md)
- - [OpenapiClient::Operation](docs/Operation.md)
+ - [OpenapiClient::PatchOperation](docs/PatchOperation.md)
  - [OpenapiClient::PaymentCreateDto](docs/PaymentCreateDto.md)
  - [OpenapiClient::PaymentDto](docs/PaymentDto.md)
+ - [OpenapiClient::PaymentDtoCollectionQueryParameters](docs/PaymentDtoCollectionQueryParameters.md)
  - [OpenapiClient::PaymentDtoListEnvelope](docs/PaymentDtoListEnvelope.md)
  - [OpenapiClient::PaymentMethodCreateDto](docs/PaymentMethodCreateDto.md)
  - [OpenapiClient::PaymentMethodDto](docs/PaymentMethodDto.md)
+ - [OpenapiClient::PaymentMethodDtoCollectionQueryParameters](docs/PaymentMethodDtoCollectionQueryParameters.md)
  - [OpenapiClient::PaymentMethodDtoEnvelope](docs/PaymentMethodDtoEnvelope.md)
  - [OpenapiClient::PaymentMethodDtoIReadOnlyListEnvelope](docs/PaymentMethodDtoIReadOnlyListEnvelope.md)
  - [OpenapiClient::PaymentMethodUpdateDto](docs/PaymentMethodUpdateDto.md)
  - [OpenapiClient::PaymentModeCreateDto](docs/PaymentModeCreateDto.md)
  - [OpenapiClient::PaymentModeDto](docs/PaymentModeDto.md)
+ - [OpenapiClient::PaymentModeDtoCollectionQueryParameters](docs/PaymentModeDtoCollectionQueryParameters.md)
  - [OpenapiClient::PaymentModeDtoEnvelope](docs/PaymentModeDtoEnvelope.md)
  - [OpenapiClient::PaymentModeDtoIReadOnlyListEnvelope](docs/PaymentModeDtoIReadOnlyListEnvelope.md)
  - [OpenapiClient::PaymentModeUpdateDto](docs/PaymentModeUpdateDto.md)
+ - [OpenapiClient::PaymentProviderRegistrationDto](docs/PaymentProviderRegistrationDto.md)
+ - [OpenapiClient::PaymentProviderRegistrationDtoCollectionQueryParameters](docs/PaymentProviderRegistrationDtoCollectionQueryParameters.md)
+ - [OpenapiClient::PaymentProviderRegistrationDtoListEnvelope](docs/PaymentProviderRegistrationDtoListEnvelope.md)
  - [OpenapiClient::PaymentTermCreateDto](docs/PaymentTermCreateDto.md)
  - [OpenapiClient::PaymentTermDto](docs/PaymentTermDto.md)
+ - [OpenapiClient::PaymentTermDtoCollectionQueryParameters](docs/PaymentTermDtoCollectionQueryParameters.md)
  - [OpenapiClient::PaymentTermDtoEnvelope](docs/PaymentTermDtoEnvelope.md)
  - [OpenapiClient::PaymentTermDtoIReadOnlyListEnvelope](docs/PaymentTermDtoIReadOnlyListEnvelope.md)
  - [OpenapiClient::PaymentTermUpdateDto](docs/PaymentTermUpdateDto.md)
  - [OpenapiClient::PaymentUpdateDto](docs/PaymentUpdateDto.md)
+ - [OpenapiClient::ProviderWebhookRegistrationCreatedDto](docs/ProviderWebhookRegistrationCreatedDto.md)
+ - [OpenapiClient::ProviderWebhookRegistrationCreatedDtoEnvelope](docs/ProviderWebhookRegistrationCreatedDtoEnvelope.md)
  - [OpenapiClient::RefreshRequest](docs/RefreshRequest.md)
  - [OpenapiClient::RegisterRequest](docs/RegisterRequest.md)
  - [OpenapiClient::ResendConfirmationEmailRequest](docs/ResendConfirmationEmailRequest.md)

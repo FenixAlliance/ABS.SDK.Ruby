@@ -33,6 +33,8 @@ module OpenapiClient
 
     attr_accessor :organization_id
 
+    attr_accessor :receiver_tenant_id
+
     attr_accessor :first_name
 
     attr_accessor :last_name
@@ -113,8 +115,6 @@ module OpenapiClient
 
     attr_accessor :deal_unit_id
 
-    attr_accessor :receiver_tenant_id
-
     attr_accessor :effective_to
 
     attr_accessor :effective_from
@@ -157,6 +157,7 @@ module OpenapiClient
         :'individual_id' => :'individualId',
         :'payment_term_id' => :'paymentTermId',
         :'organization_id' => :'organizationId',
+        :'receiver_tenant_id' => :'receiverTenantId',
         :'first_name' => :'firstName',
         :'last_name' => :'lastName',
         :'company_name' => :'companyName',
@@ -197,7 +198,6 @@ module OpenapiClient
         :'tax_calculation_method' => :'taxCalculationMethod',
         :'cart_id' => :'cartId',
         :'deal_unit_id' => :'dealUnitId',
-        :'receiver_tenant_id' => :'receiverTenantId',
         :'effective_to' => :'effectiveTo',
         :'effective_from' => :'effectiveFrom',
         :'quote_status' => :'quoteStatus',
@@ -222,6 +222,7 @@ module OpenapiClient
         :'individual_id' => :'String',
         :'payment_term_id' => :'String',
         :'organization_id' => :'String',
+        :'receiver_tenant_id' => :'String',
         :'first_name' => :'String',
         :'last_name' => :'String',
         :'company_name' => :'String',
@@ -262,7 +263,6 @@ module OpenapiClient
         :'tax_calculation_method' => :'String',
         :'cart_id' => :'String',
         :'deal_unit_id' => :'String',
-        :'receiver_tenant_id' => :'String',
         :'effective_to' => :'Time',
         :'effective_from' => :'Time',
         :'quote_status' => :'String',
@@ -279,6 +279,7 @@ module OpenapiClient
         :'individual_id',
         :'payment_term_id',
         :'organization_id',
+        :'receiver_tenant_id',
         :'first_name',
         :'last_name',
         :'company_name',
@@ -304,7 +305,6 @@ module OpenapiClient
         :'total_currency_id',
         :'cart_id',
         :'deal_unit_id',
-        :'receiver_tenant_id',
         :'effective_to',
         :'effective_from',
         :'quote_lines'
@@ -360,6 +360,10 @@ module OpenapiClient
 
       if attributes.key?(:'organization_id')
         self.organization_id = attributes[:'organization_id']
+      end
+
+      if attributes.key?(:'receiver_tenant_id')
+        self.receiver_tenant_id = attributes[:'receiver_tenant_id']
       end
 
       if attributes.key?(:'first_name')
@@ -522,10 +526,6 @@ module OpenapiClient
         self.deal_unit_id = attributes[:'deal_unit_id']
       end
 
-      if attributes.key?(:'receiver_tenant_id')
-        self.receiver_tenant_id = attributes[:'receiver_tenant_id']
-      end
-
       if attributes.key?(:'effective_to')
         self.effective_to = attributes[:'effective_to']
       end
@@ -610,6 +610,7 @@ module OpenapiClient
           individual_id == o.individual_id &&
           payment_term_id == o.payment_term_id &&
           organization_id == o.organization_id &&
+          receiver_tenant_id == o.receiver_tenant_id &&
           first_name == o.first_name &&
           last_name == o.last_name &&
           company_name == o.company_name &&
@@ -650,7 +651,6 @@ module OpenapiClient
           tax_calculation_method == o.tax_calculation_method &&
           cart_id == o.cart_id &&
           deal_unit_id == o.deal_unit_id &&
-          receiver_tenant_id == o.receiver_tenant_id &&
           effective_to == o.effective_to &&
           effective_from == o.effective_from &&
           quote_status == o.quote_status &&
@@ -666,7 +666,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, timestamp, closed, title, price_list_id, description, individual_id, payment_term_id, organization_id, first_name, last_name, company_name, billing_email, address_line1, address_line2, postal_code, country_id, state_id, city_id, forex_rate, currency_id, total_detail, total_detail_currency_id, total_profit, total_profit_currency_id, total_discounts, total_discounts_currency_id, total_surcharges, total_surcharges_currency_id, total_shipping_cost, total_shipping_cost_currency_id, total_shipping_tax, total_shipping_tax_currency_id, total_withheld_tax, total_withheld_tax_currency_id, total_tax_base, total_tax_base_currency_id, total_taxes, total_taxes_currency_id, total_global_surcharges, total_global_surcharges_currency_id, total_global_discounts, total_global_discounts_currency_id, total, total_currency_id, cost_calculation_method, tax_calculation_method, cart_id, deal_unit_id, receiver_tenant_id, effective_to, effective_from, quote_status, quote_lines].hash
+      [id, timestamp, closed, title, price_list_id, description, individual_id, payment_term_id, organization_id, receiver_tenant_id, first_name, last_name, company_name, billing_email, address_line1, address_line2, postal_code, country_id, state_id, city_id, forex_rate, currency_id, total_detail, total_detail_currency_id, total_profit, total_profit_currency_id, total_discounts, total_discounts_currency_id, total_surcharges, total_surcharges_currency_id, total_shipping_cost, total_shipping_cost_currency_id, total_shipping_tax, total_shipping_tax_currency_id, total_withheld_tax, total_withheld_tax_currency_id, total_tax_base, total_tax_base_currency_id, total_taxes, total_taxes_currency_id, total_global_surcharges, total_global_surcharges_currency_id, total_global_discounts, total_global_discounts_currency_id, total, total_currency_id, cost_calculation_method, tax_calculation_method, cart_id, deal_unit_id, effective_to, effective_from, quote_status, quote_lines].hash
     end
 
     # Builds the object from hash

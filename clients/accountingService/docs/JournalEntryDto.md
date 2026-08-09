@@ -5,6 +5,7 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **id** | **String** |  | [optional] |
+| **timestamp** | **Time** |  | [optional] |
 | **tenant_id** | **String** |  | [optional] |
 | **enrollment_id** | **String** |  | [optional] |
 | **journal_id** | **String** |  | [optional] |
@@ -25,7 +26,6 @@
 | **posted_by** | **String** |  | [optional] |
 | **forex_rate** | **Float** |  | [optional] |
 | **forex_rates_snapshot** | **String** |  | [optional] |
-| **timestamp** | **Time** |  | [optional] |
 | **debit_in_usd** | **Float** |  | [optional] |
 | **credit_in_usd** | **Float** |  | [optional] |
 | **accounting_entries** | [**Array&lt;AccountingEntryDto&gt;**](AccountingEntryDto.md) |  | [optional] |
@@ -33,6 +33,8 @@
 | **total_credit** | **Float** |  | [optional][readonly] |
 | **total_debit_amount** | [**Money**](Money.md) |  | [optional] |
 | **total_credit_amount** | [**Money**](Money.md) |  | [optional] |
+| **debit_in_usd_amount** | [**Money**](Money.md) |  | [optional] |
+| **credit_in_usd_amount** | [**Money**](Money.md) |  | [optional] |
 
 ## Example
 
@@ -41,6 +43,7 @@ require 'openapi_client'
 
 instance = OpenapiClient::JournalEntryDto.new(
   id: null,
+  timestamp: null,
   tenant_id: null,
   enrollment_id: null,
   journal_id: null,
@@ -61,14 +64,15 @@ instance = OpenapiClient::JournalEntryDto.new(
   posted_by: null,
   forex_rate: null,
   forex_rates_snapshot: null,
-  timestamp: null,
   debit_in_usd: null,
   credit_in_usd: null,
   accounting_entries: null,
   total_debit: null,
   total_credit: null,
   total_debit_amount: null,
-  total_credit_amount: null
+  total_credit_amount: null,
+  debit_in_usd_amount: null,
+  credit_in_usd_amount: null
 )
 ```
 

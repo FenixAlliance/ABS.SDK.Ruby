@@ -139,14 +139,19 @@ Class | Method | HTTP request | Description
 *OpenapiClient::SocialGroupsApi* | [**get_social_groups_async**](docs/SocialGroupsApi.md#get_social_groups_async) | **GET** /api/v2/SocialService/SocialGroups | Get social groups
 *OpenapiClient::SocialGroupsApi* | [**patch_social_group_async**](docs/SocialGroupsApi.md#patch_social_group_async) | **PATCH** /api/v2/SocialService/SocialGroups/{socialGroupId} | Patch a social group
 *OpenapiClient::SocialGroupsApi* | [**update_social_group_async**](docs/SocialGroupsApi.md#update_social_group_async) | **PUT** /api/v2/SocialService/SocialGroups/{socialGroupId} | Update a social group
+*OpenapiClient::SocialPostsApi* | [**create_social_comment_reaction_async**](docs/SocialPostsApi.md#create_social_comment_reaction_async) | **POST** /api/v2/SocialService/SocialPosts/{socialPostId}/Comments/{commentId}/Reactions | Create a social comment reaction
 *OpenapiClient::SocialPostsApi* | [**create_social_post_async**](docs/SocialPostsApi.md#create_social_post_async) | **POST** /api/v2/SocialService/SocialPosts | Create a social post
 *OpenapiClient::SocialPostsApi* | [**create_social_post_attachment_async**](docs/SocialPostsApi.md#create_social_post_attachment_async) | **POST** /api/v2/SocialService/SocialPosts/{socialPostId}/Attachments | Create a social post attachment
 *OpenapiClient::SocialPostsApi* | [**create_social_post_comment_async**](docs/SocialPostsApi.md#create_social_post_comment_async) | **POST** /api/v2/SocialService/SocialPosts/{socialPostId}/Comments | Create a social post comment
 *OpenapiClient::SocialPostsApi* | [**create_social_post_reaction_async**](docs/SocialPostsApi.md#create_social_post_reaction_async) | **POST** /api/v2/SocialService/SocialPosts/{socialPostId}/Reactions | Create a social post reaction
+*OpenapiClient::SocialPostsApi* | [**delete_social_comment_reaction_async**](docs/SocialPostsApi.md#delete_social_comment_reaction_async) | **DELETE** /api/v2/SocialService/SocialPosts/{socialPostId}/Comments/{commentId}/Reactions/{reactionId} | Delete a social comment reaction
 *OpenapiClient::SocialPostsApi* | [**delete_social_post_async**](docs/SocialPostsApi.md#delete_social_post_async) | **DELETE** /api/v2/SocialService/SocialPosts/{socialPostId} | Delete a social post
 *OpenapiClient::SocialPostsApi* | [**delete_social_post_attachment_async**](docs/SocialPostsApi.md#delete_social_post_attachment_async) | **DELETE** /api/v2/SocialService/SocialPosts/{socialPostId}/Attachments/{attachmentId} | Delete a social post attachment
 *OpenapiClient::SocialPostsApi* | [**delete_social_post_comment_async**](docs/SocialPostsApi.md#delete_social_post_comment_async) | **DELETE** /api/v2/SocialService/SocialPosts/{socialPostId}/Comments/{commentId} | Delete a social post comment
 *OpenapiClient::SocialPostsApi* | [**delete_social_post_reaction_async**](docs/SocialPostsApi.md#delete_social_post_reaction_async) | **DELETE** /api/v2/SocialService/SocialPosts/{socialPostId}/Reactions/{reactionId} | Delete a social post reaction
+*OpenapiClient::SocialPostsApi* | [**get_social_comment_reaction_async**](docs/SocialPostsApi.md#get_social_comment_reaction_async) | **GET** /api/v2/SocialService/SocialPosts/{socialPostId}/Comments/{commentId}/Reactions/{reactionId} | Get social comment reaction by ID
+*OpenapiClient::SocialPostsApi* | [**get_social_comment_reactions_async**](docs/SocialPostsApi.md#get_social_comment_reactions_async) | **GET** /api/v2/SocialService/SocialPosts/{socialPostId}/Comments/{commentId}/Reactions | Get social comment reactions
+*OpenapiClient::SocialPostsApi* | [**get_social_comment_reactions_count_async**](docs/SocialPostsApi.md#get_social_comment_reactions_count_async) | **GET** /api/v2/SocialService/SocialPosts/{socialPostId}/Comments/{commentId}/Reactions/Count | Count social comment reactions
 *OpenapiClient::SocialPostsApi* | [**get_social_post_async**](docs/SocialPostsApi.md#get_social_post_async) | **GET** /api/v2/SocialService/SocialPosts/{socialPostId} | Get social post by ID
 *OpenapiClient::SocialPostsApi* | [**get_social_post_attachment_async**](docs/SocialPostsApi.md#get_social_post_attachment_async) | **GET** /api/v2/SocialService/SocialPosts/{socialPostId}/Attachments/{attachmentId} | Get social post attachment by ID
 *OpenapiClient::SocialPostsApi* | [**get_social_post_attachments_async**](docs/SocialPostsApi.md#get_social_post_attachments_async) | **GET** /api/v2/SocialService/SocialPosts/{socialPostId}/Attachments | Get social post attachments
@@ -160,10 +165,12 @@ Class | Method | HTTP request | Description
 *OpenapiClient::SocialPostsApi* | [**get_social_posts_async**](docs/SocialPostsApi.md#get_social_posts_async) | **GET** /api/v2/SocialService/SocialPosts | Get social posts
 *OpenapiClient::SocialPostsApi* | [**get_social_posts_count_async**](docs/SocialPostsApi.md#get_social_posts_count_async) | **GET** /api/v2/SocialService/SocialPosts/Count | Count social posts
 *OpenapiClient::SocialPostsApi* | [**patch_social_post_async**](docs/SocialPostsApi.md#patch_social_post_async) | **PATCH** /api/v2/SocialService/SocialPosts/{socialPostId} | Patch a social post
+*OpenapiClient::SocialPostsApi* | [**update_social_comment_reaction_async**](docs/SocialPostsApi.md#update_social_comment_reaction_async) | **PUT** /api/v2/SocialService/SocialPosts/{socialPostId}/Comments/{commentId}/Reactions/{reactionId} | Update a social comment reaction
 *OpenapiClient::SocialPostsApi* | [**update_social_post_async**](docs/SocialPostsApi.md#update_social_post_async) | **PUT** /api/v2/SocialService/SocialPosts/{socialPostId} | Update a social post
 *OpenapiClient::SocialPostsApi* | [**update_social_post_attachment_async**](docs/SocialPostsApi.md#update_social_post_attachment_async) | **PUT** /api/v2/SocialService/SocialPosts/{socialPostId}/Attachments/{attachmentId} | Update a social post attachment
 *OpenapiClient::SocialPostsApi* | [**update_social_post_comment_async**](docs/SocialPostsApi.md#update_social_post_comment_async) | **PUT** /api/v2/SocialService/SocialPosts/{socialPostId}/Comments/{commentId} | Update a social post comment
 *OpenapiClient::SocialPostsApi* | [**update_social_post_reaction_async**](docs/SocialPostsApi.md#update_social_post_reaction_async) | **PUT** /api/v2/SocialService/SocialPosts/{socialPostId}/Reactions/{reactionId} | Update a social post reaction
+*OpenapiClient::SocialPostsApi* | [**upload_social_post_image_attachment_async**](docs/SocialPostsApi.md#upload_social_post_image_attachment_async) | **POST** /api/v2/SocialService/SocialPosts/{socialPostId}/Attachments/Image | Upload a social post image attachment
 *OpenapiClient::SocialProfilesApi* | [**count_conversations_async**](docs/SocialProfilesApi.md#count_conversations_async) | **GET** /api/v2/SocialService/SocialProfiles/{socialProfileId}/Conversations/Count | Count Conversations
 *OpenapiClient::SocialProfilesApi* | [**count_followed_profiles_async**](docs/SocialProfilesApi.md#count_followed_profiles_async) | **GET** /api/v2/SocialService/SocialProfiles/{socialProfileId}/Follows/Profiles/Count | Count Followed Profiles
 *OpenapiClient::SocialProfilesApi* | [**count_follower_profiles_async**](docs/SocialProfilesApi.md#count_follower_profiles_async) | **GET** /api/v2/SocialService/SocialProfiles/{socialProfileId}/Followers/Profiles/Count | Count Follower Profiles
@@ -185,6 +192,7 @@ Class | Method | HTTP request | Description
 *OpenapiClient::SocialProfilesApi* | [**get_messages_async**](docs/SocialProfilesApi.md#get_messages_async) | **GET** /api/v2/SocialService/SocialProfiles/{conversationId}/Messages | Get Messages
 *OpenapiClient::SocialProfilesApi* | [**get_notification_by_id_async**](docs/SocialProfilesApi.md#get_notification_by_id_async) | **GET** /api/v2/SocialService/SocialProfiles/{socialProfileId}/Notifications/{notificationId} | Get Notification
 *OpenapiClient::SocialProfilesApi* | [**get_notifications_async**](docs/SocialProfilesApi.md#get_notifications_async) | **GET** /api/v2/SocialService/SocialProfiles/{socialProfileId}/Notifications | Get Notifications
+*OpenapiClient::SocialProfilesApi* | [**get_or_create_direct_conversation_async**](docs/SocialProfilesApi.md#get_or_create_direct_conversation_async) | **POST** /api/v2/SocialService/SocialProfiles/{socialProfileId}/Conversations/Direct | Get or Create Direct Conversation
 *OpenapiClient::SocialProfilesApi* | [**get_social_profile_async**](docs/SocialProfilesApi.md#get_social_profile_async) | **GET** /api/v2/SocialService/SocialProfiles/{socialProfileId} | Get Social Profile
 *OpenapiClient::SocialProfilesApi* | [**get_social_profiles_async**](docs/SocialProfilesApi.md#get_social_profiles_async) | **GET** /api/v2/SocialService/SocialProfiles | Get Social Profiles
 *OpenapiClient::SocialProfilesApi* | [**unfollow_async**](docs/SocialProfilesApi.md#unfollow_async) | **DELETE** /api/v2/SocialService/SocialProfiles/{socialProfileId}/Follows/{followedSocialProfileId} | Unfollow
@@ -197,13 +205,17 @@ Class | Method | HTTP request | Description
  - [OpenapiClient::BooleanEnvelope](docs/BooleanEnvelope.md)
  - [OpenapiClient::ConversationCreateDto](docs/ConversationCreateDto.md)
  - [OpenapiClient::ConversationDto](docs/ConversationDto.md)
+ - [OpenapiClient::ConversationDtoCollectionQueryParameters](docs/ConversationDtoCollectionQueryParameters.md)
+ - [OpenapiClient::ConversationDtoEnvelope](docs/ConversationDtoEnvelope.md)
  - [OpenapiClient::ConversationDtoListEnvelope](docs/ConversationDtoListEnvelope.md)
  - [OpenapiClient::CurriculumCreateDto](docs/CurriculumCreateDto.md)
  - [OpenapiClient::CurriculumDto](docs/CurriculumDto.md)
+ - [OpenapiClient::CurriculumDtoCollectionQueryParameters](docs/CurriculumDtoCollectionQueryParameters.md)
  - [OpenapiClient::CurriculumDtoEnvelope](docs/CurriculumDtoEnvelope.md)
  - [OpenapiClient::CurriculumDtoListEnvelope](docs/CurriculumDtoListEnvelope.md)
  - [OpenapiClient::CurriculumExperienceCreateDto](docs/CurriculumExperienceCreateDto.md)
  - [OpenapiClient::CurriculumExperienceDto](docs/CurriculumExperienceDto.md)
+ - [OpenapiClient::CurriculumExperienceDtoCollectionQueryParameters](docs/CurriculumExperienceDtoCollectionQueryParameters.md)
  - [OpenapiClient::CurriculumExperienceDtoEnvelope](docs/CurriculumExperienceDtoEnvelope.md)
  - [OpenapiClient::CurriculumExperienceDtoListEnvelope](docs/CurriculumExperienceDtoListEnvelope.md)
  - [OpenapiClient::CurriculumExperienceUpdateDto](docs/CurriculumExperienceUpdateDto.md)
@@ -211,6 +223,7 @@ Class | Method | HTTP request | Description
  - [OpenapiClient::EmptyEnvelope](docs/EmptyEnvelope.md)
  - [OpenapiClient::ErrorEnvelope](docs/ErrorEnvelope.md)
  - [OpenapiClient::FollowRecordDto](docs/FollowRecordDto.md)
+ - [OpenapiClient::FollowRecordDtoCollectionQueryParameters](docs/FollowRecordDtoCollectionQueryParameters.md)
  - [OpenapiClient::FollowRecordDtoListEnvelope](docs/FollowRecordDtoListEnvelope.md)
  - [OpenapiClient::ForgotPasswordRequest](docs/ForgotPasswordRequest.md)
  - [OpenapiClient::HttpValidationProblemDetails](docs/HttpValidationProblemDetails.md)
@@ -219,11 +232,13 @@ Class | Method | HTTP request | Description
  - [OpenapiClient::Int32Envelope](docs/Int32Envelope.md)
  - [OpenapiClient::LoginRequest](docs/LoginRequest.md)
  - [OpenapiClient::NotificationDto](docs/NotificationDto.md)
+ - [OpenapiClient::NotificationDtoCollectionQueryParameters](docs/NotificationDtoCollectionQueryParameters.md)
  - [OpenapiClient::NotificationDtoEnvelope](docs/NotificationDtoEnvelope.md)
  - [OpenapiClient::NotificationDtoListEnvelope](docs/NotificationDtoListEnvelope.md)
- - [OpenapiClient::Operation](docs/Operation.md)
+ - [OpenapiClient::PatchOperation](docs/PatchOperation.md)
  - [OpenapiClient::PrivateMessageCreateDto](docs/PrivateMessageCreateDto.md)
  - [OpenapiClient::PrivateMessageDto](docs/PrivateMessageDto.md)
+ - [OpenapiClient::PrivateMessageDtoCollectionQueryParameters](docs/PrivateMessageDtoCollectionQueryParameters.md)
  - [OpenapiClient::PrivateMessageDtoListEnvelope](docs/PrivateMessageDtoListEnvelope.md)
  - [OpenapiClient::PrivateMessageUpdateDto](docs/PrivateMessageUpdateDto.md)
  - [OpenapiClient::RefreshRequest](docs/RefreshRequest.md)
@@ -232,38 +247,55 @@ Class | Method | HTTP request | Description
  - [OpenapiClient::ResetPasswordRequest](docs/ResetPasswordRequest.md)
  - [OpenapiClient::SkillCreateDto](docs/SkillCreateDto.md)
  - [OpenapiClient::SkillDto](docs/SkillDto.md)
+ - [OpenapiClient::SkillDtoCollectionQueryParameters](docs/SkillDtoCollectionQueryParameters.md)
  - [OpenapiClient::SkillDtoEnvelope](docs/SkillDtoEnvelope.md)
  - [OpenapiClient::SkillDtoListEnvelope](docs/SkillDtoListEnvelope.md)
  - [OpenapiClient::SkillUpdateDto](docs/SkillUpdateDto.md)
+ - [OpenapiClient::SocialCommentReactionDto](docs/SocialCommentReactionDto.md)
+ - [OpenapiClient::SocialCommentReactionDtoCollectionQueryParameters](docs/SocialCommentReactionDtoCollectionQueryParameters.md)
+ - [OpenapiClient::SocialCommentReactionDtoEnvelope](docs/SocialCommentReactionDtoEnvelope.md)
+ - [OpenapiClient::SocialCommentReactionDtoListEnvelope](docs/SocialCommentReactionDtoListEnvelope.md)
  - [OpenapiClient::SocialFeedDto](docs/SocialFeedDto.md)
+ - [OpenapiClient::SocialFeedDtoCollectionQueryParameters](docs/SocialFeedDtoCollectionQueryParameters.md)
  - [OpenapiClient::SocialFeedDtoEnvelope](docs/SocialFeedDtoEnvelope.md)
  - [OpenapiClient::SocialFeedDtoListEnvelope](docs/SocialFeedDtoListEnvelope.md)
  - [OpenapiClient::SocialFeedPostCreateDto](docs/SocialFeedPostCreateDto.md)
  - [OpenapiClient::SocialFeedPostDto](docs/SocialFeedPostDto.md)
+ - [OpenapiClient::SocialFeedPostDtoCollectionQueryParameters](docs/SocialFeedPostDtoCollectionQueryParameters.md)
  - [OpenapiClient::SocialFeedPostDtoEnvelope](docs/SocialFeedPostDtoEnvelope.md)
  - [OpenapiClient::SocialFeedPostDtoListEnvelope](docs/SocialFeedPostDtoListEnvelope.md)
  - [OpenapiClient::SocialFeedPostUpdateDto](docs/SocialFeedPostUpdateDto.md)
  - [OpenapiClient::SocialGroupCreateDto](docs/SocialGroupCreateDto.md)
  - [OpenapiClient::SocialGroupDto](docs/SocialGroupDto.md)
+ - [OpenapiClient::SocialGroupDtoCollectionQueryParameters](docs/SocialGroupDtoCollectionQueryParameters.md)
  - [OpenapiClient::SocialGroupDtoEnvelope](docs/SocialGroupDtoEnvelope.md)
  - [OpenapiClient::SocialGroupDtoListEnvelope](docs/SocialGroupDtoListEnvelope.md)
  - [OpenapiClient::SocialGroupUpdateDto](docs/SocialGroupUpdateDto.md)
  - [OpenapiClient::SocialPostAttachmentCreateDto](docs/SocialPostAttachmentCreateDto.md)
  - [OpenapiClient::SocialPostAttachmentDto](docs/SocialPostAttachmentDto.md)
+ - [OpenapiClient::SocialPostAttachmentDtoCollectionQueryParameters](docs/SocialPostAttachmentDtoCollectionQueryParameters.md)
  - [OpenapiClient::SocialPostAttachmentDtoEnvelope](docs/SocialPostAttachmentDtoEnvelope.md)
  - [OpenapiClient::SocialPostAttachmentDtoListEnvelope](docs/SocialPostAttachmentDtoListEnvelope.md)
+ - [OpenapiClient::SocialPostAttachmentRefDto](docs/SocialPostAttachmentRefDto.md)
  - [OpenapiClient::SocialPostAttachmentUpdateDto](docs/SocialPostAttachmentUpdateDto.md)
  - [OpenapiClient::SocialPostCommentCreateDto](docs/SocialPostCommentCreateDto.md)
  - [OpenapiClient::SocialPostCommentDto](docs/SocialPostCommentDto.md)
+ - [OpenapiClient::SocialPostCommentDtoCollectionQueryParameters](docs/SocialPostCommentDtoCollectionQueryParameters.md)
  - [OpenapiClient::SocialPostCommentDtoEnvelope](docs/SocialPostCommentDtoEnvelope.md)
  - [OpenapiClient::SocialPostCommentDtoListEnvelope](docs/SocialPostCommentDtoListEnvelope.md)
  - [OpenapiClient::SocialPostCommentUpdateDto](docs/SocialPostCommentUpdateDto.md)
  - [OpenapiClient::SocialPostCreateDto](docs/SocialPostCreateDto.md)
  - [OpenapiClient::SocialPostDto](docs/SocialPostDto.md)
+ - [OpenapiClient::SocialPostDtoCollectionQueryParameters](docs/SocialPostDtoCollectionQueryParameters.md)
  - [OpenapiClient::SocialPostDtoEnvelope](docs/SocialPostDtoEnvelope.md)
  - [OpenapiClient::SocialPostDtoListEnvelope](docs/SocialPostDtoListEnvelope.md)
+ - [OpenapiClient::SocialPostReactionDto](docs/SocialPostReactionDto.md)
+ - [OpenapiClient::SocialPostReactionDtoCollectionQueryParameters](docs/SocialPostReactionDtoCollectionQueryParameters.md)
+ - [OpenapiClient::SocialPostReactionDtoEnvelope](docs/SocialPostReactionDtoEnvelope.md)
+ - [OpenapiClient::SocialPostReactionFacepileDto](docs/SocialPostReactionFacepileDto.md)
  - [OpenapiClient::SocialPostUpdateDto](docs/SocialPostUpdateDto.md)
  - [OpenapiClient::SocialProfileDto](docs/SocialProfileDto.md)
+ - [OpenapiClient::SocialProfileDtoCollectionQueryParameters](docs/SocialProfileDtoCollectionQueryParameters.md)
  - [OpenapiClient::SocialProfileDtoEnvelope](docs/SocialProfileDtoEnvelope.md)
  - [OpenapiClient::SocialProfileDtoListEnvelope](docs/SocialProfileDtoListEnvelope.md)
  - [OpenapiClient::SocialReactionCreateDto](docs/SocialReactionCreateDto.md)
@@ -271,8 +303,10 @@ Class | Method | HTTP request | Description
  - [OpenapiClient::SocialReactionDtoEnvelope](docs/SocialReactionDtoEnvelope.md)
  - [OpenapiClient::SocialReactionDtoListEnvelope](docs/SocialReactionDtoListEnvelope.md)
  - [OpenapiClient::SocialReactionUpdateDto](docs/SocialReactionUpdateDto.md)
+ - [OpenapiClient::StringEnvelope](docs/StringEnvelope.md)
  - [OpenapiClient::TwoFactorRequest](docs/TwoFactorRequest.md)
  - [OpenapiClient::TwoFactorResponse](docs/TwoFactorResponse.md)
+ - [OpenapiClient::UploadSocialPostImageAttachmentAsyncRequest](docs/UploadSocialPostImageAttachmentAsyncRequest.md)
 
 
 ## Documentation for Authorization

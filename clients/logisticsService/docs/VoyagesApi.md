@@ -549,7 +549,8 @@ tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 voyage_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  voyage_port_call_dto_collection_query_parameters: OpenapiClient::VoyagePortCallDtoCollectionQueryParameters.new # VoyagePortCallDtoCollectionQueryParameters | 
 }
 
 begin
@@ -587,6 +588,7 @@ end
 | **voyage_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **voyage_port_call_dto_collection_query_parameters** | [**VoyagePortCallDtoCollectionQueryParameters**](VoyagePortCallDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -598,7 +600,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -621,7 +623,8 @@ tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 voyage_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  voyage_port_call_dto_collection_query_parameters: OpenapiClient::VoyagePortCallDtoCollectionQueryParameters.new # VoyagePortCallDtoCollectionQueryParameters | 
 }
 
 begin
@@ -659,6 +662,7 @@ end
 | **voyage_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **voyage_port_call_dto_collection_query_parameters** | [**VoyagePortCallDtoCollectionQueryParameters**](VoyagePortCallDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -670,7 +674,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -692,7 +696,8 @@ api_instance = OpenapiClient::VoyagesApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  voyage_dto_collection_query_parameters: OpenapiClient::VoyageDtoCollectionQueryParameters.new # VoyageDtoCollectionQueryParameters | 
 }
 
 begin
@@ -729,6 +734,7 @@ end
 | **tenant_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **voyage_dto_collection_query_parameters** | [**VoyageDtoCollectionQueryParameters**](VoyageDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -740,7 +746,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -762,7 +768,8 @@ api_instance = OpenapiClient::VoyagesApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  voyage_dto_collection_query_parameters: OpenapiClient::VoyageDtoCollectionQueryParameters.new # VoyageDtoCollectionQueryParameters | 
 }
 
 begin
@@ -799,6 +806,7 @@ end
 | **tenant_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **voyage_dto_collection_query_parameters** | [**VoyageDtoCollectionQueryParameters**](VoyageDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -810,7 +818,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -834,7 +842,7 @@ voyage_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 opts = {
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example', # String | 
-  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+  patch_operation: [OpenapiClient::PatchOperation.new] # Array<PatchOperation> | 
 }
 
 begin
@@ -872,7 +880,7 @@ end
 | **voyage_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
-| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+| **patch_operation** | [**Array&lt;PatchOperation&gt;**](PatchOperation.md) |  | [optional] |
 
 ### Return type
 
@@ -909,7 +917,7 @@ port_call_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 opts = {
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example', # String | 
-  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+  patch_operation: [OpenapiClient::PatchOperation.new] # Array<PatchOperation> | 
 }
 
 begin
@@ -948,7 +956,7 @@ end
 | **port_call_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
-| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+| **patch_operation** | [**Array&lt;PatchOperation&gt;**](PatchOperation.md) |  | [optional] |
 
 ### Return type
 

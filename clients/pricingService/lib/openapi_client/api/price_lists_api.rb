@@ -465,6 +465,7 @@ module OpenapiClient
     # @param price_list_id [String] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :item_id 
+    # @option opts [ItemPriceDtoCollectionQueryParameters] :item_price_dto_collection_query_parameters 
     # @return [ItemPriceDtoListEnvelope]
     def get_price_list_prices_async(tenant_id, price_list_id, opts = {})
       data, _status_code, _headers = get_price_list_prices_async_with_http_info(tenant_id, price_list_id, opts)
@@ -477,6 +478,7 @@ module OpenapiClient
     # @param price_list_id [String] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :item_id 
+    # @option opts [ItemPriceDtoCollectionQueryParameters] :item_price_dto_collection_query_parameters 
     # @return [Array<(ItemPriceDtoListEnvelope, Integer, Hash)>] ItemPriceDtoListEnvelope data, response status code and response headers
     def get_price_list_prices_async_with_http_info(tenant_id, price_list_id, opts = {})
       if @api_client.config.debugging
@@ -502,12 +504,17 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'item_price_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'ItemPriceDtoListEnvelope'
@@ -537,6 +544,7 @@ module OpenapiClient
     # @param tenant_id [String] 
     # @param price_list_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [ItemPriceDtoCollectionQueryParameters] :item_price_dto_collection_query_parameters 
     # @return [Int32Envelope]
     def get_price_list_prices_count_async(tenant_id, price_list_id, opts = {})
       data, _status_code, _headers = get_price_list_prices_count_async_with_http_info(tenant_id, price_list_id, opts)
@@ -548,6 +556,7 @@ module OpenapiClient
     # @param tenant_id [String] 
     # @param price_list_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [ItemPriceDtoCollectionQueryParameters] :item_price_dto_collection_query_parameters 
     # @return [Array<(Int32Envelope, Integer, Hash)>] Int32Envelope data, response status code and response headers
     def get_price_list_prices_count_async_with_http_info(tenant_id, price_list_id, opts = {})
       if @api_client.config.debugging
@@ -572,12 +581,17 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'item_price_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'Int32Envelope'
@@ -606,6 +620,7 @@ module OpenapiClient
     # Gets all price lists for the current tenant with OData support.
     # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [PriceListDtoCollectionQueryParameters] :price_list_dto_collection_query_parameters 
     # @return [PriceListDtoListEnvelope]
     def get_price_lists_async(tenant_id, opts = {})
       data, _status_code, _headers = get_price_lists_async_with_http_info(tenant_id, opts)
@@ -616,6 +631,7 @@ module OpenapiClient
     # Gets all price lists for the current tenant with OData support.
     # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [PriceListDtoCollectionQueryParameters] :price_list_dto_collection_query_parameters 
     # @return [Array<(PriceListDtoListEnvelope, Integer, Hash)>] PriceListDtoListEnvelope data, response status code and response headers
     def get_price_lists_async_with_http_info(tenant_id, opts = {})
       if @api_client.config.debugging
@@ -636,12 +652,17 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'price_list_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'PriceListDtoListEnvelope'
@@ -670,6 +691,7 @@ module OpenapiClient
     # Gets the count of price lists for the current tenant.
     # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [PriceListDtoCollectionQueryParameters] :price_list_dto_collection_query_parameters 
     # @return [Int32Envelope]
     def get_price_lists_count_async(tenant_id, opts = {})
       data, _status_code, _headers = get_price_lists_count_async_with_http_info(tenant_id, opts)
@@ -680,6 +702,7 @@ module OpenapiClient
     # Gets the count of price lists for the current tenant.
     # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [PriceListDtoCollectionQueryParameters] :price_list_dto_collection_query_parameters 
     # @return [Array<(Int32Envelope, Integer, Hash)>] Int32Envelope data, response status code and response headers
     def get_price_lists_count_async_with_http_info(tenant_id, opts = {})
       if @api_client.config.debugging
@@ -700,12 +723,17 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'price_list_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'Int32Envelope'
@@ -735,7 +763,7 @@ module OpenapiClient
     # @param tenant_id [String] 
     # @param price_list_id [String] 
     # @param [Hash] opts the optional parameters
-    # @option opts [Array<Operation>] :operation 
+    # @option opts [Array<PatchOperation>] :patch_operation 
     # @return [EmptyEnvelope]
     def patch_price_list_async(tenant_id, price_list_id, opts = {})
       data, _status_code, _headers = patch_price_list_async_with_http_info(tenant_id, price_list_id, opts)
@@ -747,7 +775,7 @@ module OpenapiClient
     # @param tenant_id [String] 
     # @param price_list_id [String] 
     # @param [Hash] opts the optional parameters
-    # @option opts [Array<Operation>] :operation 
+    # @option opts [Array<PatchOperation>] :patch_operation 
     # @return [Array<(EmptyEnvelope, Integer, Hash)>] EmptyEnvelope data, response status code and response headers
     def patch_price_list_async_with_http_info(tenant_id, price_list_id, opts = {})
       if @api_client.config.debugging
@@ -782,7 +810,7 @@ module OpenapiClient
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'operation'])
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'patch_operation'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'EmptyEnvelope'
@@ -813,7 +841,7 @@ module OpenapiClient
     # @param price_list_id [String] 
     # @param price_id [String] 
     # @param [Hash] opts the optional parameters
-    # @option opts [Array<Operation>] :operation 
+    # @option opts [Array<PatchOperation>] :patch_operation 
     # @return [EmptyEnvelope]
     def patch_price_list_price_async(tenant_id, price_list_id, price_id, opts = {})
       data, _status_code, _headers = patch_price_list_price_async_with_http_info(tenant_id, price_list_id, price_id, opts)
@@ -826,7 +854,7 @@ module OpenapiClient
     # @param price_list_id [String] 
     # @param price_id [String] 
     # @param [Hash] opts the optional parameters
-    # @option opts [Array<Operation>] :operation 
+    # @option opts [Array<PatchOperation>] :patch_operation 
     # @return [Array<(EmptyEnvelope, Integer, Hash)>] EmptyEnvelope data, response status code and response headers
     def patch_price_list_price_async_with_http_info(tenant_id, price_list_id, price_id, opts = {})
       if @api_client.config.debugging
@@ -865,7 +893,7 @@ module OpenapiClient
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'operation'])
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'patch_operation'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'EmptyEnvelope'

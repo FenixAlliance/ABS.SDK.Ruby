@@ -444,7 +444,8 @@ api_instance = OpenapiClient::PriceListsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 price_list_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
-  item_id: '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+  item_id: '38400000-8cf0-11bd-b23e-10b96e4ef00d', # String | 
+  item_price_dto_collection_query_parameters: OpenapiClient::ItemPriceDtoCollectionQueryParameters.new # ItemPriceDtoCollectionQueryParameters | 
 }
 
 begin
@@ -481,6 +482,7 @@ end
 | **tenant_id** | **String** |  |  |
 | **price_list_id** | **String** |  |  |
 | **item_id** | **String** |  | [optional] |
+| **item_price_dto_collection_query_parameters** | [**ItemPriceDtoCollectionQueryParameters**](ItemPriceDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -492,13 +494,13 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
 ## get_price_list_prices_count_async
 
-> <Int32Envelope> get_price_list_prices_count_async(tenant_id, price_list_id)
+> <Int32Envelope> get_price_list_prices_count_async(tenant_id, price_list_id, opts)
 
 Counts prices in a price list
 
@@ -513,10 +515,13 @@ require 'openapi_client'
 api_instance = OpenapiClient::PriceListsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 price_list_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  item_price_dto_collection_query_parameters: OpenapiClient::ItemPriceDtoCollectionQueryParameters.new # ItemPriceDtoCollectionQueryParameters | 
+}
 
 begin
   # Counts prices in a price list
-  result = api_instance.get_price_list_prices_count_async(tenant_id, price_list_id)
+  result = api_instance.get_price_list_prices_count_async(tenant_id, price_list_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling PriceListsApi->get_price_list_prices_count_async: #{e}"
@@ -527,12 +532,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Int32Envelope>, Integer, Hash)> get_price_list_prices_count_async_with_http_info(tenant_id, price_list_id)
+> <Array(<Int32Envelope>, Integer, Hash)> get_price_list_prices_count_async_with_http_info(tenant_id, price_list_id, opts)
 
 ```ruby
 begin
   # Counts prices in a price list
-  data, status_code, headers = api_instance.get_price_list_prices_count_async_with_http_info(tenant_id, price_list_id)
+  data, status_code, headers = api_instance.get_price_list_prices_count_async_with_http_info(tenant_id, price_list_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Int32Envelope>
@@ -547,6 +552,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
 | **price_list_id** | **String** |  |  |
+| **item_price_dto_collection_query_parameters** | [**ItemPriceDtoCollectionQueryParameters**](ItemPriceDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -558,13 +564,13 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
 ## get_price_lists_async
 
-> <PriceListDtoListEnvelope> get_price_lists_async(tenant_id)
+> <PriceListDtoListEnvelope> get_price_lists_async(tenant_id, opts)
 
 Retrieves all price lists
 
@@ -578,10 +584,13 @@ require 'openapi_client'
 
 api_instance = OpenapiClient::PriceListsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  price_list_dto_collection_query_parameters: OpenapiClient::PriceListDtoCollectionQueryParameters.new # PriceListDtoCollectionQueryParameters | 
+}
 
 begin
   # Retrieves all price lists
-  result = api_instance.get_price_lists_async(tenant_id)
+  result = api_instance.get_price_lists_async(tenant_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling PriceListsApi->get_price_lists_async: #{e}"
@@ -592,12 +601,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<PriceListDtoListEnvelope>, Integer, Hash)> get_price_lists_async_with_http_info(tenant_id)
+> <Array(<PriceListDtoListEnvelope>, Integer, Hash)> get_price_lists_async_with_http_info(tenant_id, opts)
 
 ```ruby
 begin
   # Retrieves all price lists
-  data, status_code, headers = api_instance.get_price_lists_async_with_http_info(tenant_id)
+  data, status_code, headers = api_instance.get_price_lists_async_with_http_info(tenant_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <PriceListDtoListEnvelope>
@@ -611,6 +620,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
+| **price_list_dto_collection_query_parameters** | [**PriceListDtoCollectionQueryParameters**](PriceListDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -622,13 +632,13 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
 ## get_price_lists_count_async
 
-> <Int32Envelope> get_price_lists_count_async(tenant_id)
+> <Int32Envelope> get_price_lists_count_async(tenant_id, opts)
 
 Counts price lists
 
@@ -642,10 +652,13 @@ require 'openapi_client'
 
 api_instance = OpenapiClient::PriceListsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  price_list_dto_collection_query_parameters: OpenapiClient::PriceListDtoCollectionQueryParameters.new # PriceListDtoCollectionQueryParameters | 
+}
 
 begin
   # Counts price lists
-  result = api_instance.get_price_lists_count_async(tenant_id)
+  result = api_instance.get_price_lists_count_async(tenant_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling PriceListsApi->get_price_lists_count_async: #{e}"
@@ -656,12 +669,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Int32Envelope>, Integer, Hash)> get_price_lists_count_async_with_http_info(tenant_id)
+> <Array(<Int32Envelope>, Integer, Hash)> get_price_lists_count_async_with_http_info(tenant_id, opts)
 
 ```ruby
 begin
   # Counts price lists
-  data, status_code, headers = api_instance.get_price_lists_count_async_with_http_info(tenant_id)
+  data, status_code, headers = api_instance.get_price_lists_count_async_with_http_info(tenant_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Int32Envelope>
@@ -675,6 +688,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
+| **price_list_dto_collection_query_parameters** | [**PriceListDtoCollectionQueryParameters**](PriceListDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -686,7 +700,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -708,7 +722,7 @@ api_instance = OpenapiClient::PriceListsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 price_list_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
-  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+  patch_operation: [OpenapiClient::PatchOperation.new] # Array<PatchOperation> | 
 }
 
 begin
@@ -744,7 +758,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
 | **price_list_id** | **String** |  |  |
-| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+| **patch_operation** | [**Array&lt;PatchOperation&gt;**](PatchOperation.md) |  | [optional] |
 
 ### Return type
 
@@ -779,7 +793,7 @@ tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 price_list_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 price_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
-  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+  patch_operation: [OpenapiClient::PatchOperation.new] # Array<PatchOperation> | 
 }
 
 begin
@@ -816,7 +830,7 @@ end
 | **tenant_id** | **String** |  |  |
 | **price_list_id** | **String** |  |  |
 | **price_id** | **String** |  |  |
-| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+| **patch_operation** | [**Array&lt;PatchOperation&gt;**](PatchOperation.md) |  | [optional] |
 
 ### Return type
 

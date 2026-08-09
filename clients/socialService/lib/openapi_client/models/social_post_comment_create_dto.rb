@@ -93,6 +93,7 @@ module OpenapiClient
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
+        :'message',
         :'body_html',
         :'body_format',
         :'parent_comment_id',
@@ -127,8 +128,6 @@ module OpenapiClient
 
       if attributes.key?(:'message')
         self.message = attributes[:'message']
-      else
-        self.message = nil
       end
 
       if attributes.key?(:'body_html')
@@ -161,23 +160,6 @@ module OpenapiClient
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
       invalid_properties = Array.new
-      if @message.nil?
-        invalid_properties.push('invalid value for "message", message cannot be nil.')
-      end
-
-      if @message.to_s.length > 280
-        invalid_properties.push('invalid value for "message", the character length must be smaller than or equal to 280.')
-      end
-
-      if @message.to_s.length < 1
-        invalid_properties.push('invalid value for "message", the character length must be great than or equal to 1.')
-      end
-
-      pattern = Regexp.new(/^[\w\s\.\,\!\?\-\(\)\[\]\{\}\'\"\:\;]{1,280}$/)
-      if @message !~ pattern
-        invalid_properties.push("invalid value for \"message\", must conform to the pattern #{pattern}.")
-      end
-
       if !@body_html.nil? && @body_html.to_s.length > 8000
         invalid_properties.push('invalid value for "body_html", the character length must be smaller than or equal to 8000.')
       end
@@ -189,37 +171,10 @@ module OpenapiClient
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      return false if @message.nil?
-      return false if @message.to_s.length > 280
-      return false if @message.to_s.length < 1
-      return false if @message !~ Regexp.new(/^[\w\s\.\,\!\?\-\(\)\[\]\{\}\'\"\:\;]{1,280}$/)
       return false if !@body_html.nil? && @body_html.to_s.length > 8000
       body_format_validator = EnumAttributeValidator.new('String', ["PlainText", "Html"])
       return false unless body_format_validator.valid?(@body_format)
       true
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] message Value to be assigned
-    def message=(message)
-      if message.nil?
-        fail ArgumentError, 'message cannot be nil'
-      end
-
-      if message.to_s.length > 280
-        fail ArgumentError, 'invalid value for "message", the character length must be smaller than or equal to 280.'
-      end
-
-      if message.to_s.length < 1
-        fail ArgumentError, 'invalid value for "message", the character length must be great than or equal to 1.'
-      end
-
-      pattern = Regexp.new(/^[\w\s\.\,\!\?\-\(\)\[\]\{\}\'\"\:\;]{1,280}$/)
-      if message !~ pattern
-        fail ArgumentError, "invalid value for \"message\", must conform to the pattern #{pattern}."
-      end
-
-      @message = message
     end
 
     # Custom attribute writer method with validation

@@ -517,7 +517,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
-    # @option opts [Array<Operation>] :operation 
+    # @option opts [Array<PatchOperation>] :patch_operation 
     # @return [EmptyEnvelope]
     def api_v2_learning_service_student_profiles_student_profile_id_patch(tenant_id, student_profile_id, opts = {})
       data, _status_code, _headers = api_v2_learning_service_student_profiles_student_profile_id_patch_with_http_info(tenant_id, student_profile_id, opts)
@@ -529,7 +529,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
-    # @option opts [Array<Operation>] :operation 
+    # @option opts [Array<PatchOperation>] :patch_operation 
     # @return [Array<(EmptyEnvelope, Integer, Hash)>] EmptyEnvelope data, response status code and response headers
     def api_v2_learning_service_student_profiles_student_profile_id_patch_with_http_info(tenant_id, student_profile_id, opts = {})
       if @api_client.config.debugging
@@ -566,7 +566,7 @@ module OpenapiClient
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'operation'])
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'patch_operation'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'EmptyEnvelope'

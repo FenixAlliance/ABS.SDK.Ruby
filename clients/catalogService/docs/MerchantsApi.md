@@ -96,7 +96,8 @@ require 'openapi_client'
 api_instance = OpenapiClient::MerchantsApi.new
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  merchant_dto_collection_query_parameters: OpenapiClient::MerchantDtoCollectionQueryParameters.new # MerchantDtoCollectionQueryParameters | 
 }
 
 begin
@@ -132,6 +133,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **merchant_dto_collection_query_parameters** | [**MerchantDtoCollectionQueryParameters**](MerchantDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -143,7 +145,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -164,7 +166,8 @@ require 'openapi_client'
 api_instance = OpenapiClient::MerchantsApi.new
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  merchant_dto_collection_query_parameters: OpenapiClient::MerchantDtoCollectionQueryParameters.new # MerchantDtoCollectionQueryParameters | 
 }
 
 begin
@@ -200,6 +203,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **merchant_dto_collection_query_parameters** | [**MerchantDtoCollectionQueryParameters**](MerchantDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -211,6 +215,6 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 

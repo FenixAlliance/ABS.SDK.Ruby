@@ -934,7 +934,7 @@ No authorization required
 
 ## get_asset_asset_categories
 
-> <AssetCategoryDtoListEnvelope> get_asset_asset_categories(tenant_id)
+> <AssetCategoryDtoListEnvelope> get_asset_asset_categories(tenant_id, opts)
 
 Gets all asset categories
 
@@ -948,10 +948,13 @@ require 'openapi_client'
 
 api_instance = OpenapiClient::AssetsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  asset_category_dto_collection_query_parameters: OpenapiClient::AssetCategoryDtoCollectionQueryParameters.new # AssetCategoryDtoCollectionQueryParameters | 
+}
 
 begin
   # Gets all asset categories
-  result = api_instance.get_asset_asset_categories(tenant_id)
+  result = api_instance.get_asset_asset_categories(tenant_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling AssetsApi->get_asset_asset_categories: #{e}"
@@ -962,12 +965,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<AssetCategoryDtoListEnvelope>, Integer, Hash)> get_asset_asset_categories_with_http_info(tenant_id)
+> <Array(<AssetCategoryDtoListEnvelope>, Integer, Hash)> get_asset_asset_categories_with_http_info(tenant_id, opts)
 
 ```ruby
 begin
   # Gets all asset categories
-  data, status_code, headers = api_instance.get_asset_asset_categories_with_http_info(tenant_id)
+  data, status_code, headers = api_instance.get_asset_asset_categories_with_http_info(tenant_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <AssetCategoryDtoListEnvelope>
@@ -981,6 +984,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
+| **asset_category_dto_collection_query_parameters** | [**AssetCategoryDtoCollectionQueryParameters**](AssetCategoryDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -992,13 +996,13 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
 ## get_asset_asset_categories_count
 
-> <Int32Envelope> get_asset_asset_categories_count(tenant_id)
+> <Int32Envelope> get_asset_asset_categories_count(tenant_id, opts)
 
 Gets the count of asset categories
 
@@ -1012,10 +1016,13 @@ require 'openapi_client'
 
 api_instance = OpenapiClient::AssetsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  asset_category_dto_collection_query_parameters: OpenapiClient::AssetCategoryDtoCollectionQueryParameters.new # AssetCategoryDtoCollectionQueryParameters | 
+}
 
 begin
   # Gets the count of asset categories
-  result = api_instance.get_asset_asset_categories_count(tenant_id)
+  result = api_instance.get_asset_asset_categories_count(tenant_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling AssetsApi->get_asset_asset_categories_count: #{e}"
@@ -1026,12 +1033,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Int32Envelope>, Integer, Hash)> get_asset_asset_categories_count_with_http_info(tenant_id)
+> <Array(<Int32Envelope>, Integer, Hash)> get_asset_asset_categories_count_with_http_info(tenant_id, opts)
 
 ```ruby
 begin
   # Gets the count of asset categories
-  data, status_code, headers = api_instance.get_asset_asset_categories_count_with_http_info(tenant_id)
+  data, status_code, headers = api_instance.get_asset_asset_categories_count_with_http_info(tenant_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Int32Envelope>
@@ -1045,6 +1052,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
+| **asset_category_dto_collection_query_parameters** | [**AssetCategoryDtoCollectionQueryParameters**](AssetCategoryDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1056,7 +1064,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -1196,7 +1204,7 @@ No authorization required
 
 ## get_asset_depreciation_records
 
-> <AssetDepreciationRecordDtoListEnvelope> get_asset_depreciation_records(tenant_id, asset_id)
+> <AssetDepreciationRecordDtoListEnvelope> get_asset_depreciation_records(tenant_id, asset_id, opts)
 
 Gets depreciation records for a specific asset
 
@@ -1211,10 +1219,13 @@ require 'openapi_client'
 api_instance = OpenapiClient::AssetsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 asset_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  asset_depreciation_record_dto_collection_query_parameters: OpenapiClient::AssetDepreciationRecordDtoCollectionQueryParameters.new # AssetDepreciationRecordDtoCollectionQueryParameters | 
+}
 
 begin
   # Gets depreciation records for a specific asset
-  result = api_instance.get_asset_depreciation_records(tenant_id, asset_id)
+  result = api_instance.get_asset_depreciation_records(tenant_id, asset_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling AssetsApi->get_asset_depreciation_records: #{e}"
@@ -1225,12 +1236,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<AssetDepreciationRecordDtoListEnvelope>, Integer, Hash)> get_asset_depreciation_records_with_http_info(tenant_id, asset_id)
+> <Array(<AssetDepreciationRecordDtoListEnvelope>, Integer, Hash)> get_asset_depreciation_records_with_http_info(tenant_id, asset_id, opts)
 
 ```ruby
 begin
   # Gets depreciation records for a specific asset
-  data, status_code, headers = api_instance.get_asset_depreciation_records_with_http_info(tenant_id, asset_id)
+  data, status_code, headers = api_instance.get_asset_depreciation_records_with_http_info(tenant_id, asset_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <AssetDepreciationRecordDtoListEnvelope>
@@ -1245,6 +1256,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
 | **asset_id** | **String** |  |  |
+| **asset_depreciation_record_dto_collection_query_parameters** | [**AssetDepreciationRecordDtoCollectionQueryParameters**](AssetDepreciationRecordDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1256,13 +1268,13 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
 ## get_asset_depreciation_records_count
 
-> <Int32Envelope> get_asset_depreciation_records_count(tenant_id, asset_id)
+> <Int32Envelope> get_asset_depreciation_records_count(tenant_id, asset_id, opts)
 
 Gets count of depreciation records for a specific asset
 
@@ -1277,10 +1289,13 @@ require 'openapi_client'
 api_instance = OpenapiClient::AssetsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 asset_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  asset_depreciation_record_dto_collection_query_parameters: OpenapiClient::AssetDepreciationRecordDtoCollectionQueryParameters.new # AssetDepreciationRecordDtoCollectionQueryParameters | 
+}
 
 begin
   # Gets count of depreciation records for a specific asset
-  result = api_instance.get_asset_depreciation_records_count(tenant_id, asset_id)
+  result = api_instance.get_asset_depreciation_records_count(tenant_id, asset_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling AssetsApi->get_asset_depreciation_records_count: #{e}"
@@ -1291,12 +1306,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Int32Envelope>, Integer, Hash)> get_asset_depreciation_records_count_with_http_info(tenant_id, asset_id)
+> <Array(<Int32Envelope>, Integer, Hash)> get_asset_depreciation_records_count_with_http_info(tenant_id, asset_id, opts)
 
 ```ruby
 begin
   # Gets count of depreciation records for a specific asset
-  data, status_code, headers = api_instance.get_asset_depreciation_records_count_with_http_info(tenant_id, asset_id)
+  data, status_code, headers = api_instance.get_asset_depreciation_records_count_with_http_info(tenant_id, asset_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Int32Envelope>
@@ -1311,6 +1326,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
 | **asset_id** | **String** |  |  |
+| **asset_depreciation_record_dto_collection_query_parameters** | [**AssetDepreciationRecordDtoCollectionQueryParameters**](AssetDepreciationRecordDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1322,7 +1338,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -1396,7 +1412,7 @@ No authorization required
 
 ## get_asset_repairs
 
-> <AssetRepairDtoListEnvelope> get_asset_repairs(tenant_id, asset_id)
+> <AssetRepairDtoListEnvelope> get_asset_repairs(tenant_id, asset_id, opts)
 
 Gets repairs for a specific asset
 
@@ -1411,10 +1427,13 @@ require 'openapi_client'
 api_instance = OpenapiClient::AssetsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 asset_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  asset_repair_dto_collection_query_parameters: OpenapiClient::AssetRepairDtoCollectionQueryParameters.new # AssetRepairDtoCollectionQueryParameters | 
+}
 
 begin
   # Gets repairs for a specific asset
-  result = api_instance.get_asset_repairs(tenant_id, asset_id)
+  result = api_instance.get_asset_repairs(tenant_id, asset_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling AssetsApi->get_asset_repairs: #{e}"
@@ -1425,12 +1444,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<AssetRepairDtoListEnvelope>, Integer, Hash)> get_asset_repairs_with_http_info(tenant_id, asset_id)
+> <Array(<AssetRepairDtoListEnvelope>, Integer, Hash)> get_asset_repairs_with_http_info(tenant_id, asset_id, opts)
 
 ```ruby
 begin
   # Gets repairs for a specific asset
-  data, status_code, headers = api_instance.get_asset_repairs_with_http_info(tenant_id, asset_id)
+  data, status_code, headers = api_instance.get_asset_repairs_with_http_info(tenant_id, asset_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <AssetRepairDtoListEnvelope>
@@ -1445,6 +1464,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
 | **asset_id** | **String** |  |  |
+| **asset_repair_dto_collection_query_parameters** | [**AssetRepairDtoCollectionQueryParameters**](AssetRepairDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1456,13 +1476,13 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
 ## get_asset_repairs_count
 
-> <Int32Envelope> get_asset_repairs_count(tenant_id, asset_id)
+> <Int32Envelope> get_asset_repairs_count(tenant_id, asset_id, opts)
 
 Gets count of repairs for a specific asset
 
@@ -1477,10 +1497,13 @@ require 'openapi_client'
 api_instance = OpenapiClient::AssetsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 asset_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  asset_repair_dto_collection_query_parameters: OpenapiClient::AssetRepairDtoCollectionQueryParameters.new # AssetRepairDtoCollectionQueryParameters | 
+}
 
 begin
   # Gets count of repairs for a specific asset
-  result = api_instance.get_asset_repairs_count(tenant_id, asset_id)
+  result = api_instance.get_asset_repairs_count(tenant_id, asset_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling AssetsApi->get_asset_repairs_count: #{e}"
@@ -1491,12 +1514,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Int32Envelope>, Integer, Hash)> get_asset_repairs_count_with_http_info(tenant_id, asset_id)
+> <Array(<Int32Envelope>, Integer, Hash)> get_asset_repairs_count_with_http_info(tenant_id, asset_id, opts)
 
 ```ruby
 begin
   # Gets count of repairs for a specific asset
-  data, status_code, headers = api_instance.get_asset_repairs_count_with_http_info(tenant_id, asset_id)
+  data, status_code, headers = api_instance.get_asset_repairs_count_with_http_info(tenant_id, asset_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Int32Envelope>
@@ -1511,6 +1534,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
 | **asset_id** | **String** |  |  |
+| **asset_repair_dto_collection_query_parameters** | [**AssetRepairDtoCollectionQueryParameters**](AssetRepairDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1522,7 +1546,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -1596,7 +1620,7 @@ No authorization required
 
 ## get_asset_transfers
 
-> <AssetTransferDtoListEnvelope> get_asset_transfers(tenant_id, asset_id)
+> <AssetTransferDtoListEnvelope> get_asset_transfers(tenant_id, asset_id, opts)
 
 Gets transfers for a specific asset
 
@@ -1611,10 +1635,13 @@ require 'openapi_client'
 api_instance = OpenapiClient::AssetsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 asset_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  asset_transfer_dto_collection_query_parameters: OpenapiClient::AssetTransferDtoCollectionQueryParameters.new # AssetTransferDtoCollectionQueryParameters | 
+}
 
 begin
   # Gets transfers for a specific asset
-  result = api_instance.get_asset_transfers(tenant_id, asset_id)
+  result = api_instance.get_asset_transfers(tenant_id, asset_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling AssetsApi->get_asset_transfers: #{e}"
@@ -1625,12 +1652,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<AssetTransferDtoListEnvelope>, Integer, Hash)> get_asset_transfers_with_http_info(tenant_id, asset_id)
+> <Array(<AssetTransferDtoListEnvelope>, Integer, Hash)> get_asset_transfers_with_http_info(tenant_id, asset_id, opts)
 
 ```ruby
 begin
   # Gets transfers for a specific asset
-  data, status_code, headers = api_instance.get_asset_transfers_with_http_info(tenant_id, asset_id)
+  data, status_code, headers = api_instance.get_asset_transfers_with_http_info(tenant_id, asset_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <AssetTransferDtoListEnvelope>
@@ -1645,6 +1672,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
 | **asset_id** | **String** |  |  |
+| **asset_transfer_dto_collection_query_parameters** | [**AssetTransferDtoCollectionQueryParameters**](AssetTransferDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1656,13 +1684,13 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
 ## get_asset_transfers_count
 
-> <Int32Envelope> get_asset_transfers_count(tenant_id, asset_id)
+> <Int32Envelope> get_asset_transfers_count(tenant_id, asset_id, opts)
 
 Gets count of transfers for a specific asset
 
@@ -1677,10 +1705,13 @@ require 'openapi_client'
 api_instance = OpenapiClient::AssetsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 asset_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  asset_transfer_dto_collection_query_parameters: OpenapiClient::AssetTransferDtoCollectionQueryParameters.new # AssetTransferDtoCollectionQueryParameters | 
+}
 
 begin
   # Gets count of transfers for a specific asset
-  result = api_instance.get_asset_transfers_count(tenant_id, asset_id)
+  result = api_instance.get_asset_transfers_count(tenant_id, asset_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling AssetsApi->get_asset_transfers_count: #{e}"
@@ -1691,12 +1722,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Int32Envelope>, Integer, Hash)> get_asset_transfers_count_with_http_info(tenant_id, asset_id)
+> <Array(<Int32Envelope>, Integer, Hash)> get_asset_transfers_count_with_http_info(tenant_id, asset_id, opts)
 
 ```ruby
 begin
   # Gets count of transfers for a specific asset
-  data, status_code, headers = api_instance.get_asset_transfers_count_with_http_info(tenant_id, asset_id)
+  data, status_code, headers = api_instance.get_asset_transfers_count_with_http_info(tenant_id, asset_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Int32Envelope>
@@ -1711,6 +1742,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
 | **asset_id** | **String** |  |  |
+| **asset_transfer_dto_collection_query_parameters** | [**AssetTransferDtoCollectionQueryParameters**](AssetTransferDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1722,7 +1754,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -1796,7 +1828,7 @@ No authorization required
 
 ## get_asset_value_amends
 
-> <AssetValueAmendDtoListEnvelope> get_asset_value_amends(tenant_id, asset_id)
+> <AssetValueAmendDtoListEnvelope> get_asset_value_amends(tenant_id, asset_id, opts)
 
 Gets value amendments for a specific asset
 
@@ -1811,10 +1843,13 @@ require 'openapi_client'
 api_instance = OpenapiClient::AssetsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 asset_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  asset_value_amend_dto_collection_query_parameters: OpenapiClient::AssetValueAmendDtoCollectionQueryParameters.new # AssetValueAmendDtoCollectionQueryParameters | 
+}
 
 begin
   # Gets value amendments for a specific asset
-  result = api_instance.get_asset_value_amends(tenant_id, asset_id)
+  result = api_instance.get_asset_value_amends(tenant_id, asset_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling AssetsApi->get_asset_value_amends: #{e}"
@@ -1825,12 +1860,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<AssetValueAmendDtoListEnvelope>, Integer, Hash)> get_asset_value_amends_with_http_info(tenant_id, asset_id)
+> <Array(<AssetValueAmendDtoListEnvelope>, Integer, Hash)> get_asset_value_amends_with_http_info(tenant_id, asset_id, opts)
 
 ```ruby
 begin
   # Gets value amendments for a specific asset
-  data, status_code, headers = api_instance.get_asset_value_amends_with_http_info(tenant_id, asset_id)
+  data, status_code, headers = api_instance.get_asset_value_amends_with_http_info(tenant_id, asset_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <AssetValueAmendDtoListEnvelope>
@@ -1845,6 +1880,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
 | **asset_id** | **String** |  |  |
+| **asset_value_amend_dto_collection_query_parameters** | [**AssetValueAmendDtoCollectionQueryParameters**](AssetValueAmendDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1856,13 +1892,13 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
 ## get_asset_value_amends_count
 
-> <Int32Envelope> get_asset_value_amends_count(tenant_id, asset_id)
+> <Int32Envelope> get_asset_value_amends_count(tenant_id, asset_id, opts)
 
 Gets count of value amendments for a specific asset
 
@@ -1877,10 +1913,13 @@ require 'openapi_client'
 api_instance = OpenapiClient::AssetsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 asset_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  asset_value_amend_dto_collection_query_parameters: OpenapiClient::AssetValueAmendDtoCollectionQueryParameters.new # AssetValueAmendDtoCollectionQueryParameters | 
+}
 
 begin
   # Gets count of value amendments for a specific asset
-  result = api_instance.get_asset_value_amends_count(tenant_id, asset_id)
+  result = api_instance.get_asset_value_amends_count(tenant_id, asset_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling AssetsApi->get_asset_value_amends_count: #{e}"
@@ -1891,12 +1930,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Int32Envelope>, Integer, Hash)> get_asset_value_amends_count_with_http_info(tenant_id, asset_id)
+> <Array(<Int32Envelope>, Integer, Hash)> get_asset_value_amends_count_with_http_info(tenant_id, asset_id, opts)
 
 ```ruby
 begin
   # Gets count of value amendments for a specific asset
-  data, status_code, headers = api_instance.get_asset_value_amends_count_with_http_info(tenant_id, asset_id)
+  data, status_code, headers = api_instance.get_asset_value_amends_count_with_http_info(tenant_id, asset_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Int32Envelope>
@@ -1911,6 +1950,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
 | **asset_id** | **String** |  |  |
+| **asset_value_amend_dto_collection_query_parameters** | [**AssetValueAmendDtoCollectionQueryParameters**](AssetValueAmendDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1922,13 +1962,13 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
 ## get_assets
 
-> <AssetDtoListEnvelope> get_assets(tenant_id)
+> <AssetDtoListEnvelope> get_assets(tenant_id, opts)
 
 Gets all assets for the current tenant
 
@@ -1942,10 +1982,13 @@ require 'openapi_client'
 
 api_instance = OpenapiClient::AssetsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  asset_dto_collection_query_parameters: OpenapiClient::AssetDtoCollectionQueryParameters.new # AssetDtoCollectionQueryParameters | 
+}
 
 begin
   # Gets all assets for the current tenant
-  result = api_instance.get_assets(tenant_id)
+  result = api_instance.get_assets(tenant_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling AssetsApi->get_assets: #{e}"
@@ -1956,12 +1999,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<AssetDtoListEnvelope>, Integer, Hash)> get_assets_with_http_info(tenant_id)
+> <Array(<AssetDtoListEnvelope>, Integer, Hash)> get_assets_with_http_info(tenant_id, opts)
 
 ```ruby
 begin
   # Gets all assets for the current tenant
-  data, status_code, headers = api_instance.get_assets_with_http_info(tenant_id)
+  data, status_code, headers = api_instance.get_assets_with_http_info(tenant_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <AssetDtoListEnvelope>
@@ -1975,6 +2018,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
+| **asset_dto_collection_query_parameters** | [**AssetDtoCollectionQueryParameters**](AssetDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1986,13 +2030,13 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
 ## get_assets_count
 
-> <Int32Envelope> get_assets_count(tenant_id)
+> <Int32Envelope> get_assets_count(tenant_id, opts)
 
 Gets the count of assets
 
@@ -2006,10 +2050,13 @@ require 'openapi_client'
 
 api_instance = OpenapiClient::AssetsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  asset_dto_collection_query_parameters: OpenapiClient::AssetDtoCollectionQueryParameters.new # AssetDtoCollectionQueryParameters | 
+}
 
 begin
   # Gets the count of assets
-  result = api_instance.get_assets_count(tenant_id)
+  result = api_instance.get_assets_count(tenant_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling AssetsApi->get_assets_count: #{e}"
@@ -2020,12 +2067,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Int32Envelope>, Integer, Hash)> get_assets_count_with_http_info(tenant_id)
+> <Array(<Int32Envelope>, Integer, Hash)> get_assets_count_with_http_info(tenant_id, opts)
 
 ```ruby
 begin
   # Gets the count of assets
-  data, status_code, headers = api_instance.get_assets_count_with_http_info(tenant_id)
+  data, status_code, headers = api_instance.get_assets_count_with_http_info(tenant_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Int32Envelope>
@@ -2039,6 +2086,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
+| **asset_dto_collection_query_parameters** | [**AssetDtoCollectionQueryParameters**](AssetDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -2050,7 +2098,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -2072,7 +2120,7 @@ api_instance = OpenapiClient::AssetsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 asset_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
-  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+  patch_operation: [OpenapiClient::PatchOperation.new] # Array<PatchOperation> | 
 }
 
 begin
@@ -2108,7 +2156,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
 | **asset_id** | **String** |  |  |
-| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+| **patch_operation** | [**Array&lt;PatchOperation&gt;**](PatchOperation.md) |  | [optional] |
 
 ### Return type
 
@@ -2142,7 +2190,7 @@ api_instance = OpenapiClient::AssetsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 category_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
-  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+  patch_operation: [OpenapiClient::PatchOperation.new] # Array<PatchOperation> | 
 }
 
 begin
@@ -2178,7 +2226,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
 | **category_id** | **String** |  |  |
-| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+| **patch_operation** | [**Array&lt;PatchOperation&gt;**](PatchOperation.md) |  | [optional] |
 
 ### Return type
 
@@ -2213,7 +2261,7 @@ tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 asset_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 record_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
-  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+  patch_operation: [OpenapiClient::PatchOperation.new] # Array<PatchOperation> | 
 }
 
 begin
@@ -2250,7 +2298,7 @@ end
 | **tenant_id** | **String** |  |  |
 | **asset_id** | **String** |  |  |
 | **record_id** | **String** |  |  |
-| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+| **patch_operation** | [**Array&lt;PatchOperation&gt;**](PatchOperation.md) |  | [optional] |
 
 ### Return type
 
@@ -2285,7 +2333,7 @@ tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 asset_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 repair_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
-  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+  patch_operation: [OpenapiClient::PatchOperation.new] # Array<PatchOperation> | 
 }
 
 begin
@@ -2322,7 +2370,7 @@ end
 | **tenant_id** | **String** |  |  |
 | **asset_id** | **String** |  |  |
 | **repair_id** | **String** |  |  |
-| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+| **patch_operation** | [**Array&lt;PatchOperation&gt;**](PatchOperation.md) |  | [optional] |
 
 ### Return type
 
@@ -2357,7 +2405,7 @@ tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 asset_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 transfer_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
-  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+  patch_operation: [OpenapiClient::PatchOperation.new] # Array<PatchOperation> | 
 }
 
 begin
@@ -2394,7 +2442,7 @@ end
 | **tenant_id** | **String** |  |  |
 | **asset_id** | **String** |  |  |
 | **transfer_id** | **String** |  |  |
-| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+| **patch_operation** | [**Array&lt;PatchOperation&gt;**](PatchOperation.md) |  | [optional] |
 
 ### Return type
 
@@ -2429,7 +2477,7 @@ tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 asset_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 amend_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
-  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+  patch_operation: [OpenapiClient::PatchOperation.new] # Array<PatchOperation> | 
 }
 
 begin
@@ -2466,7 +2514,7 @@ end
 | **tenant_id** | **String** |  |  |
 | **asset_id** | **String** |  |  |
 | **amend_id** | **String** |  |  |
-| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+| **patch_operation** | [**Array&lt;PatchOperation&gt;**](PatchOperation.md) |  | [optional] |
 
 ### Return type
 

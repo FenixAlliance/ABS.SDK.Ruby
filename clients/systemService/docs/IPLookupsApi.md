@@ -167,7 +167,8 @@ require 'openapi_client'
 api_instance = OpenapiClient::IPLookupsApi.new
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  ip_lookup_dto_collection_query_parameters: OpenapiClient::IPLookupDtoCollectionQueryParameters.new # IPLookupDtoCollectionQueryParameters | 
 }
 
 begin
@@ -203,6 +204,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **ip_lookup_dto_collection_query_parameters** | [**IPLookupDtoCollectionQueryParameters**](IPLookupDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -214,7 +216,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -235,7 +237,8 @@ require 'openapi_client'
 api_instance = OpenapiClient::IPLookupsApi.new
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  ip_lookup_dto_collection_query_parameters: OpenapiClient::IPLookupDtoCollectionQueryParameters.new # IPLookupDtoCollectionQueryParameters | 
 }
 
 begin
@@ -271,6 +274,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **ip_lookup_dto_collection_query_parameters** | [**IPLookupDtoCollectionQueryParameters**](IPLookupDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -282,6 +286,6 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 

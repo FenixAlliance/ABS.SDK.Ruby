@@ -777,7 +777,8 @@ tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 truck_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  truck_trip_dto_collection_query_parameters: OpenapiClient::TruckTripDtoCollectionQueryParameters.new # TruckTripDtoCollectionQueryParameters | 
 }
 
 begin
@@ -815,6 +816,7 @@ end
 | **truck_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **truck_trip_dto_collection_query_parameters** | [**TruckTripDtoCollectionQueryParameters**](TruckTripDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -826,7 +828,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -849,7 +851,8 @@ tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 truck_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  truck_trip_dto_collection_query_parameters: OpenapiClient::TruckTripDtoCollectionQueryParameters.new # TruckTripDtoCollectionQueryParameters | 
 }
 
 begin
@@ -887,6 +890,7 @@ end
 | **truck_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **truck_trip_dto_collection_query_parameters** | [**TruckTripDtoCollectionQueryParameters**](TruckTripDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -898,7 +902,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -920,7 +924,8 @@ api_instance = OpenapiClient::TrucksApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  truck_dto_collection_query_parameters: OpenapiClient::TruckDtoCollectionQueryParameters.new # TruckDtoCollectionQueryParameters | 
 }
 
 begin
@@ -957,6 +962,7 @@ end
 | **tenant_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **truck_dto_collection_query_parameters** | [**TruckDtoCollectionQueryParameters**](TruckDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -968,7 +974,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -990,7 +996,8 @@ api_instance = OpenapiClient::TrucksApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  truck_dto_collection_query_parameters: OpenapiClient::TruckDtoCollectionQueryParameters.new # TruckDtoCollectionQueryParameters | 
 }
 
 begin
@@ -1027,6 +1034,7 @@ end
 | **tenant_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **truck_dto_collection_query_parameters** | [**TruckDtoCollectionQueryParameters**](TruckDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1038,7 +1046,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -1062,7 +1070,7 @@ truck_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 opts = {
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example', # String | 
-  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+  patch_operation: [OpenapiClient::PatchOperation.new] # Array<PatchOperation> | 
 }
 
 begin
@@ -1100,7 +1108,7 @@ end
 | **truck_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
-| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+| **patch_operation** | [**Array&lt;PatchOperation&gt;**](PatchOperation.md) |  | [optional] |
 
 ### Return type
 
@@ -1137,7 +1145,7 @@ trip_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 opts = {
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example', # String | 
-  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+  patch_operation: [OpenapiClient::PatchOperation.new] # Array<PatchOperation> | 
 }
 
 begin
@@ -1176,7 +1184,7 @@ end
 | **trip_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
-| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+| **patch_operation** | [**Array&lt;PatchOperation&gt;**](PatchOperation.md) |  | [optional] |
 
 ### Return type
 

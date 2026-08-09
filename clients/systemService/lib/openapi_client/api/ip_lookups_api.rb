@@ -162,6 +162,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [IPLookupDtoCollectionQueryParameters] :ip_lookup_dto_collection_query_parameters 
     # @return [IPLookupDtoListEnvelope]
     def get_system_ip_lookups(opts = {})
       data, _status_code, _headers = get_system_ip_lookups_with_http_info(opts)
@@ -173,6 +174,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [IPLookupDtoCollectionQueryParameters] :ip_lookup_dto_collection_query_parameters 
     # @return [Array<(IPLookupDtoListEnvelope, Integer, Hash)>] IPLookupDtoListEnvelope data, response status code and response headers
     def get_system_ip_lookups_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -189,13 +191,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'ip_lookup_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'IPLookupDtoListEnvelope'
@@ -225,6 +232,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [IPLookupDtoCollectionQueryParameters] :ip_lookup_dto_collection_query_parameters 
     # @return [Int32Envelope]
     def get_system_ip_lookups_count(opts = {})
       data, _status_code, _headers = get_system_ip_lookups_count_with_http_info(opts)
@@ -236,6 +244,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [IPLookupDtoCollectionQueryParameters] :ip_lookup_dto_collection_query_parameters 
     # @return [Array<(Int32Envelope, Integer, Hash)>] Int32Envelope data, response status code and response headers
     def get_system_ip_lookups_count_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -252,13 +261,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'ip_lookup_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'Int32Envelope'

@@ -62,7 +62,8 @@ api_instance = OpenapiClient::CountriesApi.new
 country_id = 'country_id_example' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  country_calling_code_dto_collection_query_parameters: OpenapiClient::CountryCallingCodeDtoCollectionQueryParameters.new # CountryCallingCodeDtoCollectionQueryParameters | 
 }
 
 begin
@@ -104,7 +105,6 @@ Class | Method | HTTP request | Description
 *OpenapiClient::FenixAllianceABSWebApi* | [**account_manage_download_personal_data_post**](docs/FenixAllianceABSWebApi.md#account_manage_download_personal_data_post) | **POST** /Account/Manage/DownloadPersonalData | 
 *OpenapiClient::FenixAllianceABSWebApi* | [**account_manage_link_external_login_post**](docs/FenixAllianceABSWebApi.md#account_manage_link_external_login_post) | **POST** /Account/Manage/LinkExternalLogin | 
 *OpenapiClient::FenixAllianceABSWebApi* | [**account_perform_external_login_post**](docs/FenixAllianceABSWebApi.md#account_perform_external_login_post) | **POST** /Account/PerformExternalLogin | 
-*OpenapiClient::FenixAllianceABSWebApi* | [**api_v2_ai_service_agents_agent_id_agui_post**](docs/FenixAllianceABSWebApi.md#api_v2_ai_service_agents_agent_id_agui_post) | **POST** /api/v2/AIService/Agents/{agentId}/agui | 
 *OpenapiClient::FenixAllianceABSWebApi* | [**forgot_password_post**](docs/FenixAllianceABSWebApi.md#forgot_password_post) | **POST** /forgotPassword | 
 *OpenapiClient::FenixAllianceABSWebApi* | [**health_get**](docs/FenixAllianceABSWebApi.md#health_get) | **GET** /health | 
 *OpenapiClient::FenixAllianceABSWebApi* | [**hello_get**](docs/FenixAllianceABSWebApi.md#hello_get) | **GET** /hello | 
@@ -130,21 +130,28 @@ Class | Method | HTTP request | Description
 
  - [OpenapiClient::AccessTokenResponse](docs/AccessTokenResponse.md)
  - [OpenapiClient::CityDto](docs/CityDto.md)
+ - [OpenapiClient::CityDtoCollectionQueryParameters](docs/CityDtoCollectionQueryParameters.md)
  - [OpenapiClient::CityDtoListEnvelope](docs/CityDtoListEnvelope.md)
  - [OpenapiClient::CountryCallingCodeDto](docs/CountryCallingCodeDto.md)
+ - [OpenapiClient::CountryCallingCodeDtoCollectionQueryParameters](docs/CountryCallingCodeDtoCollectionQueryParameters.md)
  - [OpenapiClient::CountryCallingCodeDtoListEnvelope](docs/CountryCallingCodeDtoListEnvelope.md)
  - [OpenapiClient::CountryDto](docs/CountryDto.md)
+ - [OpenapiClient::CountryDtoCollectionQueryParameters](docs/CountryDtoCollectionQueryParameters.md)
  - [OpenapiClient::CountryDtoEnvelope](docs/CountryDtoEnvelope.md)
  - [OpenapiClient::CountryDtoListEnvelope](docs/CountryDtoListEnvelope.md)
  - [OpenapiClient::CountryLanguageDto](docs/CountryLanguageDto.md)
+ - [OpenapiClient::CountryLanguageDtoCollectionQueryParameters](docs/CountryLanguageDtoCollectionQueryParameters.md)
  - [OpenapiClient::CountryLanguageDtoEnvelope](docs/CountryLanguageDtoEnvelope.md)
  - [OpenapiClient::CountryLanguageDtoListEnvelope](docs/CountryLanguageDtoListEnvelope.md)
  - [OpenapiClient::CountryStateDto](docs/CountryStateDto.md)
+ - [OpenapiClient::CountryStateDtoCollectionQueryParameters](docs/CountryStateDtoCollectionQueryParameters.md)
  - [OpenapiClient::CountryStateDtoEnvelope](docs/CountryStateDtoEnvelope.md)
  - [OpenapiClient::CountryStateDtoListEnvelope](docs/CountryStateDtoListEnvelope.md)
  - [OpenapiClient::CountryTopLevelDomainDto](docs/CountryTopLevelDomainDto.md)
+ - [OpenapiClient::CountryTopLevelDomainDtoCollectionQueryParameters](docs/CountryTopLevelDomainDtoCollectionQueryParameters.md)
  - [OpenapiClient::CountryTopLevelDomainDtoListEnvelope](docs/CountryTopLevelDomainDtoListEnvelope.md)
  - [OpenapiClient::CurrencyDto](docs/CurrencyDto.md)
+ - [OpenapiClient::CurrencyDtoCollectionQueryParameters](docs/CurrencyDtoCollectionQueryParameters.md)
  - [OpenapiClient::CurrencyDtoEnvelope](docs/CurrencyDtoEnvelope.md)
  - [OpenapiClient::CurrencyDtoListEnvelope](docs/CurrencyDtoListEnvelope.md)
  - [OpenapiClient::ErrorEnvelope](docs/ErrorEnvelope.md)
@@ -159,6 +166,7 @@ Class | Method | HTTP request | Description
  - [OpenapiClient::ResendConfirmationEmailRequest](docs/ResendConfirmationEmailRequest.md)
  - [OpenapiClient::ResetPasswordRequest](docs/ResetPasswordRequest.md)
  - [OpenapiClient::TimezoneDto](docs/TimezoneDto.md)
+ - [OpenapiClient::TimezoneDtoCollectionQueryParameters](docs/TimezoneDtoCollectionQueryParameters.md)
  - [OpenapiClient::TimezoneDtoEnvelope](docs/TimezoneDtoEnvelope.md)
  - [OpenapiClient::TimezoneDtoListEnvelope](docs/TimezoneDtoListEnvelope.md)
  - [OpenapiClient::TwoFactorRequest](docs/TwoFactorRequest.md)

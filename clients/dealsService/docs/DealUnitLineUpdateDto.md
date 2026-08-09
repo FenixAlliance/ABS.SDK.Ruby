@@ -87,7 +87,6 @@
 | **price_list_item_id** | **String** |  | [optional] |
 | **unit_id** | **String** |  | [optional] |
 | **unit_group_id** | **String** |  | [optional] |
-| **forex_rates_snapshot** | **String** |  | [optional] |
 | **total_base_amount_in_usd** | **Float** |  | [optional] |
 | **total_profit_in_usd** | **Float** |  | [optional] |
 | **total_detail_amount_in_usd** | **Float** |  | [optional] |
@@ -205,7 +204,6 @@ instance = OpenapiClient::DealUnitLineUpdateDto.new(
   price_list_item_id: null,
   unit_id: null,
   unit_group_id: null,
-  forex_rates_snapshot: null,
   total_base_amount_in_usd: null,
   total_profit_in_usd: null,
   total_detail_amount_in_usd: null,

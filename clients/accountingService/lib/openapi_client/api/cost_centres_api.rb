@@ -648,6 +648,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [CostCentreBudgetDtoCollectionQueryParameters] :cost_centre_budget_dto_collection_query_parameters 
     # @return [CostCentreBudgetDtoListEnvelope]
     def get_cost_centre_budgets(tenant_id, opts = {})
       data, _status_code, _headers = get_cost_centre_budgets_with_http_info(tenant_id, opts)
@@ -660,6 +661,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [CostCentreBudgetDtoCollectionQueryParameters] :cost_centre_budget_dto_collection_query_parameters 
     # @return [Array<(CostCentreBudgetDtoListEnvelope, Integer, Hash)>] CostCentreBudgetDtoListEnvelope data, response status code and response headers
     def get_cost_centre_budgets_with_http_info(tenant_id, opts = {})
       if @api_client.config.debugging
@@ -681,13 +683,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'cost_centre_budget_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'CostCentreBudgetDtoListEnvelope'
@@ -794,6 +801,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [CostCentreGroupDtoCollectionQueryParameters] :cost_centre_group_dto_collection_query_parameters 
     # @return [CostCentreGroupDtoListEnvelope]
     def get_cost_centre_groups(tenant_id, opts = {})
       data, _status_code, _headers = get_cost_centre_groups_with_http_info(tenant_id, opts)
@@ -806,6 +814,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [CostCentreGroupDtoCollectionQueryParameters] :cost_centre_group_dto_collection_query_parameters 
     # @return [Array<(CostCentreGroupDtoListEnvelope, Integer, Hash)>] CostCentreGroupDtoListEnvelope data, response status code and response headers
     def get_cost_centre_groups_with_http_info(tenant_id, opts = {})
       if @api_client.config.debugging
@@ -827,13 +836,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'cost_centre_group_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'CostCentreGroupDtoListEnvelope'
@@ -864,6 +878,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [CostCentreGroupDtoCollectionQueryParameters] :cost_centre_group_dto_collection_query_parameters 
     # @return [Int32Envelope]
     def get_cost_centre_groups_count(tenant_id, opts = {})
       data, _status_code, _headers = get_cost_centre_groups_count_with_http_info(tenant_id, opts)
@@ -876,6 +891,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [CostCentreGroupDtoCollectionQueryParameters] :cost_centre_group_dto_collection_query_parameters 
     # @return [Array<(Int32Envelope, Integer, Hash)>] Int32Envelope data, response status code and response headers
     def get_cost_centre_groups_count_with_http_info(tenant_id, opts = {})
       if @api_client.config.debugging
@@ -897,13 +913,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'cost_centre_group_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'Int32Envelope'
@@ -934,6 +955,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [CostCentreDtoCollectionQueryParameters] :cost_centre_dto_collection_query_parameters 
     # @return [CostCentreDtoListEnvelope]
     def get_cost_centres(tenant_id, opts = {})
       data, _status_code, _headers = get_cost_centres_with_http_info(tenant_id, opts)
@@ -946,6 +968,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [CostCentreDtoCollectionQueryParameters] :cost_centre_dto_collection_query_parameters 
     # @return [Array<(CostCentreDtoListEnvelope, Integer, Hash)>] CostCentreDtoListEnvelope data, response status code and response headers
     def get_cost_centres_with_http_info(tenant_id, opts = {})
       if @api_client.config.debugging
@@ -967,13 +990,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'cost_centre_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'CostCentreDtoListEnvelope'
@@ -1004,6 +1032,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [CostCentreDtoCollectionQueryParameters] :cost_centre_dto_collection_query_parameters 
     # @return [Int32Envelope]
     def get_cost_centres_count(tenant_id, opts = {})
       data, _status_code, _headers = get_cost_centres_count_with_http_info(tenant_id, opts)
@@ -1016,6 +1045,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [CostCentreDtoCollectionQueryParameters] :cost_centre_dto_collection_query_parameters 
     # @return [Array<(Int32Envelope, Integer, Hash)>] Int32Envelope data, response status code and response headers
     def get_cost_centres_count_with_http_info(tenant_id, opts = {})
       if @api_client.config.debugging
@@ -1037,13 +1067,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'cost_centre_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'Int32Envelope'
@@ -1075,7 +1110,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
-    # @option opts [Array<Operation>] :operation 
+    # @option opts [Array<PatchOperation>] :patch_operation 
     # @return [EmptyEnvelope]
     def patch_cost_centre(tenant_id, cost_centre_id, opts = {})
       data, _status_code, _headers = patch_cost_centre_with_http_info(tenant_id, cost_centre_id, opts)
@@ -1089,7 +1124,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
-    # @option opts [Array<Operation>] :operation 
+    # @option opts [Array<PatchOperation>] :patch_operation 
     # @return [Array<(EmptyEnvelope, Integer, Hash)>] EmptyEnvelope data, response status code and response headers
     def patch_cost_centre_with_http_info(tenant_id, cost_centre_id, opts = {})
       if @api_client.config.debugging
@@ -1126,7 +1161,7 @@ module OpenapiClient
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'operation'])
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'patch_operation'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'EmptyEnvelope'
@@ -1158,7 +1193,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
-    # @option opts [Array<Operation>] :operation 
+    # @option opts [Array<PatchOperation>] :patch_operation 
     # @return [EmptyEnvelope]
     def patch_cost_centre_budget(tenant_id, budget_id, opts = {})
       data, _status_code, _headers = patch_cost_centre_budget_with_http_info(tenant_id, budget_id, opts)
@@ -1172,7 +1207,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
-    # @option opts [Array<Operation>] :operation 
+    # @option opts [Array<PatchOperation>] :patch_operation 
     # @return [Array<(EmptyEnvelope, Integer, Hash)>] EmptyEnvelope data, response status code and response headers
     def patch_cost_centre_budget_with_http_info(tenant_id, budget_id, opts = {})
       if @api_client.config.debugging
@@ -1209,7 +1244,7 @@ module OpenapiClient
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'operation'])
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'patch_operation'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'EmptyEnvelope'
@@ -1241,7 +1276,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
-    # @option opts [Array<Operation>] :operation 
+    # @option opts [Array<PatchOperation>] :patch_operation 
     # @return [EmptyEnvelope]
     def patch_cost_centre_group(tenant_id, group_id, opts = {})
       data, _status_code, _headers = patch_cost_centre_group_with_http_info(tenant_id, group_id, opts)
@@ -1255,7 +1290,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
-    # @option opts [Array<Operation>] :operation 
+    # @option opts [Array<PatchOperation>] :patch_operation 
     # @return [Array<(EmptyEnvelope, Integer, Hash)>] EmptyEnvelope data, response status code and response headers
     def patch_cost_centre_group_with_http_info(tenant_id, group_id, opts = {})
       if @api_client.config.debugging
@@ -1292,7 +1327,7 @@ module OpenapiClient
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'operation'])
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'patch_operation'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'EmptyEnvelope'

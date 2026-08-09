@@ -8,6 +8,7 @@ README.md
 Rakefile
 docs/AccessTokenResponse.md
 docs/AddressDto.md
+docs/AddressDtoCollectionQueryParameters.md
 docs/AddressDtoListEnvelope.md
 docs/CartDto.md
 docs/CartDtoEnvelope.md
@@ -21,6 +22,7 @@ docs/ExtendedUserDto.md
 docs/ExtendedUserDtoEnvelope.md
 docs/FenixAllianceABSWebApi.md
 docs/FollowRecordDto.md
+docs/FollowRecordDtoCollectionQueryParameters.md
 docs/FollowRecordDtoListEnvelope.md
 docs/ForgotPasswordRequest.md
 docs/HttpValidationProblemDetails.md
@@ -29,14 +31,16 @@ docs/InfoResponse.md
 docs/Int32Envelope.md
 docs/LoginRequest.md
 docs/NotificationDto.md
+docs/NotificationDtoCollectionQueryParameters.md
 docs/NotificationDtoListEnvelope.md
-docs/Operation.md
 docs/OptionCreateDto.md
 docs/OptionDto.md
+docs/OptionDtoCollectionQueryParameters.md
 docs/OptionDtoEnvelope.md
 docs/OptionDtoListEnvelope.md
 docs/OptionUpdateDto.md
 docs/OptionsApi.md
+docs/PatchOperation.md
 docs/RefreshRequest.md
 docs/RegisterRequest.md
 docs/ResendConfirmationEmailRequest.md
@@ -44,6 +48,7 @@ docs/ResetPasswordRequest.md
 docs/SocialProfileDto.md
 docs/SocialProfileDtoEnvelope.md
 docs/TenantDto.md
+docs/TenantDtoCollectionQueryParameters.md
 docs/TenantDtoListEnvelope.md
 docs/TenantEnrollmentDto.md
 docs/TenantEnrollmentDtoEnvelope.md
@@ -72,6 +77,7 @@ lib/openapi_client/api_error.rb
 lib/openapi_client/configuration.rb
 lib/openapi_client/models/access_token_response.rb
 lib/openapi_client/models/address_dto.rb
+lib/openapi_client/models/address_dto_collection_query_parameters.rb
 lib/openapi_client/models/address_dto_list_envelope.rb
 lib/openapi_client/models/cart_dto.rb
 lib/openapi_client/models/cart_dto_envelope.rb
@@ -84,6 +90,7 @@ lib/openapi_client/models/extended_tenant_enrollment_dto_list_envelope.rb
 lib/openapi_client/models/extended_user_dto.rb
 lib/openapi_client/models/extended_user_dto_envelope.rb
 lib/openapi_client/models/follow_record_dto.rb
+lib/openapi_client/models/follow_record_dto_collection_query_parameters.rb
 lib/openapi_client/models/follow_record_dto_list_envelope.rb
 lib/openapi_client/models/forgot_password_request.rb
 lib/openapi_client/models/http_validation_problem_details.rb
@@ -92,13 +99,15 @@ lib/openapi_client/models/info_response.rb
 lib/openapi_client/models/int32_envelope.rb
 lib/openapi_client/models/login_request.rb
 lib/openapi_client/models/notification_dto.rb
+lib/openapi_client/models/notification_dto_collection_query_parameters.rb
 lib/openapi_client/models/notification_dto_list_envelope.rb
-lib/openapi_client/models/operation.rb
 lib/openapi_client/models/option_create_dto.rb
 lib/openapi_client/models/option_dto.rb
+lib/openapi_client/models/option_dto_collection_query_parameters.rb
 lib/openapi_client/models/option_dto_envelope.rb
 lib/openapi_client/models/option_dto_list_envelope.rb
 lib/openapi_client/models/option_update_dto.rb
+lib/openapi_client/models/patch_operation.rb
 lib/openapi_client/models/refresh_request.rb
 lib/openapi_client/models/register_request.rb
 lib/openapi_client/models/resend_confirmation_email_request.rb
@@ -106,6 +115,7 @@ lib/openapi_client/models/reset_password_request.rb
 lib/openapi_client/models/social_profile_dto.rb
 lib/openapi_client/models/social_profile_dto_envelope.rb
 lib/openapi_client/models/tenant_dto.rb
+lib/openapi_client/models/tenant_dto_collection_query_parameters.rb
 lib/openapi_client/models/tenant_dto_list_envelope.rb
 lib/openapi_client/models/tenant_enrollment_dto.rb
 lib/openapi_client/models/tenant_enrollment_dto_envelope.rb
@@ -125,4 +135,10 @@ lib/openapi_client/models/wallet_dto.rb
 lib/openapi_client/models/wallet_dto_envelope.rb
 lib/openapi_client/version.rb
 openapi_client.gemspec
+spec/models/address_dto_collection_query_parameters_spec.rb
+spec/models/follow_record_dto_collection_query_parameters_spec.rb
+spec/models/notification_dto_collection_query_parameters_spec.rb
+spec/models/option_dto_collection_query_parameters_spec.rb
+spec/models/patch_operation_spec.rb
+spec/models/tenant_dto_collection_query_parameters_spec.rb
 spec/spec_helper.rb

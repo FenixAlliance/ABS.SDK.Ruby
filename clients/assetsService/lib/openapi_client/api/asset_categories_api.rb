@@ -164,6 +164,7 @@ module OpenapiClient
     # Retrieves all asset categories for the authenticated tenant.
     # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [AssetCategoryDtoCollectionQueryParameters] :asset_category_dto_collection_query_parameters 
     # @return [AssetCategoryDtoListEnvelope]
     def get_asset_categories(tenant_id, opts = {})
       data, _status_code, _headers = get_asset_categories_with_http_info(tenant_id, opts)
@@ -174,6 +175,7 @@ module OpenapiClient
     # Retrieves all asset categories for the authenticated tenant.
     # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [AssetCategoryDtoCollectionQueryParameters] :asset_category_dto_collection_query_parameters 
     # @return [Array<(AssetCategoryDtoListEnvelope, Integer, Hash)>] AssetCategoryDtoListEnvelope data, response status code and response headers
     def get_asset_categories_with_http_info(tenant_id, opts = {})
       if @api_client.config.debugging
@@ -194,12 +196,17 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'asset_category_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'AssetCategoryDtoListEnvelope'
@@ -228,6 +235,7 @@ module OpenapiClient
     # Returns the total number of asset categories for the authenticated tenant.
     # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [AssetCategoryDtoCollectionQueryParameters] :asset_category_dto_collection_query_parameters 
     # @return [Int32Envelope]
     def get_asset_categories_count(tenant_id, opts = {})
       data, _status_code, _headers = get_asset_categories_count_with_http_info(tenant_id, opts)
@@ -238,6 +246,7 @@ module OpenapiClient
     # Returns the total number of asset categories for the authenticated tenant.
     # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [AssetCategoryDtoCollectionQueryParameters] :asset_category_dto_collection_query_parameters 
     # @return [Array<(Int32Envelope, Integer, Hash)>] Int32Envelope data, response status code and response headers
     def get_asset_categories_count_with_http_info(tenant_id, opts = {})
       if @api_client.config.debugging
@@ -258,12 +267,17 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'asset_category_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'Int32Envelope'
@@ -363,7 +377,7 @@ module OpenapiClient
     # @param tenant_id [String] 
     # @param category_id [String] 
     # @param [Hash] opts the optional parameters
-    # @option opts [Array<Operation>] :operation 
+    # @option opts [Array<PatchOperation>] :patch_operation 
     # @return [EmptyEnvelope]
     def patch_asset_category(tenant_id, category_id, opts = {})
       data, _status_code, _headers = patch_asset_category_with_http_info(tenant_id, category_id, opts)
@@ -375,7 +389,7 @@ module OpenapiClient
     # @param tenant_id [String] 
     # @param category_id [String] 
     # @param [Hash] opts the optional parameters
-    # @option opts [Array<Operation>] :operation 
+    # @option opts [Array<PatchOperation>] :patch_operation 
     # @return [Array<(EmptyEnvelope, Integer, Hash)>] EmptyEnvelope data, response status code and response headers
     def patch_asset_category_with_http_info(tenant_id, category_id, opts = {})
       if @api_client.config.debugging
@@ -410,7 +424,7 @@ module OpenapiClient
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'operation'])
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'patch_operation'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'EmptyEnvelope'

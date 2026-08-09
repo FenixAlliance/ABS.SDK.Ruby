@@ -18,7 +18,7 @@ All URIs are relative to *https://absuite.net*
 
 ## create_feed_post_async
 
-> <SocialFeedPostDtoEnvelope> create_feed_post_async(social_profile_id, social_feed_id, opts)
+> <StringEnvelope> create_feed_post_async(social_profile_id, social_feed_id, opts)
 
 Create a social feed post
 
@@ -52,7 +52,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<SocialFeedPostDtoEnvelope>, Integer, Hash)> create_feed_post_async_with_http_info(social_profile_id, social_feed_id, opts)
+> <Array(<StringEnvelope>, Integer, Hash)> create_feed_post_async_with_http_info(social_profile_id, social_feed_id, opts)
 
 ```ruby
 begin
@@ -60,7 +60,7 @@ begin
   data, status_code, headers = api_instance.create_feed_post_async_with_http_info(social_profile_id, social_feed_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <SocialFeedPostDtoEnvelope>
+  p data # => <StringEnvelope>
 rescue OpenapiClient::ApiError => e
   puts "Error when calling SocialFeedsApi->create_feed_post_async_with_http_info: #{e}"
 end
@@ -78,7 +78,7 @@ end
 
 ### Return type
 
-[**SocialFeedPostDtoEnvelope**](SocialFeedPostDtoEnvelope.md)
+[**StringEnvelope**](StringEnvelope.md)
 
 ### Authorization
 
@@ -182,7 +182,8 @@ api_instance = OpenapiClient::SocialFeedsApi.new
 social_profile_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  social_feed_dto_collection_query_parameters: OpenapiClient::SocialFeedDtoCollectionQueryParameters.new # SocialFeedDtoCollectionQueryParameters | 
 }
 
 begin
@@ -219,6 +220,7 @@ end
 | **social_profile_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **social_feed_dto_collection_query_parameters** | [**SocialFeedDtoCollectionQueryParameters**](SocialFeedDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -230,7 +232,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -327,7 +329,8 @@ social_profile_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 social_feed_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  social_feed_post_dto_collection_query_parameters: OpenapiClient::SocialFeedPostDtoCollectionQueryParameters.new # SocialFeedPostDtoCollectionQueryParameters | 
 }
 
 begin
@@ -365,6 +368,7 @@ end
 | **social_feed_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **social_feed_post_dto_collection_query_parameters** | [**SocialFeedPostDtoCollectionQueryParameters**](SocialFeedPostDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -376,7 +380,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -399,7 +403,8 @@ social_profile_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 social_feed_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  social_feed_post_dto_collection_query_parameters: OpenapiClient::SocialFeedPostDtoCollectionQueryParameters.new # SocialFeedPostDtoCollectionQueryParameters | 
 }
 
 begin
@@ -437,6 +442,7 @@ end
 | **social_feed_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **social_feed_post_dto_collection_query_parameters** | [**SocialFeedPostDtoCollectionQueryParameters**](SocialFeedPostDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -448,7 +454,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -542,7 +548,8 @@ api_instance = OpenapiClient::SocialFeedsApi.new
 social_profile_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  social_feed_dto_collection_query_parameters: OpenapiClient::SocialFeedDtoCollectionQueryParameters.new # SocialFeedDtoCollectionQueryParameters | 
 }
 
 begin
@@ -579,6 +586,7 @@ end
 | **social_profile_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **social_feed_dto_collection_query_parameters** | [**SocialFeedDtoCollectionQueryParameters**](SocialFeedDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -590,7 +598,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -615,7 +623,7 @@ feed_post_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 opts = {
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example', # String | 
-  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+  patch_operation: [OpenapiClient::PatchOperation.new] # Array<PatchOperation> | 
 }
 
 begin
@@ -654,7 +662,7 @@ end
 | **feed_post_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
-| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+| **patch_operation** | [**Array&lt;PatchOperation&gt;**](PatchOperation.md) |  | [optional] |
 
 ### Return type
 

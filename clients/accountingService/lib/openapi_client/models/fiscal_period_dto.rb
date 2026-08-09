@@ -31,6 +31,30 @@ module OpenapiClient
 
     attr_accessor :fiscal_year_id
 
+    attr_accessor :status
+
+    class EnumAttributeValidator
+      attr_reader :datatype
+      attr_reader :allowable_values
+
+      def initialize(datatype, allowable_values)
+        @allowable_values = allowable_values.map do |value|
+          case datatype.to_s
+          when /Integer/i
+            value.to_i
+          when /Float/i
+            value.to_f
+          else
+            value
+          end
+        end
+      end
+
+      def valid?(value)
+        !value || allowable_values.include?(value)
+      end
+    end
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -41,7 +65,8 @@ module OpenapiClient
         :'to_date' => :'toDate',
         :'tenant_id' => :'tenantId',
         :'enrollment_id' => :'enrollmentId',
-        :'fiscal_year_id' => :'fiscalYearId'
+        :'fiscal_year_id' => :'fiscalYearId',
+        :'status' => :'status'
       }
     end
 
@@ -60,7 +85,8 @@ module OpenapiClient
         :'to_date' => :'Time',
         :'tenant_id' => :'String',
         :'enrollment_id' => :'String',
-        :'fiscal_year_id' => :'String'
+        :'fiscal_year_id' => :'String',
+        :'status' => :'String'
       }
     end
 
@@ -72,7 +98,7 @@ module OpenapiClient
         :'name',
         :'tenant_id',
         :'enrollment_id',
-        :'fiscal_year_id'
+        :'fiscal_year_id',
       ])
     end
 
@@ -122,6 +148,10 @@ module OpenapiClient
       if attributes.key?(:'fiscal_year_id')
         self.fiscal_year_id = attributes[:'fiscal_year_id']
       end
+
+      if attributes.key?(:'status')
+        self.status = attributes[:'status']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -136,7 +166,19 @@ module OpenapiClient
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
+      status_validator = EnumAttributeValidator.new('String', ["Open", "Closed", "Locked"])
+      return false unless status_validator.valid?(@status)
       true
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] status Object to be assigned
+    def status=(status)
+      validator = EnumAttributeValidator.new('String', ["Open", "Closed", "Locked"])
+      unless validator.valid?(status)
+        fail ArgumentError, "invalid value for \"status\", must be one of #{validator.allowable_values}."
+      end
+      @status = status
     end
 
     # Checks equality by comparing each attribute.
@@ -151,7 +193,8 @@ module OpenapiClient
           to_date == o.to_date &&
           tenant_id == o.tenant_id &&
           enrollment_id == o.enrollment_id &&
-          fiscal_year_id == o.fiscal_year_id
+          fiscal_year_id == o.fiscal_year_id &&
+          status == o.status
     end
 
     # @see the `==` method
@@ -163,7 +206,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, timestamp, name, from_date, to_date, tenant_id, enrollment_id, fiscal_year_id].hash
+      [id, timestamp, name, from_date, to_date, tenant_id, enrollment_id, fiscal_year_id, status].hash
     end
 
     # Builds the object from hash

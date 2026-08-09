@@ -16,7 +16,7 @@ All URIs are relative to *https://absuite.net*
 
 ## count_tenant_task_categories_async
 
-> <Int32Envelope> count_tenant_task_categories_async(tenant_id)
+> <Int32Envelope> count_tenant_task_categories_async(tenant_id, opts)
 
 Counts task categories
 
@@ -30,10 +30,13 @@ require 'openapi_client'
 
 api_instance = OpenapiClient::TaskCategoriesApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  task_category_dto_collection_query_parameters: OpenapiClient::TaskCategoryDtoCollectionQueryParameters.new # TaskCategoryDtoCollectionQueryParameters | 
+}
 
 begin
   # Counts task categories
-  result = api_instance.count_tenant_task_categories_async(tenant_id)
+  result = api_instance.count_tenant_task_categories_async(tenant_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling TaskCategoriesApi->count_tenant_task_categories_async: #{e}"
@@ -44,12 +47,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Int32Envelope>, Integer, Hash)> count_tenant_task_categories_async_with_http_info(tenant_id)
+> <Array(<Int32Envelope>, Integer, Hash)> count_tenant_task_categories_async_with_http_info(tenant_id, opts)
 
 ```ruby
 begin
   # Counts task categories
-  data, status_code, headers = api_instance.count_tenant_task_categories_async_with_http_info(tenant_id)
+  data, status_code, headers = api_instance.count_tenant_task_categories_async_with_http_info(tenant_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Int32Envelope>
@@ -63,6 +66,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
+| **task_category_dto_collection_query_parameters** | [**TaskCategoryDtoCollectionQueryParameters**](TaskCategoryDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -74,7 +78,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -346,7 +350,7 @@ No authorization required
 
 ## get_tenant_task_categories_async
 
-> <TaskCategoryDtoListEnvelope> get_tenant_task_categories_async(tenant_id)
+> <TaskCategoryDtoListEnvelope> get_tenant_task_categories_async(tenant_id, opts)
 
 Retrieves all task categories
 
@@ -360,10 +364,13 @@ require 'openapi_client'
 
 api_instance = OpenapiClient::TaskCategoriesApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  task_category_dto_collection_query_parameters: OpenapiClient::TaskCategoryDtoCollectionQueryParameters.new # TaskCategoryDtoCollectionQueryParameters | 
+}
 
 begin
   # Retrieves all task categories
-  result = api_instance.get_tenant_task_categories_async(tenant_id)
+  result = api_instance.get_tenant_task_categories_async(tenant_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling TaskCategoriesApi->get_tenant_task_categories_async: #{e}"
@@ -374,12 +381,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<TaskCategoryDtoListEnvelope>, Integer, Hash)> get_tenant_task_categories_async_with_http_info(tenant_id)
+> <Array(<TaskCategoryDtoListEnvelope>, Integer, Hash)> get_tenant_task_categories_async_with_http_info(tenant_id, opts)
 
 ```ruby
 begin
   # Retrieves all task categories
-  data, status_code, headers = api_instance.get_tenant_task_categories_async_with_http_info(tenant_id)
+  data, status_code, headers = api_instance.get_tenant_task_categories_async_with_http_info(tenant_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <TaskCategoryDtoListEnvelope>
@@ -393,6 +400,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
+| **task_category_dto_collection_query_parameters** | [**TaskCategoryDtoCollectionQueryParameters**](TaskCategoryDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -404,7 +412,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -426,7 +434,7 @@ api_instance = OpenapiClient::TaskCategoriesApi.new
 task_category_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
-  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+  patch_operation: [OpenapiClient::PatchOperation.new] # Array<PatchOperation> | 
 }
 
 begin
@@ -462,7 +470,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **task_category_id** | **String** |  |  |
 | **tenant_id** | **String** |  |  |
-| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+| **patch_operation** | [**Array&lt;PatchOperation&gt;**](PatchOperation.md) |  | [optional] |
 
 ### Return type
 

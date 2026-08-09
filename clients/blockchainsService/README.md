@@ -99,7 +99,6 @@ Class | Method | HTTP request | Description
 *OpenapiClient::FenixAllianceABSWebApi* | [**account_manage_download_personal_data_post**](docs/FenixAllianceABSWebApi.md#account_manage_download_personal_data_post) | **POST** /Account/Manage/DownloadPersonalData | 
 *OpenapiClient::FenixAllianceABSWebApi* | [**account_manage_link_external_login_post**](docs/FenixAllianceABSWebApi.md#account_manage_link_external_login_post) | **POST** /Account/Manage/LinkExternalLogin | 
 *OpenapiClient::FenixAllianceABSWebApi* | [**account_perform_external_login_post**](docs/FenixAllianceABSWebApi.md#account_perform_external_login_post) | **POST** /Account/PerformExternalLogin | 
-*OpenapiClient::FenixAllianceABSWebApi* | [**api_v2_ai_service_agents_agent_id_agui_post**](docs/FenixAllianceABSWebApi.md#api_v2_ai_service_agents_agent_id_agui_post) | **POST** /api/v2/AIService/Agents/{agentId}/agui | 
 *OpenapiClient::FenixAllianceABSWebApi* | [**forgot_password_post**](docs/FenixAllianceABSWebApi.md#forgot_password_post) | **POST** /forgotPassword | 
 *OpenapiClient::FenixAllianceABSWebApi* | [**health_get**](docs/FenixAllianceABSWebApi.md#health_get) | **GET** /health | 
 *OpenapiClient::FenixAllianceABSWebApi* | [**hello_get**](docs/FenixAllianceABSWebApi.md#hello_get) | **GET** /hello | 
@@ -127,10 +126,12 @@ Class | Method | HTTP request | Description
  - [OpenapiClient::AccessTokenResponse](docs/AccessTokenResponse.md)
  - [OpenapiClient::BlockchainBlockCreateDto](docs/BlockchainBlockCreateDto.md)
  - [OpenapiClient::BlockchainBlockDto](docs/BlockchainBlockDto.md)
+ - [OpenapiClient::BlockchainBlockDtoCollectionQueryParameters](docs/BlockchainBlockDtoCollectionQueryParameters.md)
  - [OpenapiClient::BlockchainBlockDtoListEnvelope](docs/BlockchainBlockDtoListEnvelope.md)
  - [OpenapiClient::BlockchainBlockUpdateDto](docs/BlockchainBlockUpdateDto.md)
  - [OpenapiClient::BlockchainCreateDto](docs/BlockchainCreateDto.md)
  - [OpenapiClient::BlockchainDto](docs/BlockchainDto.md)
+ - [OpenapiClient::BlockchainDtoCollectionQueryParameters](docs/BlockchainDtoCollectionQueryParameters.md)
  - [OpenapiClient::BlockchainDtoListEnvelope](docs/BlockchainDtoListEnvelope.md)
  - [OpenapiClient::BlockchainUpdateDto](docs/BlockchainUpdateDto.md)
  - [OpenapiClient::EmptyEnvelope](docs/EmptyEnvelope.md)
@@ -143,9 +144,10 @@ Class | Method | HTTP request | Description
  - [OpenapiClient::LoginRequest](docs/LoginRequest.md)
  - [OpenapiClient::NonFungibleTokenCreateDto](docs/NonFungibleTokenCreateDto.md)
  - [OpenapiClient::NonFungibleTokenDto](docs/NonFungibleTokenDto.md)
+ - [OpenapiClient::NonFungibleTokenDtoCollectionQueryParameters](docs/NonFungibleTokenDtoCollectionQueryParameters.md)
  - [OpenapiClient::NonFungibleTokenDtoListEnvelope](docs/NonFungibleTokenDtoListEnvelope.md)
  - [OpenapiClient::NonFungibleTokenUpdateDto](docs/NonFungibleTokenUpdateDto.md)
- - [OpenapiClient::Operation](docs/Operation.md)
+ - [OpenapiClient::PatchOperation](docs/PatchOperation.md)
  - [OpenapiClient::RefreshRequest](docs/RefreshRequest.md)
  - [OpenapiClient::RegisterRequest](docs/RegisterRequest.md)
  - [OpenapiClient::ResendConfirmationEmailRequest](docs/ResendConfirmationEmailRequest.md)

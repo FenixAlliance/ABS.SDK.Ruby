@@ -11,10 +11,13 @@ All URIs are relative to *https://absuite.net*
 | [**get_extended_account_holder_async**](UsersApi.md#get_extended_account_holder_async) | **GET** /api/v2/SystemService/Users/{userId}/Extended | Retrieve an extended user by ID |
 | [**get_extended_users_async**](UsersApi.md#get_extended_users_async) | **GET** /api/v2/SystemService/Users/Extended | Retrieve a list of extended users |
 | [**get_extended_users_count_async**](UsersApi.md#get_extended_users_count_async) | **GET** /api/v2/SystemService/Users/Extended/Count | Get the count of extended users |
+| [**get_user_admin_detail_async**](UsersApi.md#get_user_admin_detail_async) | **GET** /api/v2/SystemService/Users/{userId}/AdminDetail | Retrieve the admin detail aggregate for a user |
 | [**get_user_async**](UsersApi.md#get_user_async) | **GET** /api/v2/SystemService/Users/{userId} | Retrieve a user by ID |
 | [**get_users_async**](UsersApi.md#get_users_async) | **GET** /api/v2/SystemService/Users | Retrieve a list of users |
 | [**get_users_count_async**](UsersApi.md#get_users_count_async) | **GET** /api/v2/SystemService/Users/Count | Get the count of users |
 | [**patch_account_holder_async**](UsersApi.md#patch_account_holder_async) | **PATCH** /api/v2/SystemService/Users/{userId} | Partially update a user |
+| [**set_user_password_async**](UsersApi.md#set_user_password_async) | **POST** /api/v2/SystemService/Users/{userId}/Password | Set a user&#39;s password |
+| [**update_account_holder_admin_profile_async**](UsersApi.md#update_account_holder_admin_profile_async) | **PUT** /api/v2/SystemService/Users/{userId}/AdminProfile | Update a user&#39;s admin-managed profile |
 | [**update_account_holder_async**](UsersApi.md#update_account_holder_async) | **PUT** /api/v2/SystemService/Users/{userId} | Update a user |
 
 
@@ -388,7 +391,8 @@ require 'openapi_client'
 api_instance = OpenapiClient::UsersApi.new
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  extended_user_dto_collection_query_parameters: OpenapiClient::ExtendedUserDtoCollectionQueryParameters.new # ExtendedUserDtoCollectionQueryParameters | 
 }
 
 begin
@@ -424,6 +428,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **extended_user_dto_collection_query_parameters** | [**ExtendedUserDtoCollectionQueryParameters**](ExtendedUserDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -435,7 +440,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -456,7 +461,8 @@ require 'openapi_client'
 api_instance = OpenapiClient::UsersApi.new
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  extended_user_dto_collection_query_parameters: OpenapiClient::ExtendedUserDtoCollectionQueryParameters.new # ExtendedUserDtoCollectionQueryParameters | 
 }
 
 begin
@@ -492,10 +498,83 @@ end
 | ---- | ---- | ----------- | ----- |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **extended_user_dto_collection_query_parameters** | [**ExtendedUserDtoCollectionQueryParameters**](ExtendedUserDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
 [**Int32Envelope**](Int32Envelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
+- **Accept**: application/json, application/xml
+
+
+## get_user_admin_detail_async
+
+> <UserAdminDetailDtoEnvelope> get_user_admin_detail_async(user_id, tenant_id, opts)
+
+Retrieve the admin detail aggregate for a user
+
+Returns the user's orders, external logins, and — for the supplied tenant — the enrollment with its granted roles/permissions and the tenant role/permission catalogs. Global administrators only.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::UsersApi.new
+user_id = 'user_id_example' # String | 
+tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example' # String | 
+}
+
+begin
+  # Retrieve the admin detail aggregate for a user
+  result = api_instance.get_user_admin_detail_async(user_id, tenant_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling UsersApi->get_user_admin_detail_async: #{e}"
+end
+```
+
+#### Using the get_user_admin_detail_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<UserAdminDetailDtoEnvelope>, Integer, Hash)> get_user_admin_detail_async_with_http_info(user_id, tenant_id, opts)
+
+```ruby
+begin
+  # Retrieve the admin detail aggregate for a user
+  data, status_code, headers = api_instance.get_user_admin_detail_async_with_http_info(user_id, tenant_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <UserAdminDetailDtoEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling UsersApi->get_user_admin_detail_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **user_id** | **String** |  |  |
+| **tenant_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+
+### Return type
+
+[**UserAdminDetailDtoEnvelope**](UserAdminDetailDtoEnvelope.md)
 
 ### Authorization
 
@@ -594,7 +673,8 @@ require 'openapi_client'
 api_instance = OpenapiClient::UsersApi.new
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  user_dto_collection_query_parameters: OpenapiClient::UserDtoCollectionQueryParameters.new # UserDtoCollectionQueryParameters | 
 }
 
 begin
@@ -630,6 +710,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **user_dto_collection_query_parameters** | [**UserDtoCollectionQueryParameters**](UserDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -641,7 +722,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -662,7 +743,8 @@ require 'openapi_client'
 api_instance = OpenapiClient::UsersApi.new
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  user_dto_collection_query_parameters: OpenapiClient::UserDtoCollectionQueryParameters.new # UserDtoCollectionQueryParameters | 
 }
 
 begin
@@ -698,6 +780,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **user_dto_collection_query_parameters** | [**UserDtoCollectionQueryParameters**](UserDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -709,7 +792,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -732,7 +815,7 @@ user_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 opts = {
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example', # String | 
-  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+  patch_operation: [OpenapiClient::PatchOperation.new] # Array<PatchOperation> | 
 }
 
 begin
@@ -769,7 +852,151 @@ end
 | **user_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
-| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+| **patch_operation** | [**Array&lt;PatchOperation&gt;**](PatchOperation.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
+- **Accept**: application/json, application/xml
+
+
+## set_user_password_async
+
+> <EmptyEnvelope> set_user_password_async(user_id, opts)
+
+Set a user's password
+
+Replaces the user's password with the supplied value. Global administrators only.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::UsersApi.new
+user_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  set_user_password_dto: OpenapiClient::SetUserPasswordDto.new({new_password: 'new_password_example'}) # SetUserPasswordDto | 
+}
+
+begin
+  # Set a user's password
+  result = api_instance.set_user_password_async(user_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling UsersApi->set_user_password_async: #{e}"
+end
+```
+
+#### Using the set_user_password_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> set_user_password_async_with_http_info(user_id, opts)
+
+```ruby
+begin
+  # Set a user's password
+  data, status_code, headers = api_instance.set_user_password_async_with_http_info(user_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling UsersApi->set_user_password_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **user_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **set_user_password_dto** | [**SetUserPasswordDto**](SetUserPasswordDto.md) |  | [optional] |
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
+- **Accept**: application/json, application/xml
+
+
+## update_account_holder_admin_profile_async
+
+> <EmptyEnvelope> update_account_holder_admin_profile_async(user_id, opts)
+
+Update a user's admin-managed profile
+
+Updates the identity fields (email/username, re-normalized by Identity) and display fields a global administrator may change on a user, and toggles two-factor and lockout. Normalized email/username and the access-failed count are never accepted. This action is only available for global administrators.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::UsersApi.new
+user_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  user_admin_update_dto: OpenapiClient::UserAdminUpdateDto.new # UserAdminUpdateDto | 
+}
+
+begin
+  # Update a user's admin-managed profile
+  result = api_instance.update_account_holder_admin_profile_async(user_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling UsersApi->update_account_holder_admin_profile_async: #{e}"
+end
+```
+
+#### Using the update_account_holder_admin_profile_async_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<EmptyEnvelope>, Integer, Hash)> update_account_holder_admin_profile_async_with_http_info(user_id, opts)
+
+```ruby
+begin
+  # Update a user's admin-managed profile
+  data, status_code, headers = api_instance.update_account_holder_admin_profile_async_with_http_info(user_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <EmptyEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling UsersApi->update_account_holder_admin_profile_async_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **user_id** | **String** |  |  |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+| **user_admin_update_dto** | [**UserAdminUpdateDto**](UserAdminUpdateDto.md) |  | [optional] |
 
 ### Return type
 

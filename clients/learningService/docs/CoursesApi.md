@@ -209,7 +209,8 @@ course_id = 'course_id_example' # String |
 wiki_id = 'wiki_id_example' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  course_article_dto_collection_query_parameters: OpenapiClient::CourseArticleDtoCollectionQueryParameters.new # CourseArticleDtoCollectionQueryParameters | 
 }
 
 begin
@@ -247,6 +248,7 @@ end
 | **wiki_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **course_article_dto_collection_query_parameters** | [**CourseArticleDtoCollectionQueryParameters**](CourseArticleDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -258,7 +260,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -281,7 +283,8 @@ course_id = 'course_id_example' # String |
 wiki_id = 'wiki_id_example' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  course_article_dto_collection_query_parameters: OpenapiClient::CourseArticleDtoCollectionQueryParameters.new # CourseArticleDtoCollectionQueryParameters | 
 }
 
 begin
@@ -319,6 +322,7 @@ end
 | **wiki_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **course_article_dto_collection_query_parameters** | [**CourseArticleDtoCollectionQueryParameters**](CourseArticleDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -330,7 +334,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -352,7 +356,8 @@ api_instance = OpenapiClient::CoursesApi.new
 course_id = 'course_id_example' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  course_assignment_dto_collection_query_parameters: OpenapiClient::CourseAssignmentDtoCollectionQueryParameters.new # CourseAssignmentDtoCollectionQueryParameters | 
 }
 
 begin
@@ -389,6 +394,7 @@ end
 | **course_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **course_assignment_dto_collection_query_parameters** | [**CourseAssignmentDtoCollectionQueryParameters**](CourseAssignmentDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -400,7 +406,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -422,7 +428,8 @@ api_instance = OpenapiClient::CoursesApi.new
 course_id = 'course_id_example' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  course_assignment_dto_collection_query_parameters: OpenapiClient::CourseAssignmentDtoCollectionQueryParameters.new # CourseAssignmentDtoCollectionQueryParameters | 
 }
 
 begin
@@ -459,6 +466,7 @@ end
 | **course_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **course_assignment_dto_collection_query_parameters** | [**CourseAssignmentDtoCollectionQueryParameters**](CourseAssignmentDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -470,7 +478,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -564,7 +572,8 @@ api_instance = OpenapiClient::CoursesApi.new
 course_id = 'course_id_example' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  course_category_dto_collection_query_parameters: OpenapiClient::CourseCategoryDtoCollectionQueryParameters.new # CourseCategoryDtoCollectionQueryParameters | 
 }
 
 begin
@@ -601,6 +610,7 @@ end
 | **course_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **course_category_dto_collection_query_parameters** | [**CourseCategoryDtoCollectionQueryParameters**](CourseCategoryDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -612,7 +622,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -634,7 +644,8 @@ api_instance = OpenapiClient::CoursesApi.new
 course_id = 'course_id_example' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  course_category_dto_collection_query_parameters: OpenapiClient::CourseCategoryDtoCollectionQueryParameters.new # CourseCategoryDtoCollectionQueryParameters | 
 }
 
 begin
@@ -671,6 +682,7 @@ end
 | **course_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **course_category_dto_collection_query_parameters** | [**CourseCategoryDtoCollectionQueryParameters**](CourseCategoryDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -682,7 +694,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -704,7 +716,8 @@ api_instance = OpenapiClient::CoursesApi.new
 course_id = 'course_id_example' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  course_cohort_dto_collection_query_parameters: OpenapiClient::CourseCohortDtoCollectionQueryParameters.new # CourseCohortDtoCollectionQueryParameters | 
 }
 
 begin
@@ -741,6 +754,7 @@ end
 | **course_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **course_cohort_dto_collection_query_parameters** | [**CourseCohortDtoCollectionQueryParameters**](CourseCohortDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -752,7 +766,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -774,7 +788,8 @@ api_instance = OpenapiClient::CoursesApi.new
 course_id = 'course_id_example' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  course_cohort_dto_collection_query_parameters: OpenapiClient::CourseCohortDtoCollectionQueryParameters.new # CourseCohortDtoCollectionQueryParameters | 
 }
 
 begin
@@ -811,6 +826,7 @@ end
 | **course_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **course_cohort_dto_collection_query_parameters** | [**CourseCohortDtoCollectionQueryParameters**](CourseCohortDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -822,7 +838,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -845,7 +861,8 @@ tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 course_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  course_enrollment_dto_collection_query_parameters: OpenapiClient::CourseEnrollmentDtoCollectionQueryParameters.new # CourseEnrollmentDtoCollectionQueryParameters | 
 }
 
 begin
@@ -883,6 +900,7 @@ end
 | **course_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **course_enrollment_dto_collection_query_parameters** | [**CourseEnrollmentDtoCollectionQueryParameters**](CourseEnrollmentDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -894,7 +912,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -916,7 +934,8 @@ api_instance = OpenapiClient::CoursesApi.new
 course_id = 'course_id_example' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  course_file_dto_collection_query_parameters: OpenapiClient::CourseFileDtoCollectionQueryParameters.new # CourseFileDtoCollectionQueryParameters | 
 }
 
 begin
@@ -953,6 +972,7 @@ end
 | **course_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **course_file_dto_collection_query_parameters** | [**CourseFileDtoCollectionQueryParameters**](CourseFileDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -964,7 +984,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -986,7 +1006,8 @@ api_instance = OpenapiClient::CoursesApi.new
 course_id = 'course_id_example' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  course_file_dto_collection_query_parameters: OpenapiClient::CourseFileDtoCollectionQueryParameters.new # CourseFileDtoCollectionQueryParameters | 
 }
 
 begin
@@ -1023,6 +1044,7 @@ end
 | **course_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **course_file_dto_collection_query_parameters** | [**CourseFileDtoCollectionQueryParameters**](CourseFileDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1034,7 +1056,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -1056,7 +1078,8 @@ api_instance = OpenapiClient::CoursesApi.new
 course_id = 'course_id_example' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  course_forum_dto_collection_query_parameters: OpenapiClient::CourseForumDtoCollectionQueryParameters.new # CourseForumDtoCollectionQueryParameters | 
 }
 
 begin
@@ -1093,6 +1116,7 @@ end
 | **course_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **course_forum_dto_collection_query_parameters** | [**CourseForumDtoCollectionQueryParameters**](CourseForumDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1104,7 +1128,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -1126,7 +1150,8 @@ api_instance = OpenapiClient::CoursesApi.new
 course_id = 'course_id_example' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  course_forum_dto_collection_query_parameters: OpenapiClient::CourseForumDtoCollectionQueryParameters.new # CourseForumDtoCollectionQueryParameters | 
 }
 
 begin
@@ -1163,6 +1188,7 @@ end
 | **course_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **course_forum_dto_collection_query_parameters** | [**CourseForumDtoCollectionQueryParameters**](CourseForumDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1174,7 +1200,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -1196,7 +1222,8 @@ api_instance = OpenapiClient::CoursesApi.new
 course_id = 'course_id_example' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  course_handout_dto_collection_query_parameters: OpenapiClient::CourseHandoutDtoCollectionQueryParameters.new # CourseHandoutDtoCollectionQueryParameters | 
 }
 
 begin
@@ -1233,6 +1260,7 @@ end
 | **course_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **course_handout_dto_collection_query_parameters** | [**CourseHandoutDtoCollectionQueryParameters**](CourseHandoutDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1244,7 +1272,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -1266,7 +1294,8 @@ api_instance = OpenapiClient::CoursesApi.new
 course_id = 'course_id_example' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  course_handout_dto_collection_query_parameters: OpenapiClient::CourseHandoutDtoCollectionQueryParameters.new # CourseHandoutDtoCollectionQueryParameters | 
 }
 
 begin
@@ -1303,6 +1332,7 @@ end
 | **course_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **course_handout_dto_collection_query_parameters** | [**CourseHandoutDtoCollectionQueryParameters**](CourseHandoutDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1314,7 +1344,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -1336,7 +1366,8 @@ api_instance = OpenapiClient::CoursesApi.new
 course_id = 'course_id_example' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  course_library_dto_collection_query_parameters: OpenapiClient::CourseLibraryDtoCollectionQueryParameters.new # CourseLibraryDtoCollectionQueryParameters | 
 }
 
 begin
@@ -1373,6 +1404,7 @@ end
 | **course_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **course_library_dto_collection_query_parameters** | [**CourseLibraryDtoCollectionQueryParameters**](CourseLibraryDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1384,7 +1416,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -1406,7 +1438,8 @@ api_instance = OpenapiClient::CoursesApi.new
 course_id = 'course_id_example' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  course_library_dto_collection_query_parameters: OpenapiClient::CourseLibraryDtoCollectionQueryParameters.new # CourseLibraryDtoCollectionQueryParameters | 
 }
 
 begin
@@ -1443,6 +1476,7 @@ end
 | **course_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **course_library_dto_collection_query_parameters** | [**CourseLibraryDtoCollectionQueryParameters**](CourseLibraryDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1454,7 +1488,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -1476,7 +1510,8 @@ api_instance = OpenapiClient::CoursesApi.new
 course_id = 'course_id_example' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  course_page_dto_collection_query_parameters: OpenapiClient::CoursePageDtoCollectionQueryParameters.new # CoursePageDtoCollectionQueryParameters | 
 }
 
 begin
@@ -1513,6 +1548,7 @@ end
 | **course_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **course_page_dto_collection_query_parameters** | [**CoursePageDtoCollectionQueryParameters**](CoursePageDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1524,7 +1560,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -1546,7 +1582,8 @@ api_instance = OpenapiClient::CoursesApi.new
 course_id = 'course_id_example' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  course_page_dto_collection_query_parameters: OpenapiClient::CoursePageDtoCollectionQueryParameters.new # CoursePageDtoCollectionQueryParameters | 
 }
 
 begin
@@ -1583,6 +1620,7 @@ end
 | **course_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **course_page_dto_collection_query_parameters** | [**CoursePageDtoCollectionQueryParameters**](CoursePageDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1594,7 +1632,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -1616,7 +1654,8 @@ api_instance = OpenapiClient::CoursesApi.new
 course_id = 'course_id_example' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  course_problem_set_dto_collection_query_parameters: OpenapiClient::CourseProblemSetDtoCollectionQueryParameters.new # CourseProblemSetDtoCollectionQueryParameters | 
 }
 
 begin
@@ -1653,6 +1692,7 @@ end
 | **course_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **course_problem_set_dto_collection_query_parameters** | [**CourseProblemSetDtoCollectionQueryParameters**](CourseProblemSetDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1664,7 +1704,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -1686,7 +1726,8 @@ api_instance = OpenapiClient::CoursesApi.new
 course_id = 'course_id_example' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  course_problem_set_dto_collection_query_parameters: OpenapiClient::CourseProblemSetDtoCollectionQueryParameters.new # CourseProblemSetDtoCollectionQueryParameters | 
 }
 
 begin
@@ -1723,6 +1764,7 @@ end
 | **course_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **course_problem_set_dto_collection_query_parameters** | [**CourseProblemSetDtoCollectionQueryParameters**](CourseProblemSetDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1734,7 +1776,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -1756,7 +1798,8 @@ api_instance = OpenapiClient::CoursesApi.new
 course_id = 'course_id_example' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  course_section_dto_collection_query_parameters: OpenapiClient::CourseSectionDtoCollectionQueryParameters.new # CourseSectionDtoCollectionQueryParameters | 
 }
 
 begin
@@ -1793,6 +1836,7 @@ end
 | **course_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **course_section_dto_collection_query_parameters** | [**CourseSectionDtoCollectionQueryParameters**](CourseSectionDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1804,7 +1848,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -1826,7 +1870,8 @@ api_instance = OpenapiClient::CoursesApi.new
 course_id = 'course_id_example' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  course_section_dto_collection_query_parameters: OpenapiClient::CourseSectionDtoCollectionQueryParameters.new # CourseSectionDtoCollectionQueryParameters | 
 }
 
 begin
@@ -1863,6 +1908,7 @@ end
 | **course_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **course_section_dto_collection_query_parameters** | [**CourseSectionDtoCollectionQueryParameters**](CourseSectionDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1874,7 +1920,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -1896,7 +1942,8 @@ api_instance = OpenapiClient::CoursesApi.new
 course_id = 'course_id_example' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  course_unit_component_dto_collection_query_parameters: OpenapiClient::CourseUnitComponentDtoCollectionQueryParameters.new # CourseUnitComponentDtoCollectionQueryParameters | 
 }
 
 begin
@@ -1933,6 +1980,7 @@ end
 | **course_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **course_unit_component_dto_collection_query_parameters** | [**CourseUnitComponentDtoCollectionQueryParameters**](CourseUnitComponentDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1944,7 +1992,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -1966,7 +2014,8 @@ api_instance = OpenapiClient::CoursesApi.new
 course_id = 'course_id_example' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  course_unit_component_dto_collection_query_parameters: OpenapiClient::CourseUnitComponentDtoCollectionQueryParameters.new # CourseUnitComponentDtoCollectionQueryParameters | 
 }
 
 begin
@@ -2003,6 +2052,7 @@ end
 | **course_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **course_unit_component_dto_collection_query_parameters** | [**CourseUnitComponentDtoCollectionQueryParameters**](CourseUnitComponentDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -2014,7 +2064,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -2037,7 +2087,8 @@ course_id = 'course_id_example' # String |
 section_id = 'section_id_example' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  course_unit_dto_collection_query_parameters: OpenapiClient::CourseUnitDtoCollectionQueryParameters.new # CourseUnitDtoCollectionQueryParameters | 
 }
 
 begin
@@ -2075,6 +2126,7 @@ end
 | **section_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **course_unit_dto_collection_query_parameters** | [**CourseUnitDtoCollectionQueryParameters**](CourseUnitDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -2086,7 +2138,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -2109,7 +2161,8 @@ course_id = 'course_id_example' # String |
 section_id = 'section_id_example' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  course_unit_dto_collection_query_parameters: OpenapiClient::CourseUnitDtoCollectionQueryParameters.new # CourseUnitDtoCollectionQueryParameters | 
 }
 
 begin
@@ -2147,6 +2200,7 @@ end
 | **section_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **course_unit_dto_collection_query_parameters** | [**CourseUnitDtoCollectionQueryParameters**](CourseUnitDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -2158,7 +2212,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -2180,7 +2234,8 @@ api_instance = OpenapiClient::CoursesApi.new
 course_id = 'course_id_example' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  course_news_dto_collection_query_parameters: OpenapiClient::CourseNewsDtoCollectionQueryParameters.new # CourseNewsDtoCollectionQueryParameters | 
 }
 
 begin
@@ -2217,6 +2272,7 @@ end
 | **course_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **course_news_dto_collection_query_parameters** | [**CourseNewsDtoCollectionQueryParameters**](CourseNewsDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -2228,7 +2284,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -2250,7 +2306,8 @@ api_instance = OpenapiClient::CoursesApi.new
 course_id = 'course_id_example' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  course_news_dto_collection_query_parameters: OpenapiClient::CourseNewsDtoCollectionQueryParameters.new # CourseNewsDtoCollectionQueryParameters | 
 }
 
 begin
@@ -2287,6 +2344,7 @@ end
 | **course_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **course_news_dto_collection_query_parameters** | [**CourseNewsDtoCollectionQueryParameters**](CourseNewsDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -2298,7 +2356,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -2320,7 +2378,8 @@ api_instance = OpenapiClient::CoursesApi.new
 course_id = 'course_id_example' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  course_wiki_dto_collection_query_parameters: OpenapiClient::CourseWikiDtoCollectionQueryParameters.new # CourseWikiDtoCollectionQueryParameters | 
 }
 
 begin
@@ -2357,6 +2416,7 @@ end
 | **course_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **course_wiki_dto_collection_query_parameters** | [**CourseWikiDtoCollectionQueryParameters**](CourseWikiDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -2368,7 +2428,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -2390,7 +2450,8 @@ api_instance = OpenapiClient::CoursesApi.new
 course_id = 'course_id_example' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  course_wiki_dto_collection_query_parameters: OpenapiClient::CourseWikiDtoCollectionQueryParameters.new # CourseWikiDtoCollectionQueryParameters | 
 }
 
 begin
@@ -2427,6 +2488,7 @@ end
 | **course_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **course_wiki_dto_collection_query_parameters** | [**CourseWikiDtoCollectionQueryParameters**](CourseWikiDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -2438,7 +2500,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -2460,7 +2522,8 @@ api_instance = OpenapiClient::CoursesApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  course_dto_collection_query_parameters: OpenapiClient::CourseDtoCollectionQueryParameters.new # CourseDtoCollectionQueryParameters | 
 }
 
 begin
@@ -2497,6 +2560,7 @@ end
 | **tenant_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **course_dto_collection_query_parameters** | [**CourseDtoCollectionQueryParameters**](CourseDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -2508,7 +2572,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -2530,7 +2594,8 @@ api_instance = OpenapiClient::CoursesApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  course_dto_collection_query_parameters: OpenapiClient::CourseDtoCollectionQueryParameters.new # CourseDtoCollectionQueryParameters | 
 }
 
 begin
@@ -2567,6 +2632,7 @@ end
 | **tenant_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **course_dto_collection_query_parameters** | [**CourseDtoCollectionQueryParameters**](CourseDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -2578,7 +2644,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -2882,7 +2948,7 @@ course_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 opts = {
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example', # String | 
-  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+  patch_operation: [OpenapiClient::PatchOperation.new] # Array<PatchOperation> | 
 }
 
 begin
@@ -2920,7 +2986,7 @@ end
 | **course_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
-| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+| **patch_operation** | [**Array&lt;PatchOperation&gt;**](PatchOperation.md) |  | [optional] |
 
 ### Return type
 

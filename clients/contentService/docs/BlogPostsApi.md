@@ -518,7 +518,8 @@ require 'openapi_client'
 
 api_instance = OpenapiClient::BlogPostsApi.new
 opts = {
-  tenant_id: '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+  tenant_id: '38400000-8cf0-11bd-b23e-10b96e4ef00d', # String | 
+  blog_post_dto_collection_query_parameters: OpenapiClient::BlogPostDtoCollectionQueryParameters.new # BlogPostDtoCollectionQueryParameters | 
 }
 
 begin
@@ -553,6 +554,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  | [optional] |
+| **blog_post_dto_collection_query_parameters** | [**BlogPostDtoCollectionQueryParameters**](BlogPostDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -564,7 +566,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -584,7 +586,8 @@ require 'openapi_client'
 
 api_instance = OpenapiClient::BlogPostsApi.new
 opts = {
-  tenant_id: '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+  tenant_id: '38400000-8cf0-11bd-b23e-10b96e4ef00d', # String | 
+  blog_post_dto_collection_query_parameters: OpenapiClient::BlogPostDtoCollectionQueryParameters.new # BlogPostDtoCollectionQueryParameters | 
 }
 
 begin
@@ -619,6 +622,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  | [optional] |
+| **blog_post_dto_collection_query_parameters** | [**BlogPostDtoCollectionQueryParameters**](BlogPostDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -630,13 +634,13 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
 ## get_categories_for_blog_post_async
 
-> <BlogPostCategoryDtoListEnvelope> get_categories_for_blog_post_async(blog_post_id)
+> <BlogPostCategoryDtoListEnvelope> get_categories_for_blog_post_async(blog_post_id, opts)
 
 Get categories for a blog post
 
@@ -650,10 +654,13 @@ require 'openapi_client'
 
 api_instance = OpenapiClient::BlogPostsApi.new
 blog_post_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  blog_post_category_dto_collection_query_parameters: OpenapiClient::BlogPostCategoryDtoCollectionQueryParameters.new # BlogPostCategoryDtoCollectionQueryParameters | 
+}
 
 begin
   # Get categories for a blog post
-  result = api_instance.get_categories_for_blog_post_async(blog_post_id)
+  result = api_instance.get_categories_for_blog_post_async(blog_post_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling BlogPostsApi->get_categories_for_blog_post_async: #{e}"
@@ -664,12 +671,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<BlogPostCategoryDtoListEnvelope>, Integer, Hash)> get_categories_for_blog_post_async_with_http_info(blog_post_id)
+> <Array(<BlogPostCategoryDtoListEnvelope>, Integer, Hash)> get_categories_for_blog_post_async_with_http_info(blog_post_id, opts)
 
 ```ruby
 begin
   # Get categories for a blog post
-  data, status_code, headers = api_instance.get_categories_for_blog_post_async_with_http_info(blog_post_id)
+  data, status_code, headers = api_instance.get_categories_for_blog_post_async_with_http_info(blog_post_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <BlogPostCategoryDtoListEnvelope>
@@ -683,6 +690,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **blog_post_id** | **String** |  |  |
+| **blog_post_category_dto_collection_query_parameters** | [**BlogPostCategoryDtoCollectionQueryParameters**](BlogPostCategoryDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -694,13 +702,13 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
 ## get_comments_for_blog_post_async
 
-> <BlogPostCommentDtoListEnvelope> get_comments_for_blog_post_async(blog_post_id)
+> <BlogPostCommentDtoListEnvelope> get_comments_for_blog_post_async(blog_post_id, opts)
 
 Get comments for a blog post
 
@@ -714,10 +722,13 @@ require 'openapi_client'
 
 api_instance = OpenapiClient::BlogPostsApi.new
 blog_post_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  blog_post_comment_dto_collection_query_parameters: OpenapiClient::BlogPostCommentDtoCollectionQueryParameters.new # BlogPostCommentDtoCollectionQueryParameters | 
+}
 
 begin
   # Get comments for a blog post
-  result = api_instance.get_comments_for_blog_post_async(blog_post_id)
+  result = api_instance.get_comments_for_blog_post_async(blog_post_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling BlogPostsApi->get_comments_for_blog_post_async: #{e}"
@@ -728,12 +739,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<BlogPostCommentDtoListEnvelope>, Integer, Hash)> get_comments_for_blog_post_async_with_http_info(blog_post_id)
+> <Array(<BlogPostCommentDtoListEnvelope>, Integer, Hash)> get_comments_for_blog_post_async_with_http_info(blog_post_id, opts)
 
 ```ruby
 begin
   # Get comments for a blog post
-  data, status_code, headers = api_instance.get_comments_for_blog_post_async_with_http_info(blog_post_id)
+  data, status_code, headers = api_instance.get_comments_for_blog_post_async_with_http_info(blog_post_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <BlogPostCommentDtoListEnvelope>
@@ -747,6 +758,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **blog_post_id** | **String** |  |  |
+| **blog_post_comment_dto_collection_query_parameters** | [**BlogPostCommentDtoCollectionQueryParameters**](BlogPostCommentDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -758,13 +770,13 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
 ## get_replies_for_comment_async
 
-> <BlogPostCommentDtoListEnvelope> get_replies_for_comment_async(comment_id, blog_post_id)
+> <BlogPostCommentDtoListEnvelope> get_replies_for_comment_async(comment_id, blog_post_id, opts)
 
 Get replies for a comment
 
@@ -779,10 +791,13 @@ require 'openapi_client'
 api_instance = OpenapiClient::BlogPostsApi.new
 comment_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 blog_post_id = 'blog_post_id_example' # String | 
+opts = {
+  blog_post_comment_dto_collection_query_parameters: OpenapiClient::BlogPostCommentDtoCollectionQueryParameters.new # BlogPostCommentDtoCollectionQueryParameters | 
+}
 
 begin
   # Get replies for a comment
-  result = api_instance.get_replies_for_comment_async(comment_id, blog_post_id)
+  result = api_instance.get_replies_for_comment_async(comment_id, blog_post_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling BlogPostsApi->get_replies_for_comment_async: #{e}"
@@ -793,12 +808,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<BlogPostCommentDtoListEnvelope>, Integer, Hash)> get_replies_for_comment_async_with_http_info(comment_id, blog_post_id)
+> <Array(<BlogPostCommentDtoListEnvelope>, Integer, Hash)> get_replies_for_comment_async_with_http_info(comment_id, blog_post_id, opts)
 
 ```ruby
 begin
   # Get replies for a comment
-  data, status_code, headers = api_instance.get_replies_for_comment_async_with_http_info(comment_id, blog_post_id)
+  data, status_code, headers = api_instance.get_replies_for_comment_async_with_http_info(comment_id, blog_post_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <BlogPostCommentDtoListEnvelope>
@@ -813,6 +828,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **comment_id** | **String** |  |  |
 | **blog_post_id** | **String** |  |  |
+| **blog_post_comment_dto_collection_query_parameters** | [**BlogPostCommentDtoCollectionQueryParameters**](BlogPostCommentDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -824,13 +840,13 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
 ## get_tags_for_blog_post_async
 
-> <BlogPostTagDtoListEnvelope> get_tags_for_blog_post_async(blog_post_id)
+> <BlogPostTagDtoListEnvelope> get_tags_for_blog_post_async(blog_post_id, opts)
 
 Get tags for a blog post
 
@@ -844,10 +860,13 @@ require 'openapi_client'
 
 api_instance = OpenapiClient::BlogPostsApi.new
 blog_post_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  blog_post_tag_dto_collection_query_parameters: OpenapiClient::BlogPostTagDtoCollectionQueryParameters.new # BlogPostTagDtoCollectionQueryParameters | 
+}
 
 begin
   # Get tags for a blog post
-  result = api_instance.get_tags_for_blog_post_async(blog_post_id)
+  result = api_instance.get_tags_for_blog_post_async(blog_post_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling BlogPostsApi->get_tags_for_blog_post_async: #{e}"
@@ -858,12 +877,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<BlogPostTagDtoListEnvelope>, Integer, Hash)> get_tags_for_blog_post_async_with_http_info(blog_post_id)
+> <Array(<BlogPostTagDtoListEnvelope>, Integer, Hash)> get_tags_for_blog_post_async_with_http_info(blog_post_id, opts)
 
 ```ruby
 begin
   # Get tags for a blog post
-  data, status_code, headers = api_instance.get_tags_for_blog_post_async_with_http_info(blog_post_id)
+  data, status_code, headers = api_instance.get_tags_for_blog_post_async_with_http_info(blog_post_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <BlogPostTagDtoListEnvelope>
@@ -877,6 +896,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **blog_post_id** | **String** |  |  |
+| **blog_post_tag_dto_collection_query_parameters** | [**BlogPostTagDtoCollectionQueryParameters**](BlogPostTagDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -888,7 +908,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -910,7 +930,7 @@ api_instance = OpenapiClient::BlogPostsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 blog_post_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
-  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+  patch_operation: [OpenapiClient::PatchOperation.new] # Array<PatchOperation> | 
 }
 
 begin
@@ -946,7 +966,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
 | **blog_post_id** | **String** |  |  |
-| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+| **patch_operation** | [**Array&lt;PatchOperation&gt;**](PatchOperation.md) |  | [optional] |
 
 ### Return type
 

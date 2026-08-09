@@ -81,6 +81,16 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *OpenapiClient::AntiforgeryApi* | [**get_and_store_tokens**](docs/AntiforgeryApi.md#get_and_store_tokens) | **GET** /api/v2/SystemService/Antiforgery/GetAndStoreTokens | Get and store antiforgery tokens
 *OpenapiClient::AntiforgeryApi* | [**is_request_valid_async**](docs/AntiforgeryApi.md#is_request_valid_async) | **GET** /api/v2/SystemService/Antiforgery/IsRequestValid | Validate antiforgery request
+*OpenapiClient::ApplicationPrincipalsApi* | [**disable_global_application_principal**](docs/ApplicationPrincipalsApi.md#disable_global_application_principal) | **POST** /api/v2/SystemService/ApplicationPrincipals/{principalId}/Disable | Disable an application principal (global)
+*OpenapiClient::ApplicationPrincipalsApi* | [**enable_global_application_principal**](docs/ApplicationPrincipalsApi.md#enable_global_application_principal) | **POST** /api/v2/SystemService/ApplicationPrincipals/{principalId}/Enable | Enable an application principal (global)
+*OpenapiClient::ApplicationPrincipalsApi* | [**get_global_application_principal**](docs/ApplicationPrincipalsApi.md#get_global_application_principal) | **GET** /api/v2/SystemService/ApplicationPrincipals/{principalId} | Get one application principal (any tenant)
+*OpenapiClient::ApplicationPrincipalsApi* | [**get_global_application_principals**](docs/ApplicationPrincipalsApi.md#get_global_application_principals) | **GET** /api/v2/SystemService/ApplicationPrincipals | List application principals across all tenants
+*OpenapiClient::ApplicationPrincipalsApi* | [**get_global_application_principals_count**](docs/ApplicationPrincipalsApi.md#get_global_application_principals_count) | **GET** /api/v2/SystemService/ApplicationPrincipals/Count | Count application principals across all tenants
+*OpenapiClient::ApplicationPrincipalsApi* | [**grant_global_application_principal_permission**](docs/ApplicationPrincipalsApi.md#grant_global_application_principal_permission) | **POST** /api/v2/SystemService/ApplicationPrincipals/{principalId}/Permissions | Grant a permission to an application principal (any tenant)
+*OpenapiClient::ApplicationPrincipalsApi* | [**provision_global_application_principal**](docs/ApplicationPrincipalsApi.md#provision_global_application_principal) | **POST** /api/v2/SystemService/ApplicationPrincipals/Provision | Provision an application principal (any tenant, incl. system-locked)
+*OpenapiClient::ApplicationPrincipalsApi* | [**provision_payments_connector**](docs/ApplicationPrincipalsApi.md#provision_payments_connector) | **POST** /api/v2/SystemService/ApplicationPrincipals/PaymentsConnector | Provision the platform payments-connector identity
+*OpenapiClient::ApplicationPrincipalsApi* | [**revoke_global_application_principal_permission**](docs/ApplicationPrincipalsApi.md#revoke_global_application_principal_permission) | **DELETE** /api/v2/SystemService/ApplicationPrincipals/{principalId}/Permissions/{permission} | Revoke a permission from an application principal (any tenant)
+*OpenapiClient::ApplicationPrincipalsApi* | [**suspend_global_application_principal**](docs/ApplicationPrincipalsApi.md#suspend_global_application_principal) | **POST** /api/v2/SystemService/ApplicationPrincipals/{principalId}/Suspend | Suspend an application principal (global)
 *OpenapiClient::BusinessDomainsApi* | [**delete_system_business_domain**](docs/BusinessDomainsApi.md#delete_system_business_domain) | **DELETE** /api/v2/SystemService/BusinessDomains/{businessDomainId} | Delete a business domain
 *OpenapiClient::BusinessDomainsApi* | [**get_system_business_domain_by_id**](docs/BusinessDomainsApi.md#get_system_business_domain_by_id) | **GET** /api/v2/SystemService/BusinessDomains/{businessDomainId} | Retrieve a business domain by its ID
 *OpenapiClient::BusinessDomainsApi* | [**get_system_business_domains**](docs/BusinessDomainsApi.md#get_system_business_domains) | **GET** /api/v2/SystemService/BusinessDomains | Retrieve all business domains in the system
@@ -90,6 +100,7 @@ Class | Method | HTTP request | Description
 *OpenapiClient::CartsApi* | [**get_system_cart_by_id**](docs/CartsApi.md#get_system_cart_by_id) | **GET** /api/v2/SystemService/Carts/{cartId} | Retrieve a single system cart by its ID
 *OpenapiClient::CartsApi* | [**get_system_carts**](docs/CartsApi.md#get_system_carts) | **GET** /api/v2/SystemService/Carts | Retrieve a list of system carts
 *OpenapiClient::CartsApi* | [**get_system_carts_count**](docs/CartsApi.md#get_system_carts_count) | **GET** /api/v2/SystemService/Carts/Count | Get the count of system carts
+*OpenapiClient::CartsApi* | [**purge_system_guest_carts**](docs/CartsApi.md#purge_system_guest_carts) | **DELETE** /api/v2/SystemService/Carts/Guests | Purge all guest carts
 *OpenapiClient::ContactOptionsApi* | [**create_system_contact_option**](docs/ContactOptionsApi.md#create_system_contact_option) | **POST** /api/v2/SystemService/Contacts/{contactId}/Options | Create a new contact option (admin)
 *OpenapiClient::ContactOptionsApi* | [**delete_system_contact_option**](docs/ContactOptionsApi.md#delete_system_contact_option) | **DELETE** /api/v2/SystemService/Contacts/{contactId}/Options/{optionId} | Delete a contact option (admin)
 *OpenapiClient::ContactOptionsApi* | [**get_system_contact_option_by_id**](docs/ContactOptionsApi.md#get_system_contact_option_by_id) | **GET** /api/v2/SystemService/Contacts/{contactId}/Options/{optionId} | Retrieve a single contact option by its ID (admin)
@@ -103,7 +114,6 @@ Class | Method | HTTP request | Description
 *OpenapiClient::FenixAllianceABSWebApi* | [**account_manage_download_personal_data_post**](docs/FenixAllianceABSWebApi.md#account_manage_download_personal_data_post) | **POST** /Account/Manage/DownloadPersonalData | 
 *OpenapiClient::FenixAllianceABSWebApi* | [**account_manage_link_external_login_post**](docs/FenixAllianceABSWebApi.md#account_manage_link_external_login_post) | **POST** /Account/Manage/LinkExternalLogin | 
 *OpenapiClient::FenixAllianceABSWebApi* | [**account_perform_external_login_post**](docs/FenixAllianceABSWebApi.md#account_perform_external_login_post) | **POST** /Account/PerformExternalLogin | 
-*OpenapiClient::FenixAllianceABSWebApi* | [**api_v2_ai_service_agents_agent_id_agui_post**](docs/FenixAllianceABSWebApi.md#api_v2_ai_service_agents_agent_id_agui_post) | **POST** /api/v2/AIService/Agents/{agentId}/agui | 
 *OpenapiClient::FenixAllianceABSWebApi* | [**forgot_password_post**](docs/FenixAllianceABSWebApi.md#forgot_password_post) | **POST** /forgotPassword | 
 *OpenapiClient::FenixAllianceABSWebApi* | [**health_get**](docs/FenixAllianceABSWebApi.md#health_get) | **GET** /health | 
 *OpenapiClient::FenixAllianceABSWebApi* | [**hello_get**](docs/FenixAllianceABSWebApi.md#hello_get) | **GET** /hello | 
@@ -121,6 +131,19 @@ Class | Method | HTTP request | Description
 *OpenapiClient::IPLookupsApi* | [**get_system_ip_lookup_by_id**](docs/IPLookupsApi.md#get_system_ip_lookup_by_id) | **GET** /api/v2/SystemService/IPLookups/{ipLookupId} | Retrieve a single system IP lookup by its ID
 *OpenapiClient::IPLookupsApi* | [**get_system_ip_lookups**](docs/IPLookupsApi.md#get_system_ip_lookups) | **GET** /api/v2/SystemService/IPLookups | Retrieve a list of system IP lookups
 *OpenapiClient::IPLookupsApi* | [**get_system_ip_lookups_count**](docs/IPLookupsApi.md#get_system_ip_lookups_count) | **GET** /api/v2/SystemService/IPLookups/Count | Get the count of system IP lookups
+*OpenapiClient::InboxApi* | [**cancel_inbox_message_retry**](docs/InboxApi.md#cancel_inbox_message_retry) | **POST** /api/v2/SystemService/Inbox/Messages/{id}/CancelRetry | Cancel a scheduled inbox retry
+*OpenapiClient::InboxApi* | [**dead_letter_inbox_message**](docs/InboxApi.md#dead_letter_inbox_message) | **POST** /api/v2/SystemService/Inbox/Messages/{id}/DeadLetter | Manually dead-letter an inbox message
+*OpenapiClient::InboxApi* | [**expedite_inbox_message**](docs/InboxApi.md#expedite_inbox_message) | **POST** /api/v2/SystemService/Inbox/Messages/{id}/Expedite | Expedite a retry-scheduled inbox message
+*OpenapiClient::InboxApi* | [**get_duplicate_inbox_messages**](docs/InboxApi.md#get_duplicate_inbox_messages) | **GET** /api/v2/SystemService/Inbox/Duplicates | List duplicate-bearing inbox messages
+*OpenapiClient::InboxApi* | [**get_duplicate_inbox_messages_count**](docs/InboxApi.md#get_duplicate_inbox_messages_count) | **GET** /api/v2/SystemService/Inbox/Duplicates/Count | Count duplicate-bearing inbox messages
+*OpenapiClient::InboxApi* | [**get_inbox_correlation_chain**](docs/InboxApi.md#get_inbox_correlation_chain) | **GET** /api/v2/SystemService/Inbox/Correlations/{correlationId} | Get an inbox correlation chain
+*OpenapiClient::InboxApi* | [**get_inbox_health**](docs/InboxApi.md#get_inbox_health) | **GET** /api/v2/SystemService/Inbox/Health | Get durable-inbox processor health
+*OpenapiClient::InboxApi* | [**get_inbox_message**](docs/InboxApi.md#get_inbox_message) | **GET** /api/v2/SystemService/Inbox/Messages/{id} | Get one inbox message
+*OpenapiClient::InboxApi* | [**get_inbox_messages**](docs/InboxApi.md#get_inbox_messages) | **GET** /api/v2/SystemService/Inbox/Messages | List inbox messages
+*OpenapiClient::InboxApi* | [**get_inbox_messages_count**](docs/InboxApi.md#get_inbox_messages_count) | **GET** /api/v2/SystemService/Inbox/Messages/Count | Count inbox messages
+*OpenapiClient::InboxApi* | [**quarantine_inbox_message**](docs/InboxApi.md#quarantine_inbox_message) | **POST** /api/v2/SystemService/Inbox/Messages/{id}/Quarantine | Manually quarantine an inbox message
+*OpenapiClient::InboxApi* | [**release_inbox_message_lease**](docs/InboxApi.md#release_inbox_message_lease) | **POST** /api/v2/SystemService/Inbox/Messages/{id}/ReleaseLease | Release a stuck inbox lease
+*OpenapiClient::InboxApi* | [**replay_inbox_message**](docs/InboxApi.md#replay_inbox_message) | **POST** /api/v2/SystemService/Inbox/Messages/{id}/Replay | Replay a terminal inbox message as a new generation
 *OpenapiClient::LicensingApi* | [**get_attributes_for_license_async**](docs/LicensingApi.md#get_attributes_for_license_async) | **GET** /api/v2/SystemService/Licensing/Licenses/{licenseId}/Attributes | Retrieve license attributes
 *OpenapiClient::LicensingApi* | [**get_features_for_license_async**](docs/LicensingApi.md#get_features_for_license_async) | **GET** /api/v2/SystemService/Licensing/Licenses/{licenseId}/Features | Retrieve license features
 *OpenapiClient::LicensingApi* | [**get_license_assignments_async**](docs/LicensingApi.md#get_license_assignments_async) | **GET** /api/v2/SystemService/Licensing/Licenses/{licenseId}/Assignments | Retrieve license assignments
@@ -142,6 +165,16 @@ Class | Method | HTTP request | Description
 *OpenapiClient::OptionsApi* | [**patch_system_option**](docs/OptionsApi.md#patch_system_option) | **PATCH** /api/v2/SystemService/Options/{optionId} | Partially update a system option
 *OpenapiClient::OptionsApi* | [**update_system_option**](docs/OptionsApi.md#update_system_option) | **PUT** /api/v2/SystemService/Options/{optionId} | Update a system option
 *OpenapiClient::OptionsApi* | [**upsert_system_option**](docs/OptionsApi.md#upsert_system_option) | **PUT** /api/v2/SystemService/Options/Upsert/{key} | Create or update a system option by key
+*OpenapiClient::OutboxApi* | [**cancel_outbox_message**](docs/OutboxApi.md#cancel_outbox_message) | **POST** /api/v2/SystemService/Outbox/Messages/{id}/Cancel | Cancel an outbox message
+*OpenapiClient::OutboxApi* | [**dead_letter_outbox_message**](docs/OutboxApi.md#dead_letter_outbox_message) | **POST** /api/v2/SystemService/Outbox/Messages/{id}/DeadLetter | Manually dead-letter an outbox message
+*OpenapiClient::OutboxApi* | [**expedite_outbox_message**](docs/OutboxApi.md#expedite_outbox_message) | **POST** /api/v2/SystemService/Outbox/Messages/{id}/Expedite | Expedite a failed (retry-eligible) outbox message
+*OpenapiClient::OutboxApi* | [**get_outbox_correlation_chain**](docs/OutboxApi.md#get_outbox_correlation_chain) | **GET** /api/v2/SystemService/Outbox/Correlations/{correlationId} | Get an outbox correlation chain
+*OpenapiClient::OutboxApi* | [**get_outbox_health**](docs/OutboxApi.md#get_outbox_health) | **GET** /api/v2/SystemService/Outbox/Health | Get durable-outbox relay health
+*OpenapiClient::OutboxApi* | [**get_outbox_message**](docs/OutboxApi.md#get_outbox_message) | **GET** /api/v2/SystemService/Outbox/Messages/{id} | Get one outbox message
+*OpenapiClient::OutboxApi* | [**get_outbox_messages**](docs/OutboxApi.md#get_outbox_messages) | **GET** /api/v2/SystemService/Outbox/Messages | List outbox messages
+*OpenapiClient::OutboxApi* | [**get_outbox_messages_count**](docs/OutboxApi.md#get_outbox_messages_count) | **GET** /api/v2/SystemService/Outbox/Messages/Count | Count outbox messages
+*OpenapiClient::OutboxApi* | [**release_outbox_message_lease**](docs/OutboxApi.md#release_outbox_message_lease) | **POST** /api/v2/SystemService/Outbox/Messages/{id}/ReleaseLease | Release a stuck outbox lease
+*OpenapiClient::OutboxApi* | [**replay_outbox_message**](docs/OutboxApi.md#replay_outbox_message) | **POST** /api/v2/SystemService/Outbox/Messages/{id}/Replay | Replay a dead-lettered or failed outbox message
 *OpenapiClient::OverviewApi* | [**get_system_overview**](docs/OverviewApi.md#get_system_overview) | **GET** /api/v2/SystemService/Overview | Get system overview information
 *OpenapiClient::PortalsApi* | [**create_system_portal**](docs/PortalsApi.md#create_system_portal) | **POST** /api/v2/SystemService/Portals | Create a new system portal
 *OpenapiClient::PortalsApi* | [**delete_system_portal**](docs/PortalsApi.md#delete_system_portal) | **DELETE** /api/v2/SystemService/Portals/{portalId} | Delete a system portal
@@ -165,8 +198,10 @@ Class | Method | HTTP request | Description
 *OpenapiClient::TenantsApi* | [**get_all_tenants**](docs/TenantsApi.md#get_all_tenants) | **GET** /api/v2/SystemService/Tenants | Get all tenants available on this suite server instance.
 *OpenapiClient::TenantsApi* | [**get_extended_tenants_count**](docs/TenantsApi.md#get_extended_tenants_count) | **GET** /api/v2/SystemService/Tenants/Extended/Count | Get the total count of extended tenants available on this suite server instance.
 *OpenapiClient::TenantsApi* | [**get_tenant**](docs/TenantsApi.md#get_tenant) | **GET** /api/v2/SystemService/Tenants/{tenantId} | Get a specific tenant by ID.
+*OpenapiClient::TenantsApi* | [**get_tenant_module_grants**](docs/TenantsApi.md#get_tenant_module_grants) | **GET** /api/v2/SystemService/Tenants/{tenantId}/ModuleGrants | Get the per-tenant admin module grants for a specific tenant.
 *OpenapiClient::TenantsApi* | [**get_tenants_count**](docs/TenantsApi.md#get_tenants_count) | **GET** /api/v2/SystemService/Tenants/Count | Get the total count of tenants available on this suite server instance.
 *OpenapiClient::TenantsApi* | [**patch_tenant**](docs/TenantsApi.md#patch_tenant) | **PATCH** /api/v2/SystemService/Tenants/{tenantId} | Partially update a specific tenant by ID.
+*OpenapiClient::TenantsApi* | [**set_tenant_module_grants**](docs/TenantsApi.md#set_tenant_module_grants) | **PUT** /api/v2/SystemService/Tenants/{tenantId}/ModuleGrants | Replace the per-tenant admin module grants for a specific tenant.
 *OpenapiClient::TenantsApi* | [**update_tenant**](docs/TenantsApi.md#update_tenant) | **PUT** /api/v2/SystemService/Tenants/{tenantId} | Update a specific tenant by ID.
 *OpenapiClient::UserOptionsApi* | [**create_system_user_option**](docs/UserOptionsApi.md#create_system_user_option) | **POST** /api/v2/SystemService/Users/{userId}/Options | Create a new user option (admin)
 *OpenapiClient::UserOptionsApi* | [**delete_system_user_option**](docs/UserOptionsApi.md#delete_system_user_option) | **DELETE** /api/v2/SystemService/Users/{userId}/Options/{optionId} | Delete a user option (admin)
@@ -182,21 +217,35 @@ Class | Method | HTTP request | Description
 *OpenapiClient::UsersApi* | [**get_extended_account_holder_async**](docs/UsersApi.md#get_extended_account_holder_async) | **GET** /api/v2/SystemService/Users/{userId}/Extended | Retrieve an extended user by ID
 *OpenapiClient::UsersApi* | [**get_extended_users_async**](docs/UsersApi.md#get_extended_users_async) | **GET** /api/v2/SystemService/Users/Extended | Retrieve a list of extended users
 *OpenapiClient::UsersApi* | [**get_extended_users_count_async**](docs/UsersApi.md#get_extended_users_count_async) | **GET** /api/v2/SystemService/Users/Extended/Count | Get the count of extended users
+*OpenapiClient::UsersApi* | [**get_user_admin_detail_async**](docs/UsersApi.md#get_user_admin_detail_async) | **GET** /api/v2/SystemService/Users/{userId}/AdminDetail | Retrieve the admin detail aggregate for a user
 *OpenapiClient::UsersApi* | [**get_user_async**](docs/UsersApi.md#get_user_async) | **GET** /api/v2/SystemService/Users/{userId} | Retrieve a user by ID
 *OpenapiClient::UsersApi* | [**get_users_async**](docs/UsersApi.md#get_users_async) | **GET** /api/v2/SystemService/Users | Retrieve a list of users
 *OpenapiClient::UsersApi* | [**get_users_count_async**](docs/UsersApi.md#get_users_count_async) | **GET** /api/v2/SystemService/Users/Count | Get the count of users
 *OpenapiClient::UsersApi* | [**patch_account_holder_async**](docs/UsersApi.md#patch_account_holder_async) | **PATCH** /api/v2/SystemService/Users/{userId} | Partially update a user
+*OpenapiClient::UsersApi* | [**set_user_password_async**](docs/UsersApi.md#set_user_password_async) | **POST** /api/v2/SystemService/Users/{userId}/Password | Set a user's password
+*OpenapiClient::UsersApi* | [**update_account_holder_admin_profile_async**](docs/UsersApi.md#update_account_holder_admin_profile_async) | **PUT** /api/v2/SystemService/Users/{userId}/AdminProfile | Update a user's admin-managed profile
 *OpenapiClient::UsersApi* | [**update_account_holder_async**](docs/UsersApi.md#update_account_holder_async) | **PUT** /api/v2/SystemService/Users/{userId} | Update a user
 
 
 ## Documentation for Models
 
  - [OpenapiClient::AccessTokenResponse](docs/AccessTokenResponse.md)
+ - [OpenapiClient::ApplicationPrincipalDetailDto](docs/ApplicationPrincipalDetailDto.md)
+ - [OpenapiClient::ApplicationPrincipalDetailDtoEnvelope](docs/ApplicationPrincipalDetailDtoEnvelope.md)
+ - [OpenapiClient::ApplicationPrincipalDto](docs/ApplicationPrincipalDto.md)
+ - [OpenapiClient::ApplicationPrincipalDtoCollectionQueryParameters](docs/ApplicationPrincipalDtoCollectionQueryParameters.md)
+ - [OpenapiClient::ApplicationPrincipalDtoIReadOnlyListEnvelope](docs/ApplicationPrincipalDtoIReadOnlyListEnvelope.md)
+ - [OpenapiClient::ApplicationPrincipalPermissionRequestDto](docs/ApplicationPrincipalPermissionRequestDto.md)
+ - [OpenapiClient::ApplicationPrincipalProvisionRequestDto](docs/ApplicationPrincipalProvisionRequestDto.md)
+ - [OpenapiClient::ApplicationPrincipalProvisioningResultDto](docs/ApplicationPrincipalProvisioningResultDto.md)
+ - [OpenapiClient::ApplicationPrincipalProvisioningResultDtoEnvelope](docs/ApplicationPrincipalProvisioningResultDtoEnvelope.md)
  - [OpenapiClient::BooleanEnvelope](docs/BooleanEnvelope.md)
  - [OpenapiClient::BusinessDomainDto](docs/BusinessDomainDto.md)
+ - [OpenapiClient::BusinessDomainDtoCollectionQueryParameters](docs/BusinessDomainDtoCollectionQueryParameters.md)
  - [OpenapiClient::BusinessDomainDtoEnvelope](docs/BusinessDomainDtoEnvelope.md)
  - [OpenapiClient::BusinessDomainDtoListEnvelope](docs/BusinessDomainDtoListEnvelope.md)
  - [OpenapiClient::CartDto](docs/CartDto.md)
+ - [OpenapiClient::CartDtoCollectionQueryParameters](docs/CartDtoCollectionQueryParameters.md)
  - [OpenapiClient::CartDtoEnvelope](docs/CartDtoEnvelope.md)
  - [OpenapiClient::CartDtoListEnvelope](docs/CartDtoListEnvelope.md)
  - [OpenapiClient::EmailDispatchRequest](docs/EmailDispatchRequest.md)
@@ -204,37 +253,64 @@ Class | Method | HTTP request | Description
  - [OpenapiClient::Envelope](docs/Envelope.md)
  - [OpenapiClient::ErrorEnvelope](docs/ErrorEnvelope.md)
  - [OpenapiClient::ExtendedTenantDto](docs/ExtendedTenantDto.md)
+ - [OpenapiClient::ExtendedTenantDtoCollectionQueryParameters](docs/ExtendedTenantDtoCollectionQueryParameters.md)
  - [OpenapiClient::ExtendedTenantDtoListEnvelope](docs/ExtendedTenantDtoListEnvelope.md)
  - [OpenapiClient::ExtendedUserDto](docs/ExtendedUserDto.md)
+ - [OpenapiClient::ExtendedUserDtoCollectionQueryParameters](docs/ExtendedUserDtoCollectionQueryParameters.md)
  - [OpenapiClient::ExtendedUserDtoEnvelope](docs/ExtendedUserDtoEnvelope.md)
  - [OpenapiClient::ExtendedUserDtoListEnvelope](docs/ExtendedUserDtoListEnvelope.md)
  - [OpenapiClient::ForgotPasswordRequest](docs/ForgotPasswordRequest.md)
+ - [OpenapiClient::GuestCartPurgeResultDto](docs/GuestCartPurgeResultDto.md)
+ - [OpenapiClient::GuestCartPurgeResultDtoEnvelope](docs/GuestCartPurgeResultDtoEnvelope.md)
  - [OpenapiClient::HttpValidationProblemDetails](docs/HttpValidationProblemDetails.md)
  - [OpenapiClient::IOpenApiContact](docs/IOpenApiContact.md)
  - [OpenapiClient::IOpenApiDefinitionSpec](docs/IOpenApiDefinitionSpec.md)
  - [OpenapiClient::IOpenApiEndpoint](docs/IOpenApiEndpoint.md)
  - [OpenapiClient::IOpenApiLicense](docs/IOpenApiLicense.md)
  - [OpenapiClient::IPLookupDto](docs/IPLookupDto.md)
+ - [OpenapiClient::IPLookupDtoCollectionQueryParameters](docs/IPLookupDtoCollectionQueryParameters.md)
  - [OpenapiClient::IPLookupDtoEnvelope](docs/IPLookupDtoEnvelope.md)
  - [OpenapiClient::IPLookupDtoListEnvelope](docs/IPLookupDtoListEnvelope.md)
  - [OpenapiClient::IValidationFailure](docs/IValidationFailure.md)
  - [OpenapiClient::IValidationFailureListEnvelope](docs/IValidationFailureListEnvelope.md)
+ - [OpenapiClient::InboxAdminReasonDto](docs/InboxAdminReasonDto.md)
+ - [OpenapiClient::InboxHealthDto](docs/InboxHealthDto.md)
+ - [OpenapiClient::InboxHealthDtoEnvelope](docs/InboxHealthDtoEnvelope.md)
+ - [OpenapiClient::InboxMessageDto](docs/InboxMessageDto.md)
+ - [OpenapiClient::InboxMessageDtoCollectionQueryParameters](docs/InboxMessageDtoCollectionQueryParameters.md)
+ - [OpenapiClient::InboxMessageDtoEnvelope](docs/InboxMessageDtoEnvelope.md)
+ - [OpenapiClient::InboxMessageDtoIReadOnlyListEnvelope](docs/InboxMessageDtoIReadOnlyListEnvelope.md)
+ - [OpenapiClient::InboxReplayResultDto](docs/InboxReplayResultDto.md)
+ - [OpenapiClient::InboxReplayResultDtoEnvelope](docs/InboxReplayResultDtoEnvelope.md)
  - [OpenapiClient::InfoRequest](docs/InfoRequest.md)
  - [OpenapiClient::InfoResponse](docs/InfoResponse.md)
  - [OpenapiClient::Int32Envelope](docs/Int32Envelope.md)
  - [OpenapiClient::LicenseValidationRequest](docs/LicenseValidationRequest.md)
  - [OpenapiClient::LoginRequest](docs/LoginRequest.md)
+ - [OpenapiClient::ModuleGrantDto](docs/ModuleGrantDto.md)
+ - [OpenapiClient::ModuleGrantDtoListEnvelope](docs/ModuleGrantDtoListEnvelope.md)
  - [OpenapiClient::ObjectEmailDispatchRequest](docs/ObjectEmailDispatchRequest.md)
- - [OpenapiClient::Operation](docs/Operation.md)
  - [OpenapiClient::OptionCreateDto](docs/OptionCreateDto.md)
  - [OpenapiClient::OptionDto](docs/OptionDto.md)
+ - [OpenapiClient::OptionDtoCollectionQueryParameters](docs/OptionDtoCollectionQueryParameters.md)
  - [OpenapiClient::OptionDtoEnvelope](docs/OptionDtoEnvelope.md)
  - [OpenapiClient::OptionDtoListEnvelope](docs/OptionDtoListEnvelope.md)
  - [OpenapiClient::OptionUpdateDto](docs/OptionUpdateDto.md)
+ - [OpenapiClient::OutboxAdminReasonDto](docs/OutboxAdminReasonDto.md)
+ - [OpenapiClient::OutboxHealthDto](docs/OutboxHealthDto.md)
+ - [OpenapiClient::OutboxHealthDtoEnvelope](docs/OutboxHealthDtoEnvelope.md)
+ - [OpenapiClient::OutboxMessageDto](docs/OutboxMessageDto.md)
+ - [OpenapiClient::OutboxMessageDtoCollectionQueryParameters](docs/OutboxMessageDtoCollectionQueryParameters.md)
+ - [OpenapiClient::OutboxMessageDtoEnvelope](docs/OutboxMessageDtoEnvelope.md)
+ - [OpenapiClient::OutboxMessageDtoIReadOnlyListEnvelope](docs/OutboxMessageDtoIReadOnlyListEnvelope.md)
+ - [OpenapiClient::PatchOperation](docs/PatchOperation.md)
  - [OpenapiClient::RefreshRequest](docs/RefreshRequest.md)
  - [OpenapiClient::RegisterRequest](docs/RegisterRequest.md)
  - [OpenapiClient::ResendConfirmationEmailRequest](docs/ResendConfirmationEmailRequest.md)
  - [OpenapiClient::ResetPasswordRequest](docs/ResetPasswordRequest.md)
+ - [OpenapiClient::SecurityPermissionDto](docs/SecurityPermissionDto.md)
+ - [OpenapiClient::SecurityRoleDto](docs/SecurityRoleDto.md)
+ - [OpenapiClient::SetUserPasswordDto](docs/SetUserPasswordDto.md)
  - [OpenapiClient::SocialProfileDto](docs/SocialProfileDto.md)
  - [OpenapiClient::StringListEnvelope](docs/StringListEnvelope.md)
  - [OpenapiClient::StudioModule](docs/StudioModule.md)
@@ -250,20 +326,29 @@ Class | Method | HTTP request | Description
  - [OpenapiClient::SystemOverviewDtoEnvelope](docs/SystemOverviewDtoEnvelope.md)
  - [OpenapiClient::TenantCreateDto](docs/TenantCreateDto.md)
  - [OpenapiClient::TenantDto](docs/TenantDto.md)
+ - [OpenapiClient::TenantDtoCollectionQueryParameters](docs/TenantDtoCollectionQueryParameters.md)
  - [OpenapiClient::TenantDtoEnvelope](docs/TenantDtoEnvelope.md)
  - [OpenapiClient::TenantDtoListEnvelope](docs/TenantDtoListEnvelope.md)
+ - [OpenapiClient::TenantEnrollmentDto](docs/TenantEnrollmentDto.md)
  - [OpenapiClient::TenantUpdateDto](docs/TenantUpdateDto.md)
  - [OpenapiClient::TwoFactorRequest](docs/TwoFactorRequest.md)
  - [OpenapiClient::TwoFactorResponse](docs/TwoFactorResponse.md)
+ - [OpenapiClient::UserAdminDetailDto](docs/UserAdminDetailDto.md)
+ - [OpenapiClient::UserAdminDetailDtoEnvelope](docs/UserAdminDetailDtoEnvelope.md)
+ - [OpenapiClient::UserAdminUpdateDto](docs/UserAdminUpdateDto.md)
  - [OpenapiClient::UserCreateDto](docs/UserCreateDto.md)
  - [OpenapiClient::UserDto](docs/UserDto.md)
+ - [OpenapiClient::UserDtoCollectionQueryParameters](docs/UserDtoCollectionQueryParameters.md)
  - [OpenapiClient::UserDtoEnvelope](docs/UserDtoEnvelope.md)
  - [OpenapiClient::UserDtoListEnvelope](docs/UserDtoListEnvelope.md)
+ - [OpenapiClient::UserExternalLoginDto](docs/UserExternalLoginDto.md)
+ - [OpenapiClient::UserOrderSummaryDto](docs/UserOrderSummaryDto.md)
  - [OpenapiClient::UserSettingsDto](docs/UserSettingsDto.md)
  - [OpenapiClient::UserUpdateDto](docs/UserUpdateDto.md)
  - [OpenapiClient::WalletDto](docs/WalletDto.md)
  - [OpenapiClient::WebPortalCreateDto](docs/WebPortalCreateDto.md)
  - [OpenapiClient::WebPortalDto](docs/WebPortalDto.md)
+ - [OpenapiClient::WebPortalDtoCollectionQueryParameters](docs/WebPortalDtoCollectionQueryParameters.md)
  - [OpenapiClient::WebPortalDtoEnvelope](docs/WebPortalDtoEnvelope.md)
  - [OpenapiClient::WebPortalDtoListEnvelope](docs/WebPortalDtoListEnvelope.md)
  - [OpenapiClient::WebPortalUpdateDto](docs/WebPortalUpdateDto.md)

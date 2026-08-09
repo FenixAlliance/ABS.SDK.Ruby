@@ -1394,6 +1394,7 @@ module OpenapiClient
     # Retrieves a list of extended invoice details for the specified tenant.
     # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [ExtendedInvoiceDtoCollectionQueryParameters] :extended_invoice_dto_collection_query_parameters 
     # @return [ExtendedInvoiceDtoListEnvelope]
     def get_extended_invoices(tenant_id, opts = {})
       data, _status_code, _headers = get_extended_invoices_with_http_info(tenant_id, opts)
@@ -1404,6 +1405,7 @@ module OpenapiClient
     # Retrieves a list of extended invoice details for the specified tenant.
     # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [ExtendedInvoiceDtoCollectionQueryParameters] :extended_invoice_dto_collection_query_parameters 
     # @return [Array<(ExtendedInvoiceDtoListEnvelope, Integer, Hash)>] ExtendedInvoiceDtoListEnvelope data, response status code and response headers
     def get_extended_invoices_with_http_info(tenant_id, opts = {})
       if @api_client.config.debugging
@@ -1424,12 +1426,17 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'extended_invoice_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'ExtendedInvoiceDtoListEnvelope'
@@ -1458,6 +1465,7 @@ module OpenapiClient
     # Retrieves the total count of extended invoices for the specified tenant.
     # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [ExtendedInvoiceDtoCollectionQueryParameters] :extended_invoice_dto_collection_query_parameters 
     # @return [Int32Envelope]
     def get_extended_invoices_count(tenant_id, opts = {})
       data, _status_code, _headers = get_extended_invoices_count_with_http_info(tenant_id, opts)
@@ -1468,6 +1476,7 @@ module OpenapiClient
     # Retrieves the total count of extended invoices for the specified tenant.
     # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [ExtendedInvoiceDtoCollectionQueryParameters] :extended_invoice_dto_collection_query_parameters 
     # @return [Array<(Int32Envelope, Integer, Hash)>] Int32Envelope data, response status code and response headers
     def get_extended_invoices_count_with_http_info(tenant_id, opts = {})
       if @api_client.config.debugging
@@ -1488,12 +1497,17 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'extended_invoice_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'Int32Envelope'
@@ -1669,6 +1683,7 @@ module OpenapiClient
     # @param tenant_id [String] 
     # @param invoice_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [InvoiceAdjustmentDtoCollectionQueryParameters] :invoice_adjustment_dto_collection_query_parameters 
     # @return [InvoiceAdjustmentDtoIReadOnlyListEnvelope]
     def get_invoice_adjustments(tenant_id, invoice_id, opts = {})
       data, _status_code, _headers = get_invoice_adjustments_with_http_info(tenant_id, invoice_id, opts)
@@ -1680,6 +1695,7 @@ module OpenapiClient
     # @param tenant_id [String] 
     # @param invoice_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [InvoiceAdjustmentDtoCollectionQueryParameters] :invoice_adjustment_dto_collection_query_parameters 
     # @return [Array<(InvoiceAdjustmentDtoIReadOnlyListEnvelope, Integer, Hash)>] InvoiceAdjustmentDtoIReadOnlyListEnvelope data, response status code and response headers
     def get_invoice_adjustments_with_http_info(tenant_id, invoice_id, opts = {})
       if @api_client.config.debugging
@@ -1704,12 +1720,17 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'invoice_adjustment_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'InvoiceAdjustmentDtoIReadOnlyListEnvelope'
@@ -1739,6 +1760,7 @@ module OpenapiClient
     # @param tenant_id [String] 
     # @param invoice_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [InvoiceAdjustmentDtoCollectionQueryParameters] :invoice_adjustment_dto_collection_query_parameters 
     # @return [Int32Envelope]
     def get_invoice_adjustments_count(tenant_id, invoice_id, opts = {})
       data, _status_code, _headers = get_invoice_adjustments_count_with_http_info(tenant_id, invoice_id, opts)
@@ -1750,6 +1772,7 @@ module OpenapiClient
     # @param tenant_id [String] 
     # @param invoice_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [InvoiceAdjustmentDtoCollectionQueryParameters] :invoice_adjustment_dto_collection_query_parameters 
     # @return [Array<(Int32Envelope, Integer, Hash)>] Int32Envelope data, response status code and response headers
     def get_invoice_adjustments_count_with_http_info(tenant_id, invoice_id, opts = {})
       if @api_client.config.debugging
@@ -1774,12 +1797,17 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'invoice_adjustment_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'Int32Envelope'
@@ -1886,6 +1914,7 @@ module OpenapiClient
     # @param invoice_id [String] 
     # @param invoice_line_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [InvoiceLineAppliedTaxDtoCollectionQueryParameters] :invoice_line_applied_tax_dto_collection_query_parameters 
     # @return [InvoiceLineAppliedTaxDtoIReadOnlyListEnvelope]
     def get_invoice_line_taxes(tenant_id, invoice_id, invoice_line_id, opts = {})
       data, _status_code, _headers = get_invoice_line_taxes_with_http_info(tenant_id, invoice_id, invoice_line_id, opts)
@@ -1898,6 +1927,7 @@ module OpenapiClient
     # @param invoice_id [String] 
     # @param invoice_line_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [InvoiceLineAppliedTaxDtoCollectionQueryParameters] :invoice_line_applied_tax_dto_collection_query_parameters 
     # @return [Array<(InvoiceLineAppliedTaxDtoIReadOnlyListEnvelope, Integer, Hash)>] InvoiceLineAppliedTaxDtoIReadOnlyListEnvelope data, response status code and response headers
     def get_invoice_line_taxes_with_http_info(tenant_id, invoice_id, invoice_line_id, opts = {})
       if @api_client.config.debugging
@@ -1926,12 +1956,17 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'invoice_line_applied_tax_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'InvoiceLineAppliedTaxDtoIReadOnlyListEnvelope'
@@ -1962,6 +1997,7 @@ module OpenapiClient
     # @param invoice_id [String] 
     # @param invoice_line_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [InvoiceLineAppliedTaxDtoCollectionQueryParameters] :invoice_line_applied_tax_dto_collection_query_parameters 
     # @return [Int32Envelope]
     def get_invoice_line_taxes_count(tenant_id, invoice_id, invoice_line_id, opts = {})
       data, _status_code, _headers = get_invoice_line_taxes_count_with_http_info(tenant_id, invoice_id, invoice_line_id, opts)
@@ -1974,6 +2010,7 @@ module OpenapiClient
     # @param invoice_id [String] 
     # @param invoice_line_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [InvoiceLineAppliedTaxDtoCollectionQueryParameters] :invoice_line_applied_tax_dto_collection_query_parameters 
     # @return [Array<(Int32Envelope, Integer, Hash)>] Int32Envelope data, response status code and response headers
     def get_invoice_line_taxes_count_with_http_info(tenant_id, invoice_id, invoice_line_id, opts = {})
       if @api_client.config.debugging
@@ -2002,12 +2039,17 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'invoice_line_applied_tax_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'Int32Envelope'
@@ -2038,6 +2080,7 @@ module OpenapiClient
     # @param invoice_id [String] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :item_id 
+    # @option opts [InvoiceLineDtoCollectionQueryParameters] :invoice_line_dto_collection_query_parameters 
     # @return [InvoiceLineDtoListEnvelope]
     def get_invoice_lines(tenant_id, invoice_id, opts = {})
       data, _status_code, _headers = get_invoice_lines_with_http_info(tenant_id, invoice_id, opts)
@@ -2050,6 +2093,7 @@ module OpenapiClient
     # @param invoice_id [String] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :item_id 
+    # @option opts [InvoiceLineDtoCollectionQueryParameters] :invoice_line_dto_collection_query_parameters 
     # @return [Array<(InvoiceLineDtoListEnvelope, Integer, Hash)>] InvoiceLineDtoListEnvelope data, response status code and response headers
     def get_invoice_lines_with_http_info(tenant_id, invoice_id, opts = {})
       if @api_client.config.debugging
@@ -2075,12 +2119,17 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'invoice_line_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'InvoiceLineDtoListEnvelope'
@@ -2110,6 +2159,7 @@ module OpenapiClient
     # @param tenant_id [String] 
     # @param invoice_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [InvoiceLineDtoCollectionQueryParameters] :invoice_line_dto_collection_query_parameters 
     # @return [Int32Envelope]
     def get_invoice_lines_count(tenant_id, invoice_id, opts = {})
       data, _status_code, _headers = get_invoice_lines_count_with_http_info(tenant_id, invoice_id, opts)
@@ -2121,6 +2171,7 @@ module OpenapiClient
     # @param tenant_id [String] 
     # @param invoice_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [InvoiceLineDtoCollectionQueryParameters] :invoice_line_dto_collection_query_parameters 
     # @return [Array<(Int32Envelope, Integer, Hash)>] Int32Envelope data, response status code and response headers
     def get_invoice_lines_count_with_http_info(tenant_id, invoice_id, opts = {})
       if @api_client.config.debugging
@@ -2145,12 +2196,17 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'invoice_line_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'Int32Envelope'
@@ -2180,6 +2236,7 @@ module OpenapiClient
     # @param tenant_id [String] 
     # @param invoice_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [PaymentDtoCollectionQueryParameters] :payment_dto_collection_query_parameters 
     # @return [PaymentDtoIReadOnlyListEnvelope]
     def get_invoice_payments(tenant_id, invoice_id, opts = {})
       data, _status_code, _headers = get_invoice_payments_with_http_info(tenant_id, invoice_id, opts)
@@ -2191,6 +2248,7 @@ module OpenapiClient
     # @param tenant_id [String] 
     # @param invoice_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [PaymentDtoCollectionQueryParameters] :payment_dto_collection_query_parameters 
     # @return [Array<(PaymentDtoIReadOnlyListEnvelope, Integer, Hash)>] PaymentDtoIReadOnlyListEnvelope data, response status code and response headers
     def get_invoice_payments_with_http_info(tenant_id, invoice_id, opts = {})
       if @api_client.config.debugging
@@ -2215,12 +2273,17 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'payment_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'PaymentDtoIReadOnlyListEnvelope'
@@ -2250,6 +2313,7 @@ module OpenapiClient
     # @param tenant_id [String] 
     # @param invoice_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [PaymentDtoCollectionQueryParameters] :payment_dto_collection_query_parameters 
     # @return [Int32Envelope]
     def get_invoice_payments_count(tenant_id, invoice_id, opts = {})
       data, _status_code, _headers = get_invoice_payments_count_with_http_info(tenant_id, invoice_id, opts)
@@ -2261,6 +2325,7 @@ module OpenapiClient
     # @param tenant_id [String] 
     # @param invoice_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [PaymentDtoCollectionQueryParameters] :payment_dto_collection_query_parameters 
     # @return [Array<(Int32Envelope, Integer, Hash)>] Int32Envelope data, response status code and response headers
     def get_invoice_payments_count_with_http_info(tenant_id, invoice_id, opts = {})
       if @api_client.config.debugging
@@ -2285,12 +2350,17 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'payment_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'Int32Envelope'
@@ -2396,6 +2466,7 @@ module OpenapiClient
     # @param tenant_id [String] 
     # @param invoice_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [InvoiceReferenceDtoCollectionQueryParameters] :invoice_reference_dto_collection_query_parameters 
     # @return [InvoiceReferenceDtoIReadOnlyListEnvelope]
     def get_invoice_references(tenant_id, invoice_id, opts = {})
       data, _status_code, _headers = get_invoice_references_with_http_info(tenant_id, invoice_id, opts)
@@ -2407,6 +2478,7 @@ module OpenapiClient
     # @param tenant_id [String] 
     # @param invoice_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [InvoiceReferenceDtoCollectionQueryParameters] :invoice_reference_dto_collection_query_parameters 
     # @return [Array<(InvoiceReferenceDtoIReadOnlyListEnvelope, Integer, Hash)>] InvoiceReferenceDtoIReadOnlyListEnvelope data, response status code and response headers
     def get_invoice_references_with_http_info(tenant_id, invoice_id, opts = {})
       if @api_client.config.debugging
@@ -2431,12 +2503,17 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'invoice_reference_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'InvoiceReferenceDtoIReadOnlyListEnvelope'
@@ -2466,6 +2543,7 @@ module OpenapiClient
     # @param tenant_id [String] 
     # @param invoice_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [InvoiceReferenceDtoCollectionQueryParameters] :invoice_reference_dto_collection_query_parameters 
     # @return [Int32Envelope]
     def get_invoice_references_count(tenant_id, invoice_id, opts = {})
       data, _status_code, _headers = get_invoice_references_count_with_http_info(tenant_id, invoice_id, opts)
@@ -2477,6 +2555,7 @@ module OpenapiClient
     # @param tenant_id [String] 
     # @param invoice_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [InvoiceReferenceDtoCollectionQueryParameters] :invoice_reference_dto_collection_query_parameters 
     # @return [Array<(Int32Envelope, Integer, Hash)>] Int32Envelope data, response status code and response headers
     def get_invoice_references_count_with_http_info(tenant_id, invoice_id, opts = {})
       if @api_client.config.debugging
@@ -2501,12 +2580,17 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'invoice_reference_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'Int32Envelope'
@@ -2535,6 +2619,7 @@ module OpenapiClient
     # Retrieves a list of invoices for the specified tenant.
     # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [InvoiceDtoCollectionQueryParameters] :invoice_dto_collection_query_parameters 
     # @return [InvoiceDtoListEnvelope]
     def get_invoices(tenant_id, opts = {})
       data, _status_code, _headers = get_invoices_with_http_info(tenant_id, opts)
@@ -2545,6 +2630,7 @@ module OpenapiClient
     # Retrieves a list of invoices for the specified tenant.
     # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [InvoiceDtoCollectionQueryParameters] :invoice_dto_collection_query_parameters 
     # @return [Array<(InvoiceDtoListEnvelope, Integer, Hash)>] InvoiceDtoListEnvelope data, response status code and response headers
     def get_invoices_with_http_info(tenant_id, opts = {})
       if @api_client.config.debugging
@@ -2565,12 +2651,17 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'invoice_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'InvoiceDtoListEnvelope'
@@ -2599,6 +2690,7 @@ module OpenapiClient
     # Retrieves the total count of invoices for the specified tenant.
     # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [InvoiceDtoCollectionQueryParameters] :invoice_dto_collection_query_parameters 
     # @return [Int32Envelope]
     def get_invoices_count(tenant_id, opts = {})
       data, _status_code, _headers = get_invoices_count_with_http_info(tenant_id, opts)
@@ -2609,6 +2701,7 @@ module OpenapiClient
     # Retrieves the total count of invoices for the specified tenant.
     # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [InvoiceDtoCollectionQueryParameters] :invoice_dto_collection_query_parameters 
     # @return [Array<(Int32Envelope, Integer, Hash)>] Int32Envelope data, response status code and response headers
     def get_invoices_count_with_http_info(tenant_id, opts = {})
       if @api_client.config.debugging
@@ -2629,12 +2722,17 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'invoice_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'Int32Envelope'
@@ -2663,6 +2761,7 @@ module OpenapiClient
     # Returns SUM(Invoice.TotalAmountInUSD) for invoices with InvoiceType == PurchaseInvoice, filtered by the supplied OData date range.
     # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [InvoiceDtoCollectionQueryParameters] :invoice_dto_collection_query_parameters 
     # @return [MoneyEnvelope]
     def get_purchase_invoices_sum(tenant_id, opts = {})
       data, _status_code, _headers = get_purchase_invoices_sum_with_http_info(tenant_id, opts)
@@ -2673,6 +2772,7 @@ module OpenapiClient
     # Returns SUM(Invoice.TotalAmountInUSD) for invoices with InvoiceType &#x3D;&#x3D; PurchaseInvoice, filtered by the supplied OData date range.
     # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [InvoiceDtoCollectionQueryParameters] :invoice_dto_collection_query_parameters 
     # @return [Array<(MoneyEnvelope, Integer, Hash)>] MoneyEnvelope data, response status code and response headers
     def get_purchase_invoices_sum_with_http_info(tenant_id, opts = {})
       if @api_client.config.debugging
@@ -2693,12 +2793,17 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'invoice_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'MoneyEnvelope'
@@ -2727,6 +2832,7 @@ module OpenapiClient
     # Returns SUM(Invoice.TotalAmountInUSD) for invoices with InvoiceType == SalesInvoice, filtered by the supplied OData date range.
     # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [InvoiceDtoCollectionQueryParameters] :invoice_dto_collection_query_parameters 
     # @return [MoneyEnvelope]
     def get_sales_invoices_sum(tenant_id, opts = {})
       data, _status_code, _headers = get_sales_invoices_sum_with_http_info(tenant_id, opts)
@@ -2737,6 +2843,7 @@ module OpenapiClient
     # Returns SUM(Invoice.TotalAmountInUSD) for invoices with InvoiceType &#x3D;&#x3D; SalesInvoice, filtered by the supplied OData date range.
     # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [InvoiceDtoCollectionQueryParameters] :invoice_dto_collection_query_parameters 
     # @return [Array<(MoneyEnvelope, Integer, Hash)>] MoneyEnvelope data, response status code and response headers
     def get_sales_invoices_sum_with_http_info(tenant_id, opts = {})
       if @api_client.config.debugging
@@ -2757,12 +2864,17 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'invoice_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'MoneyEnvelope'
@@ -2792,7 +2904,7 @@ module OpenapiClient
     # @param tenant_id [String] 
     # @param invoice_id [String] 
     # @param [Hash] opts the optional parameters
-    # @option opts [Array<Operation>] :operation 
+    # @option opts [Array<PatchOperation>] :patch_operation 
     # @return [EmptyEnvelope]
     def patch_invoice(tenant_id, invoice_id, opts = {})
       data, _status_code, _headers = patch_invoice_with_http_info(tenant_id, invoice_id, opts)
@@ -2804,7 +2916,7 @@ module OpenapiClient
     # @param tenant_id [String] 
     # @param invoice_id [String] 
     # @param [Hash] opts the optional parameters
-    # @option opts [Array<Operation>] :operation 
+    # @option opts [Array<PatchOperation>] :patch_operation 
     # @return [Array<(EmptyEnvelope, Integer, Hash)>] EmptyEnvelope data, response status code and response headers
     def patch_invoice_with_http_info(tenant_id, invoice_id, opts = {})
       if @api_client.config.debugging
@@ -2839,7 +2951,7 @@ module OpenapiClient
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'operation'])
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'patch_operation'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'EmptyEnvelope'
@@ -2870,7 +2982,7 @@ module OpenapiClient
     # @param invoice_id [String] 
     # @param invoice_adjustment_id [String] 
     # @param [Hash] opts the optional parameters
-    # @option opts [Array<Operation>] :operation 
+    # @option opts [Array<PatchOperation>] :patch_operation 
     # @return [EmptyEnvelope]
     def patch_invoice_adjustment(tenant_id, invoice_id, invoice_adjustment_id, opts = {})
       data, _status_code, _headers = patch_invoice_adjustment_with_http_info(tenant_id, invoice_id, invoice_adjustment_id, opts)
@@ -2883,7 +2995,7 @@ module OpenapiClient
     # @param invoice_id [String] 
     # @param invoice_adjustment_id [String] 
     # @param [Hash] opts the optional parameters
-    # @option opts [Array<Operation>] :operation 
+    # @option opts [Array<PatchOperation>] :patch_operation 
     # @return [Array<(EmptyEnvelope, Integer, Hash)>] EmptyEnvelope data, response status code and response headers
     def patch_invoice_adjustment_with_http_info(tenant_id, invoice_id, invoice_adjustment_id, opts = {})
       if @api_client.config.debugging
@@ -2922,7 +3034,7 @@ module OpenapiClient
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'operation'])
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'patch_operation'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'EmptyEnvelope'
@@ -2953,7 +3065,7 @@ module OpenapiClient
     # @param invoice_id [String] 
     # @param invoice_line_id [String] 
     # @param [Hash] opts the optional parameters
-    # @option opts [Array<Operation>] :operation 
+    # @option opts [Array<PatchOperation>] :patch_operation 
     # @return [EmptyEnvelope]
     def patch_invoice_line(tenant_id, invoice_id, invoice_line_id, opts = {})
       data, _status_code, _headers = patch_invoice_line_with_http_info(tenant_id, invoice_id, invoice_line_id, opts)
@@ -2966,7 +3078,7 @@ module OpenapiClient
     # @param invoice_id [String] 
     # @param invoice_line_id [String] 
     # @param [Hash] opts the optional parameters
-    # @option opts [Array<Operation>] :operation 
+    # @option opts [Array<PatchOperation>] :patch_operation 
     # @return [Array<(EmptyEnvelope, Integer, Hash)>] EmptyEnvelope data, response status code and response headers
     def patch_invoice_line_with_http_info(tenant_id, invoice_id, invoice_line_id, opts = {})
       if @api_client.config.debugging
@@ -3005,7 +3117,7 @@ module OpenapiClient
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'operation'])
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'patch_operation'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'EmptyEnvelope'
@@ -3037,7 +3149,7 @@ module OpenapiClient
     # @param invoice_line_id [String] 
     # @param invoice_line_tax_id [String] 
     # @param [Hash] opts the optional parameters
-    # @option opts [Array<Operation>] :operation 
+    # @option opts [Array<PatchOperation>] :patch_operation 
     # @return [EmptyEnvelope]
     def patch_invoice_line_tax(tenant_id, invoice_id, invoice_line_id, invoice_line_tax_id, opts = {})
       data, _status_code, _headers = patch_invoice_line_tax_with_http_info(tenant_id, invoice_id, invoice_line_id, invoice_line_tax_id, opts)
@@ -3051,7 +3163,7 @@ module OpenapiClient
     # @param invoice_line_id [String] 
     # @param invoice_line_tax_id [String] 
     # @param [Hash] opts the optional parameters
-    # @option opts [Array<Operation>] :operation 
+    # @option opts [Array<PatchOperation>] :patch_operation 
     # @return [Array<(EmptyEnvelope, Integer, Hash)>] EmptyEnvelope data, response status code and response headers
     def patch_invoice_line_tax_with_http_info(tenant_id, invoice_id, invoice_line_id, invoice_line_tax_id, opts = {})
       if @api_client.config.debugging
@@ -3094,7 +3206,7 @@ module OpenapiClient
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'operation'])
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'patch_operation'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'EmptyEnvelope'
@@ -3125,7 +3237,7 @@ module OpenapiClient
     # @param invoice_id [String] 
     # @param invoice_reference_id [String] 
     # @param [Hash] opts the optional parameters
-    # @option opts [Array<Operation>] :operation 
+    # @option opts [Array<PatchOperation>] :patch_operation 
     # @return [EmptyEnvelope]
     def patch_invoice_reference(tenant_id, invoice_id, invoice_reference_id, opts = {})
       data, _status_code, _headers = patch_invoice_reference_with_http_info(tenant_id, invoice_id, invoice_reference_id, opts)
@@ -3138,7 +3250,7 @@ module OpenapiClient
     # @param invoice_id [String] 
     # @param invoice_reference_id [String] 
     # @param [Hash] opts the optional parameters
-    # @option opts [Array<Operation>] :operation 
+    # @option opts [Array<PatchOperation>] :patch_operation 
     # @return [Array<(EmptyEnvelope, Integer, Hash)>] EmptyEnvelope data, response status code and response headers
     def patch_invoice_reference_with_http_info(tenant_id, invoice_id, invoice_reference_id, opts = {})
       if @api_client.config.debugging
@@ -3177,7 +3289,7 @@ module OpenapiClient
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'operation'])
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'patch_operation'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'EmptyEnvelope'

@@ -98,7 +98,6 @@ Class | Method | HTTP request | Description
 *OpenapiClient::FenixAllianceABSWebApi* | [**account_manage_download_personal_data_post**](docs/FenixAllianceABSWebApi.md#account_manage_download_personal_data_post) | **POST** /Account/Manage/DownloadPersonalData | 
 *OpenapiClient::FenixAllianceABSWebApi* | [**account_manage_link_external_login_post**](docs/FenixAllianceABSWebApi.md#account_manage_link_external_login_post) | **POST** /Account/Manage/LinkExternalLogin | 
 *OpenapiClient::FenixAllianceABSWebApi* | [**account_perform_external_login_post**](docs/FenixAllianceABSWebApi.md#account_perform_external_login_post) | **POST** /Account/PerformExternalLogin | 
-*OpenapiClient::FenixAllianceABSWebApi* | [**api_v2_ai_service_agents_agent_id_agui_post**](docs/FenixAllianceABSWebApi.md#api_v2_ai_service_agents_agent_id_agui_post) | **POST** /api/v2/AIService/Agents/{agentId}/agui | 
 *OpenapiClient::FenixAllianceABSWebApi* | [**forgot_password_post**](docs/FenixAllianceABSWebApi.md#forgot_password_post) | **POST** /forgotPassword | 
 *OpenapiClient::FenixAllianceABSWebApi* | [**health_get**](docs/FenixAllianceABSWebApi.md#health_get) | **GET** /health | 
 *OpenapiClient::FenixAllianceABSWebApi* | [**hello_get**](docs/FenixAllianceABSWebApi.md#hello_get) | **GET** /hello | 
@@ -152,10 +151,12 @@ Class | Method | HTTP request | Description
  - [OpenapiClient::CurrencyId](docs/CurrencyId.md)
  - [OpenapiClient::DiscountCreateDto](docs/DiscountCreateDto.md)
  - [OpenapiClient::DiscountDto](docs/DiscountDto.md)
+ - [OpenapiClient::DiscountDtoCollectionQueryParameters](docs/DiscountDtoCollectionQueryParameters.md)
  - [OpenapiClient::DiscountDtoEnvelope](docs/DiscountDtoEnvelope.md)
  - [OpenapiClient::DiscountDtoListEnvelope](docs/DiscountDtoListEnvelope.md)
  - [OpenapiClient::DiscountListCreateDto](docs/DiscountListCreateDto.md)
  - [OpenapiClient::DiscountListDto](docs/DiscountListDto.md)
+ - [OpenapiClient::DiscountListDtoCollectionQueryParameters](docs/DiscountListDtoCollectionQueryParameters.md)
  - [OpenapiClient::DiscountListDtoEnvelope](docs/DiscountListDtoEnvelope.md)
  - [OpenapiClient::DiscountListDtoListEnvelope](docs/DiscountListDtoListEnvelope.md)
  - [OpenapiClient::DiscountListUpdateDto](docs/DiscountListUpdateDto.md)
@@ -171,20 +172,23 @@ Class | Method | HTTP request | Description
  - [OpenapiClient::ItemPriceCalculationEnvelope](docs/ItemPriceCalculationEnvelope.md)
  - [OpenapiClient::ItemPriceCreateDto](docs/ItemPriceCreateDto.md)
  - [OpenapiClient::ItemPriceDto](docs/ItemPriceDto.md)
+ - [OpenapiClient::ItemPriceDtoCollectionQueryParameters](docs/ItemPriceDtoCollectionQueryParameters.md)
  - [OpenapiClient::ItemPriceDtoEnvelope](docs/ItemPriceDtoEnvelope.md)
  - [OpenapiClient::ItemPriceDtoListEnvelope](docs/ItemPriceDtoListEnvelope.md)
  - [OpenapiClient::ItemPriceUpdateDto](docs/ItemPriceUpdateDto.md)
  - [OpenapiClient::LoginRequest](docs/LoginRequest.md)
  - [OpenapiClient::Money](docs/Money.md)
  - [OpenapiClient::MoneyEnvelope](docs/MoneyEnvelope.md)
- - [OpenapiClient::Operation](docs/Operation.md)
+ - [OpenapiClient::PatchOperation](docs/PatchOperation.md)
  - [OpenapiClient::PriceListCreateDto](docs/PriceListCreateDto.md)
  - [OpenapiClient::PriceListDto](docs/PriceListDto.md)
+ - [OpenapiClient::PriceListDtoCollectionQueryParameters](docs/PriceListDtoCollectionQueryParameters.md)
  - [OpenapiClient::PriceListDtoEnvelope](docs/PriceListDtoEnvelope.md)
  - [OpenapiClient::PriceListDtoListEnvelope](docs/PriceListDtoListEnvelope.md)
  - [OpenapiClient::PriceListUpdateDto](docs/PriceListUpdateDto.md)
  - [OpenapiClient::PricingRuleCreateDto](docs/PricingRuleCreateDto.md)
  - [OpenapiClient::PricingRuleDto](docs/PricingRuleDto.md)
+ - [OpenapiClient::PricingRuleDtoCollectionQueryParameters](docs/PricingRuleDtoCollectionQueryParameters.md)
  - [OpenapiClient::PricingRuleDtoEnvelope](docs/PricingRuleDtoEnvelope.md)
  - [OpenapiClient::PricingRuleDtoListEnvelope](docs/PricingRuleDtoListEnvelope.md)
  - [OpenapiClient::PricingRuleUpdateDto](docs/PricingRuleUpdateDto.md)
@@ -194,6 +198,7 @@ Class | Method | HTTP request | Description
  - [OpenapiClient::ResetPasswordRequest](docs/ResetPasswordRequest.md)
  - [OpenapiClient::RoundingPolicyCreateDto](docs/RoundingPolicyCreateDto.md)
  - [OpenapiClient::RoundingPolicyDto](docs/RoundingPolicyDto.md)
+ - [OpenapiClient::RoundingPolicyDtoCollectionQueryParameters](docs/RoundingPolicyDtoCollectionQueryParameters.md)
  - [OpenapiClient::RoundingPolicyDtoEnvelope](docs/RoundingPolicyDtoEnvelope.md)
  - [OpenapiClient::RoundingPolicyDtoListEnvelope](docs/RoundingPolicyDtoListEnvelope.md)
  - [OpenapiClient::RoundingPolicyUpdateDto](docs/RoundingPolicyUpdateDto.md)

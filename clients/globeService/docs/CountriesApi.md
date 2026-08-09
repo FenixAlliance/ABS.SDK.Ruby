@@ -40,7 +40,8 @@ api_instance = OpenapiClient::CountriesApi.new
 country_id = 'country_id_example' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  country_calling_code_dto_collection_query_parameters: OpenapiClient::CountryCallingCodeDtoCollectionQueryParameters.new # CountryCallingCodeDtoCollectionQueryParameters | 
 }
 
 begin
@@ -77,6 +78,7 @@ end
 | **country_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **country_calling_code_dto_collection_query_parameters** | [**CountryCallingCodeDtoCollectionQueryParameters**](CountryCallingCodeDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -88,7 +90,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 
@@ -111,7 +113,8 @@ country_state_id = 'country_state_id_example' # String |
 country_id = 'country_id_example' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  city_dto_collection_query_parameters: OpenapiClient::CityDtoCollectionQueryParameters.new # CityDtoCollectionQueryParameters | 
 }
 
 begin
@@ -149,6 +152,7 @@ end
 | **country_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **city_dto_collection_query_parameters** | [**CityDtoCollectionQueryParameters**](CityDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -160,7 +164,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 
@@ -181,7 +185,8 @@ require 'openapi_client'
 api_instance = OpenapiClient::CountriesApi.new
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  country_dto_collection_query_parameters: OpenapiClient::CountryDtoCollectionQueryParameters.new # CountryDtoCollectionQueryParameters | 
 }
 
 begin
@@ -217,6 +222,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **country_dto_collection_query_parameters** | [**CountryDtoCollectionQueryParameters**](CountryDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -228,7 +234,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 
@@ -250,7 +256,8 @@ api_instance = OpenapiClient::CountriesApi.new
 country_id = 'country_id_example' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  country_state_dto_collection_query_parameters: OpenapiClient::CountryStateDtoCollectionQueryParameters.new # CountryStateDtoCollectionQueryParameters | 
 }
 
 begin
@@ -287,6 +294,7 @@ end
 | **country_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **country_state_dto_collection_query_parameters** | [**CountryStateDtoCollectionQueryParameters**](CountryStateDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -298,7 +306,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 
@@ -320,7 +328,8 @@ api_instance = OpenapiClient::CountriesApi.new
 country_id = 'country_id_example' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  timezone_dto_collection_query_parameters: OpenapiClient::TimezoneDtoCollectionQueryParameters.new # TimezoneDtoCollectionQueryParameters | 
 }
 
 begin
@@ -357,6 +366,7 @@ end
 | **country_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **timezone_dto_collection_query_parameters** | [**TimezoneDtoCollectionQueryParameters**](TimezoneDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -368,7 +378,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 
@@ -390,7 +400,8 @@ api_instance = OpenapiClient::CountriesApi.new
 country_id = 'country_id_example' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  country_top_level_domain_dto_collection_query_parameters: OpenapiClient::CountryTopLevelDomainDtoCollectionQueryParameters.new # CountryTopLevelDomainDtoCollectionQueryParameters | 
 }
 
 begin
@@ -427,6 +438,7 @@ end
 | **country_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **country_top_level_domain_dto_collection_query_parameters** | [**CountryTopLevelDomainDtoCollectionQueryParameters**](CountryTopLevelDomainDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -438,7 +450,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 
@@ -459,7 +471,8 @@ require 'openapi_client'
 api_instance = OpenapiClient::CountriesApi.new
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  country_dto_collection_query_parameters: OpenapiClient::CountryDtoCollectionQueryParameters.new # CountryDtoCollectionQueryParameters | 
 }
 
 begin
@@ -495,6 +508,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **country_dto_collection_query_parameters** | [**CountryDtoCollectionQueryParameters**](CountryDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -506,7 +520,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 
@@ -528,7 +542,8 @@ api_instance = OpenapiClient::CountriesApi.new
 country_id = 'country_id_example' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  country_calling_code_dto_collection_query_parameters: OpenapiClient::CountryCallingCodeDtoCollectionQueryParameters.new # CountryCallingCodeDtoCollectionQueryParameters | 
 }
 
 begin
@@ -565,6 +580,7 @@ end
 | **country_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **country_calling_code_dto_collection_query_parameters** | [**CountryCallingCodeDtoCollectionQueryParameters**](CountryCallingCodeDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -576,7 +592,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 
@@ -599,7 +615,8 @@ country_state_id = 'country_state_id_example' # String |
 country_id = 'country_id_example' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  city_dto_collection_query_parameters: OpenapiClient::CityDtoCollectionQueryParameters.new # CityDtoCollectionQueryParameters | 
 }
 
 begin
@@ -637,6 +654,7 @@ end
 | **country_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **city_dto_collection_query_parameters** | [**CityDtoCollectionQueryParameters**](CityDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -648,7 +666,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 
@@ -741,7 +759,8 @@ country_state_id = 'country_state_id_example' # String |
 country_id = 'country_id_example' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  country_state_dto_collection_query_parameters: OpenapiClient::CountryStateDtoCollectionQueryParameters.new # CountryStateDtoCollectionQueryParameters | 
 }
 
 begin
@@ -779,6 +798,7 @@ end
 | **country_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **country_state_dto_collection_query_parameters** | [**CountryStateDtoCollectionQueryParameters**](CountryStateDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -790,7 +810,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 
@@ -812,7 +832,8 @@ api_instance = OpenapiClient::CountriesApi.new
 country_id = 'country_id_example' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  country_state_dto_collection_query_parameters: OpenapiClient::CountryStateDtoCollectionQueryParameters.new # CountryStateDtoCollectionQueryParameters | 
 }
 
 begin
@@ -849,6 +870,7 @@ end
 | **country_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **country_state_dto_collection_query_parameters** | [**CountryStateDtoCollectionQueryParameters**](CountryStateDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -860,7 +882,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 
@@ -882,7 +904,8 @@ api_instance = OpenapiClient::CountriesApi.new
 country_id = 'country_id_example' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  currency_dto_collection_query_parameters: OpenapiClient::CurrencyDtoCollectionQueryParameters.new # CurrencyDtoCollectionQueryParameters | 
 }
 
 begin
@@ -919,6 +942,7 @@ end
 | **country_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **currency_dto_collection_query_parameters** | [**CurrencyDtoCollectionQueryParameters**](CurrencyDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -930,7 +954,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 
@@ -952,7 +976,8 @@ api_instance = OpenapiClient::CountriesApi.new
 country_id = 'country_id_example' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  timezone_dto_collection_query_parameters: OpenapiClient::TimezoneDtoCollectionQueryParameters.new # TimezoneDtoCollectionQueryParameters | 
 }
 
 begin
@@ -989,6 +1014,7 @@ end
 | **country_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **timezone_dto_collection_query_parameters** | [**TimezoneDtoCollectionQueryParameters**](TimezoneDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1000,7 +1026,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 
@@ -1022,7 +1048,8 @@ api_instance = OpenapiClient::CountriesApi.new
 country_id = 'country_id_example' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  country_top_level_domain_dto_collection_query_parameters: OpenapiClient::CountryTopLevelDomainDtoCollectionQueryParameters.new # CountryTopLevelDomainDtoCollectionQueryParameters | 
 }
 
 begin
@@ -1059,6 +1086,7 @@ end
 | **country_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **country_top_level_domain_dto_collection_query_parameters** | [**CountryTopLevelDomainDtoCollectionQueryParameters**](CountryTopLevelDomainDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1070,7 +1098,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 

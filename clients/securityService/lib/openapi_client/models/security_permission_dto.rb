@@ -23,6 +23,8 @@ module OpenapiClient
 
     attr_accessor :tenant_id
 
+    attr_accessor :category
+
     attr_accessor :description
 
     attr_accessor :is_system_permission
@@ -34,6 +36,7 @@ module OpenapiClient
         :'timestamp' => :'timestamp',
         :'name' => :'name',
         :'tenant_id' => :'tenantId',
+        :'category' => :'category',
         :'description' => :'description',
         :'is_system_permission' => :'isSystemPermission'
       }
@@ -51,6 +54,7 @@ module OpenapiClient
         :'timestamp' => :'Time',
         :'name' => :'String',
         :'tenant_id' => :'String',
+        :'category' => :'String',
         :'description' => :'String',
         :'is_system_permission' => :'Boolean'
       }
@@ -63,6 +67,7 @@ module OpenapiClient
         :'timestamp',
         :'name',
         :'tenant_id',
+        :'category',
         :'description',
       ])
     end
@@ -98,6 +103,10 @@ module OpenapiClient
         self.tenant_id = attributes[:'tenant_id']
       end
 
+      if attributes.key?(:'category')
+        self.category = attributes[:'category']
+      end
+
       if attributes.key?(:'description')
         self.description = attributes[:'description']
       end
@@ -131,6 +140,7 @@ module OpenapiClient
           timestamp == o.timestamp &&
           name == o.name &&
           tenant_id == o.tenant_id &&
+          category == o.category &&
           description == o.description &&
           is_system_permission == o.is_system_permission
     end
@@ -144,7 +154,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, timestamp, name, tenant_id, description, is_system_permission].hash
+      [id, timestamp, name, tenant_id, category, description, is_system_permission].hash
     end
 
     # Builds the object from hash

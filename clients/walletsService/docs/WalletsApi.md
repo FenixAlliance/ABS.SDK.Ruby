@@ -648,7 +648,8 @@ api_instance = OpenapiClient::WalletsApi.new
 wallet_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  payment_dto_collection_query_parameters: OpenapiClient::PaymentDtoCollectionQueryParameters.new # PaymentDtoCollectionQueryParameters | 
 }
 
 begin
@@ -685,6 +686,7 @@ end
 | **wallet_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **payment_dto_collection_query_parameters** | [**PaymentDtoCollectionQueryParameters**](PaymentDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -696,7 +698,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -718,7 +720,8 @@ api_instance = OpenapiClient::WalletsApi.new
 wallet_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  payment_dto_collection_query_parameters: OpenapiClient::PaymentDtoCollectionQueryParameters.new # PaymentDtoCollectionQueryParameters | 
 }
 
 begin
@@ -755,6 +758,7 @@ end
 | **wallet_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **payment_dto_collection_query_parameters** | [**PaymentDtoCollectionQueryParameters**](PaymentDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -766,7 +770,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -788,7 +792,8 @@ api_instance = OpenapiClient::WalletsApi.new
 wallet_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  invoice_dto_collection_query_parameters: OpenapiClient::InvoiceDtoCollectionQueryParameters.new # InvoiceDtoCollectionQueryParameters | 
 }
 
 begin
@@ -825,6 +830,7 @@ end
 | **wallet_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **invoice_dto_collection_query_parameters** | [**InvoiceDtoCollectionQueryParameters**](InvoiceDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -836,7 +842,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -858,7 +864,8 @@ api_instance = OpenapiClient::WalletsApi.new
 wallet_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  invoice_dto_collection_query_parameters: OpenapiClient::InvoiceDtoCollectionQueryParameters.new # InvoiceDtoCollectionQueryParameters | 
 }
 
 begin
@@ -895,6 +902,7 @@ end
 | **wallet_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **invoice_dto_collection_query_parameters** | [**InvoiceDtoCollectionQueryParameters**](InvoiceDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -906,7 +914,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -1000,7 +1008,8 @@ api_instance = OpenapiClient::WalletsApi.new
 wallet_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  location_dto_collection_query_parameters: OpenapiClient::LocationDtoCollectionQueryParameters.new # LocationDtoCollectionQueryParameters | 
 }
 
 begin
@@ -1037,6 +1046,7 @@ end
 | **wallet_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **location_dto_collection_query_parameters** | [**LocationDtoCollectionQueryParameters**](LocationDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1048,7 +1058,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -1070,7 +1080,8 @@ api_instance = OpenapiClient::WalletsApi.new
 wallet_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  location_dto_collection_query_parameters: OpenapiClient::LocationDtoCollectionQueryParameters.new # LocationDtoCollectionQueryParameters | 
 }
 
 begin
@@ -1107,6 +1118,7 @@ end
 | **wallet_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **location_dto_collection_query_parameters** | [**LocationDtoCollectionQueryParameters**](LocationDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1118,7 +1130,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -1140,7 +1152,8 @@ api_instance = OpenapiClient::WalletsApi.new
 wallet_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  payment_dto_collection_query_parameters: OpenapiClient::PaymentDtoCollectionQueryParameters.new # PaymentDtoCollectionQueryParameters | 
 }
 
 begin
@@ -1177,6 +1190,7 @@ end
 | **wallet_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **payment_dto_collection_query_parameters** | [**PaymentDtoCollectionQueryParameters**](PaymentDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1188,7 +1202,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -1210,7 +1224,8 @@ api_instance = OpenapiClient::WalletsApi.new
 wallet_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  payment_dto_collection_query_parameters: OpenapiClient::PaymentDtoCollectionQueryParameters.new # PaymentDtoCollectionQueryParameters | 
 }
 
 begin
@@ -1247,6 +1262,7 @@ end
 | **wallet_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **payment_dto_collection_query_parameters** | [**PaymentDtoCollectionQueryParameters**](PaymentDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1258,7 +1274,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -1280,7 +1296,8 @@ api_instance = OpenapiClient::WalletsApi.new
 wallet_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  invoice_dto_collection_query_parameters: OpenapiClient::InvoiceDtoCollectionQueryParameters.new # InvoiceDtoCollectionQueryParameters | 
 }
 
 begin
@@ -1317,6 +1334,7 @@ end
 | **wallet_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **invoice_dto_collection_query_parameters** | [**InvoiceDtoCollectionQueryParameters**](InvoiceDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1328,7 +1346,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -1350,7 +1368,8 @@ api_instance = OpenapiClient::WalletsApi.new
 wallet_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  invoice_dto_collection_query_parameters: OpenapiClient::InvoiceDtoCollectionQueryParameters.new # InvoiceDtoCollectionQueryParameters | 
 }
 
 begin
@@ -1387,6 +1406,7 @@ end
 | **wallet_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **invoice_dto_collection_query_parameters** | [**InvoiceDtoCollectionQueryParameters**](InvoiceDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1398,7 +1418,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -1492,7 +1512,8 @@ api_instance = OpenapiClient::WalletsApi.new
 wallet_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  bank_account_dto_collection_query_parameters: OpenapiClient::BankAccountDtoCollectionQueryParameters.new # BankAccountDtoCollectionQueryParameters | 
 }
 
 begin
@@ -1529,6 +1550,7 @@ end
 | **wallet_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **bank_account_dto_collection_query_parameters** | [**BankAccountDtoCollectionQueryParameters**](BankAccountDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1540,7 +1562,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -1562,7 +1584,8 @@ api_instance = OpenapiClient::WalletsApi.new
 wallet_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  bank_account_dto_collection_query_parameters: OpenapiClient::BankAccountDtoCollectionQueryParameters.new # BankAccountDtoCollectionQueryParameters | 
 }
 
 begin
@@ -1599,6 +1622,7 @@ end
 | **wallet_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **bank_account_dto_collection_query_parameters** | [**BankAccountDtoCollectionQueryParameters**](BankAccountDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1610,7 +1634,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -1632,7 +1656,8 @@ api_instance = OpenapiClient::WalletsApi.new
 wallet_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  payment_chargeback_dto_collection_query_parameters: OpenapiClient::PaymentChargebackDtoCollectionQueryParameters.new # PaymentChargebackDtoCollectionQueryParameters | 
 }
 
 begin
@@ -1669,6 +1694,7 @@ end
 | **wallet_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **payment_chargeback_dto_collection_query_parameters** | [**PaymentChargebackDtoCollectionQueryParameters**](PaymentChargebackDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1680,7 +1706,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -1702,7 +1728,8 @@ api_instance = OpenapiClient::WalletsApi.new
 wallet_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  payment_chargeback_dto_collection_query_parameters: OpenapiClient::PaymentChargebackDtoCollectionQueryParameters.new # PaymentChargebackDtoCollectionQueryParameters | 
 }
 
 begin
@@ -1739,6 +1766,7 @@ end
 | **wallet_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **payment_chargeback_dto_collection_query_parameters** | [**PaymentChargebackDtoCollectionQueryParameters**](PaymentChargebackDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1750,7 +1778,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -1842,7 +1870,8 @@ api_instance = OpenapiClient::WalletsApi.new
 wallet_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  extended_order_dto_collection_query_parameters: OpenapiClient::ExtendedOrderDtoCollectionQueryParameters.new # ExtendedOrderDtoCollectionQueryParameters | 
 }
 
 begin
@@ -1879,6 +1908,7 @@ end
 | **wallet_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **extended_order_dto_collection_query_parameters** | [**ExtendedOrderDtoCollectionQueryParameters**](ExtendedOrderDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1890,7 +1920,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -1912,7 +1942,8 @@ api_instance = OpenapiClient::WalletsApi.new
 wallet_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  invoice_dto_collection_query_parameters: OpenapiClient::InvoiceDtoCollectionQueryParameters.new # InvoiceDtoCollectionQueryParameters | 
 }
 
 begin
@@ -1949,6 +1980,7 @@ end
 | **wallet_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **invoice_dto_collection_query_parameters** | [**InvoiceDtoCollectionQueryParameters**](InvoiceDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1960,7 +1992,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -1982,7 +2014,8 @@ api_instance = OpenapiClient::WalletsApi.new
 wallet_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  invoice_dto_collection_query_parameters: OpenapiClient::InvoiceDtoCollectionQueryParameters.new # InvoiceDtoCollectionQueryParameters | 
 }
 
 begin
@@ -2019,6 +2052,7 @@ end
 | **wallet_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **invoice_dto_collection_query_parameters** | [**InvoiceDtoCollectionQueryParameters**](InvoiceDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -2030,7 +2064,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -2052,7 +2086,8 @@ api_instance = OpenapiClient::WalletsApi.new
 wallet_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  order_dto_collection_query_parameters: OpenapiClient::OrderDtoCollectionQueryParameters.new # OrderDtoCollectionQueryParameters | 
 }
 
 begin
@@ -2089,6 +2124,7 @@ end
 | **wallet_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **order_dto_collection_query_parameters** | [**OrderDtoCollectionQueryParameters**](OrderDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -2100,7 +2136,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -2122,7 +2158,8 @@ api_instance = OpenapiClient::WalletsApi.new
 wallet_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  order_dto_collection_query_parameters: OpenapiClient::OrderDtoCollectionQueryParameters.new # OrderDtoCollectionQueryParameters | 
 }
 
 begin
@@ -2159,6 +2196,7 @@ end
 | **wallet_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **order_dto_collection_query_parameters** | [**OrderDtoCollectionQueryParameters**](OrderDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -2170,7 +2208,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -2192,7 +2230,8 @@ api_instance = OpenapiClient::WalletsApi.new
 wallet_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  payment_dto_collection_query_parameters: OpenapiClient::PaymentDtoCollectionQueryParameters.new # PaymentDtoCollectionQueryParameters | 
 }
 
 begin
@@ -2229,6 +2268,7 @@ end
 | **wallet_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **payment_dto_collection_query_parameters** | [**PaymentDtoCollectionQueryParameters**](PaymentDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -2240,7 +2280,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -2262,7 +2302,8 @@ api_instance = OpenapiClient::WalletsApi.new
 wallet_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  payment_dto_collection_query_parameters: OpenapiClient::PaymentDtoCollectionQueryParameters.new # PaymentDtoCollectionQueryParameters | 
 }
 
 begin
@@ -2299,6 +2340,7 @@ end
 | **wallet_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **payment_dto_collection_query_parameters** | [**PaymentDtoCollectionQueryParameters**](PaymentDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -2310,7 +2352,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -2332,7 +2374,8 @@ api_instance = OpenapiClient::WalletsApi.new
 wallet_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  quote_dto_collection_query_parameters: OpenapiClient::QuoteDtoCollectionQueryParameters.new # QuoteDtoCollectionQueryParameters | 
 }
 
 begin
@@ -2369,6 +2412,7 @@ end
 | **wallet_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **quote_dto_collection_query_parameters** | [**QuoteDtoCollectionQueryParameters**](QuoteDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -2380,7 +2424,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -2402,7 +2446,8 @@ api_instance = OpenapiClient::WalletsApi.new
 wallet_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  quote_dto_collection_query_parameters: OpenapiClient::QuoteDtoCollectionQueryParameters.new # QuoteDtoCollectionQueryParameters | 
 }
 
 begin
@@ -2439,6 +2484,7 @@ end
 | **wallet_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **quote_dto_collection_query_parameters** | [**QuoteDtoCollectionQueryParameters**](QuoteDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -2450,7 +2496,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -2472,7 +2518,8 @@ api_instance = OpenapiClient::WalletsApi.new
 wallet_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  payment_refund_dto_collection_query_parameters: OpenapiClient::PaymentRefundDtoCollectionQueryParameters.new # PaymentRefundDtoCollectionQueryParameters | 
 }
 
 begin
@@ -2509,6 +2556,7 @@ end
 | **wallet_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **payment_refund_dto_collection_query_parameters** | [**PaymentRefundDtoCollectionQueryParameters**](PaymentRefundDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -2520,7 +2568,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -2542,7 +2590,8 @@ api_instance = OpenapiClient::WalletsApi.new
 wallet_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  payment_refund_dto_collection_query_parameters: OpenapiClient::PaymentRefundDtoCollectionQueryParameters.new # PaymentRefundDtoCollectionQueryParameters | 
 }
 
 begin
@@ -2579,6 +2628,7 @@ end
 | **wallet_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **payment_refund_dto_collection_query_parameters** | [**PaymentRefundDtoCollectionQueryParameters**](PaymentRefundDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -2590,7 +2640,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -2684,7 +2734,8 @@ api_instance = OpenapiClient::WalletsApi.new
 wallet_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  payment_token_dto_collection_query_parameters: OpenapiClient::PaymentTokenDtoCollectionQueryParameters.new # PaymentTokenDtoCollectionQueryParameters | 
 }
 
 begin
@@ -2721,6 +2772,7 @@ end
 | **wallet_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **payment_token_dto_collection_query_parameters** | [**PaymentTokenDtoCollectionQueryParameters**](PaymentTokenDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -2732,7 +2784,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -2754,7 +2806,8 @@ api_instance = OpenapiClient::WalletsApi.new
 wallet_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  payment_token_dto_collection_query_parameters: OpenapiClient::PaymentTokenDtoCollectionQueryParameters.new # PaymentTokenDtoCollectionQueryParameters | 
 }
 
 begin
@@ -2791,6 +2844,7 @@ end
 | **wallet_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **payment_token_dto_collection_query_parameters** | [**PaymentTokenDtoCollectionQueryParameters**](PaymentTokenDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -2802,7 +2856,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -2824,7 +2878,8 @@ api_instance = OpenapiClient::WalletsApi.new
 wallet_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  wallet_withdraw_request_dto_collection_query_parameters: OpenapiClient::WalletWithdrawRequestDtoCollectionQueryParameters.new # WalletWithdrawRequestDtoCollectionQueryParameters | 
 }
 
 begin
@@ -2861,6 +2916,7 @@ end
 | **wallet_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **wallet_withdraw_request_dto_collection_query_parameters** | [**WalletWithdrawRequestDtoCollectionQueryParameters**](WalletWithdrawRequestDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -2872,7 +2928,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -2894,7 +2950,8 @@ api_instance = OpenapiClient::WalletsApi.new
 wallet_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  wallet_withdraw_request_dto_collection_query_parameters: OpenapiClient::WalletWithdrawRequestDtoCollectionQueryParameters.new # WalletWithdrawRequestDtoCollectionQueryParameters | 
 }
 
 begin
@@ -2931,6 +2988,7 @@ end
 | **wallet_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **wallet_withdraw_request_dto_collection_query_parameters** | [**WalletWithdrawRequestDtoCollectionQueryParameters**](WalletWithdrawRequestDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -2942,7 +3000,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -2964,7 +3022,8 @@ api_instance = OpenapiClient::WalletsApi.new
 wallet_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  wallet_withdraw_dto_collection_query_parameters: OpenapiClient::WalletWithdrawDtoCollectionQueryParameters.new # WalletWithdrawDtoCollectionQueryParameters | 
 }
 
 begin
@@ -3001,6 +3060,7 @@ end
 | **wallet_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **wallet_withdraw_dto_collection_query_parameters** | [**WalletWithdrawDtoCollectionQueryParameters**](WalletWithdrawDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -3012,7 +3072,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -3034,7 +3094,8 @@ api_instance = OpenapiClient::WalletsApi.new
 wallet_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  wallet_withdraw_dto_collection_query_parameters: OpenapiClient::WalletWithdrawDtoCollectionQueryParameters.new # WalletWithdrawDtoCollectionQueryParameters | 
 }
 
 begin
@@ -3071,6 +3132,7 @@ end
 | **wallet_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **wallet_withdraw_dto_collection_query_parameters** | [**WalletWithdrawDtoCollectionQueryParameters**](WalletWithdrawDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -3082,7 +3144,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -3106,7 +3168,7 @@ bank_account_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 opts = {
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example', # String | 
-  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+  patch_operation: [OpenapiClient::PatchOperation.new] # Array<PatchOperation> | 
 }
 
 begin
@@ -3144,7 +3206,7 @@ end
 | **bank_account_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
-| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+| **patch_operation** | [**Array&lt;PatchOperation&gt;**](PatchOperation.md) |  | [optional] |
 
 ### Return type
 
@@ -3180,7 +3242,7 @@ token_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 opts = {
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example', # String | 
-  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+  patch_operation: [OpenapiClient::PatchOperation.new] # Array<PatchOperation> | 
 }
 
 begin
@@ -3218,7 +3280,7 @@ end
 | **token_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
-| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+| **patch_operation** | [**Array&lt;PatchOperation&gt;**](PatchOperation.md) |  | [optional] |
 
 ### Return type
 

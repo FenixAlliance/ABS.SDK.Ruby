@@ -177,8 +177,6 @@ module OpenapiClient
 
     attr_accessor :unit_group_id
 
-    attr_accessor :forex_rates_snapshot
-
     attr_accessor :total_base_amount_in_usd
 
     attr_accessor :total_profit_in_usd
@@ -343,7 +341,6 @@ module OpenapiClient
         :'price_list_item_id' => :'priceListItemId',
         :'unit_id' => :'unitId',
         :'unit_group_id' => :'unitGroupId',
-        :'forex_rates_snapshot' => :'forexRatesSnapshot',
         :'total_base_amount_in_usd' => :'totalBaseAmountInUsd',
         :'total_profit_in_usd' => :'totalProfitInUsd',
         :'total_detail_amount_in_usd' => :'totalDetailAmountInUsd',
@@ -465,7 +462,6 @@ module OpenapiClient
         :'price_list_item_id' => :'String',
         :'unit_id' => :'String',
         :'unit_group_id' => :'String',
-        :'forex_rates_snapshot' => :'String',
         :'total_base_amount_in_usd' => :'Float',
         :'total_profit_in_usd' => :'Float',
         :'total_detail_amount_in_usd' => :'Float',
@@ -562,7 +558,6 @@ module OpenapiClient
         :'price_list_item_id',
         :'unit_id',
         :'unit_group_id',
-        :'forex_rates_snapshot',
         :'custom_global_surcharges_amount_currency_id',
         :'custom_global_discounts_amount_currency_id',
         :'return_policy_id',
@@ -916,10 +911,6 @@ module OpenapiClient
         self.unit_group_id = attributes[:'unit_group_id']
       end
 
-      if attributes.key?(:'forex_rates_snapshot')
-        self.forex_rates_snapshot = attributes[:'forex_rates_snapshot']
-      end
-
       if attributes.key?(:'total_base_amount_in_usd')
         self.total_base_amount_in_usd = attributes[:'total_base_amount_in_usd']
       end
@@ -1162,7 +1153,6 @@ module OpenapiClient
           price_list_item_id == o.price_list_item_id &&
           unit_id == o.unit_id &&
           unit_group_id == o.unit_group_id &&
-          forex_rates_snapshot == o.forex_rates_snapshot &&
           total_base_amount_in_usd == o.total_base_amount_in_usd &&
           total_profit_in_usd == o.total_profit_in_usd &&
           total_detail_amount_in_usd == o.total_detail_amount_in_usd &&
@@ -1203,7 +1193,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, timestamp, closed, title, price_list_id, description, individual_id, payment_term_id, organization_id, receiver_tenant_id, first_name, last_name, company_name, billing_email, address_line1, address_line2, postal_code, country_id, state_id, city_id, forex_rate, currency_id, total_detail, total_detail_currency_id, total_profit, total_profit_currency_id, total_discounts, total_discounts_currency_id, total_surcharges, total_surcharges_currency_id, total_shipping_cost, total_shipping_cost_currency_id, total_shipping_tax, total_shipping_tax_currency_id, total_withheld_tax, total_withheld_tax_currency_id, total_tax_base, total_tax_base_currency_id, total_taxes, total_taxes_currency_id, total_global_surcharges, total_global_surcharges_currency_id, total_global_discounts, total_global_discounts_currency_id, total, total_currency_id, cost_calculation_method, tax_calculation_method, item_id, item_title, item_short_description, item_primary_image_url, shipping_policy_id, quantity, free, free_reason, free_reason_code, data, data_label, data1, data1_label, data2, data2_label, data3, data3_label, data4, data4_label, data5, data5_label, data6, data6_label, data7, data7_label, data8, data8_label, data9, data9_label, item_price_id, price_list_item_id, unit_id, unit_group_id, forex_rates_snapshot, total_base_amount_in_usd, total_profit_in_usd, total_detail_amount_in_usd, total_tax_base_in_usd, total_discounts_in_usd, total_taxes_in_usd, total_withheld_taxes_in_usd, total_shipping_cost_in_usd, total_shipping_taxes_in_usd, total_warranty_cost_in_usd, total_return_cost_in_usd, total_refund_cost_in_usd, total_surcharges_in_usd, total_amount_in_usd, total_global_discounts_in_usd, total_global_surcharges_in_usd, custom_global_surcharges_amount, custom_global_surcharges_amount_currency_id, custom_global_discounts_amount, custom_global_discounts_amount_currency_id, return_policy_id, refund_policy_id, warranty_policy_id, shipment_policy_id, shipping_location_id, location_id, quote_item_record_id, parent_billing_item_record_id, deal_unit_id].hash
+      [id, timestamp, closed, title, price_list_id, description, individual_id, payment_term_id, organization_id, receiver_tenant_id, first_name, last_name, company_name, billing_email, address_line1, address_line2, postal_code, country_id, state_id, city_id, forex_rate, currency_id, total_detail, total_detail_currency_id, total_profit, total_profit_currency_id, total_discounts, total_discounts_currency_id, total_surcharges, total_surcharges_currency_id, total_shipping_cost, total_shipping_cost_currency_id, total_shipping_tax, total_shipping_tax_currency_id, total_withheld_tax, total_withheld_tax_currency_id, total_tax_base, total_tax_base_currency_id, total_taxes, total_taxes_currency_id, total_global_surcharges, total_global_surcharges_currency_id, total_global_discounts, total_global_discounts_currency_id, total, total_currency_id, cost_calculation_method, tax_calculation_method, item_id, item_title, item_short_description, item_primary_image_url, shipping_policy_id, quantity, free, free_reason, free_reason_code, data, data_label, data1, data1_label, data2, data2_label, data3, data3_label, data4, data4_label, data5, data5_label, data6, data6_label, data7, data7_label, data8, data8_label, data9, data9_label, item_price_id, price_list_item_id, unit_id, unit_group_id, total_base_amount_in_usd, total_profit_in_usd, total_detail_amount_in_usd, total_tax_base_in_usd, total_discounts_in_usd, total_taxes_in_usd, total_withheld_taxes_in_usd, total_shipping_cost_in_usd, total_shipping_taxes_in_usd, total_warranty_cost_in_usd, total_return_cost_in_usd, total_refund_cost_in_usd, total_surcharges_in_usd, total_amount_in_usd, total_global_discounts_in_usd, total_global_surcharges_in_usd, custom_global_surcharges_amount, custom_global_surcharges_amount_currency_id, custom_global_discounts_amount, custom_global_discounts_amount_currency_id, return_policy_id, refund_policy_id, warranty_policy_id, shipment_policy_id, shipping_location_id, location_id, quote_item_record_id, parent_billing_item_record_id, deal_unit_id].hash
     end
 
     # Builds the object from hash

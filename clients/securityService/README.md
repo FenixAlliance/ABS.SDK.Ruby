@@ -58,20 +58,20 @@ Please follow the [installation](#installation) procedure and then run the follo
 # Load the gem
 require 'openapi_client'
 
-api_instance = OpenapiClient::ApplicationsApi.new
+api_instance = OpenapiClient::ApplicationPrincipalsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
-business_application_create_dto = OpenapiClient::BusinessApplicationCreateDto.new({name: 'name_example'}) # BusinessApplicationCreateDto | 
+principal_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example' # String | 
 }
 
 begin
-  #Create a new business application
-  result = api_instance.create_business_application_async(tenant_id, business_application_create_dto, opts)
+  #Disable an application principal
+  result = api_instance.disable_application_principal_async(tenant_id, principal_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
-  puts "Exception when calling ApplicationsApi->create_business_application_async: #{e}"
+  puts "Exception when calling ApplicationPrincipalsApi->disable_application_principal_async: #{e}"
 end
 
 ```
@@ -82,6 +82,15 @@ All URIs are relative to *https://absuite.net*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*OpenapiClient::ApplicationPrincipalsApi* | [**disable_application_principal_async**](docs/ApplicationPrincipalsApi.md#disable_application_principal_async) | **POST** /api/v2/SecurityService/ApplicationPrincipals/{principalId}/Disable | Disable an application principal
+*OpenapiClient::ApplicationPrincipalsApi* | [**enable_application_principal_async**](docs/ApplicationPrincipalsApi.md#enable_application_principal_async) | **POST** /api/v2/SecurityService/ApplicationPrincipals/{principalId}/Enable | Enable an application principal
+*OpenapiClient::ApplicationPrincipalsApi* | [**get_application_principal_async**](docs/ApplicationPrincipalsApi.md#get_application_principal_async) | **GET** /api/v2/SecurityService/ApplicationPrincipals/{principalId} | Get application principal by ID
+*OpenapiClient::ApplicationPrincipalsApi* | [**get_application_principals_async**](docs/ApplicationPrincipalsApi.md#get_application_principals_async) | **GET** /api/v2/SecurityService/ApplicationPrincipals | Get all application principals
+*OpenapiClient::ApplicationPrincipalsApi* | [**get_application_principals_count_async**](docs/ApplicationPrincipalsApi.md#get_application_principals_count_async) | **GET** /api/v2/SecurityService/ApplicationPrincipals/Count | Get application principals count
+*OpenapiClient::ApplicationPrincipalsApi* | [**grant_permission_async**](docs/ApplicationPrincipalsApi.md#grant_permission_async) | **POST** /api/v2/SecurityService/ApplicationPrincipals/{principalId}/Permissions | Grant a permission to an application principal
+*OpenapiClient::ApplicationPrincipalsApi* | [**provision_application_principal_async**](docs/ApplicationPrincipalsApi.md#provision_application_principal_async) | **POST** /api/v2/SecurityService/ApplicationPrincipals/Provision | Provision an application principal
+*OpenapiClient::ApplicationPrincipalsApi* | [**revoke_permission_async**](docs/ApplicationPrincipalsApi.md#revoke_permission_async) | **DELETE** /api/v2/SecurityService/ApplicationPrincipals/{principalId}/Permissions/{permission} | Revoke a permission from an application principal
+*OpenapiClient::ApplicationPrincipalsApi* | [**suspend_application_principal_async**](docs/ApplicationPrincipalsApi.md#suspend_application_principal_async) | **POST** /api/v2/SecurityService/ApplicationPrincipals/{principalId}/Suspend | Suspend an application principal
 *OpenapiClient::ApplicationsApi* | [**create_business_application_async**](docs/ApplicationsApi.md#create_business_application_async) | **POST** /api/v2/SecurityService/Applications | Create a new business application
 *OpenapiClient::ApplicationsApi* | [**delete_business_application_async**](docs/ApplicationsApi.md#delete_business_application_async) | **DELETE** /api/v2/SecurityService/Applications/{applicationId} | Delete a business application
 *OpenapiClient::ApplicationsApi* | [**get_business_application_by_id_async**](docs/ApplicationsApi.md#get_business_application_by_id_async) | **GET** /api/v2/SecurityService/Applications/{applicationId} | Get business application by ID
@@ -95,7 +104,6 @@ Class | Method | HTTP request | Description
 *OpenapiClient::FenixAllianceABSWebApi* | [**account_manage_download_personal_data_post**](docs/FenixAllianceABSWebApi.md#account_manage_download_personal_data_post) | **POST** /Account/Manage/DownloadPersonalData | 
 *OpenapiClient::FenixAllianceABSWebApi* | [**account_manage_link_external_login_post**](docs/FenixAllianceABSWebApi.md#account_manage_link_external_login_post) | **POST** /Account/Manage/LinkExternalLogin | 
 *OpenapiClient::FenixAllianceABSWebApi* | [**account_perform_external_login_post**](docs/FenixAllianceABSWebApi.md#account_perform_external_login_post) | **POST** /Account/PerformExternalLogin | 
-*OpenapiClient::FenixAllianceABSWebApi* | [**api_v2_ai_service_agents_agent_id_agui_post**](docs/FenixAllianceABSWebApi.md#api_v2_ai_service_agents_agent_id_agui_post) | **POST** /api/v2/AIService/Agents/{agentId}/agui | 
 *OpenapiClient::FenixAllianceABSWebApi* | [**forgot_password_post**](docs/FenixAllianceABSWebApi.md#forgot_password_post) | **POST** /forgotPassword | 
 *OpenapiClient::FenixAllianceABSWebApi* | [**health_get**](docs/FenixAllianceABSWebApi.md#health_get) | **GET** /health | 
 *OpenapiClient::FenixAllianceABSWebApi* | [**hello_get**](docs/FenixAllianceABSWebApi.md#hello_get) | **GET** /hello | 
@@ -166,14 +174,25 @@ Class | Method | HTTP request | Description
 ## Documentation for Models
 
  - [OpenapiClient::AccessTokenResponse](docs/AccessTokenResponse.md)
+ - [OpenapiClient::ApplicationPrincipalDetailDto](docs/ApplicationPrincipalDetailDto.md)
+ - [OpenapiClient::ApplicationPrincipalDetailDtoEnvelope](docs/ApplicationPrincipalDetailDtoEnvelope.md)
+ - [OpenapiClient::ApplicationPrincipalDto](docs/ApplicationPrincipalDto.md)
+ - [OpenapiClient::ApplicationPrincipalDtoCollectionQueryParameters](docs/ApplicationPrincipalDtoCollectionQueryParameters.md)
+ - [OpenapiClient::ApplicationPrincipalDtoListEnvelope](docs/ApplicationPrincipalDtoListEnvelope.md)
+ - [OpenapiClient::ApplicationPrincipalPermissionRequestDto](docs/ApplicationPrincipalPermissionRequestDto.md)
+ - [OpenapiClient::ApplicationPrincipalProvisionRequestDto](docs/ApplicationPrincipalProvisionRequestDto.md)
+ - [OpenapiClient::ApplicationPrincipalProvisioningResultDto](docs/ApplicationPrincipalProvisioningResultDto.md)
+ - [OpenapiClient::ApplicationPrincipalProvisioningResultDtoEnvelope](docs/ApplicationPrincipalProvisioningResultDtoEnvelope.md)
  - [OpenapiClient::BusinessApplicationCreateDto](docs/BusinessApplicationCreateDto.md)
  - [OpenapiClient::BusinessApplicationDto](docs/BusinessApplicationDto.md)
+ - [OpenapiClient::BusinessApplicationDtoCollectionQueryParameters](docs/BusinessApplicationDtoCollectionQueryParameters.md)
  - [OpenapiClient::BusinessApplicationDtoEnvelope](docs/BusinessApplicationDtoEnvelope.md)
  - [OpenapiClient::BusinessApplicationDtoListEnvelope](docs/BusinessApplicationDtoListEnvelope.md)
  - [OpenapiClient::BusinessApplicationSimpleDto](docs/BusinessApplicationSimpleDto.md)
  - [OpenapiClient::BusinessApplicationSimpleDtoListEnvelope](docs/BusinessApplicationSimpleDtoListEnvelope.md)
  - [OpenapiClient::BusinessApplicationUpdateDto](docs/BusinessApplicationUpdateDto.md)
  - [OpenapiClient::BusinessSecurityLogDto](docs/BusinessSecurityLogDto.md)
+ - [OpenapiClient::BusinessSecurityLogDtoCollectionQueryParameters](docs/BusinessSecurityLogDtoCollectionQueryParameters.md)
  - [OpenapiClient::BusinessSecurityLogDtoListEnvelope](docs/BusinessSecurityLogDtoListEnvelope.md)
  - [OpenapiClient::EmptyEnvelope](docs/EmptyEnvelope.md)
  - [OpenapiClient::ErrorEnvelope](docs/ErrorEnvelope.md)
@@ -183,6 +202,7 @@ Class | Method | HTTP request | Description
  - [OpenapiClient::InfoResponse](docs/InfoResponse.md)
  - [OpenapiClient::Int32Envelope](docs/Int32Envelope.md)
  - [OpenapiClient::LogDto](docs/LogDto.md)
+ - [OpenapiClient::LogDtoCollectionQueryParameters](docs/LogDtoCollectionQueryParameters.md)
  - [OpenapiClient::LogDtoListEnvelope](docs/LogDtoListEnvelope.md)
  - [OpenapiClient::LoginRequest](docs/LoginRequest.md)
  - [OpenapiClient::OAuthApplicationCreateDto](docs/OAuthApplicationCreateDto.md)
@@ -193,20 +213,23 @@ Class | Method | HTTP request | Description
  - [OpenapiClient::OAuthAuthorizationDto](docs/OAuthAuthorizationDto.md)
  - [OpenapiClient::OAuthAuthorizationDtoEnvelope](docs/OAuthAuthorizationDtoEnvelope.md)
  - [OpenapiClient::OAuthAuthorizationDtoListEnvelope](docs/OAuthAuthorizationDtoListEnvelope.md)
- - [OpenapiClient::Operation](docs/Operation.md)
+ - [OpenapiClient::PatchOperation](docs/PatchOperation.md)
  - [OpenapiClient::RefreshRequest](docs/RefreshRequest.md)
  - [OpenapiClient::RegisterRequest](docs/RegisterRequest.md)
  - [OpenapiClient::ResendConfirmationEmailRequest](docs/ResendConfirmationEmailRequest.md)
  - [OpenapiClient::ResetPasswordRequest](docs/ResetPasswordRequest.md)
  - [OpenapiClient::SecurityCertificateDto](docs/SecurityCertificateDto.md)
+ - [OpenapiClient::SecurityCertificateDtoCollectionQueryParameters](docs/SecurityCertificateDtoCollectionQueryParameters.md)
  - [OpenapiClient::SecurityCertificateDtoListEnvelope](docs/SecurityCertificateDtoListEnvelope.md)
  - [OpenapiClient::SecurityPermissionCreateDto](docs/SecurityPermissionCreateDto.md)
  - [OpenapiClient::SecurityPermissionDto](docs/SecurityPermissionDto.md)
+ - [OpenapiClient::SecurityPermissionDtoCollectionQueryParameters](docs/SecurityPermissionDtoCollectionQueryParameters.md)
  - [OpenapiClient::SecurityPermissionDtoEnvelope](docs/SecurityPermissionDtoEnvelope.md)
  - [OpenapiClient::SecurityPermissionDtoListEnvelope](docs/SecurityPermissionDtoListEnvelope.md)
  - [OpenapiClient::SecurityPermissionUpdateDto](docs/SecurityPermissionUpdateDto.md)
  - [OpenapiClient::SecurityRoleCreateDto](docs/SecurityRoleCreateDto.md)
  - [OpenapiClient::SecurityRoleDto](docs/SecurityRoleDto.md)
+ - [OpenapiClient::SecurityRoleDtoCollectionQueryParameters](docs/SecurityRoleDtoCollectionQueryParameters.md)
  - [OpenapiClient::SecurityRoleDtoEnvelope](docs/SecurityRoleDtoEnvelope.md)
  - [OpenapiClient::SecurityRoleDtoListEnvelope](docs/SecurityRoleDtoListEnvelope.md)
  - [OpenapiClient::SecurityRoleUpdateDto](docs/SecurityRoleUpdateDto.md)
@@ -215,6 +238,7 @@ Class | Method | HTTP request | Description
  - [OpenapiClient::TwoFactorRequest](docs/TwoFactorRequest.md)
  - [OpenapiClient::TwoFactorResponse](docs/TwoFactorResponse.md)
  - [OpenapiClient::WebhookRequestDto](docs/WebhookRequestDto.md)
+ - [OpenapiClient::WebhookRequestDtoCollectionQueryParameters](docs/WebhookRequestDtoCollectionQueryParameters.md)
  - [OpenapiClient::WebhookRequestDtoListEnvelope](docs/WebhookRequestDtoListEnvelope.md)
 
 

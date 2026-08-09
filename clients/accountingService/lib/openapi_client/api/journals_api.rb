@@ -27,6 +27,7 @@ module OpenapiClient
     # @option opts [String] :currency_id  (default to 'USD.USA')
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [JournalEntryDtoCollectionQueryParameters] :journal_entry_dto_collection_query_parameters 
     # @return [MoneyEnvelope]
     def aggregate_journal_entry_credits_async(tenant_id, journal_id, opts = {})
       data, _status_code, _headers = aggregate_journal_entry_credits_async_with_http_info(tenant_id, journal_id, opts)
@@ -41,6 +42,7 @@ module OpenapiClient
     # @option opts [String] :currency_id  (default to 'USD.USA')
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [JournalEntryDtoCollectionQueryParameters] :journal_entry_dto_collection_query_parameters 
     # @return [Array<(MoneyEnvelope, Integer, Hash)>] MoneyEnvelope data, response status code and response headers
     def aggregate_journal_entry_credits_async_with_http_info(tenant_id, journal_id, opts = {})
       if @api_client.config.debugging
@@ -67,13 +69,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'journal_entry_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'MoneyEnvelope'
@@ -106,6 +113,7 @@ module OpenapiClient
     # @option opts [String] :currency_id  (default to 'USD.USA')
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [JournalEntryDtoCollectionQueryParameters] :journal_entry_dto_collection_query_parameters 
     # @return [MoneyEnvelope]
     def aggregate_journal_entry_debits_async(tenant_id, journal_id, opts = {})
       data, _status_code, _headers = aggregate_journal_entry_debits_async_with_http_info(tenant_id, journal_id, opts)
@@ -120,6 +128,7 @@ module OpenapiClient
     # @option opts [String] :currency_id  (default to 'USD.USA')
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [JournalEntryDtoCollectionQueryParameters] :journal_entry_dto_collection_query_parameters 
     # @return [Array<(MoneyEnvelope, Integer, Hash)>] MoneyEnvelope data, response status code and response headers
     def aggregate_journal_entry_debits_async_with_http_info(tenant_id, journal_id, opts = {})
       if @api_client.config.debugging
@@ -146,13 +155,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'journal_entry_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'MoneyEnvelope'
@@ -177,12 +191,96 @@ module OpenapiClient
       return data, status_code, headers
     end
 
+    # Bind a journal to a financial book
+    # Establishes the one-way Journal↔FinancialBook binding (finish-line #5): binds an unbound journal to the supplied book and sets its book-scoped code, enforcing (Tenant, Book, Code) uniqueness. Binding an unbound journal or re-affirming the same book succeeds; a duplicate code in the book is rejected (400), and re-homing an already-bound journal to a DIFFERENT book is rejected by the aggregate. Requires the journals_update permission.
+    # @param tenant_id [String] 
+    # @param journal_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @option opts [AssignJournalToBookRequest] :assign_journal_to_book_request 
+    # @return [EmptyEnvelope]
+    def assign_journal_to_book_async(tenant_id, journal_id, opts = {})
+      data, _status_code, _headers = assign_journal_to_book_async_with_http_info(tenant_id, journal_id, opts)
+      data
+    end
+
+    # Bind a journal to a financial book
+    # Establishes the one-way Journal↔FinancialBook binding (finish-line #5): binds an unbound journal to the supplied book and sets its book-scoped code, enforcing (Tenant, Book, Code) uniqueness. Binding an unbound journal or re-affirming the same book succeeds; a duplicate code in the book is rejected (400), and re-homing an already-bound journal to a DIFFERENT book is rejected by the aggregate. Requires the journals_update permission.
+    # @param tenant_id [String] 
+    # @param journal_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @option opts [AssignJournalToBookRequest] :assign_journal_to_book_request 
+    # @return [Array<(EmptyEnvelope, Integer, Hash)>] EmptyEnvelope data, response status code and response headers
+    def assign_journal_to_book_async_with_http_info(tenant_id, journal_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: JournalsApi.assign_journal_to_book_async ...'
+      end
+      # verify the required parameter 'tenant_id' is set
+      if @api_client.config.client_side_validation && tenant_id.nil?
+        fail ArgumentError, "Missing the required parameter 'tenant_id' when calling JournalsApi.assign_journal_to_book_async"
+      end
+      # verify the required parameter 'journal_id' is set
+      if @api_client.config.client_side_validation && journal_id.nil?
+        fail ArgumentError, "Missing the required parameter 'journal_id' when calling JournalsApi.assign_journal_to_book_async"
+      end
+      # resource path
+      local_var_path = '/api/v2/AccountingService/Journals/{journalId}/AssignToBook'.sub('{' + 'journalId' + '}', CGI.escape(journal_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'tenantId'] = tenant_id
+      query_params[:'api-version'] = opts[:'api_version'] if !opts[:'api_version'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
+      header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'assign_journal_to_book_request'])
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'EmptyEnvelope'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"JournalsApi.assign_journal_to_book_async",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: JournalsApi#assign_journal_to_book_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Count journals
     # Returns the count of journals for the tenant.
     # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [JournalDtoCollectionQueryParameters] :journal_dto_collection_query_parameters 
     # @return [Int32Envelope]
     def count_journals_async(tenant_id, opts = {})
       data, _status_code, _headers = count_journals_async_with_http_info(tenant_id, opts)
@@ -195,6 +293,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [JournalDtoCollectionQueryParameters] :journal_dto_collection_query_parameters 
     # @return [Array<(Int32Envelope, Integer, Hash)>] Int32Envelope data, response status code and response headers
     def count_journals_async_with_http_info(tenant_id, opts = {})
       if @api_client.config.debugging
@@ -216,13 +315,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'journal_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'Int32Envelope'
@@ -648,6 +752,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [JournalEntryDtoCollectionQueryParameters] :journal_entry_dto_collection_query_parameters 
     # @return [JournalEntryDtoIReadOnlyListEnvelope]
     def get_journal_entries_async(tenant_id, journal_id, opts = {})
       data, _status_code, _headers = get_journal_entries_async_with_http_info(tenant_id, journal_id, opts)
@@ -661,6 +766,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [JournalEntryDtoCollectionQueryParameters] :journal_entry_dto_collection_query_parameters 
     # @return [Array<(JournalEntryDtoIReadOnlyListEnvelope, Integer, Hash)>] JournalEntryDtoIReadOnlyListEnvelope data, response status code and response headers
     def get_journal_entries_async_with_http_info(tenant_id, journal_id, opts = {})
       if @api_client.config.debugging
@@ -686,13 +792,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'journal_entry_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'JournalEntryDtoIReadOnlyListEnvelope'
@@ -724,6 +835,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [JournalEntryDtoCollectionQueryParameters] :journal_entry_dto_collection_query_parameters 
     # @return [Int32Envelope]
     def get_journal_entries_count_async(tenant_id, journal_id, opts = {})
       data, _status_code, _headers = get_journal_entries_count_async_with_http_info(tenant_id, journal_id, opts)
@@ -737,6 +849,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [JournalEntryDtoCollectionQueryParameters] :journal_entry_dto_collection_query_parameters 
     # @return [Array<(Int32Envelope, Integer, Hash)>] Int32Envelope data, response status code and response headers
     def get_journal_entries_count_async_with_http_info(tenant_id, journal_id, opts = {})
       if @api_client.config.debugging
@@ -762,13 +875,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'journal_entry_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'Int32Envelope'
@@ -881,6 +999,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [JournalDtoCollectionQueryParameters] :journal_dto_collection_query_parameters 
     # @return [JournalDtoIReadOnlyListEnvelope]
     def get_journals_async(tenant_id, opts = {})
       data, _status_code, _headers = get_journals_async_with_http_info(tenant_id, opts)
@@ -893,6 +1012,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [JournalDtoCollectionQueryParameters] :journal_dto_collection_query_parameters 
     # @return [Array<(JournalDtoIReadOnlyListEnvelope, Integer, Hash)>] JournalDtoIReadOnlyListEnvelope data, response status code and response headers
     def get_journals_async_with_http_info(tenant_id, opts = {})
       if @api_client.config.debugging
@@ -914,13 +1034,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'journal_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'JournalDtoIReadOnlyListEnvelope'
@@ -952,7 +1077,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
-    # @option opts [Array<Operation>] :operation 
+    # @option opts [Array<PatchOperation>] :patch_operation 
     # @return [EmptyEnvelope]
     def patch_journal_async(tenant_id, journal_id, opts = {})
       data, _status_code, _headers = patch_journal_async_with_http_info(tenant_id, journal_id, opts)
@@ -966,7 +1091,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
-    # @option opts [Array<Operation>] :operation 
+    # @option opts [Array<PatchOperation>] :patch_operation 
     # @return [Array<(EmptyEnvelope, Integer, Hash)>] EmptyEnvelope data, response status code and response headers
     def patch_journal_async_with_http_info(tenant_id, journal_id, opts = {})
       if @api_client.config.debugging
@@ -1003,7 +1128,7 @@ module OpenapiClient
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'operation'])
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'patch_operation'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'EmptyEnvelope'
@@ -1036,7 +1161,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
-    # @option opts [Array<Operation>] :operation 
+    # @option opts [Array<PatchOperation>] :patch_operation 
     # @return [EmptyEnvelope]
     def patch_journal_entry_async(tenant_id, journal_id, entry_id, opts = {})
       data, _status_code, _headers = patch_journal_entry_async_with_http_info(tenant_id, journal_id, entry_id, opts)
@@ -1051,7 +1176,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
-    # @option opts [Array<Operation>] :operation 
+    # @option opts [Array<PatchOperation>] :patch_operation 
     # @return [Array<(EmptyEnvelope, Integer, Hash)>] EmptyEnvelope data, response status code and response headers
     def patch_journal_entry_async_with_http_info(tenant_id, journal_id, entry_id, opts = {})
       if @api_client.config.debugging
@@ -1092,7 +1217,7 @@ module OpenapiClient
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'operation'])
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'patch_operation'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'EmptyEnvelope'

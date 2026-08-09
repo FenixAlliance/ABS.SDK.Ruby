@@ -116,7 +116,8 @@ api_instance = OpenapiClient::PortalsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  web_portal_dto_collection_query_parameters: OpenapiClient::WebPortalDtoCollectionQueryParameters.new # WebPortalDtoCollectionQueryParameters | 
 }
 
 begin
@@ -153,6 +154,7 @@ end
 | **tenant_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **web_portal_dto_collection_query_parameters** | [**WebPortalDtoCollectionQueryParameters**](WebPortalDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -164,7 +166,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -466,7 +468,8 @@ api_instance = OpenapiClient::PortalsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  web_portal_dto_collection_query_parameters: OpenapiClient::WebPortalDtoCollectionQueryParameters.new # WebPortalDtoCollectionQueryParameters | 
 }
 
 begin
@@ -503,6 +506,7 @@ end
 | **tenant_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **web_portal_dto_collection_query_parameters** | [**WebPortalDtoCollectionQueryParameters**](WebPortalDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -514,7 +518,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -870,7 +874,7 @@ No authorization required
 
 ## initialize_current_web_portal_async
 
-> <WebPortalDtoEnvelope> initialize_current_web_portal_async(opts)
+> <ExecutionContextEnvelope> initialize_current_web_portal_async(opts)
 
 Initialize the current portal
 
@@ -901,7 +905,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<WebPortalDtoEnvelope>, Integer, Hash)> initialize_current_web_portal_async_with_http_info(opts)
+> <Array(<ExecutionContextEnvelope>, Integer, Hash)> initialize_current_web_portal_async_with_http_info(opts)
 
 ```ruby
 begin
@@ -909,7 +913,7 @@ begin
   data, status_code, headers = api_instance.initialize_current_web_portal_async_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <WebPortalDtoEnvelope>
+  p data # => <ExecutionContextEnvelope>
 rescue OpenapiClient::ApiError => e
   puts "Error when calling PortalsApi->initialize_current_web_portal_async_with_http_info: #{e}"
 end
@@ -924,7 +928,7 @@ end
 
 ### Return type
 
-[**WebPortalDtoEnvelope**](WebPortalDtoEnvelope.md)
+[**ExecutionContextEnvelope**](ExecutionContextEnvelope.md)
 
 ### Authorization
 
@@ -956,7 +960,7 @@ portal_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 opts = {
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example', # String | 
-  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+  patch_operation: [OpenapiClient::PatchOperation.new] # Array<PatchOperation> | 
 }
 
 begin
@@ -994,7 +998,7 @@ end
 | **portal_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
-| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+| **patch_operation** | [**Array&lt;PatchOperation&gt;**](PatchOperation.md) |  | [optional] |
 
 ### Return type
 

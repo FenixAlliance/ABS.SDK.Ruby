@@ -463,6 +463,7 @@ module OpenapiClient
     # Retrieves a list of extended order details for the specified tenant.
     # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [ExtendedOrderDtoCollectionQueryParameters] :extended_order_dto_collection_query_parameters 
     # @return [ExtendedOrderDtoListEnvelope]
     def get_extended_orders(tenant_id, opts = {})
       data, _status_code, _headers = get_extended_orders_with_http_info(tenant_id, opts)
@@ -473,6 +474,7 @@ module OpenapiClient
     # Retrieves a list of extended order details for the specified tenant.
     # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [ExtendedOrderDtoCollectionQueryParameters] :extended_order_dto_collection_query_parameters 
     # @return [Array<(ExtendedOrderDtoListEnvelope, Integer, Hash)>] ExtendedOrderDtoListEnvelope data, response status code and response headers
     def get_extended_orders_with_http_info(tenant_id, opts = {})
       if @api_client.config.debugging
@@ -493,12 +495,17 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'extended_order_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'ExtendedOrderDtoListEnvelope'
@@ -675,6 +682,7 @@ module OpenapiClient
     # @param order_id [String] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :item_id 
+    # @option opts [OrderLineDtoCollectionQueryParameters] :order_line_dto_collection_query_parameters 
     # @return [OrderLineDtoListEnvelope]
     def get_order_lines(tenant_id, order_id, opts = {})
       data, _status_code, _headers = get_order_lines_with_http_info(tenant_id, order_id, opts)
@@ -687,6 +695,7 @@ module OpenapiClient
     # @param order_id [String] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :item_id 
+    # @option opts [OrderLineDtoCollectionQueryParameters] :order_line_dto_collection_query_parameters 
     # @return [Array<(OrderLineDtoListEnvelope, Integer, Hash)>] OrderLineDtoListEnvelope data, response status code and response headers
     def get_order_lines_with_http_info(tenant_id, order_id, opts = {})
       if @api_client.config.debugging
@@ -712,12 +721,17 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'order_line_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'OrderLineDtoListEnvelope'
@@ -747,6 +761,7 @@ module OpenapiClient
     # @param tenant_id [String] 
     # @param order_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [OrderLineDtoCollectionQueryParameters] :order_line_dto_collection_query_parameters 
     # @return [Int32Envelope]
     def get_order_lines_count(tenant_id, order_id, opts = {})
       data, _status_code, _headers = get_order_lines_count_with_http_info(tenant_id, order_id, opts)
@@ -758,6 +773,7 @@ module OpenapiClient
     # @param tenant_id [String] 
     # @param order_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [OrderLineDtoCollectionQueryParameters] :order_line_dto_collection_query_parameters 
     # @return [Array<(Int32Envelope, Integer, Hash)>] Int32Envelope data, response status code and response headers
     def get_order_lines_count_with_http_info(tenant_id, order_id, opts = {})
       if @api_client.config.debugging
@@ -782,12 +798,17 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'order_line_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'Int32Envelope'
@@ -816,6 +837,7 @@ module OpenapiClient
     # Retrieves a list of orders for the specified tenant.
     # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [OrderDtoCollectionQueryParameters] :order_dto_collection_query_parameters 
     # @return [OrderDtoListEnvelope]
     def get_orders(tenant_id, opts = {})
       data, _status_code, _headers = get_orders_with_http_info(tenant_id, opts)
@@ -826,6 +848,7 @@ module OpenapiClient
     # Retrieves a list of orders for the specified tenant.
     # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [OrderDtoCollectionQueryParameters] :order_dto_collection_query_parameters 
     # @return [Array<(OrderDtoListEnvelope, Integer, Hash)>] OrderDtoListEnvelope data, response status code and response headers
     def get_orders_with_http_info(tenant_id, opts = {})
       if @api_client.config.debugging
@@ -846,12 +869,17 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'order_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'OrderDtoListEnvelope'
@@ -880,6 +908,7 @@ module OpenapiClient
     # Retrieves the total number of orders for the specified tenant.
     # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [OrderDtoCollectionQueryParameters] :order_dto_collection_query_parameters 
     # @return [Int32Envelope]
     def get_orders_count(tenant_id, opts = {})
       data, _status_code, _headers = get_orders_count_with_http_info(tenant_id, opts)
@@ -890,6 +919,7 @@ module OpenapiClient
     # Retrieves the total number of orders for the specified tenant.
     # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [OrderDtoCollectionQueryParameters] :order_dto_collection_query_parameters 
     # @return [Array<(Int32Envelope, Integer, Hash)>] Int32Envelope data, response status code and response headers
     def get_orders_count_with_http_info(tenant_id, opts = {})
       if @api_client.config.debugging
@@ -910,12 +940,17 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'order_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'Int32Envelope'
@@ -945,7 +980,7 @@ module OpenapiClient
     # @param tenant_id [String] 
     # @param order_id [String] 
     # @param [Hash] opts the optional parameters
-    # @option opts [Array<Operation>] :operation 
+    # @option opts [Array<PatchOperation>] :patch_operation 
     # @return [EmptyEnvelope]
     def patch_order(tenant_id, order_id, opts = {})
       data, _status_code, _headers = patch_order_with_http_info(tenant_id, order_id, opts)
@@ -957,7 +992,7 @@ module OpenapiClient
     # @param tenant_id [String] 
     # @param order_id [String] 
     # @param [Hash] opts the optional parameters
-    # @option opts [Array<Operation>] :operation 
+    # @option opts [Array<PatchOperation>] :patch_operation 
     # @return [Array<(EmptyEnvelope, Integer, Hash)>] EmptyEnvelope data, response status code and response headers
     def patch_order_with_http_info(tenant_id, order_id, opts = {})
       if @api_client.config.debugging
@@ -992,7 +1027,7 @@ module OpenapiClient
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'operation'])
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'patch_operation'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'EmptyEnvelope'
@@ -1023,7 +1058,7 @@ module OpenapiClient
     # @param order_id [String] 
     # @param order_line_id [String] 
     # @param [Hash] opts the optional parameters
-    # @option opts [Array<Operation>] :operation 
+    # @option opts [Array<PatchOperation>] :patch_operation 
     # @return [EmptyEnvelope]
     def patch_order_line(tenant_id, order_id, order_line_id, opts = {})
       data, _status_code, _headers = patch_order_line_with_http_info(tenant_id, order_id, order_line_id, opts)
@@ -1036,7 +1071,7 @@ module OpenapiClient
     # @param order_id [String] 
     # @param order_line_id [String] 
     # @param [Hash] opts the optional parameters
-    # @option opts [Array<Operation>] :operation 
+    # @option opts [Array<PatchOperation>] :patch_operation 
     # @return [Array<(EmptyEnvelope, Integer, Hash)>] EmptyEnvelope data, response status code and response headers
     def patch_order_line_with_http_info(tenant_id, order_id, order_line_id, opts = {})
       if @api_client.config.debugging
@@ -1075,7 +1110,7 @@ module OpenapiClient
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'operation'])
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'patch_operation'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'EmptyEnvelope'

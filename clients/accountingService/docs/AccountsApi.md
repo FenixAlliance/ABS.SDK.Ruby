@@ -67,7 +67,8 @@ tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 opts = {
   currency_id: 'currency_id_example', # String | 
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  account_dto_collection_query_parameters: OpenapiClient::AccountDtoCollectionQueryParameters.new # AccountDtoCollectionQueryParameters | 
 }
 
 begin
@@ -105,6 +106,7 @@ end
 | **currency_id** | **String** |  | [optional][default to &#39;USD.USA&#39;] |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **account_dto_collection_query_parameters** | [**AccountDtoCollectionQueryParameters**](AccountDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -116,7 +118,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -1087,7 +1089,8 @@ tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 account_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  accounting_entry_dto_collection_query_parameters: OpenapiClient::AccountingEntryDtoCollectionQueryParameters.new # AccountingEntryDtoCollectionQueryParameters | 
 }
 
 begin
@@ -1125,6 +1128,7 @@ end
 | **account_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **accounting_entry_dto_collection_query_parameters** | [**AccountingEntryDtoCollectionQueryParameters**](AccountingEntryDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1136,7 +1140,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -1159,7 +1163,8 @@ tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 account_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  accounting_entry_dto_collection_query_parameters: OpenapiClient::AccountingEntryDtoCollectionQueryParameters.new # AccountingEntryDtoCollectionQueryParameters | 
 }
 
 begin
@@ -1197,6 +1202,7 @@ end
 | **account_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **accounting_entry_dto_collection_query_parameters** | [**AccountingEntryDtoCollectionQueryParameters**](AccountingEntryDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1208,7 +1214,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -1231,7 +1237,8 @@ tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 account_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  accounting_entry_dto_collection_query_parameters: OpenapiClient::AccountingEntryDtoCollectionQueryParameters.new # AccountingEntryDtoCollectionQueryParameters | 
 }
 
 begin
@@ -1269,6 +1276,7 @@ end
 | **account_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **accounting_entry_dto_collection_query_parameters** | [**AccountingEntryDtoCollectionQueryParameters**](AccountingEntryDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1280,7 +1288,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -1303,7 +1311,8 @@ tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 account_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  accounting_entry_dto_collection_query_parameters: OpenapiClient::AccountingEntryDtoCollectionQueryParameters.new # AccountingEntryDtoCollectionQueryParameters | 
 }
 
 begin
@@ -1341,6 +1350,7 @@ end
 | **account_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **accounting_entry_dto_collection_query_parameters** | [**AccountingEntryDtoCollectionQueryParameters**](AccountingEntryDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1352,7 +1362,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -1447,7 +1457,8 @@ tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 account_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  accounting_entry_dto_collection_query_parameters: OpenapiClient::AccountingEntryDtoCollectionQueryParameters.new # AccountingEntryDtoCollectionQueryParameters | 
 }
 
 begin
@@ -1485,6 +1496,7 @@ end
 | **account_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **accounting_entry_dto_collection_query_parameters** | [**AccountingEntryDtoCollectionQueryParameters**](AccountingEntryDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1496,7 +1508,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -1593,7 +1605,8 @@ tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 account_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  account_relation_dto_collection_query_parameters: OpenapiClient::AccountRelationDtoCollectionQueryParameters.new # AccountRelationDtoCollectionQueryParameters | 
 }
 
 begin
@@ -1631,6 +1644,7 @@ end
 | **account_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **account_relation_dto_collection_query_parameters** | [**AccountRelationDtoCollectionQueryParameters**](AccountRelationDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1642,7 +1656,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -1665,7 +1679,8 @@ tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 account_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  account_relation_dto_collection_query_parameters: OpenapiClient::AccountRelationDtoCollectionQueryParameters.new # AccountRelationDtoCollectionQueryParameters | 
 }
 
 begin
@@ -1703,6 +1718,7 @@ end
 | **account_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **account_relation_dto_collection_query_parameters** | [**AccountRelationDtoCollectionQueryParameters**](AccountRelationDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1714,7 +1730,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -1808,7 +1824,8 @@ api_instance = OpenapiClient::AccountsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  account_type_dto_collection_query_parameters: OpenapiClient::AccountTypeDtoCollectionQueryParameters.new # AccountTypeDtoCollectionQueryParameters | 
 }
 
 begin
@@ -1845,6 +1862,7 @@ end
 | **tenant_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **account_type_dto_collection_query_parameters** | [**AccountTypeDtoCollectionQueryParameters**](AccountTypeDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1856,7 +1874,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -1878,7 +1896,8 @@ api_instance = OpenapiClient::AccountsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  account_type_dto_collection_query_parameters: OpenapiClient::AccountTypeDtoCollectionQueryParameters.new # AccountTypeDtoCollectionQueryParameters | 
 }
 
 begin
@@ -1915,6 +1934,7 @@ end
 | **tenant_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **account_type_dto_collection_query_parameters** | [**AccountTypeDtoCollectionQueryParameters**](AccountTypeDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1926,7 +1946,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -1948,7 +1968,8 @@ api_instance = OpenapiClient::AccountsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  account_dto_collection_query_parameters: OpenapiClient::AccountDtoCollectionQueryParameters.new # AccountDtoCollectionQueryParameters | 
 }
 
 begin
@@ -1985,6 +2006,7 @@ end
 | **tenant_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **account_dto_collection_query_parameters** | [**AccountDtoCollectionQueryParameters**](AccountDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1996,7 +2018,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -2018,7 +2040,8 @@ api_instance = OpenapiClient::AccountsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  account_dto_collection_query_parameters: OpenapiClient::AccountDtoCollectionQueryParameters.new # AccountDtoCollectionQueryParameters | 
 }
 
 begin
@@ -2055,6 +2078,7 @@ end
 | **tenant_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **account_dto_collection_query_parameters** | [**AccountDtoCollectionQueryParameters**](AccountDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -2066,7 +2090,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -2229,7 +2253,8 @@ tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 account_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  accounting_entry_dto_collection_query_parameters: OpenapiClient::AccountingEntryDtoCollectionQueryParameters.new # AccountingEntryDtoCollectionQueryParameters | 
 }
 
 begin
@@ -2267,6 +2292,7 @@ end
 | **account_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **accounting_entry_dto_collection_query_parameters** | [**AccountingEntryDtoCollectionQueryParameters**](AccountingEntryDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -2278,7 +2304,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -2301,7 +2327,8 @@ tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 account_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  accounting_entry_dto_collection_query_parameters: OpenapiClient::AccountingEntryDtoCollectionQueryParameters.new # AccountingEntryDtoCollectionQueryParameters | 
 }
 
 begin
@@ -2339,6 +2366,7 @@ end
 | **account_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **accounting_entry_dto_collection_query_parameters** | [**AccountingEntryDtoCollectionQueryParameters**](AccountingEntryDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -2350,7 +2378,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -2372,7 +2400,8 @@ api_instance = OpenapiClient::AccountsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  account_dto_collection_query_parameters: OpenapiClient::AccountDtoCollectionQueryParameters.new # AccountDtoCollectionQueryParameters | 
 }
 
 begin
@@ -2409,6 +2438,7 @@ end
 | **tenant_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **account_dto_collection_query_parameters** | [**AccountDtoCollectionQueryParameters**](AccountDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -2420,7 +2450,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -2444,7 +2474,7 @@ account_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 opts = {
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example', # String | 
-  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+  patch_operation: [OpenapiClient::PatchOperation.new] # Array<PatchOperation> | 
 }
 
 begin
@@ -2482,7 +2512,7 @@ end
 | **account_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
-| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+| **patch_operation** | [**Array&lt;PatchOperation&gt;**](PatchOperation.md) |  | [optional] |
 
 ### Return type
 
@@ -2519,7 +2549,7 @@ entry_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 opts = {
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example', # String | 
-  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+  patch_operation: [OpenapiClient::PatchOperation.new] # Array<PatchOperation> | 
 }
 
 begin
@@ -2558,7 +2588,7 @@ end
 | **entry_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
-| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+| **patch_operation** | [**Array&lt;PatchOperation&gt;**](PatchOperation.md) |  | [optional] |
 
 ### Return type
 
@@ -2595,7 +2625,7 @@ account_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 opts = {
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example', # String | 
-  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+  patch_operation: [OpenapiClient::PatchOperation.new] # Array<PatchOperation> | 
 }
 
 begin
@@ -2634,7 +2664,7 @@ end
 | **account_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
-| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+| **patch_operation** | [**Array&lt;PatchOperation&gt;**](PatchOperation.md) |  | [optional] |
 
 ### Return type
 
@@ -2670,7 +2700,7 @@ account_type_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 opts = {
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example', # String | 
-  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+  patch_operation: [OpenapiClient::PatchOperation.new] # Array<PatchOperation> | 
 }
 
 begin
@@ -2708,7 +2738,7 @@ end
 | **account_type_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
-| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+| **patch_operation** | [**Array&lt;PatchOperation&gt;**](PatchOperation.md) |  | [optional] |
 
 ### Return type
 

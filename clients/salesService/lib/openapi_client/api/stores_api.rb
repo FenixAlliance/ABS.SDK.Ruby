@@ -23,6 +23,7 @@ module OpenapiClient
     # Returns the total count of stores for the specified tenant with OData filter support.
     # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [StoreDtoCollectionQueryParameters] :store_dto_collection_query_parameters 
     # @return [Int32Envelope]
     def count_stores_async(tenant_id, opts = {})
       data, _status_code, _headers = count_stores_async_with_http_info(tenant_id, opts)
@@ -33,6 +34,7 @@ module OpenapiClient
     # Returns the total count of stores for the specified tenant with OData filter support.
     # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [StoreDtoCollectionQueryParameters] :store_dto_collection_query_parameters 
     # @return [Array<(Int32Envelope, Integer, Hash)>] Int32Envelope data, response status code and response headers
     def count_stores_async_with_http_info(tenant_id, opts = {})
       if @api_client.config.debugging
@@ -53,12 +55,17 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'store_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'Int32Envelope'
@@ -298,6 +305,7 @@ module OpenapiClient
     # Retrieves a list of stores for the specified tenant with OData query support.
     # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [StoreDtoCollectionQueryParameters] :store_dto_collection_query_parameters 
     # @return [StoreDtoListEnvelope]
     def get_stores_async(tenant_id, opts = {})
       data, _status_code, _headers = get_stores_async_with_http_info(tenant_id, opts)
@@ -308,6 +316,7 @@ module OpenapiClient
     # Retrieves a list of stores for the specified tenant with OData query support.
     # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [StoreDtoCollectionQueryParameters] :store_dto_collection_query_parameters 
     # @return [Array<(StoreDtoListEnvelope, Integer, Hash)>] StoreDtoListEnvelope data, response status code and response headers
     def get_stores_async_with_http_info(tenant_id, opts = {})
       if @api_client.config.debugging
@@ -328,12 +337,17 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'store_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'StoreDtoListEnvelope'
@@ -363,7 +377,7 @@ module OpenapiClient
     # @param tenant_id [String] 
     # @param store_id [String] 
     # @param [Hash] opts the optional parameters
-    # @option opts [Array<Operation>] :operation 
+    # @option opts [Array<PatchOperation>] :patch_operation 
     # @return [EmptyEnvelope]
     def patch_store_async(tenant_id, store_id, opts = {})
       data, _status_code, _headers = patch_store_async_with_http_info(tenant_id, store_id, opts)
@@ -375,7 +389,7 @@ module OpenapiClient
     # @param tenant_id [String] 
     # @param store_id [String] 
     # @param [Hash] opts the optional parameters
-    # @option opts [Array<Operation>] :operation 
+    # @option opts [Array<PatchOperation>] :patch_operation 
     # @return [Array<(EmptyEnvelope, Integer, Hash)>] EmptyEnvelope data, response status code and response headers
     def patch_store_async_with_http_info(tenant_id, store_id, opts = {})
       if @api_client.config.debugging
@@ -410,7 +424,7 @@ module OpenapiClient
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'operation'])
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'patch_operation'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'EmptyEnvelope'

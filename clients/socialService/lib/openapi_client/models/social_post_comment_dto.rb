@@ -31,11 +31,23 @@ module OpenapiClient
 
     attr_accessor :social_profile_avatar_url
 
+    attr_accessor :social_profile_type
+
     attr_accessor :body_html
 
     attr_accessor :body_format
 
+    attr_accessor :reply_count
+
+    attr_accessor :reactions_count
+
     attr_accessor :social_post_id
+
+    attr_accessor :facepile
+
+    attr_accessor :my_reaction
+
+    attr_accessor :my_reaction_id
 
     class EnumAttributeValidator
       attr_reader :datatype
@@ -70,9 +82,15 @@ module OpenapiClient
         :'social_feed_post_id' => :'socialFeedPostId',
         :'social_profile_name' => :'socialProfileName',
         :'social_profile_avatar_url' => :'socialProfileAvatarUrl',
+        :'social_profile_type' => :'socialProfileType',
         :'body_html' => :'bodyHtml',
         :'body_format' => :'bodyFormat',
-        :'social_post_id' => :'socialPostId'
+        :'reply_count' => :'replyCount',
+        :'reactions_count' => :'reactionsCount',
+        :'social_post_id' => :'socialPostId',
+        :'facepile' => :'facepile',
+        :'my_reaction' => :'myReaction',
+        :'my_reaction_id' => :'myReactionId'
       }
     end
 
@@ -92,9 +110,15 @@ module OpenapiClient
         :'social_feed_post_id' => :'String',
         :'social_profile_name' => :'String',
         :'social_profile_avatar_url' => :'String',
+        :'social_profile_type' => :'String',
         :'body_html' => :'String',
         :'body_format' => :'String',
-        :'social_post_id' => :'String'
+        :'reply_count' => :'Integer',
+        :'reactions_count' => :'Integer',
+        :'social_post_id' => :'String',
+        :'facepile' => :'Array<SocialPostReactionFacepileDto>',
+        :'my_reaction' => :'String',
+        :'my_reaction_id' => :'String'
       }
     end
 
@@ -109,9 +133,13 @@ module OpenapiClient
         :'social_feed_post_id',
         :'social_profile_name',
         :'social_profile_avatar_url',
+        :'social_profile_type',
         :'body_html',
         :'body_format',
-        :'social_post_id'
+        :'social_post_id',
+        :'facepile',
+        :'my_reaction',
+        :'my_reaction_id'
       ])
     end
 
@@ -162,6 +190,10 @@ module OpenapiClient
         self.social_profile_avatar_url = attributes[:'social_profile_avatar_url']
       end
 
+      if attributes.key?(:'social_profile_type')
+        self.social_profile_type = attributes[:'social_profile_type']
+      end
+
       if attributes.key?(:'body_html')
         self.body_html = attributes[:'body_html']
       end
@@ -170,8 +202,30 @@ module OpenapiClient
         self.body_format = attributes[:'body_format']
       end
 
+      if attributes.key?(:'reply_count')
+        self.reply_count = attributes[:'reply_count']
+      end
+
+      if attributes.key?(:'reactions_count')
+        self.reactions_count = attributes[:'reactions_count']
+      end
+
       if attributes.key?(:'social_post_id')
         self.social_post_id = attributes[:'social_post_id']
+      end
+
+      if attributes.key?(:'facepile')
+        if (value = attributes[:'facepile']).is_a?(Array)
+          self.facepile = value
+        end
+      end
+
+      if attributes.key?(:'my_reaction')
+        self.my_reaction = attributes[:'my_reaction']
+      end
+
+      if attributes.key?(:'my_reaction_id')
+        self.my_reaction_id = attributes[:'my_reaction_id']
       end
     end
 
@@ -187,9 +241,23 @@ module OpenapiClient
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
+      social_profile_type_validator = EnumAttributeValidator.new('String', ["User", "Tenant", "Contact"])
+      return false unless social_profile_type_validator.valid?(@social_profile_type)
       body_format_validator = EnumAttributeValidator.new('String', ["PlainText", "Html"])
       return false unless body_format_validator.valid?(@body_format)
+      my_reaction_validator = EnumAttributeValidator.new('String', ["Like", "Happy", "HaHa", "Love", "Sad", "Angry", "Wow", "Afraid"])
+      return false unless my_reaction_validator.valid?(@my_reaction)
       true
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] social_profile_type Object to be assigned
+    def social_profile_type=(social_profile_type)
+      validator = EnumAttributeValidator.new('String', ["User", "Tenant", "Contact"])
+      unless validator.valid?(social_profile_type)
+        fail ArgumentError, "invalid value for \"social_profile_type\", must be one of #{validator.allowable_values}."
+      end
+      @social_profile_type = social_profile_type
     end
 
     # Custom attribute writer method checking allowed values (enum).
@@ -200,6 +268,16 @@ module OpenapiClient
         fail ArgumentError, "invalid value for \"body_format\", must be one of #{validator.allowable_values}."
       end
       @body_format = body_format
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] my_reaction Object to be assigned
+    def my_reaction=(my_reaction)
+      validator = EnumAttributeValidator.new('String', ["Like", "Happy", "HaHa", "Love", "Sad", "Angry", "Wow", "Afraid"])
+      unless validator.valid?(my_reaction)
+        fail ArgumentError, "invalid value for \"my_reaction\", must be one of #{validator.allowable_values}."
+      end
+      @my_reaction = my_reaction
     end
 
     # Checks equality by comparing each attribute.
@@ -215,9 +293,15 @@ module OpenapiClient
           social_feed_post_id == o.social_feed_post_id &&
           social_profile_name == o.social_profile_name &&
           social_profile_avatar_url == o.social_profile_avatar_url &&
+          social_profile_type == o.social_profile_type &&
           body_html == o.body_html &&
           body_format == o.body_format &&
-          social_post_id == o.social_post_id
+          reply_count == o.reply_count &&
+          reactions_count == o.reactions_count &&
+          social_post_id == o.social_post_id &&
+          facepile == o.facepile &&
+          my_reaction == o.my_reaction &&
+          my_reaction_id == o.my_reaction_id
     end
 
     # @see the `==` method
@@ -229,7 +313,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, timestamp, message, parent_comment_id, social_profile_id, social_feed_post_id, social_profile_name, social_profile_avatar_url, body_html, body_format, social_post_id].hash
+      [id, timestamp, message, parent_comment_id, social_profile_id, social_feed_post_id, social_profile_name, social_profile_avatar_url, social_profile_type, body_html, body_format, reply_count, reactions_count, social_post_id, facepile, my_reaction, my_reaction_id].hash
     end
 
     # Builds the object from hash

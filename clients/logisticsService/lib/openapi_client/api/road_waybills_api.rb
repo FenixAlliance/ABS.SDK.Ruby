@@ -490,6 +490,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [WaybillLineDtoCollectionQueryParameters] :waybill_line_dto_collection_query_parameters 
     # @return [WaybillLineDtoListEnvelope]
     def get_road_waybill_lines_async(tenant_id, waybill_id, opts = {})
       data, _status_code, _headers = get_road_waybill_lines_async_with_http_info(tenant_id, waybill_id, opts)
@@ -503,6 +504,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [WaybillLineDtoCollectionQueryParameters] :waybill_line_dto_collection_query_parameters 
     # @return [Array<(WaybillLineDtoListEnvelope, Integer, Hash)>] WaybillLineDtoListEnvelope data, response status code and response headers
     def get_road_waybill_lines_async_with_http_info(tenant_id, waybill_id, opts = {})
       if @api_client.config.debugging
@@ -528,13 +530,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'waybill_line_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'WaybillLineDtoListEnvelope'
@@ -566,6 +573,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [WaybillLineDtoCollectionQueryParameters] :waybill_line_dto_collection_query_parameters 
     # @return [Int32Envelope]
     def get_road_waybill_lines_count_async(tenant_id, waybill_id, opts = {})
       data, _status_code, _headers = get_road_waybill_lines_count_async_with_http_info(tenant_id, waybill_id, opts)
@@ -579,6 +587,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [WaybillLineDtoCollectionQueryParameters] :waybill_line_dto_collection_query_parameters 
     # @return [Array<(Int32Envelope, Integer, Hash)>] Int32Envelope data, response status code and response headers
     def get_road_waybill_lines_count_async_with_http_info(tenant_id, waybill_id, opts = {})
       if @api_client.config.debugging
@@ -604,13 +613,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'waybill_line_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'Int32Envelope'
@@ -641,6 +655,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [RoadWaybillDtoCollectionQueryParameters] :road_waybill_dto_collection_query_parameters 
     # @return [RoadWaybillDtoListEnvelope]
     def get_road_waybills_async(tenant_id, opts = {})
       data, _status_code, _headers = get_road_waybills_async_with_http_info(tenant_id, opts)
@@ -653,6 +668,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [RoadWaybillDtoCollectionQueryParameters] :road_waybill_dto_collection_query_parameters 
     # @return [Array<(RoadWaybillDtoListEnvelope, Integer, Hash)>] RoadWaybillDtoListEnvelope data, response status code and response headers
     def get_road_waybills_async_with_http_info(tenant_id, opts = {})
       if @api_client.config.debugging
@@ -674,13 +690,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'road_waybill_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'RoadWaybillDtoListEnvelope'
@@ -711,6 +732,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [RoadWaybillDtoCollectionQueryParameters] :road_waybill_dto_collection_query_parameters 
     # @return [Int32Envelope]
     def get_road_waybills_count_async(tenant_id, opts = {})
       data, _status_code, _headers = get_road_waybills_count_async_with_http_info(tenant_id, opts)
@@ -723,6 +745,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [RoadWaybillDtoCollectionQueryParameters] :road_waybill_dto_collection_query_parameters 
     # @return [Array<(Int32Envelope, Integer, Hash)>] Int32Envelope data, response status code and response headers
     def get_road_waybills_count_async_with_http_info(tenant_id, opts = {})
       if @api_client.config.debugging
@@ -744,13 +767,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'road_waybill_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'Int32Envelope'
@@ -1010,7 +1038,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
-    # @option opts [Array<Operation>] :operation 
+    # @option opts [Array<PatchOperation>] :patch_operation 
     # @return [EmptyEnvelope]
     def patch_road_waybill_async(tenant_id, waybill_id, opts = {})
       data, _status_code, _headers = patch_road_waybill_async_with_http_info(tenant_id, waybill_id, opts)
@@ -1024,7 +1052,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
-    # @option opts [Array<Operation>] :operation 
+    # @option opts [Array<PatchOperation>] :patch_operation 
     # @return [Array<(EmptyEnvelope, Integer, Hash)>] EmptyEnvelope data, response status code and response headers
     def patch_road_waybill_async_with_http_info(tenant_id, waybill_id, opts = {})
       if @api_client.config.debugging
@@ -1061,7 +1089,7 @@ module OpenapiClient
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'operation'])
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'patch_operation'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'EmptyEnvelope'
@@ -1094,7 +1122,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
-    # @option opts [Array<Operation>] :operation 
+    # @option opts [Array<PatchOperation>] :patch_operation 
     # @return [EmptyEnvelope]
     def patch_road_waybill_line_async(tenant_id, waybill_id, line_id, opts = {})
       data, _status_code, _headers = patch_road_waybill_line_async_with_http_info(tenant_id, waybill_id, line_id, opts)
@@ -1109,7 +1137,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
-    # @option opts [Array<Operation>] :operation 
+    # @option opts [Array<PatchOperation>] :patch_operation 
     # @return [Array<(EmptyEnvelope, Integer, Hash)>] EmptyEnvelope data, response status code and response headers
     def patch_road_waybill_line_async_with_http_info(tenant_id, waybill_id, line_id, opts = {})
       if @api_client.config.debugging
@@ -1150,7 +1178,7 @@ module OpenapiClient
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'operation'])
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'patch_operation'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'EmptyEnvelope'

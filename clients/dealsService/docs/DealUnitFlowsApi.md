@@ -428,7 +428,7 @@ No authorization required
 
 ## get_deal_unit_flow_stages_async
 
-> <DealUnitFlowStageDtoListEnvelope> get_deal_unit_flow_stages_async(tenant_id, deal_unit_flow_id)
+> <DealUnitFlowStageDtoListEnvelope> get_deal_unit_flow_stages_async(tenant_id, deal_unit_flow_id, opts)
 
 Get stages for a deal unit flow
 
@@ -443,10 +443,13 @@ require 'openapi_client'
 api_instance = OpenapiClient::DealUnitFlowsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 deal_unit_flow_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  deal_unit_flow_stage_dto_collection_query_parameters: OpenapiClient::DealUnitFlowStageDtoCollectionQueryParameters.new # DealUnitFlowStageDtoCollectionQueryParameters | 
+}
 
 begin
   # Get stages for a deal unit flow
-  result = api_instance.get_deal_unit_flow_stages_async(tenant_id, deal_unit_flow_id)
+  result = api_instance.get_deal_unit_flow_stages_async(tenant_id, deal_unit_flow_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling DealUnitFlowsApi->get_deal_unit_flow_stages_async: #{e}"
@@ -457,12 +460,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<DealUnitFlowStageDtoListEnvelope>, Integer, Hash)> get_deal_unit_flow_stages_async_with_http_info(tenant_id, deal_unit_flow_id)
+> <Array(<DealUnitFlowStageDtoListEnvelope>, Integer, Hash)> get_deal_unit_flow_stages_async_with_http_info(tenant_id, deal_unit_flow_id, opts)
 
 ```ruby
 begin
   # Get stages for a deal unit flow
-  data, status_code, headers = api_instance.get_deal_unit_flow_stages_async_with_http_info(tenant_id, deal_unit_flow_id)
+  data, status_code, headers = api_instance.get_deal_unit_flow_stages_async_with_http_info(tenant_id, deal_unit_flow_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <DealUnitFlowStageDtoListEnvelope>
@@ -477,6 +480,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
 | **deal_unit_flow_id** | **String** |  |  |
+| **deal_unit_flow_stage_dto_collection_query_parameters** | [**DealUnitFlowStageDtoCollectionQueryParameters**](DealUnitFlowStageDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -488,13 +492,13 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
 ## get_deal_unit_flow_stages_count_async
 
-> <Int32Envelope> get_deal_unit_flow_stages_count_async(tenant_id, deal_unit_flow_id)
+> <Int32Envelope> get_deal_unit_flow_stages_count_async(tenant_id, deal_unit_flow_id, opts)
 
 Get stages count for a deal unit flow
 
@@ -509,10 +513,13 @@ require 'openapi_client'
 api_instance = OpenapiClient::DealUnitFlowsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 deal_unit_flow_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  deal_unit_flow_stage_dto_collection_query_parameters: OpenapiClient::DealUnitFlowStageDtoCollectionQueryParameters.new # DealUnitFlowStageDtoCollectionQueryParameters | 
+}
 
 begin
   # Get stages count for a deal unit flow
-  result = api_instance.get_deal_unit_flow_stages_count_async(tenant_id, deal_unit_flow_id)
+  result = api_instance.get_deal_unit_flow_stages_count_async(tenant_id, deal_unit_flow_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling DealUnitFlowsApi->get_deal_unit_flow_stages_count_async: #{e}"
@@ -523,12 +530,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Int32Envelope>, Integer, Hash)> get_deal_unit_flow_stages_count_async_with_http_info(tenant_id, deal_unit_flow_id)
+> <Array(<Int32Envelope>, Integer, Hash)> get_deal_unit_flow_stages_count_async_with_http_info(tenant_id, deal_unit_flow_id, opts)
 
 ```ruby
 begin
   # Get stages count for a deal unit flow
-  data, status_code, headers = api_instance.get_deal_unit_flow_stages_count_async_with_http_info(tenant_id, deal_unit_flow_id)
+  data, status_code, headers = api_instance.get_deal_unit_flow_stages_count_async_with_http_info(tenant_id, deal_unit_flow_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Int32Envelope>
@@ -543,6 +550,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
 | **deal_unit_flow_id** | **String** |  |  |
+| **deal_unit_flow_stage_dto_collection_query_parameters** | [**DealUnitFlowStageDtoCollectionQueryParameters**](DealUnitFlowStageDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -554,13 +562,13 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
 ## get_deal_unit_flows_async
 
-> <DealUnitFlowDtoListEnvelope> get_deal_unit_flows_async(tenant_id)
+> <DealUnitFlowDtoListEnvelope> get_deal_unit_flows_async(tenant_id, opts)
 
 Get deal unit flows
 
@@ -574,10 +582,13 @@ require 'openapi_client'
 
 api_instance = OpenapiClient::DealUnitFlowsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  deal_unit_flow_dto_collection_query_parameters: OpenapiClient::DealUnitFlowDtoCollectionQueryParameters.new # DealUnitFlowDtoCollectionQueryParameters | 
+}
 
 begin
   # Get deal unit flows
-  result = api_instance.get_deal_unit_flows_async(tenant_id)
+  result = api_instance.get_deal_unit_flows_async(tenant_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling DealUnitFlowsApi->get_deal_unit_flows_async: #{e}"
@@ -588,12 +599,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<DealUnitFlowDtoListEnvelope>, Integer, Hash)> get_deal_unit_flows_async_with_http_info(tenant_id)
+> <Array(<DealUnitFlowDtoListEnvelope>, Integer, Hash)> get_deal_unit_flows_async_with_http_info(tenant_id, opts)
 
 ```ruby
 begin
   # Get deal unit flows
-  data, status_code, headers = api_instance.get_deal_unit_flows_async_with_http_info(tenant_id)
+  data, status_code, headers = api_instance.get_deal_unit_flows_async_with_http_info(tenant_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <DealUnitFlowDtoListEnvelope>
@@ -607,6 +618,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
+| **deal_unit_flow_dto_collection_query_parameters** | [**DealUnitFlowDtoCollectionQueryParameters**](DealUnitFlowDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -618,13 +630,13 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
 ## get_deal_unit_flows_count_async
 
-> <Int32Envelope> get_deal_unit_flows_count_async(tenant_id)
+> <Int32Envelope> get_deal_unit_flows_count_async(tenant_id, opts)
 
 Get deal unit flows count
 
@@ -638,10 +650,13 @@ require 'openapi_client'
 
 api_instance = OpenapiClient::DealUnitFlowsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  deal_unit_flow_dto_collection_query_parameters: OpenapiClient::DealUnitFlowDtoCollectionQueryParameters.new # DealUnitFlowDtoCollectionQueryParameters | 
+}
 
 begin
   # Get deal unit flows count
-  result = api_instance.get_deal_unit_flows_count_async(tenant_id)
+  result = api_instance.get_deal_unit_flows_count_async(tenant_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling DealUnitFlowsApi->get_deal_unit_flows_count_async: #{e}"
@@ -652,12 +667,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Int32Envelope>, Integer, Hash)> get_deal_unit_flows_count_async_with_http_info(tenant_id)
+> <Array(<Int32Envelope>, Integer, Hash)> get_deal_unit_flows_count_async_with_http_info(tenant_id, opts)
 
 ```ruby
 begin
   # Get deal unit flows count
-  data, status_code, headers = api_instance.get_deal_unit_flows_count_async_with_http_info(tenant_id)
+  data, status_code, headers = api_instance.get_deal_unit_flows_count_async_with_http_info(tenant_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Int32Envelope>
@@ -671,6 +686,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
+| **deal_unit_flow_dto_collection_query_parameters** | [**DealUnitFlowDtoCollectionQueryParameters**](DealUnitFlowDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -682,7 +698,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -704,7 +720,7 @@ api_instance = OpenapiClient::DealUnitFlowsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 deal_unit_flow_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
-  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+  patch_operation: [OpenapiClient::PatchOperation.new] # Array<PatchOperation> | 
 }
 
 begin
@@ -740,7 +756,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
 | **deal_unit_flow_id** | **String** |  |  |
-| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+| **patch_operation** | [**Array&lt;PatchOperation&gt;**](PatchOperation.md) |  | [optional] |
 
 ### Return type
 
@@ -775,7 +791,7 @@ tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 deal_unit_flow_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 deal_unit_flow_stage_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
-  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+  patch_operation: [OpenapiClient::PatchOperation.new] # Array<PatchOperation> | 
 }
 
 begin
@@ -812,7 +828,7 @@ end
 | **tenant_id** | **String** |  |  |
 | **deal_unit_flow_id** | **String** |  |  |
 | **deal_unit_flow_stage_id** | **String** |  |  |
-| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+| **patch_operation** | [**Array&lt;PatchOperation&gt;**](PatchOperation.md) |  | [optional] |
 
 ### Return type
 

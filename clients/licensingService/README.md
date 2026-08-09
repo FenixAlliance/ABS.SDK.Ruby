@@ -81,7 +81,6 @@ Class | Method | HTTP request | Description
 *OpenapiClient::FenixAllianceABSWebApi* | [**account_manage_download_personal_data_post**](docs/FenixAllianceABSWebApi.md#account_manage_download_personal_data_post) | **POST** /Account/Manage/DownloadPersonalData | 
 *OpenapiClient::FenixAllianceABSWebApi* | [**account_manage_link_external_login_post**](docs/FenixAllianceABSWebApi.md#account_manage_link_external_login_post) | **POST** /Account/Manage/LinkExternalLogin | 
 *OpenapiClient::FenixAllianceABSWebApi* | [**account_perform_external_login_post**](docs/FenixAllianceABSWebApi.md#account_perform_external_login_post) | **POST** /Account/PerformExternalLogin | 
-*OpenapiClient::FenixAllianceABSWebApi* | [**api_v2_ai_service_agents_agent_id_agui_post**](docs/FenixAllianceABSWebApi.md#api_v2_ai_service_agents_agent_id_agui_post) | **POST** /api/v2/AIService/Agents/{agentId}/agui | 
 *OpenapiClient::FenixAllianceABSWebApi* | [**forgot_password_post**](docs/FenixAllianceABSWebApi.md#forgot_password_post) | **POST** /forgotPassword | 
 *OpenapiClient::FenixAllianceABSWebApi* | [**health_get**](docs/FenixAllianceABSWebApi.md#health_get) | **GET** /health | 
 *OpenapiClient::FenixAllianceABSWebApi* | [**hello_get**](docs/FenixAllianceABSWebApi.md#hello_get) | **GET** /hello | 
@@ -143,26 +142,31 @@ Class | Method | HTTP request | Description
  - [OpenapiClient::Int32Envelope](docs/Int32Envelope.md)
  - [OpenapiClient::LicenseAttributeCreateDto](docs/LicenseAttributeCreateDto.md)
  - [OpenapiClient::LicenseAttributeDto](docs/LicenseAttributeDto.md)
+ - [OpenapiClient::LicenseAttributeDtoCollectionQueryParameters](docs/LicenseAttributeDtoCollectionQueryParameters.md)
  - [OpenapiClient::LicenseAttributeDtoListEnvelope](docs/LicenseAttributeDtoListEnvelope.md)
  - [OpenapiClient::LicenseAttributeUpdateDto](docs/LicenseAttributeUpdateDto.md)
  - [OpenapiClient::LicenseCreateDto](docs/LicenseCreateDto.md)
  - [OpenapiClient::LicenseDto](docs/LicenseDto.md)
+ - [OpenapiClient::LicenseDtoCollectionQueryParameters](docs/LicenseDtoCollectionQueryParameters.md)
  - [OpenapiClient::LicenseDtoListEnvelope](docs/LicenseDtoListEnvelope.md)
  - [OpenapiClient::LicenseFeatureCreateDto](docs/LicenseFeatureCreateDto.md)
  - [OpenapiClient::LicenseFeatureDto](docs/LicenseFeatureDto.md)
+ - [OpenapiClient::LicenseFeatureDtoCollectionQueryParameters](docs/LicenseFeatureDtoCollectionQueryParameters.md)
  - [OpenapiClient::LicenseFeatureDtoListEnvelope](docs/LicenseFeatureDtoListEnvelope.md)
  - [OpenapiClient::LicenseFeatureUpdateDto](docs/LicenseFeatureUpdateDto.md)
  - [OpenapiClient::LicenseTypeCreateDto](docs/LicenseTypeCreateDto.md)
  - [OpenapiClient::LicenseTypeDto](docs/LicenseTypeDto.md)
+ - [OpenapiClient::LicenseTypeDtoCollectionQueryParameters](docs/LicenseTypeDtoCollectionQueryParameters.md)
  - [OpenapiClient::LicenseTypeDtoListEnvelope](docs/LicenseTypeDtoListEnvelope.md)
  - [OpenapiClient::LicenseTypeUpdateDto](docs/LicenseTypeUpdateDto.md)
  - [OpenapiClient::LicenseUpdateDto](docs/LicenseUpdateDto.md)
  - [OpenapiClient::LicensingCertificateCreateDto](docs/LicensingCertificateCreateDto.md)
  - [OpenapiClient::LicensingCertificateDto](docs/LicensingCertificateDto.md)
+ - [OpenapiClient::LicensingCertificateDtoCollectionQueryParameters](docs/LicensingCertificateDtoCollectionQueryParameters.md)
  - [OpenapiClient::LicensingCertificateDtoListEnvelope](docs/LicensingCertificateDtoListEnvelope.md)
  - [OpenapiClient::LicensingCertificateUpdateDto](docs/LicensingCertificateUpdateDto.md)
  - [OpenapiClient::LoginRequest](docs/LoginRequest.md)
- - [OpenapiClient::Operation](docs/Operation.md)
+ - [OpenapiClient::PatchOperation](docs/PatchOperation.md)
  - [OpenapiClient::RefreshRequest](docs/RefreshRequest.md)
  - [OpenapiClient::RegisterRequest](docs/RegisterRequest.md)
  - [OpenapiClient::ResendConfirmationEmailRequest](docs/ResendConfirmationEmailRequest.md)

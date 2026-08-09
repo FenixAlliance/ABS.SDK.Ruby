@@ -13,6 +13,7 @@
 | **individual_id** | **String** |  | [optional] |
 | **payment_term_id** | **String** |  | [optional] |
 | **organization_id** | **String** |  | [optional] |
+| **receiver_tenant_id** | **String** |  | [optional] |
 | **first_name** | **String** |  | [optional] |
 | **last_name** | **String** |  | [optional] |
 | **company_name** | **String** |  | [optional] |
@@ -61,7 +62,6 @@
 | **order_status** | **String** |  | [optional] |
 | **quote_status** | **String** |  | [optional] |
 | **freight_terms** | **String** |  | [optional] |
-| **receiver_tenant_id** | **String** |  | [optional] |
 | **shipping_location_id** | **String** |  | [optional] |
 | **qualified_identifier** | **String** |  | [optional] |
 | **total_taxes_in_usd** | **Float** |  | [optional] |
@@ -89,6 +89,7 @@ instance = OpenapiClient::OrderCreateDto.new(
   individual_id: null,
   payment_term_id: null,
   organization_id: null,
+  receiver_tenant_id: null,
   first_name: null,
   last_name: null,
   company_name: null,
@@ -137,7 +138,6 @@ instance = OpenapiClient::OrderCreateDto.new(
   order_status: null,
   quote_status: null,
   freight_terms: null,
-  receiver_tenant_id: null,
   shipping_location_id: null,
   qualified_identifier: null,
   total_taxes_in_usd: null,

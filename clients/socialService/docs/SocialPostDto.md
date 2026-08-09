@@ -13,6 +13,10 @@
 | **social_profile_avatar_url** | **String** |  | [optional] |
 | **comments_count** | **Integer** |  | [optional] |
 | **reactions_count** | **Integer** |  | [optional] |
+| **social_profile_type** | **String** |  | [optional] |
+| **body_html** | **String** |  | [optional] |
+| **body_format** | **String** |  | [optional] |
+| **background_style** | **String** |  | [optional] |
 
 ## Example
 
@@ -28,7 +32,11 @@ instance = OpenapiClient::SocialPostDto.new(
   social_profile_name: null,
   social_profile_avatar_url: null,
   comments_count: null,
-  reactions_count: null
+  reactions_count: null,
+  social_profile_type: null,
+  body_html: null,
+  body_format: null,
+  background_style: null
 )
 ```
 

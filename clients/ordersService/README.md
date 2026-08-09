@@ -81,7 +81,6 @@ Class | Method | HTTP request | Description
 *OpenapiClient::FenixAllianceABSWebApi* | [**account_manage_download_personal_data_post**](docs/FenixAllianceABSWebApi.md#account_manage_download_personal_data_post) | **POST** /Account/Manage/DownloadPersonalData | 
 *OpenapiClient::FenixAllianceABSWebApi* | [**account_manage_link_external_login_post**](docs/FenixAllianceABSWebApi.md#account_manage_link_external_login_post) | **POST** /Account/Manage/LinkExternalLogin | 
 *OpenapiClient::FenixAllianceABSWebApi* | [**account_perform_external_login_post**](docs/FenixAllianceABSWebApi.md#account_perform_external_login_post) | **POST** /Account/PerformExternalLogin | 
-*OpenapiClient::FenixAllianceABSWebApi* | [**api_v2_ai_service_agents_agent_id_agui_post**](docs/FenixAllianceABSWebApi.md#api_v2_ai_service_agents_agent_id_agui_post) | **POST** /api/v2/AIService/Agents/{agentId}/agui | 
 *OpenapiClient::FenixAllianceABSWebApi* | [**forgot_password_post**](docs/FenixAllianceABSWebApi.md#forgot_password_post) | **POST** /forgotPassword | 
 *OpenapiClient::FenixAllianceABSWebApi* | [**health_get**](docs/FenixAllianceABSWebApi.md#health_get) | **GET** /health | 
 *OpenapiClient::FenixAllianceABSWebApi* | [**hello_get**](docs/FenixAllianceABSWebApi.md#hello_get) | **GET** /hello | 
@@ -125,6 +124,7 @@ Class | Method | HTTP request | Description
  - [OpenapiClient::EmptyEnvelope](docs/EmptyEnvelope.md)
  - [OpenapiClient::ErrorEnvelope](docs/ErrorEnvelope.md)
  - [OpenapiClient::ExtendedOrderDto](docs/ExtendedOrderDto.md)
+ - [OpenapiClient::ExtendedOrderDtoCollectionQueryParameters](docs/ExtendedOrderDtoCollectionQueryParameters.md)
  - [OpenapiClient::ExtendedOrderDtoListEnvelope](docs/ExtendedOrderDtoListEnvelope.md)
  - [OpenapiClient::ForgotPasswordRequest](docs/ForgotPasswordRequest.md)
  - [OpenapiClient::HttpValidationProblemDetails](docs/HttpValidationProblemDetails.md)
@@ -132,17 +132,19 @@ Class | Method | HTTP request | Description
  - [OpenapiClient::InfoResponse](docs/InfoResponse.md)
  - [OpenapiClient::Int32Envelope](docs/Int32Envelope.md)
  - [OpenapiClient::LoginRequest](docs/LoginRequest.md)
- - [OpenapiClient::Operation](docs/Operation.md)
  - [OpenapiClient::OrderCreateDto](docs/OrderCreateDto.md)
  - [OpenapiClient::OrderDto](docs/OrderDto.md)
+ - [OpenapiClient::OrderDtoCollectionQueryParameters](docs/OrderDtoCollectionQueryParameters.md)
  - [OpenapiClient::OrderDtoEnvelope](docs/OrderDtoEnvelope.md)
  - [OpenapiClient::OrderDtoListEnvelope](docs/OrderDtoListEnvelope.md)
  - [OpenapiClient::OrderLineCreateDto](docs/OrderLineCreateDto.md)
  - [OpenapiClient::OrderLineDto](docs/OrderLineDto.md)
+ - [OpenapiClient::OrderLineDtoCollectionQueryParameters](docs/OrderLineDtoCollectionQueryParameters.md)
  - [OpenapiClient::OrderLineDtoEnvelope](docs/OrderLineDtoEnvelope.md)
  - [OpenapiClient::OrderLineDtoListEnvelope](docs/OrderLineDtoListEnvelope.md)
  - [OpenapiClient::OrderLineUpdateDto](docs/OrderLineUpdateDto.md)
  - [OpenapiClient::OrderUpdateDto](docs/OrderUpdateDto.md)
+ - [OpenapiClient::PatchOperation](docs/PatchOperation.md)
  - [OpenapiClient::RefreshRequest](docs/RefreshRequest.md)
  - [OpenapiClient::RegisterRequest](docs/RegisterRequest.md)
  - [OpenapiClient::ResendConfirmationEmailRequest](docs/ResendConfirmationEmailRequest.md)

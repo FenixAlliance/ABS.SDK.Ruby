@@ -102,7 +102,8 @@ require 'openapi_client'
 api_instance = OpenapiClient::MeApi.new
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  course_completion_certificate_dto_collection_query_parameters: OpenapiClient::CourseCompletionCertificateDtoCollectionQueryParameters.new # CourseCompletionCertificateDtoCollectionQueryParameters | 
 }
 
 begin
@@ -138,6 +139,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **course_completion_certificate_dto_collection_query_parameters** | [**CourseCompletionCertificateDtoCollectionQueryParameters**](CourseCompletionCertificateDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -149,7 +151,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -168,7 +170,8 @@ require 'openapi_client'
 api_instance = OpenapiClient::MeApi.new
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  course_completion_certificate_dto_collection_query_parameters: OpenapiClient::CourseCompletionCertificateDtoCollectionQueryParameters.new # CourseCompletionCertificateDtoCollectionQueryParameters | 
 }
 
 begin
@@ -204,6 +207,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **course_completion_certificate_dto_collection_query_parameters** | [**CourseCompletionCertificateDtoCollectionQueryParameters**](CourseCompletionCertificateDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -215,7 +219,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -234,7 +238,8 @@ require 'openapi_client'
 api_instance = OpenapiClient::MeApi.new
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  course_enrollment_dto_collection_query_parameters: OpenapiClient::CourseEnrollmentDtoCollectionQueryParameters.new # CourseEnrollmentDtoCollectionQueryParameters | 
 }
 
 begin
@@ -270,6 +275,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **course_enrollment_dto_collection_query_parameters** | [**CourseEnrollmentDtoCollectionQueryParameters**](CourseEnrollmentDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -281,7 +287,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -300,7 +306,8 @@ require 'openapi_client'
 api_instance = OpenapiClient::MeApi.new
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  course_enrollment_dto_collection_query_parameters: OpenapiClient::CourseEnrollmentDtoCollectionQueryParameters.new # CourseEnrollmentDtoCollectionQueryParameters | 
 }
 
 begin
@@ -336,6 +343,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **course_enrollment_dto_collection_query_parameters** | [**CourseEnrollmentDtoCollectionQueryParameters**](CourseEnrollmentDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -347,7 +355,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -432,7 +440,8 @@ require 'openapi_client'
 api_instance = OpenapiClient::MeApi.new
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  course_dto_collection_query_parameters: OpenapiClient::CourseDtoCollectionQueryParameters.new # CourseDtoCollectionQueryParameters | 
 }
 
 begin
@@ -468,6 +477,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **course_dto_collection_query_parameters** | [**CourseDtoCollectionQueryParameters**](CourseDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -479,7 +489,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -498,7 +508,8 @@ require 'openapi_client'
 api_instance = OpenapiClient::MeApi.new
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  course_dto_collection_query_parameters: OpenapiClient::CourseDtoCollectionQueryParameters.new # CourseDtoCollectionQueryParameters | 
 }
 
 begin
@@ -534,6 +545,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **course_dto_collection_query_parameters** | [**CourseDtoCollectionQueryParameters**](CourseDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -545,7 +557,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -564,7 +576,8 @@ require 'openapi_client'
 api_instance = OpenapiClient::MeApi.new
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  instructor_profile_dto_collection_query_parameters: OpenapiClient::InstructorProfileDtoCollectionQueryParameters.new # InstructorProfileDtoCollectionQueryParameters | 
 }
 
 begin
@@ -600,6 +613,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **instructor_profile_dto_collection_query_parameters** | [**InstructorProfileDtoCollectionQueryParameters**](InstructorProfileDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -611,7 +625,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -630,7 +644,8 @@ require 'openapi_client'
 api_instance = OpenapiClient::MeApi.new
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  instructor_profile_dto_collection_query_parameters: OpenapiClient::InstructorProfileDtoCollectionQueryParameters.new # InstructorProfileDtoCollectionQueryParameters | 
 }
 
 begin
@@ -666,6 +681,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **instructor_profile_dto_collection_query_parameters** | [**InstructorProfileDtoCollectionQueryParameters**](InstructorProfileDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -677,7 +693,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -762,7 +778,8 @@ require 'openapi_client'
 api_instance = OpenapiClient::MeApi.new
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  course_dto_collection_query_parameters: OpenapiClient::CourseDtoCollectionQueryParameters.new # CourseDtoCollectionQueryParameters | 
 }
 
 begin
@@ -798,6 +815,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **course_dto_collection_query_parameters** | [**CourseDtoCollectionQueryParameters**](CourseDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -809,7 +827,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -828,7 +846,8 @@ require 'openapi_client'
 api_instance = OpenapiClient::MeApi.new
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  course_dto_collection_query_parameters: OpenapiClient::CourseDtoCollectionQueryParameters.new # CourseDtoCollectionQueryParameters | 
 }
 
 begin
@@ -864,6 +883,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **course_dto_collection_query_parameters** | [**CourseDtoCollectionQueryParameters**](CourseDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -875,7 +895,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -894,7 +914,8 @@ require 'openapi_client'
 api_instance = OpenapiClient::MeApi.new
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  student_profile_dto_collection_query_parameters: OpenapiClient::StudentProfileDtoCollectionQueryParameters.new # StudentProfileDtoCollectionQueryParameters | 
 }
 
 begin
@@ -930,6 +951,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **student_profile_dto_collection_query_parameters** | [**StudentProfileDtoCollectionQueryParameters**](StudentProfileDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -941,7 +963,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -960,7 +982,8 @@ require 'openapi_client'
 api_instance = OpenapiClient::MeApi.new
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  student_profile_dto_collection_query_parameters: OpenapiClient::StudentProfileDtoCollectionQueryParameters.new # StudentProfileDtoCollectionQueryParameters | 
 }
 
 begin
@@ -996,6 +1019,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **student_profile_dto_collection_query_parameters** | [**StudentProfileDtoCollectionQueryParameters**](StudentProfileDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1007,6 +1031,6 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 

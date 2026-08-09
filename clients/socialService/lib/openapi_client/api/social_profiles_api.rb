@@ -25,6 +25,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [ConversationDtoCollectionQueryParameters] :conversation_dto_collection_query_parameters 
     # @return [Int32Envelope]
     def count_conversations_async(social_profile_id, opts = {})
       data, _status_code, _headers = count_conversations_async_with_http_info(social_profile_id, opts)
@@ -37,6 +38,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [ConversationDtoCollectionQueryParameters] :conversation_dto_collection_query_parameters 
     # @return [Array<(Int32Envelope, Integer, Hash)>] Int32Envelope data, response status code and response headers
     def count_conversations_async_with_http_info(social_profile_id, opts = {})
       if @api_client.config.debugging
@@ -57,13 +59,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'conversation_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'Int32Envelope'
@@ -94,6 +101,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [SocialProfileDtoCollectionQueryParameters] :social_profile_dto_collection_query_parameters 
     # @return [Int32Envelope]
     def count_followed_profiles_async(social_profile_id, opts = {})
       data, _status_code, _headers = count_followed_profiles_async_with_http_info(social_profile_id, opts)
@@ -106,6 +114,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [SocialProfileDtoCollectionQueryParameters] :social_profile_dto_collection_query_parameters 
     # @return [Array<(Int32Envelope, Integer, Hash)>] Int32Envelope data, response status code and response headers
     def count_followed_profiles_async_with_http_info(social_profile_id, opts = {})
       if @api_client.config.debugging
@@ -126,13 +135,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'social_profile_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'Int32Envelope'
@@ -163,6 +177,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [SocialProfileDtoCollectionQueryParameters] :social_profile_dto_collection_query_parameters 
     # @return [Int32Envelope]
     def count_follower_profiles_async(social_profile_id, opts = {})
       data, _status_code, _headers = count_follower_profiles_async_with_http_info(social_profile_id, opts)
@@ -175,6 +190,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [SocialProfileDtoCollectionQueryParameters] :social_profile_dto_collection_query_parameters 
     # @return [Array<(Int32Envelope, Integer, Hash)>] Int32Envelope data, response status code and response headers
     def count_follower_profiles_async_with_http_info(social_profile_id, opts = {})
       if @api_client.config.debugging
@@ -195,13 +211,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'social_profile_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'Int32Envelope'
@@ -232,6 +253,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [FollowRecordDtoCollectionQueryParameters] :follow_record_dto_collection_query_parameters 
     # @return [Int32Envelope]
     def count_followers_async(social_profile_id, opts = {})
       data, _status_code, _headers = count_followers_async_with_http_info(social_profile_id, opts)
@@ -244,6 +266,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [FollowRecordDtoCollectionQueryParameters] :follow_record_dto_collection_query_parameters 
     # @return [Array<(Int32Envelope, Integer, Hash)>] Int32Envelope data, response status code and response headers
     def count_followers_async_with_http_info(social_profile_id, opts = {})
       if @api_client.config.debugging
@@ -264,13 +287,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'follow_record_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'Int32Envelope'
@@ -301,6 +329,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [FollowRecordDtoCollectionQueryParameters] :follow_record_dto_collection_query_parameters 
     # @return [Int32Envelope]
     def count_follows_async(social_profile_id, opts = {})
       data, _status_code, _headers = count_follows_async_with_http_info(social_profile_id, opts)
@@ -313,6 +342,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [FollowRecordDtoCollectionQueryParameters] :follow_record_dto_collection_query_parameters 
     # @return [Array<(Int32Envelope, Integer, Hash)>] Int32Envelope data, response status code and response headers
     def count_follows_async_with_http_info(social_profile_id, opts = {})
       if @api_client.config.debugging
@@ -333,13 +363,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'follow_record_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'Int32Envelope'
@@ -371,6 +406,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [PrivateMessageDtoCollectionQueryParameters] :private_message_dto_collection_query_parameters 
     # @return [Int32Envelope]
     def count_messages_async(social_profile_id, conversation_id, opts = {})
       data, _status_code, _headers = count_messages_async_with_http_info(social_profile_id, conversation_id, opts)
@@ -384,6 +420,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [PrivateMessageDtoCollectionQueryParameters] :private_message_dto_collection_query_parameters 
     # @return [Array<(Int32Envelope, Integer, Hash)>] Int32Envelope data, response status code and response headers
     def count_messages_async_with_http_info(social_profile_id, conversation_id, opts = {})
       if @api_client.config.debugging
@@ -409,13 +446,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'private_message_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'Int32Envelope'
@@ -446,6 +488,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [NotificationDtoCollectionQueryParameters] :notification_dto_collection_query_parameters 
     # @return [Int32Envelope]
     def count_notifications_async(social_profile_id, opts = {})
       data, _status_code, _headers = count_notifications_async_with_http_info(social_profile_id, opts)
@@ -458,6 +501,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [NotificationDtoCollectionQueryParameters] :notification_dto_collection_query_parameters 
     # @return [Array<(Int32Envelope, Integer, Hash)>] Int32Envelope data, response status code and response headers
     def count_notifications_async_with_http_info(social_profile_id, opts = {})
       if @api_client.config.debugging
@@ -478,13 +522,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'notification_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'Int32Envelope'
@@ -514,6 +563,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [SocialProfileDtoCollectionQueryParameters] :social_profile_dto_collection_query_parameters 
     # @return [Int32Envelope]
     def count_social_profiles_async(opts = {})
       data, _status_code, _headers = count_social_profiles_async_with_http_info(opts)
@@ -525,6 +575,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [SocialProfileDtoCollectionQueryParameters] :social_profile_dto_collection_query_parameters 
     # @return [Array<(Int32Envelope, Integer, Hash)>] Int32Envelope data, response status code and response headers
     def count_social_profiles_async_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -541,13 +592,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'social_profile_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'Int32Envelope'
@@ -969,6 +1025,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [ConversationDtoCollectionQueryParameters] :conversation_dto_collection_query_parameters 
     # @return [ConversationDtoListEnvelope]
     def get_conversations_async(social_profile_id, opts = {})
       data, _status_code, _headers = get_conversations_async_with_http_info(social_profile_id, opts)
@@ -981,6 +1038,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [ConversationDtoCollectionQueryParameters] :conversation_dto_collection_query_parameters 
     # @return [Array<(ConversationDtoListEnvelope, Integer, Hash)>] ConversationDtoListEnvelope data, response status code and response headers
     def get_conversations_async_with_http_info(social_profile_id, opts = {})
       if @api_client.config.debugging
@@ -1001,13 +1059,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'conversation_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'ConversationDtoListEnvelope'
@@ -1038,6 +1101,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [SocialProfileDtoCollectionQueryParameters] :social_profile_dto_collection_query_parameters 
     # @return [SocialProfileDtoListEnvelope]
     def get_followed_profiles_async(social_profile_id, opts = {})
       data, _status_code, _headers = get_followed_profiles_async_with_http_info(social_profile_id, opts)
@@ -1050,6 +1114,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [SocialProfileDtoCollectionQueryParameters] :social_profile_dto_collection_query_parameters 
     # @return [Array<(SocialProfileDtoListEnvelope, Integer, Hash)>] SocialProfileDtoListEnvelope data, response status code and response headers
     def get_followed_profiles_async_with_http_info(social_profile_id, opts = {})
       if @api_client.config.debugging
@@ -1070,13 +1135,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'social_profile_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'SocialProfileDtoListEnvelope'
@@ -1107,6 +1177,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [SocialProfileDtoCollectionQueryParameters] :social_profile_dto_collection_query_parameters 
     # @return [SocialProfileDtoListEnvelope]
     def get_follower_profiles_async(social_profile_id, opts = {})
       data, _status_code, _headers = get_follower_profiles_async_with_http_info(social_profile_id, opts)
@@ -1119,6 +1190,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [SocialProfileDtoCollectionQueryParameters] :social_profile_dto_collection_query_parameters 
     # @return [Array<(SocialProfileDtoListEnvelope, Integer, Hash)>] SocialProfileDtoListEnvelope data, response status code and response headers
     def get_follower_profiles_async_with_http_info(social_profile_id, opts = {})
       if @api_client.config.debugging
@@ -1139,13 +1211,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'social_profile_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'SocialProfileDtoListEnvelope'
@@ -1176,6 +1253,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [FollowRecordDtoCollectionQueryParameters] :follow_record_dto_collection_query_parameters 
     # @return [FollowRecordDtoListEnvelope]
     def get_followers_async(social_profile_id, opts = {})
       data, _status_code, _headers = get_followers_async_with_http_info(social_profile_id, opts)
@@ -1188,6 +1266,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [FollowRecordDtoCollectionQueryParameters] :follow_record_dto_collection_query_parameters 
     # @return [Array<(FollowRecordDtoListEnvelope, Integer, Hash)>] FollowRecordDtoListEnvelope data, response status code and response headers
     def get_followers_async_with_http_info(social_profile_id, opts = {})
       if @api_client.config.debugging
@@ -1208,13 +1287,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'follow_record_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'FollowRecordDtoListEnvelope'
@@ -1245,6 +1329,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [FollowRecordDtoCollectionQueryParameters] :follow_record_dto_collection_query_parameters 
     # @return [FollowRecordDtoListEnvelope]
     def get_follows_async(social_profile_id, opts = {})
       data, _status_code, _headers = get_follows_async_with_http_info(social_profile_id, opts)
@@ -1257,6 +1342,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [FollowRecordDtoCollectionQueryParameters] :follow_record_dto_collection_query_parameters 
     # @return [Array<(FollowRecordDtoListEnvelope, Integer, Hash)>] FollowRecordDtoListEnvelope data, response status code and response headers
     def get_follows_async_with_http_info(social_profile_id, opts = {})
       if @api_client.config.debugging
@@ -1277,13 +1363,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'follow_record_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'FollowRecordDtoListEnvelope'
@@ -1315,6 +1406,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [PrivateMessageDtoCollectionQueryParameters] :private_message_dto_collection_query_parameters 
     # @return [PrivateMessageDtoListEnvelope]
     def get_messages_async(social_profile_id, conversation_id, opts = {})
       data, _status_code, _headers = get_messages_async_with_http_info(social_profile_id, conversation_id, opts)
@@ -1328,6 +1420,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [PrivateMessageDtoCollectionQueryParameters] :private_message_dto_collection_query_parameters 
     # @return [Array<(PrivateMessageDtoListEnvelope, Integer, Hash)>] PrivateMessageDtoListEnvelope data, response status code and response headers
     def get_messages_async_with_http_info(social_profile_id, conversation_id, opts = {})
       if @api_client.config.debugging
@@ -1353,13 +1446,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'private_message_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'PrivateMessageDtoListEnvelope'
@@ -1465,6 +1563,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [NotificationDtoCollectionQueryParameters] :notification_dto_collection_query_parameters 
     # @return [NotificationDtoListEnvelope]
     def get_notifications_async(social_profile_id, opts = {})
       data, _status_code, _headers = get_notifications_async_with_http_info(social_profile_id, opts)
@@ -1477,6 +1576,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [NotificationDtoCollectionQueryParameters] :notification_dto_collection_query_parameters 
     # @return [Array<(NotificationDtoListEnvelope, Integer, Hash)>] NotificationDtoListEnvelope data, response status code and response headers
     def get_notifications_async_with_http_info(social_profile_id, opts = {})
       if @api_client.config.debugging
@@ -1497,13 +1597,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'notification_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'NotificationDtoListEnvelope'
@@ -1524,6 +1629,82 @@ module OpenapiClient
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: SocialProfilesApi#get_notifications_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Get or Create Direct Conversation
+    # Get or create the direct two-party conversation between the acting profile and a counterparty.
+    # @param social_profile_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @option opts [String] :body 
+    # @return [ConversationDtoEnvelope]
+    def get_or_create_direct_conversation_async(social_profile_id, opts = {})
+      data, _status_code, _headers = get_or_create_direct_conversation_async_with_http_info(social_profile_id, opts)
+      data
+    end
+
+    # Get or Create Direct Conversation
+    # Get or create the direct two-party conversation between the acting profile and a counterparty.
+    # @param social_profile_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @option opts [String] :body 
+    # @return [Array<(ConversationDtoEnvelope, Integer, Hash)>] ConversationDtoEnvelope data, response status code and response headers
+    def get_or_create_direct_conversation_async_with_http_info(social_profile_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SocialProfilesApi.get_or_create_direct_conversation_async ...'
+      end
+      # verify the required parameter 'social_profile_id' is set
+      if @api_client.config.client_side_validation && social_profile_id.nil?
+        fail ArgumentError, "Missing the required parameter 'social_profile_id' when calling SocialProfilesApi.get_or_create_direct_conversation_async"
+      end
+      # resource path
+      local_var_path = '/api/v2/SocialService/SocialProfiles/{socialProfileId}/Conversations/Direct'.sub('{' + 'socialProfileId' + '}', CGI.escape(social_profile_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'api-version'] = opts[:'api_version'] if !opts[:'api_version'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
+      header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'body'])
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'ConversationDtoEnvelope'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"SocialProfilesApi.get_or_create_direct_conversation_async",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: SocialProfilesApi#get_or_create_direct_conversation_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -1602,6 +1783,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [SocialProfileDtoCollectionQueryParameters] :social_profile_dto_collection_query_parameters 
     # @return [SocialProfileDtoListEnvelope]
     def get_social_profiles_async(opts = {})
       data, _status_code, _headers = get_social_profiles_async_with_http_info(opts)
@@ -1613,6 +1795,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [SocialProfileDtoCollectionQueryParameters] :social_profile_dto_collection_query_parameters 
     # @return [Array<(SocialProfileDtoListEnvelope, Integer, Hash)>] SocialProfileDtoListEnvelope data, response status code and response headers
     def get_social_profiles_async_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -1629,13 +1812,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'social_profile_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'SocialProfileDtoListEnvelope'

@@ -213,7 +213,7 @@ No authorization required
 
 ## get_receipts_async
 
-> <ReceiptDtoIReadOnlyListEnvelope> get_receipts_async(tenant_id)
+> <ReceiptDtoIReadOnlyListEnvelope> get_receipts_async(tenant_id, opts)
 
 Retrieves tenant receipts
 
@@ -227,10 +227,13 @@ require 'openapi_client'
 
 api_instance = OpenapiClient::ReceiptsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  receipt_dto_collection_query_parameters: OpenapiClient::ReceiptDtoCollectionQueryParameters.new # ReceiptDtoCollectionQueryParameters | 
+}
 
 begin
   # Retrieves tenant receipts
-  result = api_instance.get_receipts_async(tenant_id)
+  result = api_instance.get_receipts_async(tenant_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling ReceiptsApi->get_receipts_async: #{e}"
@@ -241,12 +244,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<ReceiptDtoIReadOnlyListEnvelope>, Integer, Hash)> get_receipts_async_with_http_info(tenant_id)
+> <Array(<ReceiptDtoIReadOnlyListEnvelope>, Integer, Hash)> get_receipts_async_with_http_info(tenant_id, opts)
 
 ```ruby
 begin
   # Retrieves tenant receipts
-  data, status_code, headers = api_instance.get_receipts_async_with_http_info(tenant_id)
+  data, status_code, headers = api_instance.get_receipts_async_with_http_info(tenant_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ReceiptDtoIReadOnlyListEnvelope>
@@ -260,6 +263,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
+| **receipt_dto_collection_query_parameters** | [**ReceiptDtoCollectionQueryParameters**](ReceiptDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -271,13 +275,13 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
 ## get_receipts_count_async
 
-> <Int32Envelope> get_receipts_count_async(tenant_id)
+> <Int32Envelope> get_receipts_count_async(tenant_id, opts)
 
 Gets count of tenant receipts
 
@@ -291,10 +295,13 @@ require 'openapi_client'
 
 api_instance = OpenapiClient::ReceiptsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  receipt_dto_collection_query_parameters: OpenapiClient::ReceiptDtoCollectionQueryParameters.new # ReceiptDtoCollectionQueryParameters | 
+}
 
 begin
   # Gets count of tenant receipts
-  result = api_instance.get_receipts_count_async(tenant_id)
+  result = api_instance.get_receipts_count_async(tenant_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling ReceiptsApi->get_receipts_count_async: #{e}"
@@ -305,12 +312,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Int32Envelope>, Integer, Hash)> get_receipts_count_async_with_http_info(tenant_id)
+> <Array(<Int32Envelope>, Integer, Hash)> get_receipts_count_async_with_http_info(tenant_id, opts)
 
 ```ruby
 begin
   # Gets count of tenant receipts
-  data, status_code, headers = api_instance.get_receipts_count_async_with_http_info(tenant_id)
+  data, status_code, headers = api_instance.get_receipts_count_async_with_http_info(tenant_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Int32Envelope>
@@ -324,6 +331,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
+| **receipt_dto_collection_query_parameters** | [**ReceiptDtoCollectionQueryParameters**](ReceiptDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -335,7 +343,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -357,7 +365,7 @@ api_instance = OpenapiClient::ReceiptsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 receipt_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
-  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+  patch_operation: [OpenapiClient::PatchOperation.new] # Array<PatchOperation> | 
 }
 
 begin
@@ -393,7 +401,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
 | **receipt_id** | **String** |  |  |
-| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+| **patch_operation** | [**Array&lt;PatchOperation&gt;**](PatchOperation.md) |  | [optional] |
 
 ### Return type
 

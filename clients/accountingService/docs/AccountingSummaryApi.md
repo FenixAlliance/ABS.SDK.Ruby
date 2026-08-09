@@ -28,7 +28,8 @@ api_instance = OpenapiClient::AccountingSummaryApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  accounting_entry_dto_collection_query_parameters: OpenapiClient::AccountingEntryDtoCollectionQueryParameters.new # AccountingEntryDtoCollectionQueryParameters | 
 }
 
 begin
@@ -65,6 +66,7 @@ end
 | **tenant_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **accounting_entry_dto_collection_query_parameters** | [**AccountingEntryDtoCollectionQueryParameters**](AccountingEntryDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -76,7 +78,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -98,7 +100,8 @@ api_instance = OpenapiClient::AccountingSummaryApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  accounting_entry_dto_collection_query_parameters: OpenapiClient::AccountingEntryDtoCollectionQueryParameters.new # AccountingEntryDtoCollectionQueryParameters | 
 }
 
 begin
@@ -135,6 +138,7 @@ end
 | **tenant_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **accounting_entry_dto_collection_query_parameters** | [**AccountingEntryDtoCollectionQueryParameters**](AccountingEntryDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -146,7 +150,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -168,7 +172,8 @@ api_instance = OpenapiClient::AccountingSummaryApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  journal_entry_dto_collection_query_parameters: OpenapiClient::JournalEntryDtoCollectionQueryParameters.new # JournalEntryDtoCollectionQueryParameters | 
 }
 
 begin
@@ -205,6 +210,7 @@ end
 | **tenant_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **journal_entry_dto_collection_query_parameters** | [**JournalEntryDtoCollectionQueryParameters**](JournalEntryDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -216,7 +222,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -238,7 +244,8 @@ api_instance = OpenapiClient::AccountingSummaryApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  journal_entry_dto_collection_query_parameters: OpenapiClient::JournalEntryDtoCollectionQueryParameters.new # JournalEntryDtoCollectionQueryParameters | 
 }
 
 begin
@@ -275,6 +282,7 @@ end
 | **tenant_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **journal_entry_dto_collection_query_parameters** | [**JournalEntryDtoCollectionQueryParameters**](JournalEntryDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -286,6 +294,6 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 

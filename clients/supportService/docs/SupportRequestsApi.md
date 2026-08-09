@@ -327,7 +327,8 @@ tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 support_request_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  support_request_attachment_dto_collection_query_parameters: OpenapiClient::SupportRequestAttachmentDtoCollectionQueryParameters.new # SupportRequestAttachmentDtoCollectionQueryParameters | 
 }
 
 begin
@@ -365,6 +366,7 @@ end
 | **support_request_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **support_request_attachment_dto_collection_query_parameters** | [**SupportRequestAttachmentDtoCollectionQueryParameters**](SupportRequestAttachmentDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -376,7 +378,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -399,7 +401,8 @@ tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 support_request_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  support_request_attachment_dto_collection_query_parameters: OpenapiClient::SupportRequestAttachmentDtoCollectionQueryParameters.new # SupportRequestAttachmentDtoCollectionQueryParameters | 
 }
 
 begin
@@ -437,6 +440,7 @@ end
 | **support_request_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **support_request_attachment_dto_collection_query_parameters** | [**SupportRequestAttachmentDtoCollectionQueryParameters**](SupportRequestAttachmentDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -448,7 +452,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -471,7 +475,8 @@ tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 support_request_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  support_ticket_dto_collection_query_parameters: OpenapiClient::SupportTicketDtoCollectionQueryParameters.new # SupportTicketDtoCollectionQueryParameters | 
 }
 
 begin
@@ -509,6 +514,7 @@ end
 | **support_request_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **support_ticket_dto_collection_query_parameters** | [**SupportTicketDtoCollectionQueryParameters**](SupportTicketDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -520,7 +526,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -542,7 +548,8 @@ api_instance = OpenapiClient::SupportRequestsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  support_request_dto_collection_query_parameters: OpenapiClient::SupportRequestDtoCollectionQueryParameters.new # SupportRequestDtoCollectionQueryParameters | 
 }
 
 begin
@@ -579,6 +586,7 @@ end
 | **tenant_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **support_request_dto_collection_query_parameters** | [**SupportRequestDtoCollectionQueryParameters**](SupportRequestDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -590,7 +598,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -612,7 +620,8 @@ api_instance = OpenapiClient::SupportRequestsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  support_request_dto_collection_query_parameters: OpenapiClient::SupportRequestDtoCollectionQueryParameters.new # SupportRequestDtoCollectionQueryParameters | 
 }
 
 begin
@@ -649,6 +658,7 @@ end
 | **tenant_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **support_request_dto_collection_query_parameters** | [**SupportRequestDtoCollectionQueryParameters**](SupportRequestDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -660,7 +670,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -684,7 +694,7 @@ support_request_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 opts = {
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example', # String | 
-  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+  patch_operation: [OpenapiClient::PatchOperation.new] # Array<PatchOperation> | 
 }
 
 begin
@@ -722,7 +732,7 @@ end
 | **support_request_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
-| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+| **patch_operation** | [**Array&lt;PatchOperation&gt;**](PatchOperation.md) |  | [optional] |
 
 ### Return type
 

@@ -6,6 +6,7 @@
 | ---- | ---- | ----------- | ----- |
 | **id** | **String** |  | [optional] |
 | **timestamp** | **Time** |  | [optional] |
+| **closed** | **Boolean** |  | [optional] |
 | **title** | **String** |  | [optional] |
 | **price_list_id** | **String** |  | [optional] |
 | **description** | **String** |  | [optional] |
@@ -23,6 +24,7 @@
 | **country_id** | **String** |  | [optional] |
 | **state_id** | **String** |  | [optional] |
 | **city_id** | **String** |  | [optional] |
+| **forex_rate** | **Float** |  | [optional] |
 | **currency_id** | **String** |  | [optional] |
 | **total_detail** | **Float** |  | [optional] |
 | **total_detail_currency_id** | **String** |  | [optional] |
@@ -51,10 +53,8 @@
 | **cost_calculation_method** | **String** |  | [optional] |
 | **tax_calculation_method** | **String** |  | [optional] |
 | **payment_id** | **String** |  | [optional] |
-| **forex_rate** | **Float** |  | [optional] |
 | **total_amount** | **Float** |  | [optional] |
 | **total_amount_in_usd** | **Float** |  | [optional] |
-| **closed** | **Boolean** |  | [optional] |
 | **contact_id** | **String** |  | [optional] |
 | **receipt_type** | **String** |  | [optional] |
 | **order_id** | **String** |  | [optional] |
@@ -68,6 +68,7 @@ require 'openapi_client'
 instance = OpenapiClient::ReceiptCreateDto.new(
   id: null,
   timestamp: null,
+  closed: null,
   title: null,
   price_list_id: null,
   description: null,
@@ -85,6 +86,7 @@ instance = OpenapiClient::ReceiptCreateDto.new(
   country_id: null,
   state_id: null,
   city_id: null,
+  forex_rate: null,
   currency_id: null,
   total_detail: null,
   total_detail_currency_id: null,
@@ -113,10 +115,8 @@ instance = OpenapiClient::ReceiptCreateDto.new(
   cost_calculation_method: null,
   tax_calculation_method: null,
   payment_id: null,
-  forex_rate: null,
   total_amount: null,
   total_amount_in_usd: null,
-  closed: null,
   contact_id: null,
   receipt_type: null,
   order_id: null,

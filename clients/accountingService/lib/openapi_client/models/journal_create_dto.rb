@@ -31,6 +31,10 @@ module OpenapiClient
 
     attr_accessor :ledger_id
 
+    attr_accessor :financial_book_id
+
+    attr_accessor :code
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -41,7 +45,9 @@ module OpenapiClient
         :'date_time' => :'dateTime',
         :'parent_journal_id' => :'parentJournalId',
         :'journal_type_id' => :'journalTypeId',
-        :'ledger_id' => :'ledgerId'
+        :'ledger_id' => :'ledgerId',
+        :'financial_book_id' => :'financialBookId',
+        :'code' => :'code'
       }
     end
 
@@ -60,7 +66,9 @@ module OpenapiClient
         :'date_time' => :'Time',
         :'parent_journal_id' => :'String',
         :'journal_type_id' => :'String',
-        :'ledger_id' => :'String'
+        :'ledger_id' => :'String',
+        :'financial_book_id' => :'String',
+        :'code' => :'String'
       }
     end
 
@@ -70,7 +78,9 @@ module OpenapiClient
         :'description',
         :'parent_journal_id',
         :'journal_type_id',
-        :'ledger_id'
+        :'ledger_id',
+        :'financial_book_id',
+        :'code'
       ])
     end
 
@@ -121,6 +131,14 @@ module OpenapiClient
 
       if attributes.key?(:'ledger_id')
         self.ledger_id = attributes[:'ledger_id']
+      end
+
+      if attributes.key?(:'financial_book_id')
+        self.financial_book_id = attributes[:'financial_book_id']
+      end
+
+      if attributes.key?(:'code')
+        self.code = attributes[:'code']
       end
     end
 
@@ -173,6 +191,22 @@ module OpenapiClient
         invalid_properties.push('invalid value for "ledger_id", the character length must be great than or equal to 0.')
       end
 
+      if !@financial_book_id.nil? && @financial_book_id.to_s.length > 36
+        invalid_properties.push('invalid value for "financial_book_id", the character length must be smaller than or equal to 36.')
+      end
+
+      if !@financial_book_id.nil? && @financial_book_id.to_s.length < 0
+        invalid_properties.push('invalid value for "financial_book_id", the character length must be great than or equal to 0.')
+      end
+
+      if !@code.nil? && @code.to_s.length > 64
+        invalid_properties.push('invalid value for "code", the character length must be smaller than or equal to 64.')
+      end
+
+      if !@code.nil? && @code.to_s.length < 1
+        invalid_properties.push('invalid value for "code", the character length must be great than or equal to 1.')
+      end
+
       invalid_properties
     end
 
@@ -191,6 +225,10 @@ module OpenapiClient
       return false if !@journal_type_id.nil? && @journal_type_id.to_s.length < 0
       return false if !@ledger_id.nil? && @ledger_id.to_s.length > 36
       return false if !@ledger_id.nil? && @ledger_id.to_s.length < 0
+      return false if !@financial_book_id.nil? && @financial_book_id.to_s.length > 36
+      return false if !@financial_book_id.nil? && @financial_book_id.to_s.length < 0
+      return false if !@code.nil? && @code.to_s.length > 64
+      return false if !@code.nil? && @code.to_s.length < 1
       true
     end
 
@@ -268,6 +306,34 @@ module OpenapiClient
       @ledger_id = ledger_id
     end
 
+    # Custom attribute writer method with validation
+    # @param [Object] financial_book_id Value to be assigned
+    def financial_book_id=(financial_book_id)
+      if !financial_book_id.nil? && financial_book_id.to_s.length > 36
+        fail ArgumentError, 'invalid value for "financial_book_id", the character length must be smaller than or equal to 36.'
+      end
+
+      if !financial_book_id.nil? && financial_book_id.to_s.length < 0
+        fail ArgumentError, 'invalid value for "financial_book_id", the character length must be great than or equal to 0.'
+      end
+
+      @financial_book_id = financial_book_id
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] code Value to be assigned
+    def code=(code)
+      if !code.nil? && code.to_s.length > 64
+        fail ArgumentError, 'invalid value for "code", the character length must be smaller than or equal to 64.'
+      end
+
+      if !code.nil? && code.to_s.length < 1
+        fail ArgumentError, 'invalid value for "code", the character length must be great than or equal to 1.'
+      end
+
+      @code = code
+    end
+
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(o)
@@ -280,7 +346,9 @@ module OpenapiClient
           date_time == o.date_time &&
           parent_journal_id == o.parent_journal_id &&
           journal_type_id == o.journal_type_id &&
-          ledger_id == o.ledger_id
+          ledger_id == o.ledger_id &&
+          financial_book_id == o.financial_book_id &&
+          code == o.code
     end
 
     # @see the `==` method
@@ -292,7 +360,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, timestamp, name, description, date_time, parent_journal_id, journal_type_id, ledger_id].hash
+      [id, timestamp, name, description, date_time, parent_journal_id, journal_type_id, ledger_id, financial_book_id, code].hash
     end
 
     # Builds the object from hash

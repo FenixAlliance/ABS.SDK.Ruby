@@ -180,6 +180,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [ItemTagDtoCollectionQueryParameters] :item_tag_dto_collection_query_parameters 
     # @return [Int32Envelope]
     def count_stock_item_tags_by_item_id(tenant_id, item_id, opts = {})
       data, _status_code, _headers = count_stock_item_tags_by_item_id_with_http_info(tenant_id, item_id, opts)
@@ -193,6 +194,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [ItemTagDtoCollectionQueryParameters] :item_tag_dto_collection_query_parameters 
     # @return [Array<(Int32Envelope, Integer, Hash)>] Int32Envelope data, response status code and response headers
     def count_stock_item_tags_by_item_id_with_http_info(tenant_id, item_id, opts = {})
       if @api_client.config.debugging
@@ -218,13 +220,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'item_tag_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'Int32Envelope'
@@ -255,6 +262,7 @@ module OpenapiClient
     # @option opts [String] :tenant_id 
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [CatalogItemDtoCollectionQueryParameters] :catalog_item_dto_collection_query_parameters 
     # @return [Int32Envelope]
     def count_stock_items_by_business(opts = {})
       data, _status_code, _headers = count_stock_items_by_business_with_http_info(opts)
@@ -267,6 +275,7 @@ module OpenapiClient
     # @option opts [String] :tenant_id 
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [CatalogItemDtoCollectionQueryParameters] :catalog_item_dto_collection_query_parameters 
     # @return [Array<(Int32Envelope, Integer, Hash)>] Int32Envelope data, response status code and response headers
     def count_stock_items_by_business_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -284,13 +293,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'catalog_item_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'Int32Envelope'
@@ -687,6 +701,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [ItemAttachmentDtoCollectionQueryParameters] :item_attachment_dto_collection_query_parameters 
     # @return [ItemAttachmentDtoListEnvelope]
     def get_stock_item_attachments_by_item_id(item_id, opts = {})
       data, _status_code, _headers = get_stock_item_attachments_by_item_id_with_http_info(item_id, opts)
@@ -699,6 +714,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [ItemAttachmentDtoCollectionQueryParameters] :item_attachment_dto_collection_query_parameters 
     # @return [Array<(ItemAttachmentDtoListEnvelope, Integer, Hash)>] ItemAttachmentDtoListEnvelope data, response status code and response headers
     def get_stock_item_attachments_by_item_id_with_http_info(item_id, opts = {})
       if @api_client.config.debugging
@@ -719,13 +735,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'item_attachment_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'ItemAttachmentDtoListEnvelope'
@@ -975,6 +996,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [ItemBrandDtoCollectionQueryParameters] :item_brand_dto_collection_query_parameters 
     # @return [ItemBrandDtoListEnvelope]
     def get_stock_item_brands_by_item_id(item_id, opts = {})
       data, _status_code, _headers = get_stock_item_brands_by_item_id_with_http_info(item_id, opts)
@@ -987,6 +1009,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [ItemBrandDtoCollectionQueryParameters] :item_brand_dto_collection_query_parameters 
     # @return [Array<(ItemBrandDtoListEnvelope, Integer, Hash)>] ItemBrandDtoListEnvelope data, response status code and response headers
     def get_stock_item_brands_by_item_id_with_http_info(item_id, opts = {})
       if @api_client.config.debugging
@@ -1007,13 +1030,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'item_brand_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'ItemBrandDtoListEnvelope'
@@ -1113,6 +1141,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [ItemCategoryDtoCollectionQueryParameters] :item_category_dto_collection_query_parameters 
     # @return [ItemCategoryDtoListEnvelope]
     def get_stock_item_categories_by_item_id(item_id, opts = {})
       data, _status_code, _headers = get_stock_item_categories_by_item_id_with_http_info(item_id, opts)
@@ -1125,6 +1154,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [ItemCategoryDtoCollectionQueryParameters] :item_category_dto_collection_query_parameters 
     # @return [Array<(ItemCategoryDtoListEnvelope, Integer, Hash)>] ItemCategoryDtoListEnvelope data, response status code and response headers
     def get_stock_item_categories_by_item_id_with_http_info(item_id, opts = {})
       if @api_client.config.debugging
@@ -1145,13 +1175,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'item_category_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'ItemCategoryDtoListEnvelope'
@@ -1257,6 +1292,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [ItemGoogleCategoryDtoCollectionQueryParameters] :item_google_category_dto_collection_query_parameters 
     # @return [ItemGoogleCategoryDtoListEnvelope]
     def get_stock_item_google_categories_by_item_id(item_id, opts = {})
       data, _status_code, _headers = get_stock_item_google_categories_by_item_id_with_http_info(item_id, opts)
@@ -1269,6 +1305,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [ItemGoogleCategoryDtoCollectionQueryParameters] :item_google_category_dto_collection_query_parameters 
     # @return [Array<(ItemGoogleCategoryDtoListEnvelope, Integer, Hash)>] ItemGoogleCategoryDtoListEnvelope data, response status code and response headers
     def get_stock_item_google_categories_by_item_id_with_http_info(item_id, opts = {})
       if @api_client.config.debugging
@@ -1289,13 +1326,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'item_google_category_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'ItemGoogleCategoryDtoListEnvelope'
@@ -1476,6 +1518,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [ItemImageDtoCollectionQueryParameters] :item_image_dto_collection_query_parameters 
     # @return [ItemImageDtoListEnvelope]
     def get_stock_item_images_by_item_id(item_id, opts = {})
       data, _status_code, _headers = get_stock_item_images_by_item_id_with_http_info(item_id, opts)
@@ -1488,6 +1531,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [ItemImageDtoCollectionQueryParameters] :item_image_dto_collection_query_parameters 
     # @return [Array<(ItemImageDtoListEnvelope, Integer, Hash)>] ItemImageDtoListEnvelope data, response status code and response headers
     def get_stock_item_images_by_item_id_with_http_info(item_id, opts = {})
       if @api_client.config.debugging
@@ -1508,13 +1552,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'item_image_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'ItemImageDtoListEnvelope'
@@ -1764,6 +1813,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [ItemQuestionDtoCollectionQueryParameters] :item_question_dto_collection_query_parameters 
     # @return [ItemQuestionDtoListEnvelope]
     def get_stock_item_questions_by_item_id(item_id, opts = {})
       data, _status_code, _headers = get_stock_item_questions_by_item_id_with_http_info(item_id, opts)
@@ -1776,6 +1826,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [ItemQuestionDtoCollectionQueryParameters] :item_question_dto_collection_query_parameters 
     # @return [Array<(ItemQuestionDtoListEnvelope, Integer, Hash)>] ItemQuestionDtoListEnvelope data, response status code and response headers
     def get_stock_item_questions_by_item_id_with_http_info(item_id, opts = {})
       if @api_client.config.debugging
@@ -1796,13 +1847,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'item_question_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'ItemQuestionDtoListEnvelope'
@@ -1833,6 +1889,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [ItemRefundPolicyDtoCollectionQueryParameters] :item_refund_policy_dto_collection_query_parameters 
     # @return [ItemRefundPolicyDtoListEnvelope]
     def get_stock_item_refund_policies_by_item_id(item_id, opts = {})
       data, _status_code, _headers = get_stock_item_refund_policies_by_item_id_with_http_info(item_id, opts)
@@ -1845,6 +1902,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [ItemRefundPolicyDtoCollectionQueryParameters] :item_refund_policy_dto_collection_query_parameters 
     # @return [Array<(ItemRefundPolicyDtoListEnvelope, Integer, Hash)>] ItemRefundPolicyDtoListEnvelope data, response status code and response headers
     def get_stock_item_refund_policies_by_item_id_with_http_info(item_id, opts = {})
       if @api_client.config.debugging
@@ -1865,13 +1923,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'item_refund_policy_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'ItemRefundPolicyDtoListEnvelope'
@@ -1977,6 +2040,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [ItemReturnPolicyDtoCollectionQueryParameters] :item_return_policy_dto_collection_query_parameters 
     # @return [ItemReturnPolicyDtoListEnvelope]
     def get_stock_item_return_policies_by_item_id(item_id, opts = {})
       data, _status_code, _headers = get_stock_item_return_policies_by_item_id_with_http_info(item_id, opts)
@@ -1989,6 +2053,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [ItemReturnPolicyDtoCollectionQueryParameters] :item_return_policy_dto_collection_query_parameters 
     # @return [Array<(ItemReturnPolicyDtoListEnvelope, Integer, Hash)>] ItemReturnPolicyDtoListEnvelope data, response status code and response headers
     def get_stock_item_return_policies_by_item_id_with_http_info(item_id, opts = {})
       if @api_client.config.debugging
@@ -2009,13 +2074,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'item_return_policy_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'ItemReturnPolicyDtoListEnvelope'
@@ -2196,6 +2266,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [ItemReviewDtoCollectionQueryParameters] :item_review_dto_collection_query_parameters 
     # @return [ItemReviewDtoListEnvelope]
     def get_stock_item_reviews_by_item_id(item_id, opts = {})
       data, _status_code, _headers = get_stock_item_reviews_by_item_id_with_http_info(item_id, opts)
@@ -2208,6 +2279,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [ItemReviewDtoCollectionQueryParameters] :item_review_dto_collection_query_parameters 
     # @return [Array<(ItemReviewDtoListEnvelope, Integer, Hash)>] ItemReviewDtoListEnvelope data, response status code and response headers
     def get_stock_item_reviews_by_item_id_with_http_info(item_id, opts = {})
       if @api_client.config.debugging
@@ -2228,13 +2300,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'item_review_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'ItemReviewDtoListEnvelope'
@@ -2265,6 +2342,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [ItemShippingPolicyDtoCollectionQueryParameters] :item_shipping_policy_dto_collection_query_parameters 
     # @return [ItemShippingPolicyDtoListEnvelope]
     def get_stock_item_shipping_policies_by_item_id(item_id, opts = {})
       data, _status_code, _headers = get_stock_item_shipping_policies_by_item_id_with_http_info(item_id, opts)
@@ -2277,6 +2355,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [ItemShippingPolicyDtoCollectionQueryParameters] :item_shipping_policy_dto_collection_query_parameters 
     # @return [Array<(ItemShippingPolicyDtoListEnvelope, Integer, Hash)>] ItemShippingPolicyDtoListEnvelope data, response status code and response headers
     def get_stock_item_shipping_policies_by_item_id_with_http_info(item_id, opts = {})
       if @api_client.config.debugging
@@ -2297,13 +2376,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'item_shipping_policy_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'ItemShippingPolicyDtoListEnvelope'
@@ -2492,6 +2576,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [ItemTagDtoCollectionQueryParameters] :item_tag_dto_collection_query_parameters 
     # @return [ItemTagDtoListEnvelope]
     def get_stock_item_tags_by_item_id(tenant_id, item_id, opts = {})
       data, _status_code, _headers = get_stock_item_tags_by_item_id_with_http_info(tenant_id, item_id, opts)
@@ -2505,6 +2590,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [ItemTagDtoCollectionQueryParameters] :item_tag_dto_collection_query_parameters 
     # @return [Array<(ItemTagDtoListEnvelope, Integer, Hash)>] ItemTagDtoListEnvelope data, response status code and response headers
     def get_stock_item_tags_by_item_id_with_http_info(tenant_id, item_id, opts = {})
       if @api_client.config.debugging
@@ -2530,13 +2616,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'item_tag_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'ItemTagDtoListEnvelope'
@@ -2567,6 +2658,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [ItemTaxPolicyDtoCollectionQueryParameters] :item_tax_policy_dto_collection_query_parameters 
     # @return [ItemTaxPolicyDtoListEnvelope]
     def get_stock_item_tax_policies_by_item_id(item_id, opts = {})
       data, _status_code, _headers = get_stock_item_tax_policies_by_item_id_with_http_info(item_id, opts)
@@ -2579,6 +2671,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [ItemTaxPolicyDtoCollectionQueryParameters] :item_tax_policy_dto_collection_query_parameters 
     # @return [Array<(ItemTaxPolicyDtoListEnvelope, Integer, Hash)>] ItemTaxPolicyDtoListEnvelope data, response status code and response headers
     def get_stock_item_tax_policies_by_item_id_with_http_info(item_id, opts = {})
       if @api_client.config.debugging
@@ -2599,13 +2692,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'item_tax_policy_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'ItemTaxPolicyDtoListEnvelope'
@@ -2794,6 +2892,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [ItemTypeDtoCollectionQueryParameters] :item_type_dto_collection_query_parameters 
     # @return [ItemTypeDtoListEnvelope]
     def get_stock_item_types_by_item_id(tenant_id, item_id, opts = {})
       data, _status_code, _headers = get_stock_item_types_by_item_id_with_http_info(tenant_id, item_id, opts)
@@ -2807,6 +2906,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [ItemTypeDtoCollectionQueryParameters] :item_type_dto_collection_query_parameters 
     # @return [Array<(ItemTypeDtoListEnvelope, Integer, Hash)>] ItemTypeDtoListEnvelope data, response status code and response headers
     def get_stock_item_types_by_item_id_with_http_info(tenant_id, item_id, opts = {})
       if @api_client.config.debugging
@@ -2832,13 +2932,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'item_type_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'ItemTypeDtoListEnvelope'
@@ -2869,6 +2974,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [ItemWarrantyPolicyDtoCollectionQueryParameters] :item_warranty_policy_dto_collection_query_parameters 
     # @return [ItemWarrantyPolicyDtoListEnvelope]
     def get_stock_item_warranty_policies_by_item_id(item_id, opts = {})
       data, _status_code, _headers = get_stock_item_warranty_policies_by_item_id_with_http_info(item_id, opts)
@@ -2881,6 +2987,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [ItemWarrantyPolicyDtoCollectionQueryParameters] :item_warranty_policy_dto_collection_query_parameters 
     # @return [Array<(ItemWarrantyPolicyDtoListEnvelope, Integer, Hash)>] ItemWarrantyPolicyDtoListEnvelope data, response status code and response headers
     def get_stock_item_warranty_policies_by_item_id_with_http_info(item_id, opts = {})
       if @api_client.config.debugging
@@ -2901,13 +3008,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'item_warranty_policy_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'ItemWarrantyPolicyDtoListEnvelope'
@@ -3013,6 +3125,7 @@ module OpenapiClient
     # @option opts [String] :tenant_id 
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [CatalogItemDtoCollectionQueryParameters] :catalog_item_dto_collection_query_parameters 
     # @return [MoneyEnvelope]
     def get_stock_items_odata_max_price(opts = {})
       data, _status_code, _headers = get_stock_items_odata_max_price_with_http_info(opts)
@@ -3025,6 +3138,7 @@ module OpenapiClient
     # @option opts [String] :tenant_id 
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [CatalogItemDtoCollectionQueryParameters] :catalog_item_dto_collection_query_parameters 
     # @return [Array<(MoneyEnvelope, Integer, Hash)>] MoneyEnvelope data, response status code and response headers
     def get_stock_items_odata_max_price_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -3042,13 +3156,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'catalog_item_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'MoneyEnvelope'
@@ -3079,6 +3198,7 @@ module OpenapiClient
     # @option opts [String] :tenant_id 
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [CatalogItemDtoCollectionQueryParameters] :catalog_item_dto_collection_query_parameters 
     # @return [MoneyEnvelope]
     def get_stock_items_odata_min_price(opts = {})
       data, _status_code, _headers = get_stock_items_odata_min_price_with_http_info(opts)
@@ -3091,6 +3211,7 @@ module OpenapiClient
     # @option opts [String] :tenant_id 
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [CatalogItemDtoCollectionQueryParameters] :catalog_item_dto_collection_query_parameters 
     # @return [Array<(MoneyEnvelope, Integer, Hash)>] MoneyEnvelope data, response status code and response headers
     def get_stock_items_odata_min_price_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -3108,13 +3229,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'catalog_item_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'MoneyEnvelope'
@@ -3145,6 +3271,7 @@ module OpenapiClient
     # @option opts [String] :tenant_id 
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [CatalogItemDtoCollectionQueryParameters] :catalog_item_dto_collection_query_parameters 
     # @return [CatalogItemDtoListEnvelope]
     def get_stock_items_query(opts = {})
       data, _status_code, _headers = get_stock_items_query_with_http_info(opts)
@@ -3157,6 +3284,7 @@ module OpenapiClient
     # @option opts [String] :tenant_id 
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [CatalogItemDtoCollectionQueryParameters] :catalog_item_dto_collection_query_parameters 
     # @return [Array<(CatalogItemDtoListEnvelope, Integer, Hash)>] CatalogItemDtoListEnvelope data, response status code and response headers
     def get_stock_items_query_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -3174,13 +3302,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'catalog_item_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'CatalogItemDtoListEnvelope'
@@ -3212,7 +3345,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
-    # @option opts [Array<Operation>] :operation 
+    # @option opts [Array<PatchOperation>] :patch_operation 
     # @return [nil]
     def patch_stock_item(tenant_id, item_id, opts = {})
       patch_stock_item_with_http_info(tenant_id, item_id, opts)
@@ -3226,7 +3359,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
-    # @option opts [Array<Operation>] :operation 
+    # @option opts [Array<PatchOperation>] :patch_operation 
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
     def patch_stock_item_with_http_info(tenant_id, item_id, opts = {})
       if @api_client.config.debugging
@@ -3263,7 +3396,7 @@ module OpenapiClient
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'operation'])
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'patch_operation'])
 
       # return_type
       return_type = opts[:debug_return_type]

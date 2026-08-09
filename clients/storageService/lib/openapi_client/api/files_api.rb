@@ -467,6 +467,15 @@ module OpenapiClient
     # @option opts [String] :tenant_id 
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [Integer] :top 
+    # @option opts [Integer] :skip 
+    # @option opts [Boolean] :count 
+    # @option opts [String] :filter 
+    # @option opts [String] :order_by 
+    # @option opts [String] :search 
+    # @option opts [String] :select 
+    # @option opts [String] :expand 
+    # @option opts [Boolean] :is_empty 
     # @return [FileUploadDtoEnvelope]
     def get_files_async(opts = {})
       data, _status_code, _headers = get_files_async_with_http_info(opts)
@@ -477,6 +486,15 @@ module OpenapiClient
     # @option opts [String] :tenant_id 
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [Integer] :top 
+    # @option opts [Integer] :skip 
+    # @option opts [Boolean] :count 
+    # @option opts [String] :filter 
+    # @option opts [String] :order_by 
+    # @option opts [String] :search 
+    # @option opts [String] :select 
+    # @option opts [String] :expand 
+    # @option opts [Boolean] :is_empty 
     # @return [Array<(FileUploadDtoEnvelope, Integer, Hash)>] FileUploadDtoEnvelope data, response status code and response headers
     def get_files_async_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -494,10 +512,24 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'image/png']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['multipart/form-data'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
+      form_params['top'] = opts[:'top'] if !opts[:'top'].nil?
+      form_params['skip'] = opts[:'skip'] if !opts[:'skip'].nil?
+      form_params['count'] = opts[:'count'] if !opts[:'count'].nil?
+      form_params['filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+      form_params['orderBy'] = opts[:'order_by'] if !opts[:'order_by'].nil?
+      form_params['search'] = opts[:'search'] if !opts[:'search'].nil?
+      form_params['select'] = opts[:'select'] if !opts[:'select'].nil?
+      form_params['expand'] = opts[:'expand'] if !opts[:'expand'].nil?
+      form_params['isEmpty'] = opts[:'is_empty'] if !opts[:'is_empty'].nil?
 
       # http body (model)
       post_body = opts[:debug_body]
@@ -529,6 +561,15 @@ module OpenapiClient
     # @option opts [String] :tenant_id 
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [Integer] :top 
+    # @option opts [Integer] :skip 
+    # @option opts [Boolean] :count 
+    # @option opts [String] :filter 
+    # @option opts [String] :order_by 
+    # @option opts [String] :search 
+    # @option opts [String] :select 
+    # @option opts [String] :expand 
+    # @option opts [Boolean] :is_empty 
     # @return [Integer]
     def get_files_count_async(opts = {})
       data, _status_code, _headers = get_files_count_async_with_http_info(opts)
@@ -539,6 +580,15 @@ module OpenapiClient
     # @option opts [String] :tenant_id 
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [Integer] :top 
+    # @option opts [Integer] :skip 
+    # @option opts [Boolean] :count 
+    # @option opts [String] :filter 
+    # @option opts [String] :order_by 
+    # @option opts [String] :search 
+    # @option opts [String] :select 
+    # @option opts [String] :expand 
+    # @option opts [Boolean] :is_empty 
     # @return [Array<(Integer, Integer, Hash)>] Integer data, response status code and response headers
     def get_files_count_async_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -556,10 +606,24 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'image/png']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['multipart/form-data'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
+      form_params['top'] = opts[:'top'] if !opts[:'top'].nil?
+      form_params['skip'] = opts[:'skip'] if !opts[:'skip'].nil?
+      form_params['count'] = opts[:'count'] if !opts[:'count'].nil?
+      form_params['filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+      form_params['orderBy'] = opts[:'order_by'] if !opts[:'order_by'].nil?
+      form_params['search'] = opts[:'search'] if !opts[:'search'].nil?
+      form_params['select'] = opts[:'select'] if !opts[:'select'].nil?
+      form_params['expand'] = opts[:'expand'] if !opts[:'expand'].nil?
+      form_params['isEmpty'] = opts[:'is_empty'] if !opts[:'is_empty'].nil?
 
       # http body (model)
       post_body = opts[:debug_body]

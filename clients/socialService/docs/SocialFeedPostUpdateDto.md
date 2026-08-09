@@ -6,6 +6,9 @@
 | ---- | ---- | ----------- | ----- |
 | **title** | **String** |  | [optional] |
 | **message** | **String** |  | [optional] |
+| **body_html** | **String** |  | [optional] |
+| **body_format** | **String** |  | [optional] |
+| **background_style** | **String** |  | [optional] |
 
 ## Example
 
@@ -14,7 +17,10 @@ require 'openapi_client'
 
 instance = OpenapiClient::SocialFeedPostUpdateDto.new(
   title: null,
-  message: null
+  message: null,
+  body_html: null,
+  body_format: null,
+  background_style: null
 )
 ```
 

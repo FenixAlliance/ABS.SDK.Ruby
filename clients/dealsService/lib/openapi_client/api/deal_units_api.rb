@@ -535,6 +535,7 @@ module OpenapiClient
     # @param deal_unit_id [String] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :item_id 
+    # @option opts [DealUnitLineDtoCollectionQueryParameters] :deal_unit_line_dto_collection_query_parameters 
     # @return [DealUnitLineDtoListEnvelope]
     def get_deal_unit_lines_async(tenant_id, deal_unit_id, opts = {})
       data, _status_code, _headers = get_deal_unit_lines_async_with_http_info(tenant_id, deal_unit_id, opts)
@@ -547,6 +548,7 @@ module OpenapiClient
     # @param deal_unit_id [String] 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :item_id 
+    # @option opts [DealUnitLineDtoCollectionQueryParameters] :deal_unit_line_dto_collection_query_parameters 
     # @return [Array<(DealUnitLineDtoListEnvelope, Integer, Hash)>] DealUnitLineDtoListEnvelope data, response status code and response headers
     def get_deal_unit_lines_async_with_http_info(tenant_id, deal_unit_id, opts = {})
       if @api_client.config.debugging
@@ -572,12 +574,17 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'deal_unit_line_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'DealUnitLineDtoListEnvelope'
@@ -607,6 +614,7 @@ module OpenapiClient
     # @param tenant_id [String] 
     # @param deal_unit_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [DealUnitLineDtoCollectionQueryParameters] :deal_unit_line_dto_collection_query_parameters 
     # @return [Int32Envelope]
     def get_deal_unit_lines_count_async(tenant_id, deal_unit_id, opts = {})
       data, _status_code, _headers = get_deal_unit_lines_count_async_with_http_info(tenant_id, deal_unit_id, opts)
@@ -618,6 +626,7 @@ module OpenapiClient
     # @param tenant_id [String] 
     # @param deal_unit_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [DealUnitLineDtoCollectionQueryParameters] :deal_unit_line_dto_collection_query_parameters 
     # @return [Array<(Int32Envelope, Integer, Hash)>] Int32Envelope data, response status code and response headers
     def get_deal_unit_lines_count_async_with_http_info(tenant_id, deal_unit_id, opts = {})
       if @api_client.config.debugging
@@ -642,12 +651,17 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'deal_unit_line_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'Int32Envelope'
@@ -752,6 +766,7 @@ module OpenapiClient
     # Retrieves a list of deal units for the specified tenant with OData query support.
     # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [DealUnitDtoCollectionQueryParameters] :deal_unit_dto_collection_query_parameters 
     # @return [DealUnitDtoListEnvelope]
     def get_deal_units_async(tenant_id, opts = {})
       data, _status_code, _headers = get_deal_units_async_with_http_info(tenant_id, opts)
@@ -762,6 +777,7 @@ module OpenapiClient
     # Retrieves a list of deal units for the specified tenant with OData query support.
     # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [DealUnitDtoCollectionQueryParameters] :deal_unit_dto_collection_query_parameters 
     # @return [Array<(DealUnitDtoListEnvelope, Integer, Hash)>] DealUnitDtoListEnvelope data, response status code and response headers
     def get_deal_units_async_with_http_info(tenant_id, opts = {})
       if @api_client.config.debugging
@@ -782,12 +798,17 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'deal_unit_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'DealUnitDtoListEnvelope'
@@ -816,6 +837,7 @@ module OpenapiClient
     # Returns the total count of deal units for the specified tenant with OData filter support.
     # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [DealUnitDtoCollectionQueryParameters] :deal_unit_dto_collection_query_parameters 
     # @return [Int32Envelope]
     def get_deal_units_count_async(tenant_id, opts = {})
       data, _status_code, _headers = get_deal_units_count_async_with_http_info(tenant_id, opts)
@@ -826,6 +848,7 @@ module OpenapiClient
     # Returns the total count of deal units for the specified tenant with OData filter support.
     # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [DealUnitDtoCollectionQueryParameters] :deal_unit_dto_collection_query_parameters 
     # @return [Array<(Int32Envelope, Integer, Hash)>] Int32Envelope data, response status code and response headers
     def get_deal_units_count_async_with_http_info(tenant_id, opts = {})
       if @api_client.config.debugging
@@ -846,12 +869,17 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'deal_unit_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'Int32Envelope'
@@ -950,6 +978,7 @@ module OpenapiClient
     # Retrieves a list of deal units with extended details for the specified tenant with OData query support.
     # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [ExtendedDealUnitDtoCollectionQueryParameters] :extended_deal_unit_dto_collection_query_parameters 
     # @return [ExtendedDealUnitDtoListEnvelope]
     def get_extended_deal_units_async(tenant_id, opts = {})
       data, _status_code, _headers = get_extended_deal_units_async_with_http_info(tenant_id, opts)
@@ -960,6 +989,7 @@ module OpenapiClient
     # Retrieves a list of deal units with extended details for the specified tenant with OData query support.
     # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [ExtendedDealUnitDtoCollectionQueryParameters] :extended_deal_unit_dto_collection_query_parameters 
     # @return [Array<(ExtendedDealUnitDtoListEnvelope, Integer, Hash)>] ExtendedDealUnitDtoListEnvelope data, response status code and response headers
     def get_extended_deal_units_async_with_http_info(tenant_id, opts = {})
       if @api_client.config.debugging
@@ -980,12 +1010,17 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'extended_deal_unit_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'ExtendedDealUnitDtoListEnvelope'
@@ -1015,7 +1050,7 @@ module OpenapiClient
     # @param tenant_id [String] 
     # @param deal_unit_id [String] 
     # @param [Hash] opts the optional parameters
-    # @option opts [Array<Operation>] :operation 
+    # @option opts [Array<PatchOperation>] :patch_operation 
     # @return [EmptyEnvelope]
     def patch_deal_unit_async(tenant_id, deal_unit_id, opts = {})
       data, _status_code, _headers = patch_deal_unit_async_with_http_info(tenant_id, deal_unit_id, opts)
@@ -1027,7 +1062,7 @@ module OpenapiClient
     # @param tenant_id [String] 
     # @param deal_unit_id [String] 
     # @param [Hash] opts the optional parameters
-    # @option opts [Array<Operation>] :operation 
+    # @option opts [Array<PatchOperation>] :patch_operation 
     # @return [Array<(EmptyEnvelope, Integer, Hash)>] EmptyEnvelope data, response status code and response headers
     def patch_deal_unit_async_with_http_info(tenant_id, deal_unit_id, opts = {})
       if @api_client.config.debugging
@@ -1062,7 +1097,7 @@ module OpenapiClient
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'operation'])
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'patch_operation'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'EmptyEnvelope'
@@ -1093,7 +1128,7 @@ module OpenapiClient
     # @param deal_unit_id [String] 
     # @param deal_unit_line_id [String] 
     # @param [Hash] opts the optional parameters
-    # @option opts [Array<Operation>] :operation 
+    # @option opts [Array<PatchOperation>] :patch_operation 
     # @return [EmptyEnvelope]
     def patch_deal_unit_line_async(tenant_id, deal_unit_id, deal_unit_line_id, opts = {})
       data, _status_code, _headers = patch_deal_unit_line_async_with_http_info(tenant_id, deal_unit_id, deal_unit_line_id, opts)
@@ -1106,7 +1141,7 @@ module OpenapiClient
     # @param deal_unit_id [String] 
     # @param deal_unit_line_id [String] 
     # @param [Hash] opts the optional parameters
-    # @option opts [Array<Operation>] :operation 
+    # @option opts [Array<PatchOperation>] :patch_operation 
     # @return [Array<(EmptyEnvelope, Integer, Hash)>] EmptyEnvelope data, response status code and response headers
     def patch_deal_unit_line_async_with_http_info(tenant_id, deal_unit_id, deal_unit_line_id, opts = {})
       if @api_client.config.debugging
@@ -1145,7 +1180,7 @@ module OpenapiClient
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'operation'])
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'patch_operation'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'EmptyEnvelope'

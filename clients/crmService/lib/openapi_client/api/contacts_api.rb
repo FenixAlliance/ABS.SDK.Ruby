@@ -580,6 +580,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [ContactDtoCollectionQueryParameters] :contact_dto_collection_query_parameters 
     # @return [ContactDtoListEnvelope]
     def get_business_owned_individuals_async(tenant_id, opts = {})
       data, _status_code, _headers = get_business_owned_individuals_async_with_http_info(tenant_id, opts)
@@ -592,6 +593,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [ContactDtoCollectionQueryParameters] :contact_dto_collection_query_parameters 
     # @return [Array<(ContactDtoListEnvelope, Integer, Hash)>] ContactDtoListEnvelope data, response status code and response headers
     def get_business_owned_individuals_async_with_http_info(tenant_id, opts = {})
       if @api_client.config.debugging
@@ -613,13 +615,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'contact_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'ContactDtoListEnvelope'
@@ -650,6 +657,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [ContactDtoCollectionQueryParameters] :contact_dto_collection_query_parameters 
     # @return [ContactDtoListEnvelope]
     def get_business_owned_individuals_count_async(tenant_id, opts = {})
       data, _status_code, _headers = get_business_owned_individuals_count_async_with_http_info(tenant_id, opts)
@@ -662,6 +670,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [ContactDtoCollectionQueryParameters] :contact_dto_collection_query_parameters 
     # @return [Array<(ContactDtoListEnvelope, Integer, Hash)>] ContactDtoListEnvelope data, response status code and response headers
     def get_business_owned_individuals_count_async_with_http_info(tenant_id, opts = {})
       if @api_client.config.debugging
@@ -683,13 +692,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'contact_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'ContactDtoListEnvelope'
@@ -796,6 +810,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [ContactDtoCollectionQueryParameters] :contact_dto_collection_query_parameters 
     # @return [Array<ContactDto>]
     def get_business_owned_organizations_async(tenant_id, opts = {})
       data, _status_code, _headers = get_business_owned_organizations_async_with_http_info(tenant_id, opts)
@@ -808,6 +823,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [ContactDtoCollectionQueryParameters] :contact_dto_collection_query_parameters 
     # @return [Array<(Array<ContactDto>, Integer, Hash)>] Array<ContactDto> data, response status code and response headers
     def get_business_owned_organizations_async_with_http_info(tenant_id, opts = {})
       if @api_client.config.debugging
@@ -829,13 +845,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'contact_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'Array<ContactDto>'
@@ -866,6 +887,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [ContactDtoCollectionQueryParameters] :contact_dto_collection_query_parameters 
     # @return [ContactDtoListEnvelope]
     def get_business_owned_organizations_count_async(tenant_id, opts = {})
       data, _status_code, _headers = get_business_owned_organizations_count_async_with_http_info(tenant_id, opts)
@@ -878,6 +900,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [ContactDtoCollectionQueryParameters] :contact_dto_collection_query_parameters 
     # @return [Array<(ContactDtoListEnvelope, Integer, Hash)>] ContactDtoListEnvelope data, response status code and response headers
     def get_business_owned_organizations_count_async_with_http_info(tenant_id, opts = {})
       if @api_client.config.debugging
@@ -899,13 +922,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'contact_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'ContactDtoListEnvelope'
@@ -1165,6 +1193,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [ContactEmailDtoCollectionQueryParameters] :contact_email_dto_collection_query_parameters 
     # @return [ContactEmailDtoListEnvelope]
     def get_contact_emails_async(tenant_id, contact_id, opts = {})
       data, _status_code, _headers = get_contact_emails_async_with_http_info(tenant_id, contact_id, opts)
@@ -1178,6 +1207,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [ContactEmailDtoCollectionQueryParameters] :contact_email_dto_collection_query_parameters 
     # @return [Array<(ContactEmailDtoListEnvelope, Integer, Hash)>] ContactEmailDtoListEnvelope data, response status code and response headers
     def get_contact_emails_async_with_http_info(tenant_id, contact_id, opts = {})
       if @api_client.config.debugging
@@ -1203,13 +1233,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'contact_email_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'ContactEmailDtoListEnvelope'
@@ -1241,6 +1276,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [ContactEmailDtoCollectionQueryParameters] :contact_email_dto_collection_query_parameters 
     # @return [Int32Envelope]
     def get_contact_emails_count_async(tenant_id, contact_id, opts = {})
       data, _status_code, _headers = get_contact_emails_count_async_with_http_info(tenant_id, contact_id, opts)
@@ -1254,6 +1290,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [ContactEmailDtoCollectionQueryParameters] :contact_email_dto_collection_query_parameters 
     # @return [Array<(Int32Envelope, Integer, Hash)>] Int32Envelope data, response status code and response headers
     def get_contact_emails_count_async_with_http_info(tenant_id, contact_id, opts = {})
       if @api_client.config.debugging
@@ -1279,13 +1316,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'contact_email_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'Int32Envelope'
@@ -1468,6 +1510,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [ContactDtoCollectionQueryParameters] :contact_dto_collection_query_parameters 
     # @return [ContactDtoListEnvelope]
     def get_contacts_async(tenant_id, opts = {})
       data, _status_code, _headers = get_contacts_async_with_http_info(tenant_id, opts)
@@ -1480,6 +1523,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [ContactDtoCollectionQueryParameters] :contact_dto_collection_query_parameters 
     # @return [Array<(ContactDtoListEnvelope, Integer, Hash)>] ContactDtoListEnvelope data, response status code and response headers
     def get_contacts_async_with_http_info(tenant_id, opts = {})
       if @api_client.config.debugging
@@ -1501,13 +1545,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'contact_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'ContactDtoListEnvelope'
@@ -1538,6 +1587,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [ContactDtoCollectionQueryParameters] :contact_dto_collection_query_parameters 
     # @return [ContactDtoListEnvelope]
     def get_contacts_count_async(tenant_id, opts = {})
       data, _status_code, _headers = get_contacts_count_async_with_http_info(tenant_id, opts)
@@ -1550,6 +1600,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [ContactDtoCollectionQueryParameters] :contact_dto_collection_query_parameters 
     # @return [Array<(ContactDtoListEnvelope, Integer, Hash)>] ContactDtoListEnvelope data, response status code and response headers
     def get_contacts_count_async_with_http_info(tenant_id, opts = {})
       if @api_client.config.debugging
@@ -1571,13 +1622,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'contact_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'ContactDtoListEnvelope'
@@ -1608,6 +1664,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [ExtendedContactDtoCollectionQueryParameters] :extended_contact_dto_collection_query_parameters 
     # @return [ExtendedContactDtoListEnvelope]
     def get_extended_business_owned_individuals_async(tenant_id, opts = {})
       data, _status_code, _headers = get_extended_business_owned_individuals_async_with_http_info(tenant_id, opts)
@@ -1620,6 +1677,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [ExtendedContactDtoCollectionQueryParameters] :extended_contact_dto_collection_query_parameters 
     # @return [Array<(ExtendedContactDtoListEnvelope, Integer, Hash)>] ExtendedContactDtoListEnvelope data, response status code and response headers
     def get_extended_business_owned_individuals_async_with_http_info(tenant_id, opts = {})
       if @api_client.config.debugging
@@ -1641,13 +1699,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'extended_contact_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'ExtendedContactDtoListEnvelope'
@@ -1678,6 +1741,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [ExtendedContactDtoCollectionQueryParameters] :extended_contact_dto_collection_query_parameters 
     # @return [ExtendedContactDtoListEnvelope]
     def get_extended_business_owned_organizations_async(tenant_id, opts = {})
       data, _status_code, _headers = get_extended_business_owned_organizations_async_with_http_info(tenant_id, opts)
@@ -1690,6 +1754,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [ExtendedContactDtoCollectionQueryParameters] :extended_contact_dto_collection_query_parameters 
     # @return [Array<(ExtendedContactDtoListEnvelope, Integer, Hash)>] ExtendedContactDtoListEnvelope data, response status code and response headers
     def get_extended_business_owned_organizations_async_with_http_info(tenant_id, opts = {})
       if @api_client.config.debugging
@@ -1711,13 +1776,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'extended_contact_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'ExtendedContactDtoListEnvelope'
@@ -1824,6 +1894,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [ExtendedContactDtoCollectionQueryParameters] :extended_contact_dto_collection_query_parameters 
     # @return [ExtendedContactDtoListEnvelope]
     def get_extended_contacts_async(tenant_id, opts = {})
       data, _status_code, _headers = get_extended_contacts_async_with_http_info(tenant_id, opts)
@@ -1836,6 +1907,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [ExtendedContactDtoCollectionQueryParameters] :extended_contact_dto_collection_query_parameters 
     # @return [Array<(ExtendedContactDtoListEnvelope, Integer, Hash)>] ExtendedContactDtoListEnvelope data, response status code and response headers
     def get_extended_contacts_async_with_http_info(tenant_id, opts = {})
       if @api_client.config.debugging
@@ -1857,13 +1929,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'extended_contact_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'ExtendedContactDtoListEnvelope'
@@ -2275,6 +2352,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [ContactProfileDtoCollectionQueryParameters] :contact_profile_dto_collection_query_parameters 
     # @return [Int32Envelope]
     def get_profiles_for_contact_count_async(tenant_id, contact_id, opts = {})
       data, _status_code, _headers = get_profiles_for_contact_count_async_with_http_info(tenant_id, contact_id, opts)
@@ -2288,6 +2366,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [ContactProfileDtoCollectionQueryParameters] :contact_profile_dto_collection_query_parameters 
     # @return [Array<(Int32Envelope, Integer, Hash)>] Int32Envelope data, response status code and response headers
     def get_profiles_for_contact_count_async_with_http_info(tenant_id, contact_id, opts = {})
       if @api_client.config.debugging
@@ -2313,13 +2392,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'contact_profile_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'Int32Envelope'
@@ -2351,7 +2435,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
-    # @option opts [Array<Operation>] :operation 
+    # @option opts [Array<PatchOperation>] :patch_operation 
     # @return [EmptyEnvelope]
     def patch_contact_async(tenant_id, contact_id, opts = {})
       data, _status_code, _headers = patch_contact_async_with_http_info(tenant_id, contact_id, opts)
@@ -2365,7 +2449,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
-    # @option opts [Array<Operation>] :operation 
+    # @option opts [Array<PatchOperation>] :patch_operation 
     # @return [Array<(EmptyEnvelope, Integer, Hash)>] EmptyEnvelope data, response status code and response headers
     def patch_contact_async_with_http_info(tenant_id, contact_id, opts = {})
       if @api_client.config.debugging
@@ -2402,7 +2486,7 @@ module OpenapiClient
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'operation'])
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'patch_operation'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'EmptyEnvelope'
@@ -2435,7 +2519,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
-    # @option opts [Array<Operation>] :operation 
+    # @option opts [Array<PatchOperation>] :patch_operation 
     # @return [nil]
     def patch_contact_email_async(tenant_id, contact_id, email_id, opts = {})
       patch_contact_email_async_with_http_info(tenant_id, contact_id, email_id, opts)
@@ -2450,7 +2534,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
-    # @option opts [Array<Operation>] :operation 
+    # @option opts [Array<PatchOperation>] :patch_operation 
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
     def patch_contact_email_async_with_http_info(tenant_id, contact_id, email_id, opts = {})
       if @api_client.config.debugging
@@ -2491,7 +2575,7 @@ module OpenapiClient
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'operation'])
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'patch_operation'])
 
       # return_type
       return_type = opts[:debug_return_type]

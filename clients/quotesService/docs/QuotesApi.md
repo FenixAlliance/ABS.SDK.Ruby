@@ -570,7 +570,7 @@ No authorization required
 
 ## get_extended_quotes
 
-> <ExtendedQuoteDtoListEnvelope> get_extended_quotes(tenant_id)
+> <ExtendedQuoteDtoListEnvelope> get_extended_quotes(tenant_id, opts)
 
 Get a list of extended quotes.
 
@@ -584,10 +584,13 @@ require 'openapi_client'
 
 api_instance = OpenapiClient::QuotesApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  extended_quote_dto_collection_query_parameters: OpenapiClient::ExtendedQuoteDtoCollectionQueryParameters.new # ExtendedQuoteDtoCollectionQueryParameters | 
+}
 
 begin
   # Get a list of extended quotes.
-  result = api_instance.get_extended_quotes(tenant_id)
+  result = api_instance.get_extended_quotes(tenant_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling QuotesApi->get_extended_quotes: #{e}"
@@ -598,12 +601,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<ExtendedQuoteDtoListEnvelope>, Integer, Hash)> get_extended_quotes_with_http_info(tenant_id)
+> <Array(<ExtendedQuoteDtoListEnvelope>, Integer, Hash)> get_extended_quotes_with_http_info(tenant_id, opts)
 
 ```ruby
 begin
   # Get a list of extended quotes.
-  data, status_code, headers = api_instance.get_extended_quotes_with_http_info(tenant_id)
+  data, status_code, headers = api_instance.get_extended_quotes_with_http_info(tenant_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ExtendedQuoteDtoListEnvelope>
@@ -617,6 +620,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
+| **extended_quote_dto_collection_query_parameters** | [**ExtendedQuoteDtoCollectionQueryParameters**](ExtendedQuoteDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -628,7 +632,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -784,7 +788,8 @@ api_instance = OpenapiClient::QuotesApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 quote_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
-  item_id: '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+  item_id: '38400000-8cf0-11bd-b23e-10b96e4ef00d', # String | 
+  quote_line_dto_collection_query_parameters: OpenapiClient::QuoteLineDtoCollectionQueryParameters.new # QuoteLineDtoCollectionQueryParameters | 
 }
 
 begin
@@ -821,6 +826,7 @@ end
 | **tenant_id** | **String** |  |  |
 | **quote_id** | **String** |  |  |
 | **item_id** | **String** |  | [optional] |
+| **quote_line_dto_collection_query_parameters** | [**QuoteLineDtoCollectionQueryParameters**](QuoteLineDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -832,13 +838,13 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
 ## get_quote_lines_count
 
-> <Int32Envelope> get_quote_lines_count(tenant_id, quote_id)
+> <Int32Envelope> get_quote_lines_count(tenant_id, quote_id, opts)
 
 Get the count of quote lines.
 
@@ -853,10 +859,13 @@ require 'openapi_client'
 api_instance = OpenapiClient::QuotesApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 quote_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  quote_line_dto_collection_query_parameters: OpenapiClient::QuoteLineDtoCollectionQueryParameters.new # QuoteLineDtoCollectionQueryParameters | 
+}
 
 begin
   # Get the count of quote lines.
-  result = api_instance.get_quote_lines_count(tenant_id, quote_id)
+  result = api_instance.get_quote_lines_count(tenant_id, quote_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling QuotesApi->get_quote_lines_count: #{e}"
@@ -867,12 +876,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Int32Envelope>, Integer, Hash)> get_quote_lines_count_with_http_info(tenant_id, quote_id)
+> <Array(<Int32Envelope>, Integer, Hash)> get_quote_lines_count_with_http_info(tenant_id, quote_id, opts)
 
 ```ruby
 begin
   # Get the count of quote lines.
-  data, status_code, headers = api_instance.get_quote_lines_count_with_http_info(tenant_id, quote_id)
+  data, status_code, headers = api_instance.get_quote_lines_count_with_http_info(tenant_id, quote_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Int32Envelope>
@@ -887,6 +896,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
 | **quote_id** | **String** |  |  |
+| **quote_line_dto_collection_query_parameters** | [**QuoteLineDtoCollectionQueryParameters**](QuoteLineDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -898,13 +908,13 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
 ## get_quotes
 
-> <QuoteDtoListEnvelope> get_quotes(tenant_id)
+> <QuoteDtoListEnvelope> get_quotes(tenant_id, opts)
 
 Get a list of quotes.
 
@@ -918,10 +928,13 @@ require 'openapi_client'
 
 api_instance = OpenapiClient::QuotesApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  quote_dto_collection_query_parameters: OpenapiClient::QuoteDtoCollectionQueryParameters.new # QuoteDtoCollectionQueryParameters | 
+}
 
 begin
   # Get a list of quotes.
-  result = api_instance.get_quotes(tenant_id)
+  result = api_instance.get_quotes(tenant_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling QuotesApi->get_quotes: #{e}"
@@ -932,12 +945,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<QuoteDtoListEnvelope>, Integer, Hash)> get_quotes_with_http_info(tenant_id)
+> <Array(<QuoteDtoListEnvelope>, Integer, Hash)> get_quotes_with_http_info(tenant_id, opts)
 
 ```ruby
 begin
   # Get a list of quotes.
-  data, status_code, headers = api_instance.get_quotes_with_http_info(tenant_id)
+  data, status_code, headers = api_instance.get_quotes_with_http_info(tenant_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <QuoteDtoListEnvelope>
@@ -951,6 +964,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
+| **quote_dto_collection_query_parameters** | [**QuoteDtoCollectionQueryParameters**](QuoteDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -962,13 +976,13 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
 ## get_quotes_count
 
-> <Int32Envelope> get_quotes_count(tenant_id)
+> <Int32Envelope> get_quotes_count(tenant_id, opts)
 
 Get the count of quotes.
 
@@ -982,10 +996,13 @@ require 'openapi_client'
 
 api_instance = OpenapiClient::QuotesApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  quote_dto_collection_query_parameters: OpenapiClient::QuoteDtoCollectionQueryParameters.new # QuoteDtoCollectionQueryParameters | 
+}
 
 begin
   # Get the count of quotes.
-  result = api_instance.get_quotes_count(tenant_id)
+  result = api_instance.get_quotes_count(tenant_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling QuotesApi->get_quotes_count: #{e}"
@@ -996,12 +1013,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Int32Envelope>, Integer, Hash)> get_quotes_count_with_http_info(tenant_id)
+> <Array(<Int32Envelope>, Integer, Hash)> get_quotes_count_with_http_info(tenant_id, opts)
 
 ```ruby
 begin
   # Get the count of quotes.
-  data, status_code, headers = api_instance.get_quotes_count_with_http_info(tenant_id)
+  data, status_code, headers = api_instance.get_quotes_count_with_http_info(tenant_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Int32Envelope>
@@ -1015,6 +1032,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
+| **quote_dto_collection_query_parameters** | [**QuoteDtoCollectionQueryParameters**](QuoteDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1026,7 +1044,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -1048,7 +1066,7 @@ api_instance = OpenapiClient::QuotesApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 quote_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
-  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+  patch_operation: [OpenapiClient::PatchOperation.new] # Array<PatchOperation> | 
 }
 
 begin
@@ -1084,7 +1102,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
 | **quote_id** | **String** |  |  |
-| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+| **patch_operation** | [**Array&lt;PatchOperation&gt;**](PatchOperation.md) |  | [optional] |
 
 ### Return type
 
@@ -1119,7 +1137,7 @@ tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 quote_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 quote_line_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
-  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+  patch_operation: [OpenapiClient::PatchOperation.new] # Array<PatchOperation> | 
 }
 
 begin
@@ -1156,7 +1174,7 @@ end
 | **tenant_id** | **String** |  |  |
 | **quote_id** | **String** |  |  |
 | **quote_line_id** | **String** |  |  |
-| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+| **patch_operation** | [**Array&lt;PatchOperation&gt;**](PatchOperation.md) |  | [optional] |
 
 ### Return type
 

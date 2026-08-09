@@ -514,7 +514,8 @@ api_instance = OpenapiClient::DealUnitsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 deal_unit_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
-  item_id: '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+  item_id: '38400000-8cf0-11bd-b23e-10b96e4ef00d', # String | 
+  deal_unit_line_dto_collection_query_parameters: OpenapiClient::DealUnitLineDtoCollectionQueryParameters.new # DealUnitLineDtoCollectionQueryParameters | 
 }
 
 begin
@@ -551,6 +552,7 @@ end
 | **tenant_id** | **String** |  |  |
 | **deal_unit_id** | **String** |  |  |
 | **item_id** | **String** |  | [optional] |
+| **deal_unit_line_dto_collection_query_parameters** | [**DealUnitLineDtoCollectionQueryParameters**](DealUnitLineDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -562,13 +564,13 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
 ## get_deal_unit_lines_count_async
 
-> <Int32Envelope> get_deal_unit_lines_count_async(tenant_id, deal_unit_id)
+> <Int32Envelope> get_deal_unit_lines_count_async(tenant_id, deal_unit_id, opts)
 
 Get deal unit lines count
 
@@ -583,10 +585,13 @@ require 'openapi_client'
 api_instance = OpenapiClient::DealUnitsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 deal_unit_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  deal_unit_line_dto_collection_query_parameters: OpenapiClient::DealUnitLineDtoCollectionQueryParameters.new # DealUnitLineDtoCollectionQueryParameters | 
+}
 
 begin
   # Get deal unit lines count
-  result = api_instance.get_deal_unit_lines_count_async(tenant_id, deal_unit_id)
+  result = api_instance.get_deal_unit_lines_count_async(tenant_id, deal_unit_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling DealUnitsApi->get_deal_unit_lines_count_async: #{e}"
@@ -597,12 +602,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Int32Envelope>, Integer, Hash)> get_deal_unit_lines_count_async_with_http_info(tenant_id, deal_unit_id)
+> <Array(<Int32Envelope>, Integer, Hash)> get_deal_unit_lines_count_async_with_http_info(tenant_id, deal_unit_id, opts)
 
 ```ruby
 begin
   # Get deal unit lines count
-  data, status_code, headers = api_instance.get_deal_unit_lines_count_async_with_http_info(tenant_id, deal_unit_id)
+  data, status_code, headers = api_instance.get_deal_unit_lines_count_async_with_http_info(tenant_id, deal_unit_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Int32Envelope>
@@ -617,6 +622,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
 | **deal_unit_id** | **String** |  |  |
+| **deal_unit_line_dto_collection_query_parameters** | [**DealUnitLineDtoCollectionQueryParameters**](DealUnitLineDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -628,7 +634,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -702,7 +708,7 @@ No authorization required
 
 ## get_deal_units_async
 
-> <DealUnitDtoListEnvelope> get_deal_units_async(tenant_id)
+> <DealUnitDtoListEnvelope> get_deal_units_async(tenant_id, opts)
 
 Get deal units
 
@@ -716,10 +722,13 @@ require 'openapi_client'
 
 api_instance = OpenapiClient::DealUnitsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  deal_unit_dto_collection_query_parameters: OpenapiClient::DealUnitDtoCollectionQueryParameters.new # DealUnitDtoCollectionQueryParameters | 
+}
 
 begin
   # Get deal units
-  result = api_instance.get_deal_units_async(tenant_id)
+  result = api_instance.get_deal_units_async(tenant_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling DealUnitsApi->get_deal_units_async: #{e}"
@@ -730,12 +739,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<DealUnitDtoListEnvelope>, Integer, Hash)> get_deal_units_async_with_http_info(tenant_id)
+> <Array(<DealUnitDtoListEnvelope>, Integer, Hash)> get_deal_units_async_with_http_info(tenant_id, opts)
 
 ```ruby
 begin
   # Get deal units
-  data, status_code, headers = api_instance.get_deal_units_async_with_http_info(tenant_id)
+  data, status_code, headers = api_instance.get_deal_units_async_with_http_info(tenant_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <DealUnitDtoListEnvelope>
@@ -749,6 +758,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
+| **deal_unit_dto_collection_query_parameters** | [**DealUnitDtoCollectionQueryParameters**](DealUnitDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -760,13 +770,13 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
 ## get_deal_units_count_async
 
-> <Int32Envelope> get_deal_units_count_async(tenant_id)
+> <Int32Envelope> get_deal_units_count_async(tenant_id, opts)
 
 Get deal units count
 
@@ -780,10 +790,13 @@ require 'openapi_client'
 
 api_instance = OpenapiClient::DealUnitsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  deal_unit_dto_collection_query_parameters: OpenapiClient::DealUnitDtoCollectionQueryParameters.new # DealUnitDtoCollectionQueryParameters | 
+}
 
 begin
   # Get deal units count
-  result = api_instance.get_deal_units_count_async(tenant_id)
+  result = api_instance.get_deal_units_count_async(tenant_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling DealUnitsApi->get_deal_units_count_async: #{e}"
@@ -794,12 +807,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Int32Envelope>, Integer, Hash)> get_deal_units_count_async_with_http_info(tenant_id)
+> <Array(<Int32Envelope>, Integer, Hash)> get_deal_units_count_async_with_http_info(tenant_id, opts)
 
 ```ruby
 begin
   # Get deal units count
-  data, status_code, headers = api_instance.get_deal_units_count_async_with_http_info(tenant_id)
+  data, status_code, headers = api_instance.get_deal_units_count_async_with_http_info(tenant_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Int32Envelope>
@@ -813,6 +826,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
+| **deal_unit_dto_collection_query_parameters** | [**DealUnitDtoCollectionQueryParameters**](DealUnitDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -824,7 +838,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -896,7 +910,7 @@ No authorization required
 
 ## get_extended_deal_units_async
 
-> <ExtendedDealUnitDtoListEnvelope> get_extended_deal_units_async(tenant_id)
+> <ExtendedDealUnitDtoListEnvelope> get_extended_deal_units_async(tenant_id, opts)
 
 Get extended deal units
 
@@ -910,10 +924,13 @@ require 'openapi_client'
 
 api_instance = OpenapiClient::DealUnitsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  extended_deal_unit_dto_collection_query_parameters: OpenapiClient::ExtendedDealUnitDtoCollectionQueryParameters.new # ExtendedDealUnitDtoCollectionQueryParameters | 
+}
 
 begin
   # Get extended deal units
-  result = api_instance.get_extended_deal_units_async(tenant_id)
+  result = api_instance.get_extended_deal_units_async(tenant_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling DealUnitsApi->get_extended_deal_units_async: #{e}"
@@ -924,12 +941,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<ExtendedDealUnitDtoListEnvelope>, Integer, Hash)> get_extended_deal_units_async_with_http_info(tenant_id)
+> <Array(<ExtendedDealUnitDtoListEnvelope>, Integer, Hash)> get_extended_deal_units_async_with_http_info(tenant_id, opts)
 
 ```ruby
 begin
   # Get extended deal units
-  data, status_code, headers = api_instance.get_extended_deal_units_async_with_http_info(tenant_id)
+  data, status_code, headers = api_instance.get_extended_deal_units_async_with_http_info(tenant_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ExtendedDealUnitDtoListEnvelope>
@@ -943,6 +960,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
+| **extended_deal_unit_dto_collection_query_parameters** | [**ExtendedDealUnitDtoCollectionQueryParameters**](ExtendedDealUnitDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -954,7 +972,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -976,7 +994,7 @@ api_instance = OpenapiClient::DealUnitsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 deal_unit_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
-  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+  patch_operation: [OpenapiClient::PatchOperation.new] # Array<PatchOperation> | 
 }
 
 begin
@@ -1012,7 +1030,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
 | **deal_unit_id** | **String** |  |  |
-| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+| **patch_operation** | [**Array&lt;PatchOperation&gt;**](PatchOperation.md) |  | [optional] |
 
 ### Return type
 
@@ -1047,7 +1065,7 @@ tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 deal_unit_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 deal_unit_line_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
-  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+  patch_operation: [OpenapiClient::PatchOperation.new] # Array<PatchOperation> | 
 }
 
 begin
@@ -1084,7 +1102,7 @@ end
 | **tenant_id** | **String** |  |  |
 | **deal_unit_id** | **String** |  |  |
 | **deal_unit_line_id** | **String** |  |  |
-| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+| **patch_operation** | [**Array&lt;PatchOperation&gt;**](PatchOperation.md) |  | [optional] |
 
 ### Return type
 

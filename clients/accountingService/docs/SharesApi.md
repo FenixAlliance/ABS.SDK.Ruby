@@ -697,7 +697,8 @@ api_instance = OpenapiClient::SharesApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  share_class_dto_collection_query_parameters: OpenapiClient::ShareClassDtoCollectionQueryParameters.new # ShareClassDtoCollectionQueryParameters | 
 }
 
 begin
@@ -734,6 +735,7 @@ end
 | **tenant_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **share_class_dto_collection_query_parameters** | [**ShareClassDtoCollectionQueryParameters**](ShareClassDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -745,7 +747,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -767,7 +769,8 @@ api_instance = OpenapiClient::SharesApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  share_class_dto_collection_query_parameters: OpenapiClient::ShareClassDtoCollectionQueryParameters.new # ShareClassDtoCollectionQueryParameters | 
 }
 
 begin
@@ -804,6 +807,7 @@ end
 | **tenant_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **share_class_dto_collection_query_parameters** | [**ShareClassDtoCollectionQueryParameters**](ShareClassDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -815,7 +819,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -909,7 +913,8 @@ api_instance = OpenapiClient::SharesApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  share_issuance_dto_collection_query_parameters: OpenapiClient::ShareIssuanceDtoCollectionQueryParameters.new # ShareIssuanceDtoCollectionQueryParameters | 
 }
 
 begin
@@ -946,6 +951,7 @@ end
 | **tenant_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **share_issuance_dto_collection_query_parameters** | [**ShareIssuanceDtoCollectionQueryParameters**](ShareIssuanceDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -957,7 +963,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -979,7 +985,8 @@ api_instance = OpenapiClient::SharesApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  share_issuance_dto_collection_query_parameters: OpenapiClient::ShareIssuanceDtoCollectionQueryParameters.new # ShareIssuanceDtoCollectionQueryParameters | 
 }
 
 begin
@@ -1016,6 +1023,7 @@ end
 | **tenant_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **share_issuance_dto_collection_query_parameters** | [**ShareIssuanceDtoCollectionQueryParameters**](ShareIssuanceDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1027,7 +1035,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -1049,7 +1057,8 @@ api_instance = OpenapiClient::SharesApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  share_issuance_dto_collection_query_parameters: OpenapiClient::ShareIssuanceDtoCollectionQueryParameters.new # ShareIssuanceDtoCollectionQueryParameters | 
 }
 
 begin
@@ -1086,6 +1095,7 @@ end
 | **tenant_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **share_issuance_dto_collection_query_parameters** | [**ShareIssuanceDtoCollectionQueryParameters**](ShareIssuanceDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1097,7 +1107,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -1263,7 +1273,8 @@ api_instance = OpenapiClient::SharesApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  share_transfer_reason_dto_collection_query_parameters: OpenapiClient::ShareTransferReasonDtoCollectionQueryParameters.new # ShareTransferReasonDtoCollectionQueryParameters | 
 }
 
 begin
@@ -1300,6 +1311,7 @@ end
 | **tenant_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **share_transfer_reason_dto_collection_query_parameters** | [**ShareTransferReasonDtoCollectionQueryParameters**](ShareTransferReasonDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1311,7 +1323,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -1333,7 +1345,8 @@ api_instance = OpenapiClient::SharesApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  share_transfer_reason_dto_collection_query_parameters: OpenapiClient::ShareTransferReasonDtoCollectionQueryParameters.new # ShareTransferReasonDtoCollectionQueryParameters | 
 }
 
 begin
@@ -1370,6 +1383,7 @@ end
 | **tenant_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **share_transfer_reason_dto_collection_query_parameters** | [**ShareTransferReasonDtoCollectionQueryParameters**](ShareTransferReasonDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1381,7 +1395,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -1403,7 +1417,8 @@ api_instance = OpenapiClient::SharesApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  share_transfer_dto_collection_query_parameters: OpenapiClient::ShareTransferDtoCollectionQueryParameters.new # ShareTransferDtoCollectionQueryParameters | 
 }
 
 begin
@@ -1440,6 +1455,7 @@ end
 | **tenant_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **share_transfer_dto_collection_query_parameters** | [**ShareTransferDtoCollectionQueryParameters**](ShareTransferDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1451,7 +1467,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -1473,7 +1489,8 @@ api_instance = OpenapiClient::SharesApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  share_transfer_dto_collection_query_parameters: OpenapiClient::ShareTransferDtoCollectionQueryParameters.new # ShareTransferDtoCollectionQueryParameters | 
 }
 
 begin
@@ -1510,6 +1527,7 @@ end
 | **tenant_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **share_transfer_dto_collection_query_parameters** | [**ShareTransferDtoCollectionQueryParameters**](ShareTransferDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1521,7 +1539,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -1545,7 +1563,7 @@ share_class_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 opts = {
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example', # String | 
-  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+  patch_operation: [OpenapiClient::PatchOperation.new] # Array<PatchOperation> | 
 }
 
 begin
@@ -1583,7 +1601,7 @@ end
 | **share_class_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
-| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+| **patch_operation** | [**Array&lt;PatchOperation&gt;**](PatchOperation.md) |  | [optional] |
 
 ### Return type
 
@@ -1619,7 +1637,7 @@ issuance_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 opts = {
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example', # String | 
-  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+  patch_operation: [OpenapiClient::PatchOperation.new] # Array<PatchOperation> | 
 }
 
 begin
@@ -1657,7 +1675,7 @@ end
 | **issuance_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
-| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+| **patch_operation** | [**Array&lt;PatchOperation&gt;**](PatchOperation.md) |  | [optional] |
 
 ### Return type
 
@@ -1693,7 +1711,7 @@ transfer_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 opts = {
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example', # String | 
-  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+  patch_operation: [OpenapiClient::PatchOperation.new] # Array<PatchOperation> | 
 }
 
 begin
@@ -1731,7 +1749,7 @@ end
 | **transfer_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
-| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+| **patch_operation** | [**Array&lt;PatchOperation&gt;**](PatchOperation.md) |  | [optional] |
 
 ### Return type
 
@@ -1767,7 +1785,7 @@ reason_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 opts = {
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example', # String | 
-  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+  patch_operation: [OpenapiClient::PatchOperation.new] # Array<PatchOperation> | 
 }
 
 begin
@@ -1805,7 +1823,7 @@ end
 | **reason_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
-| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+| **patch_operation** | [**Array&lt;PatchOperation&gt;**](PatchOperation.md) |  | [optional] |
 
 ### Return type
 

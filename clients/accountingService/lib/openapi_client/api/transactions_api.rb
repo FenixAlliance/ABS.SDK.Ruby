@@ -407,6 +407,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [TransactionCategoryDtoCollectionQueryParameters] :transaction_category_dto_collection_query_parameters 
     # @return [TransactionCategoryDtoListEnvelope]
     def get_transaction_categories(tenant_id, opts = {})
       data, _status_code, _headers = get_transaction_categories_with_http_info(tenant_id, opts)
@@ -419,6 +420,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [TransactionCategoryDtoCollectionQueryParameters] :transaction_category_dto_collection_query_parameters 
     # @return [Array<(TransactionCategoryDtoListEnvelope, Integer, Hash)>] TransactionCategoryDtoListEnvelope data, response status code and response headers
     def get_transaction_categories_with_http_info(tenant_id, opts = {})
       if @api_client.config.debugging
@@ -440,13 +442,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'transaction_category_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'TransactionCategoryDtoListEnvelope'
@@ -477,6 +484,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [TransactionCategoryDtoCollectionQueryParameters] :transaction_category_dto_collection_query_parameters 
     # @return [Int32Envelope]
     def get_transaction_categories_count(tenant_id, opts = {})
       data, _status_code, _headers = get_transaction_categories_count_with_http_info(tenant_id, opts)
@@ -489,6 +497,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [TransactionCategoryDtoCollectionQueryParameters] :transaction_category_dto_collection_query_parameters 
     # @return [Array<(Int32Envelope, Integer, Hash)>] Int32Envelope data, response status code and response headers
     def get_transaction_categories_count_with_http_info(tenant_id, opts = {})
       if @api_client.config.debugging
@@ -510,13 +519,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'transaction_category_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'Int32Envelope'
@@ -623,6 +637,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [TransactionDtoCollectionQueryParameters] :transaction_dto_collection_query_parameters 
     # @return [TransactionDtoListEnvelope]
     def get_transactions(tenant_id, opts = {})
       data, _status_code, _headers = get_transactions_with_http_info(tenant_id, opts)
@@ -635,6 +650,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [TransactionDtoCollectionQueryParameters] :transaction_dto_collection_query_parameters 
     # @return [Array<(TransactionDtoListEnvelope, Integer, Hash)>] TransactionDtoListEnvelope data, response status code and response headers
     def get_transactions_with_http_info(tenant_id, opts = {})
       if @api_client.config.debugging
@@ -656,13 +672,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'transaction_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'TransactionDtoListEnvelope'
@@ -693,6 +714,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [TransactionDtoCollectionQueryParameters] :transaction_dto_collection_query_parameters 
     # @return [Int32Envelope]
     def get_transactions_count(tenant_id, opts = {})
       data, _status_code, _headers = get_transactions_count_with_http_info(tenant_id, opts)
@@ -705,6 +727,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [TransactionDtoCollectionQueryParameters] :transaction_dto_collection_query_parameters 
     # @return [Array<(Int32Envelope, Integer, Hash)>] Int32Envelope data, response status code and response headers
     def get_transactions_count_with_http_info(tenant_id, opts = {})
       if @api_client.config.debugging
@@ -726,13 +749,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'transaction_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'Int32Envelope'
@@ -764,7 +792,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
-    # @option opts [Array<Operation>] :operation 
+    # @option opts [Array<PatchOperation>] :patch_operation 
     # @return [EmptyEnvelope]
     def patch_transaction(tenant_id, transaction_id, opts = {})
       data, _status_code, _headers = patch_transaction_with_http_info(tenant_id, transaction_id, opts)
@@ -778,7 +806,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
-    # @option opts [Array<Operation>] :operation 
+    # @option opts [Array<PatchOperation>] :patch_operation 
     # @return [Array<(EmptyEnvelope, Integer, Hash)>] EmptyEnvelope data, response status code and response headers
     def patch_transaction_with_http_info(tenant_id, transaction_id, opts = {})
       if @api_client.config.debugging
@@ -815,7 +843,7 @@ module OpenapiClient
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'operation'])
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'patch_operation'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'EmptyEnvelope'
@@ -847,7 +875,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
-    # @option opts [Array<Operation>] :operation 
+    # @option opts [Array<PatchOperation>] :patch_operation 
     # @return [EmptyEnvelope]
     def patch_transaction_category(tenant_id, category_id, opts = {})
       data, _status_code, _headers = patch_transaction_category_with_http_info(tenant_id, category_id, opts)
@@ -861,7 +889,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
-    # @option opts [Array<Operation>] :operation 
+    # @option opts [Array<PatchOperation>] :patch_operation 
     # @return [Array<(EmptyEnvelope, Integer, Hash)>] EmptyEnvelope data, response status code and response headers
     def patch_transaction_category_with_http_info(tenant_id, category_id, opts = {})
       if @api_client.config.debugging
@@ -898,7 +926,7 @@ module OpenapiClient
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'operation'])
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'patch_operation'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'EmptyEnvelope'

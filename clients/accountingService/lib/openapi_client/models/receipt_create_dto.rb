@@ -19,6 +19,8 @@ module OpenapiClient
 
     attr_accessor :timestamp
 
+    attr_accessor :closed
+
     attr_accessor :title
 
     attr_accessor :price_list_id
@@ -52,6 +54,8 @@ module OpenapiClient
     attr_accessor :state_id
 
     attr_accessor :city_id
+
+    attr_accessor :forex_rate
 
     attr_accessor :currency_id
 
@@ -109,13 +113,9 @@ module OpenapiClient
 
     attr_accessor :payment_id
 
-    attr_accessor :forex_rate
-
     attr_accessor :total_amount
 
     attr_accessor :total_amount_in_usd
-
-    attr_accessor :closed
 
     attr_accessor :contact_id
 
@@ -152,6 +152,7 @@ module OpenapiClient
       {
         :'id' => :'id',
         :'timestamp' => :'timestamp',
+        :'closed' => :'closed',
         :'title' => :'title',
         :'price_list_id' => :'priceListId',
         :'description' => :'description',
@@ -169,6 +170,7 @@ module OpenapiClient
         :'country_id' => :'countryId',
         :'state_id' => :'stateId',
         :'city_id' => :'cityId',
+        :'forex_rate' => :'forexRate',
         :'currency_id' => :'currencyId',
         :'total_detail' => :'totalDetail',
         :'total_detail_currency_id' => :'totalDetailCurrencyId',
@@ -197,10 +199,8 @@ module OpenapiClient
         :'cost_calculation_method' => :'costCalculationMethod',
         :'tax_calculation_method' => :'taxCalculationMethod',
         :'payment_id' => :'paymentId',
-        :'forex_rate' => :'forexRate',
         :'total_amount' => :'totalAmount',
         :'total_amount_in_usd' => :'totalAmountInUSD',
-        :'closed' => :'closed',
         :'contact_id' => :'contactId',
         :'receipt_type' => :'receiptType',
         :'order_id' => :'orderId',
@@ -218,6 +218,7 @@ module OpenapiClient
       {
         :'id' => :'String',
         :'timestamp' => :'Time',
+        :'closed' => :'Boolean',
         :'title' => :'String',
         :'price_list_id' => :'String',
         :'description' => :'String',
@@ -235,6 +236,7 @@ module OpenapiClient
         :'country_id' => :'String',
         :'state_id' => :'String',
         :'city_id' => :'String',
+        :'forex_rate' => :'Float',
         :'currency_id' => :'String',
         :'total_detail' => :'Float',
         :'total_detail_currency_id' => :'String',
@@ -263,10 +265,8 @@ module OpenapiClient
         :'cost_calculation_method' => :'String',
         :'tax_calculation_method' => :'String',
         :'payment_id' => :'String',
-        :'forex_rate' => :'Float',
         :'total_amount' => :'Float',
         :'total_amount_in_usd' => :'Float',
-        :'closed' => :'Boolean',
         :'contact_id' => :'String',
         :'receipt_type' => :'String',
         :'order_id' => :'String',
@@ -337,6 +337,10 @@ module OpenapiClient
         self.timestamp = attributes[:'timestamp']
       end
 
+      if attributes.key?(:'closed')
+        self.closed = attributes[:'closed']
+      end
+
       if attributes.key?(:'title')
         self.title = attributes[:'title']
       end
@@ -403,6 +407,10 @@ module OpenapiClient
 
       if attributes.key?(:'city_id')
         self.city_id = attributes[:'city_id']
+      end
+
+      if attributes.key?(:'forex_rate')
+        self.forex_rate = attributes[:'forex_rate']
       end
 
       if attributes.key?(:'currency_id')
@@ -517,20 +525,12 @@ module OpenapiClient
         self.payment_id = attributes[:'payment_id']
       end
 
-      if attributes.key?(:'forex_rate')
-        self.forex_rate = attributes[:'forex_rate']
-      end
-
       if attributes.key?(:'total_amount')
         self.total_amount = attributes[:'total_amount']
       end
 
       if attributes.key?(:'total_amount_in_usd')
         self.total_amount_in_usd = attributes[:'total_amount_in_usd']
-      end
-
-      if attributes.key?(:'closed')
-        self.closed = attributes[:'closed']
       end
 
       if attributes.key?(:'contact_id')
@@ -608,6 +608,7 @@ module OpenapiClient
       self.class == o.class &&
           id == o.id &&
           timestamp == o.timestamp &&
+          closed == o.closed &&
           title == o.title &&
           price_list_id == o.price_list_id &&
           description == o.description &&
@@ -625,6 +626,7 @@ module OpenapiClient
           country_id == o.country_id &&
           state_id == o.state_id &&
           city_id == o.city_id &&
+          forex_rate == o.forex_rate &&
           currency_id == o.currency_id &&
           total_detail == o.total_detail &&
           total_detail_currency_id == o.total_detail_currency_id &&
@@ -653,10 +655,8 @@ module OpenapiClient
           cost_calculation_method == o.cost_calculation_method &&
           tax_calculation_method == o.tax_calculation_method &&
           payment_id == o.payment_id &&
-          forex_rate == o.forex_rate &&
           total_amount == o.total_amount &&
           total_amount_in_usd == o.total_amount_in_usd &&
-          closed == o.closed &&
           contact_id == o.contact_id &&
           receipt_type == o.receipt_type &&
           order_id == o.order_id &&
@@ -672,7 +672,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, timestamp, title, price_list_id, description, individual_id, payment_term_id, organization_id, receiver_tenant_id, first_name, last_name, company_name, billing_email, address_line1, address_line2, postal_code, country_id, state_id, city_id, currency_id, total_detail, total_detail_currency_id, total_profit, total_profit_currency_id, total_discounts, total_discounts_currency_id, total_surcharges, total_surcharges_currency_id, total_shipping_cost, total_shipping_cost_currency_id, total_shipping_tax, total_shipping_tax_currency_id, total_withheld_tax, total_withheld_tax_currency_id, total_tax_base, total_tax_base_currency_id, total_taxes, total_taxes_currency_id, total_global_surcharges, total_global_surcharges_currency_id, total_global_discounts, total_global_discounts_currency_id, total, total_currency_id, cost_calculation_method, tax_calculation_method, payment_id, forex_rate, total_amount, total_amount_in_usd, closed, contact_id, receipt_type, order_id, invoice_id].hash
+      [id, timestamp, closed, title, price_list_id, description, individual_id, payment_term_id, organization_id, receiver_tenant_id, first_name, last_name, company_name, billing_email, address_line1, address_line2, postal_code, country_id, state_id, city_id, forex_rate, currency_id, total_detail, total_detail_currency_id, total_profit, total_profit_currency_id, total_discounts, total_discounts_currency_id, total_surcharges, total_surcharges_currency_id, total_shipping_cost, total_shipping_cost_currency_id, total_shipping_tax, total_shipping_tax_currency_id, total_withheld_tax, total_withheld_tax_currency_id, total_tax_base, total_tax_base_currency_id, total_taxes, total_taxes_currency_id, total_global_surcharges, total_global_surcharges_currency_id, total_global_discounts, total_global_discounts_currency_id, total, total_currency_id, cost_calculation_method, tax_calculation_method, payment_id, total_amount, total_amount_in_usd, contact_id, receipt_type, order_id, invoice_id].hash
     end
 
     # Builds the object from hash

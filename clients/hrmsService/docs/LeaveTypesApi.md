@@ -246,7 +246,8 @@ api_instance = OpenapiClient::LeaveTypesApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  leave_type_dto_collection_query_parameters: OpenapiClient::LeaveTypeDtoCollectionQueryParameters.new # LeaveTypeDtoCollectionQueryParameters | 
 }
 
 begin
@@ -283,6 +284,7 @@ end
 | **tenant_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **leave_type_dto_collection_query_parameters** | [**LeaveTypeDtoCollectionQueryParameters**](LeaveTypeDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -294,7 +296,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -316,7 +318,8 @@ api_instance = OpenapiClient::LeaveTypesApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  leave_type_dto_collection_query_parameters: OpenapiClient::LeaveTypeDtoCollectionQueryParameters.new # LeaveTypeDtoCollectionQueryParameters | 
 }
 
 begin
@@ -353,6 +356,7 @@ end
 | **tenant_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **leave_type_dto_collection_query_parameters** | [**LeaveTypeDtoCollectionQueryParameters**](LeaveTypeDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -364,7 +368,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

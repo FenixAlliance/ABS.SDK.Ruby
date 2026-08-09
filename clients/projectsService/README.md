@@ -81,7 +81,6 @@ Class | Method | HTTP request | Description
 *OpenapiClient::FenixAllianceABSWebApi* | [**account_manage_download_personal_data_post**](docs/FenixAllianceABSWebApi.md#account_manage_download_personal_data_post) | **POST** /Account/Manage/DownloadPersonalData | 
 *OpenapiClient::FenixAllianceABSWebApi* | [**account_manage_link_external_login_post**](docs/FenixAllianceABSWebApi.md#account_manage_link_external_login_post) | **POST** /Account/Manage/LinkExternalLogin | 
 *OpenapiClient::FenixAllianceABSWebApi* | [**account_perform_external_login_post**](docs/FenixAllianceABSWebApi.md#account_perform_external_login_post) | **POST** /Account/PerformExternalLogin | 
-*OpenapiClient::FenixAllianceABSWebApi* | [**api_v2_ai_service_agents_agent_id_agui_post**](docs/FenixAllianceABSWebApi.md#api_v2_ai_service_agents_agent_id_agui_post) | **POST** /api/v2/AIService/Agents/{agentId}/agui | 
 *OpenapiClient::FenixAllianceABSWebApi* | [**forgot_password_post**](docs/FenixAllianceABSWebApi.md#forgot_password_post) | **POST** /forgotPassword | 
 *OpenapiClient::FenixAllianceABSWebApi* | [**health_get**](docs/FenixAllianceABSWebApi.md#health_get) | **GET** /health | 
 *OpenapiClient::FenixAllianceABSWebApi* | [**hello_get**](docs/FenixAllianceABSWebApi.md#hello_get) | **GET** /hello | 
@@ -163,9 +162,10 @@ Class | Method | HTTP request | Description
  - [OpenapiClient::InfoResponse](docs/InfoResponse.md)
  - [OpenapiClient::Int32Envelope](docs/Int32Envelope.md)
  - [OpenapiClient::LoginRequest](docs/LoginRequest.md)
- - [OpenapiClient::Operation](docs/Operation.md)
+ - [OpenapiClient::PatchOperation](docs/PatchOperation.md)
  - [OpenapiClient::ProjectCreateDto](docs/ProjectCreateDto.md)
  - [OpenapiClient::ProjectDto](docs/ProjectDto.md)
+ - [OpenapiClient::ProjectDtoCollectionQueryParameters](docs/ProjectDtoCollectionQueryParameters.md)
  - [OpenapiClient::ProjectDtoEnvelope](docs/ProjectDtoEnvelope.md)
  - [OpenapiClient::ProjectDtoListEnvelope](docs/ProjectDtoListEnvelope.md)
  - [OpenapiClient::ProjectHoursApprovalApproverUpdateDto](docs/ProjectHoursApprovalApproverUpdateDto.md)
@@ -177,11 +177,13 @@ Class | Method | HTTP request | Description
  - [OpenapiClient::ProjectPeriodUpdateDto](docs/ProjectPeriodUpdateDto.md)
  - [OpenapiClient::ProjectTaskCreateDto](docs/ProjectTaskCreateDto.md)
  - [OpenapiClient::ProjectTaskDto](docs/ProjectTaskDto.md)
+ - [OpenapiClient::ProjectTaskDtoCollectionQueryParameters](docs/ProjectTaskDtoCollectionQueryParameters.md)
  - [OpenapiClient::ProjectTaskDtoEnvelope](docs/ProjectTaskDtoEnvelope.md)
  - [OpenapiClient::ProjectTaskDtoListEnvelope](docs/ProjectTaskDtoListEnvelope.md)
  - [OpenapiClient::ProjectTaskUpdateDto](docs/ProjectTaskUpdateDto.md)
  - [OpenapiClient::ProjectTimeLogCreateDto](docs/ProjectTimeLogCreateDto.md)
  - [OpenapiClient::ProjectTimeLogDto](docs/ProjectTimeLogDto.md)
+ - [OpenapiClient::ProjectTimeLogDtoCollectionQueryParameters](docs/ProjectTimeLogDtoCollectionQueryParameters.md)
  - [OpenapiClient::ProjectTimeLogDtoEnvelope](docs/ProjectTimeLogDtoEnvelope.md)
  - [OpenapiClient::ProjectTimeLogDtoListEnvelope](docs/ProjectTimeLogDtoListEnvelope.md)
  - [OpenapiClient::ProjectTimeLogUpdateDto](docs/ProjectTimeLogUpdateDto.md)
@@ -192,6 +194,7 @@ Class | Method | HTTP request | Description
  - [OpenapiClient::ResetPasswordRequest](docs/ResetPasswordRequest.md)
  - [OpenapiClient::TaskCategoryCreateDto](docs/TaskCategoryCreateDto.md)
  - [OpenapiClient::TaskCategoryDto](docs/TaskCategoryDto.md)
+ - [OpenapiClient::TaskCategoryDtoCollectionQueryParameters](docs/TaskCategoryDtoCollectionQueryParameters.md)
  - [OpenapiClient::TaskCategoryDtoListEnvelope](docs/TaskCategoryDtoListEnvelope.md)
  - [OpenapiClient::TaskCategoryUpdateDto](docs/TaskCategoryUpdateDto.md)
  - [OpenapiClient::TaskTypeCreateDto](docs/TaskTypeCreateDto.md)

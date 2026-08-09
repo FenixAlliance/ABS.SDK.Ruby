@@ -695,7 +695,8 @@ api_instance = OpenapiClient::RolesApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  security_role_dto_collection_query_parameters: OpenapiClient::SecurityRoleDtoCollectionQueryParameters.new # SecurityRoleDtoCollectionQueryParameters | 
 }
 
 begin
@@ -732,6 +733,7 @@ end
 | **tenant_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **security_role_dto_collection_query_parameters** | [**SecurityRoleDtoCollectionQueryParameters**](SecurityRoleDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -743,7 +745,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -837,7 +839,8 @@ api_instance = OpenapiClient::RolesApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  security_role_dto_collection_query_parameters: OpenapiClient::SecurityRoleDtoCollectionQueryParameters.new # SecurityRoleDtoCollectionQueryParameters | 
 }
 
 begin
@@ -874,6 +877,7 @@ end
 | **tenant_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **security_role_dto_collection_query_parameters** | [**SecurityRoleDtoCollectionQueryParameters**](SecurityRoleDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -885,13 +889,13 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
 ## patch_role_async
 
-> <EmptyEnvelope> patch_role_async(tenant_id, security_role_id, operation, opts)
+> <EmptyEnvelope> patch_role_async(tenant_id, security_role_id, patch_operation, opts)
 
 Patch an existing role
 
@@ -906,7 +910,7 @@ require 'openapi_client'
 api_instance = OpenapiClient::RolesApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 security_role_id = 'security_role_id_example' # String | 
-operation = [OpenapiClient::Operation.new] # Array<Operation> | 
+patch_operation = [OpenapiClient::PatchOperation.new] # Array<PatchOperation> | 
 opts = {
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example' # String | 
@@ -914,7 +918,7 @@ opts = {
 
 begin
   # Patch an existing role
-  result = api_instance.patch_role_async(tenant_id, security_role_id, operation, opts)
+  result = api_instance.patch_role_async(tenant_id, security_role_id, patch_operation, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling RolesApi->patch_role_async: #{e}"
@@ -925,12 +929,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<EmptyEnvelope>, Integer, Hash)> patch_role_async_with_http_info(tenant_id, security_role_id, operation, opts)
+> <Array(<EmptyEnvelope>, Integer, Hash)> patch_role_async_with_http_info(tenant_id, security_role_id, patch_operation, opts)
 
 ```ruby
 begin
   # Patch an existing role
-  data, status_code, headers = api_instance.patch_role_async_with_http_info(tenant_id, security_role_id, operation, opts)
+  data, status_code, headers = api_instance.patch_role_async_with_http_info(tenant_id, security_role_id, patch_operation, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <EmptyEnvelope>
@@ -945,7 +949,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
 | **security_role_id** | **String** |  |  |
-| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  |  |
+| **patch_operation** | [**Array&lt;PatchOperation&gt;**](PatchOperation.md) |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
 

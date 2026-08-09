@@ -12,6 +12,7 @@ docs/AuthResult.md
 docs/AuthResultEnvelope.md
 docs/CheckerApi.md
 docs/ErrorEnvelope.md
+docs/ExecutionProvenance.md
 docs/FenixAllianceABSWebApi.md
 docs/ForgotPasswordRequest.md
 docs/HttpValidationProblemDetails.md
@@ -56,6 +57,7 @@ lib/openapi_client/models/access_token_response.rb
 lib/openapi_client/models/auth_result.rb
 lib/openapi_client/models/auth_result_envelope.rb
 lib/openapi_client/models/error_envelope.rb
+lib/openapi_client/models/execution_provenance.rb
 lib/openapi_client/models/forgot_password_request.rb
 lib/openapi_client/models/http_validation_problem_details.rb
 lib/openapi_client/models/info_request.rb
@@ -83,4 +85,5 @@ lib/openapi_client/models/user_create_dto.rb
 lib/openapi_client/models/user_create_dto_envelope.rb
 lib/openapi_client/version.rb
 openapi_client.gemspec
+spec/models/execution_provenance_spec.rb
 spec/spec_helper.rb

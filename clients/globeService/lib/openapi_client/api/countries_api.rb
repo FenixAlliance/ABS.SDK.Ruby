@@ -25,6 +25,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [CountryCallingCodeDtoCollectionQueryParameters] :country_calling_code_dto_collection_query_parameters 
     # @return [Int32Envelope]
     def count_calling_codes_by_country_async(country_id, opts = {})
       data, _status_code, _headers = count_calling_codes_by_country_async_with_http_info(country_id, opts)
@@ -37,6 +38,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [CountryCallingCodeDtoCollectionQueryParameters] :country_calling_code_dto_collection_query_parameters 
     # @return [Array<(Int32Envelope, Integer, Hash)>] Int32Envelope data, response status code and response headers
     def count_calling_codes_by_country_async_with_http_info(country_id, opts = {})
       if @api_client.config.debugging
@@ -57,13 +59,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'country_calling_code_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'Int32Envelope'
@@ -95,6 +102,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [CityDtoCollectionQueryParameters] :city_dto_collection_query_parameters 
     # @return [Int32Envelope]
     def count_cities_by_state_async(country_state_id, country_id, opts = {})
       data, _status_code, _headers = count_cities_by_state_async_with_http_info(country_state_id, country_id, opts)
@@ -108,6 +116,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [CityDtoCollectionQueryParameters] :city_dto_collection_query_parameters 
     # @return [Array<(Int32Envelope, Integer, Hash)>] Int32Envelope data, response status code and response headers
     def count_cities_by_state_async_with_http_info(country_state_id, country_id, opts = {})
       if @api_client.config.debugging
@@ -132,13 +141,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'city_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'Int32Envelope'
@@ -168,6 +182,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [CountryDtoCollectionQueryParameters] :country_dto_collection_query_parameters 
     # @return [Int32Envelope]
     def count_countries(opts = {})
       data, _status_code, _headers = count_countries_with_http_info(opts)
@@ -179,6 +194,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [CountryDtoCollectionQueryParameters] :country_dto_collection_query_parameters 
     # @return [Array<(Int32Envelope, Integer, Hash)>] Int32Envelope data, response status code and response headers
     def count_countries_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -195,13 +211,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'country_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'Int32Envelope'
@@ -232,6 +253,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [CountryStateDtoCollectionQueryParameters] :country_state_dto_collection_query_parameters 
     # @return [Int32Envelope]
     def count_country_states_async(country_id, opts = {})
       data, _status_code, _headers = count_country_states_async_with_http_info(country_id, opts)
@@ -244,6 +266,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [CountryStateDtoCollectionQueryParameters] :country_state_dto_collection_query_parameters 
     # @return [Array<(Int32Envelope, Integer, Hash)>] Int32Envelope data, response status code and response headers
     def count_country_states_async_with_http_info(country_id, opts = {})
       if @api_client.config.debugging
@@ -264,13 +287,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'country_state_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'Int32Envelope'
@@ -301,6 +329,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [TimezoneDtoCollectionQueryParameters] :timezone_dto_collection_query_parameters 
     # @return [Int32Envelope]
     def count_timezones_by_country_async(country_id, opts = {})
       data, _status_code, _headers = count_timezones_by_country_async_with_http_info(country_id, opts)
@@ -313,6 +342,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [TimezoneDtoCollectionQueryParameters] :timezone_dto_collection_query_parameters 
     # @return [Array<(Int32Envelope, Integer, Hash)>] Int32Envelope data, response status code and response headers
     def count_timezones_by_country_async_with_http_info(country_id, opts = {})
       if @api_client.config.debugging
@@ -333,13 +363,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'timezone_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'Int32Envelope'
@@ -370,6 +405,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [CountryTopLevelDomainDtoCollectionQueryParameters] :country_top_level_domain_dto_collection_query_parameters 
     # @return [Int32Envelope]
     def count_top_level_domains_by_country_async(country_id, opts = {})
       data, _status_code, _headers = count_top_level_domains_by_country_async_with_http_info(country_id, opts)
@@ -382,6 +418,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [CountryTopLevelDomainDtoCollectionQueryParameters] :country_top_level_domain_dto_collection_query_parameters 
     # @return [Array<(Int32Envelope, Integer, Hash)>] Int32Envelope data, response status code and response headers
     def count_top_level_domains_by_country_async_with_http_info(country_id, opts = {})
       if @api_client.config.debugging
@@ -402,13 +439,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'country_top_level_domain_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'Int32Envelope'
@@ -438,6 +480,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [CountryDtoCollectionQueryParameters] :country_dto_collection_query_parameters 
     # @return [CountryDtoListEnvelope]
     def get_all_countries(opts = {})
       data, _status_code, _headers = get_all_countries_with_http_info(opts)
@@ -449,6 +492,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [CountryDtoCollectionQueryParameters] :country_dto_collection_query_parameters 
     # @return [Array<(CountryDtoListEnvelope, Integer, Hash)>] CountryDtoListEnvelope data, response status code and response headers
     def get_all_countries_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -465,13 +509,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'country_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'CountryDtoListEnvelope'
@@ -502,6 +551,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [CountryCallingCodeDtoCollectionQueryParameters] :country_calling_code_dto_collection_query_parameters 
     # @return [CountryCallingCodeDtoListEnvelope]
     def get_calling_codes_by_country_id_async(country_id, opts = {})
       data, _status_code, _headers = get_calling_codes_by_country_id_async_with_http_info(country_id, opts)
@@ -514,6 +564,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [CountryCallingCodeDtoCollectionQueryParameters] :country_calling_code_dto_collection_query_parameters 
     # @return [Array<(CountryCallingCodeDtoListEnvelope, Integer, Hash)>] CountryCallingCodeDtoListEnvelope data, response status code and response headers
     def get_calling_codes_by_country_id_async_with_http_info(country_id, opts = {})
       if @api_client.config.debugging
@@ -534,13 +585,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'country_calling_code_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'CountryCallingCodeDtoListEnvelope'
@@ -572,6 +628,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [CityDtoCollectionQueryParameters] :city_dto_collection_query_parameters 
     # @return [CityDtoListEnvelope]
     def get_cities_by_country_state_id_async(country_state_id, country_id, opts = {})
       data, _status_code, _headers = get_cities_by_country_state_id_async_with_http_info(country_state_id, country_id, opts)
@@ -585,6 +642,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [CityDtoCollectionQueryParameters] :city_dto_collection_query_parameters 
     # @return [Array<(CityDtoListEnvelope, Integer, Hash)>] CityDtoListEnvelope data, response status code and response headers
     def get_cities_by_country_state_id_async_with_http_info(country_state_id, country_id, opts = {})
       if @api_client.config.debugging
@@ -609,13 +667,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'city_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'CityDtoListEnvelope'
@@ -716,6 +779,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [CountryStateDtoCollectionQueryParameters] :country_state_dto_collection_query_parameters 
     # @return [CountryStateDtoEnvelope]
     def get_country_state_by_id_async(country_state_id, country_id, opts = {})
       data, _status_code, _headers = get_country_state_by_id_async_with_http_info(country_state_id, country_id, opts)
@@ -729,6 +793,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [CountryStateDtoCollectionQueryParameters] :country_state_dto_collection_query_parameters 
     # @return [Array<(CountryStateDtoEnvelope, Integer, Hash)>] CountryStateDtoEnvelope data, response status code and response headers
     def get_country_state_by_id_async_with_http_info(country_state_id, country_id, opts = {})
       if @api_client.config.debugging
@@ -753,13 +818,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'country_state_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'CountryStateDtoEnvelope'
@@ -790,6 +860,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [CountryStateDtoCollectionQueryParameters] :country_state_dto_collection_query_parameters 
     # @return [CountryStateDtoListEnvelope]
     def get_country_states_async(country_id, opts = {})
       data, _status_code, _headers = get_country_states_async_with_http_info(country_id, opts)
@@ -802,6 +873,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [CountryStateDtoCollectionQueryParameters] :country_state_dto_collection_query_parameters 
     # @return [Array<(CountryStateDtoListEnvelope, Integer, Hash)>] CountryStateDtoListEnvelope data, response status code and response headers
     def get_country_states_async_with_http_info(country_id, opts = {})
       if @api_client.config.debugging
@@ -822,13 +894,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'country_state_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'CountryStateDtoListEnvelope'
@@ -859,6 +936,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [CurrencyDtoCollectionQueryParameters] :currency_dto_collection_query_parameters 
     # @return [CurrencyDtoListEnvelope]
     def get_enabled_currencies_by_country_id_async(country_id, opts = {})
       data, _status_code, _headers = get_enabled_currencies_by_country_id_async_with_http_info(country_id, opts)
@@ -871,6 +949,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [CurrencyDtoCollectionQueryParameters] :currency_dto_collection_query_parameters 
     # @return [Array<(CurrencyDtoListEnvelope, Integer, Hash)>] CurrencyDtoListEnvelope data, response status code and response headers
     def get_enabled_currencies_by_country_id_async_with_http_info(country_id, opts = {})
       if @api_client.config.debugging
@@ -891,13 +970,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'currency_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'CurrencyDtoListEnvelope'
@@ -928,6 +1012,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [TimezoneDtoCollectionQueryParameters] :timezone_dto_collection_query_parameters 
     # @return [TimezoneDtoListEnvelope]
     def get_time_zones_by_country_id_async(country_id, opts = {})
       data, _status_code, _headers = get_time_zones_by_country_id_async_with_http_info(country_id, opts)
@@ -940,6 +1025,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [TimezoneDtoCollectionQueryParameters] :timezone_dto_collection_query_parameters 
     # @return [Array<(TimezoneDtoListEnvelope, Integer, Hash)>] TimezoneDtoListEnvelope data, response status code and response headers
     def get_time_zones_by_country_id_async_with_http_info(country_id, opts = {})
       if @api_client.config.debugging
@@ -960,13 +1046,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'timezone_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'TimezoneDtoListEnvelope'
@@ -997,6 +1088,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [CountryTopLevelDomainDtoCollectionQueryParameters] :country_top_level_domain_dto_collection_query_parameters 
     # @return [CountryTopLevelDomainDtoListEnvelope]
     def get_top_level_domains_by_country_id_async(country_id, opts = {})
       data, _status_code, _headers = get_top_level_domains_by_country_id_async_with_http_info(country_id, opts)
@@ -1009,6 +1101,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [CountryTopLevelDomainDtoCollectionQueryParameters] :country_top_level_domain_dto_collection_query_parameters 
     # @return [Array<(CountryTopLevelDomainDtoListEnvelope, Integer, Hash)>] CountryTopLevelDomainDtoListEnvelope data, response status code and response headers
     def get_top_level_domains_by_country_id_async_with_http_info(country_id, opts = {})
       if @api_client.config.debugging
@@ -1029,13 +1122,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'country_top_level_domain_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'CountryTopLevelDomainDtoListEnvelope'

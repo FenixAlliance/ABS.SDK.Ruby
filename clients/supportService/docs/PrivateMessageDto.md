@@ -15,6 +15,9 @@
 | **sent_timestamp** | **Time** |  | [optional] |
 | **read_timestamp** | **Time** |  | [optional] |
 | **received_timestamp** | **Time** |  | [optional] |
+| **social_profile_name** | **String** |  | [optional] |
+| **social_profile_avatar_url** | **String** |  | [optional] |
+| **social_profile_type** | **String** |  | [optional] |
 
 ## Example
 
@@ -32,7 +35,10 @@ instance = OpenapiClient::PrivateMessageDto.new(
   receiver_social_profile_id: null,
   sent_timestamp: null,
   read_timestamp: null,
-  received_timestamp: null
+  received_timestamp: null,
+  social_profile_name: null,
+  social_profile_avatar_url: null,
+  social_profile_type: null
 )
 ```
 

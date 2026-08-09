@@ -8,7 +8,6 @@ All URIs are relative to *https://absuite.net*
 | [**account_manage_download_personal_data_post**](FenixAllianceABSWebApi.md#account_manage_download_personal_data_post) | **POST** /Account/Manage/DownloadPersonalData |  |
 | [**account_manage_link_external_login_post**](FenixAllianceABSWebApi.md#account_manage_link_external_login_post) | **POST** /Account/Manage/LinkExternalLogin |  |
 | [**account_perform_external_login_post**](FenixAllianceABSWebApi.md#account_perform_external_login_post) | **POST** /Account/PerformExternalLogin |  |
-| [**api_v2_ai_service_agents_agent_id_agui_post**](FenixAllianceABSWebApi.md#api_v2_ai_service_agents_agent_id_agui_post) | **POST** /api/v2/AIService/Agents/{agentId}/agui |  |
 | [**forgot_password_post**](FenixAllianceABSWebApi.md#forgot_password_post) | **POST** /forgotPassword |  |
 | [**health_get**](FenixAllianceABSWebApi.md#health_get) | **GET** /health |  |
 | [**hello_get**](FenixAllianceABSWebApi.md#hello_get) | **GET** /hello |  |
@@ -270,67 +269,6 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: multipart/form-data, application/x-www-form-urlencoded
-- **Accept**: Not defined
-
-
-## api_v2_ai_service_agents_agent_id_agui_post
-
-> api_v2_ai_service_agents_agent_id_agui_post(agent_id)
-
-
-
-### Examples
-
-```ruby
-require 'time'
-require 'openapi_client'
-
-api_instance = OpenapiClient::FenixAllianceABSWebApi.new
-agent_id = 'agent_id_example' # String | 
-
-begin
-  
-  api_instance.api_v2_ai_service_agents_agent_id_agui_post(agent_id)
-rescue OpenapiClient::ApiError => e
-  puts "Error when calling FenixAllianceABSWebApi->api_v2_ai_service_agents_agent_id_agui_post: #{e}"
-end
-```
-
-#### Using the api_v2_ai_service_agents_agent_id_agui_post_with_http_info variant
-
-This returns an Array which contains the response data (`nil` in this case), status code and headers.
-
-> <Array(nil, Integer, Hash)> api_v2_ai_service_agents_agent_id_agui_post_with_http_info(agent_id)
-
-```ruby
-begin
-  
-  data, status_code, headers = api_instance.api_v2_ai_service_agents_agent_id_agui_post_with_http_info(agent_id)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => nil
-rescue OpenapiClient::ApiError => e
-  puts "Error when calling FenixAllianceABSWebApi->api_v2_ai_service_agents_agent_id_agui_post_with_http_info: #{e}"
-end
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **agent_id** | **String** |  |  |
-
-### Return type
-
-nil (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
 - **Accept**: Not defined
 
 

@@ -434,7 +434,7 @@ No authorization required
 
 ## get_extended_orders
 
-> <ExtendedOrderDtoListEnvelope> get_extended_orders(tenant_id)
+> <ExtendedOrderDtoListEnvelope> get_extended_orders(tenant_id, opts)
 
 Gets a list of extended orders for a tenant.
 
@@ -448,10 +448,13 @@ require 'openapi_client'
 
 api_instance = OpenapiClient::OrdersApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  extended_order_dto_collection_query_parameters: OpenapiClient::ExtendedOrderDtoCollectionQueryParameters.new # ExtendedOrderDtoCollectionQueryParameters | 
+}
 
 begin
   # Gets a list of extended orders for a tenant.
-  result = api_instance.get_extended_orders(tenant_id)
+  result = api_instance.get_extended_orders(tenant_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling OrdersApi->get_extended_orders: #{e}"
@@ -462,12 +465,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<ExtendedOrderDtoListEnvelope>, Integer, Hash)> get_extended_orders_with_http_info(tenant_id)
+> <Array(<ExtendedOrderDtoListEnvelope>, Integer, Hash)> get_extended_orders_with_http_info(tenant_id, opts)
 
 ```ruby
 begin
   # Gets a list of extended orders for a tenant.
-  data, status_code, headers = api_instance.get_extended_orders_with_http_info(tenant_id)
+  data, status_code, headers = api_instance.get_extended_orders_with_http_info(tenant_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ExtendedOrderDtoListEnvelope>
@@ -481,6 +484,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
+| **extended_order_dto_collection_query_parameters** | [**ExtendedOrderDtoCollectionQueryParameters**](ExtendedOrderDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -492,7 +496,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -648,7 +652,8 @@ api_instance = OpenapiClient::OrdersApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 order_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
-  item_id: '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+  item_id: '38400000-8cf0-11bd-b23e-10b96e4ef00d', # String | 
+  order_line_dto_collection_query_parameters: OpenapiClient::OrderLineDtoCollectionQueryParameters.new # OrderLineDtoCollectionQueryParameters | 
 }
 
 begin
@@ -685,6 +690,7 @@ end
 | **tenant_id** | **String** |  |  |
 | **order_id** | **String** |  |  |
 | **item_id** | **String** |  | [optional] |
+| **order_line_dto_collection_query_parameters** | [**OrderLineDtoCollectionQueryParameters**](OrderLineDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -696,13 +702,13 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
 ## get_order_lines_count
 
-> <Int32Envelope> get_order_lines_count(tenant_id, order_id)
+> <Int32Envelope> get_order_lines_count(tenant_id, order_id, opts)
 
 Gets the count of order lines for an order.
 
@@ -717,10 +723,13 @@ require 'openapi_client'
 api_instance = OpenapiClient::OrdersApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 order_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  order_line_dto_collection_query_parameters: OpenapiClient::OrderLineDtoCollectionQueryParameters.new # OrderLineDtoCollectionQueryParameters | 
+}
 
 begin
   # Gets the count of order lines for an order.
-  result = api_instance.get_order_lines_count(tenant_id, order_id)
+  result = api_instance.get_order_lines_count(tenant_id, order_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling OrdersApi->get_order_lines_count: #{e}"
@@ -731,12 +740,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Int32Envelope>, Integer, Hash)> get_order_lines_count_with_http_info(tenant_id, order_id)
+> <Array(<Int32Envelope>, Integer, Hash)> get_order_lines_count_with_http_info(tenant_id, order_id, opts)
 
 ```ruby
 begin
   # Gets the count of order lines for an order.
-  data, status_code, headers = api_instance.get_order_lines_count_with_http_info(tenant_id, order_id)
+  data, status_code, headers = api_instance.get_order_lines_count_with_http_info(tenant_id, order_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Int32Envelope>
@@ -751,6 +760,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
 | **order_id** | **String** |  |  |
+| **order_line_dto_collection_query_parameters** | [**OrderLineDtoCollectionQueryParameters**](OrderLineDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -762,13 +772,13 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
 ## get_orders
 
-> <OrderDtoListEnvelope> get_orders(tenant_id)
+> <OrderDtoListEnvelope> get_orders(tenant_id, opts)
 
 Gets a list of orders for a tenant.
 
@@ -782,10 +792,13 @@ require 'openapi_client'
 
 api_instance = OpenapiClient::OrdersApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  order_dto_collection_query_parameters: OpenapiClient::OrderDtoCollectionQueryParameters.new # OrderDtoCollectionQueryParameters | 
+}
 
 begin
   # Gets a list of orders for a tenant.
-  result = api_instance.get_orders(tenant_id)
+  result = api_instance.get_orders(tenant_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling OrdersApi->get_orders: #{e}"
@@ -796,12 +809,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OrderDtoListEnvelope>, Integer, Hash)> get_orders_with_http_info(tenant_id)
+> <Array(<OrderDtoListEnvelope>, Integer, Hash)> get_orders_with_http_info(tenant_id, opts)
 
 ```ruby
 begin
   # Gets a list of orders for a tenant.
-  data, status_code, headers = api_instance.get_orders_with_http_info(tenant_id)
+  data, status_code, headers = api_instance.get_orders_with_http_info(tenant_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <OrderDtoListEnvelope>
@@ -815,6 +828,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
+| **order_dto_collection_query_parameters** | [**OrderDtoCollectionQueryParameters**](OrderDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -826,13 +840,13 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
 ## get_orders_count
 
-> <Int32Envelope> get_orders_count(tenant_id)
+> <Int32Envelope> get_orders_count(tenant_id, opts)
 
 Gets the count of orders for a tenant.
 
@@ -846,10 +860,13 @@ require 'openapi_client'
 
 api_instance = OpenapiClient::OrdersApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  order_dto_collection_query_parameters: OpenapiClient::OrderDtoCollectionQueryParameters.new # OrderDtoCollectionQueryParameters | 
+}
 
 begin
   # Gets the count of orders for a tenant.
-  result = api_instance.get_orders_count(tenant_id)
+  result = api_instance.get_orders_count(tenant_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling OrdersApi->get_orders_count: #{e}"
@@ -860,12 +877,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Int32Envelope>, Integer, Hash)> get_orders_count_with_http_info(tenant_id)
+> <Array(<Int32Envelope>, Integer, Hash)> get_orders_count_with_http_info(tenant_id, opts)
 
 ```ruby
 begin
   # Gets the count of orders for a tenant.
-  data, status_code, headers = api_instance.get_orders_count_with_http_info(tenant_id)
+  data, status_code, headers = api_instance.get_orders_count_with_http_info(tenant_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Int32Envelope>
@@ -879,6 +896,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
+| **order_dto_collection_query_parameters** | [**OrderDtoCollectionQueryParameters**](OrderDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -890,7 +908,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -912,7 +930,7 @@ api_instance = OpenapiClient::OrdersApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 order_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
-  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+  patch_operation: [OpenapiClient::PatchOperation.new] # Array<PatchOperation> | 
 }
 
 begin
@@ -948,7 +966,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
 | **order_id** | **String** |  |  |
-| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+| **patch_operation** | [**Array&lt;PatchOperation&gt;**](PatchOperation.md) |  | [optional] |
 
 ### Return type
 
@@ -983,7 +1001,7 @@ tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 order_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 order_line_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
-  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+  patch_operation: [OpenapiClient::PatchOperation.new] # Array<PatchOperation> | 
 }
 
 begin
@@ -1020,7 +1038,7 @@ end
 | **tenant_id** | **String** |  |  |
 | **order_id** | **String** |  |  |
 | **order_line_id** | **String** |  |  |
-| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+| **patch_operation** | [**Array&lt;PatchOperation&gt;**](PatchOperation.md) |  | [optional] |
 
 ### Return type
 

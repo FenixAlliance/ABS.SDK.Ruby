@@ -84,6 +84,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [CourseCompletionCertificateDtoCollectionQueryParameters] :course_completion_certificate_dto_collection_query_parameters 
     # @return [CourseCompletionCertificateDtoIReadOnlyListEnvelope]
     def get_my_certificates_async(opts = {})
       data, _status_code, _headers = get_my_certificates_async_with_http_info(opts)
@@ -94,6 +95,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [CourseCompletionCertificateDtoCollectionQueryParameters] :course_completion_certificate_dto_collection_query_parameters 
     # @return [Array<(CourseCompletionCertificateDtoIReadOnlyListEnvelope, Integer, Hash)>] CourseCompletionCertificateDtoIReadOnlyListEnvelope data, response status code and response headers
     def get_my_certificates_async_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -110,13 +112,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'course_completion_certificate_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'CourseCompletionCertificateDtoIReadOnlyListEnvelope'
@@ -145,6 +152,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [CourseCompletionCertificateDtoCollectionQueryParameters] :course_completion_certificate_dto_collection_query_parameters 
     # @return [Integer]
     def get_my_certificates_count_async(opts = {})
       data, _status_code, _headers = get_my_certificates_count_async_with_http_info(opts)
@@ -155,6 +163,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [CourseCompletionCertificateDtoCollectionQueryParameters] :course_completion_certificate_dto_collection_query_parameters 
     # @return [Array<(Integer, Integer, Hash)>] Integer data, response status code and response headers
     def get_my_certificates_count_async_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -171,13 +180,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'course_completion_certificate_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'Integer'
@@ -206,6 +220,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [CourseEnrollmentDtoCollectionQueryParameters] :course_enrollment_dto_collection_query_parameters 
     # @return [CourseEnrollmentDtoIReadOnlyListEnvelope]
     def get_my_enrollments_async(opts = {})
       data, _status_code, _headers = get_my_enrollments_async_with_http_info(opts)
@@ -216,6 +231,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [CourseEnrollmentDtoCollectionQueryParameters] :course_enrollment_dto_collection_query_parameters 
     # @return [Array<(CourseEnrollmentDtoIReadOnlyListEnvelope, Integer, Hash)>] CourseEnrollmentDtoIReadOnlyListEnvelope data, response status code and response headers
     def get_my_enrollments_async_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -232,13 +248,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'course_enrollment_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'CourseEnrollmentDtoIReadOnlyListEnvelope'
@@ -267,6 +288,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [CourseEnrollmentDtoCollectionQueryParameters] :course_enrollment_dto_collection_query_parameters 
     # @return [Integer]
     def get_my_enrollments_count_async(opts = {})
       data, _status_code, _headers = get_my_enrollments_count_async_with_http_info(opts)
@@ -277,6 +299,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [CourseEnrollmentDtoCollectionQueryParameters] :course_enrollment_dto_collection_query_parameters 
     # @return [Array<(Integer, Integer, Hash)>] Integer data, response status code and response headers
     def get_my_enrollments_count_async_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -293,13 +316,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'course_enrollment_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'Integer'
@@ -389,6 +417,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [CourseDtoCollectionQueryParameters] :course_dto_collection_query_parameters 
     # @return [CourseDtoIReadOnlyListEnvelope]
     def get_my_instructor_courses_async(opts = {})
       data, _status_code, _headers = get_my_instructor_courses_async_with_http_info(opts)
@@ -399,6 +428,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [CourseDtoCollectionQueryParameters] :course_dto_collection_query_parameters 
     # @return [Array<(CourseDtoIReadOnlyListEnvelope, Integer, Hash)>] CourseDtoIReadOnlyListEnvelope data, response status code and response headers
     def get_my_instructor_courses_async_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -415,13 +445,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'course_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'CourseDtoIReadOnlyListEnvelope'
@@ -450,6 +485,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [CourseDtoCollectionQueryParameters] :course_dto_collection_query_parameters 
     # @return [Integer]
     def get_my_instructor_courses_count_async(opts = {})
       data, _status_code, _headers = get_my_instructor_courses_count_async_with_http_info(opts)
@@ -460,6 +496,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [CourseDtoCollectionQueryParameters] :course_dto_collection_query_parameters 
     # @return [Array<(Integer, Integer, Hash)>] Integer data, response status code and response headers
     def get_my_instructor_courses_count_async_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -476,13 +513,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'course_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'Integer'
@@ -511,6 +553,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [InstructorProfileDtoCollectionQueryParameters] :instructor_profile_dto_collection_query_parameters 
     # @return [InstructorProfileDtoIReadOnlyListEnvelope]
     def get_my_instructor_profiles_async(opts = {})
       data, _status_code, _headers = get_my_instructor_profiles_async_with_http_info(opts)
@@ -521,6 +564,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [InstructorProfileDtoCollectionQueryParameters] :instructor_profile_dto_collection_query_parameters 
     # @return [Array<(InstructorProfileDtoIReadOnlyListEnvelope, Integer, Hash)>] InstructorProfileDtoIReadOnlyListEnvelope data, response status code and response headers
     def get_my_instructor_profiles_async_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -537,13 +581,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'instructor_profile_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'InstructorProfileDtoIReadOnlyListEnvelope'
@@ -572,6 +621,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [InstructorProfileDtoCollectionQueryParameters] :instructor_profile_dto_collection_query_parameters 
     # @return [Integer]
     def get_my_instructor_profiles_count_async(opts = {})
       data, _status_code, _headers = get_my_instructor_profiles_count_async_with_http_info(opts)
@@ -582,6 +632,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [InstructorProfileDtoCollectionQueryParameters] :instructor_profile_dto_collection_query_parameters 
     # @return [Array<(Integer, Integer, Hash)>] Integer data, response status code and response headers
     def get_my_instructor_profiles_count_async_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -598,13 +649,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'instructor_profile_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'Integer'
@@ -694,6 +750,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [CourseDtoCollectionQueryParameters] :course_dto_collection_query_parameters 
     # @return [CourseDtoIReadOnlyListEnvelope]
     def get_my_student_courses_async(opts = {})
       data, _status_code, _headers = get_my_student_courses_async_with_http_info(opts)
@@ -704,6 +761,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [CourseDtoCollectionQueryParameters] :course_dto_collection_query_parameters 
     # @return [Array<(CourseDtoIReadOnlyListEnvelope, Integer, Hash)>] CourseDtoIReadOnlyListEnvelope data, response status code and response headers
     def get_my_student_courses_async_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -720,13 +778,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'course_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'CourseDtoIReadOnlyListEnvelope'
@@ -755,6 +818,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [CourseDtoCollectionQueryParameters] :course_dto_collection_query_parameters 
     # @return [Integer]
     def get_my_student_courses_count_async(opts = {})
       data, _status_code, _headers = get_my_student_courses_count_async_with_http_info(opts)
@@ -765,6 +829,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [CourseDtoCollectionQueryParameters] :course_dto_collection_query_parameters 
     # @return [Array<(Integer, Integer, Hash)>] Integer data, response status code and response headers
     def get_my_student_courses_count_async_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -781,13 +846,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'course_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'Integer'
@@ -816,6 +886,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [StudentProfileDtoCollectionQueryParameters] :student_profile_dto_collection_query_parameters 
     # @return [StudentProfileDtoIReadOnlyListEnvelope]
     def get_my_student_profiles_async(opts = {})
       data, _status_code, _headers = get_my_student_profiles_async_with_http_info(opts)
@@ -826,6 +897,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [StudentProfileDtoCollectionQueryParameters] :student_profile_dto_collection_query_parameters 
     # @return [Array<(StudentProfileDtoIReadOnlyListEnvelope, Integer, Hash)>] StudentProfileDtoIReadOnlyListEnvelope data, response status code and response headers
     def get_my_student_profiles_async_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -842,13 +914,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'student_profile_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'StudentProfileDtoIReadOnlyListEnvelope'
@@ -877,6 +954,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [StudentProfileDtoCollectionQueryParameters] :student_profile_dto_collection_query_parameters 
     # @return [Integer]
     def get_my_student_profiles_count_async(opts = {})
       data, _status_code, _headers = get_my_student_profiles_count_async_with_http_info(opts)
@@ -887,6 +965,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [StudentProfileDtoCollectionQueryParameters] :student_profile_dto_collection_query_parameters 
     # @return [Array<(Integer, Integer, Hash)>] Integer data, response status code and response headers
     def get_my_student_profiles_count_async_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -903,13 +982,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'student_profile_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'Integer'

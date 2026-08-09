@@ -60,6 +60,7 @@ module OpenapiClient
     def self.openapi_nullable
       Set.new([
         :'id',
+        :'timestamp',
         :'job_field_id',
         :'job_offer_id',
         :'tenant_id',

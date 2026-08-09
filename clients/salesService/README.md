@@ -81,7 +81,6 @@ Class | Method | HTTP request | Description
 *OpenapiClient::FenixAllianceABSWebApi* | [**account_manage_download_personal_data_post**](docs/FenixAllianceABSWebApi.md#account_manage_download_personal_data_post) | **POST** /Account/Manage/DownloadPersonalData | 
 *OpenapiClient::FenixAllianceABSWebApi* | [**account_manage_link_external_login_post**](docs/FenixAllianceABSWebApi.md#account_manage_link_external_login_post) | **POST** /Account/Manage/LinkExternalLogin | 
 *OpenapiClient::FenixAllianceABSWebApi* | [**account_perform_external_login_post**](docs/FenixAllianceABSWebApi.md#account_perform_external_login_post) | **POST** /Account/PerformExternalLogin | 
-*OpenapiClient::FenixAllianceABSWebApi* | [**api_v2_ai_service_agents_agent_id_agui_post**](docs/FenixAllianceABSWebApi.md#api_v2_ai_service_agents_agent_id_agui_post) | **POST** /api/v2/AIService/Agents/{agentId}/agui | 
 *OpenapiClient::FenixAllianceABSWebApi* | [**forgot_password_post**](docs/FenixAllianceABSWebApi.md#forgot_password_post) | **POST** /forgotPassword | 
 *OpenapiClient::FenixAllianceABSWebApi* | [**health_get**](docs/FenixAllianceABSWebApi.md#health_get) | **GET** /health | 
 *OpenapiClient::FenixAllianceABSWebApi* | [**hello_get**](docs/FenixAllianceABSWebApi.md#hello_get) | **GET** /hello | 
@@ -133,6 +132,7 @@ Class | Method | HTTP request | Description
  - [OpenapiClient::EmptyEnvelope](docs/EmptyEnvelope.md)
  - [OpenapiClient::ErrorEnvelope](docs/ErrorEnvelope.md)
  - [OpenapiClient::ExtendedSalesLiteratureDto](docs/ExtendedSalesLiteratureDto.md)
+ - [OpenapiClient::ExtendedSalesLiteratureDtoCollectionQueryParameters](docs/ExtendedSalesLiteratureDtoCollectionQueryParameters.md)
  - [OpenapiClient::ExtendedSalesLiteratureDtoListEnvelope](docs/ExtendedSalesLiteratureDtoListEnvelope.md)
  - [OpenapiClient::ForgotPasswordRequest](docs/ForgotPasswordRequest.md)
  - [OpenapiClient::HttpValidationProblemDetails](docs/HttpValidationProblemDetails.md)
@@ -142,12 +142,14 @@ Class | Method | HTTP request | Description
  - [OpenapiClient::LoginRequest](docs/LoginRequest.md)
  - [OpenapiClient::LoyaltyProgramCreateDto](docs/LoyaltyProgramCreateDto.md)
  - [OpenapiClient::LoyaltyProgramDto](docs/LoyaltyProgramDto.md)
+ - [OpenapiClient::LoyaltyProgramDtoCollectionQueryParameters](docs/LoyaltyProgramDtoCollectionQueryParameters.md)
  - [OpenapiClient::LoyaltyProgramDtoEnvelope](docs/LoyaltyProgramDtoEnvelope.md)
  - [OpenapiClient::LoyaltyProgramDtoListEnvelope](docs/LoyaltyProgramDtoListEnvelope.md)
  - [OpenapiClient::LoyaltyProgramUpdateDto](docs/LoyaltyProgramUpdateDto.md)
- - [OpenapiClient::Operation](docs/Operation.md)
+ - [OpenapiClient::PatchOperation](docs/PatchOperation.md)
  - [OpenapiClient::PointOfSaleCreateDto](docs/PointOfSaleCreateDto.md)
  - [OpenapiClient::PointOfSaleDto](docs/PointOfSaleDto.md)
+ - [OpenapiClient::PointOfSaleDtoCollectionQueryParameters](docs/PointOfSaleDtoCollectionQueryParameters.md)
  - [OpenapiClient::PointOfSaleDtoEnvelope](docs/PointOfSaleDtoEnvelope.md)
  - [OpenapiClient::PointOfSaleDtoListEnvelope](docs/PointOfSaleDtoListEnvelope.md)
  - [OpenapiClient::PointOfSaleUpdateDto](docs/PointOfSaleUpdateDto.md)
@@ -157,12 +159,14 @@ Class | Method | HTTP request | Description
  - [OpenapiClient::ResetPasswordRequest](docs/ResetPasswordRequest.md)
  - [OpenapiClient::SalesLiteratureCreateDto](docs/SalesLiteratureCreateDto.md)
  - [OpenapiClient::SalesLiteratureDto](docs/SalesLiteratureDto.md)
+ - [OpenapiClient::SalesLiteratureDtoCollectionQueryParameters](docs/SalesLiteratureDtoCollectionQueryParameters.md)
  - [OpenapiClient::SalesLiteratureDtoEnvelope](docs/SalesLiteratureDtoEnvelope.md)
  - [OpenapiClient::SalesLiteratureDtoListEnvelope](docs/SalesLiteratureDtoListEnvelope.md)
  - [OpenapiClient::SalesLiteratureTypeDto](docs/SalesLiteratureTypeDto.md)
  - [OpenapiClient::SalesLiteratureUpdateDto](docs/SalesLiteratureUpdateDto.md)
  - [OpenapiClient::StoreCreateDto](docs/StoreCreateDto.md)
  - [OpenapiClient::StoreDto](docs/StoreDto.md)
+ - [OpenapiClient::StoreDtoCollectionQueryParameters](docs/StoreDtoCollectionQueryParameters.md)
  - [OpenapiClient::StoreDtoEnvelope](docs/StoreDtoEnvelope.md)
  - [OpenapiClient::StoreDtoListEnvelope](docs/StoreDtoListEnvelope.md)
  - [OpenapiClient::StoreUpdateDto](docs/StoreUpdateDto.md)

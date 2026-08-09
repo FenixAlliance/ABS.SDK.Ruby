@@ -11,6 +11,7 @@
 | **social_profile_id** | **String** |  | [optional] |
 | **social_profile_name** | **String** |  | [optional] |
 | **social_profile_avatar_url** | **String** |  | [optional] |
+| **social_profile_type** | **String** |  | [optional] |
 
 ## Example
 
@@ -24,7 +25,8 @@ instance = OpenapiClient::SocialReactionDto.new(
   reaction_value: null,
   social_profile_id: null,
   social_profile_name: null,
-  social_profile_avatar_url: null
+  social_profile_avatar_url: null,
+  social_profile_type: null
 )
 ```
 

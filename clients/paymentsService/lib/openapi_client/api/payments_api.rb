@@ -304,6 +304,7 @@ module OpenapiClient
     # Gets all payments for the current tenant with OData support.
     # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [PaymentDtoCollectionQueryParameters] :payment_dto_collection_query_parameters 
     # @return [PaymentDtoListEnvelope]
     def get_payments_async(tenant_id, opts = {})
       data, _status_code, _headers = get_payments_async_with_http_info(tenant_id, opts)
@@ -314,6 +315,7 @@ module OpenapiClient
     # Gets all payments for the current tenant with OData support.
     # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [PaymentDtoCollectionQueryParameters] :payment_dto_collection_query_parameters 
     # @return [Array<(PaymentDtoListEnvelope, Integer, Hash)>] PaymentDtoListEnvelope data, response status code and response headers
     def get_payments_async_with_http_info(tenant_id, opts = {})
       if @api_client.config.debugging
@@ -334,12 +336,17 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'payment_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'PaymentDtoListEnvelope'
@@ -369,7 +376,7 @@ module OpenapiClient
     # @param tenant_id [String] 
     # @param payment_id [String] 
     # @param [Hash] opts the optional parameters
-    # @option opts [Array<Operation>] :operation 
+    # @option opts [Array<PatchOperation>] :patch_operation 
     # @return [EmptyEnvelope]
     def patch_payment_async(tenant_id, payment_id, opts = {})
       data, _status_code, _headers = patch_payment_async_with_http_info(tenant_id, payment_id, opts)
@@ -381,7 +388,7 @@ module OpenapiClient
     # @param tenant_id [String] 
     # @param payment_id [String] 
     # @param [Hash] opts the optional parameters
-    # @option opts [Array<Operation>] :operation 
+    # @option opts [Array<PatchOperation>] :patch_operation 
     # @return [Array<(EmptyEnvelope, Integer, Hash)>] EmptyEnvelope data, response status code and response headers
     def patch_payment_async_with_http_info(tenant_id, payment_id, opts = {})
       if @api_client.config.debugging
@@ -416,7 +423,7 @@ module OpenapiClient
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'operation'])
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'patch_operation'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'EmptyEnvelope'

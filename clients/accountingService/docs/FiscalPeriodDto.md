@@ -12,6 +12,7 @@
 | **tenant_id** | **String** |  | [optional] |
 | **enrollment_id** | **String** |  | [optional] |
 | **fiscal_year_id** | **String** |  | [optional] |
+| **status** | **String** |  | [optional] |
 
 ## Example
 
@@ -26,7 +27,8 @@ instance = OpenapiClient::FiscalPeriodDto.new(
   to_date: null,
   tenant_id: null,
   enrollment_id: null,
-  fiscal_year_id: null
+  fiscal_year_id: null,
+  status: null
 )
 ```
 

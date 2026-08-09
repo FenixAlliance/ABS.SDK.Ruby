@@ -19,6 +19,95 @@ module OpenapiClient
     def initialize(api_client = ApiClient.default)
       @api_client = api_client
     end
+    # Create a social comment reaction
+    # Creates a new reaction on a specific social comment.
+    # @param social_post_id [String] 
+    # @param comment_id [String] 
+    # @param social_profile_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @option opts [SocialReactionCreateDto] :social_reaction_create_dto 
+    # @return [SocialCommentReactionDtoEnvelope]
+    def create_social_comment_reaction_async(social_post_id, comment_id, social_profile_id, opts = {})
+      data, _status_code, _headers = create_social_comment_reaction_async_with_http_info(social_post_id, comment_id, social_profile_id, opts)
+      data
+    end
+
+    # Create a social comment reaction
+    # Creates a new reaction on a specific social comment.
+    # @param social_post_id [String] 
+    # @param comment_id [String] 
+    # @param social_profile_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @option opts [SocialReactionCreateDto] :social_reaction_create_dto 
+    # @return [Array<(SocialCommentReactionDtoEnvelope, Integer, Hash)>] SocialCommentReactionDtoEnvelope data, response status code and response headers
+    def create_social_comment_reaction_async_with_http_info(social_post_id, comment_id, social_profile_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SocialPostsApi.create_social_comment_reaction_async ...'
+      end
+      # verify the required parameter 'social_post_id' is set
+      if @api_client.config.client_side_validation && social_post_id.nil?
+        fail ArgumentError, "Missing the required parameter 'social_post_id' when calling SocialPostsApi.create_social_comment_reaction_async"
+      end
+      # verify the required parameter 'comment_id' is set
+      if @api_client.config.client_side_validation && comment_id.nil?
+        fail ArgumentError, "Missing the required parameter 'comment_id' when calling SocialPostsApi.create_social_comment_reaction_async"
+      end
+      # verify the required parameter 'social_profile_id' is set
+      if @api_client.config.client_side_validation && social_profile_id.nil?
+        fail ArgumentError, "Missing the required parameter 'social_profile_id' when calling SocialPostsApi.create_social_comment_reaction_async"
+      end
+      # resource path
+      local_var_path = '/api/v2/SocialService/SocialPosts/{socialPostId}/Comments/{commentId}/Reactions'.sub('{' + 'socialPostId' + '}', CGI.escape(social_post_id.to_s)).sub('{' + 'commentId' + '}', CGI.escape(comment_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'socialProfileId'] = social_profile_id
+      query_params[:'api-version'] = opts[:'api_version'] if !opts[:'api_version'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
+      header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'social_reaction_create_dto'])
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'SocialCommentReactionDtoEnvelope'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"SocialPostsApi.create_social_comment_reaction_async",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: SocialPostsApi#create_social_comment_reaction_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Create a social post
     # Creates a new social post for the specified social profile.
     # @param social_profile_id [String] 
@@ -270,7 +359,7 @@ module OpenapiClient
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
     # @option opts [SocialReactionCreateDto] :social_reaction_create_dto 
-    # @return [SocialReactionDtoEnvelope]
+    # @return [SocialPostReactionDtoEnvelope]
     def create_social_post_reaction_async(social_post_id, social_profile_id, opts = {})
       data, _status_code, _headers = create_social_post_reaction_async_with_http_info(social_post_id, social_profile_id, opts)
       data
@@ -284,7 +373,7 @@ module OpenapiClient
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
     # @option opts [SocialReactionCreateDto] :social_reaction_create_dto 
-    # @return [Array<(SocialReactionDtoEnvelope, Integer, Hash)>] SocialReactionDtoEnvelope data, response status code and response headers
+    # @return [Array<(SocialPostReactionDtoEnvelope, Integer, Hash)>] SocialPostReactionDtoEnvelope data, response status code and response headers
     def create_social_post_reaction_async_with_http_info(social_post_id, social_profile_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SocialPostsApi.create_social_post_reaction_async ...'
@@ -323,7 +412,7 @@ module OpenapiClient
       post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'social_reaction_create_dto'])
 
       # return_type
-      return_type = opts[:debug_return_type] || 'SocialReactionDtoEnvelope'
+      return_type = opts[:debug_return_type] || 'SocialPostReactionDtoEnvelope'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -341,6 +430,94 @@ module OpenapiClient
       data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: SocialPostsApi#create_social_post_reaction_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Delete a social comment reaction
+    # Deletes a reaction from a specific social comment.
+    # @param social_post_id [String] 
+    # @param comment_id [String] 
+    # @param reaction_id [String] 
+    # @param social_profile_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @return [EmptyEnvelope]
+    def delete_social_comment_reaction_async(social_post_id, comment_id, reaction_id, social_profile_id, opts = {})
+      data, _status_code, _headers = delete_social_comment_reaction_async_with_http_info(social_post_id, comment_id, reaction_id, social_profile_id, opts)
+      data
+    end
+
+    # Delete a social comment reaction
+    # Deletes a reaction from a specific social comment.
+    # @param social_post_id [String] 
+    # @param comment_id [String] 
+    # @param reaction_id [String] 
+    # @param social_profile_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @return [Array<(EmptyEnvelope, Integer, Hash)>] EmptyEnvelope data, response status code and response headers
+    def delete_social_comment_reaction_async_with_http_info(social_post_id, comment_id, reaction_id, social_profile_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SocialPostsApi.delete_social_comment_reaction_async ...'
+      end
+      # verify the required parameter 'social_post_id' is set
+      if @api_client.config.client_side_validation && social_post_id.nil?
+        fail ArgumentError, "Missing the required parameter 'social_post_id' when calling SocialPostsApi.delete_social_comment_reaction_async"
+      end
+      # verify the required parameter 'comment_id' is set
+      if @api_client.config.client_side_validation && comment_id.nil?
+        fail ArgumentError, "Missing the required parameter 'comment_id' when calling SocialPostsApi.delete_social_comment_reaction_async"
+      end
+      # verify the required parameter 'reaction_id' is set
+      if @api_client.config.client_side_validation && reaction_id.nil?
+        fail ArgumentError, "Missing the required parameter 'reaction_id' when calling SocialPostsApi.delete_social_comment_reaction_async"
+      end
+      # verify the required parameter 'social_profile_id' is set
+      if @api_client.config.client_side_validation && social_profile_id.nil?
+        fail ArgumentError, "Missing the required parameter 'social_profile_id' when calling SocialPostsApi.delete_social_comment_reaction_async"
+      end
+      # resource path
+      local_var_path = '/api/v2/SocialService/SocialPosts/{socialPostId}/Comments/{commentId}/Reactions/{reactionId}'.sub('{' + 'socialPostId' + '}', CGI.escape(social_post_id.to_s)).sub('{' + 'commentId' + '}', CGI.escape(comment_id.to_s)).sub('{' + 'reactionId' + '}', CGI.escape(reaction_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'socialProfileId'] = social_profile_id
+      query_params[:'api-version'] = opts[:'api_version'] if !opts[:'api_version'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'EmptyEnvelope'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"SocialPostsApi.delete_social_comment_reaction_async",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: SocialPostsApi#delete_social_comment_reaction_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -667,6 +844,265 @@ module OpenapiClient
       return data, status_code, headers
     end
 
+    # Get social comment reaction by ID
+    # Retrieves a specific reaction from a social comment by its ID.
+    # @param social_post_id [String] 
+    # @param comment_id [String] 
+    # @param reaction_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @return [SocialCommentReactionDtoEnvelope]
+    def get_social_comment_reaction_async(social_post_id, comment_id, reaction_id, opts = {})
+      data, _status_code, _headers = get_social_comment_reaction_async_with_http_info(social_post_id, comment_id, reaction_id, opts)
+      data
+    end
+
+    # Get social comment reaction by ID
+    # Retrieves a specific reaction from a social comment by its ID.
+    # @param social_post_id [String] 
+    # @param comment_id [String] 
+    # @param reaction_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @return [Array<(SocialCommentReactionDtoEnvelope, Integer, Hash)>] SocialCommentReactionDtoEnvelope data, response status code and response headers
+    def get_social_comment_reaction_async_with_http_info(social_post_id, comment_id, reaction_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SocialPostsApi.get_social_comment_reaction_async ...'
+      end
+      # verify the required parameter 'social_post_id' is set
+      if @api_client.config.client_side_validation && social_post_id.nil?
+        fail ArgumentError, "Missing the required parameter 'social_post_id' when calling SocialPostsApi.get_social_comment_reaction_async"
+      end
+      # verify the required parameter 'comment_id' is set
+      if @api_client.config.client_side_validation && comment_id.nil?
+        fail ArgumentError, "Missing the required parameter 'comment_id' when calling SocialPostsApi.get_social_comment_reaction_async"
+      end
+      # verify the required parameter 'reaction_id' is set
+      if @api_client.config.client_side_validation && reaction_id.nil?
+        fail ArgumentError, "Missing the required parameter 'reaction_id' when calling SocialPostsApi.get_social_comment_reaction_async"
+      end
+      # resource path
+      local_var_path = '/api/v2/SocialService/SocialPosts/{socialPostId}/Comments/{commentId}/Reactions/{reactionId}'.sub('{' + 'socialPostId' + '}', CGI.escape(social_post_id.to_s)).sub('{' + 'commentId' + '}', CGI.escape(comment_id.to_s)).sub('{' + 'reactionId' + '}', CGI.escape(reaction_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'api-version'] = opts[:'api_version'] if !opts[:'api_version'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'SocialCommentReactionDtoEnvelope'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"SocialPostsApi.get_social_comment_reaction_async",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: SocialPostsApi#get_social_comment_reaction_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Get social comment reactions
+    # Retrieves a list of reactions for a specific social comment.
+    # @param social_post_id [String] 
+    # @param comment_id [String] 
+    # @param social_profile_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @option opts [SocialCommentReactionDtoCollectionQueryParameters] :social_comment_reaction_dto_collection_query_parameters 
+    # @return [SocialCommentReactionDtoListEnvelope]
+    def get_social_comment_reactions_async(social_post_id, comment_id, social_profile_id, opts = {})
+      data, _status_code, _headers = get_social_comment_reactions_async_with_http_info(social_post_id, comment_id, social_profile_id, opts)
+      data
+    end
+
+    # Get social comment reactions
+    # Retrieves a list of reactions for a specific social comment.
+    # @param social_post_id [String] 
+    # @param comment_id [String] 
+    # @param social_profile_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @option opts [SocialCommentReactionDtoCollectionQueryParameters] :social_comment_reaction_dto_collection_query_parameters 
+    # @return [Array<(SocialCommentReactionDtoListEnvelope, Integer, Hash)>] SocialCommentReactionDtoListEnvelope data, response status code and response headers
+    def get_social_comment_reactions_async_with_http_info(social_post_id, comment_id, social_profile_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SocialPostsApi.get_social_comment_reactions_async ...'
+      end
+      # verify the required parameter 'social_post_id' is set
+      if @api_client.config.client_side_validation && social_post_id.nil?
+        fail ArgumentError, "Missing the required parameter 'social_post_id' when calling SocialPostsApi.get_social_comment_reactions_async"
+      end
+      # verify the required parameter 'comment_id' is set
+      if @api_client.config.client_side_validation && comment_id.nil?
+        fail ArgumentError, "Missing the required parameter 'comment_id' when calling SocialPostsApi.get_social_comment_reactions_async"
+      end
+      # verify the required parameter 'social_profile_id' is set
+      if @api_client.config.client_side_validation && social_profile_id.nil?
+        fail ArgumentError, "Missing the required parameter 'social_profile_id' when calling SocialPostsApi.get_social_comment_reactions_async"
+      end
+      # resource path
+      local_var_path = '/api/v2/SocialService/SocialPosts/{socialPostId}/Comments/{commentId}/Reactions'.sub('{' + 'socialPostId' + '}', CGI.escape(social_post_id.to_s)).sub('{' + 'commentId' + '}', CGI.escape(comment_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'socialProfileId'] = social_profile_id
+      query_params[:'api-version'] = opts[:'api_version'] if !opts[:'api_version'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
+      header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'social_comment_reaction_dto_collection_query_parameters'])
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'SocialCommentReactionDtoListEnvelope'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"SocialPostsApi.get_social_comment_reactions_async",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: SocialPostsApi#get_social_comment_reactions_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Count social comment reactions
+    # Returns the count of reactions for a specific social comment.
+    # @param social_post_id [String] 
+    # @param comment_id [String] 
+    # @param social_profile_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @option opts [SocialCommentReactionDtoCollectionQueryParameters] :social_comment_reaction_dto_collection_query_parameters 
+    # @return [Int32Envelope]
+    def get_social_comment_reactions_count_async(social_post_id, comment_id, social_profile_id, opts = {})
+      data, _status_code, _headers = get_social_comment_reactions_count_async_with_http_info(social_post_id, comment_id, social_profile_id, opts)
+      data
+    end
+
+    # Count social comment reactions
+    # Returns the count of reactions for a specific social comment.
+    # @param social_post_id [String] 
+    # @param comment_id [String] 
+    # @param social_profile_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @option opts [SocialCommentReactionDtoCollectionQueryParameters] :social_comment_reaction_dto_collection_query_parameters 
+    # @return [Array<(Int32Envelope, Integer, Hash)>] Int32Envelope data, response status code and response headers
+    def get_social_comment_reactions_count_async_with_http_info(social_post_id, comment_id, social_profile_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SocialPostsApi.get_social_comment_reactions_count_async ...'
+      end
+      # verify the required parameter 'social_post_id' is set
+      if @api_client.config.client_side_validation && social_post_id.nil?
+        fail ArgumentError, "Missing the required parameter 'social_post_id' when calling SocialPostsApi.get_social_comment_reactions_count_async"
+      end
+      # verify the required parameter 'comment_id' is set
+      if @api_client.config.client_side_validation && comment_id.nil?
+        fail ArgumentError, "Missing the required parameter 'comment_id' when calling SocialPostsApi.get_social_comment_reactions_count_async"
+      end
+      # verify the required parameter 'social_profile_id' is set
+      if @api_client.config.client_side_validation && social_profile_id.nil?
+        fail ArgumentError, "Missing the required parameter 'social_profile_id' when calling SocialPostsApi.get_social_comment_reactions_count_async"
+      end
+      # resource path
+      local_var_path = '/api/v2/SocialService/SocialPosts/{socialPostId}/Comments/{commentId}/Reactions/Count'.sub('{' + 'socialPostId' + '}', CGI.escape(social_post_id.to_s)).sub('{' + 'commentId' + '}', CGI.escape(comment_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'socialProfileId'] = social_profile_id
+      query_params[:'api-version'] = opts[:'api_version'] if !opts[:'api_version'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
+      header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'social_comment_reaction_dto_collection_query_parameters'])
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'Int32Envelope'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"SocialPostsApi.get_social_comment_reactions_count_async",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: SocialPostsApi#get_social_comment_reactions_count_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Get social post by ID
     # Retrieves a specific social post by its ID.
     # @param social_profile_id [String] 
@@ -824,6 +1260,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [SocialPostAttachmentDtoCollectionQueryParameters] :social_post_attachment_dto_collection_query_parameters 
     # @return [SocialPostAttachmentDtoListEnvelope]
     def get_social_post_attachments_async(social_post_id, opts = {})
       data, _status_code, _headers = get_social_post_attachments_async_with_http_info(social_post_id, opts)
@@ -836,6 +1273,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [SocialPostAttachmentDtoCollectionQueryParameters] :social_post_attachment_dto_collection_query_parameters 
     # @return [Array<(SocialPostAttachmentDtoListEnvelope, Integer, Hash)>] SocialPostAttachmentDtoListEnvelope data, response status code and response headers
     def get_social_post_attachments_async_with_http_info(social_post_id, opts = {})
       if @api_client.config.debugging
@@ -856,13 +1294,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'social_post_attachment_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'SocialPostAttachmentDtoListEnvelope'
@@ -893,6 +1336,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [SocialPostAttachmentDtoCollectionQueryParameters] :social_post_attachment_dto_collection_query_parameters 
     # @return [Int32Envelope]
     def get_social_post_attachments_count_async(social_post_id, opts = {})
       data, _status_code, _headers = get_social_post_attachments_count_async_with_http_info(social_post_id, opts)
@@ -905,6 +1349,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [SocialPostAttachmentDtoCollectionQueryParameters] :social_post_attachment_dto_collection_query_parameters 
     # @return [Array<(Int32Envelope, Integer, Hash)>] Int32Envelope data, response status code and response headers
     def get_social_post_attachments_count_async_with_http_info(social_post_id, opts = {})
       if @api_client.config.debugging
@@ -925,13 +1370,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'social_post_attachment_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'Int32Envelope'
@@ -1043,8 +1493,10 @@ module OpenapiClient
     # @param social_profile_id [String] 
     # @param social_post_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [String] :parent_comment_id 
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [SocialPostCommentDtoCollectionQueryParameters] :social_post_comment_dto_collection_query_parameters 
     # @return [SocialPostCommentDtoListEnvelope]
     def get_social_post_comments_async(social_profile_id, social_post_id, opts = {})
       data, _status_code, _headers = get_social_post_comments_async_with_http_info(social_profile_id, social_post_id, opts)
@@ -1056,8 +1508,10 @@ module OpenapiClient
     # @param social_profile_id [String] 
     # @param social_post_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [String] :parent_comment_id 
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [SocialPostCommentDtoCollectionQueryParameters] :social_post_comment_dto_collection_query_parameters 
     # @return [Array<(SocialPostCommentDtoListEnvelope, Integer, Hash)>] SocialPostCommentDtoListEnvelope data, response status code and response headers
     def get_social_post_comments_async_with_http_info(social_profile_id, social_post_id, opts = {})
       if @api_client.config.debugging
@@ -1077,19 +1531,25 @@ module OpenapiClient
       # query parameters
       query_params = opts[:query_params] || {}
       query_params[:'socialProfileId'] = social_profile_id
+      query_params[:'parentCommentId'] = opts[:'parent_comment_id'] if !opts[:'parent_comment_id'].nil?
       query_params[:'api-version'] = opts[:'api_version'] if !opts[:'api_version'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'social_post_comment_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'SocialPostCommentDtoListEnvelope'
@@ -1119,8 +1579,10 @@ module OpenapiClient
     # @param social_profile_id [String] 
     # @param social_post_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [String] :parent_comment_id 
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [SocialPostCommentDtoCollectionQueryParameters] :social_post_comment_dto_collection_query_parameters 
     # @return [Int32Envelope]
     def get_social_post_comments_count_async(social_profile_id, social_post_id, opts = {})
       data, _status_code, _headers = get_social_post_comments_count_async_with_http_info(social_profile_id, social_post_id, opts)
@@ -1132,8 +1594,10 @@ module OpenapiClient
     # @param social_profile_id [String] 
     # @param social_post_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [String] :parent_comment_id 
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [SocialPostCommentDtoCollectionQueryParameters] :social_post_comment_dto_collection_query_parameters 
     # @return [Array<(Int32Envelope, Integer, Hash)>] Int32Envelope data, response status code and response headers
     def get_social_post_comments_count_async_with_http_info(social_profile_id, social_post_id, opts = {})
       if @api_client.config.debugging
@@ -1153,19 +1617,25 @@ module OpenapiClient
       # query parameters
       query_params = opts[:query_params] || {}
       query_params[:'socialProfileId'] = social_profile_id
+      query_params[:'parentCommentId'] = opts[:'parent_comment_id'] if !opts[:'parent_comment_id'].nil?
       query_params[:'api-version'] = opts[:'api_version'] if !opts[:'api_version'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'social_post_comment_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'Int32Envelope'
@@ -1272,6 +1742,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [SocialPostReactionDtoCollectionQueryParameters] :social_post_reaction_dto_collection_query_parameters 
     # @return [SocialReactionDtoListEnvelope]
     def get_social_post_reactions_async(social_post_id, social_profile_id, opts = {})
       data, _status_code, _headers = get_social_post_reactions_async_with_http_info(social_post_id, social_profile_id, opts)
@@ -1285,6 +1756,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [SocialPostReactionDtoCollectionQueryParameters] :social_post_reaction_dto_collection_query_parameters 
     # @return [Array<(SocialReactionDtoListEnvelope, Integer, Hash)>] SocialReactionDtoListEnvelope data, response status code and response headers
     def get_social_post_reactions_async_with_http_info(social_post_id, social_profile_id, opts = {})
       if @api_client.config.debugging
@@ -1310,13 +1782,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'social_post_reaction_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'SocialReactionDtoListEnvelope'
@@ -1348,6 +1825,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [SocialPostReactionDtoCollectionQueryParameters] :social_post_reaction_dto_collection_query_parameters 
     # @return [Int32Envelope]
     def get_social_post_reactions_count_async(social_post_id, social_profile_id, opts = {})
       data, _status_code, _headers = get_social_post_reactions_count_async_with_http_info(social_post_id, social_profile_id, opts)
@@ -1361,6 +1839,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [SocialPostReactionDtoCollectionQueryParameters] :social_post_reaction_dto_collection_query_parameters 
     # @return [Array<(Int32Envelope, Integer, Hash)>] Int32Envelope data, response status code and response headers
     def get_social_post_reactions_count_async_with_http_info(social_post_id, social_profile_id, opts = {})
       if @api_client.config.debugging
@@ -1386,13 +1865,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'social_post_reaction_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'Int32Envelope'
@@ -1423,6 +1907,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [SocialPostDtoCollectionQueryParameters] :social_post_dto_collection_query_parameters 
     # @return [SocialPostDtoListEnvelope]
     def get_social_posts_async(social_profile_id, opts = {})
       data, _status_code, _headers = get_social_posts_async_with_http_info(social_profile_id, opts)
@@ -1435,6 +1920,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [SocialPostDtoCollectionQueryParameters] :social_post_dto_collection_query_parameters 
     # @return [Array<(SocialPostDtoListEnvelope, Integer, Hash)>] SocialPostDtoListEnvelope data, response status code and response headers
     def get_social_posts_async_with_http_info(social_profile_id, opts = {})
       if @api_client.config.debugging
@@ -1456,13 +1942,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'social_post_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'SocialPostDtoListEnvelope'
@@ -1493,6 +1984,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [SocialPostDtoCollectionQueryParameters] :social_post_dto_collection_query_parameters 
     # @return [Int32Envelope]
     def get_social_posts_count_async(social_profile_id, opts = {})
       data, _status_code, _headers = get_social_posts_count_async_with_http_info(social_profile_id, opts)
@@ -1505,6 +1997,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [SocialPostDtoCollectionQueryParameters] :social_post_dto_collection_query_parameters 
     # @return [Array<(Int32Envelope, Integer, Hash)>] Int32Envelope data, response status code and response headers
     def get_social_posts_count_async_with_http_info(social_profile_id, opts = {})
       if @api_client.config.debugging
@@ -1526,13 +2019,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'social_post_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'Int32Envelope'
@@ -1564,7 +2062,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
-    # @option opts [Array<Operation>] :operation 
+    # @option opts [Array<PatchOperation>] :patch_operation 
     # @return [EmptyEnvelope]
     def patch_social_post_async(social_profile_id, social_post_id, opts = {})
       data, _status_code, _headers = patch_social_post_async_with_http_info(social_profile_id, social_post_id, opts)
@@ -1578,7 +2076,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
-    # @option opts [Array<Operation>] :operation 
+    # @option opts [Array<PatchOperation>] :patch_operation 
     # @return [Array<(EmptyEnvelope, Integer, Hash)>] EmptyEnvelope data, response status code and response headers
     def patch_social_post_async_with_http_info(social_profile_id, social_post_id, opts = {})
       if @api_client.config.debugging
@@ -1615,7 +2113,7 @@ module OpenapiClient
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'operation'])
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'patch_operation'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'EmptyEnvelope'
@@ -1636,6 +2134,101 @@ module OpenapiClient
       data, status_code, headers = @api_client.call_api(:PATCH, local_var_path, new_options)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: SocialPostsApi#patch_social_post_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Update a social comment reaction
+    # Updates an existing reaction on a specific social comment.
+    # @param social_post_id [String] 
+    # @param comment_id [String] 
+    # @param reaction_id [String] 
+    # @param social_profile_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @option opts [SocialReactionUpdateDto] :social_reaction_update_dto 
+    # @return [SocialCommentReactionDtoEnvelope]
+    def update_social_comment_reaction_async(social_post_id, comment_id, reaction_id, social_profile_id, opts = {})
+      data, _status_code, _headers = update_social_comment_reaction_async_with_http_info(social_post_id, comment_id, reaction_id, social_profile_id, opts)
+      data
+    end
+
+    # Update a social comment reaction
+    # Updates an existing reaction on a specific social comment.
+    # @param social_post_id [String] 
+    # @param comment_id [String] 
+    # @param reaction_id [String] 
+    # @param social_profile_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @option opts [SocialReactionUpdateDto] :social_reaction_update_dto 
+    # @return [Array<(SocialCommentReactionDtoEnvelope, Integer, Hash)>] SocialCommentReactionDtoEnvelope data, response status code and response headers
+    def update_social_comment_reaction_async_with_http_info(social_post_id, comment_id, reaction_id, social_profile_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SocialPostsApi.update_social_comment_reaction_async ...'
+      end
+      # verify the required parameter 'social_post_id' is set
+      if @api_client.config.client_side_validation && social_post_id.nil?
+        fail ArgumentError, "Missing the required parameter 'social_post_id' when calling SocialPostsApi.update_social_comment_reaction_async"
+      end
+      # verify the required parameter 'comment_id' is set
+      if @api_client.config.client_side_validation && comment_id.nil?
+        fail ArgumentError, "Missing the required parameter 'comment_id' when calling SocialPostsApi.update_social_comment_reaction_async"
+      end
+      # verify the required parameter 'reaction_id' is set
+      if @api_client.config.client_side_validation && reaction_id.nil?
+        fail ArgumentError, "Missing the required parameter 'reaction_id' when calling SocialPostsApi.update_social_comment_reaction_async"
+      end
+      # verify the required parameter 'social_profile_id' is set
+      if @api_client.config.client_side_validation && social_profile_id.nil?
+        fail ArgumentError, "Missing the required parameter 'social_profile_id' when calling SocialPostsApi.update_social_comment_reaction_async"
+      end
+      # resource path
+      local_var_path = '/api/v2/SocialService/SocialPosts/{socialPostId}/Comments/{commentId}/Reactions/{reactionId}'.sub('{' + 'socialPostId' + '}', CGI.escape(social_post_id.to_s)).sub('{' + 'commentId' + '}', CGI.escape(comment_id.to_s)).sub('{' + 'reactionId' + '}', CGI.escape(reaction_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'socialProfileId'] = social_profile_id
+      query_params[:'api-version'] = opts[:'api_version'] if !opts[:'api_version'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
+      header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'social_reaction_update_dto'])
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'SocialCommentReactionDtoEnvelope'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"SocialPostsApi.update_social_comment_reaction_async",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: SocialPostsApi#update_social_comment_reaction_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -1910,7 +2503,7 @@ module OpenapiClient
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
     # @option opts [SocialReactionUpdateDto] :social_reaction_update_dto 
-    # @return [EmptyEnvelope]
+    # @return [SocialPostReactionDtoEnvelope]
     def update_social_post_reaction_async(social_profile_id, social_post_id, reaction_id, opts = {})
       data, _status_code, _headers = update_social_post_reaction_async_with_http_info(social_profile_id, social_post_id, reaction_id, opts)
       data
@@ -1925,7 +2518,7 @@ module OpenapiClient
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
     # @option opts [SocialReactionUpdateDto] :social_reaction_update_dto 
-    # @return [Array<(EmptyEnvelope, Integer, Hash)>] EmptyEnvelope data, response status code and response headers
+    # @return [Array<(SocialPostReactionDtoEnvelope, Integer, Hash)>] SocialPostReactionDtoEnvelope data, response status code and response headers
     def update_social_post_reaction_async_with_http_info(social_profile_id, social_post_id, reaction_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SocialPostsApi.update_social_post_reaction_async ...'
@@ -1968,7 +2561,7 @@ module OpenapiClient
       post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'social_reaction_update_dto'])
 
       # return_type
-      return_type = opts[:debug_return_type] || 'EmptyEnvelope'
+      return_type = opts[:debug_return_type] || 'SocialPostReactionDtoEnvelope'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -1986,6 +2579,90 @@ module OpenapiClient
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path, new_options)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: SocialPostsApi#update_social_post_reaction_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Upload a social post image attachment
+    # Uploads an image and attaches it to a social post, storing the bytes through the storage spine.
+    # @param social_post_id [String] 
+    # @param social_profile_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @option opts [File] :file 
+    # @return [SocialPostAttachmentDtoEnvelope]
+    def upload_social_post_image_attachment_async(social_post_id, social_profile_id, opts = {})
+      data, _status_code, _headers = upload_social_post_image_attachment_async_with_http_info(social_post_id, social_profile_id, opts)
+      data
+    end
+
+    # Upload a social post image attachment
+    # Uploads an image and attaches it to a social post, storing the bytes through the storage spine.
+    # @param social_post_id [String] 
+    # @param social_profile_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :api_version 
+    # @option opts [String] :x_api_version 
+    # @option opts [File] :file 
+    # @return [Array<(SocialPostAttachmentDtoEnvelope, Integer, Hash)>] SocialPostAttachmentDtoEnvelope data, response status code and response headers
+    def upload_social_post_image_attachment_async_with_http_info(social_post_id, social_profile_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SocialPostsApi.upload_social_post_image_attachment_async ...'
+      end
+      # verify the required parameter 'social_post_id' is set
+      if @api_client.config.client_side_validation && social_post_id.nil?
+        fail ArgumentError, "Missing the required parameter 'social_post_id' when calling SocialPostsApi.upload_social_post_image_attachment_async"
+      end
+      # verify the required parameter 'social_profile_id' is set
+      if @api_client.config.client_side_validation && social_profile_id.nil?
+        fail ArgumentError, "Missing the required parameter 'social_profile_id' when calling SocialPostsApi.upload_social_post_image_attachment_async"
+      end
+      # resource path
+      local_var_path = '/api/v2/SocialService/SocialPosts/{socialPostId}/Attachments/Image'.sub('{' + 'socialPostId' + '}', CGI.escape(social_post_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'socialProfileId'] = social_profile_id
+      query_params[:'api-version'] = opts[:'api_version'] if !opts[:'api_version'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['multipart/form-data', 'application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
+      header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+      form_params['file'] = opts[:'file'] if !opts[:'file'].nil?
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'SocialPostAttachmentDtoEnvelope'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"SocialPostsApi.upload_social_post_image_attachment_async",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: SocialPostsApi#upload_social_post_image_attachment_async\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

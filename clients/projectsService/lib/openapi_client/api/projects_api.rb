@@ -611,6 +611,7 @@ module OpenapiClient
     # @param project_id [String] 
     # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [TaskCategoryDtoCollectionQueryParameters] :task_category_dto_collection_query_parameters 
     # @return [TaskCategoryDtoListEnvelope]
     def get_project_task_categories_async(project_id, tenant_id, opts = {})
       data, _status_code, _headers = get_project_task_categories_async_with_http_info(project_id, tenant_id, opts)
@@ -622,6 +623,7 @@ module OpenapiClient
     # @param project_id [String] 
     # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [TaskCategoryDtoCollectionQueryParameters] :task_category_dto_collection_query_parameters 
     # @return [Array<(TaskCategoryDtoListEnvelope, Integer, Hash)>] TaskCategoryDtoListEnvelope data, response status code and response headers
     def get_project_task_categories_async_with_http_info(project_id, tenant_id, opts = {})
       if @api_client.config.debugging
@@ -646,12 +648,17 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'task_category_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'TaskCategoryDtoListEnvelope'
@@ -681,6 +688,7 @@ module OpenapiClient
     # @param project_id [String] 
     # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [TaskCategoryDtoCollectionQueryParameters] :task_category_dto_collection_query_parameters 
     # @return [Int32Envelope]
     def get_project_task_categories_count_async(project_id, tenant_id, opts = {})
       data, _status_code, _headers = get_project_task_categories_count_async_with_http_info(project_id, tenant_id, opts)
@@ -692,6 +700,7 @@ module OpenapiClient
     # @param project_id [String] 
     # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [TaskCategoryDtoCollectionQueryParameters] :task_category_dto_collection_query_parameters 
     # @return [Array<(Int32Envelope, Integer, Hash)>] Int32Envelope data, response status code and response headers
     def get_project_task_categories_count_async_with_http_info(project_id, tenant_id, opts = {})
       if @api_client.config.debugging
@@ -716,12 +725,17 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'task_category_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'Int32Envelope'
@@ -751,6 +765,7 @@ module OpenapiClient
     # @param project_id [String] 
     # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [ProjectTimeLogDtoCollectionQueryParameters] :project_time_log_dto_collection_query_parameters 
     # @return [Int32Envelope]
     def get_project_time_logs_count_async(project_id, tenant_id, opts = {})
       data, _status_code, _headers = get_project_time_logs_count_async_with_http_info(project_id, tenant_id, opts)
@@ -762,6 +777,7 @@ module OpenapiClient
     # @param project_id [String] 
     # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [ProjectTimeLogDtoCollectionQueryParameters] :project_time_log_dto_collection_query_parameters 
     # @return [Array<(Int32Envelope, Integer, Hash)>] Int32Envelope data, response status code and response headers
     def get_project_time_logs_count_async_with_http_info(project_id, tenant_id, opts = {})
       if @api_client.config.debugging
@@ -786,12 +802,17 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'project_time_log_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'Int32Envelope'
@@ -820,6 +841,7 @@ module OpenapiClient
     # Gets all projects for the current tenant with OData support.
     # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [ProjectDtoCollectionQueryParameters] :project_dto_collection_query_parameters 
     # @return [ProjectDtoListEnvelope]
     def get_projects_by_tenant_id_async(tenant_id, opts = {})
       data, _status_code, _headers = get_projects_by_tenant_id_async_with_http_info(tenant_id, opts)
@@ -830,6 +852,7 @@ module OpenapiClient
     # Gets all projects for the current tenant with OData support.
     # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [ProjectDtoCollectionQueryParameters] :project_dto_collection_query_parameters 
     # @return [Array<(ProjectDtoListEnvelope, Integer, Hash)>] ProjectDtoListEnvelope data, response status code and response headers
     def get_projects_by_tenant_id_async_with_http_info(tenant_id, opts = {})
       if @api_client.config.debugging
@@ -850,12 +873,17 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'project_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'ProjectDtoListEnvelope'
@@ -884,6 +912,7 @@ module OpenapiClient
     # Gets the count of projects for the current tenant.
     # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [ProjectDtoCollectionQueryParameters] :project_dto_collection_query_parameters 
     # @return [Int32Envelope]
     def get_projects_count_by_tenant_id_async(tenant_id, opts = {})
       data, _status_code, _headers = get_projects_count_by_tenant_id_async_with_http_info(tenant_id, opts)
@@ -894,6 +923,7 @@ module OpenapiClient
     # Gets the count of projects for the current tenant.
     # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [ProjectDtoCollectionQueryParameters] :project_dto_collection_query_parameters 
     # @return [Array<(Int32Envelope, Integer, Hash)>] Int32Envelope data, response status code and response headers
     def get_projects_count_by_tenant_id_async_with_http_info(tenant_id, opts = {})
       if @api_client.config.debugging
@@ -914,12 +944,17 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'project_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'Int32Envelope'
@@ -949,6 +984,7 @@ module OpenapiClient
     # @param project_id [String] 
     # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [ProjectTaskDtoCollectionQueryParameters] :project_task_dto_collection_query_parameters 
     # @return [ProjectTaskDtoListEnvelope]
     def get_tasks_for_project_async(project_id, tenant_id, opts = {})
       data, _status_code, _headers = get_tasks_for_project_async_with_http_info(project_id, tenant_id, opts)
@@ -960,6 +996,7 @@ module OpenapiClient
     # @param project_id [String] 
     # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [ProjectTaskDtoCollectionQueryParameters] :project_task_dto_collection_query_parameters 
     # @return [Array<(ProjectTaskDtoListEnvelope, Integer, Hash)>] ProjectTaskDtoListEnvelope data, response status code and response headers
     def get_tasks_for_project_async_with_http_info(project_id, tenant_id, opts = {})
       if @api_client.config.debugging
@@ -984,12 +1021,17 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'project_task_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'ProjectTaskDtoListEnvelope'
@@ -1019,6 +1061,7 @@ module OpenapiClient
     # @param project_id [String] 
     # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [ProjectTaskDtoCollectionQueryParameters] :project_task_dto_collection_query_parameters 
     # @return [Int32Envelope]
     def get_tasks_for_project_count_async(project_id, tenant_id, opts = {})
       data, _status_code, _headers = get_tasks_for_project_count_async_with_http_info(project_id, tenant_id, opts)
@@ -1030,6 +1073,7 @@ module OpenapiClient
     # @param project_id [String] 
     # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [ProjectTaskDtoCollectionQueryParameters] :project_task_dto_collection_query_parameters 
     # @return [Array<(Int32Envelope, Integer, Hash)>] Int32Envelope data, response status code and response headers
     def get_tasks_for_project_count_async_with_http_info(project_id, tenant_id, opts = {})
       if @api_client.config.debugging
@@ -1054,12 +1098,17 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'project_task_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'Int32Envelope'
@@ -1089,6 +1138,7 @@ module OpenapiClient
     # @param project_id [String] 
     # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [ProjectTimeLogDtoCollectionQueryParameters] :project_time_log_dto_collection_query_parameters 
     # @return [ProjectTimeLogDtoListEnvelope]
     def get_time_logs_for_project_async(project_id, tenant_id, opts = {})
       data, _status_code, _headers = get_time_logs_for_project_async_with_http_info(project_id, tenant_id, opts)
@@ -1100,6 +1150,7 @@ module OpenapiClient
     # @param project_id [String] 
     # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [ProjectTimeLogDtoCollectionQueryParameters] :project_time_log_dto_collection_query_parameters 
     # @return [Array<(ProjectTimeLogDtoListEnvelope, Integer, Hash)>] ProjectTimeLogDtoListEnvelope data, response status code and response headers
     def get_time_logs_for_project_async_with_http_info(project_id, tenant_id, opts = {})
       if @api_client.config.debugging
@@ -1124,12 +1175,17 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'project_time_log_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'ProjectTimeLogDtoListEnvelope'
@@ -1159,7 +1215,7 @@ module OpenapiClient
     # @param project_id [String] 
     # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
-    # @option opts [Array<Operation>] :operation 
+    # @option opts [Array<PatchOperation>] :patch_operation 
     # @return [EmptyEnvelope]
     def patch_project_async(project_id, tenant_id, opts = {})
       data, _status_code, _headers = patch_project_async_with_http_info(project_id, tenant_id, opts)
@@ -1171,7 +1227,7 @@ module OpenapiClient
     # @param project_id [String] 
     # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
-    # @option opts [Array<Operation>] :operation 
+    # @option opts [Array<PatchOperation>] :patch_operation 
     # @return [Array<(EmptyEnvelope, Integer, Hash)>] EmptyEnvelope data, response status code and response headers
     def patch_project_async_with_http_info(project_id, tenant_id, opts = {})
       if @api_client.config.debugging
@@ -1206,7 +1262,7 @@ module OpenapiClient
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'operation'])
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'patch_operation'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'EmptyEnvelope'
@@ -1237,7 +1293,7 @@ module OpenapiClient
     # @param project_period_id [String] 
     # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
-    # @option opts [Array<Operation>] :operation 
+    # @option opts [Array<PatchOperation>] :patch_operation 
     # @return [EmptyEnvelope]
     def patch_project_period_async(project_id, project_period_id, tenant_id, opts = {})
       data, _status_code, _headers = patch_project_period_async_with_http_info(project_id, project_period_id, tenant_id, opts)
@@ -1250,7 +1306,7 @@ module OpenapiClient
     # @param project_period_id [String] 
     # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
-    # @option opts [Array<Operation>] :operation 
+    # @option opts [Array<PatchOperation>] :patch_operation 
     # @return [Array<(EmptyEnvelope, Integer, Hash)>] EmptyEnvelope data, response status code and response headers
     def patch_project_period_async_with_http_info(project_id, project_period_id, tenant_id, opts = {})
       if @api_client.config.debugging
@@ -1289,7 +1345,7 @@ module OpenapiClient
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'operation'])
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'patch_operation'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'EmptyEnvelope'
@@ -1320,7 +1376,7 @@ module OpenapiClient
     # @param project_task_id [String] 
     # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
-    # @option opts [Array<Operation>] :operation 
+    # @option opts [Array<PatchOperation>] :patch_operation 
     # @return [EmptyEnvelope]
     def patch_task_for_project_async(project_id, project_task_id, tenant_id, opts = {})
       data, _status_code, _headers = patch_task_for_project_async_with_http_info(project_id, project_task_id, tenant_id, opts)
@@ -1333,7 +1389,7 @@ module OpenapiClient
     # @param project_task_id [String] 
     # @param tenant_id [String] 
     # @param [Hash] opts the optional parameters
-    # @option opts [Array<Operation>] :operation 
+    # @option opts [Array<PatchOperation>] :patch_operation 
     # @return [Array<(EmptyEnvelope, Integer, Hash)>] EmptyEnvelope data, response status code and response headers
     def patch_task_for_project_async_with_http_info(project_id, project_task_id, tenant_id, opts = {})
       if @api_client.config.debugging
@@ -1372,7 +1428,7 @@ module OpenapiClient
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'operation'])
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'patch_operation'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'EmptyEnvelope'

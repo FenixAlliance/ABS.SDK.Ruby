@@ -5,6 +5,7 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **id** | **String** |  | [optional] |
+| **timestamp** | **Time** |  | [optional] |
 | **tenant_id** | **String** |  | [optional] |
 | **enrollment_id** | **String** |  | [optional] |
 | **journal_entry_id** | **String** |  | [optional] |
@@ -23,7 +24,6 @@
 | **forex_rates_snapshot** | **String** |  | [optional] |
 | **cost_centre_id** | **String** |  | [optional] |
 | **project_id** | **String** |  | [optional] |
-| **timestamp** | **Time** |  | [optional] |
 | **debit** | **Float** |  | [optional][readonly] |
 | **credit** | **Float** |  | [optional][readonly] |
 | **amount** | [**Money**](Money.md) |  | [optional] |
@@ -36,6 +36,7 @@ require 'openapi_client'
 
 instance = OpenapiClient::AccountingEntryDto.new(
   id: null,
+  timestamp: null,
   tenant_id: null,
   enrollment_id: null,
   journal_entry_id: null,
@@ -54,7 +55,6 @@ instance = OpenapiClient::AccountingEntryDto.new(
   forex_rates_snapshot: null,
   cost_centre_id: null,
   project_id: null,
-  timestamp: null,
   debit: null,
   credit: null,
   amount: null,

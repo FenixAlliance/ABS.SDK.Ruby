@@ -27,6 +27,34 @@ module OpenapiClient
 
     attr_accessor :social_profile_id
 
+    attr_accessor :body_html
+
+    attr_accessor :body_format
+
+    attr_accessor :background_style
+
+    class EnumAttributeValidator
+      attr_reader :datatype
+      attr_reader :allowable_values
+
+      def initialize(datatype, allowable_values)
+        @allowable_values = allowable_values.map do |value|
+          case datatype.to_s
+          when /Integer/i
+            value.to_i
+          when /Float/i
+            value.to_f
+          else
+            value
+          end
+        end
+      end
+
+      def valid?(value)
+        !value || allowable_values.include?(value)
+      end
+    end
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -35,7 +63,10 @@ module OpenapiClient
         :'title' => :'title',
         :'message' => :'message',
         :'social_feed_id' => :'socialFeedId',
-        :'social_profile_id' => :'socialProfileId'
+        :'social_profile_id' => :'socialProfileId',
+        :'body_html' => :'bodyHtml',
+        :'body_format' => :'bodyFormat',
+        :'background_style' => :'backgroundStyle'
       }
     end
 
@@ -52,7 +83,10 @@ module OpenapiClient
         :'title' => :'String',
         :'message' => :'String',
         :'social_feed_id' => :'String',
-        :'social_profile_id' => :'String'
+        :'social_profile_id' => :'String',
+        :'body_html' => :'String',
+        :'body_format' => :'String',
+        :'background_style' => :'String'
       }
     end
 
@@ -62,7 +96,10 @@ module OpenapiClient
         :'title',
         :'message',
         :'social_feed_id',
-        :'social_profile_id'
+        :'social_profile_id',
+        :'body_html',
+        :'body_format',
+        :'background_style'
       ])
     end
 
@@ -104,6 +141,18 @@ module OpenapiClient
       if attributes.key?(:'social_profile_id')
         self.social_profile_id = attributes[:'social_profile_id']
       end
+
+      if attributes.key?(:'body_html')
+        self.body_html = attributes[:'body_html']
+      end
+
+      if attributes.key?(:'body_format')
+        self.body_format = attributes[:'body_format']
+      end
+
+      if attributes.key?(:'background_style')
+        self.background_style = attributes[:'background_style']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -111,6 +160,14 @@ module OpenapiClient
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
       invalid_properties = Array.new
+      if !@body_html.nil? && @body_html.to_s.length > 8000
+        invalid_properties.push('invalid value for "body_html", the character length must be smaller than or equal to 8000.')
+      end
+
+      if !@background_style.nil? && @background_style.to_s.length > 64
+        invalid_properties.push('invalid value for "background_style", the character length must be smaller than or equal to 64.')
+      end
+
       invalid_properties
     end
 
@@ -118,7 +175,41 @@ module OpenapiClient
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
+      return false if !@body_html.nil? && @body_html.to_s.length > 8000
+      body_format_validator = EnumAttributeValidator.new('String', ["PlainText", "Html"])
+      return false unless body_format_validator.valid?(@body_format)
+      return false if !@background_style.nil? && @background_style.to_s.length > 64
       true
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] body_html Value to be assigned
+    def body_html=(body_html)
+      if !body_html.nil? && body_html.to_s.length > 8000
+        fail ArgumentError, 'invalid value for "body_html", the character length must be smaller than or equal to 8000.'
+      end
+
+      @body_html = body_html
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] body_format Object to be assigned
+    def body_format=(body_format)
+      validator = EnumAttributeValidator.new('String', ["PlainText", "Html"])
+      unless validator.valid?(body_format)
+        fail ArgumentError, "invalid value for \"body_format\", must be one of #{validator.allowable_values}."
+      end
+      @body_format = body_format
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] background_style Value to be assigned
+    def background_style=(background_style)
+      if !background_style.nil? && background_style.to_s.length > 64
+        fail ArgumentError, 'invalid value for "background_style", the character length must be smaller than or equal to 64.'
+      end
+
+      @background_style = background_style
     end
 
     # Checks equality by comparing each attribute.
@@ -131,7 +222,10 @@ module OpenapiClient
           title == o.title &&
           message == o.message &&
           social_feed_id == o.social_feed_id &&
-          social_profile_id == o.social_profile_id
+          social_profile_id == o.social_profile_id &&
+          body_html == o.body_html &&
+          body_format == o.body_format &&
+          background_style == o.background_style
     end
 
     # @see the `==` method
@@ -143,7 +237,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, timestamp, title, message, social_feed_id, social_profile_id].hash
+      [id, timestamp, title, message, social_feed_id, social_profile_id, body_html, body_format, background_style].hash
     end
 
     # Builds the object from hash

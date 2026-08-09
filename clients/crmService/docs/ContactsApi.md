@@ -574,7 +574,8 @@ api_instance = OpenapiClient::ContactsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  contact_dto_collection_query_parameters: OpenapiClient::ContactDtoCollectionQueryParameters.new # ContactDtoCollectionQueryParameters | 
 }
 
 begin
@@ -611,6 +612,7 @@ end
 | **tenant_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **contact_dto_collection_query_parameters** | [**ContactDtoCollectionQueryParameters**](ContactDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -622,7 +624,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -644,7 +646,8 @@ api_instance = OpenapiClient::ContactsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  contact_dto_collection_query_parameters: OpenapiClient::ContactDtoCollectionQueryParameters.new # ContactDtoCollectionQueryParameters | 
 }
 
 begin
@@ -681,6 +684,7 @@ end
 | **tenant_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **contact_dto_collection_query_parameters** | [**ContactDtoCollectionQueryParameters**](ContactDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -692,7 +696,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -786,7 +790,8 @@ api_instance = OpenapiClient::ContactsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  contact_dto_collection_query_parameters: OpenapiClient::ContactDtoCollectionQueryParameters.new # ContactDtoCollectionQueryParameters | 
 }
 
 begin
@@ -823,6 +828,7 @@ end
 | **tenant_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **contact_dto_collection_query_parameters** | [**ContactDtoCollectionQueryParameters**](ContactDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -834,7 +840,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -856,7 +862,8 @@ api_instance = OpenapiClient::ContactsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  contact_dto_collection_query_parameters: OpenapiClient::ContactDtoCollectionQueryParameters.new # ContactDtoCollectionQueryParameters | 
 }
 
 begin
@@ -893,6 +900,7 @@ end
 | **tenant_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **contact_dto_collection_query_parameters** | [**ContactDtoCollectionQueryParameters**](ContactDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -904,7 +912,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -1143,7 +1151,8 @@ tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 contact_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  contact_email_dto_collection_query_parameters: OpenapiClient::ContactEmailDtoCollectionQueryParameters.new # ContactEmailDtoCollectionQueryParameters | 
 }
 
 begin
@@ -1181,6 +1190,7 @@ end
 | **contact_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **contact_email_dto_collection_query_parameters** | [**ContactEmailDtoCollectionQueryParameters**](ContactEmailDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1192,7 +1202,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -1215,7 +1225,8 @@ tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 contact_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  contact_email_dto_collection_query_parameters: OpenapiClient::ContactEmailDtoCollectionQueryParameters.new # ContactEmailDtoCollectionQueryParameters | 
 }
 
 begin
@@ -1253,6 +1264,7 @@ end
 | **contact_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **contact_email_dto_collection_query_parameters** | [**ContactEmailDtoCollectionQueryParameters**](ContactEmailDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1264,7 +1276,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -1430,7 +1442,8 @@ api_instance = OpenapiClient::ContactsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  contact_dto_collection_query_parameters: OpenapiClient::ContactDtoCollectionQueryParameters.new # ContactDtoCollectionQueryParameters | 
 }
 
 begin
@@ -1467,6 +1480,7 @@ end
 | **tenant_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **contact_dto_collection_query_parameters** | [**ContactDtoCollectionQueryParameters**](ContactDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1478,7 +1492,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -1500,7 +1514,8 @@ api_instance = OpenapiClient::ContactsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  contact_dto_collection_query_parameters: OpenapiClient::ContactDtoCollectionQueryParameters.new # ContactDtoCollectionQueryParameters | 
 }
 
 begin
@@ -1537,6 +1552,7 @@ end
 | **tenant_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **contact_dto_collection_query_parameters** | [**ContactDtoCollectionQueryParameters**](ContactDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1548,7 +1564,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -1570,7 +1586,8 @@ api_instance = OpenapiClient::ContactsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  extended_contact_dto_collection_query_parameters: OpenapiClient::ExtendedContactDtoCollectionQueryParameters.new # ExtendedContactDtoCollectionQueryParameters | 
 }
 
 begin
@@ -1607,6 +1624,7 @@ end
 | **tenant_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **extended_contact_dto_collection_query_parameters** | [**ExtendedContactDtoCollectionQueryParameters**](ExtendedContactDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1618,7 +1636,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -1640,7 +1658,8 @@ api_instance = OpenapiClient::ContactsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  extended_contact_dto_collection_query_parameters: OpenapiClient::ExtendedContactDtoCollectionQueryParameters.new # ExtendedContactDtoCollectionQueryParameters | 
 }
 
 begin
@@ -1677,6 +1696,7 @@ end
 | **tenant_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **extended_contact_dto_collection_query_parameters** | [**ExtendedContactDtoCollectionQueryParameters**](ExtendedContactDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1688,7 +1708,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -1782,7 +1802,8 @@ api_instance = OpenapiClient::ContactsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  extended_contact_dto_collection_query_parameters: OpenapiClient::ExtendedContactDtoCollectionQueryParameters.new # ExtendedContactDtoCollectionQueryParameters | 
 }
 
 begin
@@ -1819,6 +1840,7 @@ end
 | **tenant_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **extended_contact_dto_collection_query_parameters** | [**ExtendedContactDtoCollectionQueryParameters**](ExtendedContactDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1830,7 +1852,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -2213,7 +2235,8 @@ tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 contact_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  contact_profile_dto_collection_query_parameters: OpenapiClient::ContactProfileDtoCollectionQueryParameters.new # ContactProfileDtoCollectionQueryParameters | 
 }
 
 begin
@@ -2251,6 +2274,7 @@ end
 | **contact_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **contact_profile_dto_collection_query_parameters** | [**ContactProfileDtoCollectionQueryParameters**](ContactProfileDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -2262,7 +2286,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -2286,7 +2310,7 @@ contact_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 opts = {
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example', # String | 
-  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+  patch_operation: [OpenapiClient::PatchOperation.new] # Array<PatchOperation> | 
 }
 
 begin
@@ -2324,7 +2348,7 @@ end
 | **contact_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
-| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+| **patch_operation** | [**Array&lt;PatchOperation&gt;**](PatchOperation.md) |  | [optional] |
 
 ### Return type
 
@@ -2361,7 +2385,7 @@ email_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 opts = {
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example', # String | 
-  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+  patch_operation: [OpenapiClient::PatchOperation.new] # Array<PatchOperation> | 
 }
 
 begin
@@ -2399,7 +2423,7 @@ end
 | **email_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
-| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+| **patch_operation** | [**Array&lt;PatchOperation&gt;**](PatchOperation.md) |  | [optional] |
 
 ### Return type
 

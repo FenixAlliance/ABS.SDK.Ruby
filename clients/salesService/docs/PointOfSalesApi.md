@@ -15,7 +15,7 @@ All URIs are relative to *https://absuite.net*
 
 ## count_point_of_sales_async
 
-> <Int32Envelope> count_point_of_sales_async(tenant_id)
+> <Int32Envelope> count_point_of_sales_async(tenant_id, opts)
 
 Get point of sales count
 
@@ -29,10 +29,13 @@ require 'openapi_client'
 
 api_instance = OpenapiClient::PointOfSalesApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  point_of_sale_dto_collection_query_parameters: OpenapiClient::PointOfSaleDtoCollectionQueryParameters.new # PointOfSaleDtoCollectionQueryParameters | 
+}
 
 begin
   # Get point of sales count
-  result = api_instance.count_point_of_sales_async(tenant_id)
+  result = api_instance.count_point_of_sales_async(tenant_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling PointOfSalesApi->count_point_of_sales_async: #{e}"
@@ -43,12 +46,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Int32Envelope>, Integer, Hash)> count_point_of_sales_async_with_http_info(tenant_id)
+> <Array(<Int32Envelope>, Integer, Hash)> count_point_of_sales_async_with_http_info(tenant_id, opts)
 
 ```ruby
 begin
   # Get point of sales count
-  data, status_code, headers = api_instance.count_point_of_sales_async_with_http_info(tenant_id)
+  data, status_code, headers = api_instance.count_point_of_sales_async_with_http_info(tenant_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Int32Envelope>
@@ -62,6 +65,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
+| **point_of_sale_dto_collection_query_parameters** | [**PointOfSaleDtoCollectionQueryParameters**](PointOfSaleDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -73,7 +77,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -279,7 +283,7 @@ No authorization required
 
 ## get_point_of_sales_async
 
-> <PointOfSaleDtoListEnvelope> get_point_of_sales_async(tenant_id)
+> <PointOfSaleDtoListEnvelope> get_point_of_sales_async(tenant_id, opts)
 
 Get point of sales
 
@@ -293,10 +297,13 @@ require 'openapi_client'
 
 api_instance = OpenapiClient::PointOfSalesApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  point_of_sale_dto_collection_query_parameters: OpenapiClient::PointOfSaleDtoCollectionQueryParameters.new # PointOfSaleDtoCollectionQueryParameters | 
+}
 
 begin
   # Get point of sales
-  result = api_instance.get_point_of_sales_async(tenant_id)
+  result = api_instance.get_point_of_sales_async(tenant_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling PointOfSalesApi->get_point_of_sales_async: #{e}"
@@ -307,12 +314,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<PointOfSaleDtoListEnvelope>, Integer, Hash)> get_point_of_sales_async_with_http_info(tenant_id)
+> <Array(<PointOfSaleDtoListEnvelope>, Integer, Hash)> get_point_of_sales_async_with_http_info(tenant_id, opts)
 
 ```ruby
 begin
   # Get point of sales
-  data, status_code, headers = api_instance.get_point_of_sales_async_with_http_info(tenant_id)
+  data, status_code, headers = api_instance.get_point_of_sales_async_with_http_info(tenant_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <PointOfSaleDtoListEnvelope>
@@ -326,6 +333,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
+| **point_of_sale_dto_collection_query_parameters** | [**PointOfSaleDtoCollectionQueryParameters**](PointOfSaleDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -337,7 +345,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -359,7 +367,7 @@ api_instance = OpenapiClient::PointOfSalesApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 point_of_sale_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
-  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+  patch_operation: [OpenapiClient::PatchOperation.new] # Array<PatchOperation> | 
 }
 
 begin
@@ -395,7 +403,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
 | **point_of_sale_id** | **String** |  |  |
-| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+| **patch_operation** | [**Array&lt;PatchOperation&gt;**](PatchOperation.md) |  | [optional] |
 
 ### Return type
 

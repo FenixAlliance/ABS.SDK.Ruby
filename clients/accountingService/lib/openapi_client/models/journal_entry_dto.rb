@@ -17,6 +17,8 @@ module OpenapiClient
   class JournalEntryDto
     attr_accessor :id
 
+    attr_accessor :timestamp
+
     attr_accessor :tenant_id
 
     attr_accessor :enrollment_id
@@ -57,8 +59,6 @@ module OpenapiClient
 
     attr_accessor :forex_rates_snapshot
 
-    attr_accessor :timestamp
-
     attr_accessor :debit_in_usd
 
     attr_accessor :credit_in_usd
@@ -72,6 +72,10 @@ module OpenapiClient
     attr_accessor :total_debit_amount
 
     attr_accessor :total_credit_amount
+
+    attr_accessor :debit_in_usd_amount
+
+    attr_accessor :credit_in_usd_amount
 
     class EnumAttributeValidator
       attr_reader :datatype
@@ -99,6 +103,7 @@ module OpenapiClient
     def self.attribute_map
       {
         :'id' => :'id',
+        :'timestamp' => :'timestamp',
         :'tenant_id' => :'tenantId',
         :'enrollment_id' => :'enrollmentId',
         :'journal_id' => :'journalId',
@@ -119,14 +124,15 @@ module OpenapiClient
         :'posted_by' => :'postedBy',
         :'forex_rate' => :'forexRate',
         :'forex_rates_snapshot' => :'forexRatesSnapshot',
-        :'timestamp' => :'timestamp',
         :'debit_in_usd' => :'debitInUsd',
         :'credit_in_usd' => :'creditInUsd',
         :'accounting_entries' => :'accountingEntries',
         :'total_debit' => :'totalDebit',
         :'total_credit' => :'totalCredit',
         :'total_debit_amount' => :'totalDebitAmount',
-        :'total_credit_amount' => :'totalCreditAmount'
+        :'total_credit_amount' => :'totalCreditAmount',
+        :'debit_in_usd_amount' => :'debitInUsdAmount',
+        :'credit_in_usd_amount' => :'creditInUsdAmount'
       }
     end
 
@@ -139,6 +145,7 @@ module OpenapiClient
     def self.openapi_types
       {
         :'id' => :'String',
+        :'timestamp' => :'Time',
         :'tenant_id' => :'String',
         :'enrollment_id' => :'String',
         :'journal_id' => :'String',
@@ -159,14 +166,15 @@ module OpenapiClient
         :'posted_by' => :'String',
         :'forex_rate' => :'Float',
         :'forex_rates_snapshot' => :'String',
-        :'timestamp' => :'Time',
         :'debit_in_usd' => :'Float',
         :'credit_in_usd' => :'Float',
         :'accounting_entries' => :'Array<AccountingEntryDto>',
         :'total_debit' => :'Float',
         :'total_credit' => :'Float',
         :'total_debit_amount' => :'Money',
-        :'total_credit_amount' => :'Money'
+        :'total_credit_amount' => :'Money',
+        :'debit_in_usd_amount' => :'Money',
+        :'credit_in_usd_amount' => :'Money'
       }
     end
 
@@ -174,6 +182,7 @@ module OpenapiClient
     def self.openapi_nullable
       Set.new([
         :'id',
+        :'timestamp',
         :'tenant_id',
         :'enrollment_id',
         :'journal_id',
@@ -190,7 +199,6 @@ module OpenapiClient
         :'reversal_of_journal_entry_id',
         :'posted_by',
         :'forex_rates_snapshot',
-        :'timestamp',
         :'accounting_entries',
       ])
     end
@@ -212,6 +220,10 @@ module OpenapiClient
 
       if attributes.key?(:'id')
         self.id = attributes[:'id']
+      end
+
+      if attributes.key?(:'timestamp')
+        self.timestamp = attributes[:'timestamp']
       end
 
       if attributes.key?(:'tenant_id')
@@ -294,10 +306,6 @@ module OpenapiClient
         self.forex_rates_snapshot = attributes[:'forex_rates_snapshot']
       end
 
-      if attributes.key?(:'timestamp')
-        self.timestamp = attributes[:'timestamp']
-      end
-
       if attributes.key?(:'debit_in_usd')
         self.debit_in_usd = attributes[:'debit_in_usd']
       end
@@ -326,6 +334,14 @@ module OpenapiClient
 
       if attributes.key?(:'total_credit_amount')
         self.total_credit_amount = attributes[:'total_credit_amount']
+      end
+
+      if attributes.key?(:'debit_in_usd_amount')
+        self.debit_in_usd_amount = attributes[:'debit_in_usd_amount']
+      end
+
+      if attributes.key?(:'credit_in_usd_amount')
+        self.credit_in_usd_amount = attributes[:'credit_in_usd_amount']
       end
     end
 
@@ -374,6 +390,7 @@ module OpenapiClient
       return true if self.equal?(o)
       self.class == o.class &&
           id == o.id &&
+          timestamp == o.timestamp &&
           tenant_id == o.tenant_id &&
           enrollment_id == o.enrollment_id &&
           journal_id == o.journal_id &&
@@ -394,14 +411,15 @@ module OpenapiClient
           posted_by == o.posted_by &&
           forex_rate == o.forex_rate &&
           forex_rates_snapshot == o.forex_rates_snapshot &&
-          timestamp == o.timestamp &&
           debit_in_usd == o.debit_in_usd &&
           credit_in_usd == o.credit_in_usd &&
           accounting_entries == o.accounting_entries &&
           total_debit == o.total_debit &&
           total_credit == o.total_credit &&
           total_debit_amount == o.total_debit_amount &&
-          total_credit_amount == o.total_credit_amount
+          total_credit_amount == o.total_credit_amount &&
+          debit_in_usd_amount == o.debit_in_usd_amount &&
+          credit_in_usd_amount == o.credit_in_usd_amount
     end
 
     # @see the `==` method
@@ -413,7 +431,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, tenant_id, enrollment_id, journal_id, journal_name, journal_code, fiscal_period_id, financial_book_id, description, entry_type, status, posting_date, is_opening_balance, transaction_currency_id, source_document_type, source_document_id, idempotency_key, reversal_of_journal_entry_id, posted_by, forex_rate, forex_rates_snapshot, timestamp, debit_in_usd, credit_in_usd, accounting_entries, total_debit, total_credit, total_debit_amount, total_credit_amount].hash
+      [id, timestamp, tenant_id, enrollment_id, journal_id, journal_name, journal_code, fiscal_period_id, financial_book_id, description, entry_type, status, posting_date, is_opening_balance, transaction_currency_id, source_document_type, source_document_id, idempotency_key, reversal_of_journal_entry_id, posted_by, forex_rate, forex_rates_snapshot, debit_in_usd, credit_in_usd, accounting_entries, total_debit, total_credit, total_debit_amount, total_credit_amount, debit_in_usd_amount, credit_in_usd_amount].hash
     end
 
     # Builds the object from hash

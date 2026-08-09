@@ -13,6 +13,7 @@
 | **individual_id** | **String** |  | [optional] |
 | **payment_term_id** | **String** |  | [optional] |
 | **organization_id** | **String** |  | [optional] |
+| **receiver_tenant_id** | **String** |  | [optional] |
 | **first_name** | **String** |  | [optional] |
 | **last_name** | **String** |  | [optional] |
 | **company_name** | **String** |  | [optional] |
@@ -53,7 +54,6 @@
 | **tax_calculation_method** | **String** |  | [optional] |
 | **cart_id** | **String** |  | [optional] |
 | **deal_unit_id** | **String** |  | [optional] |
-| **receiver_tenant_id** | **String** |  | [optional] |
 | **effective_to** | **Time** |  | [optional] |
 | **effective_from** | **Time** |  | [optional] |
 | **quote_status** | **String** |  | [optional] |
@@ -74,6 +74,7 @@ instance = OpenapiClient::QuoteCreateDto.new(
   individual_id: null,
   payment_term_id: null,
   organization_id: null,
+  receiver_tenant_id: null,
   first_name: null,
   last_name: null,
   company_name: null,
@@ -114,7 +115,6 @@ instance = OpenapiClient::QuoteCreateDto.new(
   tax_calculation_method: null,
   cart_id: null,
   deal_unit_id: null,
-  receiver_tenant_id: null,
   effective_to: null,
   effective_from: null,
   quote_status: null,

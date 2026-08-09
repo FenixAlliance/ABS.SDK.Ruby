@@ -356,7 +356,7 @@ No authorization required
 
 ## get_locations_async
 
-> <LocationDtoIReadOnlyListEnvelope> get_locations_async(tenant_id)
+> <LocationDtoIReadOnlyListEnvelope> get_locations_async(tenant_id, opts)
 
 Get Locations
 
@@ -370,10 +370,13 @@ require 'openapi_client'
 
 api_instance = OpenapiClient::LocationsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  location_dto_collection_query_parameters: OpenapiClient::LocationDtoCollectionQueryParameters.new # LocationDtoCollectionQueryParameters | 
+}
 
 begin
   # Get Locations
-  result = api_instance.get_locations_async(tenant_id)
+  result = api_instance.get_locations_async(tenant_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling LocationsApi->get_locations_async: #{e}"
@@ -384,12 +387,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<LocationDtoIReadOnlyListEnvelope>, Integer, Hash)> get_locations_async_with_http_info(tenant_id)
+> <Array(<LocationDtoIReadOnlyListEnvelope>, Integer, Hash)> get_locations_async_with_http_info(tenant_id, opts)
 
 ```ruby
 begin
   # Get Locations
-  data, status_code, headers = api_instance.get_locations_async_with_http_info(tenant_id)
+  data, status_code, headers = api_instance.get_locations_async_with_http_info(tenant_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <LocationDtoIReadOnlyListEnvelope>
@@ -403,6 +406,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
+| **location_dto_collection_query_parameters** | [**LocationDtoCollectionQueryParameters**](LocationDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -414,13 +418,13 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
 ## get_locations_count_async
 
-> <Int32Envelope> get_locations_count_async(tenant_id)
+> <Int32Envelope> get_locations_count_async(tenant_id, opts)
 
 Get Locations Count
 
@@ -434,10 +438,13 @@ require 'openapi_client'
 
 api_instance = OpenapiClient::LocationsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  location_dto_collection_query_parameters: OpenapiClient::LocationDtoCollectionQueryParameters.new # LocationDtoCollectionQueryParameters | 
+}
 
 begin
   # Get Locations Count
-  result = api_instance.get_locations_count_async(tenant_id)
+  result = api_instance.get_locations_count_async(tenant_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling LocationsApi->get_locations_count_async: #{e}"
@@ -448,12 +455,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Int32Envelope>, Integer, Hash)> get_locations_count_async_with_http_info(tenant_id)
+> <Array(<Int32Envelope>, Integer, Hash)> get_locations_count_async_with_http_info(tenant_id, opts)
 
 ```ruby
 begin
   # Get Locations Count
-  data, status_code, headers = api_instance.get_locations_count_async_with_http_info(tenant_id)
+  data, status_code, headers = api_instance.get_locations_count_async_with_http_info(tenant_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Int32Envelope>
@@ -467,6 +474,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
+| **location_dto_collection_query_parameters** | [**LocationDtoCollectionQueryParameters**](LocationDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -478,7 +486,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -550,7 +558,7 @@ No authorization required
 
 ## get_wallet_locations_async
 
-> <LocationDtoIReadOnlyListEnvelope> get_wallet_locations_async(wallet_id)
+> <LocationDtoIReadOnlyListEnvelope> get_wallet_locations_async(wallet_id, opts)
 
 Get Wallet Locations
 
@@ -564,10 +572,13 @@ require 'openapi_client'
 
 api_instance = OpenapiClient::LocationsApi.new
 wallet_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  location_dto_collection_query_parameters: OpenapiClient::LocationDtoCollectionQueryParameters.new # LocationDtoCollectionQueryParameters | 
+}
 
 begin
   # Get Wallet Locations
-  result = api_instance.get_wallet_locations_async(wallet_id)
+  result = api_instance.get_wallet_locations_async(wallet_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling LocationsApi->get_wallet_locations_async: #{e}"
@@ -578,12 +589,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<LocationDtoIReadOnlyListEnvelope>, Integer, Hash)> get_wallet_locations_async_with_http_info(wallet_id)
+> <Array(<LocationDtoIReadOnlyListEnvelope>, Integer, Hash)> get_wallet_locations_async_with_http_info(wallet_id, opts)
 
 ```ruby
 begin
   # Get Wallet Locations
-  data, status_code, headers = api_instance.get_wallet_locations_async_with_http_info(wallet_id)
+  data, status_code, headers = api_instance.get_wallet_locations_async_with_http_info(wallet_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <LocationDtoIReadOnlyListEnvelope>
@@ -597,6 +608,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **wallet_id** | **String** |  |  |
+| **location_dto_collection_query_parameters** | [**LocationDtoCollectionQueryParameters**](LocationDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -608,13 +620,13 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
 ## get_wallet_locations_count_async
 
-> <Int32Envelope> get_wallet_locations_count_async(wallet_id)
+> <Int32Envelope> get_wallet_locations_count_async(wallet_id, opts)
 
 Get Wallet Locations Count
 
@@ -628,10 +640,13 @@ require 'openapi_client'
 
 api_instance = OpenapiClient::LocationsApi.new
 wallet_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
+opts = {
+  location_dto_collection_query_parameters: OpenapiClient::LocationDtoCollectionQueryParameters.new # LocationDtoCollectionQueryParameters | 
+}
 
 begin
   # Get Wallet Locations Count
-  result = api_instance.get_wallet_locations_count_async(wallet_id)
+  result = api_instance.get_wallet_locations_count_async(wallet_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling LocationsApi->get_wallet_locations_count_async: #{e}"
@@ -642,12 +657,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Int32Envelope>, Integer, Hash)> get_wallet_locations_count_async_with_http_info(wallet_id)
+> <Array(<Int32Envelope>, Integer, Hash)> get_wallet_locations_count_async_with_http_info(wallet_id, opts)
 
 ```ruby
 begin
   # Get Wallet Locations Count
-  data, status_code, headers = api_instance.get_wallet_locations_count_async_with_http_info(wallet_id)
+  data, status_code, headers = api_instance.get_wallet_locations_count_async_with_http_info(wallet_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Int32Envelope>
@@ -661,6 +676,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **wallet_id** | **String** |  |  |
+| **location_dto_collection_query_parameters** | [**LocationDtoCollectionQueryParameters**](LocationDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -672,7 +688,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -694,7 +710,7 @@ api_instance = OpenapiClient::LocationsApi.new
 tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 location_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
-  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+  patch_operation: [OpenapiClient::PatchOperation.new] # Array<PatchOperation> | 
 }
 
 begin
@@ -730,7 +746,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **tenant_id** | **String** |  |  |
 | **location_id** | **String** |  |  |
-| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+| **patch_operation** | [**Array&lt;PatchOperation&gt;**](PatchOperation.md) |  | [optional] |
 
 ### Return type
 
@@ -764,7 +780,7 @@ api_instance = OpenapiClient::LocationsApi.new
 wallet_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 location_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
-  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+  patch_operation: [OpenapiClient::PatchOperation.new] # Array<PatchOperation> | 
 }
 
 begin
@@ -800,7 +816,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **wallet_id** | **String** |  |  |
 | **location_id** | **String** |  |  |
-| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+| **patch_operation** | [**Array&lt;PatchOperation&gt;**](PatchOperation.md) |  | [optional] |
 
 ### Return type
 

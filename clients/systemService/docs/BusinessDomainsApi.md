@@ -168,7 +168,8 @@ require 'openapi_client'
 api_instance = OpenapiClient::BusinessDomainsApi.new
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  business_domain_dto_collection_query_parameters: OpenapiClient::BusinessDomainDtoCollectionQueryParameters.new # BusinessDomainDtoCollectionQueryParameters | 
 }
 
 begin
@@ -204,6 +205,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **business_domain_dto_collection_query_parameters** | [**BusinessDomainDtoCollectionQueryParameters**](BusinessDomainDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -215,7 +217,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -236,7 +238,8 @@ require 'openapi_client'
 api_instance = OpenapiClient::BusinessDomainsApi.new
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  business_domain_dto_collection_query_parameters: OpenapiClient::BusinessDomainDtoCollectionQueryParameters.new # BusinessDomainDtoCollectionQueryParameters | 
 }
 
 begin
@@ -272,6 +275,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **business_domain_dto_collection_query_parameters** | [**BusinessDomainDtoCollectionQueryParameters**](BusinessDomainDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -283,7 +287,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 

@@ -28,7 +28,8 @@ api_instance = OpenapiClient::BlogPostAuthorsApi.new
 author_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  blog_post_dto_collection_query_parameters: OpenapiClient::BlogPostDtoCollectionQueryParameters.new # BlogPostDtoCollectionQueryParameters | 
 }
 
 begin
@@ -65,6 +66,7 @@ end
 | **author_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **blog_post_dto_collection_query_parameters** | [**BlogPostDtoCollectionQueryParameters**](BlogPostDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -76,7 +78,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -168,7 +170,8 @@ api_instance = OpenapiClient::BlogPostAuthorsApi.new
 opts = {
   tenant_id: '38400000-8cf0-11bd-b23e-10b96e4ef00d', # String | 
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  blog_author_dto_collection_query_parameters: OpenapiClient::BlogAuthorDtoCollectionQueryParameters.new # BlogAuthorDtoCollectionQueryParameters | 
 }
 
 begin
@@ -205,6 +208,7 @@ end
 | **tenant_id** | **String** |  | [optional] |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **blog_author_dto_collection_query_parameters** | [**BlogAuthorDtoCollectionQueryParameters**](BlogAuthorDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -216,7 +220,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -238,7 +242,8 @@ api_instance = OpenapiClient::BlogPostAuthorsApi.new
 author_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  blog_post_dto_collection_query_parameters: OpenapiClient::BlogPostDtoCollectionQueryParameters.new # BlogPostDtoCollectionQueryParameters | 
 }
 
 begin
@@ -275,6 +280,7 @@ end
 | **author_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **blog_post_dto_collection_query_parameters** | [**BlogPostDtoCollectionQueryParameters**](BlogPostDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -286,6 +292,6 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 

@@ -17,6 +17,8 @@ module OpenapiClient
   class AccountingEntryDto
     attr_accessor :id
 
+    attr_accessor :timestamp
+
     attr_accessor :tenant_id
 
     attr_accessor :enrollment_id
@@ -53,8 +55,6 @@ module OpenapiClient
 
     attr_accessor :project_id
 
-    attr_accessor :timestamp
-
     attr_accessor :debit
 
     attr_accessor :credit
@@ -89,6 +89,7 @@ module OpenapiClient
     def self.attribute_map
       {
         :'id' => :'id',
+        :'timestamp' => :'timestamp',
         :'tenant_id' => :'tenantId',
         :'enrollment_id' => :'enrollmentId',
         :'journal_entry_id' => :'journalEntryId',
@@ -107,7 +108,6 @@ module OpenapiClient
         :'forex_rates_snapshot' => :'forexRatesSnapshot',
         :'cost_centre_id' => :'costCentreId',
         :'project_id' => :'projectId',
-        :'timestamp' => :'timestamp',
         :'debit' => :'debit',
         :'credit' => :'credit',
         :'amount' => :'amount',
@@ -124,6 +124,7 @@ module OpenapiClient
     def self.openapi_types
       {
         :'id' => :'String',
+        :'timestamp' => :'Time',
         :'tenant_id' => :'String',
         :'enrollment_id' => :'String',
         :'journal_entry_id' => :'String',
@@ -142,7 +143,6 @@ module OpenapiClient
         :'forex_rates_snapshot' => :'String',
         :'cost_centre_id' => :'String',
         :'project_id' => :'String',
-        :'timestamp' => :'Time',
         :'debit' => :'Float',
         :'credit' => :'Float',
         :'amount' => :'Money',
@@ -154,6 +154,7 @@ module OpenapiClient
     def self.openapi_nullable
       Set.new([
         :'id',
+        :'timestamp',
         :'tenant_id',
         :'enrollment_id',
         :'journal_entry_id',
@@ -166,7 +167,6 @@ module OpenapiClient
         :'forex_rates_snapshot',
         :'cost_centre_id',
         :'project_id',
-        :'timestamp',
       ])
     end
 
@@ -187,6 +187,10 @@ module OpenapiClient
 
       if attributes.key?(:'id')
         self.id = attributes[:'id']
+      end
+
+      if attributes.key?(:'timestamp')
+        self.timestamp = attributes[:'timestamp']
       end
 
       if attributes.key?(:'tenant_id')
@@ -261,10 +265,6 @@ module OpenapiClient
         self.project_id = attributes[:'project_id']
       end
 
-      if attributes.key?(:'timestamp')
-        self.timestamp = attributes[:'timestamp']
-      end
-
       if attributes.key?(:'debit')
         self.debit = attributes[:'debit']
       end
@@ -315,6 +315,7 @@ module OpenapiClient
       return true if self.equal?(o)
       self.class == o.class &&
           id == o.id &&
+          timestamp == o.timestamp &&
           tenant_id == o.tenant_id &&
           enrollment_id == o.enrollment_id &&
           journal_entry_id == o.journal_entry_id &&
@@ -333,7 +334,6 @@ module OpenapiClient
           forex_rates_snapshot == o.forex_rates_snapshot &&
           cost_centre_id == o.cost_centre_id &&
           project_id == o.project_id &&
-          timestamp == o.timestamp &&
           debit == o.debit &&
           credit == o.credit &&
           amount == o.amount &&
@@ -349,7 +349,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, tenant_id, enrollment_id, journal_entry_id, account_id, account_name, direction, description, transaction_amount, transaction_currency_id, functional_amount, functional_currency_id, account_amount, account_currency_id, reporting_amount_in_usd, forex_rate, forex_rates_snapshot, cost_centre_id, project_id, timestamp, debit, credit, amount, amount_in_usd].hash
+      [id, timestamp, tenant_id, enrollment_id, journal_entry_id, account_id, account_name, direction, description, transaction_amount, transaction_currency_id, functional_amount, functional_currency_id, account_amount, account_currency_id, reporting_amount_in_usd, forex_rate, forex_rates_snapshot, cost_centre_id, project_id, debit, credit, amount, amount_in_usd].hash
     end
 
     # Builds the object from hash

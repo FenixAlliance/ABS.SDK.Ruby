@@ -247,7 +247,8 @@ tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 item_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  item_tag_dto_collection_query_parameters: OpenapiClient::ItemTagDtoCollectionQueryParameters.new # ItemTagDtoCollectionQueryParameters | 
 }
 
 begin
@@ -285,6 +286,7 @@ end
 | **item_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **item_tag_dto_collection_query_parameters** | [**ItemTagDtoCollectionQueryParameters**](ItemTagDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -296,7 +298,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -318,7 +320,8 @@ api_instance = OpenapiClient::ItemsApi.new
 opts = {
   tenant_id: '38400000-8cf0-11bd-b23e-10b96e4ef00d', # String | 
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  catalog_item_dto_collection_query_parameters: OpenapiClient::CatalogItemDtoCollectionQueryParameters.new # CatalogItemDtoCollectionQueryParameters | 
 }
 
 begin
@@ -355,6 +358,7 @@ end
 | **tenant_id** | **String** |  | [optional] |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **catalog_item_dto_collection_query_parameters** | [**CatalogItemDtoCollectionQueryParameters**](CatalogItemDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -366,7 +370,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -742,7 +746,8 @@ api_instance = OpenapiClient::ItemsApi.new
 item_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  item_attachment_dto_collection_query_parameters: OpenapiClient::ItemAttachmentDtoCollectionQueryParameters.new # ItemAttachmentDtoCollectionQueryParameters | 
 }
 
 begin
@@ -779,6 +784,7 @@ end
 | **item_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **item_attachment_dto_collection_query_parameters** | [**ItemAttachmentDtoCollectionQueryParameters**](ItemAttachmentDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -790,7 +796,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -1026,7 +1032,8 @@ api_instance = OpenapiClient::ItemsApi.new
 item_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  item_brand_dto_collection_query_parameters: OpenapiClient::ItemBrandDtoCollectionQueryParameters.new # ItemBrandDtoCollectionQueryParameters | 
 }
 
 begin
@@ -1063,6 +1070,7 @@ end
 | **item_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **item_brand_dto_collection_query_parameters** | [**ItemBrandDtoCollectionQueryParameters**](ItemBrandDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1074,7 +1082,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -1166,7 +1174,8 @@ api_instance = OpenapiClient::ItemsApi.new
 item_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  item_category_dto_collection_query_parameters: OpenapiClient::ItemCategoryDtoCollectionQueryParameters.new # ItemCategoryDtoCollectionQueryParameters | 
 }
 
 begin
@@ -1203,6 +1212,7 @@ end
 | **item_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **item_category_dto_collection_query_parameters** | [**ItemCategoryDtoCollectionQueryParameters**](ItemCategoryDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1214,7 +1224,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -1308,7 +1318,8 @@ api_instance = OpenapiClient::ItemsApi.new
 item_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  item_google_category_dto_collection_query_parameters: OpenapiClient::ItemGoogleCategoryDtoCollectionQueryParameters.new # ItemGoogleCategoryDtoCollectionQueryParameters | 
 }
 
 begin
@@ -1345,6 +1356,7 @@ end
 | **item_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **item_google_category_dto_collection_query_parameters** | [**ItemGoogleCategoryDtoCollectionQueryParameters**](ItemGoogleCategoryDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1356,7 +1368,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -1522,7 +1534,8 @@ api_instance = OpenapiClient::ItemsApi.new
 item_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  item_image_dto_collection_query_parameters: OpenapiClient::ItemImageDtoCollectionQueryParameters.new # ItemImageDtoCollectionQueryParameters | 
 }
 
 begin
@@ -1559,6 +1572,7 @@ end
 | **item_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **item_image_dto_collection_query_parameters** | [**ItemImageDtoCollectionQueryParameters**](ItemImageDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1570,7 +1584,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -1806,7 +1820,8 @@ api_instance = OpenapiClient::ItemsApi.new
 item_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  item_question_dto_collection_query_parameters: OpenapiClient::ItemQuestionDtoCollectionQueryParameters.new # ItemQuestionDtoCollectionQueryParameters | 
 }
 
 begin
@@ -1843,6 +1858,7 @@ end
 | **item_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **item_question_dto_collection_query_parameters** | [**ItemQuestionDtoCollectionQueryParameters**](ItemQuestionDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1854,7 +1870,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -1876,7 +1892,8 @@ api_instance = OpenapiClient::ItemsApi.new
 item_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  item_refund_policy_dto_collection_query_parameters: OpenapiClient::ItemRefundPolicyDtoCollectionQueryParameters.new # ItemRefundPolicyDtoCollectionQueryParameters | 
 }
 
 begin
@@ -1913,6 +1930,7 @@ end
 | **item_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **item_refund_policy_dto_collection_query_parameters** | [**ItemRefundPolicyDtoCollectionQueryParameters**](ItemRefundPolicyDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -1924,7 +1942,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -2018,7 +2036,8 @@ api_instance = OpenapiClient::ItemsApi.new
 item_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  item_return_policy_dto_collection_query_parameters: OpenapiClient::ItemReturnPolicyDtoCollectionQueryParameters.new # ItemReturnPolicyDtoCollectionQueryParameters | 
 }
 
 begin
@@ -2055,6 +2074,7 @@ end
 | **item_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **item_return_policy_dto_collection_query_parameters** | [**ItemReturnPolicyDtoCollectionQueryParameters**](ItemReturnPolicyDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -2066,7 +2086,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -2232,7 +2252,8 @@ api_instance = OpenapiClient::ItemsApi.new
 item_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  item_review_dto_collection_query_parameters: OpenapiClient::ItemReviewDtoCollectionQueryParameters.new # ItemReviewDtoCollectionQueryParameters | 
 }
 
 begin
@@ -2269,6 +2290,7 @@ end
 | **item_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **item_review_dto_collection_query_parameters** | [**ItemReviewDtoCollectionQueryParameters**](ItemReviewDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -2280,7 +2302,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -2302,7 +2324,8 @@ api_instance = OpenapiClient::ItemsApi.new
 item_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  item_shipping_policy_dto_collection_query_parameters: OpenapiClient::ItemShippingPolicyDtoCollectionQueryParameters.new # ItemShippingPolicyDtoCollectionQueryParameters | 
 }
 
 begin
@@ -2339,6 +2362,7 @@ end
 | **item_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **item_shipping_policy_dto_collection_query_parameters** | [**ItemShippingPolicyDtoCollectionQueryParameters**](ItemShippingPolicyDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -2350,7 +2374,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -2519,7 +2543,8 @@ tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 item_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  item_tag_dto_collection_query_parameters: OpenapiClient::ItemTagDtoCollectionQueryParameters.new # ItemTagDtoCollectionQueryParameters | 
 }
 
 begin
@@ -2557,6 +2582,7 @@ end
 | **item_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **item_tag_dto_collection_query_parameters** | [**ItemTagDtoCollectionQueryParameters**](ItemTagDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -2568,7 +2594,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -2590,7 +2616,8 @@ api_instance = OpenapiClient::ItemsApi.new
 item_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  item_tax_policy_dto_collection_query_parameters: OpenapiClient::ItemTaxPolicyDtoCollectionQueryParameters.new # ItemTaxPolicyDtoCollectionQueryParameters | 
 }
 
 begin
@@ -2627,6 +2654,7 @@ end
 | **item_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **item_tax_policy_dto_collection_query_parameters** | [**ItemTaxPolicyDtoCollectionQueryParameters**](ItemTaxPolicyDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -2638,7 +2666,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -2807,7 +2835,8 @@ tenant_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 item_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  item_type_dto_collection_query_parameters: OpenapiClient::ItemTypeDtoCollectionQueryParameters.new # ItemTypeDtoCollectionQueryParameters | 
 }
 
 begin
@@ -2845,6 +2874,7 @@ end
 | **item_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **item_type_dto_collection_query_parameters** | [**ItemTypeDtoCollectionQueryParameters**](ItemTypeDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -2856,7 +2886,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -2878,7 +2908,8 @@ api_instance = OpenapiClient::ItemsApi.new
 item_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  item_warranty_policy_dto_collection_query_parameters: OpenapiClient::ItemWarrantyPolicyDtoCollectionQueryParameters.new # ItemWarrantyPolicyDtoCollectionQueryParameters | 
 }
 
 begin
@@ -2915,6 +2946,7 @@ end
 | **item_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **item_warranty_policy_dto_collection_query_parameters** | [**ItemWarrantyPolicyDtoCollectionQueryParameters**](ItemWarrantyPolicyDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -2926,7 +2958,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -3020,7 +3052,8 @@ api_instance = OpenapiClient::ItemsApi.new
 opts = {
   tenant_id: '38400000-8cf0-11bd-b23e-10b96e4ef00d', # String | 
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  catalog_item_dto_collection_query_parameters: OpenapiClient::CatalogItemDtoCollectionQueryParameters.new # CatalogItemDtoCollectionQueryParameters | 
 }
 
 begin
@@ -3057,6 +3090,7 @@ end
 | **tenant_id** | **String** |  | [optional] |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **catalog_item_dto_collection_query_parameters** | [**CatalogItemDtoCollectionQueryParameters**](CatalogItemDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -3068,7 +3102,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -3090,7 +3124,8 @@ api_instance = OpenapiClient::ItemsApi.new
 opts = {
   tenant_id: '38400000-8cf0-11bd-b23e-10b96e4ef00d', # String | 
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  catalog_item_dto_collection_query_parameters: OpenapiClient::CatalogItemDtoCollectionQueryParameters.new # CatalogItemDtoCollectionQueryParameters | 
 }
 
 begin
@@ -3127,6 +3162,7 @@ end
 | **tenant_id** | **String** |  | [optional] |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **catalog_item_dto_collection_query_parameters** | [**CatalogItemDtoCollectionQueryParameters**](CatalogItemDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -3138,7 +3174,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -3160,7 +3196,8 @@ api_instance = OpenapiClient::ItemsApi.new
 opts = {
   tenant_id: '38400000-8cf0-11bd-b23e-10b96e4ef00d', # String | 
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  catalog_item_dto_collection_query_parameters: OpenapiClient::CatalogItemDtoCollectionQueryParameters.new # CatalogItemDtoCollectionQueryParameters | 
 }
 
 begin
@@ -3197,6 +3234,7 @@ end
 | **tenant_id** | **String** |  | [optional] |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **catalog_item_dto_collection_query_parameters** | [**CatalogItemDtoCollectionQueryParameters**](CatalogItemDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -3208,7 +3246,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -3232,7 +3270,7 @@ item_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String |
 opts = {
   api_version: 'api_version_example', # String | 
   x_api_version: 'x_api_version_example', # String | 
-  operation: [OpenapiClient::Operation.new] # Array<Operation> | 
+  patch_operation: [OpenapiClient::PatchOperation.new] # Array<PatchOperation> | 
 }
 
 begin
@@ -3269,7 +3307,7 @@ end
 | **item_id** | **String** |  |  |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
-| **operation** | [**Array&lt;Operation&gt;**](Operation.md) |  | [optional] |
+| **patch_operation** | [**Array&lt;PatchOperation&gt;**](PatchOperation.md) |  | [optional] |
 
 ### Return type
 

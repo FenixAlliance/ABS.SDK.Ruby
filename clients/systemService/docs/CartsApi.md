@@ -8,6 +8,7 @@ All URIs are relative to *https://absuite.net*
 | [**get_system_cart_by_id**](CartsApi.md#get_system_cart_by_id) | **GET** /api/v2/SystemService/Carts/{cartId} | Retrieve a single system cart by its ID |
 | [**get_system_carts**](CartsApi.md#get_system_carts) | **GET** /api/v2/SystemService/Carts | Retrieve a list of system carts |
 | [**get_system_carts_count**](CartsApi.md#get_system_carts_count) | **GET** /api/v2/SystemService/Carts/Count | Get the count of system carts |
+| [**purge_system_guest_carts**](CartsApi.md#purge_system_guest_carts) | **DELETE** /api/v2/SystemService/Carts/Guests | Purge all guest carts |
 
 
 ## delete_system_cart
@@ -167,7 +168,8 @@ require 'openapi_client'
 api_instance = OpenapiClient::CartsApi.new
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  cart_dto_collection_query_parameters: OpenapiClient::CartDtoCollectionQueryParameters.new # CartDtoCollectionQueryParameters | 
 }
 
 begin
@@ -203,6 +205,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **cart_dto_collection_query_parameters** | [**CartDtoCollectionQueryParameters**](CartDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
@@ -214,7 +217,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json, application/xml
 - **Accept**: application/json, application/xml
 
 
@@ -235,7 +238,8 @@ require 'openapi_client'
 api_instance = OpenapiClient::CartsApi.new
 opts = {
   api_version: 'api_version_example', # String | 
-  x_api_version: 'x_api_version_example' # String | 
+  x_api_version: 'x_api_version_example', # String | 
+  cart_dto_collection_query_parameters: OpenapiClient::CartDtoCollectionQueryParameters.new # CartDtoCollectionQueryParameters | 
 }
 
 begin
@@ -271,10 +275,79 @@ end
 | ---- | ---- | ----------- | ----- |
 | **api_version** | **String** |  | [optional] |
 | **x_api_version** | **String** |  | [optional] |
+| **cart_dto_collection_query_parameters** | [**CartDtoCollectionQueryParameters**](CartDtoCollectionQueryParameters.md) |  | [optional] |
 
 ### Return type
 
 [**Int32Envelope**](Int32Envelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/xml
+- **Accept**: application/json, application/xml
+
+
+## purge_system_guest_carts
+
+> <GuestCartPurgeResultDtoEnvelope> purge_system_guest_carts(opts)
+
+Purge all guest carts
+
+Deletes every guest cart, cascading its item cart records, compare records and wish lists, and returns the removed-row counts. Idempotent.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+
+api_instance = OpenapiClient::CartsApi.new
+opts = {
+  api_version: 'api_version_example', # String | 
+  x_api_version: 'x_api_version_example' # String | 
+}
+
+begin
+  # Purge all guest carts
+  result = api_instance.purge_system_guest_carts(opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling CartsApi->purge_system_guest_carts: #{e}"
+end
+```
+
+#### Using the purge_system_guest_carts_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<GuestCartPurgeResultDtoEnvelope>, Integer, Hash)> purge_system_guest_carts_with_http_info(opts)
+
+```ruby
+begin
+  # Purge all guest carts
+  data, status_code, headers = api_instance.purge_system_guest_carts_with_http_info(opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <GuestCartPurgeResultDtoEnvelope>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling CartsApi->purge_system_guest_carts_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **api_version** | **String** |  | [optional] |
+| **x_api_version** | **String** |  | [optional] |
+
+### Return type
+
+[**GuestCartPurgeResultDtoEnvelope**](GuestCartPurgeResultDtoEnvelope.md)
 
 ### Authorization
 

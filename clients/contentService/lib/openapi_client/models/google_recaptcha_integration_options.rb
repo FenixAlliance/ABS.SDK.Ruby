@@ -25,6 +25,12 @@ module OpenapiClient
 
     attr_accessor :version
 
+    attr_accessor :project_id
+
+    attr_accessor :api_key
+
+    attr_accessor :score_threshold
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -32,7 +38,10 @@ module OpenapiClient
         :'site' => :'site',
         :'site_key' => :'siteKey',
         :'secret_key' => :'secretKey',
-        :'version' => :'version'
+        :'version' => :'version',
+        :'project_id' => :'projectId',
+        :'api_key' => :'apiKey',
+        :'score_threshold' => :'scoreThreshold'
       }
     end
 
@@ -48,7 +57,10 @@ module OpenapiClient
         :'site' => :'String',
         :'site_key' => :'String',
         :'secret_key' => :'String',
-        :'version' => :'String'
+        :'version' => :'String',
+        :'project_id' => :'String',
+        :'api_key' => :'String',
+        :'score_threshold' => :'Float'
       }
     end
 
@@ -58,7 +70,10 @@ module OpenapiClient
         :'site',
         :'site_key',
         :'secret_key',
-        :'version'
+        :'version',
+        :'project_id',
+        :'api_key',
+        :'score_threshold'
       ])
     end
 
@@ -96,6 +111,18 @@ module OpenapiClient
       if attributes.key?(:'version')
         self.version = attributes[:'version']
       end
+
+      if attributes.key?(:'project_id')
+        self.project_id = attributes[:'project_id']
+      end
+
+      if attributes.key?(:'api_key')
+        self.api_key = attributes[:'api_key']
+      end
+
+      if attributes.key?(:'score_threshold')
+        self.score_threshold = attributes[:'score_threshold']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -122,7 +149,10 @@ module OpenapiClient
           site == o.site &&
           site_key == o.site_key &&
           secret_key == o.secret_key &&
-          version == o.version
+          version == o.version &&
+          project_id == o.project_id &&
+          api_key == o.api_key &&
+          score_threshold == o.score_threshold
     end
 
     # @see the `==` method
@@ -134,7 +164,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [enable, site, site_key, secret_key, version].hash
+      [enable, site, site_key, secret_key, version, project_id, api_key, score_threshold].hash
     end
 
     # Builds the object from hash

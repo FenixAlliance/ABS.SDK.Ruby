@@ -9,6 +9,9 @@
 | **site_key** | **String** |  | [optional] |
 | **secret_key** | **String** |  | [optional] |
 | **version** | **String** |  | [optional] |
+| **project_id** | **String** |  | [optional] |
+| **api_key** | **String** |  | [optional] |
+| **score_threshold** | **Float** |  | [optional] |
 
 ## Example
 
@@ -20,7 +23,10 @@ instance = OpenapiClient::GoogleRecaptchaIntegrationOptions.new(
   site: null,
   site_key: null,
   secret_key: null,
-  version: null
+  version: null,
+  project_id: null,
+  api_key: null,
+  score_threshold: null
 )
 ```
 

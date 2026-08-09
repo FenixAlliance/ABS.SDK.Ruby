@@ -534,6 +534,7 @@ module OpenapiClient
     # Retrieves all blog posts, optionally filtered by tenant using OData query options.
     # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_id 
+    # @option opts [BlogPostDtoCollectionQueryParameters] :blog_post_dto_collection_query_parameters 
     # @return [BlogPostDtoListEnvelope]
     def get_blog_posts_async(opts = {})
       data, _status_code, _headers = get_blog_posts_async_with_http_info(opts)
@@ -544,6 +545,7 @@ module OpenapiClient
     # Retrieves all blog posts, optionally filtered by tenant using OData query options.
     # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_id 
+    # @option opts [BlogPostDtoCollectionQueryParameters] :blog_post_dto_collection_query_parameters 
     # @return [Array<(BlogPostDtoListEnvelope, Integer, Hash)>] BlogPostDtoListEnvelope data, response status code and response headers
     def get_blog_posts_async_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -560,12 +562,17 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'blog_post_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'BlogPostDtoListEnvelope'
@@ -594,6 +601,7 @@ module OpenapiClient
     # Returns the total count of blog posts, optionally filtered by tenant using OData query options.
     # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_id 
+    # @option opts [BlogPostDtoCollectionQueryParameters] :blog_post_dto_collection_query_parameters 
     # @return [Int32Envelope]
     def get_blog_posts_count_async(opts = {})
       data, _status_code, _headers = get_blog_posts_count_async_with_http_info(opts)
@@ -604,6 +612,7 @@ module OpenapiClient
     # Returns the total count of blog posts, optionally filtered by tenant using OData query options.
     # @param [Hash] opts the optional parameters
     # @option opts [String] :tenant_id 
+    # @option opts [BlogPostDtoCollectionQueryParameters] :blog_post_dto_collection_query_parameters 
     # @return [Array<(Int32Envelope, Integer, Hash)>] Int32Envelope data, response status code and response headers
     def get_blog_posts_count_async_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -620,12 +629,17 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'blog_post_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'Int32Envelope'
@@ -654,6 +668,7 @@ module OpenapiClient
     # Retrieves all categories related to a specific blog post.
     # @param blog_post_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [BlogPostCategoryDtoCollectionQueryParameters] :blog_post_category_dto_collection_query_parameters 
     # @return [BlogPostCategoryDtoListEnvelope]
     def get_categories_for_blog_post_async(blog_post_id, opts = {})
       data, _status_code, _headers = get_categories_for_blog_post_async_with_http_info(blog_post_id, opts)
@@ -664,6 +679,7 @@ module OpenapiClient
     # Retrieves all categories related to a specific blog post.
     # @param blog_post_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [BlogPostCategoryDtoCollectionQueryParameters] :blog_post_category_dto_collection_query_parameters 
     # @return [Array<(BlogPostCategoryDtoListEnvelope, Integer, Hash)>] BlogPostCategoryDtoListEnvelope data, response status code and response headers
     def get_categories_for_blog_post_async_with_http_info(blog_post_id, opts = {})
       if @api_client.config.debugging
@@ -683,12 +699,17 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'blog_post_category_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'BlogPostCategoryDtoListEnvelope'
@@ -717,6 +738,7 @@ module OpenapiClient
     # Retrieves all comments for a specific blog post.
     # @param blog_post_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [BlogPostCommentDtoCollectionQueryParameters] :blog_post_comment_dto_collection_query_parameters 
     # @return [BlogPostCommentDtoListEnvelope]
     def get_comments_for_blog_post_async(blog_post_id, opts = {})
       data, _status_code, _headers = get_comments_for_blog_post_async_with_http_info(blog_post_id, opts)
@@ -727,6 +749,7 @@ module OpenapiClient
     # Retrieves all comments for a specific blog post.
     # @param blog_post_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [BlogPostCommentDtoCollectionQueryParameters] :blog_post_comment_dto_collection_query_parameters 
     # @return [Array<(BlogPostCommentDtoListEnvelope, Integer, Hash)>] BlogPostCommentDtoListEnvelope data, response status code and response headers
     def get_comments_for_blog_post_async_with_http_info(blog_post_id, opts = {})
       if @api_client.config.debugging
@@ -746,12 +769,17 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'blog_post_comment_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'BlogPostCommentDtoListEnvelope'
@@ -781,6 +809,7 @@ module OpenapiClient
     # @param comment_id [String] 
     # @param blog_post_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [BlogPostCommentDtoCollectionQueryParameters] :blog_post_comment_dto_collection_query_parameters 
     # @return [BlogPostCommentDtoListEnvelope]
     def get_replies_for_comment_async(comment_id, blog_post_id, opts = {})
       data, _status_code, _headers = get_replies_for_comment_async_with_http_info(comment_id, blog_post_id, opts)
@@ -792,6 +821,7 @@ module OpenapiClient
     # @param comment_id [String] 
     # @param blog_post_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [BlogPostCommentDtoCollectionQueryParameters] :blog_post_comment_dto_collection_query_parameters 
     # @return [Array<(BlogPostCommentDtoListEnvelope, Integer, Hash)>] BlogPostCommentDtoListEnvelope data, response status code and response headers
     def get_replies_for_comment_async_with_http_info(comment_id, blog_post_id, opts = {})
       if @api_client.config.debugging
@@ -815,12 +845,17 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'blog_post_comment_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'BlogPostCommentDtoListEnvelope'
@@ -849,6 +884,7 @@ module OpenapiClient
     # Retrieves all tags related to a specific blog post.
     # @param blog_post_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [BlogPostTagDtoCollectionQueryParameters] :blog_post_tag_dto_collection_query_parameters 
     # @return [BlogPostTagDtoListEnvelope]
     def get_tags_for_blog_post_async(blog_post_id, opts = {})
       data, _status_code, _headers = get_tags_for_blog_post_async_with_http_info(blog_post_id, opts)
@@ -859,6 +895,7 @@ module OpenapiClient
     # Retrieves all tags related to a specific blog post.
     # @param blog_post_id [String] 
     # @param [Hash] opts the optional parameters
+    # @option opts [BlogPostTagDtoCollectionQueryParameters] :blog_post_tag_dto_collection_query_parameters 
     # @return [Array<(BlogPostTagDtoListEnvelope, Integer, Hash)>] BlogPostTagDtoListEnvelope data, response status code and response headers
     def get_tags_for_blog_post_async_with_http_info(blog_post_id, opts = {})
       if @api_client.config.debugging
@@ -878,12 +915,17 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'blog_post_tag_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'BlogPostTagDtoListEnvelope'
@@ -913,7 +955,7 @@ module OpenapiClient
     # @param tenant_id [String] 
     # @param blog_post_id [String] 
     # @param [Hash] opts the optional parameters
-    # @option opts [Array<Operation>] :operation 
+    # @option opts [Array<PatchOperation>] :patch_operation 
     # @return [EmptyEnvelope]
     def patch_blog_post_async(tenant_id, blog_post_id, opts = {})
       data, _status_code, _headers = patch_blog_post_async_with_http_info(tenant_id, blog_post_id, opts)
@@ -925,7 +967,7 @@ module OpenapiClient
     # @param tenant_id [String] 
     # @param blog_post_id [String] 
     # @param [Hash] opts the optional parameters
-    # @option opts [Array<Operation>] :operation 
+    # @option opts [Array<PatchOperation>] :patch_operation 
     # @return [Array<(EmptyEnvelope, Integer, Hash)>] EmptyEnvelope data, response status code and response headers
     def patch_blog_post_async_with_http_info(tenant_id, blog_post_id, opts = {})
       if @api_client.config.debugging
@@ -960,7 +1002,7 @@ module OpenapiClient
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'operation'])
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'patch_operation'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'EmptyEnvelope'

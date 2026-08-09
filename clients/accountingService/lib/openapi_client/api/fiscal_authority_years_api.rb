@@ -262,6 +262,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [FiscalYearDtoCollectionQueryParameters] :fiscal_year_dto_collection_query_parameters 
     # @return [FiscalYearDtoListEnvelope]
     def get_fiscal_years(tenant_id, fiscal_authority_id, authority_id, opts = {})
       data, _status_code, _headers = get_fiscal_years_with_http_info(tenant_id, fiscal_authority_id, authority_id, opts)
@@ -276,6 +277,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [FiscalYearDtoCollectionQueryParameters] :fiscal_year_dto_collection_query_parameters 
     # @return [Array<(FiscalYearDtoListEnvelope, Integer, Hash)>] FiscalYearDtoListEnvelope data, response status code and response headers
     def get_fiscal_years_with_http_info(tenant_id, fiscal_authority_id, authority_id, opts = {})
       if @api_client.config.debugging
@@ -306,13 +308,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'fiscal_year_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'FiscalYearDtoListEnvelope'
@@ -344,6 +351,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [FiscalYearDtoCollectionQueryParameters] :fiscal_year_dto_collection_query_parameters 
     # @return [Int32Envelope]
     def get_fiscal_years_count(tenant_id, fiscal_authority_id, opts = {})
       data, _status_code, _headers = get_fiscal_years_count_with_http_info(tenant_id, fiscal_authority_id, opts)
@@ -357,6 +365,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [FiscalYearDtoCollectionQueryParameters] :fiscal_year_dto_collection_query_parameters 
     # @return [Array<(Int32Envelope, Integer, Hash)>] Int32Envelope data, response status code and response headers
     def get_fiscal_years_count_with_http_info(tenant_id, fiscal_authority_id, opts = {})
       if @api_client.config.debugging
@@ -382,13 +391,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'fiscal_year_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'Int32Envelope'
@@ -420,7 +434,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
-    # @option opts [Array<Operation>] :operation 
+    # @option opts [Array<PatchOperation>] :patch_operation 
     # @return [EmptyEnvelope]
     def patch_fiscal_authority_year_async(tenant_id, fiscal_year_id, opts = {})
       data, _status_code, _headers = patch_fiscal_authority_year_async_with_http_info(tenant_id, fiscal_year_id, opts)
@@ -434,7 +448,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
-    # @option opts [Array<Operation>] :operation 
+    # @option opts [Array<PatchOperation>] :patch_operation 
     # @return [Array<(EmptyEnvelope, Integer, Hash)>] EmptyEnvelope data, response status code and response headers
     def patch_fiscal_authority_year_async_with_http_info(tenant_id, fiscal_year_id, opts = {})
       if @api_client.config.debugging
@@ -471,7 +485,7 @@ module OpenapiClient
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'operation'])
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'patch_operation'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'EmptyEnvelope'

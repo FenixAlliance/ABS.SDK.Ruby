@@ -315,6 +315,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [TenantInvitationDtoCollectionQueryParameters] :tenant_invitation_dto_collection_query_parameters 
     # @return [TenantInvitationDtoListEnvelope]
     def get_tenant_invitations(tenant_id, opts = {})
       data, _status_code, _headers = get_tenant_invitations_with_http_info(tenant_id, opts)
@@ -327,6 +328,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [TenantInvitationDtoCollectionQueryParameters] :tenant_invitation_dto_collection_query_parameters 
     # @return [Array<(TenantInvitationDtoListEnvelope, Integer, Hash)>] TenantInvitationDtoListEnvelope data, response status code and response headers
     def get_tenant_invitations_with_http_info(tenant_id, opts = {})
       if @api_client.config.debugging
@@ -348,13 +350,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'tenant_invitation_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'TenantInvitationDtoListEnvelope'
@@ -385,6 +392,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [TenantInvitationDtoCollectionQueryParameters] :tenant_invitation_dto_collection_query_parameters 
     # @return [Int32Envelope]
     def get_tenant_invitations_count(tenant_id, opts = {})
       data, _status_code, _headers = get_tenant_invitations_count_with_http_info(tenant_id, opts)
@@ -397,6 +405,7 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :api_version 
     # @option opts [String] :x_api_version 
+    # @option opts [TenantInvitationDtoCollectionQueryParameters] :tenant_invitation_dto_collection_query_parameters 
     # @return [Array<(Int32Envelope, Integer, Hash)>] Int32Envelope data, response status code and response headers
     def get_tenant_invitations_count_with_http_info(tenant_id, opts = {})
       if @api_client.config.debugging
@@ -418,13 +427,18 @@ module OpenapiClient
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
       header_params[:'x-api-version'] = opts[:'x_api_version'] if !opts[:'x_api_version'].nil?
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'tenant_invitation_dto_collection_query_parameters'])
 
       # return_type
       return_type = opts[:debug_return_type] || 'Int32Envelope'
