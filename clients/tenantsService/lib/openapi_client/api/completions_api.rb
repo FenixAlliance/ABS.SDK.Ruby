@@ -43,7 +43,7 @@ module OpenapiClient
         fail ArgumentError, "Missing the required parameter 'tenant_id' when calling CompletionsApi.api_v2_ai_service_completions_complete_get"
       end
       # resource path
-      local_var_path = '/api/v2/AiService/Completions/Complete'
+      local_var_path = '/api/v2/IntelligenceService/Completions/Complete'
 
       # query parameters
       query_params = opts[:query_params] || {}
